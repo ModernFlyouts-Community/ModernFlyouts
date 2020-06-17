@@ -2,12 +2,15 @@
 ### A modern replacement for existing flyouts in Windows
 
 **Dark Theme :** 
+
 ![Audio_Dark](docs/images/Audio_Dark.png)
 
 **Light Theme :** 
+
 ![Audio_Light](docs/images/Audio_Light.png)
 
 **Default one**
+
 ![Audio_Old](docs/images/Audio_Old.png)
 
 This application will replace the default audio/airplane flyouts found in Windows shown when the volume changes or when airplane mode key is pressed.
@@ -44,15 +47,19 @@ This project depends on :
 ## Screenshots
 
 **Fallback thumbnail for music playback with no album art**
+
 ![Audio_Session_Music_NoAlbumArt](docs/images/Audio_Session_Music_NoAlbumArt.png)
 
 **Fallback thumbnail for video playback with no thumbnail**
+
 ![Audio_Session_Video_NoThumbnail](docs/images/Audio_Session_Video_NoThumbnail.png)
 
 **Airplane-Mode Flyout**
+
 ![Airplane_On_Light](docs/images/Airplane_On_Light.png)
 
 **Lock key flyout**
+
 ![LockKey_Caps_Light](docs/images/LockKey_Caps_Light.png)
 
 ## Coming up
