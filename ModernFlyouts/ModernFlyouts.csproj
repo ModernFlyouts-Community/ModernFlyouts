@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>netcoreapp3.1;net462</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\DefaultAudioThumbnail.png" />
+    <None Remove="Assets\Images\DefaultImageThumbnail.png" />
+    <None Remove="Assets\Images\DefaultVideoThumbnail.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2005" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.0" />
+    <PackageReference Include="NAudio" Version="1.10.0" />
+    <PackageReference Include="System.Management" Version="5.0.0-preview.5.20278.1" />
+    <PackageReference Include="System.Runtime.WindowsRuntime" Version="5.0.0-preview.5.20278.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="Assets\Images\DefaultAudioThumbnail.png" />
+    <Resource Include="Assets\Images\DefaultImageThumbnail.png" />
+    <Resource Include="Assets\Images\DefaultVideoThumbnail.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Page Remove="Properties\DesignTimeResources.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Properties\DesignTimeResources.xaml">
+      <ContainsDesignTimeResources>True</ContainsDesignTimeResources>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  
+</Project>

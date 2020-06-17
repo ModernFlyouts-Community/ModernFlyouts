@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernFlyouts", "ModernFlyouts\ModernFlyouts.csproj", "{BC335805-3121-430D-8CE6-38334C0CC365}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC335805-3121-430D-8CE6-38334C0CC365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC335805-3121-430D-8CE6-38334C0CC365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC335805-3121-430D-8CE6-38334C0CC365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC335805-3121-430D-8CE6-38334C0CC365}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {014668DA-AB84-4E95-988B-E0998E492C23}
+	EndGlobalSection
+EndGlobal

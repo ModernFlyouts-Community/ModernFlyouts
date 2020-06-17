@@ -1,0 +1,29 @@
+﻿<Application x:Class="ModernFlyouts.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModernFlyouts"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources>
+                    <ui:ThemeResources.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light">
+                            <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF"/>
+                        </ResourceDictionary>
+
+                        <ResourceDictionary x:Key="Dark" ui:ThemeDictionary.Key="Dark">
+                            <SolidColorBrush x:Key="FlyoutBackground" Color="#222222"/>
+                        </ResourceDictionary>
+
+                        <ResourceDictionary x:Key="HighContrast" ui:ThemeDictionary.Key="HighContrast">
+                            <SolidColorBrush x:Key="FlyoutBackground" Color="{ui:ThemeResource SystemColorWindowColor}"/>
+                        </ResourceDictionary>
+                    </ui:ThemeResources.ThemeDictionaries>
+                </ui:ThemeResources>
+                <ui:XamlControlsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
