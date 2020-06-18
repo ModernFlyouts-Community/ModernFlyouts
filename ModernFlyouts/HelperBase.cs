@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -8,7 +9,7 @@ namespace ModernFlyouts
 
         public abstract event ShowFlyoutEventHandler ShowFlyoutRequested;
 
-        public delegate void ShowFlyoutEventHandler(object sender, bool handled);
+        public delegate void ShowFlyoutEventHandler(HelperBase sender);
 
         #region Properties
 
@@ -60,6 +61,46 @@ namespace ModernFlyouts
             set => SetValue(SecondaryContentVisibleProperty, value);
         }
 
+        public bool AlwaysHandleDefaultFlyout { get; protected set; } = false;
+
+        public static readonly DependencyProperty IsEnabledProperty =
+            DependencyProperty.Register("IsEnabled",
+                typeof(bool),
+                typeof(HelperBase),
+                new PropertyMetadata(true, OnIsEnabledChanged));
+
+        private static void OnIsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var helper = d as HelperBase;
+            if ((bool)e.NewValue)
+            {
+                helper.OnEnabled();
+            }
+            else
+            {
+                helper.OnDisabled();
+            }
+        }
+
+        public bool IsEnabled
+        {
+            get => (bool)GetValue(IsEnabledProperty);
+            set => SetValue(IsEnabledProperty, value);
+        }
+
         #endregion
+
+        protected virtual void OnEnabled()
+        {
+
+        }
+
+        protected virtual void OnDisabled()
+        {
+            if (FlyoutHandler.Instance.FlyoutWindow.DataContext == this)
+            {
+                FlyoutHandler.Instance.FlyoutWindow.Visible = false;
+            }
+        }
     }
 }

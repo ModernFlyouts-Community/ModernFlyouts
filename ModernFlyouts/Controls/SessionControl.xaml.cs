@@ -28,17 +28,12 @@ namespace ModernFlyouts
                     UpdateSessionInfo(value);
                     value.MediaPropertiesChanged += Session_MediaPropertiesChanged;
                     value.PlaybackInfoChanged += Value_PlaybackInfoChanged;
+                    _SMTCSession = value;
                 }
                 else
                 {
-                    //Gute Nacht
-                    if (_SMTCSession != null)
-                    {
-                        _SMTCSession.MediaPropertiesChanged -= Session_MediaPropertiesChanged;
-                        _SMTCSession.PlaybackInfoChanged -= Value_PlaybackInfoChanged;
-                    }
+                    DisposeSession();
                 }
-                _SMTCSession = value;
             }
         }
 
@@ -169,7 +164,7 @@ namespace ModernFlyouts
 
         private ImageSource GetDefaultThumbnail(Windows.Media.MediaPlaybackType? playbackType)
         {
-            return (playbackType) switch
+            return playbackType switch
             {
                 Windows.Media.MediaPlaybackType.Image => AudioHelper.GetDefaultImageThumbnail(),
                 Windows.Media.MediaPlaybackType.Music => AudioHelper.GetDefaultAudioThumbnail(),
@@ -177,6 +172,16 @@ namespace ModernFlyouts
                 Windows.Media.MediaPlaybackType.Unknown => null,
                 _ => null
             };
+        }
+
+        public void DisposeSession()
+        {
+            if (_SMTCSession != null)
+            {
+                _SMTCSession.MediaPropertiesChanged -= Session_MediaPropertiesChanged;
+                _SMTCSession.PlaybackInfoChanged -= Value_PlaybackInfoChanged;
+            }
+            _SMTCSession = null;
         }
     }
 }

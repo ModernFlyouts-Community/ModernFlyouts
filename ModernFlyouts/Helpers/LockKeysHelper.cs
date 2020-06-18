@@ -15,7 +15,7 @@ namespace ModernFlyouts
 
         public void Initialize()
         {
-            FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
+            AlwaysHandleDefaultFlyout = false;
 
             PrimaryContent = null;
             PrimaryContentVisible = false;
@@ -24,6 +24,8 @@ namespace ModernFlyouts
 
             SecondaryContent = lockKeysControl;
             SecondaryContentVisible = true;
+
+            OnEnabled();
         }
 
         private void KeyPressed(Key Key)
@@ -49,7 +51,7 @@ namespace ModernFlyouts
 
             void ShowFlyout()
             {
-                ShowFlyoutRequested?.Invoke(this, false);
+                ShowFlyoutRequested?.Invoke(this);
             }
         }
 
@@ -66,5 +68,21 @@ namespace ModernFlyouts
             ScrollLock
         }
 
+        protected override void OnEnabled()
+        {
+            base.OnEnabled();
+
+            if (IsEnabled)
+            {
+                FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
+            }
+        }
+
+        protected override void OnDisabled()
+        {
+            base.OnDisabled();
+
+            FlyoutHandler.Instance.KeyboardHook.KeyDown -= KeyPressed;
+        }
     }
 }

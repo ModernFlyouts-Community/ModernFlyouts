@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using System;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Threading;
 
@@ -15,11 +18,15 @@ namespace ModernFlyouts
 
         public FlyoutWindow FlyoutWindow { get; set; }
 
+        public SettingsWindow SettingsWindow { get; set; }
+
         public AudioHelper AudioHelper { get; set; }
 
         public AirplaneModeHelper AirplaneModeHelper { get; set; }
 
         public LockKeysHelper LockKeysHelper { get; set; }
+
+        public TaskbarIcon TaskbarIcon { get; set; }
 
         public void Initialize()
         {
@@ -28,23 +35,28 @@ namespace ModernFlyouts
             FlyoutWindow = new FlyoutWindow();
             FlyoutWindow.SourceInitialized += FlyoutWindow_SourceInitialized;
 
-            OnSystemThemeChange();
+            SystemTheme.SystemThemeChanged += OnSystemThemeChange;
+            SystemTheme.Initialize();
 
             (IntPtr Host, int processid) = DUIHandler.GetAll();
             DUIHook = new DUIHook();
             DUIHook.Hook(Host, (uint)processid);
             DUIHook.DUIShown += DUIShown;
             DUIHook.DUIDestroyed += DUIDestroyed;
-            rehooktimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(2), IsEnabled = false };
+            rehooktimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(3), IsEnabled = false };
             rehooktimer.Tick += (_, __) => TryRehook();
 
             KeyboardHook = new KeyboardHook();
 
             #region Initiate Helpers
 
-            AudioHelper = new AudioHelper(); AudioHelper.ShowFlyoutRequested += (s, h) => ShowFlyout(s, h);
-            AirplaneModeHelper = new AirplaneModeHelper(); AirplaneModeHelper.ShowFlyoutRequested += (s, h) => ShowFlyout(s, h);
-            LockKeysHelper = new LockKeysHelper(); LockKeysHelper.ShowFlyoutRequested += (s, h) => ShowFlyout(s, h);
+            AudioHelper = new AudioHelper();
+            AirplaneModeHelper = new AirplaneModeHelper();
+            LockKeysHelper = new LockKeysHelper();
+
+            AudioHelper.ShowFlyoutRequested += ShowFlyout;
+            AirplaneModeHelper.ShowFlyoutRequested += ShowFlyout;
+            LockKeysHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
         }
@@ -73,11 +85,16 @@ namespace ModernFlyouts
             else { DUIHandler.FindDUIAndShow(); }
         }
 
-        private void ShowFlyout(object helper, bool handled)
+        private void ShowFlyout(HelperBase helper)
         {
+            if (!helper.IsEnabled)
+            {
+                return;
+            }
+
             FlyoutWindow.StopHideTimer();   
 
-            if (handled)
+            if (helper.AlwaysHandleDefaultFlyout)
             {
                 DUIHandler.FindDUIAndHide();
             }
@@ -89,7 +106,11 @@ namespace ModernFlyouts
 
         private bool Handled()
         {
-            return FlyoutWindow.Visible && (FlyoutWindow.DataContext == AudioHelper || FlyoutWindow.DataContext == AirplaneModeHelper);
+            if (FlyoutWindow.DataContext is HelperBase helper)
+            {
+                return FlyoutWindow.Visible && helper.AlwaysHandleDefaultFlyout && helper.IsEnabled;
+            }
+            return false;
         }
 
         private void FlyoutWindow_SourceInitialized(object sender, EventArgs e)
@@ -103,8 +124,6 @@ namespace ModernFlyouts
 
         private const int MA_NOACTIVATE = 0x3;
         private const int WM_MOUSEACTIVATE = 0x21;
-        private const int WM_WININICHANGE = 0x001A;
-        private const int WM_SETTINGCHANGE = WM_WININICHANGE;
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
@@ -113,21 +132,39 @@ namespace ModernFlyouts
                 handled = true;
                 return new IntPtr(MA_NOACTIVATE);
             }
-            else if (msg == WM_SETTINGCHANGE)
-            {
-                if (System.Runtime.InteropServices.Marshal.PtrToStringAuto(lParam) == "ImmersiveColorSet")
-                {
-                    handled = true;
-                    OnSystemThemeChange();
-                }
-            }
 
             return IntPtr.Zero;
         }
 
-        private void OnSystemThemeChange()
+        private void OnSystemThemeChange(object sender, SystemThemeChangedEventArgs args)
         {
-            ModernWpf.ThemeManager.SetRequestedTheme(FlyoutWindow, SystemTheme.GetIsSystemLightTheme() ? ModernWpf.ElementTheme.Light : ModernWpf.ElementTheme.Dark);
+            FlyoutWindow.Dispatcher.Invoke(() =>
+            {
+                var theme = args.IsSystemLightTheme ? ModernWpf.ElementTheme.Light : ModernWpf.ElementTheme.Dark;
+                ModernWpf.ThemeManager.SetRequestedTheme(FlyoutWindow, theme);
+                ModernWpf.ThemeManager.SetRequestedTheme(FlyoutWindow.TrayContextMenu, theme);
+            });
+        }
+
+        public static void SafelyExitApplication()
+        {
+            DUIHandler.FindDUIAndShow();
+            Application.Current.Shutdown();
+        }
+
+        public static void ShowSettingsWindow()
+        {
+            if (Instance.SettingsWindow == null)
+            {
+                Instance.SettingsWindow = new SettingsWindow();
+                void handler(object sender, CancelEventArgs e)
+                {
+                    Instance.SettingsWindow.Closing -= handler;
+                    Instance.SettingsWindow = null;
+                }
+                Instance.SettingsWindow.Closing += handler;
+            }
+            Instance.SettingsWindow.Show();
         }
     }
 }

@@ -20,24 +20,18 @@ namespace ModernFlyouts
         private MMDevice device;
         private VolumeControl volumeControl;
         private StackPanel SessionsStackPanel;
+        private bool _isinit = false;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
         public AudioHelper()
         {
-           if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
-           {
-                volumeControl = new VolumeControl();
-                PrimaryContent = volumeControl;
-
-                SecondaryContent = new Border() { Background = Brushes.Blue, CornerRadius = new CornerRadius(10), Height = 40 };
-                SecondaryContentVisible = true;
-           } else { Initialize(); }
+           Initialize();
         }
 
         public void Initialize()
         {
-            FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
+            AlwaysHandleDefaultFlyout = true;
 
             #region Creating Volume Control
 
@@ -50,19 +44,26 @@ namespace ModernFlyouts
 
             #region Creating Session Controls
 
+            SessionsStackPanel = new StackPanel();
+            SecondaryContent = SessionsStackPanel;
+
             try { SetupSMTCAsync(); } catch { }
 
             #endregion
             
             PrimaryContent = volumeControl;
             client = new AudioDeviceNotificationClient();
-            client.DefaultDeviceChanged += Client_DefaultDeviceChanged;
 
             enumerator = new MMDeviceEnumerator();
             enumerator.RegisterEndpointNotificationCallback(client);
 
             if (enumerator.HasDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia))
+            {
                 UpdateDevice(enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia));
+            }
+
+            OnEnabled();
+            _isinit = true;
         }
 
         private void KeyPressed(Key Key)
@@ -78,7 +79,7 @@ namespace ModernFlyouts
 
             void ShowFlyout()
             {
-                ShowFlyoutRequested?.Invoke(this, true);
+                ShowFlyoutRequested?.Invoke(this);
             }
 
             bool SMTCAvail()
@@ -92,21 +93,35 @@ namespace ModernFlyouts
         private void Client_DefaultDeviceChanged(object sender, string e)
         {
             if (e != null)
+            {
                 UpdateDevice(enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia));
+            }
             else
+            {
                 UpdateDevice(null);
+            }
         }
 
         private void UpdateDevice(MMDevice mmdevice)
         {
+            if (device != null)
+            {
+                device.AudioEndpointVolume.OnVolumeNotification -= AudioEndpointVolume_OnVolumeNotification;
+            }
+
             device = mmdevice;
             if (device != null)
             {
                 UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
-                device.AudioEndpointVolume.OnVolumeNotification += (data) => UpdateVolume(data.MasterVolume * 100);
+                device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
                 PrimaryContentVisible = true;
             }
             else { PrimaryContentVisible = false; }
+        }
+
+        private void AudioEndpointVolume_OnVolumeNotification(AudioVolumeNotificationData data)
+        {
+            UpdateVolume(data.MasterVolume * 100);
         }
 
         private bool _isInCodeValueChange = false; //Prevents a LOOP between changing volume.
@@ -152,7 +167,9 @@ namespace ModernFlyouts
                 var oldValue = Math.Truncate(e.OldValue);
 
                 if (value == oldValue)
+                {
                     return;
+                }
 
                 if (device != null)
                 {
@@ -180,10 +197,12 @@ namespace ModernFlyouts
         {
             var slider = sender as Slider;
             var value = Math.Truncate(slider.Value);
-            var change = (e.Delta / 120);
+            var change = e.Delta / 120;
 
             if (value + change > 100 || value + change < 0)
+            {
                 return;
+            }
 
 
             if (device != null)
@@ -203,25 +222,62 @@ namespace ModernFlyouts
 
         #region SMTC
 
+        private object _SMTC;
+
         [MethodImpl(MethodImplOptions.NoInlining)]
         private async void SetupSMTCAsync()
         {
-            SessionsStackPanel = new StackPanel();
-            SecondaryContent = SessionsStackPanel;
-            SecondaryContentVisible = true;
-
             GlobalSystemMediaTransportControlsSessionManager SMTC;
 
             SMTC = await GlobalSystemMediaTransportControlsSessionManager.RequestAsync();
+            SMTC.SessionsChanged += SMTC_SessionsChanged;
+            _SMTC = SMTC;
 
             LoadSessionControls();
+        }
 
-            SMTC.SessionsChanged += (_, __) => Dispatcher.BeginInvoke(DispatcherPriority.Send, new Action(LoadSessionControls));
-
-            void LoadSessionControls()
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void DetachSMTC()
+        {
+            if (_SMTC is GlobalSystemMediaTransportControlsSessionManager SMTC)
             {
-                SessionsStackPanel.Children.Clear();
+                SMTC.SessionsChanged -= SMTC_SessionsChanged;
+                _SMTC = null;
+            }
 
+            ClearSessionControls();
+            SecondaryContentVisible = false;
+        }
+
+        private void ClearSessionControls()
+        {
+            foreach (var child in SessionsStackPanel.Children)
+            {
+                var s = child as SessionControl;
+                s.DisposeSession();
+            }
+
+            SessionsStackPanel.Children.Clear();
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void SMTC_SessionsChanged(GlobalSystemMediaTransportControlsSessionManager sender, SessionsChangedEventArgs args)
+        {
+            Dispatcher.BeginInvoke(DispatcherPriority.Send, new Action(LoadSessionControls));
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void LoadSessionControls()
+        {
+            ClearSessionControls();
+
+            if (!IsEnabled)
+            {
+                return;
+            }
+
+            if (_SMTC is GlobalSystemMediaTransportControlsSessionManager SMTC)
+            {
                 var sessions = SMTC.GetSessions();
 
                 foreach (var session in sessions)
@@ -237,11 +293,11 @@ namespace ModernFlyouts
                 {
                     SessionsStackPanel.Margin = new Thickness(0, 2, 0, 0);
                     (SessionsStackPanel.Children[0] as SessionControl).Margin = new Thickness(0);
+                    SecondaryContentVisible = true;
                 }
                 else { SessionsStackPanel.Margin = new Thickness(0); }
             }
         }
-
         #endregion
 
         #region SMTC Thumbnails
@@ -262,6 +318,47 @@ namespace ModernFlyouts
         }
 
         #endregion
+
+        protected override void OnEnabled()
+        {
+            base.OnEnabled();
+
+            if (!IsEnabled)
+            {
+                return;
+            }
+
+            FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
+            client.DefaultDeviceChanged += Client_DefaultDeviceChanged;
+
+            if (device != null)
+            {
+                device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
+                PrimaryContentVisible = true;
+            }
+            else { PrimaryContentVisible = false; }
+
+            if (_isinit)
+            {
+                try { SetupSMTCAsync(); } catch { }
+            }
+        }
+
+        protected override void OnDisabled()
+        {
+            base.OnDisabled();
+
+            FlyoutHandler.Instance.KeyboardHook.KeyDown -= KeyPressed;
+            client.DefaultDeviceChanged -= Client_DefaultDeviceChanged;
+
+            if (device != null)
+            {
+                device.AudioEndpointVolume.OnVolumeNotification -= AudioEndpointVolume_OnVolumeNotification;
+            }
+            PrimaryContentVisible = false;
+
+            try { DetachSMTC(); } catch { }
+        }
     }
 
     public class AudioDeviceNotificationClient : IMMNotificationClient

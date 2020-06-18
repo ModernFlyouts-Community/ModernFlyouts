@@ -33,5 +33,7 @@
         public const string Volume2 = "\uE994";
 
         public const string Volume3 = "\uE995";
+
+        public const string PowerButton = "\uE7E8";
     }
 }

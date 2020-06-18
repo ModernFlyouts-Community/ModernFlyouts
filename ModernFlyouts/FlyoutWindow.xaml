@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
-        xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+        xmlns:util="clr-namespace:ModernFlyouts.Utilities" xmlns:tb="http://www.hardcodet.net/taskbar"
         Background="Transparent" SizeToContent="WidthAndHeight" WindowStyle="None"
         AllowsTransparency="True" mc:Ignorable="d" ResizeMode="NoResize" Topmost="True"
         ShowInTaskbar="False" Title="Modern Flyouts">
@@ -89,18 +89,18 @@
 
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="34" />
                         <ColumnDefinition Width="34" />
                         <ColumnDefinition />
                         <ColumnDefinition Width="34" />
                     </Grid.ColumnDefinitions>
                     
-                    <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="4,2,2,2"
-                    Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Visibility="Collapsed">
+                    <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="4,2,2,4"
+                    Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Click="settingsItem_Click">
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Setting}" FontSize="16"/>
                     </Button>
 
-                    <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="4,2,2,2"
+                    <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="2"
                     Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Align">
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.AlignTopLeft}" FontSize="12"/>
                     </Button>
@@ -125,5 +125,21 @@
             </Border.RenderTransform>
             <ContentPresenter Content="{Binding SecondaryContent}"/>
         </Border>
+        <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu x:Name="TrayContextMenu" ui:ThemeManager.RequestedTheme="Dark">
+                    <MenuItem Header="Settings" Click="settingsItem_Click">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon Symbol="Setting"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exit" Click="exitItem_Click">
+                        <MenuItem.Icon>
+                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.PowerButton}"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
     </StackPanel>
 </Window>

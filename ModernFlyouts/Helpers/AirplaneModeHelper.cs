@@ -8,6 +8,7 @@ namespace ModernFlyouts
     public class AirplaneModeHelper : HelperBase
     {
         private AirplaneModeControl airplaneModeControl;
+        private AirplaneModeWatcher airplaneModeWatcher;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
@@ -18,6 +19,8 @@ namespace ModernFlyouts
 
         public void Initialize()
         {
+            AlwaysHandleDefaultFlyout = true;
+
             PrimaryContent = null;
             PrimaryContentVisible = false;
 
@@ -26,8 +29,9 @@ namespace ModernFlyouts
             SecondaryContent = airplaneModeControl;
             SecondaryContentVisible = true;
 
-            var AirplaneModeWatcher = new AirplaneModeWatcher();
-            AirplaneModeWatcher.Changed += AirplaneModeWatcher_Changed;
+            airplaneModeWatcher = new AirplaneModeWatcher();
+
+            OnEnabled();
         }
 
         private void Prepare(AirplaneModeChangedEventArgs e)
@@ -53,8 +57,27 @@ namespace ModernFlyouts
             Dispatcher.Invoke(() =>
             {
                 Prepare(e);
-                ShowFlyoutRequested?.Invoke(this, true);
+                ShowFlyoutRequested?.Invoke(this);
             });
+        }
+
+        protected override void OnEnabled()
+        {
+            base.OnEnabled();
+
+            if (IsEnabled)
+            {
+                airplaneModeWatcher.Start();
+                airplaneModeWatcher.Changed += AirplaneModeWatcher_Changed;
+            }
+        }
+
+        protected override void OnDisabled()
+        {
+            base.OnDisabled();
+
+            airplaneModeWatcher.Stop();
+            airplaneModeWatcher.Changed -= AirplaneModeWatcher_Changed;
         }
     }
 
@@ -75,6 +98,8 @@ namespace ModernFlyouts
 
     public class AirplaneModeWatcher
     {
+        private ManagementEventWatcher watcher;
+
         public event EventHandler<AirplaneModeChangedEventArgs> Changed;
         public AirplaneModeWatcher()
         {
@@ -86,18 +111,25 @@ namespace ModernFlyouts
                      "Hive = 'HKEY_LOCAL_MACHINE'" +
                      @"AND KeyPath = 'SYSTEM\\CurrentControlSet\\Control\\RadioManagement\\SystemRadioState' AND ValueName=''");
 
-                ManagementEventWatcher watcher = new ManagementEventWatcher(query);
+                watcher = new ManagementEventWatcher(query);
 
                 // Set up the delegate that will handle the change event.
                 watcher.EventArrived += new EventArrivedEventHandler(HandleEvent);
-
-                // Start listening for events.
-                watcher.Start();
             }
             catch (ManagementException managementException)
             {
                 Debug.WriteLine($"{nameof(AirplaneModeWatcher)}: " + managementException.Message);
             }
+        }
+
+        public void Start()
+        {
+            watcher.Start();
+        }
+
+        public void Stop()
+        {
+            watcher.Stop();
         }
 
         public static int GetAirplaneMode()

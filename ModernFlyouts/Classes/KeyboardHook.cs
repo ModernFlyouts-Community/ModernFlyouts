@@ -46,7 +46,7 @@ namespace ModernFlyouts
 
         public KeyboardHook()
         {
-            KBDLLHookProcDelegate =  new KBDLLHookProc(this.KeyboardProc);
+            KBDLLHookProcDelegate =  new KBDLLHookProc(KeyboardProc);
             var module = System.Diagnostics.Process.GetCurrentProcess().MainModule;
             IntPtr handle = NativeMethods.GetModuleHandle(module.ModuleName);// Marshal.GetHINSTANCE(System.Reflection.Assembly.GetExecutingAssembly().GetLoadedModules()[0]);
             HHookID = (IntPtr)SetWindowsHookEx(WH_KEYBOARD_LL, KBDLLHookProcDelegate, handle, 0);

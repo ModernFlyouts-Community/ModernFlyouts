@@ -39,9 +39,9 @@ namespace ModernFlyouts
             remove { RemoveHandler(FlyoutShownEvent, value); }
         }
 
-        public void ShowFlyout()
+        private void ShowFlyout()
         {
-            this.Show();
+            Show();
             _elapsedTimer.Stop();
             RoutedEventArgs args = new RoutedEventArgs(FlyoutShownEvent);
             RaiseEvent(args);
@@ -57,7 +57,7 @@ namespace ModernFlyouts
             remove { RemoveHandler(FlyoutHiddenEvent, value); }
         }
 
-        public void HideFlyout()
+        private void HideFlyout()
         {
             RoutedEventArgs args = new RoutedEventArgs(FlyoutHiddenEvent);
             RaiseEvent(args);
@@ -81,11 +81,7 @@ namespace ModernFlyouts
 
         private void SetupHideTimer()
         {
-#if DEBUG
             _elapsedTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2.75) };
-#else
-            _elapsedTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2.75) };
-#endif
 
             _elapsedTimer.Tick += (_, __) =>
             {
@@ -127,7 +123,21 @@ namespace ModernFlyouts
         {
             (var left, var top) = DUIHandler.GetCoordinates();
 
-            this.Left = left; this.Top = top;
+            Left = left; Top = top;
         }
+
+        #region Tray Menu Methods
+
+        private void exitItem_Click(object sender, RoutedEventArgs e)
+        {
+            FlyoutHandler.SafelyExitApplication();
+        }
+
+        private void settingsItem_Click(object sender, RoutedEventArgs e)
+        {
+            FlyoutHandler.ShowSettingsWindow();
+        }
+
+        #endregion
     }
 }

@@ -6,16 +6,18 @@
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>8.0</LangVersion>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Assets\Images\DefaultAudioThumbnail.png" />
     <None Remove="Assets\Images\DefaultImageThumbnail.png" />
     <None Remove="Assets\Images\DefaultVideoThumbnail.png" />
+    <None Remove="Assets\Logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2005" />
     <PackageReference Include="ModernWpfUI" Version="0.9.0" />
     <PackageReference Include="NAudio" Version="1.10.0" />
@@ -27,6 +29,7 @@
     <Resource Include="Assets\Images\DefaultAudioThumbnail.png" />
     <Resource Include="Assets\Images\DefaultImageThumbnail.png" />
     <Resource Include="Assets\Images\DefaultVideoThumbnail.png" />
+    <Resource Include="Assets\Logo.ico" />
   </ItemGroup>
   
   <ItemGroup>
