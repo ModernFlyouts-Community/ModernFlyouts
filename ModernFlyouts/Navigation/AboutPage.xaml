@@ -10,17 +10,9 @@
       Title="AboutPage">
     <Page.Resources>
         <system:String xml:space="preserve" x:Key="About.md">
-#This is placeholder markdown for about page
-
-Does it work?
-
-I will update this later [link](https://www.bing.com)
-
-### It kinda seem to work^Hello^super^script
-
-Images also work!
-![Caps](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/54px-Font_Awesome_5_brands_github.svg.png)
-![Test](/Assets/Images/DefaultAudioThumbnail.png)
+#### ModernFlyouts
+            
+            
         </system:String>
     </Page.Resources>
     <md:MarkdownTextBlock Text="{StaticResource About.md}" ImageResolving="MarkdownTextBlock_ImageResolving" LinkClicked="MarkdownTextBlock_LinkClicked" ImageClicked="MarkdownTextBlock_ImageClicked"/>

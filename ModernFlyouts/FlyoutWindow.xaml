@@ -75,7 +75,7 @@
         </EventTrigger>
     </Window.Triggers>
     <StackPanel>
-        <Border x:Name="MainBorder" Width="364" Margin="0" Background="{DynamicResource FlyoutBackground}" CornerRadius="4" RenderTransformOrigin="0.5, 0.5">
+        <Border x:Name="MainBorder" Width="364" Margin="0" Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}" RenderTransformOrigin="0.5, 0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="T1"/>
@@ -100,7 +100,7 @@
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Setting}" FontSize="16"/>
                     </Button>
 
-                    <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="2"
+                    <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
                     Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Align">
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.AlignTopLeft}" FontSize="12"/>
                     </Button>

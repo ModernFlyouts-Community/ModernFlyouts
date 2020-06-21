@@ -119,11 +119,16 @@ namespace ModernFlyouts
             SecondaryHost.Opacity = 0;
         }
 
+        private Point DefaultPosition;
+
         private void AlignFlyout()
         {
-            (var left, var top) = DUIHandler.GetCoordinates();
+            if (DefaultPosition == default)
+            {
+                DefaultPosition = DUIHandler.GetCoordinates();
+            }
 
-            Left = left; Top = top;
+            Left = DefaultPosition.X; Top = DefaultPosition.Y;
         }
 
         #region Tray Menu Methods

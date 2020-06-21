@@ -22,9 +22,11 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 
 ## Features (new ones compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).)
 - Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**)
-- Airplane mode flyout
-- LockKeys flyout
+- AirplaneMode-flyout Module
+- LockKeys-flyout Module
 - Note : **Brightness flyout** is not yet implemented and will show the existing one in Windows
+- Each Module can be disabled separately.
+- Can Choose either Windows Default Flyout, ModernFlyouts or None.
 - Flyout is **Draggable**
 - Flyout can **aligned to default position**
 - **Slide Animation** when hide & showing
@@ -43,6 +45,7 @@ Hey @ADeltaX, I respect you man 😙. I could have made changes to the original 
 This project depends on : 
 - [NAudio](https://github.com/naudio/NAudio)
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (That's how I got the name **Modern**Flyout)
+- [Hardcodet.NotifyIcon.Wpf]()
 
 ## Screenshots
 
@@ -61,8 +64,3 @@ This project depends on :
 **Lock key flyout**
 
 ![LockKey_Caps_Light](docs/images/LockKey_Caps_Light.png)
-
-## Coming up
-- Settings Window
-- Tray Icon
-- Option to choose either default or Modern flyout.

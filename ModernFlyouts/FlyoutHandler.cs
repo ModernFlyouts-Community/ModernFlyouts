@@ -101,8 +101,6 @@ namespace ModernFlyouts
             LockKeysHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
-
-            ShowSettingsWindow();
         }
 
         private void DUIDestroyed()
@@ -145,7 +143,7 @@ namespace ModernFlyouts
                 return;
             }
 
-            FlyoutWindow.StopHideTimer();   
+            FlyoutWindow.StopHideTimer();
 
             if (helper.AlwaysHandleDefaultFlyout)
             {

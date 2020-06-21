@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Windows;
 using System.Windows.Input;
 using static ModernFlyouts.NativeMethods;
 
@@ -10,19 +11,19 @@ namespace ModernFlyouts
     {
         public const int MAX_TRIES = 6;
 
-        public static (int left, int top) GetCoordinates()
+        public static Point GetCoordinates()
         {
-            var @default = (50, 60);
+            var defaultPos = new Point(50, 60);
 
 
             var hWndHost = GetHost();
             if (hWndHost != IntPtr.Zero & GetWindowRect(hWndHost, out RECT rct))
             {
                 Debug.WriteLine($"({rct.Left}, {rct.Top})");
-                return (rct.Left, rct.Top);
+                return new Point(rct.Left, rct.Top);
             }
             Debug.WriteLine("ERROR");
-            return @default;
+            return defaultPos;
         }
 
         public static void ForceFindDUIAndHide()

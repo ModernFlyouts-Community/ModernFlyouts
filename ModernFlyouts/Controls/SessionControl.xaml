@@ -14,15 +14,28 @@
         <Style TargetType="ui:FontIcon">
             <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
         </Style>
+        <util:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter"/>
     </UserControl.Resources>
-    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="4">
+    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="64" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-
+            <Border Grid.ColumnSpan="4" CornerRadius="{DynamicResource OverlayCornerRadius}" ClipToBounds="True">
+                <Border.OpacityMask>
+                    <RadialGradientBrush GradientOrigin="0,0.5" RadiusX="1" RadiusY="1" Center="0,0.5">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                    </RadialGradientBrush>
+                </Border.OpacityMask>
+                <Border.Background>
+                    <ImageBrush x:Name="thumbBackground" Opacity="0.5"
+                                Stretch="UniformToFill" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased">
+                    </ImageBrush>
+                </Border.Background>
+            </Border>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -37,7 +50,7 @@
 
                 <Rectangle RadiusX="4" RadiusY="4" Grid.Row="0" Margin="0,8,0,0" Height="48" Width="48">
                     <Rectangle.Fill>
-                        <ImageBrush x:Name="thumb" Stretch="Uniform"  RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased" />
+                        <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased"/>
                     </Rectangle.Fill>
                 </Rectangle>
 
@@ -49,8 +62,8 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" x:Name="SongName" FontSize="14" FontWeight="Medium" Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=SongName}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"  />
-                <TextBlock Grid.Row="1" x:Name="SongArtist" FontSize="10" Text="Song Artist" ToolTip="{Binding Text, ElementName=SongArtist}"/>
+                <TextBlock Grid.Row="0" x:Name="SongName" FontSize="14" FontWeight="Medium" Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=SongName}" ToolTipService.IsEnabled="{Binding Text, ElementName=SongName, Converter={StaticResource TextToTooltipEnabledConverter}}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"  />
+                <TextBlock Grid.Row="1" x:Name="SongArtist" FontSize="10" Text="Song Artist" ToolTip="{Binding Text, ElementName=SongArtist}" ToolTipService.IsEnabled="{Binding Text, ElementName=SongArtist, Converter={StaticResource TextToTooltipEnabledConverter}}"/>
                 
             </Grid>
             <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Height="40">

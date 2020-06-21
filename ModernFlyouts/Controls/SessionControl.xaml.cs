@@ -42,6 +42,8 @@ namespace ModernFlyouts
         public SessionControl()
         {
             InitializeComponent();
+            SongName.Text = "";
+            SongArtist.Text = "";
             Back.Click += (_, __) => PreviousTrack();
             PlayPause.Click += (_, __) => PlayOrPause();
             Next.Click += (_, __) => NextTrack();
@@ -155,11 +157,13 @@ namespace ModernFlyouts
                     if (nstream != null && nstream.Length > 0)
                     {
                         thumb.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+                        thumbBackground.ImageSource = thumb.ImageSource;
                         return;
                     }
                 }
             }
             thumb.ImageSource = GetDefaultThumbnail(playbackType);
+            thumbBackground.ImageSource = null;
         }
 
         private ImageSource GetDefaultThumbnail(Windows.Media.MediaPlaybackType? playbackType)
