@@ -72,6 +72,9 @@ namespace ModernFlyouts
         {
             base.OnEnabled();
 
+            Properties.Settings.Default.LockKeysModuleEnabled = IsEnabled;
+            Properties.Settings.Default.Save();
+
             if (IsEnabled)
             {
                 FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
@@ -83,6 +86,9 @@ namespace ModernFlyouts
             base.OnDisabled();
 
             FlyoutHandler.Instance.KeyboardHook.KeyDown -= KeyPressed;
+
+            Properties.Settings.Default.LockKeysModuleEnabled = IsEnabled;
+            Properties.Settings.Default.Save();
         }
     }
 }

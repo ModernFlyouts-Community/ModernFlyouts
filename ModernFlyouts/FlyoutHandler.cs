@@ -2,14 +2,19 @@
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Threading;
 
 namespace ModernFlyouts
 {
-    public class FlyoutHandler
+    public class FlyoutHandler : INotifyPropertyChanged
     {
+        DispatcherTimer rehooktimer;
+
+        #region Properties
+
         public static FlyoutHandler Instance { get; set; }
 
         public KeyboardHook KeyboardHook { get; private set; }
@@ -27,6 +32,24 @@ namespace ModernFlyouts
         public LockKeysHelper LockKeysHelper { get; set; }
 
         public TaskbarIcon TaskbarIcon { get; set; }
+
+        private DefaultFlyout defaultFlyout = DefaultFlyout.ModernFlyouts;
+
+        public DefaultFlyout DefaultFlyout
+        {
+            get { return defaultFlyout; }
+            set
+            {
+                if (defaultFlyout != value)
+                {
+                    defaultFlyout = value;
+                    OnPropertyChanged();
+                    OnDefaultFlyoutChanged();
+                }
+            }
+        }
+
+        #endregion
 
         public void Initialize()
         {
@@ -48,20 +71,39 @@ namespace ModernFlyouts
 
             KeyboardHook = new KeyboardHook();
 
+            #region Load Settings
+
+            var adEnabled = Properties.Settings.Default.AudioModuleEnabled;
+            var apmdEnabled = Properties.Settings.Default.AirplaneModeModuleEnabled;
+            var lkkyEnabled = Properties.Settings.Default.LockKeysModuleEnabled;
+            var defaultFlyoutString = Properties.Settings.Default.DefaultFlyout;
+
+            if (Enum.TryParse(defaultFlyoutString, true, out DefaultFlyout _defaultFlyout))
+            {
+                DefaultFlyout = _defaultFlyout;
+            }
+            else
+            {
+                Properties.Settings.Default.DefaultFlyout = DefaultFlyout.ToString();
+                Properties.Settings.Default.Save();
+            }
+
+            #endregion
+
             #region Initiate Helpers
 
-            AudioHelper = new AudioHelper();
-            AirplaneModeHelper = new AirplaneModeHelper();
-            LockKeysHelper = new LockKeysHelper();
+            AudioHelper = new AudioHelper() { IsEnabled = adEnabled };
+            AirplaneModeHelper = new AirplaneModeHelper() { IsEnabled = apmdEnabled };
+            LockKeysHelper = new LockKeysHelper() { IsEnabled = lkkyEnabled };
 
             AudioHelper.ShowFlyoutRequested += ShowFlyout;
             AirplaneModeHelper.ShowFlyoutRequested += ShowFlyout;
             LockKeysHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
-        }
 
-        DispatcherTimer rehooktimer;
+            ShowSettingsWindow();
+        }
 
         private void DUIDestroyed()
         {
@@ -81,13 +123,24 @@ namespace ModernFlyouts
         private void DUIShown()
         {
             Debug.WriteLine(nameof(DUIHook) + ": DUI Shown!");
-            if (Handled()) { DUIHandler.FindDUIAndHide(); }
-            else { DUIHandler.FindDUIAndShow(); }
+
+            if (DefaultFlyout == DefaultFlyout.ModernFlyouts && Handled())
+            {
+                DUIHandler.FindDUIAndHide();
+            }
+            else if (DefaultFlyout == DefaultFlyout.None)
+            {
+                DUIHandler.FindDUIAndHide();
+            }
+            else
+            {
+                DUIHandler.FindDUIAndShow();
+            }
         }
 
         private void ShowFlyout(HelperBase helper)
         {
-            if (!helper.IsEnabled)
+            if (DefaultFlyout != DefaultFlyout.ModernFlyouts || !helper.IsEnabled)
             {
                 return;
             }
@@ -111,6 +164,21 @@ namespace ModernFlyouts
                 return FlyoutWindow.Visible && helper.AlwaysHandleDefaultFlyout && helper.IsEnabled;
             }
             return false;
+        }
+
+        private void OnDefaultFlyoutChanged()
+        {
+            if (defaultFlyout != DefaultFlyout.ModernFlyouts)
+            {
+                FlyoutWindow.Visible = false;
+            }
+            if (defaultFlyout != DefaultFlyout.WindowsDefault)
+            {
+                DUIHandler.FindDUIAndHide();
+            }
+
+            Properties.Settings.Default.DefaultFlyout = defaultFlyout.ToString();
+            Properties.Settings.Default.Save();
         }
 
         private void FlyoutWindow_SourceInitialized(object sender, EventArgs e)
@@ -166,5 +234,19 @@ namespace ModernFlyouts
             }
             Instance.SettingsWindow.Show();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    public enum DefaultFlyout
+    {
+        WindowsDefault = 0,
+        ModernFlyouts = 1,
+        None = 2
     }
 }

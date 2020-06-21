@@ -323,6 +323,9 @@ namespace ModernFlyouts
         {
             base.OnEnabled();
 
+            Properties.Settings.Default.AudioModuleEnabled = IsEnabled;
+            Properties.Settings.Default.Save();
+
             if (!IsEnabled)
             {
                 return;
@@ -358,6 +361,9 @@ namespace ModernFlyouts
             PrimaryContentVisible = false;
 
             try { DetachSMTC(); } catch { }
+
+            Properties.Settings.Default.AudioModuleEnabled = IsEnabled;
+            Properties.Settings.Default.Save();
         }
     }
 

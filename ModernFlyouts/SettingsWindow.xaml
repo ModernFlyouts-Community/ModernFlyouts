@@ -4,9 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="http://schemas.modernwpf.com/2019"
-        mc:Ignorable="d" ui:WindowHelper.UseModernWindowStyle="True"
-        Title="SettingsWindow" Height="450" Width="800" Icon="Assets\Logo.ico">
-    <Grid>
-        
-    </Grid>
+        xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+        mc:Ignorable="d" ui:WindowHelper.UseModernWindowStyle="True" ui:TitleBar.ExtendViewIntoTitleBar="True"
+        Title="Settings" d:DesignHeight="450" d:DesignWidth="800">
+    <ui:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False" IsSettingsVisible="False"
+                           IsTabStop="False" SelectionChanged="NavView_SelectionChanged"
+                           BackRequested="NavView_BackRequested" IsPaneOpen="False">
+        <ui:NavigationView.MenuItems>
+            <ui:NavigationViewItem Content="General" ToolTip="General" Icon="Setting" Tag="general"/>
+            <ui:NavigationViewItem Content="About" ToolTip="About" Tag="about">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Info}"/>
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
+        </ui:NavigationView.MenuItems>
+        <ui:Frame x:Name="ContentFrame" IsTabStop="True"/>
+    </ui:NavigationView>
 </Window>

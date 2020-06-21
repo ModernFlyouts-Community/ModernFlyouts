@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net462</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net461</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>8.0</LangVersion>
@@ -17,12 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
+    <PackageReference Include="BUSK.Markdown" Version="0.7.1" />
     <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2005" />
     <PackageReference Include="ModernWpfUI" Version="0.9.0" />
     <PackageReference Include="NAudio" Version="1.10.0" />
     <PackageReference Include="System.Management" Version="5.0.0-preview.5.20278.1" />
-    <PackageReference Include="System.Runtime.WindowsRuntime" Version="5.0.0-preview.5.20278.1" />
   </ItemGroup>
   
   <ItemGroup>
@@ -41,6 +40,29 @@
       <ContainsDesignTimeResources>True</ContainsDesignTimeResources>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.11" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   
