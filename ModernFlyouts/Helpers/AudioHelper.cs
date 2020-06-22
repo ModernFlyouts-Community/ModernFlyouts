@@ -291,11 +291,9 @@ namespace ModernFlyouts
 
                 if (SessionsStackPanel.Children.Count > 0)
                 {
-                    SessionsStackPanel.Margin = new Thickness(0, 2, 0, 0);
                     (SessionsStackPanel.Children[0] as SessionControl).Margin = new Thickness(0);
                     SecondaryContentVisible = true;
                 }
-                else { SessionsStackPanel.Margin = new Thickness(0); }
             }
         }
         #endregion

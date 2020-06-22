@@ -70,5 +70,17 @@ namespace ModernFlyouts.Properties {
                 this["DefaultFlyout"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TopBarEnabled {
+            get {
+                return ((bool)(this["TopBarEnabled"]));
+            }
+            set {
+                this["TopBarEnabled"] = value;
+            }
+        }
     }
 }

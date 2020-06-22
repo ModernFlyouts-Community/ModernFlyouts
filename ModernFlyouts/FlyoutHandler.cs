@@ -49,6 +49,24 @@ namespace ModernFlyouts
             }
         }
 
+
+        private bool topBarEnabled = true;
+
+        public bool TopBarEnabled
+        {
+            get { return topBarEnabled; }
+            set
+            {
+                if (topBarEnabled != value)
+                {
+                    topBarEnabled = value;
+                    OnPropertyChanged();
+                    Properties.Settings.Default.TopBarEnabled = value;
+                    Properties.Settings.Default.Save();
+                }
+            }
+        }
+
         #endregion
 
         public void Initialize()
@@ -87,6 +105,8 @@ namespace ModernFlyouts
                 Properties.Settings.Default.DefaultFlyout = DefaultFlyout.ToString();
                 Properties.Settings.Default.Save();
             }
+
+            TopBarEnabled = Properties.Settings.Default.TopBarEnabled;
 
             #endregion
 

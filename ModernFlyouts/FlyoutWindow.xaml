@@ -20,22 +20,14 @@
                     <CircleEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <DoubleAnimation To="1" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MainBorder">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
-
+            <ui:FadeInThemeAnimation Storyboard.TargetName="MainBorder"/>
+            
             <DoubleAnimation To="0" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" Storyboard.TargetName="SecondaryHost">
                 <DoubleAnimation.EasingFunction>
                     <CircleEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <DoubleAnimation To="1" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SecondaryHost">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
+            <ui:FadeInThemeAnimation Storyboard.TargetName="SecondaryHost"/>
         </Storyboard>
 
         <Storyboard x:Key="HideFlyout">
@@ -44,22 +36,14 @@
                     <CircleEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <DoubleAnimation To="0" BeginTime="0:0:0.100" Duration="0:0:0.100" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MainBorder">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
+            <ui:FadeOutThemeAnimation Storyboard.TargetName="MainBorder"/>
 
             <DoubleAnimation To="40" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" Storyboard.TargetName="SecondaryHost">
                 <DoubleAnimation.EasingFunction>
                     <CircleEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <DoubleAnimation To="0" BeginTime="0:0:0.100" Duration="0:0:0.100" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SecondaryHost">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
+            <ui:FadeOutThemeAnimation Storyboard.TargetName="SecondaryHost"/>
             <ObjectAnimationUsingKeyFrames BeginTime="0:0:0.210" Storyboard.TargetProperty="Visibility">
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
@@ -83,11 +67,11 @@
             </Border.RenderTransform>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="32" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=TopBarEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="34" />
                         <ColumnDefinition Width="34" />
@@ -117,13 +101,15 @@
                 <ContentPresenter Grid.Row="1" x:Name="PrimaryHost" Visibility="{Binding Path=PrimaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding PrimaryContent}"/>
             </Grid>
         </Border>
-        <Border x:Name="SecondaryHost" RenderTransformOrigin="0.5, 0.5" Visibility="{Binding Path=SecondaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Border x:Name="SecondaryHost" Margin="0,2,0,0" RenderTransformOrigin="0.5, 0.5" Visibility="{Binding Path=SecondaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="T2"/>
                 </TransformGroup>
             </Border.RenderTransform>
-            <ContentPresenter Content="{Binding SecondaryContent}"/>
+            <ScrollViewer MaxHeight="198" Style="{DynamicResource SecondaryContentScrollViewerStyle}">
+                <ContentPresenter Content="{Binding SecondaryContent}"/>
+            </ScrollViewer>
         </Border>
         <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico">
             <tb:TaskbarIcon.ContextMenu>

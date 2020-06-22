@@ -31,11 +31,17 @@
             </GroupBox>
             <GroupBox Header="Modules" Visibility="{Binding ElementName=DefaultFlyoutCmbBox, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
-                    <ui:ToggleSwitch Header="Audio-flyout Module Enabled" IsOn="{Binding AudioHelper.IsEnabled}"
+                    <ui:ToggleSwitch Header="Audio-flyout Module" IsOn="{Binding AudioHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
-                    <ui:ToggleSwitch Header="AirplaneMode-flyout Module Enabled" IsOn="{Binding AirplaneModeHelper.IsEnabled}"
+                    <ui:ToggleSwitch Header="AirplaneMode-flyout Module" IsOn="{Binding AirplaneModeHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
-                    <ui:ToggleSwitch Header="LockKeys-flyout Module Enabled" IsOn="{Binding LockKeysHelper.IsEnabled}"
+                    <ui:ToggleSwitch Header="LockKeys-flyout Module" IsOn="{Binding LockKeysHelper.IsEnabled}"
+                                 OnContent="Enabled" OffContent="Disabled"/>
+                </ui:SimpleStackPanel>
+            </GroupBox>
+            <GroupBox Header="Additional" Visibility="{Binding ElementName=DefaultFlyoutCmbBox, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
+                <ui:SimpleStackPanel Spacing="10">
+                    <ui:ToggleSwitch Header="Flyout TopBar" IsOn="{Binding TopBarEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
                 </ui:SimpleStackPanel>
             </GroupBox>

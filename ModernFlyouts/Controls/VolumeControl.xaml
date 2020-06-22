@@ -12,7 +12,7 @@
             <ColumnDefinition />
             <ColumnDefinition Width="48" />
         </Grid.ColumnDefinitions>
-        <Button x:Name="VolumeButton" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,0,0" ui:ControlHelper.CornerRadius="2,2,2,4"
+        <Button x:Name="VolumeButton" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,0,0" ui:ControlHelper.CornerRadius="{DynamicResource OverlayCornerRadius}"
                     Width="48" Padding="0" Height="48" Background="Transparent">
             <Grid>
                 <ui:FontIcon x:Name="VolumeShadowGlyph" Glyph="{x:Static util:CommonGlyphs.Volume3}" Foreground="{DynamicResource SystemControlForegroundChromeGrayBrush}"/>

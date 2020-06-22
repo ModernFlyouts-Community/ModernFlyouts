@@ -6,7 +6,7 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:util="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d"
-             Height="64" d:DesignWidth="364" MaxWidth="364" Margin="0,2,0,0">
+             Height="64" d:DesignWidth="364" MaxWidth="364">
     <UserControl.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />

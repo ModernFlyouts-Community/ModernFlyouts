@@ -10,10 +10,30 @@
       Title="AboutPage">
     <Page.Resources>
         <system:String xml:space="preserve" x:Key="About.md">
-#### ModernFlyouts
-            
-            
+## ModernFlyouts
+
+This app is a modern replacement for the existing flyouts in Windows (since Windows 8)
+
+Source Code : [Github](https://github.com/ShankarBUS/ModernFlyouts)
+
+See the github repo for more info
+
+Version : **0.2.0**
+
+***If you find any bugs, file a new issue in the github repository.***
+
+## Dependencies and References
+
+[NAudio](https://github.com/naudio/NAudio)
+
+[ModernWpf](https://github.com/Kinnara/ModernWpf)
+
+Hardcodet.NotifyIcon.Wpf
+
+## Credits
+
+This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).
         </system:String>
     </Page.Resources>
-    <md:MarkdownTextBlock Text="{StaticResource About.md}" ImageResolving="MarkdownTextBlock_ImageResolving" LinkClicked="MarkdownTextBlock_LinkClicked" ImageClicked="MarkdownTextBlock_ImageClicked"/>
+    <md:MarkdownTextBlock Text="{StaticResource About.md}" Padding="10" Header2FontWeight="SemiBold" ImageResolving="MarkdownTextBlock_ImageResolving" LinkClicked="MarkdownTextBlock_LinkClicked" ImageClicked="MarkdownTextBlock_ImageClicked"/>
 </Page>

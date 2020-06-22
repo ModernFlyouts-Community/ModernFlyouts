@@ -45,7 +45,7 @@ Hey @ADeltaX, I respect you man 😙. I could have made changes to the original 
 This project depends on : 
 - [NAudio](https://github.com/naudio/NAudio)
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (That's how I got the name **Modern**Flyout)
-- [Hardcodet.NotifyIcon.Wpf]()
+- Hardcodet.NotifyIcon.Wpf
 
 ## Screenshots
 
