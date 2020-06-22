@@ -35,5 +35,7 @@
         public const string Volume3 = "\uE995";
 
         public const string PowerButton = "\uE7E8";
+
+        public const string Brightness = "\uE706";
     }
 }

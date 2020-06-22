@@ -38,7 +38,6 @@ namespace ModernFlyouts
             volumeControl = new VolumeControl();
             volumeControl.VolumeButton.Click += VolumeButton_Click;
             volumeControl.VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
-            volumeControl.VolumeSlider.PreviewMouseWheel += VolumeSlider_PreviewMouseWheel;
 
             #endregion
 
@@ -191,31 +190,6 @@ namespace ModernFlyouts
             {
                 device.AudioEndpointVolume.Mute = !device.AudioEndpointVolume.Mute;
             }
-        }
-
-        private void VolumeSlider_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            var slider = sender as Slider;
-            var value = Math.Truncate(slider.Value);
-            var change = e.Delta / 120;
-
-            if (value + change > 100 || value + change < 0)
-            {
-                return;
-            }
-
-
-            if (device != null)
-            {
-                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)((value + change) / 100);
-
-                if (device.AudioEndpointVolume.Mute)
-                {
-                    device.AudioEndpointVolume.Mute = false;
-                }
-            }
-
-            e.Handled = true;
         }
 
         #endregion

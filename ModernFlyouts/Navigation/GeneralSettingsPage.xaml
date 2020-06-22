@@ -37,6 +37,8 @@
                                  OnContent="Enabled" OffContent="Disabled"/>
                     <ui:ToggleSwitch Header="LockKeys-flyout Module" IsOn="{Binding LockKeysHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
+                    <ui:ToggleSwitch Header="Brightness-flyout Module" IsOn="{Binding BrightnessHelper.IsEnabled}"
+                                 OnContent="Enabled" OffContent="Disabled"/>
                 </ui:SimpleStackPanel>
             </GroupBox>
             <GroupBox Header="Additional" Visibility="{Binding ElementName=DefaultFlyoutCmbBox, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">

@@ -31,6 +31,8 @@ namespace ModernFlyouts
 
         public LockKeysHelper LockKeysHelper { get; set; }
 
+        public BrightnessHelper BrightnessHelper { get; set; }
+
         public TaskbarIcon TaskbarIcon { get; set; }
 
         private DefaultFlyout defaultFlyout = DefaultFlyout.ModernFlyouts;
@@ -94,6 +96,7 @@ namespace ModernFlyouts
             var adEnabled = Properties.Settings.Default.AudioModuleEnabled;
             var apmdEnabled = Properties.Settings.Default.AirplaneModeModuleEnabled;
             var lkkyEnabled = Properties.Settings.Default.LockKeysModuleEnabled;
+            var brEnabled = Properties.Settings.Default.BrightnessModuleEnabled;
             var defaultFlyoutString = Properties.Settings.Default.DefaultFlyout;
 
             if (Enum.TryParse(defaultFlyoutString, true, out DefaultFlyout _defaultFlyout))
@@ -115,10 +118,12 @@ namespace ModernFlyouts
             AudioHelper = new AudioHelper() { IsEnabled = adEnabled };
             AirplaneModeHelper = new AirplaneModeHelper() { IsEnabled = apmdEnabled };
             LockKeysHelper = new LockKeysHelper() { IsEnabled = lkkyEnabled };
+            BrightnessHelper = new BrightnessHelper() { IsEnabled = brEnabled };
 
             AudioHelper.ShowFlyoutRequested += ShowFlyout;
             AirplaneModeHelper.ShowFlyoutRequested += ShowFlyout;
             LockKeysHelper.ShowFlyoutRequested += ShowFlyout;
+            BrightnessHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
         }

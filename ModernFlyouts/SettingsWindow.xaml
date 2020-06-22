@@ -6,7 +6,7 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:util="clr-namespace:ModernFlyouts.Utilities"
         mc:Ignorable="d" ui:WindowHelper.UseModernWindowStyle="True" ui:TitleBar.ExtendViewIntoTitleBar="True"
-        Title="Settings" d:DesignHeight="450" d:DesignWidth="800" MinWidth="200">
+        Title="Settings" d:DesignHeight="450" d:DesignWidth="800" MinWidth="200" Icon="Assets\Logo.ico">
     <ui:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False" IsSettingsVisible="False"
                            IsTabStop="False" SelectionChanged="NavView_SelectionChanged"
                            BackRequested="NavView_BackRequested" IsPaneOpen="False">

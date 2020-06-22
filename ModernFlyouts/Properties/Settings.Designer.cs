@@ -58,7 +58,22 @@ namespace ModernFlyouts.Properties {
                 this["LockKeysModuleEnabled"] = value;
             }
         }
-        
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BrightnessModuleEnabled
+        {
+            get
+            {
+                return ((bool)(this["BrightnessModuleEnabled"]));
+            }
+            set
+            {
+                this["BrightnessModuleEnabled"] = value;
+            }
+        }
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]

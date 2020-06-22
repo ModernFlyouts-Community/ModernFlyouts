@@ -52,6 +52,7 @@ namespace ModernFlyouts
                 airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.SignalBars5;
             }
         }
+
         private void AirplaneModeWatcher_Changed(object sender, AirplaneModeChangedEventArgs e)
         {
             Dispatcher.Invoke(() =>
@@ -70,8 +71,8 @@ namespace ModernFlyouts
 
             if (IsEnabled)
             {
-                airplaneModeWatcher.Start();
                 airplaneModeWatcher.Changed += AirplaneModeWatcher_Changed;
+                airplaneModeWatcher.Start();
             }
         }
 
@@ -118,8 +119,6 @@ namespace ModernFlyouts
                      @"AND KeyPath = 'SYSTEM\\CurrentControlSet\\Control\\RadioManagement\\SystemRadioState' AND ValueName=''");
 
                 watcher = new ManagementEventWatcher(query);
-
-                // Set up the delegate that will handle the change event.
                 watcher.EventArrived += new EventArrivedEventHandler(HandleEvent);
             }
             catch (ManagementException managementException)
