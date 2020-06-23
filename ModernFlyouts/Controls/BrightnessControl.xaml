@@ -18,7 +18,7 @@
             <ColumnDefinition Width="48" />
         </Grid.ColumnDefinitions>
 
-        <ui:FontIcon Grid.Column="0" Glyph="{x:Static util:CommonGlyphs.Brightness}"/>
+        <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0" Glyph="{x:Static util:CommonGlyphs.Brightness}"/>
 
         <Slider x:Name="BrightnessSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0"
                         SmallChange="0.01" IsMoveToPointEnabled="True"/>

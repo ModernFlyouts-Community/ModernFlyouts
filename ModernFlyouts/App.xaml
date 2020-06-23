@@ -15,10 +15,10 @@
                             <SolidColorBrush x:Key="MarkdownInlineCodeForegroundBrush" Color="#FF6E6F70" />
                             <SolidColorBrush x:Key="MarkdownQuoteForegroundBrush" Color="#FF6E747C" />
                             <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#FFF6F8FA" />
-                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="Black"/>
+                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="Black" />
                             <Thickness x:Key="MarkdownBorderThickness">0</Thickness>
                             <system:Boolean x:Key="MardownUseDarkThemeForCode">False</system:Boolean>
-                            <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF"/>
+                            <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />
                         </ResourceDictionary>
 
                         <ResourceDictionary x:Key="Dark" ui:ThemeDictionary.Key="Dark">
@@ -28,10 +28,10 @@
                             <SolidColorBrush x:Key="MarkdownInlineCodeForegroundBrush" Color="#FFB7B4B4" />
                             <SolidColorBrush x:Key="MarkdownQuoteForegroundBrush" Color="#FFBEC1C5" />
                             <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#FF202020" />
-                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="White"/>
+                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="White" />
                             <Thickness x:Key="MarkdownBorderThickness">0</Thickness>
                             <system:Boolean x:Key="MardownUseDarkThemeForCode">True</system:Boolean>
-                            <SolidColorBrush x:Key="FlyoutBackground" Color="#222222"/>
+                            <SolidColorBrush x:Key="FlyoutBackground" Color="#222222" />
                         </ResourceDictionary>
 
                         <ResourceDictionary x:Key="HighContrast" ui:ThemeDictionary.Key="HighContrast">
@@ -41,10 +41,10 @@
                             <SolidColorBrush x:Key="MarkdownInlineCodeForegroundBrush" Color="#FFB7B4B4" />
                             <SolidColorBrush x:Key="MarkdownQuoteForegroundBrush" Color="#FFBEC1C5" />
                             <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#FF202020" />
-                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="Black"/>
+                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="Black" />
                             <Thickness x:Key="MarkdownBorderThickness">0</Thickness>
                             <system:Boolean x:Key="MardownUseDarkThemeForCode">False</system:Boolean>
-                            <SolidColorBrush x:Key="FlyoutBackground" Color="{ui:ThemeResource SystemColorWindowColor}"/>
+                            <SolidColorBrush x:Key="FlyoutBackground" Color="{ui:ThemeResource SystemColorWindowColor}" />
                         </ResourceDictionary>
                     </ui:ThemeResources.ThemeDictionaries>
                 </ui:ThemeResources>
@@ -242,6 +242,7 @@
             </Style>
 
             <!--endregion-->
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

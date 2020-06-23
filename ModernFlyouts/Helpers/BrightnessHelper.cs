@@ -1,7 +1,7 @@
-﻿using System;
+﻿using ModernWpf.Controls;
+using System;
 using System.Diagnostics;
 using System.Management;
-using System.Windows.Input;
 
 namespace ModernFlyouts
 {
@@ -35,45 +35,59 @@ namespace ModernFlyouts
             OnEnabled();
         }
 
-        private void BrightnessSlider_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
-        {
-            
-        }
+        #region Brightness
 
-        private void BrightnessWatcher_Changed(object sender, BrightnessChangedEventArgs e)
+        private bool _isInCodeValueChange = false; //Prevents a LOOP between changing brightness
+
+        private void UpdateBrightness(int brightness)
         {
-            Dispatcher.Invoke(() =>
+            brightnessControl.Dispatcher.Invoke(() =>
             {
+                UpdateBrightnessGlyph(brightness);
+                _isInCodeValueChange = true;
+                brightnessControl.BrightnessSlider.Value = brightness;
+                _isInCodeValueChange = false;
+                brightnessControl.textVal.Text = brightness.ToString("00");
                 ShowFlyoutRequested?.Invoke(this);
             });
         }
 
-        protected override void OnEnabled()
+        private void UpdateBrightnessGlyph(int brightness)
         {
-            base.OnEnabled();
-
-            Properties.Settings.Default.BrightnessModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
-
-            if (IsEnabled)
+            if (brightness > 90.0)
             {
-                brightnessWatcher.Changed += BrightnessWatcher_Changed;
-                brightnessWatcher.Start();
+                brightnessControl.BrightnessGlyph.SetResourceReference(FontIcon.ForegroundProperty, "SystemControlErrorTextForegroundBrush");
+            }
+            else
+            {
+                brightnessControl.BrightnessGlyph.SetResourceReference(FontIcon.ForegroundProperty, "SystemControlForegroundBaseHighBrush");
             }
         }
 
-        protected override void OnDisabled()
+        private void BrightnessSlider_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
         {
-            base.OnDisabled();
+            if (!_isInCodeValueChange)
+            {
+                var value = Math.Truncate(e.NewValue);
+                var oldValue = Math.Truncate(e.OldValue);
 
-            brightnessWatcher.Stop();
-            brightnessWatcher.Changed -= BrightnessWatcher_Changed;
+                if (value == oldValue)
+                {
+                    return;
+                }
 
-            Properties.Settings.Default.BrightnessModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
+                SetBrightnessLevel((int)value);
+
+                e.Handled = true;
+            }
         }
 
-        internal static double GetBrightnessLevel()
+        private void BrightnessWatcher_Changed(object sender, BrightnessChangedEventArgs e)
+        {
+            UpdateBrightness(e.NewValue);
+        }
+
+        private int GetBrightnessLevel()
         {
             try
             {
@@ -87,7 +101,9 @@ namespace ModernFlyouts
                     foreach (var o in managementBaseObject.Properties)
                     {
                         if (o.Name == "CurrentBrightness")
+                        {
                             return Convert.ToInt32(o.Value);
+                        }
                     }
                 }
 
@@ -97,6 +113,66 @@ namespace ModernFlyouts
             catch (Exception ex) { Debug.WriteLine(ex.Message); }
 
             return 0;
+        }
+
+        private void SetBrightnessLevel(int brightnessLevel)
+        {
+            if (brightnessLevel < 0 ||
+                brightnessLevel > 100)
+                throw new ArgumentOutOfRangeException("brightnessLevel");
+
+            try
+            {
+                var s = new ManagementScope("root\\WMI");
+                var q = new SelectQuery("WmiMonitorBrightnessMethods");
+                var mos = new ManagementObjectSearcher(s, q);
+                var moc = mos.Get();
+
+                foreach (var managementBaseObject in moc)
+                {
+                    var o = (ManagementObject)managementBaseObject;
+                    o.InvokeMethod("WmiSetBrightness", new object[]
+                    {
+                        uint.MaxValue,
+                        brightnessLevel
+                    });
+                }
+
+                moc.Dispose();
+                mos.Dispose();
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
+        }
+
+        #endregion
+
+        protected override void OnEnabled()
+        {
+            base.OnEnabled();
+
+            Properties.Settings.Default.BrightnessModuleEnabled = IsEnabled;
+            Properties.Settings.Default.Save();
+
+            if (IsEnabled)
+            {
+                brightnessWatcher.Changed += BrightnessWatcher_Changed;
+                brightnessWatcher.Start();
+
+                _isInCodeValueChange = true;
+                brightnessControl.BrightnessSlider.Value = GetBrightnessLevel();
+                _isInCodeValueChange = false;
+            }
+        }
+
+        protected override void OnDisabled()
+        {
+            base.OnDisabled();
+
+            brightnessWatcher.Stop();
+            brightnessWatcher.Changed -= BrightnessWatcher_Changed;
+
+            Properties.Settings.Default.BrightnessModuleEnabled = IsEnabled;
+            Properties.Settings.Default.Save();
         }
     }
 
@@ -125,7 +201,6 @@ namespace ModernFlyouts
                 var query = new WqlEventQuery("SELECT * FROM WmiMonitorBrightnessEvent");
                 watcher = new ManagementEventWatcher(scope, query);
                 watcher.EventArrived += new EventArrivedEventHandler(HandleEvent);
-                watcher.Start();
             }
             catch (ManagementException managementException)
             {
@@ -135,12 +210,26 @@ namespace ModernFlyouts
 
         public void Start()
         {
-            //watcher.Start();
+            try
+            {
+                watcher.Start();
+            }
+            catch (ManagementException managementException)
+            {
+                Debug.WriteLine($"{nameof(BrightnessWatcher)}: " + managementException.Message);
+            }
         }
 
         public void Stop()
         {
-            watcher.Stop();
+            try
+            {
+                watcher.Stop();
+            }
+            catch (ManagementException managementException)
+            {
+                Debug.WriteLine($"{nameof(BrightnessWatcher)}: " + managementException.Message);
+            }
         }
 
         private void HandleEvent(object sender, EventArrivedEventArgs e)
