@@ -9,11 +9,11 @@ namespace ModernFlyouts
     {
         public event KeyDownEventHandler KeyDown;
 
-        public delegate void KeyDownEventHandler(Key Key);
+        public delegate void KeyDownEventHandler(Key Key, int virtualKey);
 
         public event KeyUpEventHandler KeyUp;
 
-        public delegate void KeyUpEventHandler(Key Key);
+        public delegate void KeyUpEventHandler(Key Key, int virtualKey);
 
         private const int WH_KEYBOARD_LL = 13;
         private const int HC_ACTION = 0;
@@ -32,12 +32,12 @@ namespace ModernFlyouts
                 if (wParam == (IntPtr)WM_KEYDOWN || wParam == (IntPtr)WM_SYSKEYDOWN)
                 {
                     var vkcode = (int)((KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT))).vkCode;
-                    KeyDown?.Invoke(KeyInterop.KeyFromVirtualKey(vkcode));
+                    KeyDown?.Invoke(KeyInterop.KeyFromVirtualKey(vkcode), vkcode);
                 }
                 if (wParam == (IntPtr)WM_KEYUP || wParam == (IntPtr)WM_SYSKEYUP)
                 {
                     var vkcode = (int)((KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT))).vkCode;
-                    KeyUp?.Invoke(KeyInterop.KeyFromVirtualKey(vkcode));
+                    KeyUp?.Invoke(KeyInterop.KeyFromVirtualKey(vkcode), vkcode);
                 }
             }
 
@@ -48,7 +48,7 @@ namespace ModernFlyouts
         {
             KBDLLHookProcDelegate =  new KBDLLHookProc(KeyboardProc);
             var module = System.Diagnostics.Process.GetCurrentProcess().MainModule;
-            IntPtr handle = NativeMethods.GetModuleHandle(module.ModuleName);// Marshal.GetHINSTANCE(System.Reflection.Assembly.GetExecutingAssembly().GetLoadedModules()[0]);
+            IntPtr handle = NativeMethods.GetModuleHandle(module.ModuleName);
             HHookID = (IntPtr)SetWindowsHookEx(WH_KEYBOARD_LL, KBDLLHookProcDelegate, handle, 0);
             if (HHookID == IntPtr.Zero)
             {

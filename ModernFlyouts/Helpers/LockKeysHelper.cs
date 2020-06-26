@@ -28,7 +28,7 @@ namespace ModernFlyouts
             OnEnabled();
         }
 
-        private void KeyPressed(Key Key)
+        private void KeyPressed(Key Key, int virtualKey)
         {
             if (Key == Key.CapsLock || Key == Key.Capital)
             {

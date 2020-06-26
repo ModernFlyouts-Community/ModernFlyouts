@@ -90,6 +90,7 @@ namespace ModernFlyouts
             rehooktimer.Tick += (_, __) => TryRehook();
 
             KeyboardHook = new KeyboardHook();
+            KeyboardHook.KeyDown += KeyboardHook_KeyDown;
 
             #region Load Settings
 
@@ -126,6 +127,11 @@ namespace ModernFlyouts
             BrightnessHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
+        }
+
+        private void KeyboardHook_KeyDown(System.Windows.Input.Key Key, int virtualKey)
+        {
+            Debug.WriteLine(Key + " - " + virtualKey);
         }
 
         private void DUIDestroyed()
@@ -234,6 +240,7 @@ namespace ModernFlyouts
                 var theme = args.IsSystemLightTheme ? ModernWpf.ElementTheme.Light : ModernWpf.ElementTheme.Dark;
                 ModernWpf.ThemeManager.SetRequestedTheme(FlyoutWindow, theme);
                 ModernWpf.ThemeManager.SetRequestedTheme(FlyoutWindow.TrayContextMenu, theme);
+                ModernWpf.ThemeManager.SetRequestedTheme(FlyoutWindow.TrayToolTip, theme);
             });
         }
 

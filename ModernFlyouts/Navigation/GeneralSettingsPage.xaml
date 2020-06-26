@@ -8,18 +8,14 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="General Settings" DataContext="{x:Static local:FlyoutHandler.Instance}">
     <Page.Resources>
-        <ObjectDataProvider x:Key="DefaultFlyouts" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="local:DefaultFlyout"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
+        <util:EnumValuesConverter x:Key="EnumValuesConverter"/>
         <util:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter"/>
     </Page.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="20">
             <GroupBox Header="Default Flyout">
                 <StackPanel>
-                    <ComboBox x:Name="DefaultFlyoutCmbBox" ItemsSource="{Binding Source={StaticResource DefaultFlyouts}}" SelectedItem="{Binding DefaultFlyout}"
+                    <ComboBox x:Name="DefaultFlyoutCmbBox" ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}" SelectedItem="{Binding DefaultFlyout}"
                       ui:ControlHelper.Header="Select the default flyout"/>
                     <StackPanel x:Name="WarningPanel" Visibility="{Binding ElementName=DefaultFlyoutCmbBox, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}}">
                         <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}" TextWrapping="Wrap">

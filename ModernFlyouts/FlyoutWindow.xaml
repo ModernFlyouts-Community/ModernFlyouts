@@ -112,6 +112,9 @@
             </ScrollViewer>
         </Border>
         <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico">
+            <tb:TaskbarIcon.TrayToolTip>
+                <ToolTip x:Name="TrayToolTip" Content="ModernFlyouts" ui:ThemeManager.RequestedTheme="Dark"/>
+            </tb:TaskbarIcon.TrayToolTip>
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Name="TrayContextMenu" ui:ThemeManager.RequestedTheme="Dark">
                     <MenuItem Header="Settings" Click="settingsItem_Click">

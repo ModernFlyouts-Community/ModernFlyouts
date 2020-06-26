@@ -37,5 +37,13 @@
         public const string PowerButton = "\uE7E8";
 
         public const string Brightness = "\uE706";
+
+        public const string Shuffle = "\uE14B";
+
+        public const string RepeatOne = "\uE1CC";
+
+        public const string RepeatAll = "\uE1CD";
+
+        public const string Stop = "\uE15B";
     }
 }
