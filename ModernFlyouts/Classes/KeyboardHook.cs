@@ -25,6 +25,12 @@ namespace ModernFlyouts
         private KBDLLHookProc KBDLLHookProcDelegate;
         private IntPtr HHookID = IntPtr.Zero;
 
+        #region Properties
+
+        public Key? CurrentKey { get; private set; }
+
+        #endregion
+
         private int KeyboardProc(int nCode, IntPtr wParam, IntPtr lParam)
         {
             if (nCode == HC_ACTION)
@@ -32,12 +38,16 @@ namespace ModernFlyouts
                 if (wParam == (IntPtr)WM_KEYDOWN || wParam == (IntPtr)WM_SYSKEYDOWN)
                 {
                     var vkcode = (int)((KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT))).vkCode;
-                    KeyDown?.Invoke(KeyInterop.KeyFromVirtualKey(vkcode), vkcode);
+                    var key = KeyInterop.KeyFromVirtualKey(vkcode);
+                    CurrentKey = key;
+                    KeyDown?.Invoke(key, vkcode);
                 }
                 if (wParam == (IntPtr)WM_KEYUP || wParam == (IntPtr)WM_SYSKEYUP)
                 {
                     var vkcode = (int)((KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT))).vkCode;
-                    KeyUp?.Invoke(KeyInterop.KeyFromVirtualKey(vkcode), vkcode);
+                    var key = KeyInterop.KeyFromVirtualKey(vkcode);
+                    CurrentKey = null;
+                    KeyUp?.Invoke(key, vkcode);
                 }
             }
 

@@ -190,7 +190,9 @@ namespace ModernFlyouts
         {
             if (FlyoutWindow.DataContext is HelperBase helper)
             {
-                return FlyoutWindow.Visible && helper.AlwaysHandleDefaultFlyout && helper.IsEnabled;
+                bool canHandle = helper.AlwaysHandleDefaultFlyout && helper.IsEnabled;
+                bool shouldHandle = FlyoutWindow.Visible;
+                return canHandle && shouldHandle;
             }
             return false;
         }
