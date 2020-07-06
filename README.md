@@ -32,6 +32,12 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 > Note : The native flyout is not permanently closed but will be hidden when this flyout is shown
 > Thus, only audio/airplane-mode flyouts will replace the old one. **Brightness flyout** is incomplete and may not work on all devices.
 
+## Quick guide
+1. Go to the [releases page](https://github.com/ShankarBUS/ModernFlyouts/releases)
+2. Click on a recent release
+3. Download the attached zip file
+4. Extract and run.
+
 ## Features (new ones compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).)
 - Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**).
 - SMTC has new controls such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
