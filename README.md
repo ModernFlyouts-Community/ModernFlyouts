@@ -45,15 +45,15 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 - Flyout can **aligned to default position**
 - **Slide Animation** when hide & showing
 - And finally this application works in **all versions of Windows 10** 🎉🎉🎉 (and also tested on Windows 8) (fallback method is added for **SMTC** and not restricted to Windows 10 17763+)
-- Supports both .NET 4.6.2 & .NET Core 3.1
+- Targets both .NET 4.6.2 & .NET Core 3.1
 
 ## Disadvantages compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).
 - Flyout can't be shown in **LockScreen** and above **TaskManager**, since UIAccess is not taken into account from the beginning.
 - No **Acrylic** backdrop (will cost animation so ...)
 
 ## IMPORTANT NOTE :
-This project is made possible because of the legend **[ADeltaX](https://github.com/ADeltaX/)**.
-Hey @ADeltaX, I respect you man 😙. I could have made changes to the original project but the project is called **AUDIO**Flyout and adding airplane-mode to it seemed silly 😅, also the project has no recent activity. He's a legendary dev, I thought he know what he's doing. He's doing a **AudioFlyout**v2 with a new UI. So, I had to make my own with the said additional features.
+This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
+I could have improved the original project but the project is called **AUDIO**Flyout and adding airplane-mode/brightness flyouts wouldn't be a good idea, also the project has no recent activity. He's developing a **AudioFlyout**v2 with a refreshed UI. So, I had to make my own with the said additional features.
 
 This project depends on : 
 - [NAudio](https://github.com/naudio/NAudio)
