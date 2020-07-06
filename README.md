@@ -33,10 +33,9 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 > Thus, only audio/airplane-mode flyouts will replace the old one. **Brightness flyout** is incomplete and may not work on all devices.
 
 ## Quick guide
-1. Go to the [releases page](https://github.com/ShankarBUS/ModernFlyouts/releases)
-2. Click on a recent release
-3. Download the attached zip file
-4. Extract and run.
+1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest)
+2. Download the attached zip file there or [click here](https://github.com/ShankarBUS/ModernFlyouts/releases/latest/download/ModernFlyouts.NET462.zip) to download it
+4. Extract it **to a folder** and run **ModernFlyouts.exe**.
 
 ## Features (new ones compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).)
 - Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**).
