@@ -89,7 +89,7 @@
                         <ui:ProgressBar x:Name="TimeBar" Grid.Column="1"/>
                         <TextBlock x:Name="EndTimeBlock" Margin="5,0" Grid.Column="2" Text="00:00:00"/>
                     </Grid>
-                    <StackPanel x:Name="AdditionalControls" Orientation="Horizontal" Margin="0, 2">
+                    <StackPanel x:Name="AdditionalControls" Orientation="Horizontal" Margin="4, 2">
                         <ToggleButton x:Name="ShuffleButton" ToolTip="Shuffle: off" Margin="2,0" Width="40">
                             <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Shuffle}" FontSize="16.0"/>
                         </ToggleButton>

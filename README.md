@@ -5,28 +5,42 @@
 
 ![Audio_Dark](docs/images/Audio_Dark.png)
 
+_With TopBar_
+
+![Audio_Dark_NoTop](docs/images/Audio_Dark_NoTop.png)
+
+_Without TopBar_
+
 **Light Theme :** 
 
 ![Audio_Light](docs/images/Audio_Light.png)
+
+_With TopBar_
+
+![Audio_Light_NoTop](docs/images/Audio_Dark_NoTop.png)
+
+_Without TopBar_
 
 **Default one**
 
 ![Audio_Old](docs/images/Audio_Old.png)
 
-This application will replace the default audio/airplane flyouts found in Windows shown when the volume changes or when airplane mode key is pressed.
+This application will replace the default audio/airplane/brightness flyouts found in Windows shown when the volume or brightness changes or when airplane mode key is pressed.
 
-This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). I have implemented airplane mode flyout as an addition. I have also added a flyout for lock keys (caps lock, scroll lock & num lock).
+This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). I have implemented airplane mode and brightness (incomplete) flyout as an addition. I have also added a flyout for lock keys (caps lock, scroll lock & num lock).
 
 > Note : The native flyout is not permanently closed but will be hidden when this flyout is shown
-> Thus, only audio/airplane-mode flyouts will replace the old one. For **Brightness flyout** the old one is shown.
+> Thus, only audio/airplane-mode flyouts will replace the old one. **Brightness flyout** is incomplete and may not work on all devices.
 
 ## Features (new ones compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).)
-- Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**)
-- AirplaneMode-flyout Module
-- LockKeys-flyout Module
-- Note : **Brightness flyout** is not yet implemented and will show the existing one in Windows
+- Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**).
+- SMTC has new controls such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
+- AirplaneMode-flyout Module.
+- LockKeys-flyout Module.
+- Note : **Brightness flyout** is not yet fully implemented and may not work on all devices.
 - Each Module can be disabled separately.
 - Can Choose either Windows Default Flyout, ModernFlyouts or None.
+- Flyout's TopBar can be hidden.
 - Flyout is **Draggable**
 - Flyout can **aligned to default position**
 - **Slide Animation** when hide & showing
@@ -35,7 +49,6 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 
 ## Disadvantages compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).
 - Flyout can't be shown in **LockScreen** and above **TaskManager**, since UIAccess is not taken into account from the beginning.
-- No flyout to control **Brightness** due to technical difficulties (can't find the perfect API that works for every laptop device, there are multiple APIs such as `WmiMonitorBrightnessMethods` and `SetDeviceGammaRamp`, can't find the trigger method to show the flyout 😅) and is planned for later.
 - No **Acrylic** backdrop (will cost animation so ...)
 
 ## IMPORTANT NOTE :
@@ -45,22 +58,42 @@ Hey @ADeltaX, I respect you man 😙. I could have made changes to the original 
 This project depends on : 
 - [NAudio](https://github.com/naudio/NAudio)
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (That's how I got the name **Modern**Flyout)
-- Hardcodet.NotifyIcon.Wpf
+- [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
 
 ## Screenshots
 
+**SMTC audio playback session**
+
+![Audio_Session_Music_NoTop](docs/images/Audio_Session_Music_NoTop.png)
+
+**SMTC audio playback session with additional info**
+
+![Audio_Session_Music_NoTop_More](docs/images/Audio_Session_Music_NoTop_More.png)
+
 **Fallback thumbnail for music playback with no album art**
 
-![Audio_Session_Music_NoAlbumArt](docs/images/Audio_Session_Music_NoAlbumArt.png)
+![Audio_Session_Music_NoTop_NoAlbumArt](docs/images/Audio_Session_Music_NoTop_NoAlbumArt.png)
 
-**Fallback thumbnail for video playback with no thumbnail**
+**SMTC video playback session with additional info**
 
-![Audio_Session_Video_NoThumbnail](docs/images/Audio_Session_Video_NoThumbnail.png)
+![Audio_Session_Video](docs/images/Audio_Session_Video.png)
 
 **Airplane-Mode Flyout**
 
 ![Airplane_On_Light](docs/images/Airplane_On_Light.png)
 
+_With TopBar_
+
+![Airplane_On_Light_NoTop](docs/images/Airplane_On_Light_NoTop.png)
+
+_Without TopBar_
+
 **Lock key flyout**
 
 ![LockKey_Caps_Light](docs/images/LockKey_Caps_Light.png)
+
+_With TopBar_
+
+![LockKey_Caps_Light_NoTop](docs/images/LockKey_Caps_Light_NoTop.png)
+
+_Without TopBar_
