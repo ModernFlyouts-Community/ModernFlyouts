@@ -17,7 +17,7 @@ _Without TopBar_
 
 _With TopBar_
 
-![Audio_Light_NoTop](docs/images/Audio_Dark_NoTop.png)
+![Audio_Light_NoTop](docs/images/Audio_Light_NoTop.png)
 
 _Without TopBar_
 
