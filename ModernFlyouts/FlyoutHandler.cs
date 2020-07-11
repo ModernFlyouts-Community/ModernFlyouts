@@ -90,7 +90,7 @@ namespace ModernFlyouts
             rehooktimer.Tick += (_, __) => TryRehook();
 
             KeyboardHook = new KeyboardHook();
-            KeyboardHook.KeyDown += KeyboardHook_KeyDown;
+            //KeyboardHook.KeyDown += KeyboardHook_KeyDown;
 
             #region Load Settings
 
