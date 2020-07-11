@@ -86,7 +86,10 @@ namespace ModernFlyouts
             _elapsedTimer.Tick += (_, __) =>
             {
                 _elapsedTimer.Stop();
-                Visible = false;
+                if (!IsMouseOver)
+                {
+                    Visible = false;
+                }
             };
         }
 

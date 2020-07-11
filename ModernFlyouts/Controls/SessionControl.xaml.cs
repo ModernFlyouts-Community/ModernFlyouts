@@ -1,4 +1,6 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Classes;
+using ModernFlyouts.Utilities;
+using ModernWpf.Input;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -53,6 +55,39 @@ namespace ModernFlyouts
             ShuffleButton.Click += (_, __) => ShuffleTrack();
             RepeatButton.Click += (_, __) => ChangeRepeatMode();
             StopButton.Click += (_, __) => StopTrack();
+
+            Loaded += SessionControl_Loaded;
+            Unloaded += SessionControl_Unloaded;
+        }
+
+        private void SessionControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            InputHelper.SetIsTapEnabled(SongName, true);
+            InputHelper.AddTappedHandler(SongName, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(SongArtist, true);
+            InputHelper.AddTappedHandler(SongArtist, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(ThumbnailGrid, true);
+            InputHelper.AddTappedHandler(ThumbnailGrid, UIElement_Tapped);
+        }
+
+        private void SessionControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            InputHelper.RemoveTappedHandler(SongName, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(SongName, false);
+            InputHelper.RemoveTappedHandler(SongArtist, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(SongArtist, false);
+            InputHelper.RemoveTappedHandler(ThumbnailGrid, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(ThumbnailGrid, false);
+        }
+
+        private void UIElement_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            OpenSourceApp();
+        }
+
+        private void OpenSourceApp()
+        {
+            SessionSourceManager.ActivateSourceAppAsync(_SMTCSession?.SourceAppUserModelId);
         }
 
         private async void Session_PlaybackInfoChanged(GlobalSystemMediaTransportControlsSession session, PlaybackInfoChangedEventArgs args)

@@ -21,7 +21,7 @@
     <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2005" />
     <PackageReference Include="ModernWpfUI" Version="0.9.0" />
     <PackageReference Include="NAudio" Version="1.10.0" />
-    <PackageReference Include="System.Management" Version="5.0.0-preview.5.20278.1" />
+    <PackageReference Include="System.Management" Version="5.0.0-preview.6.20305.6" />
   </ItemGroup>
   
   <ItemGroup>

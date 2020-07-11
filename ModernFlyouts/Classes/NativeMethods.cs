@@ -170,6 +170,9 @@ namespace ModernFlyouts
         [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
         private static extern IntPtr SetWindowLongPtr64(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
 
+        [DllImport("user32.dll")]
+        public static extern int SetForegroundWindow(IntPtr hWnd);
+
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
 

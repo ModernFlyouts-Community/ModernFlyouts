@@ -44,16 +44,18 @@
             </Border>
 
             <Grid Grid.Column="0">
-                <Rectangle RadiusX="4" RadiusY="4" Height="48" Width="48" Fill="#333333">
-                    <Rectangle.Effect>
-                        <DropShadowEffect ShadowDepth="0" BlurRadius="30" Opacity="0.4" />
-                    </Rectangle.Effect>
-                </Rectangle>
-                <Rectangle RadiusX="4" RadiusY="4" Height="48" Width="48">
-                    <Rectangle.Fill>
-                        <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased"/>
-                    </Rectangle.Fill>
-                </Rectangle>
+                <Grid Height="48" Width="48" x:Name="ThumbnailGrid">
+                    <Rectangle RadiusX="4" RadiusY="4" Fill="#333333">
+                        <Rectangle.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="30" Opacity="0.4" />
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle RadiusX="4" RadiusY="4">
+                        <Rectangle.Fill>
+                            <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
             </Grid>
 
             <Grid Grid.Column="1" VerticalAlignment="Center">
