@@ -14,8 +14,6 @@
         <Style TargetType="ui:FontIcon">
             <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
         </Style>
-        <util:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter"/>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </UserControl.Resources>
     <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}">
         <Grid>

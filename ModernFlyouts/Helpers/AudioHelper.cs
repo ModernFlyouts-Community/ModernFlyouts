@@ -19,8 +19,9 @@ namespace ModernFlyouts
         private MMDeviceEnumerator enumerator;
         private MMDevice device;
         private VolumeControl volumeControl;
-        private StackPanel SessionsStackPanel;
+        private SessionsPanel sessionsPanel;
         private bool _isinit = false;
+        private bool _SMTCAvail = false;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
@@ -44,8 +45,8 @@ namespace ModernFlyouts
 
             #region Creating Session Controls
 
-            SessionsStackPanel = new StackPanel();
-            SecondaryContent = SessionsStackPanel;
+            sessionsPanel = new SessionsPanel();
+            SecondaryContent = sessionsPanel;
 
             try { SetupSMTCAsync(); } catch { }
 
@@ -72,7 +73,7 @@ namespace ModernFlyouts
             {
                 ShowFlyout();
             }
-            if ((Key == Key.MediaNextTrack || Key == Key.MediaPreviousTrack || Key == Key.MediaPlayPause || Key == Key.MediaStop) && SMTCAvail())
+            if ((Key == Key.MediaNextTrack || Key == Key.MediaPreviousTrack || Key == Key.MediaPlayPause || Key == Key.MediaStop) && _SMTCAvail)
             {
                 ShowFlyout();
             }
@@ -80,11 +81,6 @@ namespace ModernFlyouts
             void ShowFlyout()
             {
                 ShowFlyoutRequested?.Invoke(this);
-            }
-
-            bool SMTCAvail()
-            {
-                return SessionsStackPanel.Children.Count > 0;
             }
         }
 
@@ -243,13 +239,14 @@ namespace ModernFlyouts
 
         private void ClearSessionControls()
         {
-            foreach (var child in SessionsStackPanel.Children)
+            foreach (var child in sessionsPanel.SessionsStackPanel.Children)
             {
                 var s = child as SessionControl;
-                s.DisposeSession();
+                s?.DisposeSession();
             }
 
-            SessionsStackPanel.Children.Clear();
+            sessionsPanel.SessionsStackPanel.Children.Clear();
+            _SMTCAvail = false;
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -274,17 +271,19 @@ namespace ModernFlyouts
 
                 foreach (var session in sessions)
                 {
-                    SessionsStackPanel.Children.Add(new SessionControl
+                    sessionsPanel.SessionsStackPanel.Children.Add(new SessionControl
                     {
                         SMTCSession = session,
-                        Margin = new Thickness(0, 2, 0, 0)
+                        Margin = new Thickness(0, 0, 0, 2)
                     });
                 }
 
-                if (SessionsStackPanel.Children.Count > 0)
+                int count = sessionsPanel.SessionsStackPanel.Children.Count;
+                if (count > 0)
                 {
-                    (SessionsStackPanel.Children[0] as SessionControl).Margin = new Thickness(0);
+                    (sessionsPanel.SessionsStackPanel.Children[count - 1] as SessionControl).Margin = new Thickness(0);
                     SecondaryContentVisible = true;
+                    _SMTCAvail = true;
                 }
             }
         }
