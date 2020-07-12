@@ -7,14 +7,6 @@
              xmlns:util="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d"
              d:DesignWidth="364" MaxWidth="364">
-    <UserControl.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
-        </Style>
-        <Style TargetType="ui:FontIcon">
-            <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
-        </Style>
-    </UserControl.Resources>
     <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -26,8 +18,8 @@
                 <RowDefinition Height="64"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
-            <Border Grid.ColumnSpan="4" Grid.RowSpan="2" CornerRadius="{DynamicResource OverlayCornerRadius}" ClipToBounds="True">
+
+            <Border Grid.ColumnSpan="4" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource OverlayCornerRadius}" ClipToBounds="True">
                 <Border.OpacityMask>
                     <RadialGradientBrush GradientOrigin="0,0.5" RadiusX="1" RadiusY="1" Center="0,0.5">
                         <GradientStop Color="White" Offset="0"/>
@@ -35,14 +27,14 @@
                     </RadialGradientBrush>
                 </Border.OpacityMask>
                 <Border.Background>
-                    <ImageBrush x:Name="thumbBackground" Opacity="0.5"
+                    <ImageBrush x:Name="thumbBackground"
                                 Stretch="UniformToFill" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased">
                     </ImageBrush>
                 </Border.Background>
             </Border>
 
             <Grid Grid.Column="0">
-                <Grid Height="48" Width="48" x:Name="ThumbnailGrid">
+                <Grid Height="48" Width="48" x:Name="ThumbnailGrid" Cursor="Hand">
                     <Rectangle RadiusX="4" RadiusY="4" Fill="#333333">
                         <Rectangle.Effect>
                             <DropShadowEffect ShadowDepth="0" BlurRadius="30" Opacity="0.4" />
@@ -56,13 +48,21 @@
                 </Grid>
             </Grid>
 
-            <Grid Grid.Column="1" VerticalAlignment="Center">
+            <Grid x:Name="TextBlockGrid" Grid.Column="1" VerticalAlignment="Center" Cursor="Hand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" x:Name="SongName" FontSize="14" FontWeight="Medium" Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=SongName}" ToolTipService.IsEnabled="{Binding Text, ElementName=SongName, Converter={StaticResource TextToTooltipEnabledConverter}}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"  />
-                <TextBlock Grid.Row="1" x:Name="SongArtist" FontSize="10" Text="Song Artist" ToolTip="{Binding Text, ElementName=SongArtist}" ToolTipService.IsEnabled="{Binding Text, ElementName=SongArtist, Converter={StaticResource TextToTooltipEnabledConverter}}"/>
+                <TextBlock Grid.Row="0" x:Name="SongName" Style="{DynamicResource BodyTextBlockStyle}" FontWeight="Medium"
+                           Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                           Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=SongName}"
+                           ToolTipService.IsEnabled="{Binding Text, ElementName=SongName, Converter={StaticResource TextToTooltipEnabledConverter}}"
+                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+                <TextBlock Grid.Row="1" x:Name="SongArtist" Style="{DynamicResource CaptionTextBlockStyle}"
+                           Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                           Text="Song Artist" ToolTip="{Binding Text, ElementName=SongArtist}"
+                           ToolTipService.IsEnabled="{Binding Text, ElementName=SongArtist, Converter={StaticResource TextToTooltipEnabledConverter}}"
+                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
             </Grid>
             
             <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Height="40">

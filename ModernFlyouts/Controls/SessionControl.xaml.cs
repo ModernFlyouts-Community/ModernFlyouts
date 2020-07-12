@@ -1,6 +1,7 @@
 ﻿using ModernFlyouts.Classes;
 using ModernFlyouts.Utilities;
 using ModernWpf.Input;
+using ModernWpf.Media.Animation;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -62,20 +63,16 @@ namespace ModernFlyouts
 
         private void SessionControl_Loaded(object sender, RoutedEventArgs e)
         {
-            InputHelper.SetIsTapEnabled(SongName, true);
-            InputHelper.AddTappedHandler(SongName, UIElement_Tapped);
-            InputHelper.SetIsTapEnabled(SongArtist, true);
-            InputHelper.AddTappedHandler(SongArtist, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(TextBlockGrid, true);
+            InputHelper.AddTappedHandler(TextBlockGrid, UIElement_Tapped);
             InputHelper.SetIsTapEnabled(ThumbnailGrid, true);
             InputHelper.AddTappedHandler(ThumbnailGrid, UIElement_Tapped);
         }
 
         private void SessionControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            InputHelper.RemoveTappedHandler(SongName, UIElement_Tapped);
-            InputHelper.SetIsTapEnabled(SongName, false);
-            InputHelper.RemoveTappedHandler(SongArtist, UIElement_Tapped);
-            InputHelper.SetIsTapEnabled(SongArtist, false);
+            InputHelper.RemoveTappedHandler(TextBlockGrid, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(TextBlockGrid, false);
             InputHelper.RemoveTappedHandler(ThumbnailGrid, UIElement_Tapped);
             InputHelper.SetIsTapEnabled(ThumbnailGrid, false);
         }
@@ -351,8 +348,8 @@ namespace ModernFlyouts
                     TimeBar.Maximum = timeline.EndTime.TotalSeconds;
                     TimeBar.Value = timeline.Position.TotalSeconds;
 
-                    StartTimeBlock.Text = timeline.StartTime.ToString();
-                    EndTimeBlock.Text = timeline.EndTime.ToString();
+                    StartTimeBlock.Text = timeline.StartTime.ToString("hh\\:mm\\:ss");
+                    EndTimeBlock.Text = timeline.EndTime.ToString("hh\\:mm\\:ss");
 
                     TimelineInfo.Visibility = Visibility.Visible;
                 }
@@ -372,6 +369,8 @@ namespace ModernFlyouts
         {
             try
             {
+                BeginTrackTransition();
+
                 var mediaInfo = await session.TryGetMediaPropertiesAsync();
 
                 if (mediaInfo != null)
@@ -397,6 +396,8 @@ namespace ModernFlyouts
                 UpdatePlaybackInfo(session);
 
                 await SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
+
+                EndTrackTransition();
             }
             catch { }
         }
@@ -434,6 +435,29 @@ namespace ModernFlyouts
                 MediaPlaybackType.Unknown => null,
                 _ => null
             };
+        }
+
+        #endregion
+
+        #region Transitions
+
+        private void BeginTrackTransition()
+        {
+            thumbBackground.BeginAnimation(Brush.OpacityProperty, null);
+            thumb.BeginAnimation(Brush.OpacityProperty, null);
+            TextBlockGrid.BeginAnimation(OpacityProperty, null);
+
+            thumbBackground.Opacity = 0.0;
+            thumb.Opacity = 0.0;
+            TextBlockGrid.Opacity = 0.0;
+        }
+
+        private void EndTrackTransition()
+        {
+            var fadeAnim = new FadeInThemeAnimation();
+            thumbBackground.BeginAnimation(Brush.OpacityProperty, fadeAnim);
+            thumb.BeginAnimation(Brush.OpacityProperty, fadeAnim);
+            TextBlockGrid.BeginAnimation(OpacityProperty, fadeAnim);
         }
 
         #endregion

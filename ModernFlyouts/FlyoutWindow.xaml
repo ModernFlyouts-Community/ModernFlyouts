@@ -9,46 +9,46 @@
         AllowsTransparency="True" mc:Ignorable="d" ResizeMode="NoResize" Topmost="True"
         ShowInTaskbar="False" Title="Modern Flyouts">
     <Window.Resources>
-        
         <Storyboard x:Key="ShowFlyout">
             <ObjectAnimationUsingKeyFrames BeginTime="0" Storyboard.TargetProperty="Visibility">
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimation To="0" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" Storyboard.TargetName="MainBorder">
+
+            <ui:FadeInThemeAnimation Storyboard.TargetName="ContentsPanel"/>
+
+            <DoubleAnimation To="0" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T1">
                 <DoubleAnimation.EasingFunction>
                     <CircleEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <ui:FadeInThemeAnimation Storyboard.TargetName="MainBorder"/>
-            
-            <DoubleAnimation To="0" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" Storyboard.TargetName="SecondaryHost">
+
+            <DoubleAnimation To="0" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T2">
                 <DoubleAnimation.EasingFunction>
                     <CircleEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <ui:FadeInThemeAnimation Storyboard.TargetName="SecondaryHost"/>
         </Storyboard>
-
         <Storyboard x:Key="HideFlyout">
-            <DoubleAnimation To="-40" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" Storyboard.TargetName="MainBorder">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
-            <ui:FadeOutThemeAnimation Storyboard.TargetName="MainBorder"/>
+            <ui:FadeOutThemeAnimation Storyboard.TargetName="ContentsPanel"/>
 
-            <DoubleAnimation To="40" Duration="0:0:0.200" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" Storyboard.TargetName="SecondaryHost">
+            <DoubleAnimation To="-40" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T1">
                 <DoubleAnimation.EasingFunction>
                     <CircleEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <ui:FadeOutThemeAnimation Storyboard.TargetName="SecondaryHost"/>
+
+            <DoubleAnimation To="40" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T2">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
             <ObjectAnimationUsingKeyFrames BeginTime="0:0:0.210" Storyboard.TargetProperty="Visibility">
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
-        
     </Window.Resources>
+    
     <Window.Triggers>
         <EventTrigger RoutedEvent="local:FlyoutWindow.FlyoutShown">
             <BeginStoryboard Storyboard="{StaticResource ShowFlyout}"/>
@@ -57,8 +57,9 @@
             <BeginStoryboard Storyboard="{StaticResource HideFlyout}"/>
         </EventTrigger>
     </Window.Triggers>
-    <StackPanel>
-        <Border x:Name="MainBorder" Width="364" Margin="0" Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}" RenderTransformOrigin="0.5, 0.5">
+    
+    <StackPanel x:Name="ContentsPanel">
+        <Border Width="364" Margin="0" Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}" RenderTransformOrigin="0.5, 0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="T1"/>
@@ -100,7 +101,8 @@
                 <ContentPresenter Grid.Row="1" x:Name="PrimaryHost" Visibility="{Binding Path=PrimaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding PrimaryContent}"/>
             </Grid>
         </Border>
-        <Border x:Name="SecondaryHost" Margin="0,2,0,0" RenderTransformOrigin="0.5, 0.5" Visibility="{Binding Path=SecondaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}">
+        
+        <Border Margin="0,2,0,0" RenderTransformOrigin="0.5, 0.5" Visibility="{Binding Path=SecondaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="T2"/>
@@ -108,6 +110,7 @@
             </Border.RenderTransform>
             <ContentPresenter Content="{Binding SecondaryContent}"/>
         </Border>
+        
         <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico">
             <tb:TaskbarIcon.TrayToolTip>
                 <ToolTip x:Name="TrayToolTip" Content="ModernFlyouts" ui:ThemeManager.RequestedTheme="Dark"/>
