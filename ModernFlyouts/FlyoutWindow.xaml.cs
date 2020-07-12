@@ -118,11 +118,10 @@ namespace ModernFlyouts
         {
             T1.Y = -40;
             T2.Y = 40;
-            MainBorder.Opacity = 0;
-            SecondaryHost.Opacity = 0;
+            ContentsPanel.Opacity = 0;
         }
 
-        private Point DefaultPosition;
+        private Point DefaultPosition = default;
 
         private void AlignFlyout()
         {

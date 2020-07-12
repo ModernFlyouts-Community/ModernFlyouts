@@ -56,11 +56,11 @@ namespace ModernFlyouts
         {
             if (brightness > 90.0)
             {
-                brightnessControl.BrightnessGlyph.SetResourceReference(FontIcon.ForegroundProperty, "SystemControlErrorTextForegroundBrush");
+                brightnessControl.BrightnessGlyph.SetResourceReference(IconElement.ForegroundProperty, "SystemControlErrorTextForegroundBrush");
             }
             else
             {
-                brightnessControl.BrightnessGlyph.SetResourceReference(FontIcon.ForegroundProperty, "SystemControlForegroundBaseHighBrush");
+                brightnessControl.BrightnessGlyph.SetResourceReference(IconElement.ForegroundProperty, "SystemControlForegroundBaseHighBrush");
             }
         }
 
