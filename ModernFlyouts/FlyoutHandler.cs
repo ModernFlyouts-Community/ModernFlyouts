@@ -69,6 +69,22 @@ namespace ModernFlyouts
             }
         }
 
+        private bool runAtStartup = false;
+
+        public bool RunAtStartup
+        {
+            get { return runAtStartup; }
+            set
+            {
+                if (runAtStartup != value)
+                {
+                    runAtStartup = value;
+                    OnPropertyChanged();
+                    OnRunAtStartupChanged();
+                }
+            }
+        }
+
         #endregion
 
         public void Initialize()
@@ -111,6 +127,8 @@ namespace ModernFlyouts
             }
 
             TopBarEnabled = Properties.Settings.Default.TopBarEnabled;
+
+            RunAtStartup = StartupHelper.GetRunAtStartupEnabled();
 
             #endregion
 
@@ -210,6 +228,11 @@ namespace ModernFlyouts
 
             Properties.Settings.Default.DefaultFlyout = defaultFlyout.ToString();
             Properties.Settings.Default.Save();
+        }
+
+        private void OnRunAtStartupChanged()
+        {
+            StartupHelper.SetRunAtStartupEnabled(runAtStartup);
         }
 
         private void FlyoutWindow_SourceInitialized(object sender, EventArgs e)
