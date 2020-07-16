@@ -9,11 +9,14 @@
       Title="General Settings" DataContext="{x:Static local:FlyoutHandler.Instance}">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="20">
+            <GroupBox Header="Behavior">
+                <ui:ToggleSwitch Header="Run at startup" IsOn="{Binding RunAtStartup}"/>
+            </GroupBox>
             <GroupBox Header="Default Flyout">
                 <StackPanel>
-                    <ComboBox x:Name="DefaultFlyoutCmbBox" ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}" SelectedItem="{Binding DefaultFlyout}"
-                      ui:ControlHelper.Header="Select the default flyout"/>
-                    <StackPanel x:Name="WarningPanel" Visibility="{Binding ElementName=DefaultFlyoutCmbBox, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}}">
+                    <ui:RadioButtons x:Name="DefaultFlyoutSelector"
+                        Header="Select the default flyout" ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}" SelectedItem="{Binding DefaultFlyout}"/>
+                    <StackPanel x:Name="WarningPanel" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}}">
                         <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}" TextWrapping="Wrap">
                         Instead of choosing windows default, close this application safely to reduce memory usage.
                         </TextBlock>
@@ -21,7 +24,7 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="Modules" Visibility="{Binding ElementName=DefaultFlyoutCmbBox, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
+            <GroupBox Header="Modules" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:ToggleSwitch Header="Audio-flyout Module" IsOn="{Binding AudioHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>

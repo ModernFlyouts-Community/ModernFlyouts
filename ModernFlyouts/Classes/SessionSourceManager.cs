@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace ModernFlyouts.Classes
+namespace ModernFlyouts
 {
     public class SessionSourceManager
     {

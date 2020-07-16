@@ -7,8 +7,8 @@ namespace ModernFlyouts
 {
     public class SystemTheme
     {
-        const string PersonalizeKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
-        const string SysThemeValueName = "SystemUsesLightTheme";
+        private const string PersonalizeKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
+        private const string SysThemeValueName = "SystemUsesLightTheme";
 
         public static event EventHandler<SystemThemeChangedEventArgs> SystemThemeChanged;
 
@@ -17,7 +17,10 @@ namespace ModernFlyouts
         private static bool ReadDWord(string valueName)
         {
             var regkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(PersonalizeKey);
-            if (regkey == null) return false;
+            if (regkey == null)
+            {
+                return false;
+            }
 
             return (int)regkey.GetValue(valueName, 0) > 0;
         }
