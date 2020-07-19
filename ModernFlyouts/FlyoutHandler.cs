@@ -149,7 +149,11 @@ namespace ModernFlyouts
 
         private void KeyboardHook_KeyDown(System.Windows.Input.Key Key, int virtualKey)
         {
-            Debug.WriteLine(Key + " - " + virtualKey);
+            if (Key == System.Windows.Input.Key.Escape)
+            {
+                FlyoutWindow.DataContext = null;
+            }
+            //Debug.WriteLine(Key + " - " + virtualKey);
         }
 
         private void DUIDestroyed()
