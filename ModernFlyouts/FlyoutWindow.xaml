@@ -98,7 +98,7 @@
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Cancel}" FontSize="12"/>
                     </Button>
                 </Grid>
-                <ContentPresenter Grid.Row="1" x:Name="PrimaryHost" Visibility="{Binding Path=PrimaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding PrimaryContent}"/>
+                <local:CrossFadeContentControl Grid.Row="1" x:Name="PrimaryHost" Visibility="{Binding Path=PrimaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding PrimaryContent}"/>
             </Grid>
         </Border>
         
@@ -108,7 +108,7 @@
                     <TranslateTransform x:Name="T2"/>
                 </TransformGroup>
             </Border.RenderTransform>
-            <ContentPresenter Content="{Binding SecondaryContent}"/>
+            <local:CrossFadeContentControl Content="{Binding SecondaryContent}"/>
         </Border>
         
         <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico">
