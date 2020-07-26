@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ui="http://schemas.modernwpf.com/2019"
-             mc:Ignorable="d" 
-             d:DesignHeight="198" d:DesignWidth="364" MaxHeight="180">
+             mc:Ignorable="d"
+             d:DesignHeight="198" d:DesignWidth="354" MaxWidth="{DynamicResource FlyoutWidth}">
     <UserControl.Resources>
         
         <!--region: ScrollViewer-->
 
-        <ControlTemplate x:Key="SecondaryContentScrollBarButtonTemplate" TargetType="RepeatButton">
+        <ControlTemplate x:Key="SecondaryContentScrollBarButtonTemplate" TargetType="Button">
             <Border x:Name="Root" CornerRadius="10"
                     Background="{DynamicResource ScrollBarButtonBackground}"
                     BorderBrush="{DynamicResource ScrollBarButtonBorderBrush}"
@@ -37,6 +37,7 @@
 
         <Style x:Key="SecondaryContentScrollBarStyle" TargetType="ScrollBar">
             <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Orientation" Value="Horizontal" />
             <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
             <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
             <Setter Property="IsTabStop" Value="False" />
@@ -44,50 +45,48 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ScrollBar">
                         <ControlTemplate.Resources>
-                            <StreamGeometry x:Key="ChevronDown">M 18.935547 4.560547 L 19.814453 5.439453 L 10 15.253906 L 0.185547 5.439453 L 1.064453 4.560547 L 10 13.496094 Z</StreamGeometry>
-                            <StreamGeometry x:Key="ChevronUp">M 19.091797 14.970703 L 10 5.888672 L 0.908203 14.970703 L 0.029297 14.091797 L 10 4.111328 L 19.970703 14.091797 Z</StreamGeometry>
+                            <StreamGeometry x:Key="ChevronLeft">M 14.091797 19.970703 L 4.111328 10 L 14.091797 0.029297 L 14.970703 0.908203 L 5.888672 10 L 14.970703 19.091797 Z</StreamGeometry>
+                            <StreamGeometry x:Key="ChevronRight">M 5.029297 19.091797 L 14.111328 10 L 5.029297 0.908203 L 5.908203 0.029297 L 15.888672 10 L 5.908203 19.970703 Z</StreamGeometry>
                         </ControlTemplate.Resources>
                         <Border x:Name="Root" SnapsToDevicePixels="true">
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <RepeatButton
-                                        x:Name="PART_LineUpButton"
-                                        Command="{x:Static ScrollBar.LineUpCommand}"
-                                        Height="20" Width="40"
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="PART_LineLeftButton"
+                                        Command="{x:Static ScrollBar.LineLeftCommand}"
+                                        Height="40" Width="20"
                                         IsTabStop="False"
                                         Margin="0"
-                                        Grid.Row="0"
+                                        Grid.Column="0"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
-                                        Content="{StaticResource ChevronUp}"
-                                        HorizontalAlignment="Center">
-                                    <RepeatButton.Visibility>
+                                        Content="{StaticResource ChevronLeft}"
+                                        VerticalAlignment="Center">
+                                    <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&gt;">
                                             <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value"/>
                                             <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Minimum"/>
                                         </MultiBinding>
-                                    </RepeatButton.Visibility>
-                                </RepeatButton>
-                                <RepeatButton
-                                        x:Name="PART_LineDownButton"
-                                        Command="{x:Static ScrollBar.LineDownCommand}"
-                                        Height="20" Width="40"
+                                    </Button.Visibility>
+                                </Button>
+                                <Button x:Name="PART_LineRightButton"
+                                        Command="{x:Static ScrollBar.LineRightCommand}"
+                                        Height="40" Width="20"
                                         IsTabStop="False"
                                         Margin="0"
-                                        Grid.Row="2"
+                                        Grid.Column="2"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
-                                        Content="{StaticResource ChevronDown}"
-                                        HorizontalAlignment="Center">
-                                    <RepeatButton.Visibility>
+                                        Content="{StaticResource ChevronRight}"
+                                        VerticalAlignment="Center">
+                                    <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&lt;">
                                             <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value"/>
                                             <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Maximum"/>
                                         </MultiBinding>
-                                    </RepeatButton.Visibility>
-                                </RepeatButton>
+                                    </Button.Visibility>
+                                </Button>
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -100,9 +99,10 @@
             <Setter Property="Focusable" Value="False" />
             <Setter Property="HorizontalContentAlignment" Value="Left" />
             <Setter Property="VerticalContentAlignment" Value="Top" />
-            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Disabled" />
             <Setter Property="Padding" Value="0" />
-            <Setter Property="ui:ControlHelper.CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+            <Setter Property="ui:ControlHelper.CornerRadius" Value="{DynamicResource FlyoutCornerRadius}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ScrollViewer">
@@ -117,13 +117,14 @@
                                     Content="{TemplateBinding Content}"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"/>
                                 <ScrollBar
-                                    x:Name="PART_VerticalScrollBar" Style="{StaticResource SecondaryContentScrollBarStyle}"
-                                    AutomationProperties.AutomationId="VerticalScrollBar"
-                                    Maximum="{TemplateBinding ScrollableHeight}"
-                                    Minimum="0" HorizontalAlignment="Stretch"
-                                    ViewportSize="{TemplateBinding ViewportHeight}"
-                                    Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
-                                    Value="{TemplateBinding VerticalOffset}"/>
+                                    x:Name="PART_HorizontalScrollBar" Style="{StaticResource SecondaryContentScrollBarStyle}"
+                                    AutomationProperties.AutomationId="HorizontalScrollBar"
+                                    Maximum="{TemplateBinding ScrollableWidth}"
+                                    Minimum="0" VerticalAlignment="Stretch"
+                                    ViewportSize="{TemplateBinding ViewportWidth}"
+                                    Orientation="Horizontal"
+                                    Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                    Value="{TemplateBinding HorizontalOffset}"/>
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -135,6 +136,6 @@
         
     </UserControl.Resources>
     <ScrollViewer Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="True">
-        <StackPanel x:Name="SessionsStackPanel"/>
+        <StackPanel x:Name="SessionsStackPanel" Orientation="Horizontal" />
     </ScrollViewer>
 </UserControl>

@@ -6,22 +6,21 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:util="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d"
-             d:DesignWidth="364" MaxWidth="364">
-    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}">
+             Width="{DynamicResource FlyoutWidth}" VerticalAlignment="Top">
+    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource FlyoutCornerRadius}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="64" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="64"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Border Grid.ColumnSpan="4" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource OverlayCornerRadius}" ClipToBounds="True">
+            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True">
                 <Border.OpacityMask>
-                    <RadialGradientBrush GradientOrigin="0,0.5" RadiusX="1" RadiusY="1" Center="0,0.5">
+                    <RadialGradientBrush GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
                         <GradientStop Color="White" Offset="0"/>
                         <GradientStop Color="Transparent" Offset="1"/>
                     </RadialGradientBrush>
@@ -33,27 +32,12 @@
                 </Border.Background>
             </Border>
 
-            <Grid Grid.Column="0">
-                <Grid Height="48" Width="48" x:Name="ThumbnailGrid" Cursor="Hand">
-                    <Rectangle RadiusX="4" RadiusY="4" Fill="#333333">
-                        <Rectangle.Effect>
-                            <DropShadowEffect ShadowDepth="0" BlurRadius="30" Opacity="0.4" />
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Rectangle RadiusX="4" RadiusY="4">
-                        <Rectangle.Fill>
-                            <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased"/>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                </Grid>
-            </Grid>
-
-            <Grid x:Name="TextBlockGrid" Grid.Column="1" VerticalAlignment="Center" Cursor="Hand">
+            <Grid x:Name="TextBlockGrid" Grid.Column="0" VerticalAlignment="Center" Margin="15,20,0,0" Cursor="Hand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" x:Name="SongName" Style="{DynamicResource BodyTextBlockStyle}" FontWeight="Medium"
+                <TextBlock Grid.Row="0" x:Name="SongName" Style="{DynamicResource BaseTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
                            Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=SongName}"
                            ToolTipService.IsEnabled="{Binding Text, ElementName=SongName, Converter={StaticResource TextToTooltipEnabledConverter}}"
@@ -64,44 +48,76 @@
                            ToolTipService.IsEnabled="{Binding Text, ElementName=SongArtist, Converter={StaticResource TextToTooltipEnabledConverter}}"
                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
             </Grid>
-            
-            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
-                <Button x:Name="PreviousButton" ToolTip="Previous" Margin="2,0" Width="40">
-                    <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Previous}" FontSize="16.0"/>
-                </Button>
-                <Button x:Name="PlayPauseButton" ToolTip="Play" Margin="2,0" FontSize="16" Width="40">
-                    <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static util:CommonGlyphs.Play}" FontSize="16"/>
-                </Button>
-                <Button x:Name="NextButton" ToolTip="Next" Margin="2,0,12,0" Width="40">
-                    <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Next}" FontSize="16"/>
-                </Button>
+
+            <Grid Grid.Column="1">
+                <Grid Height="64" Width="64" Margin="16,16,16,6" x:Name="ThumbnailGrid" Cursor="Hand">
+                    <Border CornerRadius="{DynamicResource FlyoutCornerRadius}" Background="#333333" />
+                    <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
+                        <Border.Background>
+                            <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased"/>
+                        </Border.Background>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <StackPanel Margin="15" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Top" Orientation="Horizontal">
+                <Image x:Name="AppImage" Source="/Assets/Logo.ico" Width="16" Height="16"/>
+                <TextBlock x:Name="AppName" Text="ModernFlyouts" VerticalAlignment="Center" Margin="5,0,0,0"
+                           Style="{DynamicResource CaptionTextBlockStyle}" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
             </StackPanel>
 
-            <Expander x:Name="MoreInfo" Header="More" Padding="10,2" Grid.Row="1" Grid.ColumnSpan="4" ExpandDirection="Up">
-                <StackPanel Orientation="Vertical" Margin="-8, 0">
-                    <Grid x:Name="TimelineInfo" Margin="0, 0, 0, 4">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="StartTimeBlock" Grid.Column="0" Margin="5,0" Text="00:00:00"/>
-                        <ui:ProgressBar x:Name="TimeBar" Grid.Column="1"/>
-                        <TextBlock x:Name="EndTimeBlock" Margin="5,0" Grid.Column="2" Text="00:00:00"/>
-                    </Grid>
-                    <StackPanel x:Name="AdditionalControls" Orientation="Horizontal" Margin="4, 2">
-                        <ToggleButton x:Name="ShuffleButton" ToolTip="Shuffle: off" Margin="2,0" Width="40">
+            <ui:SplitView x:Name="ControlsSplitView" Grid.ColumnSpan="2" Grid.Row="1"
+                          Margin="0,0,0,12" VerticalAlignment="Center" OpenPaneLength="{DynamicResource FlyoutWidth}"
+                          PaneBackground="Transparent" DisplayMode="Inline" IsPaneOpen="False">
+                <ui:SplitView.Pane>
+                    <StackPanel x:Name="AdditionalControls" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <ToggleButton x:Name="ShuffleButton" ToolTip="Shuffle: off" Style="{DynamicResource MediaToggleButtonStyle}">
                             <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Shuffle}" FontSize="16.0"/>
                         </ToggleButton>
-                        <ToggleButton x:Name="RepeatButton" ToolTip="Repeat: off" Margin="2,0" Width="40">
-                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static util:CommonGlyphs.RepeatAll}" FontSize="16.0"/>
+                        <ToggleButton x:Name="RepeatButton" ToolTip="Repeat: off" Margin="40,0" Style="{DynamicResource MediaToggleButtonStyle}">
+                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static util:CommonGlyphs.RepeatAll}" FontSize="16"/>
                         </ToggleButton>
-                        <Button x:Name="StopButton" ToolTip="Stop" Margin="2,0" Width="40">
-                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Stop}" FontSize="16.0"/>
+                        <Button x:Name="StopButton" ToolTip="Stop" Margin="2,0" Width="40" Style="{DynamicResource MediaButtonStyle}">
+                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Stop}" FontSize="16"/>
                         </Button>
                     </StackPanel>
+                </ui:SplitView.Pane>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button x:Name="PreviousButton" ToolTip="Previous" Style="{DynamicResource MediaButtonStyle}">
+                        <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Previous}" FontSize="16"/>
+                    </Button>
+                    <Button x:Name="PlayPauseButton" ToolTip="Play" Margin="40,0" Style="{DynamicResource HighlightedMediaButtonStyle}">
+                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static util:CommonGlyphs.Play}" FontSize="16"/>
+                    </Button>
+                    <Button x:Name="NextButton" ToolTip="Next" Style="{DynamicResource MediaButtonStyle}">
+                        <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Next}" FontSize="16"/>
+                    </Button>
                 </StackPanel>
-            </Expander>
+            </ui:SplitView>
+
+            <ToggleButton Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="More Controls"
+                          Margin="16,0,0,12" IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
+                <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.More}" FontSize="16"/>
+            </ToggleButton>
+
+            <Button x:Name="TimelineInfo" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center"
+                    ToolTip="Time Line Info" Margin="0,0,16,12">
+                <ui:FontIcon Glyph="&#xF8A6;" FontSize="16"/>
+                <ui:FlyoutService.Flyout>
+                    <ui:Flyout x:Name="TimelineInfoFlyout">
+                        <Grid Margin="0, 0, 0, 4" Width="{DynamicResource FlyoutWidth}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="StartTimeBlock" Grid.Column="0" Margin="5,0" Text="00:00:00"/>
+                            <ui:ProgressBar x:Name="TimeBar" Grid.Column="1" Margin="10,0"/>
+                            <TextBlock x:Name="EndTimeBlock" Margin="5,0" Grid.Column="2" Text="00:00:00"/>
+                        </Grid>
+                    </ui:Flyout>
+                </ui:FlyoutService.Flyout>
+            </Button>
         </Grid>
     </Border>
 </UserControl>

@@ -66,14 +66,35 @@ namespace ModernFlyouts
             InputHelper.AddTappedHandler(TextBlockGrid, UIElement_Tapped);
             InputHelper.SetIsTapEnabled(ThumbnailGrid, true);
             InputHelper.AddTappedHandler(ThumbnailGrid, UIElement_Tapped);
+
+            FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding += FlyoutWindow_FlyoutTimedHiding;
+            FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden += FlyoutWindow_FlyoutHidden;
+        }
+
+        private void FlyoutWindow_FlyoutTimedHiding(object sender, RoutedEventArgs e)
+        {
+            if (TimelineInfoFlyout.IsOpen)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void FlyoutWindow_FlyoutHidden(object sender, RoutedEventArgs e)
+        {
+            TimelineInfoFlyout.Hide();
         }
 
         private void SessionControl_Unloaded(object sender, RoutedEventArgs e)
         {
+            TimelineInfoFlyout.Hide();
+
             InputHelper.RemoveTappedHandler(TextBlockGrid, UIElement_Tapped);
             InputHelper.SetIsTapEnabled(TextBlockGrid, false);
             InputHelper.RemoveTappedHandler(ThumbnailGrid, UIElement_Tapped);
             InputHelper.SetIsTapEnabled(ThumbnailGrid, false);
+
+            FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding -= FlyoutWindow_FlyoutTimedHiding;
+            FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden -= FlyoutWindow_FlyoutHidden;
         }
 
         private void UIElement_Tapped(object sender, TappedRoutedEventArgs e)

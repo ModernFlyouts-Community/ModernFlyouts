@@ -50,6 +50,8 @@
                 </ui:ThemeResources>
                 <ui:XamlControlsResources />
             </ResourceDictionary.MergedDictionaries>
+            
+            <!--#region Temp-->
 
             <Style x:Key="DefaultMarkdownTextBlockStyle" TargetType="md:MarkdownTextBlock">
                 <Setter Property="Background" Value="{DynamicResource MarkdownBackgroundBrush}" />
@@ -129,12 +131,38 @@
             </Style>
 
             <Style TargetType="md:MarkdownTextBlock" BasedOn="{StaticResource DefaultMarkdownTextBlockStyle}" />
+            
+            <!--#endregion-->
 
             <util:EnumValuesConverter x:Key="EnumValuesConverter"/>
             <util:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter"/>
             <util:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter"/>
             <util:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter"/>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+            <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
+            <system:Double x:Key="FlyoutWidth">354</system:Double>
+
+            <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+                <Setter Property="Width" Value="40" />
+                <Setter Property="Height" Value="40" />
+                <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
+            </Style>
+
+            <Style x:Key="MediaButtonStyle" TargetType="Button" BasedOn="{StaticResource HighlightedMediaButtonStyle}">
+                <Setter Property="Width" Value="40" />
+                <Setter Property="Height" Value="40" />
+                <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+            
+            <Style x:Key="MediaToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource DefaultToggleButtonStyle}">
+                <Setter Property="Width" Value="40" />
+                <Setter Property="Height" Value="40" />
+                <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

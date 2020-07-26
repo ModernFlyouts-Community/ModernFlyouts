@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             Height="64" d:DesignWidth="364" MaxWidth="364">
+             Height="64" d:DesignWidth="354">
     <UserControl.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
         </Style>
     </UserControl.Resources>
-    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}">
+    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource FlyoutCornerRadius}">
         <TextBlock x:Name="txt" TextAlignment="Center" FontWeight="SemiBold" VerticalAlignment="Center" Margin="20" FontSize="18" Text="Lock key is on"/>
     </Border>
 </UserControl>

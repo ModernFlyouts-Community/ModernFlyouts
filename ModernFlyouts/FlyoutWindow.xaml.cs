@@ -12,18 +12,24 @@ namespace ModernFlyouts
 
         public static readonly DependencyProperty VisibleProperty = DependencyProperty.Register("Visible", typeof(bool), typeof(FlyoutWindow), new PropertyMetadata(false, OnVisiblePropertyChanged));
 
-        private static void OnVisiblePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var vlFly = d as FlyoutWindow;
-
-            if ((bool)e.NewValue) { vlFly.ShowFlyout(); }
-            else { vlFly.HideFlyout(); }
-        }
-
         public bool Visible
         {
             get => (bool)GetValue(VisibleProperty);
             set => SetValue(VisibleProperty, value);
+        }
+
+        private static void OnVisiblePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var flyout = d as FlyoutWindow;
+
+            if ((bool)e.NewValue)
+            {
+                flyout.ShowFlyout();
+            }
+            else
+            {
+                flyout.HideFlyout();
+            }
         }
 
         #endregion
@@ -57,6 +63,14 @@ namespace ModernFlyouts
             remove { RemoveHandler(FlyoutHiddenEvent, value); }
         }
 
+        public static readonly RoutedEvent FlyoutTimedHidingEvent = EventManager.RegisterRoutedEvent(nameof(FlyoutTimedHiding), RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(FlyoutWindow));
+
+        public event RoutedEventHandler FlyoutTimedHiding
+        {
+            add { AddHandler(FlyoutTimedHidingEvent, value); }
+            remove { RemoveHandler(FlyoutTimedHidingEvent, value); }
+        }
+
         private void HideFlyout()
         {
             RoutedEventArgs args = new RoutedEventArgs(FlyoutHiddenEvent);
@@ -86,7 +100,11 @@ namespace ModernFlyouts
             _elapsedTimer.Tick += (_, __) =>
             {
                 _elapsedTimer.Stop();
-                if (!IsMouseOver)
+
+                RoutedEventArgs args = new RoutedEventArgs(FlyoutTimedHidingEvent);
+                RaiseEvent(args);
+
+                if (!IsMouseOver && !args.Handled)
                 {
                     Visible = false;
                 }

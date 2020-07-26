@@ -18,6 +18,8 @@
 
         public const string Cancel = "\uE10A";
 
+        public const string More = "\uE10C";
+
         public const string Info = "\uE946";
 
         public const string Airplane = "\uE709";

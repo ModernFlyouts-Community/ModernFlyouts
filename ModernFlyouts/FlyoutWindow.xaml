@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:util="clr-namespace:ModernFlyouts.Utilities" xmlns:tb="http://www.hardcodet.net/taskbar"
-        Background="Transparent" SizeToContent="WidthAndHeight" WindowStyle="None"
+        Background="Transparent" SizeToContent="Height" WindowStyle="None" Width="{DynamicResource FlyoutWidth}"
         AllowsTransparency="True" mc:Ignorable="d" ResizeMode="NoResize" Topmost="True"
         ShowInTaskbar="False" Title="Modern Flyouts">
     <Window.Resources>
@@ -59,7 +59,7 @@
     </Window.Triggers>
     
     <StackPanel x:Name="ContentsPanel">
-        <Border Width="364" Margin="0" Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}" RenderTransformOrigin="0.5, 0.5">
+        <Border Margin="0" Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource FlyoutCornerRadius}" RenderTransformOrigin="0.5, 0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="T1"/>
@@ -68,14 +68,14 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=TopBarEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="34" />
                         <ColumnDefinition Width="34" />
-                        <ColumnDefinition />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="34" />
                     </Grid.ColumnDefinitions>
                     
