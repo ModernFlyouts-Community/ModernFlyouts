@@ -6,7 +6,7 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:util="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d"
-             Height="64" d:DesignWidth="364" MaxWidth="364">
+             Height="64" d:DesignWidth="354">
     <UserControl.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
@@ -15,7 +15,7 @@
             <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
         </Style>
     </UserControl.Resources>
-    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource OverlayCornerRadius}">
+    <Border Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource FlyoutCornerRadius}">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <ui:FontIcon x:Name="AirplaneGlyph" Glyph="{x:Static util:CommonGlyphs.Info}" FontSize="24"/>
             <TextBlock x:Name="txt" Grid.Column="2" HorizontalAlignment="Left" FontWeight="SemiBold" VerticalAlignment="Center" Margin="20" FontSize="18" Text="Airplane Mode is not available :("/>
