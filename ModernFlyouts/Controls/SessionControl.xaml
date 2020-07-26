@@ -37,15 +37,15 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" x:Name="SongName" Style="{DynamicResource BaseTextBlockStyle}"
+                <TextBlock Grid.Row="0" x:Name="MediaTitleBlock" Style="{DynamicResource BaseTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
-                           Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=SongName}"
-                           ToolTipService.IsEnabled="{Binding Text, ElementName=SongName, Converter={StaticResource TextToTooltipEnabledConverter}}"
+                           Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=MediaTitleBlock}"
+                           ToolTipService.IsEnabled="{Binding Text, ElementName=MediaTitleBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
-                <TextBlock Grid.Row="1" x:Name="SongArtist" Style="{DynamicResource CaptionTextBlockStyle}"
+                <TextBlock Grid.Row="1" x:Name="MediaArtistBlock" Style="{DynamicResource CaptionTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
-                           Text="Song Artist" ToolTip="{Binding Text, ElementName=SongArtist}"
-                           ToolTipService.IsEnabled="{Binding Text, ElementName=SongArtist, Converter={StaticResource TextToTooltipEnabledConverter}}"
+                           Text="Song Artist" ToolTip="{Binding Text, ElementName=MediaArtistBlock}"
+                           ToolTipService.IsEnabled="{Binding Text, ElementName=MediaArtistBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
             </Grid>
 
@@ -54,15 +54,17 @@
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}" Background="#333333" />
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
                         <Border.Background>
-                            <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased"/>
+                            <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" />
                         </Border.Background>
                     </Border>
                 </Grid>
             </Grid>
 
-            <StackPanel Margin="15" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Top" Orientation="Horizontal">
-                <Image x:Name="AppImage" Source="/Assets/Logo.ico" Width="16" Height="16"/>
-                <TextBlock x:Name="AppName" Text="ModernFlyouts" VerticalAlignment="Center" Margin="5,0,0,0"
+            <StackPanel x:Name="AppInfoPanel" Margin="15,15,0,0" Grid.RowSpan="2" Grid.Column="0"
+                        VerticalAlignment="Top" Orientation="Horizontal" Cursor="Hand">
+                <Image x:Name="AppImage" Source="/Assets/Logo.ico" Width="16" Height="16" RenderOptions.BitmapScalingMode="Fant" />
+                <TextBlock x:Name="AppNameBlock" Text="ModernFlyouts" VerticalAlignment="Center"
+                           Margin="5,0,0,0" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
                            Style="{DynamicResource CaptionTextBlockStyle}" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
             </StackPanel>
 
@@ -70,7 +72,7 @@
                           Margin="0,0,0,12" VerticalAlignment="Center" OpenPaneLength="{DynamicResource FlyoutWidth}"
                           PaneBackground="Transparent" DisplayMode="Inline" IsPaneOpen="False">
                 <ui:SplitView.Pane>
-                    <StackPanel x:Name="AdditionalControls" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                         <ToggleButton x:Name="ShuffleButton" ToolTip="Shuffle: off" Style="{DynamicResource MediaToggleButtonStyle}">
                             <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Shuffle}" FontSize="16.0"/>
                         </ToggleButton>

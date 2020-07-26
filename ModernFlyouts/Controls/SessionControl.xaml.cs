@@ -1,4 +1,5 @@
 ﻿using ModernFlyouts.Utilities;
+using ModernWpf;
 using ModernWpf.Input;
 using ModernWpf.Media.Animation;
 using System;
@@ -17,6 +18,7 @@ namespace ModernFlyouts
 {
     public partial class SessionControl : UserControl
     {
+        private SourceAppInfo sourceAppInfo;
 
         #region Properties
 
@@ -29,6 +31,8 @@ namespace ModernFlyouts
             {
                 if (value != null)
                 {
+                    sourceAppInfo = SourceAppInfo.FromAppId(value.SourceAppUserModelId);
+                    sourceAppInfo.InfoFetched += SourceAppInfo_InfoFetched;
                     UpdateSessionInfo(value);
                     value.MediaPropertiesChanged += Session_MediaPropertiesChanged;
                     value.PlaybackInfoChanged += Session_PlaybackInfoChanged;
@@ -47,8 +51,8 @@ namespace ModernFlyouts
         public SessionControl()
         {
             InitializeComponent();
-            SongName.Text = "";
-            SongArtist.Text = "";
+            MediaTitleBlock.Text = "";
+            MediaArtistBlock.Text = "";
             PreviousButton.Click += (_, __) => PreviousTrack();
             PlayPauseButton.Click += (_, __) => PlayOrPause();
             NextButton.Click += (_, __) => NextTrack();
@@ -60,12 +64,21 @@ namespace ModernFlyouts
             Unloaded += SessionControl_Unloaded;
         }
 
+        private void SourceAppInfo_InfoFetched(object sender, EventArgs e)
+        {
+            sourceAppInfo.InfoFetched -= SourceAppInfo_InfoFetched;
+            AppNameBlock.Text = sourceAppInfo.AppName;
+            AppImage.Source = sourceAppInfo.AppImage;
+        }
+
         private void SessionControl_Loaded(object sender, RoutedEventArgs e)
         {
             InputHelper.SetIsTapEnabled(TextBlockGrid, true);
             InputHelper.AddTappedHandler(TextBlockGrid, UIElement_Tapped);
             InputHelper.SetIsTapEnabled(ThumbnailGrid, true);
             InputHelper.AddTappedHandler(ThumbnailGrid, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(AppInfoPanel, true);
+            InputHelper.AddTappedHandler(AppInfoPanel, UIElement_Tapped);
 
             FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding += FlyoutWindow_FlyoutTimedHiding;
             FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden += FlyoutWindow_FlyoutHidden;
@@ -92,6 +105,8 @@ namespace ModernFlyouts
             InputHelper.SetIsTapEnabled(TextBlockGrid, false);
             InputHelper.RemoveTappedHandler(ThumbnailGrid, UIElement_Tapped);
             InputHelper.SetIsTapEnabled(ThumbnailGrid, false);
+            InputHelper.RemoveTappedHandler(AppInfoPanel, UIElement_Tapped);
+            InputHelper.SetIsTapEnabled(AppInfoPanel, false);
 
             FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding -= FlyoutWindow_FlyoutTimedHiding;
             FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden -= FlyoutWindow_FlyoutHidden;
@@ -104,7 +119,7 @@ namespace ModernFlyouts
 
         private void OpenSourceApp()
         {
-            SessionSourceManager.ActivateSourceAppAsync(_SMTCSession?.SourceAppUserModelId);
+            sourceAppInfo?.Activate();
         }
 
         private async void Session_PlaybackInfoChanged(GlobalSystemMediaTransportControlsSession session, PlaybackInfoChangedEventArgs args)
@@ -395,8 +410,8 @@ namespace ModernFlyouts
 
                 if (mediaInfo != null)
                 {
-                    SongName.Text = mediaInfo.Title;
-                    SongArtist.Text = mediaInfo.Artist;
+                    MediaTitleBlock.Text = mediaInfo.Title;
+                    MediaArtistBlock.Text = mediaInfo.Artist;
                 }
 
                 var playback = session.GetPlaybackInfo();
