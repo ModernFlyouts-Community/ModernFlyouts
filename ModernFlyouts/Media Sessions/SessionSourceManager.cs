@@ -17,7 +17,6 @@ namespace ModernFlyouts
             {
                 try
                 {
-                    
                     if (IsAppWin32(AppId))
                     {
                         var processName = AppId.Remove(AppId.Length - 5, 4);
