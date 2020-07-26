@@ -1,5 +1,4 @@
 ﻿using ModernFlyouts.Utilities;
-using ModernWpf;
 using ModernWpf.Input;
 using ModernWpf.Media.Animation;
 using System;

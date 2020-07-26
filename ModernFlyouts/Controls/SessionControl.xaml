@@ -32,7 +32,7 @@
                 </Border.Background>
             </Border>
 
-            <Grid x:Name="TextBlockGrid" Grid.Column="0" VerticalAlignment="Center" Margin="15,20,0,0" Cursor="Hand">
+            <Grid x:Name="TextBlockGrid" Grid.Column="0" VerticalAlignment="Center" Margin="15,25,0,0" Cursor="Hand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
