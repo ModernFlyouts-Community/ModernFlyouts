@@ -48,7 +48,7 @@ namespace ModernFlyouts
 
         private async void FetchInfos()
         {
-            Bitmap bitmap = null;
+            Bitmap bitmap = new Bitmap(16, 16);
 
             await Task.Run(() =>
             {

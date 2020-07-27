@@ -28,6 +28,7 @@ namespace ModernFlyouts
         }
 
         private AppListEntry sourceApp;
+        private int currentAppIndex = 0;
 
         private async void ActivateAsync()
         {
@@ -50,11 +51,14 @@ namespace ModernFlyouts
                     foreach (var package in packages)
                     {
                         var result = await package.GetAppListEntriesAsync();
-                        foreach (var app in result)
+                        for (int i = 0; i < result.Count; i++)
                         {
+                            var app = result[i];
+
                             if (app.AppUserModelId == AppId)
                             {
                                 path = package.InstalledLocation.Path;
+                                currentAppIndex = i;
                                 return app;
                             }
                         }
@@ -66,12 +70,16 @@ namespace ModernFlyouts
                 sourceApp = await GetAppListEntry();
                 AppName = sourceApp.DisplayInfo.DisplayName;
 
+                
                 var logoPath = GetRefinedLogoPath(path);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                if (File.Exists(logoPath))
                 {
-                    AppImage = new BitmapImage(new Uri(logoPath));
-                }, System.Windows.Threading.DispatcherPriority.Send);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        AppImage = new BitmapImage(new Uri(logoPath));
+                    }, System.Windows.Threading.DispatcherPriority.Send);
+                }
 
                 InfoFetched?.Invoke(this, null);
             } catch { }
@@ -80,7 +88,7 @@ namespace ModernFlyouts
         private string GetLogoPathFromAppPath(string appPath)
         {
             var factory = (IAppxFactory)new AppxFactory();
-            string value = string.Empty;
+            string logo = string.Empty;
 
             string manifestPath = Path.Combine(appPath, "AppXManifest.xml");
             const int STGM_SHARE_DENY_NONE = 0x40;
@@ -89,25 +97,53 @@ namespace ModernFlyouts
             if (strm != null)
             {
                 var reader = factory.CreateManifestReader(strm);
-                reader.GetProperties().GetStringValue("Logo", out value);
+                var apps = reader.GetApplications();
+                int i = 0;
+
+                while (apps.GetHasCurrent())
+                {
+                    var app = apps.GetCurrent();
+                    if (currentAppIndex == i)
+                    {
+                        app.GetStringValue("Square44x44Logo", out logo);
+                        break;
+                    }
+                    else
+                    {
+                        i++;
+                        apps.MoveNext();
+                    }
+                }
                 Marshal.ReleaseComObject(strm);
             }
 
             Marshal.ReleaseComObject(factory);
-            return value;
+            return logo;
         }
 
         private string GetRefinedLogoPath(string appPath)
         {
             var resourceName = GetLogoPathFromAppPath(appPath);
+            const string targetSizeToken = ".targetsize-";
             const string scaleToken = ".scale-";
             var sizes = new List<int>();
             string name = Path.GetFileNameWithoutExtension(resourceName);
             string ext = Path.GetExtension(resourceName);
-            foreach (var file in Directory.EnumerateFiles(Path.Combine(appPath, Path.GetDirectoryName(resourceName)), name + scaleToken + "*" + ext))
+
+            string finalSizeToken;
+            if (Directory.EnumerateFiles(Path.Combine(appPath, Path.GetDirectoryName(resourceName)), name + targetSizeToken + "*" + ext).Count() > 0)
+            {
+                finalSizeToken = targetSizeToken;
+            }
+            else
+            {
+                finalSizeToken = scaleToken;
+            }
+
+            foreach (var file in Directory.EnumerateFiles(Path.Combine(appPath, Path.GetDirectoryName(resourceName)), name + finalSizeToken + "*" + ext))
             {
                 string fileName = Path.GetFileNameWithoutExtension(file);
-                int pos = fileName.IndexOf(scaleToken) + scaleToken.Length;
+                int pos = fileName.IndexOf(finalSizeToken) + finalSizeToken.Length;
                 string sizeText = fileName.Substring(pos);
                 if (int.TryParse(sizeText, out int size))
                 {
@@ -118,7 +154,7 @@ namespace ModernFlyouts
                 return null;
 
             sizes.Sort();
-            return Path.Combine(appPath, Path.GetDirectoryName(resourceName), name + scaleToken + sizes.First() + ext);
+            return Path.Combine(appPath, Path.GetDirectoryName(resourceName), name + finalSizeToken + sizes.First() + ext);
         }
 
         #region Appx Things
