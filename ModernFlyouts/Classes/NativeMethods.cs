@@ -171,19 +171,22 @@ namespace ModernFlyouts
         private static extern IntPtr SetWindowLongPtr64(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
 
         [DllImport("user32.dll")]
-        public static extern int SetForegroundWindow(IntPtr hWnd);
+        internal static extern int SetForegroundWindow(IntPtr hWnd);
 
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern IntPtr GetModuleHandle(string lpModuleName);
+        internal static extern IntPtr GetModuleHandle(string lpModuleName);
 
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
 
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern bool ShowWindowAsync(IntPtr windowHandle, int nCmdShow);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool FlashWindow(IntPtr hWnd, bool bInvert);
 
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern uint GetWindowThreadProcessId(IntPtr hWnd, out int processId);
@@ -211,7 +214,7 @@ namespace ModernFlyouts
         internal static extern bool UnhookWinEvent(IntPtr hWinEventHook);
 
         [StructLayout(LayoutKind.Sequential)]
-        public struct RECT
+        internal struct RECT
         {
             public int Left;        // x position of upper-left corner
             public int Top;         // y position of upper-left corner
@@ -220,7 +223,14 @@ namespace ModernFlyouts
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        public struct KBDLLHOOKSTRUCT
+        internal struct POINT
+        {
+            public int x;
+            public int y;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct KBDLLHOOKSTRUCT
         {
             public uint vkCode;
             public uint scanCode;
@@ -230,7 +240,7 @@ namespace ModernFlyouts
         }
 
         [Flags()]
-        public enum KBDLLHOOKSTRUCTFlags : uint
+        internal enum KBDLLHOOKSTRUCTFlags : uint
         {
             LLKHF_EXTENDED = 0x1,
             LLKHF_INJECTED = 0x10,
@@ -238,11 +248,42 @@ namespace ModernFlyouts
             LLKHF_UP = 0x80
         }
 
-        public delegate int KBDLLHookProc(int nCode, IntPtr wParam, IntPtr lParam);
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct WINDOWPLACEMENT
+        {
+            public int Length;
 
-        public delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
+            public int Flags;
 
-        public static void SetToolWindow(IntPtr hWnd)
+            public ShowWindowCommands ShowCmd;
+
+            public POINT MinPosition;
+
+            public POINT MaxPosition;
+
+            public RECT NormalPosition;
+
+            public static WINDOWPLACEMENT Default
+            {
+                get
+                {
+                    WINDOWPLACEMENT result = default;
+                    result.Length = Marshal.SizeOf(result);
+                    return result;
+                }
+            }
+        }
+
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+
+        internal delegate int KBDLLHookProc(int nCode, IntPtr wParam, IntPtr lParam);
+
+        internal delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hWnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
+
+        internal static void SetToolWindow(IntPtr hWnd)
         {
             var exstyle = GetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_EXSTYLE);
             IntPtr style = new IntPtr((uint)GetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_STYLE) & ~(uint)WindowStyles.WS_SYSMENU);

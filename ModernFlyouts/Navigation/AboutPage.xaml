@@ -12,6 +12,8 @@
         <system:String xml:space="preserve" x:Key="About.md">
 ## ModernFlyouts
 
+![ModernFlyouts](Assets/Images/ModernFlyouts_128.png =128x128)
+
 This app is a modern replacement for the existing flyouts in Windows (since Windows 8)
 
 Source Code : [Github - https://github.com/ShankarBUS/ModernFlyouts](https://github.com/ShankarBUS/ModernFlyouts)

@@ -7,12 +7,23 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>8.0</LangVersion>
     <Version>0.3.0</Version>
+    <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Assets\Images\DefaultAudioThumbnail.png" />
     <None Remove="Assets\Images\DefaultImageThumbnail.png" />
     <None Remove="Assets\Images\DefaultVideoThumbnail.png" />
+    <None Remove="Assets\Images\ModernFlyouts_1024.png" />
+    <None Remove="Assets\Images\ModernFlyouts_128.png" />
+    <None Remove="Assets\Images\ModernFlyouts_16.png" />
+    <None Remove="Assets\Images\ModernFlyouts_24.png" />
+    <None Remove="Assets\Images\ModernFlyouts_256.png" />
+    <None Remove="Assets\Images\ModernFlyouts_32.png" />
+    <None Remove="Assets\Images\ModernFlyouts_48.png" />
+    <None Remove="Assets\Images\ModernFlyouts_512.png" />
+    <None Remove="Assets\Images\ModernFlyouts_64.png" />
+    <None Remove="Assets\Images\ModernFlyouts_96.png" />
     <None Remove="Assets\Logo.ico" />
   </ItemGroup>
 
@@ -29,6 +40,16 @@
     <Resource Include="Assets\Images\DefaultAudioThumbnail.png" />
     <Resource Include="Assets\Images\DefaultImageThumbnail.png" />
     <Resource Include="Assets\Images\DefaultVideoThumbnail.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_1024.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_128.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_16.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_24.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_256.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_32.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_48.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_512.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_64.png" />
+    <Resource Include="Assets\Images\ModernFlyouts_96.png" />
     <Resource Include="Assets\Logo.ico" />
   </ItemGroup>
   

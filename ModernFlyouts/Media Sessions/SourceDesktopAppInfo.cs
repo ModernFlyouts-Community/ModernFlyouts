@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
+using static ModernFlyouts.NativeMethods;
 
 namespace ModernFlyouts
 {
@@ -18,32 +19,28 @@ namespace ModernFlyouts
 
         public override event EventHandler InfoFetched;
 
+        private Process sourceProcess;
+
         public override void Activate()
         {
-            ActivateAsync();
-        }
-
-        private async void ActivateAsync()
-        {
-            await Task.Run(() =>
+            try
             {
-                try
+                var hWnd = sourceProcess.MainWindowHandle;
+                if (hWnd != null && hWnd != IntPtr.Zero)
                 {
-                    var processName = AppId.Remove(AppId.Length - 5, 4);
-                    var processes = Process.GetProcessesByName(processName);
-
-                    if (processes?.Length > 0)
+                    if (GetWindowSizeState(hWnd) == WindowSizeState.Minimized)
                     {
-                        var hWnd = processes[0].MainWindowHandle;
-                        if (hWnd != null && hWnd != IntPtr.Zero)
-                        {
-                            NativeMethods.ShowWindowAsync(hWnd, (int)NativeMethods.ShowWindowCommands.ShowNA);
-                            NativeMethods.SetForegroundWindow(hWnd);
-                        }
+                        ShowWindowAsync(hWnd, (int)ShowWindowCommands.Restore);
                     }
+                    else
+                    {
+                        SetForegroundWindow(hWnd);
+                    }
+
+                    FlashWindow(hWnd, true);
                 }
-                catch { }
-            });
+            }
+            catch { }
         }
 
         private async void FetchInfos()
@@ -57,14 +54,15 @@ namespace ModernFlyouts
 
                 if (processes?.Length > 0)
                 {
+                    sourceProcess = processes[0];
                     try
                     {
-                        AppName = processes[0].MainModule.FileVersionInfo.FileDescription;
+                        AppName = sourceProcess.MainModule.FileVersionInfo.FileDescription;
                     } catch { }
 
                     try
                     {
-                        var path = processes[0].MainModule.FileName;
+                        var path = sourceProcess.MainModule.FileName;
                         var ie = new IconExtractor(path);
                         var icon = ie.GetIcon(0);
                         bitmap = icon.ToBitmap();
@@ -82,5 +80,35 @@ namespace ModernFlyouts
 
             InfoFetched?.Invoke(this, null);
         }
+
+        #region Window Activation things
+
+        public WindowSizeState GetWindowSizeState(IntPtr hWnd)
+        {
+            GetWindowPlacement(hWnd, out WINDOWPLACEMENT placement);
+
+            switch (placement.ShowCmd)
+            {
+                case ShowWindowCommands.Normal:
+                    return WindowSizeState.Normal;
+                case ShowWindowCommands.Minimize:
+                case ShowWindowCommands.ShowMinimized:
+                    return WindowSizeState.Minimized;
+                case ShowWindowCommands.Maximize:
+                    return WindowSizeState.Maximized;
+                default:
+                    return WindowSizeState.Unknown;
+            }
+        }
+
+        public enum WindowSizeState
+        {
+            Normal,
+            Minimized,
+            Maximized,
+            Unknown,
+        }
+
+        #endregion
     }
 }

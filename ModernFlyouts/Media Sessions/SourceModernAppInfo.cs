@@ -22,20 +22,16 @@ namespace ModernFlyouts
 
         public override event EventHandler InfoFetched;
 
-        public override void Activate()
-        {
-            ActivateAsync();
-        }
-
         private AppListEntry sourceApp;
         private int currentAppIndex = 0;
 
-        private async void ActivateAsync()
+        public override void Activate()
         {
             try
             {
-                await sourceApp.LaunchAsync();
-            } catch { }
+                _ = sourceApp.LaunchAsync();
+            }
+            catch { }
         }
 
         private async void FetchInfos()
