@@ -1,7 +1,6 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Interop;
@@ -97,16 +96,14 @@ namespace ModernFlyouts
             SystemTheme.SystemThemeChanged += OnSystemThemeChange;
             SystemTheme.Initialize();
 
-            (IntPtr Host, int processid) = DUIHandler.GetAll();
             DUIHook = new DUIHook();
-            DUIHook.Hook(Host, (uint)processid);
+            DUIHook.Hook();
             DUIHook.DUIShown += DUIShown;
             DUIHook.DUIDestroyed += DUIDestroyed;
             rehooktimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(3), IsEnabled = false };
             rehooktimer.Tick += (_, __) => TryRehook();
 
             KeyboardHook = new KeyboardHook();
-            //KeyboardHook.KeyDown += KeyboardHook_KeyDown;
 
             #region Load Settings
 
@@ -147,15 +144,6 @@ namespace ModernFlyouts
             #endregion
         }
 
-        private void KeyboardHook_KeyDown(System.Windows.Input.Key Key, int virtualKey)
-        {
-            if (Key == System.Windows.Input.Key.Escape)
-            {
-                FlyoutWindow.DataContext = null;
-            }
-            //Debug.WriteLine(Key + " - " + virtualKey);
-        }
-
         private void DUIDestroyed()
         {
             rehooktimer.Start();
@@ -163,18 +151,15 @@ namespace ModernFlyouts
 
         private void TryRehook()
         {
-            (IntPtr Host, int processid) = DUIHandler.GetAll();
-            if (Host != IntPtr.Zero && processid != 0)
+            if (DUIHandler.GetAllInfos())
             {
                 rehooktimer.Stop();
-                DUIHook.Rehook(Host, (uint)processid);
+                DUIHook.Rehook();
             }
         }
 
         private void DUIShown()
         {
-            Debug.WriteLine(nameof(DUIHook) + ": DUI Shown!");
-
             if (DefaultFlyout == DefaultFlyout.ModernFlyouts && Handled())
             {
                 DUIHandler.FindDUIAndHide();
@@ -197,6 +182,8 @@ namespace ModernFlyouts
             }
 
             FlyoutWindow.StopHideTimer();
+
+            DUIHandler.VerifyDUI();
 
             if (helper.AlwaysHandleDefaultFlyout)
             {

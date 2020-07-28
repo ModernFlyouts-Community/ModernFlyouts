@@ -18,11 +18,11 @@
 
   <ItemGroup>
     <PackageReference Include="BUSK.Markdown" Version="0.7.1" />
-    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2005" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.19041.1" />
     <PackageReference Include="ModernWpfUI" Version="0.9.1" />
     <PackageReference Include="NAudio" Version="1.10.0" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.0-preview.7.20364.11" />
-    <PackageReference Include="System.Management" Version="5.0.0-preview.6.20305.6" />
+    <PackageReference Include="System.Management" Version="5.0.0-preview.7.20364.11" />
   </ItemGroup>
   
   <ItemGroup>
@@ -49,7 +49,7 @@
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.11" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.13" />
   </ItemGroup>
   
   <ItemGroup>

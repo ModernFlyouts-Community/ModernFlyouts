@@ -157,6 +157,8 @@ namespace ModernFlyouts
 
         public event DUIHookEventHandler DUIShown;
 
+        public event DUIHookEventHandler DUIHidden;
+
         public event DUIHookEventHandler DUIDestroyed;
 
         public delegate void DUIHookEventHandler();
@@ -166,17 +168,16 @@ namespace ModernFlyouts
             procDelegate = new WinEventDelegate(WinEventProc);
         }
 
-        public void Hook(IntPtr Host, uint processid)
+        public void Hook()
         {
-            HHookID = SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_STATECHANGE, IntPtr.Zero, procDelegate, processid, 0, WINEVENT_OUTOFCONTEXT);
+            HHookID = SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_STATECHANGE, IntPtr.Zero, procDelegate, DUIHandler.ProcessId, 0, WINEVENT_OUTOFCONTEXT);
             if (HHookID == IntPtr.Zero)
             {
                 throw new Exception("Could not set DUI hook");
             }
-            hWndHost = Host;
-        }
 
-        private IntPtr hWndHost = IntPtr.Zero;
+            Debug.WriteLine(nameof(DUIHook) + ": Hooked!");
+        }
 
         private void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
         {
@@ -184,30 +185,32 @@ namespace ModernFlyouts
             {
                 return;
             }
-            if (hwnd == hWndHost)
+            if (hwnd == DUIHandler.HWndHost)
             {
                 switch (eventType)
                 {
                     case EVENT_OBJECT_SHOW:
                         DUIShown?.Invoke();
+                        Debug.WriteLine(nameof(DUIHook) + ": DUI Shown!");
                         break;
                     case EVENT_OBJECT_DESTROY:
                         DUIDestroyed?.Invoke();
+                        Debug.WriteLine(nameof(DUIHook) + ": DUI Destroyed!");
                         break;
                     case EVENT_OBJECT_HIDE:
+                        DUIHidden?.Invoke();
                         Debug.WriteLine(nameof(DUIHook) + ": DUI Hidden!");
                         break;
                     default:
-                        Debug.WriteLine(eventType);
                         break;
                 }
             }
         }
 
-        public void Rehook(IntPtr Host, uint processid)
+        public void Rehook()
         {
             Unhook();
-            Hook(Host, processid);
+            Hook();
 
             Debug.WriteLine(nameof(DUIHook) + ": Rehooked!");
         }

@@ -75,9 +75,18 @@ namespace ModernFlyouts
 
                 if (File.Exists(logoPath))
                 {
+                    MemoryStream memoryStream = new MemoryStream();
+                    byte[] fileBytes = File.ReadAllBytes(logoPath);
+                    memoryStream.Write(fileBytes, 0, fileBytes.Length);
+                    memoryStream.Position = 0;
+
                     Application.Current.Dispatcher.Invoke(() =>
                     {
-                        AppImage = new BitmapImage(new Uri(logoPath));
+                        var image = new BitmapImage();
+                        image.BeginInit();
+                        image.StreamSource = memoryStream;
+                        image.EndInit();
+                        AppImage = image;
                     }, System.Windows.Threading.DispatcherPriority.Send);
                 }
 
