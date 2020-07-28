@@ -273,15 +273,12 @@ namespace ModernFlyouts
                 {
                     sessionsPanel.SessionsStackPanel.Children.Add(new SessionControl
                     {
-                        SMTCSession = session,
-                        Margin = new Thickness(0, 0, 0, 2)
+                        SMTCSession = session
                     });
                 }
 
-                int count = sessionsPanel.SessionsStackPanel.Children.Count;
-                if (count > 0)
+                if (sessionsPanel.SessionsStackPanel.Children.Count > 0)
                 {
-                    (sessionsPanel.SessionsStackPanel.Children[count - 1] as SessionControl).Margin = new Thickness(0);
                     SecondaryContentVisible = true;
                     _SMTCAvail = true;
                 }
