@@ -67,6 +67,12 @@ namespace ModernFlyouts
             _isinit = true;
         }
 
+        public void OnExternalUpdated(bool isMediaKey)
+        {
+            if (!isMediaKey || (isMediaKey && _SMTCAvail))
+                ShowFlyoutRequested?.Invoke(this);
+        }
+
         private void KeyPressed(Key Key, int virtualKey)
         {
             if (Key == Key.VolumeUp || Key == Key.VolumeDown || Key == Key.VolumeMute)
@@ -317,7 +323,9 @@ namespace ModernFlyouts
                 return;
             }
 
-            FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
+            if (!Classes.WindowsInfo.IsWindows8OrLater())
+                FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
+
             client.DefaultDeviceChanged += Client_DefaultDeviceChanged;
 
             if (device != null)
@@ -337,7 +345,9 @@ namespace ModernFlyouts
         {
             base.OnDisabled();
 
-            FlyoutHandler.Instance.KeyboardHook.KeyDown -= KeyPressed;
+            if (!Classes.WindowsInfo.IsWindows8OrLater())
+                FlyoutHandler.Instance.KeyboardHook.KeyDown -= KeyPressed;
+
             client.DefaultDeviceChanged -= Client_DefaultDeviceChanged;
 
             if (device != null)
