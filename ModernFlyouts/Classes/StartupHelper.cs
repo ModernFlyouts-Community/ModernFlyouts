@@ -5,7 +5,6 @@ namespace ModernFlyouts
     internal class StartupHelper
     {
         private static string appPath = "";
-        private const string appName = "ModernFlyouts";
         private const string RunKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
 
         static StartupHelper()
@@ -21,7 +20,7 @@ namespace ModernFlyouts
                 return false;
             }
 
-            if (regkey.GetValue(appName) != null && regkey.GetValue(appName) is string path)
+            if (regkey.GetValue(App.AppName) != null && regkey.GetValue(App.AppName) is string path)
             {
                 return appPath == path;
             }
@@ -36,11 +35,11 @@ namespace ModernFlyouts
             {
                 if (value)
                 {
-                    regkey.SetValue(appName, appPath);
+                    regkey.SetValue(App.AppName, appPath);
                 }
                 else
                 {
-                    regkey.DeleteValue(appName);
+                    regkey.DeleteValue(App.AppName);
                 }
             }
         }

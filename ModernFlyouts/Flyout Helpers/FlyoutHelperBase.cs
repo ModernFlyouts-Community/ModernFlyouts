@@ -2,20 +2,21 @@
 
 namespace ModernFlyouts
 {
-    public abstract class HelperBase : DependencyObject
+    public abstract class FlyoutHelperBase : DependencyObject
     {
-        public HelperBase Instance { get; set; }
+        public FlyoutHelperBase Instance { get; set; }
 
         public abstract event ShowFlyoutEventHandler ShowFlyoutRequested;
 
-        public delegate void ShowFlyoutEventHandler(HelperBase sender);
+        public delegate void ShowFlyoutEventHandler(FlyoutHelperBase sender);
 
         #region Properties
 
         public static readonly DependencyProperty PrimaryContentProperty =
-            DependencyProperty.Register("PrimaryContent",
+            DependencyProperty.Register(
+                nameof(PrimaryContent),
                 typeof(FrameworkElement),
-                typeof(HelperBase),
+                typeof(FlyoutHelperBase),
                 new PropertyMetadata(null));
 
         public FrameworkElement PrimaryContent
@@ -25,9 +26,10 @@ namespace ModernFlyouts
         }
 
         public static readonly DependencyProperty SecondaryContentProperty =
-            DependencyProperty.Register("SecondaryContent",
+            DependencyProperty.Register(
+                nameof(SecondaryContent),
                 typeof(FrameworkElement),
-                typeof(HelperBase),
+                typeof(FlyoutHelperBase),
                 new PropertyMetadata(null));
 
         public FrameworkElement SecondaryContent
@@ -37,9 +39,10 @@ namespace ModernFlyouts
         }
 
         public static readonly DependencyProperty PrimaryContentVisibleProperty =
-            DependencyProperty.Register("PrimaryContentVisible",
+            DependencyProperty.Register(
+                nameof(PrimaryContentVisible),
                 typeof(bool),
-                typeof(HelperBase),
+                typeof(FlyoutHelperBase),
                 new PropertyMetadata(true));
 
         public bool PrimaryContentVisible
@@ -49,9 +52,10 @@ namespace ModernFlyouts
         }
 
         public static readonly DependencyProperty SecondaryContentVisibleProperty =
-            DependencyProperty.Register("SecondaryContentVisible",
+            DependencyProperty.Register(
+                nameof(SecondaryContentVisible),
                 typeof(bool),
-                typeof(HelperBase),
+                typeof(FlyoutHelperBase),
                 new PropertyMetadata(false));
 
         public bool SecondaryContentVisible
@@ -63,14 +67,21 @@ namespace ModernFlyouts
         public bool AlwaysHandleDefaultFlyout { get; protected set; } = false;
 
         public static readonly DependencyProperty IsEnabledProperty =
-            DependencyProperty.Register("IsEnabled",
+            DependencyProperty.Register(
+                nameof(IsEnabled),
                 typeof(bool),
-                typeof(HelperBase),
+                typeof(FlyoutHelperBase),
                 new PropertyMetadata(true, OnIsEnabledChanged));
+
+        public bool IsEnabled
+        {
+            get => (bool)GetValue(IsEnabledProperty);
+            set => SetValue(IsEnabledProperty, value);
+        }
 
         private static void OnIsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var helper = d as HelperBase;
+            var helper = d as FlyoutHelperBase;
             if ((bool)e.NewValue)
             {
                 helper.OnEnabled();
@@ -79,12 +90,6 @@ namespace ModernFlyouts
             {
                 helper.OnDisabled();
             }
-        }
-
-        public bool IsEnabled
-        {
-            get => (bool)GetValue(IsEnabledProperty);
-            set => SetValue(IsEnabledProperty, value);
         }
 
         #endregion
@@ -96,7 +101,7 @@ namespace ModernFlyouts
 
         protected virtual void OnDisabled()
         {
-            if (FlyoutHandler.Instance.FlyoutWindow.DataContext == this)
+            if (FlyoutHandler.Instance.FlyoutWindow.FlyoutHelper == this)
             {
                 FlyoutHandler.Instance.FlyoutWindow.Visible = false;
             }

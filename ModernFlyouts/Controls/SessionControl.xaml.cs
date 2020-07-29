@@ -463,9 +463,9 @@ namespace ModernFlyouts
         {
             return playbackType switch
             {
-                MediaPlaybackType.Image => AudioHelper.GetDefaultImageThumbnail(),
-                MediaPlaybackType.Music => AudioHelper.GetDefaultAudioThumbnail(),
-                MediaPlaybackType.Video => AudioHelper.GetDefaultVideoThumbnail(),
+                MediaPlaybackType.Image => AudioFlyoutHelper.GetDefaultImageThumbnail(),
+                MediaPlaybackType.Music => AudioFlyoutHelper.GetDefaultAudioThumbnail(),
+                MediaPlaybackType.Video => AudioFlyoutHelper.GetDefaultVideoThumbnail(),
                 MediaPlaybackType.Unknown => null,
                 _ => null
             };
