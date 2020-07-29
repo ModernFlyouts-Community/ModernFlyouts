@@ -5,14 +5,14 @@ using System.Management;
 
 namespace ModernFlyouts
 {
-    public class BrightnessHelper : HelperBase
+    public class BrightnessFlyoutHelper : FlyoutHelperBase
     {
         private BrightnessControl brightnessControl;
         private BrightnessWatcher brightnessWatcher;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
-        public BrightnessHelper()
+        public BrightnessFlyoutHelper()
         {
             Initialize();
         }

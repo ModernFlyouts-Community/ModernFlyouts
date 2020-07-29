@@ -24,13 +24,13 @@ namespace ModernFlyouts
 
         public SettingsWindow SettingsWindow { get; set; }
 
-        public AudioHelper AudioHelper { get; set; }
+        public AudioFlyoutHelper AudioFlyoutHelper { get; set; }
 
-        public AirplaneModeHelper AirplaneModeHelper { get; set; }
+        public AirplaneModeFlyoutHelper AirplaneModeFlyoutHelper { get; set; }
 
-        public LockKeysHelper LockKeysHelper { get; set; }
+        public LockKeysFlyoutHelper LockKeysFlyoutHelper { get; set; }
 
-        public BrightnessHelper BrightnessHelper { get; set; }
+        public BrightnessFlyoutHelper BrightnessFlyoutHelper { get; set; }
 
         public TaskbarIcon TaskbarIcon { get; set; }
 
@@ -131,15 +131,15 @@ namespace ModernFlyouts
 
             #region Initiate Helpers
 
-            AudioHelper = new AudioHelper() { IsEnabled = adEnabled };
-            AirplaneModeHelper = new AirplaneModeHelper() { IsEnabled = apmdEnabled };
-            LockKeysHelper = new LockKeysHelper() { IsEnabled = lkkyEnabled };
-            BrightnessHelper = new BrightnessHelper() { IsEnabled = brEnabled };
+            AudioFlyoutHelper = new AudioFlyoutHelper() { IsEnabled = adEnabled };
+            AirplaneModeFlyoutHelper = new AirplaneModeFlyoutHelper() { IsEnabled = apmdEnabled };
+            LockKeysFlyoutHelper = new LockKeysFlyoutHelper() { IsEnabled = lkkyEnabled };
+            BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled };
 
-            AudioHelper.ShowFlyoutRequested += ShowFlyout;
-            AirplaneModeHelper.ShowFlyoutRequested += ShowFlyout;
-            LockKeysHelper.ShowFlyoutRequested += ShowFlyout;
-            BrightnessHelper.ShowFlyoutRequested += ShowFlyout;
+            AudioFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
+            AirplaneModeFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
+            LockKeysFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
+            BrightnessFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
         }
@@ -174,7 +174,7 @@ namespace ModernFlyouts
             }
         }
 
-        private void ShowFlyout(HelperBase helper)
+        private void ShowFlyout(FlyoutHelperBase helper)
         {
             if (DefaultFlyout != DefaultFlyout.ModernFlyouts || !helper.IsEnabled)
             {
@@ -190,14 +190,14 @@ namespace ModernFlyouts
                 DUIHandler.FindDUIAndHide();
             }
 
-            FlyoutWindow.DataContext = helper;
+            FlyoutWindow.FlyoutHelper = helper;
             FlyoutWindow.Visible = true;
             FlyoutWindow.StartHideTimer();
         }
 
         private bool Handled()
         {
-            if (FlyoutWindow.DataContext is HelperBase helper)
+            if (FlyoutWindow.FlyoutHelper is FlyoutHelperBase helper)
             {
                 bool canHandle = helper.AlwaysHandleDefaultFlyout && helper.IsEnabled;
                 bool shouldHandle = FlyoutWindow.Visible;

@@ -2,13 +2,13 @@
 
 namespace ModernFlyouts
 {
-    public class LockKeysHelper : HelperBase
+    public class LockKeysFlyoutHelper : FlyoutHelperBase
     {
         private LockKeysControl lockKeysControl;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
-        public LockKeysHelper()
+        public LockKeysFlyoutHelper()
         {
             Initialize();
         }

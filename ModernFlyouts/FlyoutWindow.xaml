@@ -59,7 +59,8 @@
     </Window.Triggers>
     
     <StackPanel x:Name="ContentsPanel">
-        <Border Margin="0" Background="{DynamicResource FlyoutBackground}" CornerRadius="{DynamicResource FlyoutCornerRadius}" RenderTransformOrigin="0.5, 0.5">
+        <Border Margin="0" Background="{DynamicResource FlyoutBackground}"
+                CornerRadius="{DynamicResource FlyoutCornerRadius}" RenderTransformOrigin="0.5, 0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="T1"/>
@@ -71,7 +72,8 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=TopBarEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid Grid.Row="0"
+                      Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=TopBarEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="34" />
                         <ColumnDefinition Width="34" />
@@ -79,13 +81,15 @@
                         <ColumnDefinition Width="34" />
                     </Grid.ColumnDefinitions>
                     
-                    <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="4,2,2,4"
-                    Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Click="settingsItem_Click">
+                    <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            ui:ControlHelper.CornerRadius="4,2,2,4"
+                            Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Click="settingsItem_Click">
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Setting}" FontSize="16"/>
                     </Button>
 
-                    <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
-                    Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Align">
+                    <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
+                            Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Align">
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.AlignTopLeft}" FontSize="12"/>
                     </Button>
 
@@ -98,17 +102,21 @@
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Cancel}" FontSize="12"/>
                     </Button>
                 </Grid>
-                <local:CrossFadeContentControl Grid.Row="1" x:Name="PrimaryHost" Visibility="{Binding Path=PrimaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding PrimaryContent}"/>
+                <local:CrossFadeContentControl 
+                    Grid.Row="1" x:Name="PrimaryHost"
+                    Visibility="{Binding FlyoutHelper.PrimaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Content="{Binding FlyoutHelper.PrimaryContent}"/>
             </Grid>
         </Border>
-        
-        <Border Margin="0,2,0,0" RenderTransformOrigin="0.5, 0.5" Visibility="{Binding Path=SecondaryContentVisible,Mode=OneWay,Converter={StaticResource BooleanToVisibilityConverter}}">
+
+        <Border Margin="0,2,0,0" RenderTransformOrigin="0.5, 0.5"
+                Visibility="{Binding FlyoutHelper.SecondaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="T2"/>
                 </TransformGroup>
             </Border.RenderTransform>
-            <local:CrossFadeContentControl Content="{Binding SecondaryContent}"/>
+            <local:CrossFadeContentControl Content="{Binding FlyoutHelper.SecondaryContent}"/>
         </Border>
         
         <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico">

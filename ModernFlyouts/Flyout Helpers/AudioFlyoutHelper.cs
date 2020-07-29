@@ -13,7 +13,7 @@ using Windows.Media.Control;
 
 namespace ModernFlyouts
 {
-    public class AudioHelper : HelperBase
+    public class AudioFlyoutHelper : FlyoutHelperBase
     {
         private AudioDeviceNotificationClient client;
         private MMDeviceEnumerator enumerator;
@@ -25,7 +25,7 @@ namespace ModernFlyouts
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
-        public AudioHelper()
+        public AudioFlyoutHelper()
         {
            Initialize();
         }

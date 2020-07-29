@@ -10,7 +10,12 @@ namespace ModernFlyouts
 
         #region Properties
 
-        public static readonly DependencyProperty VisibleProperty = DependencyProperty.Register("Visible", typeof(bool), typeof(FlyoutWindow), new PropertyMetadata(false, OnVisiblePropertyChanged));
+        public static readonly DependencyProperty VisibleProperty = 
+            DependencyProperty.Register(
+                nameof(Visible),
+                typeof(bool),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(false, OnVisiblePropertyChanged));
 
         public bool Visible
         {
@@ -30,6 +35,20 @@ namespace ModernFlyouts
             {
                 flyout.HideFlyout();
             }
+        }
+
+        public static readonly DependencyProperty FlyoutHelperProperty =
+            DependencyProperty.Register(
+                nameof(FlyoutHelper),
+                typeof(FlyoutHelperBase),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(null));
+
+
+        public FlyoutHelperBase FlyoutHelper
+        {
+            get => (FlyoutHelperBase)GetValue(FlyoutHelperProperty);
+            set => SetValue(FlyoutHelperProperty, value);
         }
 
         #endregion
@@ -82,7 +101,9 @@ namespace ModernFlyouts
         public FlyoutWindow()
         {
             InitializeComponent();
-            
+
+            DataContext = this;
+
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this)) { return; }
 
             AlignFlyout();

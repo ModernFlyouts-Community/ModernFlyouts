@@ -26,13 +26,13 @@
             </GroupBox>
             <GroupBox Header="Modules" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
-                    <ui:ToggleSwitch Header="Audio-flyout Module" IsOn="{Binding AudioHelper.IsEnabled}"
+                    <ui:ToggleSwitch Header="Audio-flyout Module" IsOn="{Binding AudioFlyoutHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
-                    <ui:ToggleSwitch Header="AirplaneMode-flyout Module" IsOn="{Binding AirplaneModeHelper.IsEnabled}"
+                    <ui:ToggleSwitch Header="AirplaneMode-flyout Module" IsOn="{Binding AirplaneModeFlyoutHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
-                    <ui:ToggleSwitch Header="LockKeys-flyout Module" IsOn="{Binding LockKeysHelper.IsEnabled}"
+                    <ui:ToggleSwitch Header="LockKeys-flyout Module" IsOn="{Binding LockKeysFlyoutHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
-                    <ui:ToggleSwitch Header="Brightness-flyout Module" IsOn="{Binding BrightnessHelper.IsEnabled}"
+                    <ui:ToggleSwitch Header="Brightness-flyout Module" IsOn="{Binding BrightnessFlyoutHelper.IsEnabled}"
                                  OnContent="Enabled" OffContent="Disabled"/>
                 </ui:SimpleStackPanel>
             </GroupBox>

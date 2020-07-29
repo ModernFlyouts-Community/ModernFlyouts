@@ -5,14 +5,14 @@ using System.Management;
 
 namespace ModernFlyouts
 {
-    public class AirplaneModeHelper : HelperBase
+    public class AirplaneModeFlyoutHelper : FlyoutHelperBase
     {
         private AirplaneModeControl airplaneModeControl;
         private AirplaneModeWatcher airplaneModeWatcher;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
-        public AirplaneModeHelper()
+        public AirplaneModeFlyoutHelper()
         {
             Initialize();
         }
