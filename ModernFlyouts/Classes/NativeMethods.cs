@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace ModernFlyouts
@@ -212,6 +214,12 @@ namespace ModernFlyouts
 
         [DllImport("user32.dll")]
         internal static extern bool UnhookWinEvent(IntPtr hWinEventHook);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool RegisterShellHookWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        internal static extern uint RegisterWindowMessage(string lpString);
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct RECT

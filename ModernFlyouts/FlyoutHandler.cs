@@ -10,7 +10,19 @@ namespace ModernFlyouts
 {
     public class FlyoutHandler : INotifyPropertyChanged
     {
+        enum HookMessageEnum : uint
+        {
+            HOOK_MEDIA_PLAYPAUSE = 917504,
+            HOOK_MEDIA_PREVIOUS = 786432,
+            HOOK_MEDIA_NEXT = 720896,
+            HOOK_MEDIA_STOP = 851968,
+            HOOK_MEDIA_VOLPLUS = 655360,
+            HOOK_MEDIA_VOLMINUS = 589824,
+            HOOK_MEDIA_VOLMUTE = 524288
+        }
+
         DispatcherTimer rehooktimer;
+        uint messageShellHookId;
 
         #region Properties
 
@@ -91,7 +103,7 @@ namespace ModernFlyouts
             DUIHandler.ForceFindDUIAndHide();
 
             FlyoutWindow = new FlyoutWindow();
-            FlyoutWindow.SourceInitialized += FlyoutWindow_SourceInitialized;
+            CreateWndProc();
 
             SystemTheme.SystemThemeChanged += OnSystemThemeChange;
             SystemTheme.Initialize();
@@ -226,17 +238,20 @@ namespace ModernFlyouts
             StartupHelper.SetRunAtStartupEnabled(runAtStartup);
         }
 
-        private void FlyoutWindow_SourceInitialized(object sender, EventArgs e)
+        private const int MA_NOACTIVATE = 0x3;
+        private const int WM_MOUSEACTIVATE = 0x21;
+
+        private void CreateWndProc()
         {
             var wih = new WindowInteropHelper(FlyoutWindow);
-            var hWnd = wih.Handle;
+            var hWnd = wih.EnsureHandle();
             var source = HwndSource.FromHwnd(hWnd);
             source.AddHook(WndProc);
             NativeMethods.SetToolWindow(hWnd);
-        }
 
-        private const int MA_NOACTIVATE = 0x3;
-        private const int WM_MOUSEACTIVATE = 0x21;
+            NativeMethods.RegisterShellHookWindow(hWnd);
+            messageShellHookId = NativeMethods.RegisterWindowMessage("SHELLHOOK");
+        }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
@@ -244,6 +259,24 @@ namespace ModernFlyouts
             {
                 handled = true;
                 return new IntPtr(MA_NOACTIVATE);
+            }
+
+            if (msg == messageShellHookId)
+            {
+                if (wParam == (IntPtr)55)
+                {
+                    //Brightness
+                    BrightnessFlyoutHelper?.OnExternalUpdated();
+                }
+                else if (wParam == (IntPtr)12)
+                {
+                    //Volume
+                    AudioFlyoutHelper?.OnExternalUpdated(
+                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_NEXT || 
+                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_PREVIOUS || 
+                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_PLAYPAUSE || 
+                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_STOP);
+                }
             }
 
             return IntPtr.Zero;
