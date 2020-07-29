@@ -48,7 +48,8 @@ namespace ModernFlyouts
                 brightnessControl.BrightnessSlider.Value = brightness;
                 _isInCodeValueChange = false;
                 brightnessControl.textVal.Text = brightness.ToString("00");
-                ShowFlyoutRequested?.Invoke(this);
+                if (!Classes.WindowsInfo.IsWindows8OrLater())
+                    ShowFlyoutRequested?.Invoke(this);
             });
         }
 
@@ -145,6 +146,10 @@ namespace ModernFlyouts
         }
 
         #endregion
+
+        //This is if it was "updated" using other methods (e.g. Shellhook)
+        public void OnExternalUpdated() => ShowFlyoutRequested?.Invoke(this);
+
 
         protected override void OnEnabled()
         {
