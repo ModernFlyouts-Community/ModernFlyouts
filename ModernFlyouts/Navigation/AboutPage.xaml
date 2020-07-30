@@ -16,14 +16,16 @@
 
 This app is a modern replacement for the existing flyouts in Windows (since Windows 8)
 
-Source Code : [Github - https://github.com/ShankarBUS/ModernFlyouts](https://github.com/ShankarBUS/ModernFlyouts)
+Source Code : [Github - ShankarBUS/ModernFlyouts](https://github.com/ShankarBUS/ModernFlyouts)
+
+[Contributors](https://github.com/ShankarBUS/ModernFlyouts/graphs/contributors)
 
 See the github repository for more info
 
 Version : **0.3.0**
 
 ***If you find any bugs, file a new issue in the github repository.***
-
+            
 ## Dependencies and References
 
 [NAudio](https://github.com/naudio/NAudio)
@@ -34,7 +36,7 @@ Version : **0.3.0**
 
 ## Credits
 
-This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).
+This project is based on **[AudioFlyout by ADeltaX](https://github.com/ADeltaX/AudioFlyout)**.
         </system:String>
     </Page.Resources>
     <md:MarkdownTextBlock Text="{StaticResource About.md}" Padding="10" Header2FontWeight="SemiBold" ImageResolving="MarkdownTextBlock_ImageResolving" LinkClicked="MarkdownTextBlock_LinkClicked" ImageClicked="MarkdownTextBlock_ImageClicked"/>
