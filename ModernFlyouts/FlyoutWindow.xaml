@@ -82,7 +82,7 @@
                     </Grid.ColumnDefinitions>
                     
                     <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left"
-                            ui:ControlHelper.CornerRadius="4,2,2,4"
+                            ui:ControlHelper.CornerRadius="8,2,2,8"
                             Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Click="settingsItem_Click">
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Setting}" FontSize="16"/>
                     </Button>
@@ -97,7 +97,7 @@
                         <Border Margin="10" BorderBrush="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Opacity="0.2" BorderThickness="0, 1, 0, 1"/>
                     </Border>
 
-                    <Button x:Name="HideFlyoutButton" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" ui:ControlHelper.CornerRadius="2,4,2,2" 
+                    <Button x:Name="HideFlyoutButton" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" ui:ControlHelper.CornerRadius="2,8,8,2" 
                     Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Close">
                         <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Cancel}" FontSize="12"/>
                     </Button>
