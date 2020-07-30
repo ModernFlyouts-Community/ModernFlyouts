@@ -1,5 +1,4 @@
-﻿using ModernWpf.Controls;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Management;
 
@@ -43,24 +42,11 @@ namespace ModernFlyouts
         {
             brightnessControl.Dispatcher.Invoke(() =>
             {
-                UpdateBrightnessGlyph(brightness);
                 _isInCodeValueChange = true;
                 brightnessControl.BrightnessSlider.Value = brightness;
                 _isInCodeValueChange = false;
                 brightnessControl.textVal.Text = brightness.ToString("00");
             });
-        }
-
-        private void UpdateBrightnessGlyph(int brightness)
-        {
-            if (brightness > 90.0)
-            {
-                brightnessControl.BrightnessGlyph.SetResourceReference(IconElement.ForegroundProperty, "SystemControlErrorTextForegroundBrush");
-            }
-            else
-            {
-                brightnessControl.BrightnessGlyph.SetResourceReference(IconElement.ForegroundProperty, "SystemControlForegroundBaseHighBrush");
-            }
         }
 
         private void BrightnessSlider_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
