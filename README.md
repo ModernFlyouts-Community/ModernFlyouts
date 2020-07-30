@@ -1,6 +1,63 @@
 # ModernFlyouts
 ### A modern replacement for existing flyouts in Windows
 
+![ModernFlyouts](ModernFlyouts/Assets/Images/ModernFlyouts_128.png)
+
+[Overview](#overview) | [Features](#features) | [Installation](#installation) | [Screenshots](#screenshots)
+
+## Overview
+
+**Default one**
+
+![Overview](docs/images/Overview.png)
+
+This application will replace the default audio/airplane/brightness flyouts found in Windows shown when the volume or brightness changes or when airplane mode key is pressed with a new modern UI.
+
+This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). With additional implementation for airplane mode and brightness flyouts. This project also includes a flyout for lock keys (caps lock, scroll lock & num lock).
+
+> Note : The native flyout is not permanently closed but will be hidden when this flyout is shown
+> Thus, users have the freedom to choose between the windows default one. this modern one or none.
+
+## Features
+- Fluent UI (similar to the one in Windows 10X)
+- Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**).
+- Media session control has new buttons such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
+- AirplaneMode-flyout Module.
+- LockKeys-flyout Module.
+- Brightness-flyout Module.
+- Each Module can be disabled separately.
+- Can Choose either Windows Default Flyout, ModernFlyouts or None.
+- Flyout's TopBar can be hidden.
+- Flyout is **Draggable**
+- Flyout can **aligned to default position**
+- **Slide Animation** when hiding & showing.
+- Transitions.
+- And finally this application works in **all versions of Windows 10** 🎉🎉🎉 (and also tested on Windows 8) (fallback method is added for **SMTC** and not restricted to Windows 10 17763+)
+- Targets both .NET 4.6.2 & .NET Core 3.1 (Only .NET Framework 4.6.2 is publically available)
+
+## Installation
+1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
+2. Download the attachment file there or [click here](https://github.com/ShankarBUS/ModernFlyouts/releases/latest/download/ModernFlyoutsSetup.msi) to download it.
+3. Make sure you have .NET Framework 4.6.2 installed on your machine.
+4. Install the setup and run **ModernFlyouts.exe**.
+
+## IMPORTANT NOTE :
+This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
+I could have improved the original project but the project is called **AUDIO**Flyout and adding airplane-mode/brightness flyouts wouldn't be a good idea, also the project has no recent activity. He's developing a **AudioFlyout**v2 with a refreshed UI. So, I had to make my own with the said additional features.
+
+This project depends on : 
+- [NAudio](https://github.com/naudio/NAudio)
+- [ModernWpf](https://github.com/Kinnara/ModernWpf) (That's how I got the name **Modern**Flyouts)
+- [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
+
+## Screenshots
+
+### Audio Flyout
+
+**Windows Default One**
+
+![Audio_Old](docs/images/Audio_Old.png)
+
 **Dark Theme :** 
 
 ![Audio_Dark](docs/images/Audio_Dark.png)
@@ -21,51 +78,9 @@ _With TopBar_
 
 _Without TopBar_
 
-**Default one**
+**SMTC audio playback session in old one**
 
-![Audio_Old](docs/images/Audio_Old.png)
-
-This application will replace the default audio/airplane/brightness flyouts found in Windows shown when the volume or brightness changes or when airplane mode key is pressed.
-
-This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). I have implemented airplane mode and brightness (incomplete) flyout as an addition. I have also added a flyout for lock keys (caps lock, scroll lock & num lock).
-
-> Note : The native flyout is not permanently closed but will be hidden when this flyout is shown
-> Thus, only audio/airplane-mode flyouts will replace the old one. **Brightness flyout** is incomplete and may not work on all devices.
-
-## Quick guide
-1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest)
-2. Download the attached zip file there or [click here](https://github.com/ShankarBUS/ModernFlyouts/releases/latest/download/ModernFlyouts.NET462.zip) to download it
-4. Extract it **to a folder** and run **ModernFlyouts.exe**.
-
-## Features (new ones compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).)
-- Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**).
-- SMTC has new controls such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
-- AirplaneMode-flyout Module.
-- LockKeys-flyout Module.
-- Note : **Brightness flyout** is not yet fully implemented and may not work on all devices.
-- Each Module can be disabled separately.
-- Can Choose either Windows Default Flyout, ModernFlyouts or None.
-- Flyout's TopBar can be hidden.
-- Flyout is **Draggable**
-- Flyout can **aligned to default position**
-- **Slide Animation** when hide & showing
-- And finally this application works in **all versions of Windows 10** 🎉🎉🎉 (and also tested on Windows 8) (fallback method is added for **SMTC** and not restricted to Windows 10 17763+)
-- Targets both .NET 4.6.2 & .NET Core 3.1
-
-## Disadvantages compared to [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout).
-- Flyout can't be shown in **LockScreen** and above **TaskManager**, since UIAccess is not taken into account from the beginning.
-- No **Acrylic** backdrop (will cost animation so ...)
-
-## IMPORTANT NOTE :
-This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
-I could have improved the original project but the project is called **AUDIO**Flyout and adding airplane-mode/brightness flyouts wouldn't be a good idea, also the project has no recent activity. He's developing a **AudioFlyout**v2 with a refreshed UI. So, I had to make my own with the said additional features.
-
-This project depends on : 
-- [NAudio](https://github.com/naudio/NAudio)
-- [ModernWpf](https://github.com/Kinnara/ModernWpf) (That's how I got the name **Modern**Flyout)
-- [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
-
-## Screenshots
+![Audio_Old_Session](docs/images/Audio_Old_Session.png)
 
 **SMTC audio playback session**
 
@@ -83,7 +98,35 @@ This project depends on :
 
 ![Audio_Session_Video](docs/images/Audio_Session_Video.png)
 
-**Airplane-Mode Flyout**
+### Brightness Flyout
+
+**Windows Default One**
+
+![Brightness_Old](docs/images/Brightness_Old.png)
+
+**Dark Theme :** 
+
+![Brightness_Dark](docs/images/Brightness_Dark.png)
+
+_With TopBar_
+
+![Brightness_Dark_NoTop](docs/images/Brightness_Dark_NoTop.png)
+
+_Without TopBar_
+
+**Light Theme :** 
+
+![Brightness_Light](docs/images/Brightness_Light.png)
+
+_With TopBar_
+
+![Brightness_Light_NoTop](docs/images/Brightness_Light_NoTop.png)
+
+_Without TopBar_
+
+### Airplane-Mode Flyout
+
+**Light Theme : (On state)**
 
 ![Airplane_On_Light](docs/images/Airplane_On_Light.png)
 
@@ -93,7 +136,9 @@ _With TopBar_
 
 _Without TopBar_
 
-**Lock key flyout**
+### Lock-keys flyout
+
+**Light Theme : (Caps-lock On)**
 
 ![LockKey_Caps_Light](docs/images/LockKey_Caps_Light.png)
 
