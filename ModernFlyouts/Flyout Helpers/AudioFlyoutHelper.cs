@@ -73,23 +73,6 @@ namespace ModernFlyouts
                 ShowFlyoutRequested?.Invoke(this);
         }
 
-        private void KeyPressed(Key Key, int virtualKey)
-        {
-            if (Key == Key.VolumeUp || Key == Key.VolumeDown || Key == Key.VolumeMute)
-            {
-                ShowFlyout();
-            }
-            if ((Key == Key.MediaNextTrack || Key == Key.MediaPreviousTrack || Key == Key.MediaPlayPause || Key == Key.MediaStop) && _SMTCAvail)
-            {
-                ShowFlyout();
-            }
-
-            void ShowFlyout()
-            {
-                ShowFlyoutRequested?.Invoke(this);
-            }
-        }
-
         #region Volume
 
         private void Client_DefaultDeviceChanged(object sender, string e)
@@ -323,9 +306,6 @@ namespace ModernFlyouts
                 return;
             }
 
-            if (!Classes.WindowsInfo.IsWindows8OrLater())
-                FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
-
             client.DefaultDeviceChanged += Client_DefaultDeviceChanged;
 
             if (device != null)
@@ -344,9 +324,6 @@ namespace ModernFlyouts
         protected override void OnDisabled()
         {
             base.OnDisabled();
-
-            if (!Classes.WindowsInfo.IsWindows8OrLater())
-                FlyoutHandler.Instance.KeyboardHook.KeyDown -= KeyPressed;
 
             client.DefaultDeviceChanged -= Client_DefaultDeviceChanged;
 

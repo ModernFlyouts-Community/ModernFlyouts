@@ -48,8 +48,6 @@ namespace ModernFlyouts
                 brightnessControl.BrightnessSlider.Value = brightness;
                 _isInCodeValueChange = false;
                 brightnessControl.textVal.Text = brightness.ToString("00");
-                if (!Classes.WindowsInfo.IsWindows8OrLater())
-                    ShowFlyoutRequested?.Invoke(this);
             });
         }
 
