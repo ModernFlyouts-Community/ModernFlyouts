@@ -10,7 +10,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="20">
             <GroupBox Header="Behavior">
-                <ui:ToggleSwitch Header="Run at startup" IsOn="{Binding RunAtStartup}"/>
+                <ui:ToggleSwitch Header="Open settings app at startup" IsOn="{Binding RunAtStartup}"/>
             </GroupBox>
             <GroupBox Header="Default Flyout">
                 <StackPanel>
