@@ -38,6 +38,8 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 ## Installation
 Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
+Both distribution methods will be supported, however only the store version will automatically remain up to date.
+
 **Github:**
 1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
 2. Download the attachment file there or [click here](https://github.com/ShankarBUS/ModernFlyouts/releases/latest/download/ModernFlyoutsSetup.msi) to download it.
