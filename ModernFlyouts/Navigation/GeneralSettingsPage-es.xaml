@@ -1,0 +1,47 @@
+﻿<Page x:Class="ModernFlyouts.Navigation.GeneralSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="General Settings" DataContext="{x:Static local:FlyoutHandler.Instance}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+            <GroupBox Header="Comportamiento">
+                <ui:ToggleSwitch Header="Ejecutar al inicio" IsOn="{Binding RunAtStartup}"/>
+            </GroupBox>
+            <GroupBox Header="Flyout por defecto">
+                <StackPanel>
+                    <ui:RadioButtons x:Name="DefaultFlyoutSelector"
+                        Header="Seleccione el flyout predeterminado" ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}" SelectedItem="{Binding DefaultFlyout}"/>
+                    <StackPanel x:Name="WarningPanel" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}}">
+                        <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}" TextWrapping="Wrap">
+                        En lugar de elegir el valor predeterminado de Windows, cierre esta aplicación de forma segura para reducir el uso de la memoria.
+                        </TextBlock>
+                        <Button Content="Cerrar la aplicación de forma segura" Click="Button_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Modules" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
+                <ui:SimpleStackPanel Spacing="10">
+                    <ui:ToggleSwitch Header="Módulo de Audio-Flyout" IsOn="{Binding AudioFlyoutHelper.IsEnabled}"
+                                 OnContent="Activado" OffContent="Desactivado"/>
+                    <ui:ToggleSwitch Header="Módulo de ModoAvión-Flyout" IsOn="{Binding AirplaneModeFlyoutHelper.IsEnabled}"
+                                 OnContent="Activado" OffContent="Desactivado"/>
+                    <ui:ToggleSwitch Header="Módulo de BloqMayús-Flyout" IsOn="{Binding LockKeysFlyoutHelper.IsEnabled}"
+                                 OnContent="Activado" OffContent="Desactivado"/>
+                    <ui:ToggleSwitch Header="Módulo de Brillo-Flyout" IsOn="{Binding BrightnessFlyoutHelper.IsEnabled}"
+                                 OnContent="Activado" OffContent="Desactivado"/>
+                </ui:SimpleStackPanel>
+            </GroupBox>
+            <GroupBox Header="Adicional" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
+                <ui:SimpleStackPanel Spacing="10">
+                    <ui:ToggleSwitch Header="Barra superior Flyout" IsOn="{Binding TopBarEnabled}"
+                                 OnContent="Activado" OffContent="Desactivado"/>
+                </ui:SimpleStackPanel>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
