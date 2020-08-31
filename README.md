@@ -36,16 +36,30 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 - Targets both .NET 4.6.2 & .NET Core 3.1 (Only .NET Framework 4.6.2 is publically available)
 
 ## Installation
+Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
+
+Both distribution methods will be supported, however only the store version will automatically remain up to date.
+
+**Github:**
 1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
 2. Download the attachment file there or [click here](https://github.com/ShankarBUS/ModernFlyouts/releases/latest/download/ModernFlyoutsSetup.msi) to download it.
 3. Make sure you have .NET Framework 4.6.2 installed on your machine.
 4. Install the setup and run **ModernFlyouts.exe**.
 
-## IMPORTANT NOTE :
+**Alternatively:**
+
+<a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='Microsoft Store' width='160'/></a>
+
+
+## IMPORTANT NOTE
 This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
 I could have improved the original project but the project is called **AUDIO**Flyout and adding airplane-mode/brightness flyouts wouldn't be a good idea, also the project has no recent activity. He's developing a **AudioFlyout**v2 with a refreshed UI. So, I had to make my own with the said additional features.
 
-This project depends on : 
+### Credits
+- **[@ADeltaX](https://github.com/ADeltaX/)** laid the foundation for this project and has been a huge support along the way.
+- **[@Samuel12321](https://github.com/Samuel12321/)** for publishing this app to **Microsoft Store**.
+
+### Dependencies and References 
 - [NAudio](https://github.com/naudio/NAudio)
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (That's how I got the name **Modern**Flyouts)
 - [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
