@@ -74,8 +74,7 @@ namespace ModernFlyouts
                 {
                     topBarEnabled = value;
                     OnPropertyChanged();
-                    Properties.Settings.Default.TopBarEnabled = value;
-                    Properties.Settings.Default.Save();
+                    AppDataHelper.TopBarEnabled = value;
                 }
             }
         }
@@ -119,11 +118,11 @@ namespace ModernFlyouts
 
             #region Load Settings
 
-            var adEnabled = Properties.Settings.Default.AudioModuleEnabled;
-            var apmdEnabled = Properties.Settings.Default.AirplaneModeModuleEnabled;
-            var lkkyEnabled = Properties.Settings.Default.LockKeysModuleEnabled;
-            var brEnabled = Properties.Settings.Default.BrightnessModuleEnabled;
-            var defaultFlyoutString = Properties.Settings.Default.DefaultFlyout;
+            var adEnabled = AppDataHelper.AudioModuleEnabled;
+            var apmdEnabled = AppDataHelper.AirplaneModeModuleEnabled;
+            var lkkyEnabled = AppDataHelper.LockKeysModuleEnabled;
+            var brEnabled = AppDataHelper.BrightnessModuleEnabled;
+            var defaultFlyoutString = AppDataHelper.DefaultFlyout;
 
             if (Enum.TryParse(defaultFlyoutString, true, out DefaultFlyout _defaultFlyout))
             {
@@ -131,13 +130,17 @@ namespace ModernFlyouts
             }
             else
             {
-                Properties.Settings.Default.DefaultFlyout = DefaultFlyout.ToString();
-                Properties.Settings.Default.Save();
+                AppDataHelper.DefaultFlyout = DefaultFlyout.ToString();
             }
 
-            TopBarEnabled = Properties.Settings.Default.TopBarEnabled;
+            TopBarEnabled = AppDataHelper.TopBarEnabled;
 
-            RunAtStartup = StartupHelper.GetRunAtStartupEnabled();
+            async void getStartupStatus()
+            {
+                RunAtStartup = await StartupHelper.GetRunAtStartupEnabled();
+            }
+
+            getStartupStatus();
 
             #endregion
 
@@ -229,8 +232,7 @@ namespace ModernFlyouts
                 DUIHandler.FindDUIAndHide();
             }
 
-            Properties.Settings.Default.DefaultFlyout = defaultFlyout.ToString();
-            Properties.Settings.Default.Save();
+            AppDataHelper.DefaultFlyout = defaultFlyout.ToString();
         }
 
         private void OnRunAtStartupChanged()

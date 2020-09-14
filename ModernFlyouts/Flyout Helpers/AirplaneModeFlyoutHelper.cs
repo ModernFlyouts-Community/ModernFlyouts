@@ -66,8 +66,7 @@ namespace ModernFlyouts
         {
             base.OnEnabled();
 
-            Properties.Settings.Default.AirplaneModeModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
+            AppDataHelper.AirplaneModeModuleEnabled = IsEnabled;
 
             if (IsEnabled)
             {
@@ -83,8 +82,7 @@ namespace ModernFlyouts
             airplaneModeWatcher.Stop();
             airplaneModeWatcher.Changed -= AirplaneModeWatcher_Changed;
 
-            Properties.Settings.Default.AirplaneModeModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
+            AppDataHelper.AirplaneModeModuleEnabled = IsEnabled;
         }
     }
 

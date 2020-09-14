@@ -180,7 +180,9 @@ namespace ModernFlyouts
             var value = Math.Truncate(slider.Value);
             var change = e.Delta / 120;
 
-            if (value + change > 100 || value + change < 0)
+            var volume = value + change;
+
+            if (volume > 100 || volume < 0)
             {
                 return;
             }
@@ -188,7 +190,7 @@ namespace ModernFlyouts
 
             if (device != null)
             {
-                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)((value + change) / 100);
+                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100);
                 device.AudioEndpointVolume.Mute = false;
             }
 
@@ -298,8 +300,7 @@ namespace ModernFlyouts
         {
             base.OnEnabled();
 
-            Properties.Settings.Default.AudioModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
+            AppDataHelper.AudioModuleEnabled = IsEnabled;
 
             if (!IsEnabled)
             {
@@ -335,8 +336,7 @@ namespace ModernFlyouts
 
             try { DetachSMTC(); } catch { }
 
-            Properties.Settings.Default.AudioModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
+            AppDataHelper.AudioModuleEnabled = IsEnabled;
         }
     }
 

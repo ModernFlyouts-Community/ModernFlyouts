@@ -119,7 +119,7 @@
             <local:CrossFadeContentControl Content="{Binding FlyoutHelper.SecondaryContent}"/>
         </Border>
         
-        <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico">
+        <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico" TrayMouseDoubleClick="settingsItem_Click">
             <tb:TaskbarIcon.TrayToolTip>
                 <ToolTip x:Name="TrayToolTip" Content="ModernFlyouts" ui:ThemeManager.RequestedTheme="Dark"/>
             </tb:TaskbarIcon.TrayToolTip>
