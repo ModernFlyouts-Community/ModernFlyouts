@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Management;
+using System.Windows.Controls;
 
 namespace ModernFlyouts
 {
@@ -24,6 +25,7 @@ namespace ModernFlyouts
 
             brightnessControl = new BrightnessControl();
             brightnessControl.BrightnessSlider.ValueChanged += BrightnessSlider_ValueChanged;
+            brightnessControl.BrightnessSlider.PreviewMouseWheel += BrightnessSlider_PreviewMouseWheel;
 
             #endregion
 
@@ -33,6 +35,7 @@ namespace ModernFlyouts
 
             OnEnabled();
         }
+
 
         #region Brightness
 
@@ -65,6 +68,25 @@ namespace ModernFlyouts
 
                 e.Handled = true;
             }
+        }
+
+        private void BrightnessSlider_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            var slider = sender as Slider;
+            var value = Math.Truncate(slider.Value);
+            var change = e.Delta / 120;
+
+            var brightness = value + change;
+
+            if (brightness > 100 || brightness < 0)
+            {
+                return;
+            }
+
+
+            SetBrightnessLevel((int)brightness);
+
+            e.Handled = true;
         }
 
         private void BrightnessWatcher_Changed(object sender, BrightnessChangedEventArgs e)
@@ -139,8 +161,7 @@ namespace ModernFlyouts
         {
             base.OnEnabled();
 
-            Properties.Settings.Default.BrightnessModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
+            AppDataHelper.BrightnessModuleEnabled = IsEnabled;
 
             if (IsEnabled)
             {
@@ -160,8 +181,7 @@ namespace ModernFlyouts
             brightnessWatcher.Stop();
             brightnessWatcher.Changed -= BrightnessWatcher_Changed;
 
-            Properties.Settings.Default.BrightnessModuleEnabled = IsEnabled;
-            Properties.Settings.Default.Save();
+            AppDataHelper.BrightnessModuleEnabled = IsEnabled;
         }
     }
 

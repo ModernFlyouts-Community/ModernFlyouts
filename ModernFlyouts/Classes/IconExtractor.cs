@@ -256,7 +256,7 @@ namespace ModernFlyouts
 
                 var devPath = buf.ToString();
                 if (fileName.StartsWith(devPath))
-                    return (drive + fileName.Substring(devPath.Length));
+                    return drive + fileName.Substring(devPath.Length);
             }
 
             return fileName;

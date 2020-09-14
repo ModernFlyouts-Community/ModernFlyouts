@@ -1,46 +1,31 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Threading.Tasks;
+using Windows.ApplicationModel;
 
 namespace ModernFlyouts
 {
     internal class StartupHelper
     {
-        private static string appPath = "";
-        private const string RunKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+        private const string StartupId = "ModernFlyoutsStartupId";
 
-        static StartupHelper()
+        public static async Task<bool> GetRunAtStartupEnabled()
         {
-            appPath = Process.GetCurrentProcess().MainModule.FileName;
+            StartupTask startupTask = await StartupTask.GetAsync(StartupId);
+
+            return startupTask.State == StartupTaskState.Enabled;
         }
 
-        public static bool GetRunAtStartupEnabled()
+        public static async void SetRunAtStartupEnabled(bool value)
         {
-            var regkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(RunKey, false);
-            if (regkey == null)
+            StartupTask startupTask = await StartupTask.GetAsync(StartupId);
+            
+            if (value)
             {
-                return false;
+                await startupTask.RequestEnableAsync();
             }
-
-            if (regkey.GetValue(App.AppName) != null && regkey.GetValue(App.AppName) is string path)
+            else
             {
-                return appPath == path;
-            }
-
-            return false;
-        }
-
-        public static void SetRunAtStartupEnabled(bool value)
-        {
-            var regkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(RunKey, true);
-            if (regkey != null)
-            {
-                if (value)
-                {
-                    regkey.SetValue(App.AppName, appPath);
-                }
-                else
-                {
-                    regkey.DeleteValue(App.AppName);
-                }
+                startupTask.Disable();
             }
         }
     }

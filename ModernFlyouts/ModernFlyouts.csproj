@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net462</TargetFrameworks>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>8.0</LangVersion>
-    <Version>0.3.0</Version>
+    <Version>0.4.0</Version>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
   </PropertyGroup>
 
@@ -30,10 +30,11 @@
   <ItemGroup>
     <PackageReference Include="BUSK.Markdown" Version="0.7.1" />
     <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.19041.1" />
-    <PackageReference Include="ModernWpfUI" Version="0.9.1" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.2-preview.200831.1" />
     <PackageReference Include="NAudio" Version="1.10.0" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.0-preview.7.20364.11" />
-    <PackageReference Include="System.Management" Version="5.0.0-preview.7.20364.11" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0-preview.8.20407.11" />
+    <PackageReference Include="System.Management" Version="5.0.0-preview.8.20407.11" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.13" />
   </ItemGroup>
   
   <ItemGroup>
@@ -65,27 +66,17 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.13" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
+  <PropertyGroup>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
   
 </Project>
