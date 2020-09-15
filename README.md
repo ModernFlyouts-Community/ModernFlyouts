@@ -32,8 +32,8 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 - Flyout can **aligned to default position**
 - **Slide Animation** when hiding & showing.
 - Transitions.
-- And finally this application works in **all versions of Windows 10** 🎉🎉🎉 (and also tested on Windows 8) (fallback method is added for **SMTC** and not restricted to Windows 10 17763+)
-- Targets both .NET 4.6.2 & .NET Core 3.1 (Only .NET Framework 4.6.2 is publically available)
+- This application works on **Windows 10 1809 and above** (Version 0.3.0 supported from Windows 8+, however to simplify distribution and due to .MSIX limitations 0.4.0 and above does not) 
+- Targets .NET Core 3.1
 
 ## Installation
 Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
