@@ -40,15 +40,17 @@ Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.micr
 
 Both distribution methods will be supported, however only the store version will automatically remain up to date.
 
-**Github:**
-1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
-2. Download the attachment file there or [click here](https://github.com/ShankarBUS/ModernFlyouts/releases/latest/download/ModernFlyoutsSetup.msi) to download it.
-3. Make sure you have .NET Framework 4.6.2 installed on your machine.
-4. Install the setup and run **ModernFlyouts.exe**.
-
-**Alternatively:**
+**Microsoft Store:**
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='Microsoft Store' width='160'/></a>
+
+**Alternatively download from Github:**
+
+1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
+2. Download the latest zip file.
+3. Make sure you have .NET Core 3.1 installed on your machine.
+4. Install the **ModernFlyouts.MSIX**.
+
 
 
 ## IMPORTANT NOTE
