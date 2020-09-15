@@ -38,11 +38,12 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 ## Installation
 Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
-Both distribution methods will be supported, however only the store version will automatically remain up to date.
+Both distribution methods will be supported, however the store version is recommended as it is easier to install and will automatically remain up to date.
 
 **Microsoft Store:**
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='Microsoft Store' width='160'/></a>
+
 
 **Alternatively download from Github:**
 
