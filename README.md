@@ -3,7 +3,7 @@
 
 ![ModernFlyouts](ModernFlyouts/Assets/Images/ModernFlyouts_128.png)
 
-[Overview](#overview) | [Features](#features) | [System Requirements](#system_requirements) | [Installation](#installation) | [Screenshots](#screenshots)
+[Overview](#overview) | [Features](#features) | [System Requirements](#system-requirements) | [Installation](#installation) | [Screenshots](#screenshots)
 
 ## Overview
 
