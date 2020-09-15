@@ -48,9 +48,9 @@ Both distribution methods will be supported, however the store version is recomm
 **Alternatively download from Github:**
 
 1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
-2. Download the latest zip file.
+2. Download the latest .MSIX file.
 3. Make sure you have .NET Core 3.1 installed on your machine.
-4. Install the **ModernFlyouts.MSIX**.
+4. Install **ModernFlyouts.MSIX**.
 
 
 
