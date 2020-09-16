@@ -113,7 +113,7 @@ namespace ModernFlyouts
             ProcessCommandLineArgs(args, false);
         }
 
-        private async void CreateJumpList()
+        private void CreateJumpList()
         {
             JumpList jumpList = new JumpList();
             JumpList.SetJumpList(Current, jumpList);

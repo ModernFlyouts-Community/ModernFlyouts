@@ -6,11 +6,7 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:util="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d" d:DesignWidth="354">
-    <UserControl.Resources>
-        <Style TargetType="ui:FontIcon">
-            <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
-        </Style>
-    </UserControl.Resources>
+    
     <Grid Height="48">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48" />
@@ -18,12 +14,14 @@
             <ColumnDefinition Width="48" />
         </Grid.ColumnDefinitions>
 
-        <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0" FontSize="16" Glyph="{x:Static util:CommonGlyphs.Brightness}"/>
+        <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0" FontSize="16" Glyph="{x:Static util:CommonGlyphs.Brightness}" />
 
         <Slider x:Name="BrightnessSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0"
-                        SmallChange="0.01" IsMoveToPointEnabled="True"/>
+                SmallChange="0.01" IsMoveToPointEnabled="True" />
 
-        <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="6" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
-                        Text="100" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="6"
+                   Style="{DynamicResource SubtitleTextBlockStyle}"
+                   Text="100" VerticalAlignment="Center" />
     </Grid>
+    
 </UserControl>

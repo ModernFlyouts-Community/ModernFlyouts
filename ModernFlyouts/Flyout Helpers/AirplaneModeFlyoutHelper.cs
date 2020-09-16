@@ -21,13 +21,9 @@ namespace ModernFlyouts
         {
             AlwaysHandleDefaultFlyout = true;
 
-            PrimaryContent = null;
-            PrimaryContentVisible = false;
-
             airplaneModeControl = new AirplaneModeControl();
-            
-            SecondaryContent = airplaneModeControl;
-            SecondaryContentVisible = true;
+
+            PrimaryContent = airplaneModeControl;
 
             airplaneModeWatcher = new AirplaneModeWatcher();
 

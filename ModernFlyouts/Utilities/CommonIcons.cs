@@ -2,6 +2,14 @@
 {
     public static class CommonGlyphs
     {
+        public const string ChevronLeft = "\uE00E";
+        
+        public const string ChevronRight = "\uE00F";
+        
+        public const string ChevronUp = "\uE010";
+        
+        public const string ChevronDown = "\uE011";
+
         public const string Refresh = "\uE149";
 
         public const string Previous = "\uE100";
@@ -47,5 +55,9 @@
         public const string RepeatAll = "\uE1CD";
 
         public const string Stop = "\uE15B";
+
+        public const string Pin = "\uE141";
+
+        public const string UnPin = "\uE196";
     }
 }

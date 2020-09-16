@@ -74,6 +74,7 @@ namespace ModernFlyouts
                 {
                     topBarEnabled = value;
                     OnPropertyChanged();
+                    FlyoutWindow.OnTopBarEnabledChanged(value);
                     AppDataHelper.TopBarEnabled = value;
                 }
             }
