@@ -48,9 +48,9 @@
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:ToggleSwitch Header="Flyout TopBar" IsOn="{Binding TopBarEnabled}"
                                  OnContent="Always Visible" OffContent="Auto Hide" />
-                    <TextBox ui:ControlHelper.Header="Flyout Default Position (for Align button)"
-                             ui:ControlHelper.Description="Type the position in 'x, y' format (for e.g. 50, 60)"
-                             HorizontalAlignment="Left" />
+                    <TextBox ui:ControlHelper.Header="Flyout Default Position (for Align button)" HorizontalAlignment="Left"
+                             ui:ControlHelper.Description="Type the position in 'x, y' format (for e.g. 50,60)"
+                             Text="{Binding Path=DefaultFlyoutPosition, Converter={StaticResource PointToStringConverter}, UpdateSourceTrigger=PropertyChanged}"/>
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

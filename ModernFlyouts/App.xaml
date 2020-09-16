@@ -1,7 +1,8 @@
 ﻿<Application x:Class="ModernFlyouts.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:system="clr-namespace:System;assembly=System.Runtime" xmlns:md="clr-namespace:BUSK.Markdown.Controls;assembly=BUSK.Markdown" xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:md="clr-namespace:BUSK.Markdown.Controls;assembly=BUSK.Markdown" xmlns:util="clr-namespace:ModernFlyouts.Utilities"
              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
         <ResourceDictionary>
@@ -72,7 +73,7 @@
                 <Setter Property="CodeBorderThickness" Value="0" />
                 <Setter Property="InlineCodeBorderThickness" Value="0" />
                 <Setter Property="InlineCodePadding" Value="4, 2, 4, 2" />
-                <Setter Property="InlineCodeMargin" Value="2, 0, 2, -4"/>
+                <Setter Property="InlineCodeMargin" Value="2, 0, 2, -4" />
                 <Setter Property="InlineCodeBackground" Value="{DynamicResource MarkdownInlineCodeBackgroundBrush}" />
                 <Setter Property="InlineCodeBorderBrush" Value="{DynamicResource MarkdownBorderBrush}" />
                 <Setter Property="InlineCodeForeground" Value="{DynamicResource MarkdownInlineCodeForegroundBrush}" />
@@ -134,11 +135,12 @@
             
             <!--#endregion-->
 
-            <util:EnumValuesConverter x:Key="EnumValuesConverter"/>
-            <util:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter"/>
-            <util:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter"/>
-            <util:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter"/>
-            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <util:EnumValuesConverter x:Key="EnumValuesConverter" />
+            <util:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter" />
+            <util:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
+            <util:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
+            <util:PointToStringConverter x:Key="PointToStringConverter" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
             <system:Double x:Key="FlyoutWidth">354</system:Double>
@@ -162,7 +164,11 @@
                 <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
                 <Setter Property="Background" Value="Transparent" />
             </Style>
-            
+
+            <Style TargetType="ScrollViewer" BasedOn="{StaticResource DefaultScrollViewerStyle}">
+                <Setter Property="util:ScrollViewerHelperEx.IsSmoothScrollingEnabled" Value="True" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

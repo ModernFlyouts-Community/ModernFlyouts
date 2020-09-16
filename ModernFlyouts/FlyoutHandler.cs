@@ -80,6 +80,22 @@ namespace ModernFlyouts
             }
         }
 
+        private Point defaultFlyoutPosition = new Point(50, 60);
+
+        public Point DefaultFlyoutPosition
+        {
+            get { return defaultFlyoutPosition; }
+            set
+            {
+                if (defaultFlyoutPosition != value)
+                {
+                    defaultFlyoutPosition = value;
+                    OnPropertyChanged();
+                    AppDataHelper.DefaultFlyoutPosition = value;
+                }
+            }
+        }
+
         private bool runAtStartup = false;
 
         public bool RunAtStartup
@@ -135,6 +151,7 @@ namespace ModernFlyouts
             }
 
             TopBarEnabled = AppDataHelper.TopBarEnabled;
+            DefaultFlyoutPosition = AppDataHelper.DefaultFlyoutPosition;
 
             async void getStartupStatus()
             {
@@ -243,6 +260,7 @@ namespace ModernFlyouts
 
         private const int MA_NOACTIVATE = 0x3;
         private const int WM_MOUSEACTIVATE = 0x21;
+        private const int WM_EXITSIZEMOVE = 0x0232;
 
         private void CreateWndProc()
         {
@@ -280,6 +298,11 @@ namespace ModernFlyouts
                         (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_PLAYPAUSE || 
                         (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_STOP);
                 }
+            }
+
+            if (msg == WM_EXITSIZEMOVE)
+            {
+                FlyoutWindow.SaveFlyoutPosition();
             }
 
             return IntPtr.Zero;

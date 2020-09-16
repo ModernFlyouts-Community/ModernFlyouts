@@ -1,4 +1,5 @@
-﻿using Windows.Storage;
+﻿using System.Windows;
+using Windows.Storage;
 
 namespace ModernFlyouts
 {
@@ -52,6 +53,30 @@ namespace ModernFlyouts
             } catch { }
         }
 
+        private static Point GetPoint(string propertyName, Point defaultPoint)
+        {
+            try
+            {
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
+                {
+                    object value = ApplicationData.Current.LocalSettings.Values[propertyName];
+                    return Point.Parse(value.ToString());
+                }
+            }
+            catch { }
+
+            return defaultPoint;
+        }
+
+        private static void SetPoint(string propertyName, Point value)
+        {
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value.ToString();
+            }
+            catch { }
+        }
+
         public static bool AudioModuleEnabled
         {
             get => GetBool(nameof(AudioModuleEnabled), true);
@@ -86,6 +111,20 @@ namespace ModernFlyouts
         {
             get => GetBool(nameof(TopBarEnabled), true);
             set => SetBool(nameof(TopBarEnabled), value);
+        }
+
+        private static Point defaultFlyoutPosition = new Point(50, 60);
+
+        public static Point DefaultFlyoutPosition
+        {
+            get => GetPoint(nameof(DefaultFlyoutPosition), defaultFlyoutPosition);
+            set => SetPoint(nameof(DefaultFlyoutPosition), value);
+        }
+
+        public static Point FlyoutPosition
+        {
+            get => GetPoint(nameof(FlyoutPosition), defaultFlyoutPosition);
+            set => SetPoint(nameof(FlyoutPosition), value);
         }
     }
 }

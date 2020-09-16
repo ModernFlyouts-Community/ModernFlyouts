@@ -1,7 +1,9 @@
 ﻿using ModernFlyouts.Utilities;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace ModernFlyouts
@@ -12,7 +14,7 @@ namespace ModernFlyouts
 
         #region Properties
 
-        public static readonly DependencyProperty VisibleProperty = 
+        public static readonly DependencyProperty VisibleProperty =
             DependencyProperty.Register(
                 nameof(Visible),
                 typeof(bool),
@@ -108,7 +110,7 @@ namespace ModernFlyouts
 
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this)) { return; }
 
-            AlignFlyout();
+            AlignFlyout(false);
             MovableAreaBorder.MouseLeftButtonDown += (_, __) => DragMove();
             HideFlyoutButton.Click += (_, __) => Visible = false;
             AlignButton.Click += (_, __) => AlignFlyout();
@@ -141,7 +143,7 @@ namespace ModernFlyouts
 
         public void StartHideTimer()
         {
-           if (!_elapsedTimer.IsEnabled) { _elapsedTimer.Start(); }
+            if (!_elapsedTimer.IsEnabled) { _elapsedTimer.Start(); }
         }
 
         private void OtherPreps()
@@ -151,7 +153,7 @@ namespace ModernFlyouts
             MouseEnter += (_, e) =>
             {
                 _elapsedTimer.Stop();
-                
+
                 if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && e.GetPosition(TopBarGrid).Y <= 10)
                 {
                     _topBarOverlay = true;
@@ -195,16 +197,21 @@ namespace ModernFlyouts
             ContentGrid.Opacity = 0;
         }
 
-        private Point DefaultPosition = default;
-
-        private void AlignFlyout()
+        private void AlignFlyout(bool toDefault = true)
         {
-            if (DefaultPosition == default)
-            {
-                DefaultPosition = DUIHandler.GetCoordinates();
-            }
+            var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : AppDataHelper.FlyoutPosition;
 
-            Left = DefaultPosition.X; Top = DefaultPosition.Y;
+            Left = defaultPosition.X - leftShadowMargin; Top = defaultPosition.Y;
+
+            if (toDefault)
+            {
+                SaveFlyoutPosition();
+            }
+        }
+
+        public void SaveFlyoutPosition()
+        {
+            AppDataHelper.FlyoutPosition = new Point(Left + leftShadowMargin, Top);
         }
 
         public void OnTopBarEnabledChanged(bool value)
@@ -236,21 +243,35 @@ namespace ModernFlyouts
 
         #endregion
 
-        private bool _topBarOverlay = false;
-
         private void UpdateTopBar(bool showTopBar)
         {
+            var R1 = this.TopBarGrid.RowDefinitions[0];
+            var R2 = this.TopBarGrid.RowDefinitions[1];
             if (showTopBar)
             {
                 this.TopBarGrid.Margin = new Thickness(0);
-                this.TopBarGrid.RowDefinitions[1].Height = new GridLength(0);
-                this.TopBarGrid.RowDefinitions[0].Height = new GridLength(32);
+                R2.Height = new GridLength(0);
+                var glAnim = new GridLengthAnimation()
+                {
+                    From = R1.Height,
+                    To = new GridLength(32),
+                    Duration = TimeSpan.FromMilliseconds(167),
+                    EasingFunction = new BackEase() { EasingMode = EasingMode.EaseOut }
+                };
+                R1.BeginAnimation(RowDefinition.HeightProperty, glAnim);
             }
             else
             {
                 this.TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
-                this.TopBarGrid.RowDefinitions[1].Height = new GridLength(10);
-                this.TopBarGrid.RowDefinitions[0].Height = new GridLength(0);
+                R2.Height = new GridLength(10);
+                var glAnim = new GridLengthAnimation()
+                {
+                    From = R1.Height,
+                    To = new GridLength(0),
+                    Duration = TimeSpan.FromMilliseconds(167),
+                    EasingFunction = new CircleEase() { EasingMode = EasingMode.EaseOut }
+                };
+                R1.BeginAnimation(RowDefinition.HeightProperty, glAnim);
             }
         }
 
@@ -258,5 +279,8 @@ namespace ModernFlyouts
         {
             FlyoutHandler.Instance.TopBarEnabled = !FlyoutHandler.Instance.TopBarEnabled;
         }
+
+        private int leftShadowMargin = 20;
+        private bool _topBarOverlay = false;
     }
 }
