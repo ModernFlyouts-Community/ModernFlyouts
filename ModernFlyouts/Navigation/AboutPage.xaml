@@ -39,5 +39,7 @@ Version : **0.4.0**
 This project is based on **[AudioFlyout by ADeltaX](https://github.com/ADeltaX/AudioFlyout)**.
         </system:String>
     </Page.Resources>
-    <md:MarkdownTextBlock Text="{StaticResource About.md}" Padding="10" Header2FontWeight="SemiBold" ImageResolving="MarkdownTextBlock_ImageResolving" LinkClicked="MarkdownTextBlock_LinkClicked" ImageClicked="MarkdownTextBlock_ImageClicked"/>
+    <md:MarkdownTextBlock Text="{StaticResource About.md}" Padding="10"
+                          Header2FontWeight="SemiBold" ImageResolving="MarkdownTextBlock_ImageResolving"
+                          LinkClicked="MarkdownTextBlock_LinkClicked" ImageClicked="MarkdownTextBlock_ImageClicked" />
 </Page>

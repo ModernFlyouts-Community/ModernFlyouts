@@ -11,13 +11,13 @@
                            IsTabStop="False" SelectionChanged="NavView_SelectionChanged"
                            BackRequested="NavView_BackRequested" IsPaneOpen="False">
         <ui:NavigationView.MenuItems>
-            <ui:NavigationViewItem Content="General" ToolTip="General" Icon="Setting" Tag="general"/>
+            <ui:NavigationViewItem Content="General" ToolTip="General" Icon="Setting" Tag="general" />
             <ui:NavigationViewItem Content="About" ToolTip="About" Tag="about">
                 <ui:NavigationViewItem.Icon>
-                    <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Info}"/>
+                    <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Info}" />
                 </ui:NavigationViewItem.Icon>
             </ui:NavigationViewItem>
         </ui:NavigationView.MenuItems>
-        <ui:Frame x:Name="ContentFrame" IsTabStop="True"/>
+        <ui:Frame x:Name="ContentFrame" IsTabStop="True" />
     </ui:NavigationView>
 </Window>

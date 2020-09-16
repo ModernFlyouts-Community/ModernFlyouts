@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ModernFlyouts.Utilities;
+using System;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace ModernFlyouts
@@ -145,8 +147,42 @@ namespace ModernFlyouts
         private void OtherPreps()
         {
             SetupHideTimer();
-            MouseEnter += (_, __) => _elapsedTimer.Stop();
-            MouseLeave += (_, __) => _elapsedTimer.Start();
+
+            MouseEnter += (_, e) =>
+            {
+                _elapsedTimer.Stop();
+                
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && e.GetPosition(TopBarGrid).Y <= 10)
+                {
+                    _topBarOverlay = true;
+                    UpdateTopBar(true);
+                }
+            };
+            MouseLeave += (_, e) =>
+            {
+                _elapsedTimer.Start();
+
+                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled)
+                {
+                    _topBarOverlay = false;
+                    UpdateTopBar(false);
+                }
+            };
+            MouseMove += (_, e) =>
+            {
+                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && e.GetPosition(TopBarGrid).Y > 32)
+                {
+                    _topBarOverlay = false;
+                    UpdateTopBar(false);
+                }
+
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && e.GetPosition(TopBarGrid).Y <= 10)
+                {
+                    _topBarOverlay = true;
+                    UpdateTopBar(true);
+                }
+            };
+
             PreviewMouseDown += (_, __) => _elapsedTimer.Stop();
             PreviewStylusDown += (_, __) => _elapsedTimer.Stop();
             PreviewMouseUp += (_, __) => { _elapsedTimer.Stop(); _elapsedTimer.Start(); };
@@ -156,8 +192,7 @@ namespace ModernFlyouts
         internal void SetUpAnimPreps()
         {
             T1.Y = -40;
-            T2.Y = 40;
-            ContentsPanel.Opacity = 0;
+            ContentGrid.Opacity = 0;
         }
 
         private Point DefaultPosition = default;
@@ -170,6 +205,21 @@ namespace ModernFlyouts
             }
 
             Left = DefaultPosition.X; Top = DefaultPosition.Y;
+        }
+
+        public void OnTopBarEnabledChanged(bool value)
+        {
+            TopBarPinButtonIcon.Glyph = value ? CommonGlyphs.UnPin : CommonGlyphs.Pin;
+            TopBarPinButton.ToolTip = value ? "Unpin TopBar" : "Pin TopBar";
+            _topBarOverlay = false;
+            var pos = Mouse.GetPosition(TopBarGrid);
+            if (pos.Y > 0 && pos.Y < 32)
+            {
+                _topBarOverlay = true;
+                value = true;
+            }
+
+            UpdateTopBar(value);
         }
 
         #region Tray Menu Methods
@@ -185,5 +235,28 @@ namespace ModernFlyouts
         }
 
         #endregion
+
+        private bool _topBarOverlay = false;
+
+        private void UpdateTopBar(bool showTopBar)
+        {
+            if (showTopBar)
+            {
+                this.TopBarGrid.Margin = new Thickness(0);
+                this.TopBarGrid.RowDefinitions[1].Height = new GridLength(0);
+                this.TopBarGrid.RowDefinitions[0].Height = new GridLength(32);
+            }
+            else
+            {
+                this.TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
+                this.TopBarGrid.RowDefinitions[1].Height = new GridLength(10);
+                this.TopBarGrid.RowDefinitions[0].Height = new GridLength(0);
+            }
+        }
+
+        private void TopBarPinButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlyoutHandler.Instance.TopBarEnabled = !FlyoutHandler.Instance.TopBarEnabled;
+        }
     }
 }

@@ -10,36 +10,47 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="20">
             <GroupBox Header="Behavior">
-                <ui:ToggleSwitch Header="Run at startup" IsOn="{Binding RunAtStartup}"/>
+                <ui:ToggleSwitch Header="Run at startup" IsOn="{Binding RunAtStartup}" />
             </GroupBox>
             <GroupBox Header="Default Flyout">
                 <StackPanel>
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"
-                        Header="Select the default flyout" ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}" SelectedItem="{Binding DefaultFlyout}"/>
-                    <StackPanel x:Name="WarningPanel" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}}">
+                        Header="Select the default flyout"
+                        ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}"
+                        SelectedItem="{Binding DefaultFlyout}"/>
+                    <StackPanel x:Name="WarningPanel"
+                                Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
+                                    Converter={StaticResource IndexToVisibilityConverter}}">
                         <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}" TextWrapping="Wrap">
-                        Instead of choosing windows default, close this application safely to reduce memory usage.
+                            Instead of choosing windows default, close this application safely to reduce memory usage.
                         </TextBlock>
-                        <Button Content="Close Application Safely" Click="Button_Click"/>
+                        <Button Content="Close Application Safely" Click="Button_Click" />
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="Modules" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
+            <GroupBox Header="Modules"
+                      Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
+                          Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:ToggleSwitch Header="Audio-flyout Module" IsOn="{Binding AudioFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled"/>
+                                 OnContent="Enabled" OffContent="Disabled" />
                     <ui:ToggleSwitch Header="AirplaneMode-flyout Module" IsOn="{Binding AirplaneModeFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled"/>
+                                 OnContent="Enabled" OffContent="Disabled" />
                     <ui:ToggleSwitch Header="LockKeys-flyout Module" IsOn="{Binding LockKeysFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled"/>
+                                 OnContent="Enabled" OffContent="Disabled" />
                     <ui:ToggleSwitch Header="Brightness-flyout Module" IsOn="{Binding BrightnessFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled"/>
+                                 OnContent="Enabled" OffContent="Disabled" />
                 </ui:SimpleStackPanel>
             </GroupBox>
-            <GroupBox Header="Additional" Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex, Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
+            <GroupBox Header="Additional"
+                      Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
+                          Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:ToggleSwitch Header="Flyout TopBar" IsOn="{Binding TopBarEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled"/>
+                                 OnContent="Always Visible" OffContent="Auto Hide" />
+                    <TextBox ui:ControlHelper.Header="Flyout Default Position (for Align button)"
+                             ui:ControlHelper.Description="Type the position in 'x, y' format (for e.g. 50, 60)"
+                             HorizontalAlignment="Left" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

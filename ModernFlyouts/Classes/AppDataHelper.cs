@@ -6,36 +6,50 @@ namespace ModernFlyouts
     {
         private static bool GetBool(string propertyName, bool defaultValue)
         {
-            if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
+            try
             {
-                object value = ApplicationData.Current.LocalSettings.Values[propertyName];
-                if (bool.TryParse(value.ToString(), out bool result))
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
                 {
-                    return result;
+                    object value = ApplicationData.Current.LocalSettings.Values[propertyName];
+                    if (bool.TryParse(value.ToString(), out bool result))
+                    {
+                        return result;
+                    }
                 }
-            }
+            } catch { }
+
             return defaultValue;
         }
 
         private static void SetBool(string propertyName, bool value)
         {
-            ApplicationData.Current.LocalSettings.Values[propertyName] = value.ToString();
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value.ToString();
+            }
+            catch { }
         }
 
         private static string GetString(string propertyName)
         {
-            if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
+            try
             {
-                object value = ApplicationData.Current.LocalSettings.Values[propertyName];
-                return value.ToString();
-            }
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
+                {
+                    object value = ApplicationData.Current.LocalSettings.Values[propertyName];
+                    return value.ToString();
+                }
+            } catch { }
 
             return string.Empty;
         }
 
         private static void SetString(string propertyName, string value)
         {
-            ApplicationData.Current.LocalSettings.Values[propertyName] = value;
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value;
+            } catch { }
         }
 
         public static bool AudioModuleEnabled
