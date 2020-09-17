@@ -154,7 +154,7 @@ namespace ModernFlyouts
             {
                 _elapsedTimer.Stop();
 
-                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && e.GetPosition(TopBarGrid).Y <= 10)
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
                 {
                     _topBarOverlay = true;
                     UpdateTopBar(true);
@@ -172,13 +172,13 @@ namespace ModernFlyouts
             };
             MouseMove += (_, e) =>
             {
-                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && e.GetPosition(TopBarGrid).Y > 32)
+                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && !IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
                 {
                     _topBarOverlay = false;
                     UpdateTopBar(false);
                 }
 
-                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && e.GetPosition(TopBarGrid).Y <= 10)
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
                 {
                     _topBarOverlay = true;
                     UpdateTopBar(true);
@@ -256,7 +256,7 @@ namespace ModernFlyouts
                     From = R1.Height,
                     To = new GridLength(32),
                     Duration = TimeSpan.FromMilliseconds(167),
-                    EasingFunction = new BackEase() { EasingMode = EasingMode.EaseOut }
+                    EasingFunction = new CircleEase() { EasingMode = EasingMode.EaseOut }
                 };
                 R1.BeginAnimation(RowDefinition.HeightProperty, glAnim);
             }
@@ -278,6 +278,11 @@ namespace ModernFlyouts
         private void TopBarPinButton_Click(object sender, RoutedEventArgs e)
         {
             FlyoutHandler.Instance.TopBarEnabled = !FlyoutHandler.Instance.TopBarEnabled;
+        }
+
+        private static bool IsPointWithinBounds(FrameworkElement frameworkElement, Point point)
+        {
+            return point.X >= 0 && point.Y >= 0 && point.X <= frameworkElement.ActualWidth && point.Y <= frameworkElement.ActualHeight;
         }
 
         private int leftShadowMargin = 20;

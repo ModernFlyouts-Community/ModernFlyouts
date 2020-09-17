@@ -10,6 +10,9 @@ namespace ModernFlyouts
 {
     public class FlyoutHandler : INotifyPropertyChanged
     {
+
+        public static event EventHandler Initialized;
+
         enum HookMessageEnum : uint
         {
             HOOK_MEDIA_PLAYPAUSE = 917504,
@@ -27,6 +30,8 @@ namespace ModernFlyouts
         #region Properties
 
         public static FlyoutHandler Instance { get; set; }
+
+        public static bool HasInitialized = false;
 
         public KeyboardHook KeyboardHook { get; private set; }
 
@@ -175,6 +180,9 @@ namespace ModernFlyouts
             BrightnessFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
+
+            HasInitialized = true;
+            Initialized?.Invoke(null, null);
         }
 
         private void DUIDestroyed()
@@ -322,7 +330,7 @@ namespace ModernFlyouts
         public static void SafelyExitApplication()
         {
             DUIHandler.FindDUIAndShow();
-            Application.Current.Shutdown();
+            Environment.Exit(0);
         }
 
         public static void ShowSettingsWindow()
