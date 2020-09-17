@@ -70,7 +70,7 @@
                         </Grid.ColumnDefinitions>
                         
                         <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                ui:ControlHelper.CornerRadius="8,2,2,8"
+                                ui:ControlHelper.CornerRadius="8,2,2,2"
                                 Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Click="settingsItem_Click">
                             <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Setting}" FontSize="16" />
                         </Button>
@@ -94,12 +94,12 @@
                         </Button>
 
                         <Button x:Name="HideFlyoutButton" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                                ui:ControlHelper.CornerRadius="2,8,8,2" Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Close">
+                                ui:ControlHelper.CornerRadius="2,8,2,2" Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Close">
                             <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Cancel}" FontSize="12" />
                         </Button>
 
-                        <Border Background="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Grid.Row="1" Grid.Column="2"
-                                Height="2" CornerRadius="1" />
+                        <Rectangle Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Grid.Row="1" Grid.Column="2"
+                                   RadiusX="1" RadiusY="1" Width="30" Height="2"/>
                     </Grid>
 
                     <local:CrossFadeContentControl x:Name="PrimaryHost"
