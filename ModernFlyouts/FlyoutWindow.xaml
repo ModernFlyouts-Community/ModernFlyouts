@@ -5,138 +5,136 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:util="clr-namespace:ModernFlyouts.Utilities" xmlns:tb="http://www.hardcodet.net/taskbar"
-        Background="Transparent" SizeToContent="Height" WindowStyle="None" Width="{DynamicResource FlyoutWidth}"
+        Background="Transparent" SizeToContent="WidthAndHeight" WindowStyle="None"
         AllowsTransparency="True" mc:Ignorable="d" ResizeMode="NoResize" Topmost="True"
-        ShowInTaskbar="False" Title="Modern Flyouts">
+        ShowInTaskbar="False" Title="Modern Flyouts" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}">
+
     <Window.Resources>
+
         <Storyboard x:Key="ShowFlyout">
             <ObjectAnimationUsingKeyFrames BeginTime="0" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
             </ObjectAnimationUsingKeyFrames>
 
-            <ui:FadeInThemeAnimation Storyboard.TargetName="ContentsPanel"/>
+            <ui:FadeInThemeAnimation Storyboard.TargetName="ContentGrid"/>
 
-            <DoubleAnimation To="0" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T1">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
-
-            <DoubleAnimation To="0" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T2">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T1">
+                <DiscreteDoubleKeyFrame KeyTime="0" Value="-40" />
+                <SplineDoubleKeyFrame KeyTime="0:0:0.367" Value="0" KeySpline="0.1, 0.9, 0.2, 1" />
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        
         <Storyboard x:Key="HideFlyout">
-            <ui:FadeOutThemeAnimation Storyboard.TargetName="ContentsPanel"/>
+            <ui:FadeOutThemeAnimation Storyboard.TargetName="ContentGrid" />
 
-            <DoubleAnimation To="-40" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T1">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
-
-            <DoubleAnimation To="40" Duration="0:0:0.200" Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T2">
-                <DoubleAnimation.EasingFunction>
-                    <CircleEase EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T1">
+                <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="0:0:0.367" Value="-40" KeySpline="1, 0.2, 0.9, 0.1" />
+            </DoubleAnimationUsingKeyFrames>
 
             <ObjectAnimationUsingKeyFrames BeginTime="0:0:0.210" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
     
     <Window.Triggers>
         <EventTrigger RoutedEvent="local:FlyoutWindow.FlyoutShown">
-            <BeginStoryboard Storyboard="{StaticResource ShowFlyout}"/>
+            <BeginStoryboard Storyboard="{StaticResource ShowFlyout}" />
         </EventTrigger>
         <EventTrigger RoutedEvent="local:FlyoutWindow.FlyoutHidden">
-            <BeginStoryboard Storyboard="{StaticResource HideFlyout}"/>
+            <BeginStoryboard Storyboard="{StaticResource HideFlyout}" />
         </EventTrigger>
     </Window.Triggers>
-    
-    <StackPanel x:Name="ContentsPanel">
-        <Border Margin="0" Background="{DynamicResource FlyoutBackground}"
-                CornerRadius="{DynamicResource FlyoutCornerRadius}" RenderTransformOrigin="0.5, 0.5">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <TranslateTransform x:Name="T1"/>
-                </TransformGroup>
-            </Border.RenderTransform>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0"
-                      Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=TopBarEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="34" />
-                        <ColumnDefinition Width="34" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="34" />
-                    </Grid.ColumnDefinitions>
+    <Grid x:Name="ContentGrid">
+        <ui:ThemeShadowChrome Depth="32" CornerRadius="{DynamicResource FlyoutCornerRadius}" Margin="20, 2, 20, 30">
+            <ui:ThemeShadowChrome.RenderTransform>
+                <TranslateTransform x:Name="T1" />
+            </ui:ThemeShadowChrome.RenderTransform>
+            
+            <Border Margin="0" Background="{DynamicResource FlyoutBackground}"
+                    CornerRadius="{DynamicResource FlyoutCornerRadius}" RenderTransformOrigin="0.5, 0.5">
+                <StackPanel Width="{DynamicResource FlyoutWidth}">
+                    <Grid x:Name="TopBarGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32" />
+                            <RowDefinition Height="0" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="34" />
+                            <ColumnDefinition Width="34" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="34" />
+                            <ColumnDefinition Width="34" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                ui:ControlHelper.CornerRadius="8,2,2,2"
+                                Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Click="settingsItem_Click">
+                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Setting}" FontSize="16" />
+                        </Button>
+
+                        <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
+                                Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Align to default position">
+                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.AlignTopLeft}" FontSize="12" />
+                        </Button>
+
+                        <Border x:Name="MovableAreaBorder" Grid.Column="2" VerticalAlignment="Bottom" Height="32"
+                                Background="#22BBBBBB" CornerRadius="0,0,10,10">
+                            <Rectangle Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" RadiusX="1" RadiusY="1" Width="30" Height="2"/>
+                        </Border>
+
+                        <Button x:Name="TopBarPinButton" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                      ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
+                                      Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Unpin TopBar"
+                                      Click="TopBarPinButton_Click">
+                            <ui:FontIcon x:Name="TopBarPinButtonIcon" Glyph="{x:Static util:CommonGlyphs.UnPin}" FontSize="16" />
+                        </Button>
+
+                        <Button x:Name="HideFlyoutButton" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                ui:ControlHelper.CornerRadius="2,8,2,2" Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Close">
+                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Cancel}" FontSize="12" />
+                        </Button>
+
+                        <Rectangle Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Grid.Row="1" Grid.Column="2"
+                                   RadiusX="1" RadiusY="1" Width="30" Height="2"/>
+                    </Grid>
+
+                    <local:CrossFadeContentControl x:Name="PrimaryHost"
+                        Visibility="{Binding FlyoutHelper.PrimaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Content="{Binding FlyoutHelper.PrimaryContent}" />
+
+                    <local:CrossFadeContentControl x:Name="SecondaryHost"
+                        Visibility="{Binding FlyoutHelper.SecondaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Content="{Binding FlyoutHelper.SecondaryContent}" />
                     
-                    <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left"
-                            ui:ControlHelper.CornerRadius="8,2,2,8"
-                            Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Settings" Click="settingsItem_Click">
-                        <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Setting}" FontSize="16"/>
-                    </Button>
-
-                    <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left"
-                            ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
-                            Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Align">
-                        <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.AlignTopLeft}" FontSize="12"/>
-                    </Button>
-
-                    <Border x:Name="MovableAreaBorder" Grid.Column="2" Background="#22BBBBBB" CornerRadius="0,0,10,10">
-                        <Border Margin="10" BorderBrush="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Opacity="0.2" BorderThickness="0, 1, 0, 1"/>
-                    </Border>
-
-                    <Button x:Name="HideFlyoutButton" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" ui:ControlHelper.CornerRadius="2,8,8,2" 
-                    Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="Close">
-                        <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Cancel}" FontSize="12"/>
-                    </Button>
-                </Grid>
-                <local:CrossFadeContentControl 
-                    Grid.Row="1" x:Name="PrimaryHost"
-                    Visibility="{Binding FlyoutHelper.PrimaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"
-                    Content="{Binding FlyoutHelper.PrimaryContent}"/>
-            </Grid>
-        </Border>
-
-        <Border Margin="0,2,0,0" RenderTransformOrigin="0.5, 0.5"
-                Visibility="{Binding FlyoutHelper.SecondaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <TranslateTransform x:Name="T2"/>
-                </TransformGroup>
-            </Border.RenderTransform>
-            <local:CrossFadeContentControl Content="{Binding FlyoutHelper.SecondaryContent}"/>
-        </Border>
+                </StackPanel>
+            </Border>
+        </ui:ThemeShadowChrome>
         
+        <!--#region: Tray Icon -->
         <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico" TrayMouseDoubleClick="settingsItem_Click">
             <tb:TaskbarIcon.TrayToolTip>
-                <ToolTip x:Name="TrayToolTip" Content="ModernFlyouts" ui:ThemeManager.RequestedTheme="Dark"/>
+                <ToolTip x:Name="TrayToolTip" Content="ModernFlyouts" ui:ThemeManager.RequestedTheme="Dark" />
             </tb:TaskbarIcon.TrayToolTip>
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Name="TrayContextMenu" ui:ThemeManager.RequestedTheme="Dark">
                     <MenuItem Header="Settings" Click="settingsItem_Click">
                         <MenuItem.Icon>
-                            <ui:SymbolIcon Symbol="Setting"/>
+                            <ui:SymbolIcon Symbol="Setting" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="Exit" Click="exitItem_Click">
                         <MenuItem.Icon>
-                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.PowerButton}"/>
+                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.PowerButton}" />
                         </MenuItem.Icon>
                     </MenuItem>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
-    </StackPanel>
+        <!--#endregion-->
+        
+    </Grid>
 </Window>

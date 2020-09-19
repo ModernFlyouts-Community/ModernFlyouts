@@ -59,9 +59,9 @@
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <PackageCertificateThumbprint>BAE3C540FAA71D3DC357FBA574927BFBAC8B903B</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
-    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
@@ -151,6 +151,7 @@
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">

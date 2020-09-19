@@ -17,37 +17,39 @@ namespace ModernFlyouts
         {
             AlwaysHandleDefaultFlyout = false;
 
-            PrimaryContent = null;
-            PrimaryContentVisible = false;
-
             lockKeysControl = new LockKeysControl();
 
-            SecondaryContent = lockKeysControl;
-            SecondaryContentVisible = true;
+            PrimaryContent = lockKeysControl;
 
             OnEnabled();
         }
 
-        private void KeyPressed(Key Key, int virtualKey)
+        private void KeyPressed(Key key, int virtualKey)
         {
-            if (Key == Key.CapsLock || Key == Key.Capital)
+            if (key == Key.CapsLock || key == Key.Capital)
             {
                 var islock = !Keyboard.IsKeyToggled(Key.CapsLock);
                 Prepare(LockKeys.CapsLock, islock);
                 ShowFlyout();
             }
-            else if (Key == Key.NumLock)
+            else if (key == Key.NumLock)
             {
                 var islock = !Keyboard.IsKeyToggled(Key.NumLock);
                 Prepare(LockKeys.NumLock, islock);
                 ShowFlyout();
             }
-            else if (Key == Key.Scroll)
+            else if (key == Key.Scroll)
             {
                 var islock = !Keyboard.IsKeyToggled(Key.Scroll);
                 Prepare(LockKeys.ScrollLock, islock);
                 ShowFlyout();
-            }    
+            }
+            else if (key == Key.Insert)
+            {
+                var islock = !Keyboard.IsKeyToggled(Key.Insert);
+                Prepare(LockKeys.Insert, islock);
+                ShowFlyout();
+            }
 
             void ShowFlyout()
             {
@@ -57,7 +59,17 @@ namespace ModernFlyouts
 
         private void Prepare(LockKeys key, bool islock)
         {
-            var msg = key.ToString() + (islock ? " is on." : " is off.");
+            string msg = string.Empty;
+
+            if (key != LockKeys.Insert)
+            {
+                msg = key.ToString() + (islock ? " is on" : " is off");
+            }
+            else
+            {
+                msg = islock ? "Overtype Mode" : "Insert Mode";
+            }
+
             lockKeysControl.txt.Text = msg;
         }
 
@@ -65,7 +77,8 @@ namespace ModernFlyouts
         {
             CapsLock,
             NumLock,
-            ScrollLock
+            ScrollLock,
+            Insert
         }
 
         protected override void OnEnabled()

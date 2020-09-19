@@ -69,22 +69,17 @@ namespace ModernFlyouts
 
         public void OnExternalUpdated(bool isMediaKey)
         {
-            if (!isMediaKey || (isMediaKey && _SMTCAvail))
+            if ((!isMediaKey && device != null) || (isMediaKey && _SMTCAvail))
+            {
                 ShowFlyoutRequested?.Invoke(this);
+            }
         }
 
         #region Volume
 
         private void Client_DefaultDeviceChanged(object sender, string e)
         {
-            if (e != null)
-            {
-                UpdateDevice(enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia));
-            }
-            else
-            {
-                UpdateDevice(null);
-            }
+            UpdateDevice(enumerator.GetDevice(e));
         }
 
         private void UpdateDevice(MMDevice mmdevice)
@@ -116,10 +111,10 @@ namespace ModernFlyouts
             volumeControl.Dispatcher.Invoke(() =>
             {
                 UpdateVolumeGlyph(volume);
-                _isInCodeValueChange = true;
-                volumeControl.VolumeSlider.Value = Math.Round(volume);
-                _isInCodeValueChange = false;
                 volumeControl.textVal.Text = Math.Round(volume).ToString("00");
+                _isInCodeValueChange = true;
+                volumeControl.VolumeSlider.Value = volume;
+                _isInCodeValueChange = false;
             });
         }
 

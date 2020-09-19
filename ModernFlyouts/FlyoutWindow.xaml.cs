@@ -1,5 +1,9 @@
-﻿using System;
+﻿using ModernFlyouts.Utilities;
+using System;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace ModernFlyouts
@@ -10,7 +14,7 @@ namespace ModernFlyouts
 
         #region Properties
 
-        public static readonly DependencyProperty VisibleProperty = 
+        public static readonly DependencyProperty VisibleProperty =
             DependencyProperty.Register(
                 nameof(Visible),
                 typeof(bool),
@@ -106,7 +110,7 @@ namespace ModernFlyouts
 
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this)) { return; }
 
-            AlignFlyout();
+            AlignFlyout(false);
             MovableAreaBorder.MouseLeftButtonDown += (_, __) => DragMove();
             HideFlyoutButton.Click += (_, __) => Visible = false;
             AlignButton.Click += (_, __) => AlignFlyout();
@@ -139,14 +143,48 @@ namespace ModernFlyouts
 
         public void StartHideTimer()
         {
-           if (!_elapsedTimer.IsEnabled) { _elapsedTimer.Start(); }
+            if (!_elapsedTimer.IsEnabled) { _elapsedTimer.Start(); }
         }
 
         private void OtherPreps()
         {
             SetupHideTimer();
-            MouseEnter += (_, __) => _elapsedTimer.Stop();
-            MouseLeave += (_, __) => _elapsedTimer.Start();
+
+            MouseEnter += (_, e) =>
+            {
+                _elapsedTimer.Stop();
+
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
+                {
+                    _topBarOverlay = true;
+                    UpdateTopBar(true);
+                }
+            };
+            MouseLeave += (_, e) =>
+            {
+                _elapsedTimer.Start();
+
+                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled)
+                {
+                    _topBarOverlay = false;
+                    UpdateTopBar(false);
+                }
+            };
+            MouseMove += (_, e) =>
+            {
+                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && !IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
+                {
+                    _topBarOverlay = false;
+                    UpdateTopBar(false);
+                }
+
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
+                {
+                    _topBarOverlay = true;
+                    UpdateTopBar(true);
+                }
+            };
+
             PreviewMouseDown += (_, __) => _elapsedTimer.Stop();
             PreviewStylusDown += (_, __) => _elapsedTimer.Stop();
             PreviewMouseUp += (_, __) => { _elapsedTimer.Stop(); _elapsedTimer.Start(); };
@@ -156,20 +194,39 @@ namespace ModernFlyouts
         internal void SetUpAnimPreps()
         {
             T1.Y = -40;
-            T2.Y = 40;
-            ContentsPanel.Opacity = 0;
+            ContentGrid.Opacity = 0;
         }
 
-        private Point DefaultPosition = default;
-
-        private void AlignFlyout()
+        private void AlignFlyout(bool toDefault = true)
         {
-            if (DefaultPosition == default)
+            var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : AppDataHelper.FlyoutPosition;
+
+            Left = defaultPosition.X - leftShadowMargin; Top = defaultPosition.Y;
+
+            if (toDefault)
             {
-                DefaultPosition = DUIHandler.GetCoordinates();
+                SaveFlyoutPosition();
+            }
+        }
+
+        public void SaveFlyoutPosition()
+        {
+            AppDataHelper.FlyoutPosition = new Point(Left + leftShadowMargin, Top);
+        }
+
+        public void OnTopBarEnabledChanged(bool value)
+        {
+            TopBarPinButtonIcon.Glyph = value ? CommonGlyphs.UnPin : CommonGlyphs.Pin;
+            TopBarPinButton.ToolTip = value ? "Unpin TopBar" : "Pin TopBar";
+            _topBarOverlay = false;
+            var pos = Mouse.GetPosition(TopBarGrid);
+            if (pos.Y > 0 && pos.Y < 32)
+            {
+                _topBarOverlay = true;
+                value = true;
             }
 
-            Left = DefaultPosition.X; Top = DefaultPosition.Y;
+            UpdateTopBar(value);
         }
 
         #region Tray Menu Methods
@@ -185,5 +242,50 @@ namespace ModernFlyouts
         }
 
         #endregion
+
+        private void UpdateTopBar(bool showTopBar)
+        {
+            var R1 = this.TopBarGrid.RowDefinitions[0];
+            var R2 = this.TopBarGrid.RowDefinitions[1];
+            if (showTopBar)
+            {
+                this.TopBarGrid.Margin = new Thickness(0);
+                R2.Height = new GridLength(0);
+                var glAnim = new GridLengthAnimation()
+                {
+                    From = R1.Height,
+                    To = new GridLength(32),
+                    Duration = TimeSpan.FromMilliseconds(167),
+                    EasingFunction = new CircleEase() { EasingMode = EasingMode.EaseOut }
+                };
+                R1.BeginAnimation(RowDefinition.HeightProperty, glAnim);
+            }
+            else
+            {
+                this.TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
+                R2.Height = new GridLength(10);
+                var glAnim = new GridLengthAnimation()
+                {
+                    From = R1.Height,
+                    To = new GridLength(0),
+                    Duration = TimeSpan.FromMilliseconds(167),
+                    EasingFunction = new CircleEase() { EasingMode = EasingMode.EaseOut }
+                };
+                R1.BeginAnimation(RowDefinition.HeightProperty, glAnim);
+            }
+        }
+
+        private void TopBarPinButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlyoutHandler.Instance.TopBarEnabled = !FlyoutHandler.Instance.TopBarEnabled;
+        }
+
+        private static bool IsPointWithinBounds(FrameworkElement frameworkElement, Point point)
+        {
+            return point.X >= 0 && point.Y >= 0 && point.X <= frameworkElement.ActualWidth && point.Y <= frameworkElement.ActualHeight;
+        }
+
+        private int leftShadowMargin = 20;
+        private bool _topBarOverlay = false;
     }
 }

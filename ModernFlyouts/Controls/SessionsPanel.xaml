@@ -19,7 +19,7 @@
                         x:Name="Arrow"
                         FontFamily="{DynamicResource SymbolThemeFontFamily}"
                         Data="{TemplateBinding Content}"
-                        Foreground="{DynamicResource ScrollBarButtonArrowForeground}"/>
+                        Foreground="{DynamicResource ScrollBarButtonArrowForeground}" />
             </Border>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -51,9 +51,9 @@
                         <Border x:Name="Root" SnapsToDevicePixels="true">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <Button x:Name="PART_LineLeftButton"
                                         Command="{x:Static ScrollBar.LineLeftCommand}"
@@ -66,8 +66,8 @@
                                         VerticalAlignment="Center">
                                     <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&gt;">
-                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value"/>
-                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Minimum"/>
+                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value" />
+                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Minimum" />
                                         </MultiBinding>
                                     </Button.Visibility>
                                 </Button>
@@ -82,8 +82,8 @@
                                         VerticalAlignment="Center">
                                     <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&lt;">
-                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value"/>
-                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Maximum"/>
+                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value" />
+                                            <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Maximum" />
                                         </MultiBinding>
                                     </Button.Visibility>
                                 </Button>
@@ -115,7 +115,7 @@
                                     CanHorizontallyScroll="False"
                                     CanVerticallyScroll="False"
                                     Content="{TemplateBinding Content}"
-                                    ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
                                 <ScrollBar
                                     x:Name="PART_HorizontalScrollBar" Style="{StaticResource SecondaryContentScrollBarStyle}"
                                     AutomationProperties.AutomationId="HorizontalScrollBar"
@@ -124,7 +124,7 @@
                                     ViewportSize="{TemplateBinding ViewportWidth}"
                                     Orientation="Horizontal"
                                     Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
-                                    Value="{TemplateBinding HorizontalOffset}"/>
+                                    Value="{TemplateBinding HorizontalOffset}" />
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -135,7 +135,9 @@
         <!--endregion-->
         
     </UserControl.Resources>
+    
     <ScrollViewer Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="True">
         <StackPanel x:Name="SessionsStackPanel" Orientation="Horizontal" />
     </ScrollViewer>
+    
 </UserControl>

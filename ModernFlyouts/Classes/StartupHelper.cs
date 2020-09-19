@@ -10,23 +10,29 @@ namespace ModernFlyouts
 
         public static async Task<bool> GetRunAtStartupEnabled()
         {
-            StartupTask startupTask = await StartupTask.GetAsync(StartupId);
+            try
+            {
+                StartupTask startupTask = await StartupTask.GetAsync(StartupId);
 
-            return startupTask.State == StartupTaskState.Enabled;
+                return startupTask.State == StartupTaskState.Enabled;
+            } catch { return true; }
         }
 
         public static async void SetRunAtStartupEnabled(bool value)
         {
-            StartupTask startupTask = await StartupTask.GetAsync(StartupId);
-            
-            if (value)
+            try
             {
-                await startupTask.RequestEnableAsync();
-            }
-            else
-            {
-                startupTask.Disable();
-            }
+                StartupTask startupTask = await StartupTask.GetAsync(StartupId);
+
+                if (value)
+                {
+                    await startupTask.RequestEnableAsync();
+                }
+                else
+                {
+                    startupTask.Disable();
+                }
+            } catch { }
         }
     }
 }

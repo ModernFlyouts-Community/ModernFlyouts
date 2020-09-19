@@ -16,6 +16,7 @@ namespace ModernFlyouts
 
         private const string arg_settings = "/settings";
         private const string arg_exit = "/exit-safe";
+        private const string arg_restore = "/restore";
         private const char arg_delimiter = ' ';
         private static Mutex mutex = new Mutex(true, AppName);
 
@@ -30,6 +31,8 @@ namespace ModernFlyouts
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
             {
+                ProcessCommandLineArgs(e.Args);
+
                 CreateRemoteService(AppName);
 
                 FlyoutHandler.Instance = new FlyoutHandler();
@@ -39,8 +42,6 @@ namespace ModernFlyouts
             {
                 SignalFirstInstance(AppName);
             }
-
-            ProcessCommandLineArgs(e.Args);
         }
 
         private static async void CreateRemoteService(string channelName)
@@ -71,20 +72,37 @@ namespace ModernFlyouts
 
         public static void ProcessCommandLineArgs(IList<string> args, bool isFirstInstance = true)
         {
-            if (!isFirstInstance && args?.Count == 0)
+            if (args?.Count == 0)
             {
-                FlyoutHandler.ShowSettingsWindow();
-                return;
-            }
-
-            if (args?.Count > 1)
-            {
-                //the first index always contains the location of the exe so we need to check the second index
-                if (args[1].ToLowerInvariant() == arg_settings)
+                if (!isFirstInstance)
                 {
                     FlyoutHandler.ShowSettingsWindow();
                 }
-                else if (args[1].ToLowerInvariant() == arg_exit)
+            }
+            else
+            {
+                var arg = isFirstInstance ? args[0] : args[1];
+
+                if (arg.ToLowerInvariant() == arg_settings)
+                {
+                    if (FlyoutHandler.HasInitialized)
+                    {
+                        FlyoutHandler.ShowSettingsWindow();
+                    }
+                    else
+                    {
+                        FlyoutHandler.Initialized += (_, __) => FlyoutHandler.ShowSettingsWindow();
+                    }
+                }
+                else if (arg.ToLowerInvariant() == arg_restore)
+                {
+                    if (!DUIHandler.IsDUIAvailable())
+                    {
+                        DUIHandler.GetAllInfos();
+                    }
+                    FlyoutHandler.SafelyExitApplication();
+                }
+                else if (arg.ToLowerInvariant() == arg_exit)
                 {
                     FlyoutHandler.SafelyExitApplication();
                 }
@@ -113,23 +131,32 @@ namespace ModernFlyouts
             ProcessCommandLineArgs(args, false);
         }
 
-        private async void CreateJumpList()
+        private void CreateJumpList()
         {
             JumpList jumpList = new JumpList();
             JumpList.SetJumpList(Current, jumpList);
             JumpTask settingsTask = new JumpTask
             {
                 Title = "Settings",
-                Description = "Open settings window.",
+                Description = "Open settings window",
                 ApplicationPath = AppPath,
                 Arguments = arg_settings
             };
             jumpList.JumpItems.Add(settingsTask);
 
+            JumpTask restoreTask = new JumpTask
+            {
+                Title = "Restore Default",
+                Description = "Restores the windows default flyout and safely quits this app",
+                ApplicationPath = AppPath,
+                Arguments = arg_restore
+            };
+            jumpList.JumpItems.Add(restoreTask);
+
             JumpTask exitTask = new JumpTask
             {
                 Title = "Exit",
-                Description = "Exit the app safely.",
+                Description = "Exit the app safely",
                 ApplicationPath = AppPath,
                 Arguments = arg_exit
             };

@@ -3,7 +3,7 @@
 
 ![ModernFlyouts](ModernFlyouts/Assets/Images/ModernFlyouts_128.png)
 
-[Overview](#overview) | [Features](#features) | [Installation](#installation) | [Screenshots](#screenshots)
+[Overview](#overview) | [Features](#features) | [System Requirements](#system-requirements) | [Installation](#installation) | [Screenshots](#screenshots)
 
 ## Overview
 
@@ -16,7 +16,7 @@ This application will replace the default audio/airplane/brightness flyouts foun
 This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). With additional implementation for airplane mode and brightness flyouts. This project also includes a flyout for lock keys (caps lock, scroll lock & num lock).
 
 > Note : The native flyout is not permanently closed but will be hidden when this flyout is shown
-> Thus, users have the freedom to choose between the windows default one. this modern one or none.
+> Thus, users have the freedom to choose between the windows default one, this modern one or none.
 
 ## Features
 - Fluent UI (similar to the one in Windows 10X)
@@ -29,27 +29,29 @@ This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioF
 - Can Choose either Windows Default Flyout, ModernFlyouts or None.
 - Flyout's TopBar can be hidden.
 - Flyout is **Draggable**
-- Flyout can **aligned to default position**
+- Flyout can be **aligned to the default position**
 - **Slide Animation** when hiding & showing.
 - Transitions.
-- And finally this application works in **all versions of Windows 10** 🎉🎉🎉 (and also tested on Windows 8) (fallback method is added for **SMTC** and not restricted to Windows 10 17763+)
-- Targets both .NET 4.6.2 & .NET Core 3.1 (Only .NET Framework 4.6.2 is publically available)
+- This application works on **Windows 10 1809 and above** (v0.3.0 supports Windows 8+, however to simplify distribution and due to MSIX packaging limitations v0.4.0+ won't support windows versions less than 1809)
+
+## System Requirements
+- Windows 10 1809+
+- Make sure you have .NET Core 3.1 runtime installed on your machine.
 
 ## Installation
 Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
-Both distribution methods will be supported, however only the store version will automatically remain up to date.
+Both distribution methods will be supported, however the store version is recommended as it is easier to install and will automatically remain up to date.
 
-**Github:**
-1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
-2. Download the attachment file there or [click here](https://github.com/ShankarBUS/ModernFlyouts/releases/latest/download/ModernFlyoutsSetup.msi) to download it.
-3. Make sure you have .NET Framework 4.6.2 installed on your machine.
-4. Install the setup and run **ModernFlyouts.exe**.
-
-**Alternatively:**
+**Microsoft Store:**
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='Microsoft Store' width='160'/></a>
 
+**Alternatively download from Github:**
+
+1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
+2. Download the latest *.msix file from the assets.
+3. Install the **ModernFlyouts.msix** file and launch the app.
 
 ## IMPORTANT NOTE
 This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.

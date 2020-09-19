@@ -10,6 +10,9 @@ namespace ModernFlyouts
 {
     public class FlyoutHandler : INotifyPropertyChanged
     {
+
+        public static event EventHandler Initialized;
+
         enum HookMessageEnum : uint
         {
             HOOK_MEDIA_PLAYPAUSE = 917504,
@@ -27,6 +30,8 @@ namespace ModernFlyouts
         #region Properties
 
         public static FlyoutHandler Instance { get; set; }
+
+        public static bool HasInitialized = false;
 
         public KeyboardHook KeyboardHook { get; private set; }
 
@@ -74,7 +79,24 @@ namespace ModernFlyouts
                 {
                     topBarEnabled = value;
                     OnPropertyChanged();
+                    FlyoutWindow.OnTopBarEnabledChanged(value);
                     AppDataHelper.TopBarEnabled = value;
+                }
+            }
+        }
+
+        private Point defaultFlyoutPosition = new Point(50, 60);
+
+        public Point DefaultFlyoutPosition
+        {
+            get { return defaultFlyoutPosition; }
+            set
+            {
+                if (defaultFlyoutPosition != value)
+                {
+                    defaultFlyoutPosition = value;
+                    OnPropertyChanged();
+                    AppDataHelper.DefaultFlyoutPosition = value;
                 }
             }
         }
@@ -134,6 +156,7 @@ namespace ModernFlyouts
             }
 
             TopBarEnabled = AppDataHelper.TopBarEnabled;
+            DefaultFlyoutPosition = AppDataHelper.DefaultFlyoutPosition;
 
             async void getStartupStatus()
             {
@@ -157,6 +180,9 @@ namespace ModernFlyouts
             BrightnessFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
 
             #endregion
+
+            HasInitialized = true;
+            Initialized?.Invoke(null, null);
         }
 
         private void DUIDestroyed()
@@ -242,6 +268,7 @@ namespace ModernFlyouts
 
         private const int MA_NOACTIVATE = 0x3;
         private const int WM_MOUSEACTIVATE = 0x21;
+        private const int WM_EXITSIZEMOVE = 0x0232;
 
         private void CreateWndProc()
         {
@@ -281,6 +308,11 @@ namespace ModernFlyouts
                 }
             }
 
+            if (msg == WM_EXITSIZEMOVE)
+            {
+                FlyoutWindow.SaveFlyoutPosition();
+            }
+
             return IntPtr.Zero;
         }
 
@@ -298,7 +330,7 @@ namespace ModernFlyouts
         public static void SafelyExitApplication()
         {
             DUIHandler.FindDUIAndShow();
-            Application.Current.Shutdown();
+            Environment.Exit(0);
         }
 
         public static void ShowSettingsWindow()

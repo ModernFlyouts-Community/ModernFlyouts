@@ -9,11 +9,11 @@ namespace ModernFlyouts
     {
         public event KeyDownEventHandler KeyDown;
 
-        public delegate void KeyDownEventHandler(Key Key, int virtualKey);
+        public delegate void KeyDownEventHandler(Key key, int virtualKey);
 
         public event KeyUpEventHandler KeyUp;
 
-        public delegate void KeyUpEventHandler(Key Key, int virtualKey);
+        public delegate void KeyUpEventHandler(Key key, int virtualKey);
 
         private const int WH_KEYBOARD_LL = 13;
         private const int HC_ACTION = 0;
