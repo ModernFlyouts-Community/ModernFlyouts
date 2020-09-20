@@ -168,9 +168,7 @@ namespace ModernFlyouts
                 brightnessWatcher.Changed += BrightnessWatcher_Changed;
                 brightnessWatcher.Start();
 
-                _isInCodeValueChange = true;
-                brightnessControl.BrightnessSlider.Value = GetBrightnessLevel();
-                _isInCodeValueChange = false;
+                UpdateBrightness(GetBrightnessLevel());
             }
         }
 

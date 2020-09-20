@@ -10,7 +10,8 @@
   <Identity
     Name="32669SamG.ModernFlyouts"
     Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
-    Version="0.4.4.0" />
+    Version="0.5.0.0" />
+
 
   <Properties>
     <DisplayName>ModernFlyouts</DisplayName>
@@ -45,6 +46,7 @@
           </uap:ShowNameOnTiles>
         </uap:DefaultTile >
         <uap:SplashScreen Image="Images\SplashScreen.png" />
+        <uap:LockScreen BadgeLogo="Images\BadgeLogo.png" Notification="badge"/>
       </uap:VisualElements>
       <Extensions>
         <uap5:Extension
