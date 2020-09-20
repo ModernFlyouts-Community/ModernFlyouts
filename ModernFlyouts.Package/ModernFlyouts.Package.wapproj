@@ -100,6 +100,11 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\BadgeLogo.scale-100.png" />
+    <Content Include="Images\BadgeLogo.scale-125.png" />
+    <Content Include="Images\BadgeLogo.scale-150.png" />
+    <Content Include="Images\BadgeLogo.scale-200.png" />
+    <Content Include="Images\BadgeLogo.scale-400.png" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
