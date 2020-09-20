@@ -2,6 +2,7 @@
 using NAudio.CoreAudioApi;
 using NAudio.CoreAudioApi.Interfaces;
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -131,9 +132,15 @@ namespace ModernFlyouts
                     volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume1;
                 else if (volume < 66)
                     volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume2;
+
+                volumeControl.textVal.ClearValue(TextBlock.ForegroundProperty);
+                volumeControl.VolumeSlider.IsEnabled = true;
+
             }
             else
             {
+                volumeControl.textVal.SetResourceReference(TextBlock.ForegroundProperty, "SystemControlForegroundBaseMediumBrush");
+                volumeControl.VolumeSlider.IsEnabled = false;
                 volumeControl.VolumeShadowGlyph.Visibility = Visibility.Collapsed;
                 volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Mute;
             }
