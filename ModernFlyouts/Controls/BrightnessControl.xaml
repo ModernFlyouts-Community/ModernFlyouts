@@ -17,7 +17,7 @@
         <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0" FontSize="16" Glyph="{x:Static util:CommonGlyphs.Brightness}" />
 
         <Slider x:Name="BrightnessSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0"
-                SmallChange="0.01" IsMoveToPointEnabled="True" />
+                SmallChange="0.01" Value="100" IsMoveToPointEnabled="True" />
 
         <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="6"
                    Style="{DynamicResource SubtitleTextBlockStyle}"
