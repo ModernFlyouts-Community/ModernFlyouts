@@ -7,7 +7,7 @@
              Height="64" d:DesignWidth="354">
 
     <TextBlock x:Name="txt" TextAlignment="Center" VerticalAlignment="Center"
-               Style="{DynamicResource BaseTextBlockStyle}"
+               Style="{DynamicResource BaseTextBlockStyle}" FontSize="18"
                Margin="20" Text="Lock key is on" />
 
 </UserControl>

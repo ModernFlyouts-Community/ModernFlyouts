@@ -96,6 +96,7 @@ namespace ModernFlyouts
 
         private void HideFlyout()
         {
+            FlyoutHelper = null;;
             RoutedEventArgs args = new RoutedEventArgs(FlyoutHiddenEvent);
             RaiseEvent(args);
         }
