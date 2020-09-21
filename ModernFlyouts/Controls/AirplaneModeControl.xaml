@@ -11,7 +11,7 @@
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
         <ui:FontIcon x:Name="AirplaneGlyph" Glyph="{x:Static util:CommonGlyphs.Info}" FontSize="24" />
         <TextBlock x:Name="txt" HorizontalAlignment="Left" VerticalAlignment="Center"
-                   Style="{DynamicResource BaseTextBlockStyle}"
+                   Style="{DynamicResource BaseTextBlockStyle}" FontSize="18"
                    Margin="20" Text="Airplane Mode is not available :(" />
     </StackPanel>
     
