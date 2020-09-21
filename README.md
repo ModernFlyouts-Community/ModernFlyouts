@@ -13,30 +13,31 @@
 
 This application will replace the default audio/airplane/brightness flyouts found in Windows shown when the volume or brightness changes or when airplane mode key is pressed with a new modern UI.
 
-This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). With additional implementation for airplane mode and brightness flyouts. This project also includes a flyout for lock keys (caps lock, scroll lock & num lock).
+This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). With additional implementation for airplane mode and brightness flyouts. This project also includes a flyout for lock keys (caps lock, scroll lock, num lock & insert key).
 
 > Note : The native flyout is not permanently closed but will be hidden when this flyout is shown
 > Thus, users have the freedom to choose between the windows default one, this modern one or none.
 
+See the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) page for additional infos
+
 ## Features
 - Fluent UI (similar to the one in Windows 10X)
-- Follows system Light/Dark theme (the theme that taskbar has and not **App Theme**).
-- Media session control has new buttons such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
-- AirplaneMode-flyout Module.
-- LockKeys-flyout Module.
-- Brightness-flyout Module.
-- Each Module can be disabled separately.
-- Can Choose either Windows Default Flyout, ModernFlyouts or None.
-- Flyout's TopBar can be hidden.
-- Flyout is **Draggable**
-- Flyout can be **aligned to the default position**
-- **Slide Animation** when hiding & showing.
-- Transitions.
-- This application works on **Windows 10 1809 and above** (v0.3.0 supports Windows 8+, however to simplify distribution and due to MSIX packaging limitations v0.4.0+ won't support windows versions less than 1809)
+- Follows system Light/Dark theme
+- Media session controls have additional features such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
+- AirplaneMode-flyout Module
+- LockKeys-flyout Module
+- Brightness-flyout Module
+- Each Module can be disabled separately
+- Can Choose either Windows Default Flyout, ModernFlyouts or None
+- Flyout's TopBar can be unpinned
+- Flyout is **Draggable** and autosaves the position
+- Flyout can be **aligned to a default position** (can be modified in the settings)
+- Smooth **Animations** & **Tranisitions**
+- This application works on **Windows 10 1809 and above** (v0.3.0 supports Windows 8+, however to simplify distribution and due to MSIX packaging limitations, v0.4.0+ won't support windows versions less than 1809)
 
 ## System Requirements
 - Windows 10 1809+
-- Make sure you have .NET Core 3.1 runtime installed on your machine.
+- Make sure you have .NET Framework 4.8 runtime installed on your machine.
 
 ## Installation
 Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
@@ -50,8 +51,8 @@ Both distribution methods will be supported, however the store version is recomm
 **Alternatively download from Github:**
 
 1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
-2. Download the latest *.msix file from the assets.
-3. Install the **ModernFlyouts.msix** file and launch the app.
+2. Download the latest ***.msix** file from the assets.
+3. Install the downloaded ***.msix** file and launch the app.
 
 ## IMPORTANT NOTE
 This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
@@ -59,7 +60,7 @@ I could have improved the original project but the project is called **AUDIO**Fl
 
 ### Credits
 - **[@ADeltaX](https://github.com/ADeltaX/)** laid the foundation for this project and has been a huge support along the way.
-- **[@Samuel12321](https://github.com/Samuel12321/)** for publishing this app to **Microsoft Store**.
+- **[@Samuel12321](https://github.com/Samuel12321/)** - package publisher (including **Microsoft Store**), helps maintaining the repo & takes care of issues.
 
 ### Dependencies and References 
 - [NAudio](https://github.com/naudio/NAudio)
@@ -142,6 +143,16 @@ _Without TopBar_
 
 ### Airplane-Mode Flyout
 
+**Dark Theme : (On state)**
+
+![Airplane_On_Dark](docs/images/Airplane_On_Dark.png)
+
+_With TopBar_
+
+![Airplane_On_Dark_NoTop](docs/images/Airplane_On_Dark_NoTop.png)
+
+_Without TopBar_
+
 **Light Theme : (On state)**
 
 ![Airplane_On_Light](docs/images/Airplane_On_Light.png)
@@ -153,6 +164,16 @@ _With TopBar_
 _Without TopBar_
 
 ### Lock-keys flyout
+
+**Dark Theme : (Caps-lock On)**
+
+![LockKey_Caps_Dark](docs/images/LockKey_Caps_Dark.png)
+
+_With TopBar_
+
+![LockKey_Caps_Dark_NoTop](docs/images/LockKey_Caps_Dark_NoTop.png)
+
+_Without TopBar_
 
 **Light Theme : (Caps-lock On)**
 
