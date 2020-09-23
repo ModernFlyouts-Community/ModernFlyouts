@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="General Settings" DataContext="{x:Static local:FlyoutHandler.Instance}">
@@ -49,8 +50,17 @@
                     <ui:ToggleSwitch Header="Flyout TopBar" IsOn="{Binding TopBarEnabled}"
                                      OnContent="Always Visible" OffContent="Auto Hide" />
                     <TextBox ui:ControlHelper.Header="Flyout Default Position (for Align button)" HorizontalAlignment="Left"
-                             ui:ControlHelper.Description="Type the position in 'x, y' format (for e.g. 50,60)"
-                             Text="{Binding Path=DefaultFlyoutPosition, Converter={StaticResource PointToStringConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+                             Style="{DynamicResource ValidatableTextBoxStyle}"
+                             ui:ControlHelper.Description="Type the position in 'x,y' format (for e.g. 50,60)">
+                        <TextBox.Text>
+                            <Binding Path="DefaultFlyoutPosition" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource PointToStringConverter}"
+                                     ValidatesOnNotifyDataErrors="True" ValidatesOnDataErrors="True" NotifyOnValidationError="True">
+                                <Binding.ValidationRules>
+                                    <utils:PointValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                     <ui:ToggleSwitch Header="Tray Icon Mode" IsOn="{Binding UseColoredTrayIcon}"
                                      OnContent="Colored" OffContent="Monochrome" />
                 </ui:SimpleStackPanel>
