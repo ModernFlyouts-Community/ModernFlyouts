@@ -9,24 +9,24 @@ using System.Windows.Input;
 
 namespace ModernFlyouts
 {
-    public partial class SettingsWindow : Window
-    {
+	public partial class SettingsWindow : Window
+	{
 		public SettingsWindow()
-        {
-            InitializeComponent();
+		{
+			InitializeComponent();
 
-            ContentFrame.Navigated += OnNavigated;
+			ContentFrame.Navigated += OnNavigated;
 
-            NavView_Navigate("general", new EntranceNavigationTransitionInfo());
+			NavView_Navigate("general", new EntranceNavigationTransitionInfo());
 
-            KeyDown += (s, e) =>
-            {
-                if (e.Key == Key.Back || (e.Key == Key.Left && Keyboard.Modifiers == ModifierKeys.Alt))
-                {
-                    BackRequested();
-                }
-            };
-        }
+			KeyDown += (s, e) =>
+			{
+				if (e.Key == Key.Back || (e.Key == Key.Left && Keyboard.Modifiers == ModifierKeys.Alt))
+				{
+					BackRequested();
+				}
+			};
+		}
 
 		private readonly List<(string Tag, Type PageType)> _pages = new List<(string Tag, Type PageType)>
 		{
