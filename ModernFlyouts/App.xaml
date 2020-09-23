@@ -140,6 +140,7 @@
             <util:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
             <util:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
             <util:PointToStringConverter x:Key="PointToStringConverter" />
+            <util:ValidationErrorsToStringConverter x:Key="ValidationErrorsToStringConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
@@ -167,6 +168,26 @@
 
             <Style TargetType="ScrollViewer" BasedOn="{StaticResource DefaultScrollViewerStyle}">
                 <Setter Property="util:ScrollViewerHelperEx.IsSmoothScrollingEnabled" Value="True" />
+            </Style>
+
+            <Style x:Key="ValidatableTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError" Value="True">
+                        <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors),
+                        Converter={StaticResource ValidationErrorsToStringConverter}}" />
+                        <Setter Property="Validation.ErrorTemplate">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <AdornedElementPlaceholder />
+                                        <Border BorderBrush="Red" CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                BorderThickness="{DynamicResource TextControlBorderThemeThicknessFocused}" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
             </Style>
 
         </ResourceDictionary>

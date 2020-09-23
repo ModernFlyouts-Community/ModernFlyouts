@@ -16,8 +16,13 @@ namespace ModernFlyouts.Utilities
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var point = Point.Parse(value.ToString());
-            return point;
+            try
+            {
+                var point = Point.Parse(value.ToString());
+                return point;
+            } catch { }
+
+            return default(Point);
         }
     }
 }
