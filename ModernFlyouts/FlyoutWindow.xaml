@@ -115,7 +115,7 @@
         </ui:ThemeShadowChrome>
         
         <!--#region: Tray Icon -->
-        <tb:TaskbarIcon x:Name="TaskbarIcon" IconSource="Assets\Logo.ico" TrayMouseDoubleClick="settingsItem_Click">
+        <tb:TaskbarIcon x:Name="TaskbarIcon" TrayMouseDoubleClick="settingsItem_Click">
             <tb:TaskbarIcon.TrayToolTip>
                 <ToolTip x:Name="TrayToolTip" Content="ModernFlyouts" ui:ThemeManager.RequestedTheme="Dark" />
             </tb:TaskbarIcon.TrayToolTip>

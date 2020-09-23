@@ -47,10 +47,12 @@
                           Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:ToggleSwitch Header="Flyout TopBar" IsOn="{Binding TopBarEnabled}"
-                                 OnContent="Always Visible" OffContent="Auto Hide" />
+                                     OnContent="Always Visible" OffContent="Auto Hide" />
                     <TextBox ui:ControlHelper.Header="Flyout Default Position (for Align button)" HorizontalAlignment="Left"
                              ui:ControlHelper.Description="Type the position in 'x, y' format (for e.g. 50,60)"
                              Text="{Binding Path=DefaultFlyoutPosition, Converter={StaticResource PointToStringConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+                    <ui:ToggleSwitch Header="Tray Icon Mode" IsOn="{Binding UseColoredTrayIcon}"
+                                     OnContent="Colored" OffContent="Monochrome" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

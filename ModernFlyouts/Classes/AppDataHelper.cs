@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Windows.Storage;
 
 namespace ModernFlyouts
@@ -53,6 +54,30 @@ namespace ModernFlyouts
             } catch { }
         }
 
+        private static T GetEnum<T>(string propertyName, T defaultValue) where T : Enum
+        {
+            try
+            {
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
+                {
+                    object value = ApplicationData.Current.LocalSettings.Values[propertyName];
+                    return (T)Enum.Parse(typeof(T), value.ToString());
+                }
+            }
+            catch { }
+
+            return defaultValue;
+        }
+
+        private static void SetEnum<T>(string propertyName, T value) where T : Enum
+        {
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value.ToString();
+            }
+            catch { }
+        }
+
         private static Point GetPoint(string propertyName, Point defaultPoint)
         {
             try
@@ -101,10 +126,10 @@ namespace ModernFlyouts
             set => SetBool(nameof(BrightnessModuleEnabled), value);
         }
 
-        public static string DefaultFlyout
+        public static DefaultFlyout DefaultFlyout
         {
-            get => GetString(nameof(DefaultFlyout));
-            set => SetString(nameof(DefaultFlyout), value);
+            get => GetEnum(nameof(DefaultFlyout), DefaultFlyout.ModernFlyouts);
+            set => SetEnum(nameof(DefaultFlyout), value);
         }
 
         public static bool TopBarEnabled
@@ -125,6 +150,12 @@ namespace ModernFlyouts
         {
             get => GetPoint(nameof(FlyoutPosition), defaultFlyoutPosition);
             set => SetPoint(nameof(FlyoutPosition), value);
+        }
+
+        public static bool UseColoredTrayIcon
+        {
+            get => GetBool(nameof(UseColoredTrayIcon), true);
+            set => SetBool(nameof(UseColoredTrayIcon), value);
         }
     }
 }
