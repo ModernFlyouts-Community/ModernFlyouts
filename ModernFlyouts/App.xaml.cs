@@ -72,40 +72,42 @@ namespace ModernFlyouts
 
         public static void ProcessCommandLineArgs(IList<string> args, bool isFirstInstance = true)
         {
-            if (args?.Count == 0)
+            string arg = string.Empty;
+
+            if ((isFirstInstance && args?.Count > 0) || (!isFirstInstance && args?.Count > 1))
+            {
+                arg = isFirstInstance ? args[0] : args[1];
+            }
+
+            if (arg == string.Empty)
             {
                 if (!isFirstInstance)
                 {
                     FlyoutHandler.ShowSettingsWindow();
                 }
             }
-            else
+            else if (arg.ToLowerInvariant() == arg_settings)
             {
-                var arg = isFirstInstance ? args[0] : args[1];
-
-                if (arg.ToLowerInvariant() == arg_settings)
+                if (FlyoutHandler.HasInitialized)
                 {
-                    if (FlyoutHandler.HasInitialized)
-                    {
-                        FlyoutHandler.ShowSettingsWindow();
-                    }
-                    else
-                    {
-                        FlyoutHandler.Initialized += (_, __) => FlyoutHandler.ShowSettingsWindow();
-                    }
+                    FlyoutHandler.ShowSettingsWindow();
                 }
-                else if (arg.ToLowerInvariant() == arg_restore)
+                else
                 {
-                    if (!DUIHandler.IsDUIAvailable())
-                    {
-                        DUIHandler.GetAllInfos();
-                    }
-                    FlyoutHandler.SafelyExitApplication();
+                    FlyoutHandler.Initialized += (_, __) => FlyoutHandler.ShowSettingsWindow();
                 }
-                else if (arg.ToLowerInvariant() == arg_exit)
+            }
+            else if (arg.ToLowerInvariant() == arg_restore)
+            {
+                if (!DUIHandler.IsDUIAvailable())
                 {
-                    FlyoutHandler.SafelyExitApplication();
+                    DUIHandler.GetAllInfos();
                 }
+                FlyoutHandler.SafelyExitApplication();
+            }
+            else if (arg.ToLowerInvariant() == arg_exit)
+            {
+                FlyoutHandler.SafelyExitApplication();
             }
         }
 
