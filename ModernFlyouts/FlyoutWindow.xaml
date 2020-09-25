@@ -16,7 +16,7 @@
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
             </ObjectAnimationUsingKeyFrames>
 
-            <ui:FadeInThemeAnimation Storyboard.TargetName="ContentGrid"/>
+            <ui:FadeInThemeAnimation Storyboard.TargetName="ContentGrid" />
 
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TranslateTransform.Y)" Storyboard.TargetName="T1">
                 <DiscreteDoubleKeyFrame KeyTime="0" Value="-40" />
@@ -83,7 +83,7 @@
 
                         <Border x:Name="MovableAreaBorder" Grid.Column="2" VerticalAlignment="Bottom" Height="32"
                                 Background="#22BBBBBB" CornerRadius="0,0,10,10">
-                            <Rectangle Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" RadiusX="1" RadiusY="1" Width="30" Height="2"/>
+                            <Rectangle Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" RadiusX="1" RadiusY="1" Width="30" Height="2" />
                         </Border>
 
                         <Button x:Name="TopBarPinButton" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right"
@@ -99,7 +99,7 @@
                         </Button>
 
                         <Rectangle Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Grid.Row="1" Grid.Column="2"
-                                   RadiusX="1" RadiusY="1" Width="30" Height="2"/>
+                                   RadiusX="1" RadiusY="1" Width="30" Height="2" />
                     </Grid>
 
                     <local:CrossFadeContentControl x:Name="PrimaryHost"

@@ -32,6 +32,33 @@ namespace ModernFlyouts
             catch { }
         }
 
+        private static double GetDouble(string propertyName, double defaultValue)
+        {
+            try
+            {
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
+                {
+                    object value = ApplicationData.Current.LocalSettings.Values[propertyName];
+                    if (double.TryParse(value.ToString(), out double result))
+                    {
+                        return result;
+                    }
+                }
+            }
+            catch { }
+
+            return defaultValue;
+        }
+
+        private static void SetDouble(string propertyName, double value)
+        {
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value;
+            }
+            catch { }
+        }
+
         private static string GetString(string propertyName)
         {
             try
@@ -162,6 +189,12 @@ namespace ModernFlyouts
         {
             get => GetString(nameof(SettingsWindowPlacement));
             set => SetString(nameof(SettingsWindowPlacement), value);
+        }
+
+        public static double FlyoutBackgroundOpacity
+        {
+            get => GetDouble(nameof(FlyoutBackgroundOpacity), 90.0);
+            set => SetDouble(nameof(FlyoutBackgroundOpacity), value);
         }
     }
 }

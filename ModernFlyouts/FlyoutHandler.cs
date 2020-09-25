@@ -1,13 +1,9 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
-using ModernFlyouts.Utilities;
-using ModernWpf;
+﻿using ModernFlyouts.Utilities;
 using System;
 using System.ComponentModel;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Interop;
-using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace ModernFlyouts
@@ -30,7 +26,6 @@ namespace ModernFlyouts
 
         DispatcherTimer rehooktimer;
         uint messageShellHookId;
-        ElementTheme currentTheme = ElementTheme.Dark;
 
         #region Properties
 
@@ -46,6 +41,8 @@ namespace ModernFlyouts
 
         public SettingsWindow SettingsWindow { get; set; }
 
+        public UIManager UIManager { get; set; }
+
         public AudioFlyoutHelper AudioFlyoutHelper { get; set; }
 
         public AirplaneModeFlyoutHelper AirplaneModeFlyoutHelper { get; set; }
@@ -53,8 +50,6 @@ namespace ModernFlyouts
         public LockKeysFlyoutHelper LockKeysFlyoutHelper { get; set; }
 
         public BrightnessFlyoutHelper BrightnessFlyoutHelper { get; set; }
-
-        public TaskbarIcon TaskbarIcon { get; set; }
 
         private DefaultFlyout defaultFlyout = DefaultFlyout.ModernFlyouts;
 
@@ -122,35 +117,17 @@ namespace ModernFlyouts
             }
         }
 
-        private bool useColoredTrayIcon = false;
-
-        public bool UseColoredTrayIcon
-        {
-            get { return useColoredTrayIcon; }
-            set
-            {
-                if (useColoredTrayIcon != value)
-                {
-                    useColoredTrayIcon = value;
-                    OnPropertyChanged();
-                    OnUseColoredTrayIconChanged();
-                }
-            }
-        }
-
         #endregion
 
         public void Initialize()
         {
             DUIHandler.ForceFindDUIAndHide();
 
-            ListenToSystemColorChanges();
-
             FlyoutWindow = new FlyoutWindow();
             CreateWndProc();
 
-            SystemTheme.SystemThemeChanged += OnSystemThemeChange;
-            SystemTheme.Initialize();
+            UIManager = new UIManager();
+            UIManager.Initialize(FlyoutWindow);
 
             DUIHook = new DUIHook();
             DUIHook.Hook();
@@ -172,7 +149,6 @@ namespace ModernFlyouts
 
             TopBarEnabled = AppDataHelper.TopBarEnabled;
             DefaultFlyoutPosition = AppDataHelper.DefaultFlyoutPosition;
-            UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
 
             async void getStartupStatus()
             {
@@ -282,12 +258,6 @@ namespace ModernFlyouts
             StartupHelper.SetRunAtStartupEnabled(runAtStartup);
         }
 
-        private void OnUseColoredTrayIconChanged()
-        {
-            UpdateTrayIcon();
-            AppDataHelper.UseColoredTrayIcon = useColoredTrayIcon;
-        }
-
         private const int MA_NOACTIVATE = 0x3;
         private const int WM_MOUSEACTIVATE = 0x21;
         private const int WM_EXITSIZEMOVE = 0x0232;
@@ -338,33 +308,6 @@ namespace ModernFlyouts
             return IntPtr.Zero;
         }
 
-        private void OnSystemThemeChange(object sender, SystemThemeChangedEventArgs args)
-        {
-            FlyoutWindow.Dispatcher.Invoke(() =>
-            {
-                currentTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
-                ThemeManager.SetRequestedTheme(FlyoutWindow, currentTheme);
-                ThemeManager.SetRequestedTheme(FlyoutWindow.TrayContextMenu, currentTheme);
-                ThemeManager.SetRequestedTheme(FlyoutWindow.TrayToolTip, currentTheme);
-                UpdateTrayIcon();
-            });
-        }
-
-        private void UpdateTrayIcon()
-        {
-            Uri iconUri;
-            if (useColoredTrayIcon)
-            {
-                iconUri = PackUriHelper.GetAbsoluteUri(@"Assets\Logo.ico");
-            }
-            else
-            {
-                iconUri = PackUriHelper.GetAbsoluteUri(currentTheme == ElementTheme.Light ? @"Assets\Logo_Tray_Black.ico" : @"Assets\Logo_Tray_White.ico");
-            }
-
-            FlyoutWindow.TaskbarIcon.IconSource = BitmapFrame.Create(iconUri);
-        }
-
         public static void SafelyExitApplication()
         {
             DUIHandler.FindDUIAndShow();
@@ -387,17 +330,6 @@ namespace ModernFlyouts
                 Instance.SettingsWindow.Closing += handler;
             }
             Instance.SettingsWindow.Show();
-        }
-
-        // Temporary workaround for https://github.com/ShankarBUS/ModernFlyouts/issues/38
-        private void ListenToSystemColorChanges()
-        {
-            Type ColorsHelperType = Type.GetType("ModernWpf.ColorsHelper, ModernWpf");
-            PropertyInfo CurrentProperty = ColorsHelperType.GetProperty("Current", BindingFlags.Static | BindingFlags.Public);
-            object colorsHelperInstance = CurrentProperty.GetValue(null);
-            MethodInfo ListenToSystemColorChangesMethod = ColorsHelperType.GetMethod("ListenToSystemColorChanges",
-                BindingFlags.Instance | BindingFlags.NonPublic);
-            ListenToSystemColorChangesMethod.Invoke(colorsHelperInstance, null);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
