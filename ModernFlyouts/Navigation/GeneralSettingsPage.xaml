@@ -18,7 +18,7 @@
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"
                         Header="Select the default flyout"
                         ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}"
-                        SelectedItem="{Binding DefaultFlyout}"/>
+                        SelectedItem="{Binding DefaultFlyout}" />
                     <StackPanel x:Name="WarningPanel"
                                 Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
                                     Converter={StaticResource IndexToVisibilityConverter}}">
@@ -61,8 +61,10 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <ui:ToggleSwitch Header="Tray Icon Mode" IsOn="{Binding UseColoredTrayIcon}"
+                    <ui:ToggleSwitch Header="Tray Icon Mode" IsOn="{Binding UIManager.UseColoredTrayIcon}"
                                      OnContent="Colored" OffContent="Monochrome" />
+                    <Slider ui:ControlHelper.Header="Flyout Background Opacity" Minimum="0" Maximum="100" AutoToolTipPlacement="TopLeft"
+                            IsMoveToPointEnabled="True" Value="{Binding UIManager.FlyoutBackgroundOpacity}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>
