@@ -51,7 +51,7 @@
                                      OnContent="Always Visible" OffContent="Auto Hide" />
                     <TextBox ui:ControlHelper.Header="Flyout Default Position (for Align button)" HorizontalAlignment="Left"
                              Style="{DynamicResource ValidatableTextBoxStyle}"
-                             ui:ControlHelper.Description="Type the position in 'x,y' format (for e.g. 50,60)">
+                             ui:ControlHelper.Description="Type the position in 'X,Y' format (for e.g. 50,60)">
                         <TextBox.Text>
                             <Binding Path="DefaultFlyoutPosition" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource PointToStringConverter}"
                                      ValidatesOnNotifyDataErrors="True" ValidatesOnDataErrors="True" NotifyOnValidationError="True">

@@ -14,16 +14,22 @@ namespace ModernFlyouts.Utilities
             if (string.IsNullOrEmpty(strValue))
                 return new ValidationResult(false, $"Value cannot be coverted to string.");
 
-            Point point;
-            bool canConvert = false;
+            Point point = default;
             try
             {
                 point = Point.Parse(strValue);
-                canConvert = true;
             }
-            catch { }
+            catch 
+            {
+                return new ValidationResult(false, $"Please enter the point in the format 'X,Y' (for e.g. 50,60).");
+            }
 
-            return canConvert ? new ValidationResult(true, null) : new ValidationResult(false, $"Please enter in the format 'x,y' (for e.g. 50,60)");
+            if (point.X < int.MinValue || point.X > int.MaxValue || point.Y < int.MinValue || point.Y > int.MaxValue)
+            {
+                return new ValidationResult(false, $"Please enter X,Y values in the range {int.MinValue} - {int.MaxValue}.");
+            }
+
+            return new ValidationResult(true, null);
         }
     }
 }

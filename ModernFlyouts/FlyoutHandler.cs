@@ -1,4 +1,5 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
+using ModernFlyouts.Utilities;
 using ModernWpf;
 using System;
 using System.ComponentModel;
@@ -375,9 +376,12 @@ namespace ModernFlyouts
             if (Instance.SettingsWindow == null)
             {
                 Instance.SettingsWindow = new SettingsWindow();
+                WindowPlacement.SetPlacement(new WindowInteropHelper(Instance.SettingsWindow).EnsureHandle(), AppDataHelper.SettingsWindowPlacement);
+
                 void handler(object sender, CancelEventArgs e)
                 {
                     Instance.SettingsWindow.Closing -= handler;
+                    AppDataHelper.SettingsWindowPlacement = WindowPlacement.GetPlacement(new WindowInteropHelper(Instance.SettingsWindow).Handle);
                     Instance.SettingsWindow = null;
                 }
                 Instance.SettingsWindow.Closing += handler;

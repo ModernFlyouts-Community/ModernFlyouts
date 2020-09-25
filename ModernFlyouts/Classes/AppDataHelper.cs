@@ -157,5 +157,11 @@ namespace ModernFlyouts
             get => GetBool(nameof(UseColoredTrayIcon), true);
             set => SetBool(nameof(UseColoredTrayIcon), value);
         }
+
+        public static string SettingsWindowPlacement
+        {
+            get => GetString(nameof(SettingsWindowPlacement));
+            set => SetString(nameof(SettingsWindowPlacement), value);
+        }
     }
 }
