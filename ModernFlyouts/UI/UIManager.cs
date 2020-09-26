@@ -1,6 +1,7 @@
 ﻿using ModernWpf;
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -13,10 +14,15 @@ namespace ModernFlyouts
     {
         private FlyoutWindow _flyoutWindow;
         private ElementTheme currentTheme = ElementTheme.Dark;
+        private ThemeResources themeResources;
+        private ResourceDictionary lightResources;
+        private ResourceDictionary darkResources;
+
+        private bool _isThemeUpdated = false;
 
         #region Properties
 
-        private double flyoutBackgroundOpacity = 90.0;
+        private double flyoutBackgroundOpacity = 100.0;
 
         public double FlyoutBackgroundOpacity
         {
@@ -54,13 +60,17 @@ namespace ModernFlyouts
         {
             _flyoutWindow = flyoutWindow;
 
-            ListenToSystemColorChanges();
+            themeResources = (ThemeResources)App.Current.Resources.MergedDictionaries.FirstOrDefault(x => x is ThemeResources);
+            lightResources = themeResources.ThemeDictionaries["Light"];
+            darkResources = themeResources.ThemeDictionaries["Dark"];
 
-            SystemTheme.SystemThemeChanged += OnSystemThemeChange;
-            SystemTheme.Initialize();
+            ListenToSystemColorChanges();
 
             FlyoutBackgroundOpacity = AppDataHelper.FlyoutBackgroundOpacity;
             UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
+
+            SystemTheme.SystemThemeChanged += OnSystemThemeChange;
+            SystemTheme.Initialize();
         }
 
         private void OnFlyoutBackgroundOpacityChanged()
@@ -83,30 +93,31 @@ namespace ModernFlyouts
                 ThemeManager.SetRequestedTheme(_flyoutWindow, currentTheme);
                 ThemeManager.SetRequestedTheme(_flyoutWindow.TrayContextMenu, currentTheme);
                 ThemeManager.SetRequestedTheme(_flyoutWindow.TrayToolTip, currentTheme);
+
+                if (!_isThemeUpdated)
+                {
+                    _isThemeUpdated = true;
+                }
+
                 UpdateFlyoutBackgroundOpacity();
                 UpdateTrayIcon();
             });
         }
 
-        private ResourceDictionary resourceDictionary;
-
         private void UpdateFlyoutBackgroundOpacity()
         {
-            //var brush = App.Current.Resources["FlyoutBackground"] as Brush;
-            //if (resourceDictionary != null && App.Current.Resources.MergedDictionaries.Contains(resourceDictionary))
-            //{
-            //    App.Current.Resources.MergedDictionaries.Remove(resourceDictionary);
-            //    resourceDictionary = null;
-            //}
-            //resourceDictionary = new ResourceDictionary();
-            //brush = brush.Clone();
-            //brush.Opacity = 0;
-            //resourceDictionary.Add("FlyoutBackground", brush);
-            //App.Current.Resources.MergedDictionaries.Add(resourceDictionary);
+            if (!_isThemeUpdated) return;
+            var themeResource = currentTheme == ElementTheme.Light ? lightResources : darkResources;
+            var brush = themeResource["FlyoutBackground"] as Brush;
+            brush = brush.Clone();
+            brush.Opacity = flyoutBackgroundOpacity * 0.01;
+            themeResource["FlyoutBackground"] = brush;
         }
 
         private void UpdateTrayIcon()
         {
+            if (!_isThemeUpdated) return;
+
             Uri iconUri;
             if (useColoredTrayIcon)
             {
