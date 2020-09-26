@@ -193,7 +193,7 @@ namespace ModernFlyouts
 
         public static double FlyoutBackgroundOpacity
         {
-            get => GetDouble(nameof(FlyoutBackgroundOpacity), 90.0);
+            get => GetDouble(nameof(FlyoutBackgroundOpacity), 100.0);
             set => SetDouble(nameof(FlyoutBackgroundOpacity), value);
         }
     }
