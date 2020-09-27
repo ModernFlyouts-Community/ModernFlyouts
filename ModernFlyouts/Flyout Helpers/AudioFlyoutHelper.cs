@@ -20,6 +20,7 @@ namespace ModernFlyouts
         private MMDevice device;
         private VolumeControl volumeControl;
         private SessionsPanel sessionsPanel;
+        private TextBlock noDeviceMessageBlock;
         private bool _isinit = false;
         private bool _SMTCAvail = false;
 
@@ -40,6 +41,16 @@ namespace ModernFlyouts
             volumeControl.VolumeButton.Click += VolumeButton_Click;
             volumeControl.VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
             volumeControl.VolumeSlider.PreviewMouseWheel += VolumeSlider_PreviewMouseWheel;
+
+            noDeviceMessageBlock = new TextBlock()
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                FontSize = 18.0,
+                Margin = new Thickness(20),
+                Text = "No Connected Audio Devices"
+            };
+            noDeviceMessageBlock.SetResourceReference(TextBlock.StyleProperty, "BaseTextBlockStyle");
 
             #endregion
 
@@ -79,7 +90,8 @@ namespace ModernFlyouts
 
         private void Client_DefaultDeviceChanged(object sender, string e)
         {
-            UpdateDevice(enumerator.GetDevice(e));
+            MMDevice mmdevice = string.IsNullOrEmpty(e) ? null : enumerator.GetDevice(e);
+            UpdateDevice(mmdevice);
         }
 
         private void UpdateDevice(MMDevice mmdevice)
@@ -94,9 +106,9 @@ namespace ModernFlyouts
             {
                 UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
                 device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
-                PrimaryContentVisible = true;
+                Dispatcher.Invoke(() => PrimaryContent = volumeControl);
             }
-            else { PrimaryContentVisible = false; }
+            else { Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
         }
 
         private void AudioEndpointVolume_OnVolumeNotification(AudioVolumeNotificationData data)
@@ -108,7 +120,7 @@ namespace ModernFlyouts
 
         private void UpdateVolume(double volume)
         {
-            volumeControl.Dispatcher.Invoke(() =>
+            Dispatcher.Invoke(() =>
             {
                 UpdateVolumeGlyph(volume);
                 volumeControl.textVal.Text = Math.Round(volume).ToString("00");
@@ -313,9 +325,11 @@ namespace ModernFlyouts
             if (device != null)
             {
                 device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
-                PrimaryContentVisible = true;
+                PrimaryContent = volumeControl;
             }
-            else { PrimaryContentVisible = false; }
+            else { PrimaryContent = noDeviceMessageBlock; }
+
+            PrimaryContentVisible = true;
 
             if (_isinit)
             {
@@ -333,6 +347,7 @@ namespace ModernFlyouts
             {
                 device.AudioEndpointVolume.OnVolumeNotification -= AudioEndpointVolume_OnVolumeNotification;
             }
+            PrimaryContent = null;
             PrimaryContentVisible = false;
 
             try { DetachSMTC(); } catch { }

@@ -43,7 +43,7 @@ namespace ModernFlyouts
 
         private void UpdateBrightness(int brightness)
         {
-            brightnessControl.Dispatcher.Invoke(() =>
+            Dispatcher.Invoke(() =>
             {
                 _isInCodeValueChange = true;
                 brightnessControl.BrightnessSlider.Value = brightness;
