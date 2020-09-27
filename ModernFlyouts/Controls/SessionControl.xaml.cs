@@ -181,7 +181,9 @@ namespace ModernFlyouts
                         {
                             await _SMTCSession.TryPauseAsync();
                         }
-                        else if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Paused)
+                        else if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Paused
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Stopped
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Opened)
                         {
                             await _SMTCSession.TryPlayAsync();
                         }
@@ -293,7 +295,9 @@ namespace ModernFlyouts
                             PlayPauseIcon.Glyph = CommonGlyphs.Pause;
                             PlayPauseButton.ToolTip = "Pause";
                         }
-                        else if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Paused)
+                        else if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Paused
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Stopped
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Opened)
                         {
                             PlayPauseIcon.Glyph = CommonGlyphs.Play;
                             PlayPauseButton.ToolTip = "Play";
@@ -385,7 +389,7 @@ namespace ModernFlyouts
                     StartTimeBlock.Text = timeline.StartTime.ToString("hh\\:mm\\:ss");
                     EndTimeBlock.Text = timeline.EndTime.ToString("hh\\:mm\\:ss");
 
-                    TimelineInfo.Visibility = Visibility.Visible;
+                    TimelineInfoButton.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -393,7 +397,7 @@ namespace ModernFlyouts
                     TimeBar.Maximum = 100;
                     TimeBar.Value = 0;
 
-                    TimelineInfo.Visibility = Visibility.Collapsed;
+                    TimelineInfoButton.Visibility = Visibility.Collapsed;
                 }
             }
             catch { }
@@ -424,6 +428,9 @@ namespace ModernFlyouts
                     RepeatButton.IsEnabled = playback.Controls.IsRepeatEnabled;
                     StopButton.IsEnabled = playback.Controls.IsStopEnabled;
                 }
+
+                MoreControlsButton.Visibility = (ShuffleButton.IsEnabled ||
+                    RepeatButton.IsEnabled || StopButton.IsEnabled) ? Visibility.Visible : Visibility.Collapsed;
 
                 UpdateTimelineInfo(session);
 
