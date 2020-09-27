@@ -97,12 +97,12 @@
                 </StackPanel>
             </ui:SplitView>
 
-            <ToggleButton Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="More Controls"
+            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="More Controls"
                           Margin="16,0,0,12" IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
                 <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.More}" FontSize="16" />
             </ToggleButton>
 
-            <Button x:Name="TimelineInfo" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center"
+            <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center"
                     ToolTip="Time Line Info" Margin="0,0,16,12">
                 <ui:FontIcon Glyph="&#xF8A6;" FontSize="16" />
                 <ui:FlyoutService.Flyout>
