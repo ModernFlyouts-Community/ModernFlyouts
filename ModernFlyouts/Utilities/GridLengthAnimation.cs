@@ -7,7 +7,8 @@ namespace ModernFlyouts.Utilities
     internal class GridLengthAnimation : AnimationTimeline
     {
         public static readonly DependencyProperty FromProperty =
-            DependencyProperty.Register(nameof(From),
+            DependencyProperty.Register(
+                nameof(From),
                 typeof(GridLength),
                 typeof(GridLengthAnimation));
 
@@ -18,7 +19,8 @@ namespace ModernFlyouts.Utilities
         }
         
         public static readonly DependencyProperty ToProperty =
-            DependencyProperty.Register(nameof(To),
+            DependencyProperty.Register(
+                nameof(To),
                 typeof(GridLength),
                 typeof(GridLengthAnimation));
 
@@ -29,7 +31,8 @@ namespace ModernFlyouts.Utilities
         }
 
         public static readonly DependencyProperty EasingFunctionProperty =
-            DependencyProperty.Register(nameof(EasingFunction),
+            DependencyProperty.Register(
+                nameof(EasingFunction),
                 typeof(IEasingFunction),
                 typeof(GridLengthAnimation));
 

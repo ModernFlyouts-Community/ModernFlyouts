@@ -23,8 +23,71 @@ namespace ModernFlyouts
         private TextBlock noDeviceMessageBlock;
         private bool _isinit = false;
         private bool _SMTCAvail = false;
+        private bool isVolumeFlyout = true;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
+
+        #region Properties
+
+        public static readonly DependencyProperty ShowGSMTCInVolumeFlyoutProperty =
+            DependencyProperty.Register(
+                nameof(ShowGSMTCInVolumeFlyout),
+                typeof(bool),
+                typeof(AudioFlyoutHelper),
+                new PropertyMetadata(true, OnShowGSMTCInVolumeFlyoutChanged));
+
+        public bool ShowGSMTCInVolumeFlyout
+        {
+            get => (bool)GetValue(ShowGSMTCInVolumeFlyoutProperty);
+            set => SetValue(ShowGSMTCInVolumeFlyoutProperty, value);
+        }
+
+        private static void OnShowGSMTCInVolumeFlyoutChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var helper = d as AudioFlyoutHelper;
+            bool value = (bool)e.NewValue;
+            if (helper.isVolumeFlyout)
+            {
+                helper.SecondaryContentVisible = helper._SMTCAvail ? value : false;
+            }
+            else
+            {
+                helper.SecondaryContentVisible = helper._SMTCAvail;
+            }
+
+            AppDataHelper.ShowGSMTCInVolumeFlyout = value;
+        }
+
+        public static readonly DependencyProperty ShowVolumeControlInGSMTCFlyoutProperty =
+            DependencyProperty.Register(
+                nameof(ShowVolumeControlInGSMTCFlyout),
+                typeof(bool),
+                typeof(AudioFlyoutHelper),
+                new PropertyMetadata(true, OnShowVolumeControlInGSMTCFlyoutChanged));
+
+        public bool ShowVolumeControlInGSMTCFlyout
+        {
+            get => (bool)GetValue(ShowVolumeControlInGSMTCFlyoutProperty);
+            set => SetValue(ShowVolumeControlInGSMTCFlyoutProperty, value);
+        }
+
+        private static void OnShowVolumeControlInGSMTCFlyoutChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var helper = d as AudioFlyoutHelper;
+            bool value = (bool)e.NewValue;
+            if (helper.isVolumeFlyout)
+            {
+                helper.PrimaryContentVisible = true;
+            }
+            else
+            {
+                helper.PrimaryContentVisible = value;
+            }
+
+            AppDataHelper.ShowVolumeControlInGSMTCFlyout = value;
+        }
+
+        #endregion
 
         public AudioFlyoutHelper()
         {
@@ -34,6 +97,9 @@ namespace ModernFlyouts
         public void Initialize()
         {
             AlwaysHandleDefaultFlyout = true;
+
+            ShowGSMTCInVolumeFlyout = AppDataHelper.ShowGSMTCInVolumeFlyout;
+            ShowVolumeControlInGSMTCFlyout = AppDataHelper.ShowVolumeControlInGSMTCFlyout;
 
             #region Creating Volume Control
 
@@ -82,6 +148,19 @@ namespace ModernFlyouts
         {
             if ((!isMediaKey && device != null) || (isMediaKey && _SMTCAvail))
             {
+                isVolumeFlyout = !isMediaKey;
+
+                if (isVolumeFlyout)
+                {
+                    PrimaryContentVisible = true;
+                    SecondaryContentVisible = _SMTCAvail ? ShowGSMTCInVolumeFlyout : false;
+                }
+                else
+                {
+                    PrimaryContentVisible = ShowVolumeControlInGSMTCFlyout;
+                    SecondaryContentVisible = _SMTCAvail;
+                }
+
                 ShowFlyoutRequested?.Invoke(this);
             }
         }
@@ -219,6 +298,11 @@ namespace ModernFlyouts
         [MethodImpl(MethodImplOptions.NoInlining)]
         private async void SetupSMTCAsync()
         {
+            if (!IsEnabled)
+            {
+                return;
+            }
+
             GlobalSystemMediaTransportControlsSessionManager SMTC;
 
             SMTC = await GlobalSystemMediaTransportControlsSessionManager.RequestAsync();
@@ -283,7 +367,7 @@ namespace ModernFlyouts
 
                 if (sessionsPanel.SessionsStackPanel.Children.Count > 0)
                 {
-                    SecondaryContentVisible = true;
+                    SecondaryContentVisible = isVolumeFlyout ? ShowGSMTCInVolumeFlyout : true;
                     _SMTCAvail = true;
                 }
             }
@@ -329,7 +413,7 @@ namespace ModernFlyouts
             }
             else { PrimaryContent = noDeviceMessageBlock; }
 
-            PrimaryContentVisible = true;
+            PrimaryContentVisible = isVolumeFlyout ? true : ShowVolumeControlInGSMTCFlyout;
 
             if (_isinit)
             {
