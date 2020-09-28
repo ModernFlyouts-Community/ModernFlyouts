@@ -46,7 +46,7 @@ Both distribution methods will be supported, however the store version is recomm
 
 **Microsoft Store:**
 
-<a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='Microsoft Store' width='160'/></a>
+<a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
 
 **Alternatively download from Github:**
 
