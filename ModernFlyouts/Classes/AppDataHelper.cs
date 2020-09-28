@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using Windows.Storage;
 
@@ -6,7 +7,9 @@ namespace ModernFlyouts
 {
     public class AppDataHelper
     {
-        private static bool GetBool(string propertyName, bool defaultValue)
+        #region Methods
+
+        private static bool GetBool(bool defaultValue, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -18,12 +21,13 @@ namespace ModernFlyouts
                         return result;
                     }
                 }
-            } catch { }
+            }
+            catch { }
 
             return defaultValue;
         }
 
-        private static void SetBool(string propertyName, bool value)
+        private static void SetBool(bool value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -32,7 +36,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static double GetDouble(string propertyName, double defaultValue)
+        private static double GetDouble(double defaultValue, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -50,7 +54,7 @@ namespace ModernFlyouts
             return defaultValue;
         }
 
-        private static void SetDouble(string propertyName, double value)
+        private static void SetDouble(double value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -59,7 +63,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static string GetString(string propertyName)
+        private static string GetString([CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -68,20 +72,22 @@ namespace ModernFlyouts
                     object value = ApplicationData.Current.LocalSettings.Values[propertyName];
                     return value.ToString();
                 }
-            } catch { }
+            }
+            catch { }
 
             return string.Empty;
         }
 
-        private static void SetString(string propertyName, string value)
+        private static void SetString(string value, [CallerMemberName] string propertyName = "")
         {
             try
             {
                 ApplicationData.Current.LocalSettings.Values[propertyName] = value;
-            } catch { }
+            }
+            catch { }
         }
 
-        private static T GetEnum<T>(string propertyName, T defaultValue) where T : Enum
+        private static T GetEnum<T>(T defaultValue, [CallerMemberName] string propertyName = "") where T : Enum
         {
             try
             {
@@ -96,7 +102,7 @@ namespace ModernFlyouts
             return defaultValue;
         }
 
-        private static void SetEnum<T>(string propertyName, T value) where T : Enum
+        private static void SetEnum<T>(T value, [CallerMemberName] string propertyName = "") where T : Enum
         {
             try
             {
@@ -105,7 +111,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static Point GetPoint(string propertyName, Point defaultPoint)
+        private static Point GetPoint(Point defaultPoint, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -120,7 +126,7 @@ namespace ModernFlyouts
             return defaultPoint;
         }
 
-        private static void SetPoint(string propertyName, Point value)
+        private static void SetPoint(Point value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -129,72 +135,90 @@ namespace ModernFlyouts
             catch { }
         }
 
+        #endregion
+
+        #region Properties
+
         public static bool AudioModuleEnabled
         {
-            get => GetBool(nameof(AudioModuleEnabled), true);
-            set => SetBool(nameof(AudioModuleEnabled), value);
+            get => GetBool(true);
+            set => SetBool(value);
         }
-        
+
+        public static bool ShowGSMTCInVolumeFlyout
+        {
+            get => GetBool(true);
+            set => SetBool(value);
+        }
+
+        public static bool ShowVolumeControlInGSMTCFlyout
+        {
+            get => GetBool(true);
+            set => SetBool(value);
+        }
+
         public static bool AirplaneModeModuleEnabled
         {
-            get => GetBool(nameof(AirplaneModeModuleEnabled), true);
-            set => SetBool(nameof(AirplaneModeModuleEnabled), value);
+            get => GetBool(true);
+            set => SetBool(value);
         }
-        
+
         public static bool LockKeysModuleEnabled
         {
-            get => GetBool(nameof(LockKeysModuleEnabled), true);
-            set => SetBool(nameof(LockKeysModuleEnabled), value);
+            get => GetBool(true);
+            set => SetBool(value);
         }
-        
+
         public static bool BrightnessModuleEnabled
         {
-            get => GetBool(nameof(BrightnessModuleEnabled), true);
-            set => SetBool(nameof(BrightnessModuleEnabled), value);
+            get => GetBool(true);
+            set => SetBool(value);
         }
 
         public static DefaultFlyout DefaultFlyout
         {
-            get => GetEnum(nameof(DefaultFlyout), DefaultFlyout.ModernFlyouts);
-            set => SetEnum(nameof(DefaultFlyout), value);
+            get => GetEnum(DefaultFlyout.ModernFlyouts);
+            set => SetEnum(value);
         }
 
         public static bool TopBarEnabled
         {
-            get => GetBool(nameof(TopBarEnabled), true);
-            set => SetBool(nameof(TopBarEnabled), value);
+            get => GetBool(true);
+            set => SetBool(value);
         }
 
         private static Point defaultFlyoutPosition = new Point(50, 60);
 
         public static Point DefaultFlyoutPosition
         {
-            get => GetPoint(nameof(DefaultFlyoutPosition), defaultFlyoutPosition);
-            set => SetPoint(nameof(DefaultFlyoutPosition), value);
+            get => GetPoint(defaultFlyoutPosition);
+            set => SetPoint(value);
         }
 
         public static Point FlyoutPosition
         {
-            get => GetPoint(nameof(FlyoutPosition), defaultFlyoutPosition);
-            set => SetPoint(nameof(FlyoutPosition), value);
+            get => GetPoint(defaultFlyoutPosition);
+            set => SetPoint(value);
         }
 
         public static bool UseColoredTrayIcon
         {
-            get => GetBool(nameof(UseColoredTrayIcon), true);
-            set => SetBool(nameof(UseColoredTrayIcon), value);
+            get => GetBool(true);
+            set => SetBool(value);
         }
 
         public static string SettingsWindowPlacement
         {
-            get => GetString(nameof(SettingsWindowPlacement));
-            set => SetString(nameof(SettingsWindowPlacement), value);
+            get => GetString();
+            set => SetString(value);
         }
 
         public static double FlyoutBackgroundOpacity
         {
-            get => GetDouble(nameof(FlyoutBackgroundOpacity), 100.0);
-            set => SetDouble(nameof(FlyoutBackgroundOpacity), value);
+            get => GetDouble(100.0);
+            set => SetDouble(value);
         }
+
+        #endregion
     }
 }

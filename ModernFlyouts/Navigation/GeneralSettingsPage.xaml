@@ -65,6 +65,10 @@
                                      OnContent="Colored" OffContent="Monochrome" />
                     <Slider ui:ControlHelper.Header="Flyout Background Opacity" Minimum="0" Maximum="100" AutoToolTipPlacement="TopLeft"
                             IsMoveToPointEnabled="True" Value="{Binding UIManager.FlyoutBackgroundOpacity}" />
+                    <ui:ToggleSwitch Header="Show Global System Media Transport Controls in Volume flyout"
+                                     IsOn="{Binding AudioFlyoutHelper.ShowGSMTCInVolumeFlyout}" />
+                    <ui:ToggleSwitch Header="Show Volume control in Global System Media Transport Controls flyout"
+                                     IsOn="{Binding AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

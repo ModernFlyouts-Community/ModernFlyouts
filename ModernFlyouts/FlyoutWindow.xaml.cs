@@ -96,7 +96,6 @@ namespace ModernFlyouts
 
         private void HideFlyout()
         {
-            FlyoutHelper = null;;
             RoutedEventArgs args = new RoutedEventArgs(FlyoutHiddenEvent);
             RaiseEvent(args);
         }
@@ -110,6 +109,14 @@ namespace ModernFlyouts
             DataContext = this;
 
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this)) { return; }
+
+            this.IsVisibleChanged += (s, e) =>
+            {
+                if (!(bool)e.NewValue)
+                {
+                    FlyoutHelper = null;
+                }
+            };
 
             AlignFlyout(false);
             MovableAreaBorder.MouseLeftButtonDown += (_, __) => DragMove();
