@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:system="clr-namespace:System;assembly=System.Runtime"
-      xmlns:md="clr-namespace:BUSK.Markdown.Controls;assembly=BUSK.Markdown"
+      xmlns:md="clr-namespace:ModernWpf.Toolkit.UI.Controls;assembly=ModernWpf.Toolkit.UI.Controls.Markdown"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AboutPage">
@@ -22,7 +22,7 @@ Source Code : [Github - ShankarBUS/ModernFlyouts](https://github.com/ShankarBUS/
 
 See the github repository for more info
 
-Version : **0.6.0**
+Version : **0.6.5**
 
 ***If you find any bugs, file a new issue in the github repository.***
             
