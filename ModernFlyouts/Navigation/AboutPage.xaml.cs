@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModernWpf.Toolkit.UI.Controls;
+using System;
 using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -12,7 +13,7 @@ namespace ModernFlyouts.Navigation
             InitializeComponent();
         }
 
-        private void MarkdownTextBlock_LinkClicked(object sender, BUSK.Markdown.Controls.LinkClickedEventArgs e)
+        private void MarkdownTextBlock_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             if (Uri.TryCreate(e.Link, UriKind.Absolute, out Uri _))
             {
@@ -25,7 +26,7 @@ namespace ModernFlyouts.Navigation
             }
         }
 
-        private void MarkdownTextBlock_ImageClicked(object sender, BUSK.Markdown.Controls.LinkClickedEventArgs e)
+        private void MarkdownTextBlock_ImageClicked(object sender, LinkClickedEventArgs e)
         {
             if (Uri.TryCreate(e.Link, UriKind.Absolute, out Uri _))
             {
@@ -38,7 +39,7 @@ namespace ModernFlyouts.Navigation
             }
         }
 
-        private void MarkdownTextBlock_ImageResolving(object sender, BUSK.Markdown.Controls.ImageResolvingEventArgs e)
+        private void MarkdownTextBlock_ImageResolving(object sender, ImageResolvingEventArgs e)
         {
             if (Uri.TryCreate(e.Url, UriKind.Absolute, out Uri result))
             {

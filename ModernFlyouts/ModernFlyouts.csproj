@@ -3,11 +3,11 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
-	<RuntimeIdentifiers>win10-x64;win10-x86</RuntimeIdentifiers>
-	<!--<PublishTrimmed>true</PublishTrimmed>
+	  <RuntimeIdentifiers>win10-x64;win10-x86</RuntimeIdentifiers>
+	  <!--<PublishTrimmed>true</PublishTrimmed>
     <TrimMode>CopyUsed</TrimMode>--> 
     <SignAssembly>false</SignAssembly>
-	<DelaySign>false</DelaySign>
+	  <DelaySign>false</DelaySign>
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>latest</LangVersion>
@@ -16,7 +16,7 @@
   </PropertyGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="BUSK.Markdown" Version="0.7.1" />
+		<PackageReference Include="ModernWpf.Toolkit.UI.Controls.Markdown" Version="0.1.0-alpha" />
 		<PackageReference Include="ModernWpfUI" Version="0.9.2" />
 		<PackageReference Include="NAudio" Version="1.10.0" />
 		<PackageReference Include="System.Drawing.Common" Version="5.0.0-rc.1.20451.14" />
