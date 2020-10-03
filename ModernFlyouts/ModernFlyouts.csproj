@@ -14,7 +14,7 @@
     <Version>0.6.5</Version>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
   </PropertyGroup>
-
+	
 	<ItemGroup>
 		<PackageReference Include="BUSK.Markdown" Version="0.7.1" />
 		<PackageReference Include="ModernWpfUI" Version="0.9.2" />
@@ -51,7 +51,7 @@
     <None Remove="Assets\Logo_Tray_Black.ico" />
     <None Remove="Assets\Logo_Tray_White.ico" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <Resource Include="Assets\Images\DefaultAudioThumbnail.png" />
     <Resource Include="Assets\Images\DefaultImageThumbnail.png" />
