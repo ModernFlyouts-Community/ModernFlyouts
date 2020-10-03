@@ -14,22 +14,16 @@
     <Version>0.6.5</Version>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
   </PropertyGroup>
-	
-	<!--<Choose>
-		<When Condition=" '$(Configuration)'=='Debug' ">
-			<PropertyGroup>
-				<SignAssembly>false</SignAssembly>
-			</PropertyGroup>
-		</When>
-		<When Condition=" '$(Configuration)'=='Release' ">
-			<PropertyGroup>
-				<SignAssembly>true</SignAssembly>
-				<DelaySign>false</DelaySign>
-				<AssemblyOriginatorKeyFile>StrongNameKey.pfx</AssemblyOriginatorKeyFile>
-			</PropertyGroup>
-		</When>
-	</Choose>-->
 
+	<ItemGroup>
+		<PackageReference Include="BUSK.Markdown" Version="0.7.1" />
+		<PackageReference Include="ModernWpfUI" Version="0.9.2" />
+		<PackageReference Include="NAudio" Version="1.10.0" />
+		<PackageReference Include="System.Drawing.Common" Version="5.0.0-rc.1.20451.14" />
+		<PackageReference Include="System.Management" Version="5.0.0-rc.1.20451.14" />
+		<PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.13" />
+	</ItemGroup>
+	
   <ItemGroup>
     <None Remove="Assets\Images\DefaultAudioThumbnail.png" />
     <None Remove="Assets\Images\DefaultImageThumbnail.png" />
@@ -58,20 +52,6 @@
     <None Remove="Assets\Logo_Tray_White.ico" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="BUSK.Markdown" Version="0.7.1" />
-    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.8.0-3.final">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="ModernWpfUI" Version="0.9.2" />
-    <PackageReference Include="NAudio" Version="1.10.0" />
-    <PackageReference Include="NuGet.Frameworks" Version="5.8.0-preview.3.6823" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.0-rc.1.20451.14" />
-    <PackageReference Include="System.Management" Version="5.0.0-rc.1.20451.14" />
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.13" />
-  </ItemGroup>
-  
   <ItemGroup>
     <Resource Include="Assets\Images\DefaultAudioThumbnail.png" />
     <Resource Include="Assets\Images\DefaultImageThumbnail.png" />
