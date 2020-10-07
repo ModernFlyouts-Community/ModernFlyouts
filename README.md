@@ -37,7 +37,6 @@ See the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) page for additi
 
 ## System Requirements
 - Windows 10 1809+
-- Make sure you have .NET Framework 4.8 runtime installed on your machine.
 
 ## Installation
 Modern Flyouts is Available on GitHub, winget and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
