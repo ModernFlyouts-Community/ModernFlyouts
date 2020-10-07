@@ -54,6 +54,9 @@ Both distribution methods will be supported, however the store version is recomm
 2. Download the latest ***.msix** file from the assets.
 3. Install the downloaded ***.msix** file and launch the app.
 
+
+<a href=”ms-appinstaller:?source= https://github.com/ShankarBUS/ModernFlyouts/releases/download/0.6.5/32669SamG.ModernFlyouts_0.6.5.0_neutral___pcy8vm99wrpcg.Msixbundle”/>
+
 ## IMPORTANT NOTE
 This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
 I could have improved the original project but the project is called **AUDIO**Flyout and adding airplane-mode/brightness flyouts wouldn't be a good idea, also the project has no recent activity. He's developing a **AudioFlyout**v2 with a refreshed UI. So, I had to make my own with the said additional features.
