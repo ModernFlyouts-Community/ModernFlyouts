@@ -44,10 +44,11 @@ Modern Flyouts is Available on GitHub, winget and the [Microsoft Store](https://
 
 Both distribution methods will be supported, however the store version is recommended as it is easier to install and will automatically remain up to date.
 
-### Microsoft Store:
+### _Microsoft Store:_
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
 
+&nbsp;
 
 **Alternatively download from Github:**
 
@@ -57,9 +58,9 @@ Both distribution methods will be supported, however the store version is recomm
 
 **winget:**
 
-*please note that due to how winget processes package updates, updates may take longer to be released to winget*
+_please note that due to how winget processes package updates, updates may take longer to be released to winget_
 
-winget install --id=ModernFlyouts.ModernFlyouts -e
+`winget install --id=ModernFlyouts.ModernFlyouts -e`
 
 ## IMPORTANT NOTE
 This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
