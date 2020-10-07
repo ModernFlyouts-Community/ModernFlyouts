@@ -40,19 +40,26 @@ See the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) page for additi
 - Make sure you have .NET Framework 4.8 runtime installed on your machine.
 
 ## Installation
-Modern Flyouts is Available on GitHub and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
+Modern Flyouts is Available on GitHub, winget and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
 Both distribution methods will be supported, however the store version is recommended as it is easier to install and will automatically remain up to date.
 
-**Microsoft Store:**
+### Microsoft Store:
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
+
 
 **Alternatively download from Github:**
 
 1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
 2. Download the latest ***.msix** file from the assets.
 3. Install the downloaded ***.msix** file and launch the app.
+
+**winget:**
+
+*please note that due to how winget processes package updates, updates may take longer to be released to winget*
+
+winget install --id=ModernFlyouts.ModernFlyouts -e
 
 ## IMPORTANT NOTE
 This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
