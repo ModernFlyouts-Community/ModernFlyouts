@@ -55,11 +55,13 @@ Both distribution methods will be supported, however the store version is recomm
 2. Download the latest ***.msix** file from the assets.
 3. Install the downloaded ***.msix** file and launch the app.
 
+
 **winget:**
 
 _please note that due to how winget processes package updates, updates may take longer to be released to winget_
 
 `winget install --id=ModernFlyouts.ModernFlyouts -e`
+
 
 ## IMPORTANT NOTE
 This project is made possible due to the work of **[ADeltaX](https://github.com/ADeltaX/)**.
