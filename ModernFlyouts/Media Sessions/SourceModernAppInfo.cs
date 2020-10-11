@@ -29,7 +29,7 @@ namespace ModernFlyouts
         {
             try
             {
-                _ = sourceApp.LaunchAsync();
+                _ = sourceApp?.LaunchAsync();
             }
             catch { }
         }
