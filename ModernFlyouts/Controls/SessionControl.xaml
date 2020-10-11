@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ui="http://schemas.modernwpf.com/2019"
-             xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:resx="clr-namespace:ModernFlyouts.Properties"
              mc:Ignorable="d"
              Width="{DynamicResource FlyoutWidth}" VerticalAlignment="Top">
     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
@@ -73,38 +74,43 @@
                           PaneBackground="Transparent" DisplayMode="Inline" IsPaneOpen="False">
                 <ui:SplitView.Pane>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                        <ToggleButton x:Name="ShuffleButton" ToolTip="Shuffle: off" Style="{DynamicResource MediaToggleButtonStyle}">
-                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Shuffle}" FontSize="16.0" />
+                        <ToggleButton x:Name="ShuffleButton" ToolTip="{x:Static resx:Strings.SessionControl_ShuffleOff}"
+                                      Style="{DynamicResource MediaToggleButtonStyle}">
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Shuffle}" FontSize="16.0" />
                         </ToggleButton>
-                        <ToggleButton x:Name="RepeatButton" ToolTip="Repeat: off" Margin="40,0" Style="{DynamicResource MediaToggleButtonStyle}">
-                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static util:CommonGlyphs.RepeatAll}" FontSize="16" />
+                        <ToggleButton x:Name="RepeatButton" ToolTip="{x:Static resx:Strings.SessionControl_RepeatOff}"
+                                      Margin="40,0" Style="{DynamicResource MediaToggleButtonStyle}">
+                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static utils:CommonGlyphs.RepeatAll}" FontSize="16" />
                         </ToggleButton>
-                        <Button x:Name="StopButton" ToolTip="Stop" Margin="2,0" Width="40" Style="{DynamicResource MediaButtonStyle}">
-                            <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Stop}" FontSize="16" />
+                        <Button x:Name="StopButton" ToolTip="{x:Static resx:Strings.SessionControl_Stop}"
+                                Margin="2,0" Width="40" Style="{DynamicResource MediaButtonStyle}">
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Stop}" FontSize="16" />
                         </Button>
                     </StackPanel>
                 </ui:SplitView.Pane>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button x:Name="PreviousButton" ToolTip="Previous" Style="{DynamicResource MediaButtonStyle}">
-                        <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Previous}" FontSize="16" />
+                    <Button x:Name="PreviousButton" ToolTip="{x:Static resx:Strings.SessionControl_Previous}" Style="{DynamicResource MediaButtonStyle}">
+                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Previous}" FontSize="16" />
                     </Button>
-                    <Button x:Name="PlayPauseButton" ToolTip="Play" Margin="40,0" Style="{DynamicResource HighlightedMediaButtonStyle}">
-                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static util:CommonGlyphs.Play}" FontSize="16" />
+                    <Button x:Name="PlayPauseButton" ToolTip="{x:Static resx:Strings.SessionControl_Play}"
+                            Margin="40,0" Style="{DynamicResource HighlightedMediaButtonStyle}">
+                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static utils:CommonGlyphs.Play}" FontSize="16" />
                     </Button>
-                    <Button x:Name="NextButton" ToolTip="Next" Style="{DynamicResource MediaButtonStyle}">
-                        <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.Next}" FontSize="16" />
+                    <Button x:Name="NextButton" ToolTip="{x:Static resx:Strings.SessionControl_Next}" Style="{DynamicResource MediaButtonStyle}">
+                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Next}" FontSize="16" />
                     </Button>
                 </StackPanel>
             </ui:SplitView>
 
             <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                          ToolTip="More Controls" Margin="16,0,0,12" IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
-                <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.More}" FontSize="16" />
+                          ToolTip="{x:Static resx:Strings.SessionControl_MoreControls}" Margin="16,0,0,12"
+                          IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" FontSize="16" />
             </ToggleButton>
 
             <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center"
-                    ToolTip="Time Line Info" Margin="0,0,16,12">
-                <ui:FontIcon Glyph="&#xF8A6;" FontSize="16" />
+                    ToolTip="{x:Static resx:Strings.SessionControl_TimelineInfo}" Margin="0,0,16,12">
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.TimelineInfo}" FontSize="16" />
                 <ui:FlyoutService.Flyout>
                     <ui:Flyout x:Name="TimelineInfoFlyout">
                         <Grid Margin="0, 0, 0, 4" Width="{DynamicResource FlyoutWidth}">

@@ -19,8 +19,8 @@ namespace ModernFlyouts
             JumpList jumpList = new JumpList();
             JumpTask settingsTask = new JumpTask
             {
-                Title = "Settings",
-                Description = "Open settings window",
+                Title = Properties.Strings.SettingsItem,
+                Description = Properties.Strings.SettingsItemDescription,
                 ApplicationPath = AppPath,
                 Arguments = arg_settings
             };
@@ -28,8 +28,8 @@ namespace ModernFlyouts
 
             JumpTask restoreTask = new JumpTask
             {
-                Title = "Restore Default",
-                Description = "Restores the windows default flyout and safely quits this app",
+                Title = Properties.Strings.RestoreDefaultItem,
+                Description = Properties.Strings.RestoreDefaultItemDescription,
                 ApplicationPath = AppPath,
                 Arguments = arg_restore
             };
@@ -37,8 +37,8 @@ namespace ModernFlyouts
 
             JumpTask exitTask = new JumpTask
             {
-                Title = "Exit",
-                Description = "Exit the app safely",
+                Title = Properties.Strings.ExitItem,
+                Description = Properties.Strings.ExitItemDescription,
                 ApplicationPath = AppPath,
                 Arguments = arg_exit
             };

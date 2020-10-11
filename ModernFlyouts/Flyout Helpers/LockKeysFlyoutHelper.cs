@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using ModernFlyouts.Utilities;
+using System.Windows.Input;
 
 namespace ModernFlyouts
 {
@@ -26,28 +27,18 @@ namespace ModernFlyouts
 
         private void KeyPressed(Key key, int virtualKey)
         {
-            if (key == Key.CapsLock || key == Key.Capital)
+            LockKeys? lockKey = key switch
             {
-                var islock = !Keyboard.IsKeyToggled(Key.CapsLock);
-                Prepare(LockKeys.CapsLock, islock);
-                ShowFlyout();
-            }
-            else if (key == Key.NumLock)
+                Key.CapsLock => LockKeys.CapsLock,
+                Key.NumLock => LockKeys.NumLock,
+                Key.Scroll => LockKeys.ScrollLock,
+                Key.Insert => LockKeys.Insert,
+                _ => null
+            };
+
+            if (lockKey.HasValue)
             {
-                var islock = !Keyboard.IsKeyToggled(Key.NumLock);
-                Prepare(LockKeys.NumLock, islock);
-                ShowFlyout();
-            }
-            else if (key == Key.Scroll)
-            {
-                var islock = !Keyboard.IsKeyToggled(Key.Scroll);
-                Prepare(LockKeys.ScrollLock, islock);
-                ShowFlyout();
-            }
-            else if (key == Key.Insert)
-            {
-                var islock = !Keyboard.IsKeyToggled(Key.Insert);
-                Prepare(LockKeys.Insert, islock);
+                Prepare(lockKey.Value, !Keyboard.IsKeyToggled(key));
                 ShowFlyout();
             }
 
@@ -59,17 +50,18 @@ namespace ModernFlyouts
 
         private void Prepare(LockKeys key, bool islock)
         {
-            string msg = string.Empty;
-
+            string msg;
             if (key != LockKeys.Insert)
             {
-                msg = key.ToString() + (islock ? " is on" : " is off");
+                msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, key.ToString());
+                lockKeysControl.LockGlyph.Glyph = islock ? CommonGlyphs.Lock : CommonGlyphs.Unlock;
             }
             else
             {
-                msg = islock ? "Overtype Mode" : "Insert Mode";
+                msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
+                lockKeysControl.LockGlyph.Glyph = string.Empty;
             }
-
+            
             lockKeysControl.txt.Text = msg;
         }
 

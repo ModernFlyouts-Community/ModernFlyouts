@@ -114,7 +114,7 @@ namespace ModernFlyouts
                 VerticalAlignment = VerticalAlignment.Center,
                 FontSize = 18.0,
                 Margin = new Thickness(20),
-                Text = "No Connected Audio Devices"
+                Text = Properties.Strings.AudioFlyoutHelper_NoDevices
             };
             noDeviceMessageBlock.SetResourceReference(TextBlock.StyleProperty, "BaseTextBlockStyle");
 

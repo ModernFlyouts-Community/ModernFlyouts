@@ -12,7 +12,7 @@ namespace ModernFlyouts.Utilities
             string strValue = Convert.ToString(value);
 
             if (string.IsNullOrEmpty(strValue))
-                return new ValidationResult(false, $"Value cannot be coverted to string.");
+                return new ValidationResult(false, Properties.Strings.PointValidationRule_StringConvertionErrorMessage);
 
             Point point = default;
             try
@@ -21,12 +21,12 @@ namespace ModernFlyouts.Utilities
             }
             catch 
             {
-                return new ValidationResult(false, $"Please enter the point in the format 'X,Y' (for e.g. 50,60).");
+                return new ValidationResult(false, Properties.Strings.PointValidationRule_PointFormatInvalidMessage);
             }
 
             if (point.X < int.MinValue || point.X > int.MaxValue || point.Y < int.MinValue || point.Y > int.MaxValue)
             {
-                return new ValidationResult(false, $"Please enter X,Y values in the range {int.MinValue} - {int.MaxValue}.");
+                return new ValidationResult(false, string.Format(Properties.Strings.PointValidationRule_PointOutOfRangeMessage, int.MinValue, int.MaxValue));
             }
 
             return new ValidationResult(true, null);

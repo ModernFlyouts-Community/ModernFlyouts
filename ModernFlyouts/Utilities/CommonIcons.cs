@@ -59,5 +59,11 @@
         public const string Pin = "\uE141";
 
         public const string UnPin = "\uE196";
+
+        public const string TimelineInfo = "\uF8A6";
+
+        public const string Lock = "\uE72E";
+
+        public const string Unlock = "\uE785";
     }
 }

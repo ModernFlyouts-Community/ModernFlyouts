@@ -162,7 +162,7 @@ namespace ModernFlyouts
             {
                 _elapsedTimer.Stop();
 
-                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsMousePointerWithinBounds(TopBarGrid, e))
                 {
                     _topBarOverlay = true;
                     UpdateTopBar(true);
@@ -180,13 +180,13 @@ namespace ModernFlyouts
             };
             MouseMove += (_, e) =>
             {
-                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && !IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
+                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && !IsMousePointerWithinBounds(TopBarGrid, e))
                 {
                     _topBarOverlay = false;
                     UpdateTopBar(false);
                 }
 
-                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsPointWithinBounds(TopBarGrid, e.GetPosition(TopBarGrid)))
+                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsMousePointerWithinBounds(TopBarGrid, e))
                 {
                     _topBarOverlay = true;
                     UpdateTopBar(true);
@@ -225,7 +225,7 @@ namespace ModernFlyouts
         public void OnTopBarEnabledChanged(bool value)
         {
             TopBarPinButtonIcon.Glyph = value ? CommonGlyphs.UnPin : CommonGlyphs.Pin;
-            TopBarPinButton.ToolTip = value ? "Unpin TopBar" : "Pin TopBar";
+            TopBarPinButton.ToolTip = value ? Properties.Strings.UnpinTopBar : Properties.Strings.PinTopBar;
             _topBarOverlay = false;
             var pos = Mouse.GetPosition(TopBarGrid);
             if (pos.Y > 0 && pos.Y < 32)
@@ -288,8 +288,9 @@ namespace ModernFlyouts
             FlyoutHandler.Instance.TopBarEnabled = !FlyoutHandler.Instance.TopBarEnabled;
         }
 
-        private static bool IsPointWithinBounds(FrameworkElement frameworkElement, Point point)
+        private static bool IsMousePointerWithinBounds(FrameworkElement frameworkElement, MouseEventArgs e)
         {
+            var point = e.GetPosition(frameworkElement);
             return point.X >= 0 && point.Y >= 0 && point.X <= frameworkElement.ActualWidth && point.Y <= frameworkElement.ActualHeight;
         }
 

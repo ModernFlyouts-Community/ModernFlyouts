@@ -156,7 +156,6 @@ namespace ModernFlyouts
         //This is if it was "updated" using other methods (e.g. Shellhook)
         public void OnExternalUpdated() => ShowFlyoutRequested?.Invoke(this);
 
-
         protected override void OnEnabled()
         {
             base.OnEnabled();

@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Media;
@@ -63,8 +62,6 @@ namespace ModernFlyouts
             themeResources = (ThemeResources)App.Current.Resources.MergedDictionaries.FirstOrDefault(x => x is ThemeResources);
             lightResources = themeResources.ThemeDictionaries["Light"];
             darkResources = themeResources.ThemeDictionaries["Dark"];
-
-            ListenToSystemColorChanges();
 
             FlyoutBackgroundOpacity = AppDataHelper.FlyoutBackgroundOpacity;
             UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
@@ -129,17 +126,6 @@ namespace ModernFlyouts
             }
 
             _flyoutWindow.TaskbarIcon.IconSource = BitmapFrame.Create(iconUri);
-        }
-
-        // Temporary workaround for https://github.com/ShankarBUS/ModernFlyouts/issues/38
-        private static void ListenToSystemColorChanges()
-        {
-            Type ColorsHelperType = Type.GetType("ModernWpf.ColorsHelper, ModernWpf");
-            PropertyInfo CurrentProperty = ColorsHelperType.GetProperty("Current", BindingFlags.Static | BindingFlags.Public);
-            object colorsHelperInstance = CurrentProperty.GetValue(null);
-            MethodInfo ListenToSystemColorChangesMethod = ColorsHelperType.GetMethod("ListenToSystemColorChanges",
-                BindingFlags.Instance | BindingFlags.NonPublic);
-            ListenToSystemColorChangesMethod.Invoke(colorsHelperInstance, null);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

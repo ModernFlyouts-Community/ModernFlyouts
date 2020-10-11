@@ -34,17 +34,17 @@ namespace ModernFlyouts
         {
             if (e.NotAvailable) 
             {
-                airplaneModeControl.txt.Text = "Airplane Mode is not available :(";
+                airplaneModeControl.txt.Text = Properties.Strings.AirplaneMode_NotAvailable;
                 airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Info;
             }
             if (e.IsEnabled)
             {
-                airplaneModeControl.txt.Text = "Airplane mode on";
+                airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOn;
                 airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Airplane;
             }
             else
             {
-                airplaneModeControl.txt.Text = "Airplane mode off";
+                airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOff;
                 airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.SignalBars5;
             }
         }

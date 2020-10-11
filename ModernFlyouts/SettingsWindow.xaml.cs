@@ -69,6 +69,7 @@ namespace ModernFlyouts
 			{
 				return false;
 			}
+
 			ContentFrame.GoBack();
 			return true;
 		}
