@@ -22,6 +22,8 @@ namespace ModernFlyouts
 
                 CreateRemoteService(AppName);
 
+                DUIHandler.ForceFindDUIAndHide(false);
+
                 var app = new App();
                 app.Run();
             }

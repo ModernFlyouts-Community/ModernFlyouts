@@ -121,8 +121,6 @@ namespace ModernFlyouts
 
         public void Initialize()
         {
-            DUIHandler.ForceFindDUIAndHide();
-
             FlyoutWindow = new FlyoutWindow();
             CreateWndProc();
 
@@ -138,7 +136,7 @@ namespace ModernFlyouts
 
             KeyboardHook = new KeyboardHook();
 
-            #region Load Settings
+            #region App Data
 
             var adEnabled = AppDataHelper.AudioModuleEnabled;
             var apmdEnabled = AppDataHelper.AirplaneModeModuleEnabled;

@@ -5,53 +5,53 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
+      xmlns:resx="clr-namespace:ModernFlyouts.Properties"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="General Settings" DataContext="{x:Static local:FlyoutHandler.Instance}">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="20">
-            <GroupBox Header="Behavior">
-                <ui:ToggleSwitch Header="Run at startup" IsOn="{Binding RunAtStartup}" />
+            <GroupBox Header="{x:Static resx:Strings.Settings_Behavior}">
+                <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_RunAtStartup}" IsOn="{Binding RunAtStartup}" />
             </GroupBox>
-            <GroupBox Header="Default Flyout">
+            <GroupBox Header="{x:Static resx:Strings.Settings_DefaultFlyout}">
                 <StackPanel>
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"
-                        Header="Select the default flyout"
+                        Header="{x:Static resx:Strings.Settings_DefaultFlyoutDescription}"
                         ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}"
                         SelectedItem="{Binding DefaultFlyout}" />
                     <StackPanel x:Name="WarningPanel"
                                 Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
                                     Converter={StaticResource IndexToVisibilityConverter}}">
-                        <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}" TextWrapping="Wrap">
-                            Instead of choosing windows default, close this application safely to reduce memory usage.
-                        </TextBlock>
-                        <Button Content="Close Application Safely" Click="Button_Click" />
+                        <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
+                                   TextWrapping="Wrap" Text="{x:Static resx:Strings.Settings_DefaultFlyoutWarningMessage}" />
+                        <Button Content="{x:Static resx:Strings.ExitItemDescription}" Click="Button_Click" />
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="Modules"
+            <GroupBox Header="{x:Static resx:Strings.Settings_Modules}"
                       Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
                           Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
-                    <ui:ToggleSwitch Header="Audio-flyout Module" IsOn="{Binding AudioFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled" />
-                    <ui:ToggleSwitch Header="AirplaneMode-flyout Module" IsOn="{Binding AirplaneModeFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled" />
-                    <ui:ToggleSwitch Header="LockKeys-flyout Module" IsOn="{Binding LockKeysFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled" />
-                    <ui:ToggleSwitch Header="Brightness-flyout Module" IsOn="{Binding BrightnessFlyoutHelper.IsEnabled}"
-                                 OnContent="Enabled" OffContent="Disabled" />
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_Audio}" IsOn="{Binding AudioFlyoutHelper.IsEnabled}"
+                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_Airplane}" IsOn="{Binding AirplaneModeFlyoutHelper.IsEnabled}"
+                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_LockKeys}" IsOn="{Binding LockKeysFlyoutHelper.IsEnabled}"
+                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_Brightness}" IsOn="{Binding BrightnessFlyoutHelper.IsEnabled}"
+                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
-            <GroupBox Header="Additional"
+            <GroupBox Header="{x:Static resx:Strings.Settings_Additional}"
                       Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
                           Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
-                    <ui:ToggleSwitch Header="Flyout TopBar" IsOn="{Binding TopBarEnabled}"
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_FlyoutTopBar}" IsOn="{Binding TopBarEnabled}"
                                      OnContent="Always Visible" OffContent="Auto Hide" />
-                    <TextBox ui:ControlHelper.Header="Flyout Default Position (for Align button)" HorizontalAlignment="Left"
+                    <TextBox ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutDefaultPosition}" HorizontalAlignment="Left"
                              Style="{DynamicResource ValidatableTextBoxStyle}"
-                             ui:ControlHelper.Description="Type the position in 'X,Y' format (for e.g. 50,60)">
+                             ui:ControlHelper.Description="{x:Static resx:Strings.Settings_FlyoutDefaultPositionDescription}">
                         <TextBox.Text>
                             <Binding Path="DefaultFlyoutPosition" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource PointToStringConverter}"
                                      ValidatesOnNotifyDataErrors="True" ValidatesOnDataErrors="True" NotifyOnValidationError="True">
@@ -61,13 +61,15 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <ui:ToggleSwitch Header="Tray Icon Mode" IsOn="{Binding UIManager.UseColoredTrayIcon}"
-                                     OnContent="Colored" OffContent="Monochrome" />
-                    <Slider ui:ControlHelper.Header="Flyout Background Opacity" Minimum="0" Maximum="100" AutoToolTipPlacement="TopLeft"
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_TrayIconMode}" IsOn="{Binding UIManager.UseColoredTrayIcon}"
+                                     OnContent="{x:Static resx:Strings.Settings_TrayIconMode_Colored}"
+                                     OffContent="{x:Static resx:Strings.Settings_TrayIconMode_Monochrome}" />
+                    <Slider ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutBackgroundOpacity}" Minimum="0" Maximum="100"
+                            HorizontalAlignment="Left" AutoToolTipPlacement="TopLeft" Width="300"
                             IsMoveToPointEnabled="True" Value="{Binding UIManager.FlyoutBackgroundOpacity}" />
-                    <ui:ToggleSwitch Header="Show Global System Media Transport Controls in Volume flyout"
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_ShowGSMTCInVolumeFlyout}"
                                      IsOn="{Binding AudioFlyoutHelper.ShowGSMTCInVolumeFlyout}" />
-                    <ui:ToggleSwitch Header="Show Volume control in Global System Media Transport Controls flyout"
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_ShowVolumeControlInGSMTCFlyout}"
                                      IsOn="{Binding AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout}" />
                 </ui:SimpleStackPanel>
             </GroupBox>

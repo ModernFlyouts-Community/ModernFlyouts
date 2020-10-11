@@ -219,20 +219,36 @@ namespace ModernFlyouts
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         internal static extern uint RegisterWindowMessage(string lpString);
 
+        [Serializable]
         [StructLayout(LayoutKind.Sequential)]
-        internal struct RECT
+        public struct RECT
         {
             public int Left;        // x position of upper-left corner
             public int Top;         // y position of upper-left corner
             public int Right;       // x position of lower-right corner
             public int Bottom;      // y position of lower-right corner
+
+            public RECT(int left, int top, int right, int bottom)
+            {
+                Left = left;
+                Top = top;
+                Right = right;
+                Bottom = bottom;
+            }
         }
 
+        [Serializable]
         [StructLayout(LayoutKind.Sequential)]
-        internal struct POINT
+        public struct POINT
         {
-            public int x;
-            public int y;
+            public int X;
+            public int Y;
+
+            public POINT(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -254,8 +270,9 @@ namespace ModernFlyouts
             LLKHF_UP = 0x80
         }
 
+        [Serializable]
         [StructLayout(LayoutKind.Sequential)]
-        internal struct WINDOWPLACEMENT
+        public struct WINDOWPLACEMENT
         {
             public int Length;
 
@@ -284,6 +301,9 @@ namespace ModernFlyouts
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+
+        [DllImport("user32.dll")]
+        internal static extern bool SetWindowPlacement(IntPtr hWnd, [In] ref WINDOWPLACEMENT lpwndpl);
 
         internal delegate int KBDLLHookProc(int nCode, IntPtr wParam, IntPtr lParam);
 

@@ -34,7 +34,7 @@ namespace ModernFlyouts
             return defaultPos;
         }
 
-        public static async void ForceFindDUIAndHide()
+        public static async void ForceFindDUIAndHide(bool minimizeDUI = true)
         {
             await Task.Run(() =>
             {
@@ -46,18 +46,21 @@ namespace ModernFlyouts
                     keybd_event((byte)KeyInterop.VirtualKeyFromKey(Key.VolumeUp), 0, 0, 0);
                     keybd_event((byte)KeyInterop.VirtualKeyFromKey(Key.VolumeDown), 0, 0, 0);
 
-                    FindDUIAndHide();
+                    FindDUIAndHide(minimizeDUI);
 
                     Thread.Sleep(500);
                 }
             });
         }
 
-        public static void FindDUIAndHide()
+        public static void FindDUIAndHide(bool minimizeDUI = true)
         {
             if (IsDUIAvailable())
             {
-                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Minimize);
+                if (minimizeDUI)
+                {
+                    ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Minimize);
+                }
                 ShowWindowAsync(HWndHost, (int)ShowWindowCommands.Hide);
             }
         }
@@ -69,6 +72,14 @@ namespace ModernFlyouts
                 ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Minimize);
                 ShowWindowAsync(HWndHost, (int)ShowWindowCommands.Minimize);
                 ShowWindowAsync(HWndHost, (int)ShowWindowCommands.ForceMinimize);
+            }
+        }
+
+        public static void FindDUIAndShow()
+        {
+            if (IsDUIAvailable())
+            {
+                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Restore);
             }
         }
 
@@ -93,14 +104,6 @@ namespace ModernFlyouts
             }
 
             return false;
-        }
-
-        public static void FindDUIAndShow()
-        {
-            if (IsDUIAvailable())
-            {
-                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Restore);
-            }
         }
 
         public static bool IsDUIAvailable()

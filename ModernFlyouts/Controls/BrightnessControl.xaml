@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ui="http://schemas.modernwpf.com/2019"
-             xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d" d:DesignWidth="354">
     
     <Grid Height="48">
@@ -14,7 +14,7 @@
             <ColumnDefinition Width="48" />
         </Grid.ColumnDefinitions>
 
-        <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0" FontSize="16" Glyph="{x:Static util:CommonGlyphs.Brightness}" />
+        <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0" FontSize="16" Glyph="{x:Static utils:CommonGlyphs.Brightness}" />
 
         <Slider x:Name="BrightnessSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0"
                 SmallChange="0.01" Value="100" IsMoveToPointEnabled="True" />

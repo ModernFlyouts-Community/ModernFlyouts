@@ -298,14 +298,14 @@ namespace ModernFlyouts
                         if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Playing)
                         {
                             PlayPauseIcon.Glyph = CommonGlyphs.Pause;
-                            PlayPauseButton.ToolTip = "Pause";
+                            PlayPauseButton.ToolTip = Properties.Strings.SessionControl_Pause;
                         }
                         else if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Paused
                             || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Stopped
                             || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Opened)
                         {
                             PlayPauseIcon.Glyph = CommonGlyphs.Play;
-                            PlayPauseButton.ToolTip = "Play";
+                            PlayPauseButton.ToolTip = Properties.Strings.SessionControl_Play;
                         }
                     }
                 }
@@ -328,12 +328,12 @@ namespace ModernFlyouts
                             if (playback.IsShuffleActive.Value)
                             {
                                 ShuffleButton.IsChecked = true;
-                                ShuffleButton.ToolTip = "Shuffle: on";
+                                ShuffleButton.ToolTip = Properties.Strings.SessionControl_ShuffleOn;
                             }
                             else
                             {
                                 ShuffleButton.IsChecked = false;
-                                ShuffleButton.ToolTip = "Shuffle: off";
+                                ShuffleButton.ToolTip = Properties.Strings.SessionControl_ShuffleOff;
                             }
                         }
                         else
@@ -359,19 +359,19 @@ namespace ModernFlyouts
                         {
                             RepeatButton.IsChecked = false;
                             RepeatIcon.Glyph = CommonGlyphs.RepeatAll;
-                            RepeatButton.ToolTip = "Repeat: off";
+                            RepeatButton.ToolTip = Properties.Strings.SessionControl_RepeatOff;
                         }
                         else if (playback.AutoRepeatMode == MediaPlaybackAutoRepeatMode.Track)
                         {
                             RepeatButton.IsChecked = true;
                             RepeatIcon.Glyph = CommonGlyphs.RepeatOne;
-                            RepeatButton.ToolTip = "Repeat: one";
+                            RepeatButton.ToolTip = Properties.Strings.SessionControl_RepeatOne;
                         }
                         else if (playback.AutoRepeatMode == MediaPlaybackAutoRepeatMode.List)
                         {
                             RepeatButton.IsChecked = true;
                             RepeatIcon.Glyph = CommonGlyphs.RepeatAll;
-                            RepeatButton.ToolTip = "Repeat: all";
+                            RepeatButton.ToolTip = Properties.Strings.SessionControl_RepeatAll;
                         }
                     }
                 }
