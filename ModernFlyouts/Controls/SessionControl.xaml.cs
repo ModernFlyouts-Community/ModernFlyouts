@@ -436,7 +436,7 @@ namespace ModernFlyouts
 
                 UpdatePlaybackInfo(session);
 
-                await SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
+                /*await*/ SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
 
                 EndTrackTransition();
             }
@@ -445,22 +445,22 @@ namespace ModernFlyouts
 
         #region Thumbnail
 
-        private async Task SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
+        // TODO : Re-enable once .NET 5 RC 2 is released
+        private /*async Task */ void SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
         {
-            if (thumbnail != null)
-            {
-                using var strm = await thumbnail.OpenReadAsync();
-                if (strm != null)
-                {
-                    using var nstream = strm.AsStream();
-                    if (nstream != null && nstream.Length > 0)
-                    {
-                        thumb.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
-                        thumbBackground.ImageSource = thumb.ImageSource;
-                        return;
-                    }
-                }
-            }
+            //if (thumbnail != null)
+            //{
+            //    using var strm = await thumbnail.OpenReadAsync();
+            //    if (strm != null)
+            //    {
+            //        using var nstream = strm.AsStream();
+            //        if (nstream != null && nstream.Length > 0)
+            //        {
+            //            thumb.ImageSource = thumbBackground.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);;
+            //            return;
+            //        }
+            //    }
+            //}
 
             thumb.ImageSource = GetDefaultThumbnail(playbackType);
             thumbBackground.ImageSource = null;

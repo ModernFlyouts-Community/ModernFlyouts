@@ -25,6 +25,9 @@ namespace ModernFlyouts
         {
             try
             {
+                if (sourceProcess == null)
+                    return;
+
                 var hWnd = sourceProcess.MainWindowHandle;
                 if (hWnd != null && hWnd != IntPtr.Zero)
                 {
@@ -49,7 +52,7 @@ namespace ModernFlyouts
 
             await Task.Run(() =>
             {
-                var processName = AppId.Remove(AppId.Length - 5, 4);
+                var processName = AppId.Remove(AppId.Length - 4, 4);
                 var processes = Process.GetProcessesByName(processName);
 
                 if (processes?.Length > 0)
