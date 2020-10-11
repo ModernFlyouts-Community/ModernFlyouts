@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>機内モードは:(利用できません</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>機内モード オフ</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>機内モード オン</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>既定の位置に揃える</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>接続されたオーディオ デバイスなし</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>アプリを安全に終了する</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>概要</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>挿入モード</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0}はオフです</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0}オン</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>上書きモード</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>ピントップバー</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>「X,Y」の形式でポイントを入力してください(例えば50,60)。</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>x,Y の値を{0} - {1}の範囲に入力してください。</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>値を文字列に隠すことはできません。</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>既定値に戻す</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>ウィンドウのデフォルトのポップアップを復元し、安全にこのアプリを終了します</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>その他のコントロール</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>次へ</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>再生</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>前へ</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>繰り返し: すべて</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>繰り返し: オフ</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>繰り返し: 1</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>シャッフル:オフ</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>シャッフル:オン</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>タイムライン情報</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>動作</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>デフォルトのフライアウト</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>デフォルトのフライアウトを選択する</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>Windows のデフォルトのポップアップをデフォルトとして選択しても、このアプリは閉じることはありません。このアプリはまだバックグラウンドで実行され続けます。パフォーマンスを向上させるために安全にこのアプリを終了してください。</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>無効</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>有効</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>ポップアップ背景の不透明度</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>フライアウトの既定の位置 ([配置] ボタンの場合)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>「X,Y」形式でポジションを入力します(例えば50,60の場合)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>フライアウトトップバー</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>モジュール</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>機内モードフライアウトモジュール</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>オーディオフライアウトモジュール</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>輝度フライアウトモジュール</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>ロックキーフライアウトモジュール</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>起動時に実行</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>ボリューム フライアウトでグローバル システム メディア トランスポート (メディア) コントロールを表示する</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>グローバル システム メディア トランスポート (メディア) コントロール のポップアップでボリューム コントロールを表示</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>トレイ アイコン モード</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>モノクロ</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>[設定] ウィンドウを開く</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>トップバーの固定を解除する</value>
+  </data>
+</root>

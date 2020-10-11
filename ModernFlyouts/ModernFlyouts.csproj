@@ -1,30 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
-	  <RuntimeIdentifiers>win10-x64;win10-x86</RuntimeIdentifiers>
-	  <!--<PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>CopyUsed</TrimMode>--> 
+    <RuntimeIdentifiers>win10-x64;win10-x86</RuntimeIdentifiers>
+    <!--<PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>CopyUsed</TrimMode>-->
     <SignAssembly>false</SignAssembly>
-	  <DelaySign>false</DelaySign>
+    <DelaySign>false</DelaySign>
     <UseWPF>true</UseWPF>
+    <NeutralLanguage>en-US</NeutralLanguage>
     <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>latest</LangVersion>
     <Version>0.7.0</Version>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
   </PropertyGroup>
-	
-	<ItemGroup>
-		<PackageReference Include="ModernWpf.Toolkit.UI.Controls.Markdown" Version="0.1.0-alpha" />
-		<PackageReference Include="ModernWpfUI" Version="0.9.3-preview.201004.0" />
-		<PackageReference Include="NAudio" Version="1.10.0" />
-		<PackageReference Include="System.Drawing.Common" Version="5.0.0-rc.1.20451.14" />
-		<PackageReference Include="System.Management" Version="5.0.0-rc.1.20451.14" />
-		<PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.13" />
-	</ItemGroup>
-	
+  <ItemGroup>
+    <PackageReference Include="ModernWpf.Toolkit.UI.Controls.Markdown" Version="0.1.0-alpha" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.3-preview.201004.0" />
+    <PackageReference Include="NAudio" Version="1.10.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0-rc.1.20451.14" />
+    <PackageReference Include="System.Management" Version="5.0.0-rc.1.20451.14" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.13" />
+  </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\Images\DefaultAudioThumbnail.png" />
     <None Remove="Assets\Images\DefaultImageThumbnail.png" />
@@ -52,7 +57,6 @@
     <None Remove="Assets\Logo_Tray_Black.ico" />
     <None Remove="Assets\Logo_Tray_White.ico" />
   </ItemGroup>
-  
   <ItemGroup>
     <Resource Include="Assets\Images\DefaultAudioThumbnail.png" />
     <Resource Include="Assets\Images\DefaultImageThumbnail.png" />
@@ -80,11 +84,9 @@
     <Resource Include="Assets\Logo_Tray_Black.ico" />
     <Resource Include="Assets\Logo_Tray_White.ico" />
   </ItemGroup>
-  
   <ItemGroup>
     <Page Remove="Properties\DesignTimeResources.xaml" />
   </ItemGroup>
-  
   <ItemGroup>
     <None Include="Properties\DesignTimeResources.xaml">
       <ContainsDesignTimeResources>True</ContainsDesignTimeResources>
@@ -92,7 +94,6 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>
-  
   <ItemGroup>
     <Compile Update="Properties\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -100,25 +101,35 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-  
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Strings.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Strings.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Strings.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include="Properties\Strings\" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
-	
-  
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
 </Project>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>Flymodus er ikke tilgjengelig :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>Flymodus av</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>Flymodus på</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Juster til standardposisjon</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>Ingen tilkoblede lydenheter</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Lukk</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>Avslutt</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>Avslutt appen på en trygg måte</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Generelt</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>Innsettingsmodus</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} er av</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} er på</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>Overskrivingsmodus</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>Pin TopBar</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>Vennligst skriv inn punktet i formatet 'X,Y' (for eksempel 50,60).</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>Vennligst skriv inn X,Y-verdier i området {0} - {1}.</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>Verdien kan ikke skjules til streng.</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>Bruk standard</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>Gjenoppretter windows standard undermeny og avslutter denne appen på en trygg måte</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>Flere kontroller</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>NEXT</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>Stans midlertidig</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>Spill av</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>Forrige</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>Gjenta: alle</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>Gjenta: av</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>Gjenta: en</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>Tilfeldig rekkefølge: av</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>Tilfeldig rekkefølge: på</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>Stopp</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>Informasjon om tidslinje</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>Tillegg</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>Virkemåte</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>Standard undermeny</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>Velg standard undermeny</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>Hvis du velger standard undermeny for Windows som standard, lukkes ikke denne appen. Denne appen vil fortsatt fortsette å kjøre i bakgrunnen. Vennligst avslutt denne appen trygt for å forbedre ytelsen.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>Deaktivert</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>Aktivert</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>Flyout Bakgrunn Tetthet</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>Standardposisjon for undermeny (for Juster-knappen)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>Skriv inn posisjonen i X,Y-format (for eksempel 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>Flyout TopBar</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>Moduler</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>FlyMode-undermenymodul</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>Modul for lyd undermeny</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>Modul for undermeny for lysstyrke</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>LockKeys-undermenymodul</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>Kjør ved oppstart</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Vis globale systemmedietransportkontroller (Media) i volum undermeny</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Vis volumkontroll i undermeny for globale systemmediertransport (Media)</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>Skuff Ikon Modus</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>Farget</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>Monokrom</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>Innstillinger</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>Åpne innstillingsvinduet</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>Løsne TopBar</value>
+  </data>
+</root>

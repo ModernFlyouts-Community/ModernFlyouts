@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>비행기 모드는 :( 사용할 수 없습니다.</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>비행기 모드 끄기</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>비행기 모드 켜기</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>기본 위치에 정렬</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>연결된 오디오 장치 없음</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>닫다</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>끝내기</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>앱을 안전하게 종료</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>삽입 모드</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} 꺼져 있습니다.</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0}</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>겹쳐쓰기 모드</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>핀 탑바</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>형식 'X,Y'(예: 50,60)로 포인트를 입력하십시오.</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>{1} - {0} 범위에서 X, Y 값을 입력하십시오.</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>값을 문자열로 덮을 수 없습니다.</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>기본값 복원</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>창 기본 플라이 아웃을 복원하고 안전하게이 응용 프로그램을 종료</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>추가 컨트롤</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>다음</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>일시 중지</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>재생</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>이전</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>반복: 모두</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>반복: 끄기</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>반복: 1회</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>셔플: 끄기</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>셔플: 켜기</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>중지</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>타임라인 정보</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>동작</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>기본 플라이아웃</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>기본 플라이아웃 선택</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>기본으로 Windows 기본 플라이아웃을 선택하면 이 앱이 닫히지 않습니다. 이 응용 프로그램은 여전히 백그라운드에서 실행 계속됩니다. 성능을 향상시키기 위해 안전하게이 응용 프로그램을 종료하십시오.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>사용 안 함</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>플라이아웃 배경 불투명도</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>플라이아웃 기본 위치(정렬 버튼용)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>'X, Y' 형식으로 위치를 입력합니다(예: 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>플라이아웃 탑바</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>모듈</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>비행기 모드 플라이 아웃 모듈</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>오디오 플라이아웃 모듈</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>밝기 플라이아웃 모듈</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>록키 플라이아웃 모듈</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>시작할 때 실행</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>볼륨 플라이아웃에서 글로벌 시스템 미디어 전송(미디어) 컨트롤 표시</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>글로벌 시스템 미디어 전송(미디어) 컨트롤 플라이아웃에서 볼륨 제어 표시</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>트레이 아이콘 모드</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>색</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>단색</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>설정 창 열기</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>핀 을 해제 탑바</value>
+  </data>
+</root>

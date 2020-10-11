@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Perihal</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>Mod Kapal Terbang tidak tersedia untuk :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>Mod kapal terbang dimatikan</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>Mod kapal terbang buka</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Sejajar dengan kedudukan lalai</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>Tiada Peranti Audio Bersambung</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>Keluar dari aplikasi dengan selamat</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Umum</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>Mod Senyap</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} dimatikan</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} disalakan</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>Mod Overtype</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>Bar Atas Pin</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>Sila masukkan titik dalam format 'X,Y' (contohnya 50,60).</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>Sila masukkan nilai X,Y dalam julat {0} - {1}.</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>Nilai tidak boleh dilindungi kepada rentetan.</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>Pulihkan Lalai</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>Ambil semula lalat tetingkap dan keluar aplikasi ini dengan selamat</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>Kawalan Lain</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>Seterusnya</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>Jeda</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>Sebelumnya</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>Ulangi: semua</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>Ulangi: matikan</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>Ulang: satu</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>Rombak: matikan</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>Rombak: pada</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>Berhenti</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>Maklumat Garis Masa</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>Tambahan</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>Kelakuan</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>Risalah Lalai</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>Pilih flyout lalai</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>Memilih Flyout Lalai Windows sebagai lalai tidak akan menutup aplikasi ini. Aplikasi ini masih akan terus berjalan di latar belakang. Sila keluar dari aplikasi ini dengan selamat untuk meningkatkan prestasi.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>Dinyahdayakan</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>Didayakan</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>Kelegapan Latar Belakang Terbang</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>Kedudukan Lalai Flyout (untuk butang Sejajar)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>Taipkan kedudukan dalam format 'X,Y' (contohnya 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>Flyout TopBar</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>Modul</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>Modul PenerbanganMode-flyout</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>Modul Audio-flyout</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>Modul Kecerahan-flyout</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>Modul LockKeys-flyout</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>Jalankan semasa permulaan</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Tayang Kawalan Pengangkutan Media Sistem Global (Media) dalam lalat</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Tayang kawalan kelantangan dalam risalah Kawalan Pengangkutan Media Sistem Global (Media)</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>Mod Ikon Dulang</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>Berwarna</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>Monokrom</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>Seting</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>Buka tetingkap pengesetan</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>Buka Bar Teratas</value>
+  </data>
+</root>

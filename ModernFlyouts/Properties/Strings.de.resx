@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>Der Flugzeugmodus ist nicht verfügbar :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>Flugzeugmodus aus</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>Flugzeugmodus ein</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>An der Standardposition ausrichten</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>Keine verbundenen Audiogeräte</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>Beenden Sie die App sicher</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>Einfügemodus</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} ist aus</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} ist auf</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>Überschreibmodus</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>Pin TopBar</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>Bitte geben Sie den Punkt im Format 'X,Y' (z.B. 50,60) ein.</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>Bitte geben Sie X,Y-Werte im Bereich {0} - {1} ein.</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>Der Wert kann nicht mit einer Zeichenfolge abgedeckt werden.</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>Standard wiederherstellen</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>Stellt das Windows-Standard-Flyout wieder her und beendet diese App sicher</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>Weitere Steuerelemente</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>NÄCHSTER</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>Anhalten</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>Wiedergeben</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>Wiederholen: alle</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>Wiederholen: aus</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>Wiederholen: ein</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>Shuffle: aus</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>Shuffle: auf</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>Zeitleiste Info</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>Zusätzlich</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>Verhalten</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>Standard-Flyout</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>Wählen Sie das Standard-Flyout</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>Wenn Sie standardmäßig das Windows-Standard-Flyout auswählen, wird diese App nicht geschlossen. Diese App wird weiterhin im Hintergrund laufen. Bitte beenden Sie diese App sicher, um die Leistung zu verbessern.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>Aktiviert</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>Flyout Hintergrund Opazität</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>Flyout-Standardposition (für Ausrichtungsschaltfläche)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>Geben Sie die Position im 'X,Y'-Format ein (z.B. 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>Flyout TopBar</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>AirplaneMode-Flyout-Modul</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>Audio-Flyout-Modul</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>Helligkeits-Flyout-Modul</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>LockKeys-Flyout-Modul</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>Beim Start ausführen</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Global System Media Transport (Media) Controls in Volume Flyout anzeigen</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Volume-Steuerung in Global System Media Transport (Media) Controls Flyout anzeigen</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>Tray Icon-Modus</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>Farbigen</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>Monochrom</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>Fenster "Einstellungen öffnen"</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>Unpin TopBar</value>
+  </data>
+</root>
