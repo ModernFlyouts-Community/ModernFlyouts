@@ -26,7 +26,7 @@
                     </RadialGradientBrush>
                 </Border.OpacityMask>
                 <Border.Background>
-                    <ImageBrush x:Name="thumbBackground"
+                    <ImageBrush x:Name="ThumbnailBackgroundBrush"
                                 Stretch="UniformToFill" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased">
                     </ImageBrush>
                 </Border.Background>
@@ -54,7 +54,7 @@
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}" Background="#333333" />
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
                         <Border.Background>
-                            <ImageBrush x:Name="thumb" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" />
+                            <ImageBrush x:Name="ThumbnailImageBrush" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" />
                         </Border.Background>
                     </Border>
                 </Grid>
@@ -97,8 +97,8 @@
                 </StackPanel>
             </ui:SplitView>
 
-            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="More Controls"
-                          Margin="16,0,0,12" IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
+            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                          ToolTip="More Controls" Margin="16,0,0,12" IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
                 <ui:FontIcon Glyph="{x:Static util:CommonGlyphs.More}" FontSize="16" />
             </ToggleButton>
 
@@ -113,9 +113,11 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="StartTimeBlock" Grid.Column="0" Margin="5,0" Text="00:00:00" />
+                            <TextBlock x:Name="CurrentTimeBlock" Grid.Column="0" Margin="5,0"
+                                       Text="00:00:00" VerticalAlignment="Center" />
                             <ui:ProgressBar x:Name="TimeBar" Grid.Column="1" Margin="10,0" />
-                            <TextBlock x:Name="EndTimeBlock" Margin="5,0" Grid.Column="2" Text="00:00:00" />
+                            <TextBlock x:Name="TotalTimeBlock" Margin="5,0" Grid.Column="2"
+                                       Text="00:00:00" VerticalAlignment="Center" />
                         </Grid>
                     </ui:Flyout>
                 </ui:FlyoutService.Flyout>

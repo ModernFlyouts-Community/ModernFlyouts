@@ -293,7 +293,7 @@ namespace ModernFlyouts
 
         #region SMTC
 
-        private object _SMTC;
+        private GlobalSystemMediaTransportControlsSessionManager GSMTC;
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         private async void SetupSMTCAsync()
@@ -303,11 +303,8 @@ namespace ModernFlyouts
                 return;
             }
 
-            GlobalSystemMediaTransportControlsSessionManager SMTC;
-
-            SMTC = await GlobalSystemMediaTransportControlsSessionManager.RequestAsync();
-            SMTC.SessionsChanged += SMTC_SessionsChanged;
-            _SMTC = SMTC;
+            GSMTC = await GlobalSystemMediaTransportControlsSessionManager.RequestAsync();
+            GSMTC.SessionsChanged += SMTC_SessionsChanged;
 
             LoadSessionControls();
         }
@@ -315,10 +312,10 @@ namespace ModernFlyouts
         [MethodImpl(MethodImplOptions.NoInlining)]
         private void DetachSMTC()
         {
-            if (_SMTC is GlobalSystemMediaTransportControlsSessionManager SMTC)
+            if (GSMTC != null)
             {
-                SMTC.SessionsChanged -= SMTC_SessionsChanged;
-                _SMTC = null;
+                GSMTC.SessionsChanged -= SMTC_SessionsChanged;
+                GSMTC = null;
             }
 
             ClearSessionControls();
@@ -353,16 +350,13 @@ namespace ModernFlyouts
                 return;
             }
 
-            if (_SMTC is GlobalSystemMediaTransportControlsSessionManager SMTC)
+            if (GSMTC != null)
             {
-                var sessions = SMTC.GetSessions();
+                var sessions = GSMTC.GetSessions();
 
                 foreach (var session in sessions)
                 {
-                    sessionsPanel.SessionsStackPanel.Children.Add(new SessionControl
-                    {
-                        SMTCSession = session
-                    });
+                    sessionsPanel.SessionsStackPanel.Children.Add(new SessionControl(session));
                 }
 
                 if (sessionsPanel.SessionsStackPanel.Children.Count > 0)
@@ -372,24 +366,16 @@ namespace ModernFlyouts
                 }
             }
         }
+
         #endregion
 
         #region SMTC Thumbnails
 
-        public static ImageSource GetDefaultAudioThumbnail()
-        {
-            return new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultAudioThumbnail.png"));
-        }
+        public static ImageSource GetDefaultAudioThumbnail() => new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultAudioThumbnail.png"));
 
-        public static ImageSource GetDefaultImageThumbnail()
-        {
-            return new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultImageThumbnail.png"));
-        }
+        public static ImageSource GetDefaultImageThumbnail() => new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultImageThumbnail.png"));
 
-        public static ImageSource GetDefaultVideoThumbnail()
-        {
-            return new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultVideoThumbnail.png"));
-        }
+        public static ImageSource GetDefaultVideoThumbnail() => new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultVideoThumbnail.png"));
 
         #endregion
 
