@@ -63,6 +63,11 @@ namespace ModernFlyouts
             Unloaded += SessionControl_Unloaded;
         }
 
+        public SessionControl(GlobalSystemMediaTransportControlsSession session) : this()
+        {
+            SMTCSession = session;
+        }
+
         private void SourceAppInfo_InfoFetched(object sender, EventArgs e)
         {
             sourceAppInfo.InfoFetched -= SourceAppInfo_InfoFetched;
@@ -386,8 +391,8 @@ namespace ModernFlyouts
                     TimeBar.Maximum = timeline.EndTime.TotalSeconds;
                     TimeBar.Value = timeline.Position.TotalSeconds;
 
-                    StartTimeBlock.Text = timeline.StartTime.ToString("hh\\:mm\\:ss");
-                    EndTimeBlock.Text = timeline.EndTime.ToString("hh\\:mm\\:ss");
+                    CurrentTimeBlock.Text = timeline.Position.ToString("hh\\:mm\\:ss");
+                    TotalTimeBlock.Text = timeline.EndTime.ToString("hh\\:mm\\:ss");
 
                     TimelineInfoButton.Visibility = Visibility.Visible;
                 }
@@ -456,14 +461,14 @@ namespace ModernFlyouts
             //        using var nstream = strm.AsStream();
             //        if (nstream != null && nstream.Length > 0)
             //        {
-            //            thumb.ImageSource = thumbBackground.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);;
+            //            ThumbnailImageBrush.ImageSource = ThumbnailBackgroundBrush.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);;
             //            return;
             //        }
             //    }
             //}
 
-            thumb.ImageSource = GetDefaultThumbnail(playbackType);
-            thumbBackground.ImageSource = null;
+            ThumbnailImageBrush.ImageSource = GetDefaultThumbnail(playbackType);
+            ThumbnailBackgroundBrush.ImageSource = null;
         }
 
         private ImageSource GetDefaultThumbnail(MediaPlaybackType? playbackType)
@@ -484,20 +489,20 @@ namespace ModernFlyouts
 
         private void BeginTrackTransition()
         {
-            thumbBackground.BeginAnimation(Brush.OpacityProperty, null);
-            thumb.BeginAnimation(Brush.OpacityProperty, null);
+            ThumbnailBackgroundBrush.BeginAnimation(Brush.OpacityProperty, null);
+            ThumbnailImageBrush.BeginAnimation(Brush.OpacityProperty, null);
             TextBlockGrid.BeginAnimation(OpacityProperty, null);
 
-            thumbBackground.Opacity = 0.0;
-            thumb.Opacity = 0.0;
+            ThumbnailBackgroundBrush.Opacity = 0.0;
+            ThumbnailImageBrush.Opacity = 0.0;
             TextBlockGrid.Opacity = 0.0;
         }
 
         private void EndTrackTransition()
         {
             var fadeAnim = new FadeInThemeAnimation();
-            thumbBackground.BeginAnimation(Brush.OpacityProperty, fadeAnim);
-            thumb.BeginAnimation(Brush.OpacityProperty, fadeAnim);
+            ThumbnailBackgroundBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);
+            ThumbnailImageBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);
             TextBlockGrid.BeginAnimation(OpacityProperty, fadeAnim);
         }
 
