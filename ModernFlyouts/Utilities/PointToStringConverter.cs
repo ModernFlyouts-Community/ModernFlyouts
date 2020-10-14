@@ -20,7 +20,8 @@ namespace ModernFlyouts.Utilities
             {
                 var point = Point.Parse(value.ToString());
                 return point;
-            } catch { }
+            }
+            catch { }
 
             return default(Point);
         }

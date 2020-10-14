@@ -117,7 +117,10 @@ namespace ModernFlyouts
                 moc.Dispose();
                 mos.Dispose();
             }
-            catch (Exception ex) { Debug.WriteLine(ex.Message); }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
 
             return 0;
         }
@@ -148,7 +151,10 @@ namespace ModernFlyouts
                 moc.Dispose();
                 mos.Dispose();
             }
-            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
 
         #endregion

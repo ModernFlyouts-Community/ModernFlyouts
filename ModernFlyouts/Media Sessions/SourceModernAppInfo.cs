@@ -87,7 +87,8 @@ namespace ModernFlyouts
                 }
 
                 InfoFetched?.Invoke(this, null);
-            } catch { }
+            }
+            catch { }
         }
 
         private string GetLogoPathFromAppPath(string appPath)
