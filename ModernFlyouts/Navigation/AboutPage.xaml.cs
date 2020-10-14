@@ -54,7 +54,8 @@ namespace ModernFlyouts.Navigation
                     e.Image = new BitmapImage(PackUriHelper.GetAbsoluteUri(e.Url));
                     e.Handled = true;
                     return;
-                } catch { return; }
+                }
+                catch { return; }
             }
         }
     }

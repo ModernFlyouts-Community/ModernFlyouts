@@ -29,7 +29,7 @@ namespace ModernFlyouts
                     return;
 
                 var hWnd = sourceProcess.MainWindowHandle;
-                if (hWnd != null && hWnd != IntPtr.Zero)
+                if (hWnd != IntPtr.Zero)
                 {
                     if (GetWindowSizeState(hWnd) == WindowSizeState.Minimized)
                     {
@@ -52,7 +52,7 @@ namespace ModernFlyouts
 
             await Task.Run(() =>
             {
-                var processName = AppId.Remove(AppId.Length - 4, 4);
+                var processName = AppId.Substring(0, AppId.Length - 4);
                 var processes = Process.GetProcessesByName(processName);
 
                 if (processes?.Length > 0)
@@ -61,7 +61,8 @@ namespace ModernFlyouts
                     try
                     {
                         AppName = sourceProcess.MainModule.FileVersionInfo.FileDescription;
-                    } catch { }
+                    }
+                    catch { }
 
                     try
                     {
@@ -69,7 +70,8 @@ namespace ModernFlyouts
                         var ie = new IconExtractor(path);
                         var icon = ie.GetIcon(0);
                         bitmap = icon.ToBitmap();
-                    } catch { }
+                    }
+                    catch { }
                 }
             });
 

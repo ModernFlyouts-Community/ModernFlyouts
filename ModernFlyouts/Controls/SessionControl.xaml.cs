@@ -410,10 +410,10 @@ namespace ModernFlyouts
 
         private async void UpdateSessionInfo(GlobalSystemMediaTransportControlsSession session)
         {
+            BeginTrackTransition();
+
             try
             {
-                BeginTrackTransition();
-
                 var mediaInfo = await session.TryGetMediaPropertiesAsync();
 
                 if (mediaInfo != null)
@@ -441,31 +441,30 @@ namespace ModernFlyouts
 
                 UpdatePlaybackInfo(session);
 
-                /*await*/ SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
-
-                EndTrackTransition();
+                await SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
             }
             catch { }
+
+            EndTrackTransition();
         }
 
         #region Thumbnail
 
-        // TODO : Re-enable once .NET 5 RC 2 is released
-        private /*async Task */ void SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
+        private async Task SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
         {
-            //if (thumbnail != null)
-            //{
-            //    using var strm = await thumbnail.OpenReadAsync();
-            //    if (strm != null)
-            //    {
-            //        using var nstream = strm.AsStream();
-            //        if (nstream != null && nstream.Length > 0)
-            //        {
-            //            ThumbnailImageBrush.ImageSource = ThumbnailBackgroundBrush.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);;
-            //            return;
-            //        }
-            //    }
-            //}
+            if (thumbnail != null)
+            {
+                using var strm = await thumbnail.OpenReadAsync();
+                if (strm != null)
+                {
+                    using var nstream = strm.AsStream();
+                    if (nstream != null && nstream.Length > 0)
+                    {
+                        ThumbnailImageBrush.ImageSource = ThumbnailBackgroundBrush.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad); ;
+                        return;
+                    }
+                }
+            }
 
             ThumbnailImageBrush.ImageSource = GetDefaultThumbnail(playbackType);
             ThumbnailBackgroundBrush.ImageSource = null;

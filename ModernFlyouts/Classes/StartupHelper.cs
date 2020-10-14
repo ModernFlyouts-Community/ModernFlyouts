@@ -15,7 +15,8 @@ namespace ModernFlyouts
                 StartupTask startupTask = await StartupTask.GetAsync(StartupId);
 
                 return startupTask.State == StartupTaskState.Enabled;
-            } catch { return true; }
+            }
+            catch { return true; }
         }
 
         public static async void SetRunAtStartupEnabled(bool value)
@@ -32,7 +33,8 @@ namespace ModernFlyouts
                 {
                     startupTask.Disable();
                 }
-            } catch { }
+            }
+            catch { }
         }
     }
 }
