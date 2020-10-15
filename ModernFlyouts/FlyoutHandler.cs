@@ -314,20 +314,23 @@ namespace ModernFlyouts
 
         public static void ShowSettingsWindow()
         {
-            if (Instance.SettingsWindow == null)
+            App.Current.Dispatcher.Invoke(() =>
             {
-                Instance.SettingsWindow = new SettingsWindow();
-                WindowPlacement.SetPlacement(new WindowInteropHelper(Instance.SettingsWindow).EnsureHandle(), AppDataHelper.SettingsWindowPlacement);
-
-                void handler(object sender, CancelEventArgs e)
+                if (Instance.SettingsWindow == null)
                 {
-                    Instance.SettingsWindow.Closing -= handler;
-                    AppDataHelper.SettingsWindowPlacement = WindowPlacement.GetPlacement(new WindowInteropHelper(Instance.SettingsWindow).Handle);
-                    Instance.SettingsWindow = null;
+                    Instance.SettingsWindow = new SettingsWindow();
+                    WindowPlacement.SetPlacement(new WindowInteropHelper(Instance.SettingsWindow).EnsureHandle(), AppDataHelper.SettingsWindowPlacement);
+
+                    void handler(object sender, CancelEventArgs e)
+                    {
+                        Instance.SettingsWindow.Closing -= handler;
+                        AppDataHelper.SettingsWindowPlacement = WindowPlacement.GetPlacement(new WindowInteropHelper(Instance.SettingsWindow).Handle);
+                        Instance.SettingsWindow = null;
+                    }
+                    Instance.SettingsWindow.Closing += handler;
                 }
-                Instance.SettingsWindow.Closing += handler;
-            }
-            Instance.SettingsWindow.Show();
+                Instance.SettingsWindow.Show();
+            });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

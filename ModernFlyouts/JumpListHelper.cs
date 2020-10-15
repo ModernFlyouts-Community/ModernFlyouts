@@ -22,7 +22,8 @@ namespace ModernFlyouts
                 Title = Properties.Strings.SettingsItem,
                 Description = Properties.Strings.SettingsItemDescription,
                 ApplicationPath = AppPath,
-                Arguments = arg_settings
+                Arguments = arg_settings,
+                IconResourceIndex = -1
             };
             jumpList.JumpItems.Add(settingsTask);
 
@@ -31,7 +32,8 @@ namespace ModernFlyouts
                 Title = Properties.Strings.RestoreDefaultItem,
                 Description = Properties.Strings.RestoreDefaultItemDescription,
                 ApplicationPath = AppPath,
-                Arguments = arg_restore
+                Arguments = arg_restore,
+                IconResourceIndex = -1,
             };
             jumpList.JumpItems.Add(restoreTask);
 
@@ -40,7 +42,8 @@ namespace ModernFlyouts
                 Title = Properties.Strings.ExitItem,
                 Description = Properties.Strings.ExitItemDescription,
                 ApplicationPath = AppPath,
-                Arguments = arg_exit
+                Arguments = arg_exit,
+                IconResourceIndex = -1
             };
             jumpList.JumpItems.Add(exitTask);
 
