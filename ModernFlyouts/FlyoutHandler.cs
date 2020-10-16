@@ -289,12 +289,25 @@ namespace ModernFlyouts
                 }
                 else if (wParam == (IntPtr)12)
                 {
-                    //Volume
-                    AudioFlyoutHelper?.OnExternalUpdated(
-                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_NEXT ||
-                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_PREVIOUS ||
-                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_PLAYPAUSE ||
-                        (int)lParam == (int)HookMessageEnum.HOOK_MEDIA_STOP);
+                    switch ((long)lParam)
+                    {
+                        case (long)HookMessageEnum.HOOK_MEDIA_NEXT:
+                        case (long)HookMessageEnum.HOOK_MEDIA_PREVIOUS:
+                        case (long)HookMessageEnum.HOOK_MEDIA_PLAYPAUSE:
+                        case (long)HookMessageEnum.HOOK_MEDIA_STOP:
+                            //Media
+                            AudioFlyoutHelper?.OnExternalUpdated(true);
+                            break;
+                        case (long)HookMessageEnum.HOOK_MEDIA_VOLMINUS:
+                        case (long)HookMessageEnum.HOOK_MEDIA_VOLMUTE:
+                        case (long)HookMessageEnum.HOOK_MEDIA_VOLPLUS:
+                            //Volume
+                            AudioFlyoutHelper?.OnExternalUpdated(false);
+                            break;
+                        default:
+                            //Ignore mouse side buttons and other keyboard special keys
+                            break;
+                    }
                 }
             }
 
