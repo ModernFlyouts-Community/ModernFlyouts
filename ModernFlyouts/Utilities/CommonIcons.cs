@@ -34,6 +34,8 @@
 
         public const string SignalBars5 = "\uE870";
 
+        public const string MobSignal5 = "\uEC3B";
+
         public const string Mute = "\uE74F";
 
         public const string Volume0 = "\uE992";
