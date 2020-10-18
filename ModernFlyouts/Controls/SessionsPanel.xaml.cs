@@ -1,6 +1,5 @@
 ﻿using ModernFlyouts.Utilities;
 using System;
-using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;

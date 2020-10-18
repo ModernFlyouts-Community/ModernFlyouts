@@ -52,6 +52,7 @@
             <util:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
             <util:PointToStringConverter x:Key="PointToStringConverter" />
             <util:ValidationErrorsToStringConverter x:Key="ValidationErrorsToStringConverter" />
+            <util:EnumToLocalizedStringConverter x:Key="EnumToLocalizedStringConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>

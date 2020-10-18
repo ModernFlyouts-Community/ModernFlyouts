@@ -124,6 +124,33 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ModernFlyouts.
+        /// </summary>
+        public static string Enums_DefaultFlyout_ModernFlyouts {
+            get {
+                return ResourceManager.GetString("Enums.DefaultFlyout.ModernFlyouts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string Enums_DefaultFlyout_None {
+            get {
+                return ResourceManager.GetString("Enums.DefaultFlyout.None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows default.
+        /// </summary>
+        public static string Enums_DefaultFlyout_WindowsDefault {
+            get {
+                return ResourceManager.GetString("Enums.DefaultFlyout.WindowsDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string ExitItem {
