@@ -237,20 +237,6 @@ namespace ModernFlyouts
             UpdateTopBar(value);
         }
 
-        #region Tray Menu Methods
-
-        private void exitItem_Click(object sender, RoutedEventArgs e)
-        {
-            FlyoutHandler.SafelyExitApplication();
-        }
-
-        private void settingsItem_Click(object sender, RoutedEventArgs e)
-        {
-            FlyoutHandler.ShowSettingsWindow();
-        }
-
-        #endregion
-
         private void UpdateTopBar(bool showTopBar)
         {
             var R1 = this.TopBarGrid.RowDefinitions[0];
@@ -286,6 +272,11 @@ namespace ModernFlyouts
         private void TopBarPinButton_Click(object sender, RoutedEventArgs e)
         {
             FlyoutHandler.Instance.TopBarEnabled = !FlyoutHandler.Instance.TopBarEnabled;
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlyoutHandler.ShowSettingsWindow();
         }
 
         private static bool IsMousePointerWithinBounds(FrameworkElement frameworkElement, MouseEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using ModernFlyouts.Navigation;
+using ModernFlyouts.Utilities;
 using ModernWpf.Controls;
 using ModernWpf.Media.Animation;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Interop;
 
 namespace ModernFlyouts
 {
@@ -14,6 +16,8 @@ namespace ModernFlyouts
 		public SettingsWindow()
 		{
 			InitializeComponent();
+
+			WindowPlacement.SetPlacement(new WindowInteropHelper(this).EnsureHandle(), AppDataHelper.SettingsWindowPlacement);
 
 			ContentFrame.Navigated += OnNavigated;
 
@@ -26,6 +30,14 @@ namespace ModernFlyouts
 					BackRequested();
 				}
 			};
+
+            Closing += SettingsWindow_Closing;
+		}
+
+        private void SettingsWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+			AppDataHelper.SettingsWindowPlacement = WindowPlacement.GetPlacement(new WindowInteropHelper(this).Handle);
+			FlyoutHandler.Instance.SettingsWindow = null;
 		}
 
 		private readonly List<(string Tag, Type PageType)> _pages = new List<(string Tag, Type PageType)>

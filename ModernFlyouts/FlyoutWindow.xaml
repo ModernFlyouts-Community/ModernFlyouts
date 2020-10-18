@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
-        xmlns:utils="clr-namespace:ModernFlyouts.Utilities" xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
         xmlns:resx="clr-namespace:ModernFlyouts.Properties"
         Background="Transparent" SizeToContent="WidthAndHeight" WindowStyle="None"
         AllowsTransparency="True" mc:Ignorable="d" ResizeMode="NoResize" Topmost="True"
@@ -53,7 +53,7 @@
             <ui:ThemeShadowChrome.RenderTransform>
                 <TranslateTransform x:Name="T1" />
             </ui:ThemeShadowChrome.RenderTransform>
-            
+
             <Border Margin="0" Background="{DynamicResource FlyoutBackground}"
                     CornerRadius="{DynamicResource FlyoutCornerRadius}" RenderTransformOrigin="0.5,0.5">
                 <StackPanel Width="{DynamicResource FlyoutWidth}">
@@ -69,10 +69,10 @@
                             <ColumnDefinition Width="34" />
                             <ColumnDefinition Width="34" />
                         </Grid.ColumnDefinitions>
-                        
+
                         <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                                 ui:ControlHelper.CornerRadius="8,2,2,2"
-                                Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="{x:Static resx:Strings.SettingsItem}" Click="settingsItem_Click">
+                                Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="{x:Static resx:Strings.SettingsItem}" Click="SettingsButton_Click">
                             <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Setting}" FontSize="16" />
                         </Button>
 
@@ -110,32 +110,8 @@
                     <local:CrossFadeContentControl x:Name="SecondaryHost"
                         Visibility="{Binding FlyoutHelper.SecondaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"
                         Content="{Binding FlyoutHelper.SecondaryContent}" />
-                    
                 </StackPanel>
             </Border>
         </ui:ThemeShadowChrome>
-        
-        <!--#region: Tray Icon -->
-        <tb:TaskbarIcon x:Name="TaskbarIcon" TrayMouseDoubleClick="settingsItem_Click">
-            <tb:TaskbarIcon.TrayToolTip>
-                <ToolTip x:Name="TrayToolTip" Content="ModernFlyouts" ui:ThemeManager.RequestedTheme="Dark" />
-            </tb:TaskbarIcon.TrayToolTip>
-            <tb:TaskbarIcon.ContextMenu>
-                <ContextMenu x:Name="TrayContextMenu" ui:ThemeManager.RequestedTheme="Dark">
-                    <MenuItem Header="{x:Static resx:Strings.SettingsItem}" Click="settingsItem_Click">
-                        <MenuItem.Icon>
-                            <ui:SymbolIcon Symbol="Setting" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static resx:Strings.ExitItem}" Click="exitItem_Click">
-                        <MenuItem.Icon>
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.PowerButton}" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </ContextMenu>
-            </tb:TaskbarIcon.ContextMenu>
-        </tb:TaskbarIcon>
-        <!--#endregion-->
-        
     </Grid>
 </Window>
