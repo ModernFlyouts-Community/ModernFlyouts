@@ -15,6 +15,10 @@ namespace ModernFlyouts
 {
     public class UIManager : INotifyPropertyChanged
     {
+        public const double FlyoutWidth = 354;
+
+        public const double SessionControlHeight = 138;
+
         private FlyoutWindow _flyoutWindow;
         private ElementTheme currentTheme = ElementTheme.Dark;
         private ThemeResources themeResources;

@@ -93,6 +93,34 @@ namespace ModernFlyouts.Utilities
 
         #endregion
 
+        #region CurrentHorizontalOffset
+
+        internal static readonly DependencyProperty CurrentHorizontalOffsetProperty =
+            DependencyProperty.RegisterAttached("CurrentHorizontalOffset",
+                typeof(double),
+                typeof(ScrollViewerHelperEx),
+                new PropertyMetadata(0.0, OnCurrentHorizontalOffsetChanged));
+
+        private static double GetCurrentHorizontalOffset(ScrollViewer scrollViewer)
+        {
+            return (double)scrollViewer.GetValue(CurrentHorizontalOffsetProperty);
+        }
+
+        private static void SetCurrentHorizontalOffset(ScrollViewer scrollViewer, double value)
+        {
+            scrollViewer.SetValue(CurrentHorizontalOffsetProperty, value);
+        }
+
+        private static void OnCurrentHorizontalOffsetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is ScrollViewer ctl && e.NewValue is double v)
+            {
+                ctl.ScrollToHorizontalOffset(v);
+            }
+        }
+
+        #endregion
+
         private static void OnMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {
             var scrollViewer = sender as ScrollViewer;
@@ -104,25 +132,43 @@ namespace ModernFlyouts.Utilities
             }
 
             double _totalVerticalOffset = Math.Min(Math.Max(0, scrollViewer.VerticalOffset - e.Delta), scrollViewer.ScrollableHeight);
-            ScrollToVerticalOffsetInternal(scrollViewer, _totalVerticalOffset);
+            ScrollToVerticalOffset(scrollViewer, _totalVerticalOffset);
         }
 
-        private static void ScrollToVerticalOffsetInternal(ScrollViewer scrollViewer, double offset)
+        public static void ScrollToOffset(ScrollViewer scrollViewer, Orientation orientation, double offset, double duration = 500, IEasingFunction easingFunction = null)
         {
-            var animation = new DoubleAnimation(offset, TimeSpan.FromMilliseconds(500));
-            animation.EasingFunction = new CubicEase
+            var animation = new DoubleAnimation(offset, TimeSpan.FromMilliseconds(duration));
+            easingFunction ??= new CubicEase
             {
                 EasingMode = EasingMode.EaseOut
             };
+            animation.EasingFunction = easingFunction;
             animation.FillBehavior = FillBehavior.Stop;
             animation.Completed += (s, e1) =>
             {
-                SetCurrentVerticalOffset(scrollViewer, offset);
+                if (orientation == Orientation.Vertical)
+                {
+                    SetCurrentVerticalOffset(scrollViewer, offset);
+                }
+                else
+                {
+                    SetCurrentHorizontalOffset(scrollViewer, offset);
+                }
                 SetIsAnimating(scrollViewer, false);
             };
             SetIsAnimating(scrollViewer, true);
 
-            scrollViewer.BeginAnimation(CurrentVerticalOffsetProperty, animation, HandoffBehavior.Compose);
+            scrollViewer.BeginAnimation(orientation == Orientation.Vertical ? CurrentVerticalOffsetProperty : CurrentHorizontalOffsetProperty, animation, HandoffBehavior.Compose);
+        }
+
+        public static void ScrollToVerticalOffset(ScrollViewer scrollViewer, double offset, double duration = 500, IEasingFunction easingFunction = null)
+        {
+            ScrollToOffset(scrollViewer, Orientation.Vertical, offset, duration, easingFunction);
+        }
+
+        public static void ScrollToHorizontalOffset(ScrollViewer scrollViewer, double offset, double duration = 500, IEasingFunction easingFunction = null)
+        {
+            ScrollToOffset(scrollViewer, Orientation.Horizontal, offset, duration, easingFunction);
         }
     }
 }
