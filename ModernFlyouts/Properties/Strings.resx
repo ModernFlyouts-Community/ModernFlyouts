@@ -138,6 +138,21 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows default</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
   <data name="ExitItem" xml:space="preserve">
     <value>Exit</value>
   </data>
@@ -251,6 +266,9 @@
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Flyout TopBar</value>
   </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Maximum Number of Media Session Controls vertically</value>
+  </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Modules</value>
   </data>
@@ -268,6 +286,9 @@
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Run at startup</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Media Sessions Panel Orientation</value>
   </data>
   <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
     <value>Show Global System Media Transport (Media) Controls in Volume flyout</value>

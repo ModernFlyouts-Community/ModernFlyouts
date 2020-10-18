@@ -1,9 +1,13 @@
-﻿using ModernWpf;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using ModernFlyouts.Utilities;
+using ModernWpf;
+using ModernWpf.Controls;
 using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -11,6 +15,10 @@ namespace ModernFlyouts
 {
     public class UIManager : INotifyPropertyChanged
     {
+        public const double FlyoutWidth = 354;
+
+        public const double DefaultSessionControlHeight = 138;
+
         private FlyoutWindow _flyoutWindow;
         private ElementTheme currentTheme = ElementTheme.Dark;
         private ThemeResources themeResources;
@@ -20,6 +28,8 @@ namespace ModernFlyouts
         private bool _isThemeUpdated = false;
 
         #region Properties
+
+        #region General
 
         private double flyoutBackgroundOpacity = 100.0;
 
@@ -55,15 +65,116 @@ namespace ModernFlyouts
 
         #endregion
 
+        #region Media Controls
+
+        private Orientation sessionsPanelOrientation = Orientation.Horizontal;
+
+        public Orientation SessionsPanelOrientation
+        {
+            get { return sessionsPanelOrientation; }
+            set
+            {
+                if (sessionsPanelOrientation != value)
+                {
+                    sessionsPanelOrientation = value;
+                    OnPropertyChanged();
+                    OnSessionsPanelOrientation();
+                }
+            }
+        }
+
+        private int maxVerticalSessionControlsCount = 1;
+
+        public int MaxVerticalSessionControlsCount
+        {
+            get { return maxVerticalSessionControlsCount; }
+            set
+            {
+                if (maxVerticalSessionControlsCount != value)
+                {
+                    maxVerticalSessionControlsCount = value;
+                    OnPropertyChanged();
+                    OnMaxVerticalSessionControlsCount();
+                }
+            }
+        }
+
+        private double calculatedSessionsPanelMaxHeight = DefaultSessionControlHeight;
+
+        public double CalculatedSessionsPanelMaxHeight
+        {
+            get { return calculatedSessionsPanelMaxHeight; }
+            private set
+            {
+                if (calculatedSessionsPanelMaxHeight != value)
+                {
+                    calculatedSessionsPanelMaxHeight = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region Tray Icon
+
+        public TaskbarIcon TaskbarIcon { get; private set; }
+
+        public ContextMenu TaskbarIconContextMenu { get; private set; }
+
+        public ToolTip TaskbarIconToolTip { get; private set; }
+
+        #endregion
+
+        #endregion
+
         public void Initialize(FlyoutWindow flyoutWindow)
         {
             _flyoutWindow = flyoutWindow;
+
+            MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
+            SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 
             themeResources = (ThemeResources)App.Current.Resources.MergedDictionaries.FirstOrDefault(x => x is ThemeResources);
             lightResources = themeResources.ThemeDictionaries["Light"];
             darkResources = themeResources.ThemeDictionaries["Dark"];
 
             FlyoutBackgroundOpacity = AppDataHelper.FlyoutBackgroundOpacity;
+
+            #region Setup TaskbarIcon
+
+            var settingsItem = new MenuItem()
+            {
+                Header = Properties.Strings.SettingsItem,
+                ToolTip = Properties.Strings.SettingsItemDescription,
+                Icon = new SymbolIcon() { Symbol = Symbol.Setting }
+            };
+            settingsItem.Click += (_, __) => FlyoutHandler.ShowSettingsWindow();
+
+            var exitItem = new MenuItem()
+            {
+                Header = Properties.Strings.ExitItem,
+                ToolTip = Properties.Strings.ExitItemDescription,
+                Icon = new FontIcon() { Glyph = CommonGlyphs.PowerButton }
+            };
+            exitItem.Click += (_, __) => FlyoutHandler.SafelyExitApplication();
+
+            TaskbarIconContextMenu = new ContextMenu()
+            {
+                Items = { settingsItem, exitItem }
+            };
+
+            TaskbarIconToolTip = new ToolTip() { Content = Program.AppName };
+
+            TaskbarIcon = new TaskbarIcon()
+            {
+                TrayToolTip = TaskbarIconToolTip,
+                ContextMenu = TaskbarIconContextMenu
+            };
+            TaskbarIcon.TrayMouseDoubleClick += (_, __) => FlyoutHandler.ShowSettingsWindow();
+
+            #endregion
+
             UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
 
             SystemTheme.SystemThemeChanged += OnSystemThemeChange;
@@ -88,8 +199,8 @@ namespace ModernFlyouts
             {
                 currentTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
                 ThemeManager.SetRequestedTheme(_flyoutWindow, currentTheme);
-                ThemeManager.SetRequestedTheme(_flyoutWindow.TrayContextMenu, currentTheme);
-                ThemeManager.SetRequestedTheme(_flyoutWindow.TrayToolTip, currentTheme);
+                ThemeManager.SetRequestedTheme(TaskbarIconContextMenu, currentTheme);
+                ThemeManager.SetRequestedTheme(TaskbarIconToolTip, currentTheme);
 
                 if (!_isThemeUpdated)
                 {
@@ -125,7 +236,31 @@ namespace ModernFlyouts
                 iconUri = PackUriHelper.GetAbsoluteUri(currentTheme == ElementTheme.Light ? @"Assets\Logo_Tray_Black.ico" : @"Assets\Logo_Tray_White.ico");
             }
 
-            _flyoutWindow.TaskbarIcon.IconSource = BitmapFrame.Create(iconUri);
+            TaskbarIcon.IconSource = BitmapFrame.Create(iconUri);
+        }
+
+        private void OnMaxVerticalSessionControlsCount()
+        {
+            UpdateCalculatedSessionsPanelMaxHeight();
+            AppDataHelper.MaxVerticalSessionControlsCount = maxVerticalSessionControlsCount;
+        }
+
+        private void OnSessionsPanelOrientation()
+        {
+            UpdateCalculatedSessionsPanelMaxHeight();
+            AppDataHelper.SessionsPanelOrientation = sessionsPanelOrientation;
+        }
+
+        private void UpdateCalculatedSessionsPanelMaxHeight()
+        {
+            if (sessionsPanelOrientation == Orientation.Vertical)
+            {
+                CalculatedSessionsPanelMaxHeight = DefaultSessionControlHeight * maxVerticalSessionControlsCount;
+            }
+            else
+            {
+                CalculatedSessionsPanelMaxHeight = DefaultSessionControlHeight;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

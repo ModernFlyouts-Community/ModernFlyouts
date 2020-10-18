@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
 using Windows.Storage;
 
 namespace ModernFlyouts
@@ -32,6 +33,33 @@ namespace ModernFlyouts
             try
             {
                 ApplicationData.Current.LocalSettings.Values[propertyName] = value.ToString();
+            }
+            catch { }
+        }
+
+        private static int GetInteger(int defaultValue, [CallerMemberName] string propertyName = "")
+        {
+            try
+            {
+                if (ApplicationData.Current.LocalSettings.Values.ContainsKey(propertyName))
+                {
+                    object value = ApplicationData.Current.LocalSettings.Values[propertyName];
+                    if (int.TryParse(value.ToString(), out int result))
+                    {
+                        return result;
+                    }
+                }
+            }
+            catch { }
+
+            return defaultValue;
+        }
+
+        private static void SetInteger(int value, [CallerMemberName] string propertyName = "")
+        {
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value;
             }
             catch { }
         }
@@ -217,6 +245,18 @@ namespace ModernFlyouts
         {
             get => GetDouble(100.0);
             set => SetDouble(value);
+        }
+
+        public static int MaxVerticalSessionControlsCount
+        {
+            get => GetInteger(1);
+            set => SetInteger(value);
+        }
+
+        public static Orientation SessionsPanelOrientation
+        {
+            get => GetEnum(Orientation.Horizontal);
+            set => SetEnum(value);
         }
 
         #endregion

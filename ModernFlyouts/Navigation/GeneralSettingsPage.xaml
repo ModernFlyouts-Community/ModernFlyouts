@@ -18,6 +18,7 @@
                 <StackPanel>
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"
                         Header="{x:Static resx:Strings.Settings_DefaultFlyoutDescription}"
+                        ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
                         ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}"
                         SelectedItem="{Binding DefaultFlyout}" />
                     <StackPanel x:Name="WarningPanel"
@@ -71,6 +72,14 @@
                                      IsOn="{Binding AudioFlyoutHelper.ShowGSMTCInVolumeFlyout}" />
                     <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_ShowVolumeControlInGSMTCFlyout}"
                                      IsOn="{Binding AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout}" />
+                    <ComboBox ui:ControlHelper.Header="{x:Static resx:Strings.Settings_SessionsPanelOrientation}"
+                        ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
+                        ItemsSource="{Binding Source={x:Type Orientation}, Converter={StaticResource EnumValuesConverter}}"
+                        SelectedItem="{Binding UIManager.SessionsPanelOrientation}" />
+                    <ui:NumberBox Header="{x:Static resx:Strings.Settings_MaxVerticalSessionControlsCount}"
+                                  HorizontalAlignment="Left"
+                                  Minimum="1" Maximum="10" SmallChange="1" LargeChange="2" SpinButtonPlacementMode="Inline"
+                                  Value="{Binding UIManager.MaxVerticalSessionControlsCount}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>
