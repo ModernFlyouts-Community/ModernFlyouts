@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:local="clr-namespace:ModernFlyouts"
              mc:Ignorable="d"
-             d:DesignHeight="138" d:DesignWidth="354" MaxWidth="{DynamicResource FlyoutWidth}">
+             d:DesignHeight="138" d:DesignWidth="354"
+             MaxWidth="{DynamicResource FlyoutWidth}" DataContext="{x:Static local:FlyoutHandler.Instance}">
     <UserControl.Resources>
         
         <!--region: ScrollViewer-->
@@ -203,8 +204,8 @@
         
     </UserControl.Resources>
     
-    <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="138" Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
-        <StackPanel x:Name="SessionsStackPanel" Orientation="Horizontal" />
+    <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}" Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
+        <StackPanel x:Name="SessionsStackPanel" Orientation="{Binding UIManager.SessionsPanelOrientation}" />
     </ScrollViewer>
     
 </UserControl>

@@ -27,12 +27,12 @@ namespace ModernFlyouts
         {
             if (e.Command == ScrollBar.LineUpCommand)
             {
-                double offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset - UIManager.SessionControlHeight), ContentScrollViewer.ScrollableHeight);
+                double offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset - UIManager.DefaultSessionControlHeight), ContentScrollViewer.ScrollableHeight);
                 ScrollViewerHelperEx.ScrollToVerticalOffset(ContentScrollViewer, offset);
             }
             else if (e.Command == ScrollBar.LineDownCommand)
             {
-                double offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset + UIManager.SessionControlHeight), ContentScrollViewer.ScrollableHeight);
+                double offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset + UIManager.DefaultSessionControlHeight), ContentScrollViewer.ScrollableHeight);
                 ScrollViewerHelperEx.ScrollToVerticalOffset(ContentScrollViewer, offset);
             }
             else if (e.Command == ScrollBar.LineLeftCommand)
