@@ -1,5 +1,4 @@
-﻿using ModernFlyouts.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -329,19 +328,7 @@ namespace ModernFlyouts
         {
             App.Current.Dispatcher.Invoke(() =>
             {
-                if (Instance.SettingsWindow == null)
-                {
-                    Instance.SettingsWindow = new SettingsWindow();
-                    WindowPlacement.SetPlacement(new WindowInteropHelper(Instance.SettingsWindow).EnsureHandle(), AppDataHelper.SettingsWindowPlacement);
-
-                    void handler(object sender, CancelEventArgs e)
-                    {
-                        Instance.SettingsWindow.Closing -= handler;
-                        AppDataHelper.SettingsWindowPlacement = WindowPlacement.GetPlacement(new WindowInteropHelper(Instance.SettingsWindow).Handle);
-                        Instance.SettingsWindow = null;
-                    }
-                    Instance.SettingsWindow.Closing += handler;
-                }
+                Instance.SettingsWindow ??= new SettingsWindow();
                 Instance.SettingsWindow.Show();
             });
         }
