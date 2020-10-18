@@ -102,6 +102,10 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
+
+            <DataTemplate x:Key="LocalizedEnumItemTemplate">
+                <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

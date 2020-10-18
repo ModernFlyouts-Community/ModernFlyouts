@@ -151,6 +151,24 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Horizontal.
+        /// </summary>
+        public static string Enums_Orientation_Horizontal {
+            get {
+                return ResourceManager.GetString("Enums.Orientation.Horizontal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vertical.
+        /// </summary>
+        public static string Enums_Orientation_Vertical {
+            get {
+                return ResourceManager.GetString("Enums.Orientation.Vertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string ExitItem {
@@ -475,6 +493,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximum Number of Media Session Controls vertically.
+        /// </summary>
+        public static string Settings_MaxVerticalSessionControlsCount {
+            get {
+                return ResourceManager.GetString("Settings.MaxVerticalSessionControlsCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modules.
         /// </summary>
         public static string Settings_Modules {
@@ -525,6 +552,15 @@ namespace ModernFlyouts.Properties {
         public static string Settings_RunAtStartup {
             get {
                 return ResourceManager.GetString("Settings.RunAtStartup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Media Sessions Panel Orientation.
+        /// </summary>
+        public static string Settings_SessionsPanelOrientation {
+            get {
+                return ResourceManager.GetString("Settings.SessionsPanelOrientation", resourceCulture);
             }
         }
         
