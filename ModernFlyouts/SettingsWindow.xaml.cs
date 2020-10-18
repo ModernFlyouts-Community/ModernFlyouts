@@ -31,11 +31,11 @@ namespace ModernFlyouts
 				}
 			};
 
-            Closing += SettingsWindow_Closing;
+			Closing += SettingsWindow_Closing;
 		}
 
-        private void SettingsWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
+		private void SettingsWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		{
 			AppDataHelper.SettingsWindowPlacement = WindowPlacement.GetPlacement(new WindowInteropHelper(this).Handle);
 			FlyoutHandler.Instance.SettingsWindow = null;
 		}

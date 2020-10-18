@@ -19,7 +19,13 @@
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"
                         Header="{x:Static resx:Strings.Settings_DefaultFlyoutDescription}"
                         ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}"
-                        SelectedItem="{Binding DefaultFlyout}" />
+                        SelectedItem="{Binding DefaultFlyout}">
+                        <ui:RadioButtons.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />
+                            </DataTemplate>
+                        </ui:RadioButtons.ItemTemplate>
+                    </ui:RadioButtons>
                     <StackPanel x:Name="WarningPanel"
                                 Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
                                     Converter={StaticResource IndexToVisibilityConverter}}">
