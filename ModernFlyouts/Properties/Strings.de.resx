@@ -37,7 +37,7 @@
     <value>Beenden</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Beenden Sie die App sicher</value>
+    <value>Die App sicher beenden</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
     <value>Allgemein</value>
@@ -50,7 +50,7 @@
     <comment>E.g. CapsLock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} ist auf</value>
+    <value>{0} ist an</value>
     <comment>E.g. CapsLock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
@@ -68,26 +68,26 @@
     <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
   </data>
   <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Der Wert kann nicht mit einer Zeichenfolge abgedeckt werden.</value>
+    <value>Der Wert kann nicht in eine Zeichenfolge umgewandelt werden.</value>
     <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Standard wiederherstellen</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Stellt das Windows-Standard-Flyout wieder her und beendet diese App sicher</value>
+    <value>Stellt das Windows Standard Flyout wieder her und beendet die App sicher</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Weitere Steuerelemente</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
-    <value>NÄCHSTER</value>
+    <value>Weiter</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
-    <value>Anhalten</value>
+    <value>Pause</value>
   </data>
   <data name="SessionControl.Play" xml:space="preserve">
-    <value>Wiedergeben</value>
+    <value>Play</value>
   </data>
   <data name="SessionControl.Previous" xml:space="preserve">
     <value>Zurück</value>
@@ -99,13 +99,13 @@
     <value>Wiederholen: aus</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Wiederholen: ein</value>
+    <value>Wiederholen: Titel</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
     <value>Shuffle: aus</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Shuffle: auf</value>
+    <value>Shuffle: an</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Beenden</value>
@@ -120,13 +120,13 @@
     <value>Verhalten</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Standard-Flyout</value>
+    <value>Standard Flyout</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Wählen Sie das Standard-Flyout</value>
+    <value>Wählen Sie das Standard Flyout</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Wenn Sie standardmäßig das Windows-Standard-Flyout auswählen, wird diese App nicht geschlossen. Diese App wird weiterhin im Hintergrund laufen. Bitte beenden Sie diese App sicher, um die Leistung zu verbessern.</value>
+    <value>Wenn Sie das Windows Standard Flyout standardmäßig auswählen, wird die App nicht beendet. Die App wird im Hintergrund weiterlaufen. Bitte beenden Sie die App, um die Leistung zu verbessern.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Deaktiviert</value>
@@ -135,10 +135,10 @@
     <value>Aktiviert</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Flyout Hintergrund Opazität</value>
+    <value>Flyout Hintergrundtransparenz</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Flyout-Standardposition (für Ausrichtungsschaltfläche)</value>
+    <value>Flyout Standardposition</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
     <value>Geben Sie die Position im 'X,Y'-Format ein (z.B. 50,60)</value>
@@ -147,19 +147,19 @@
     <value>Flyout TopBar</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Module</value>
+    <value>Modul</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>AirplaneMode-Flyout-Modul</value>
+    <value>AirplaneMode Flyout-Modul</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Audio-Flyout-Modul</value>
+    <value>Audio Flyout-Modul</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Helligkeits-Flyout-Modul</value>
+    <value>Helligkeits Flyout-Modul</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>LockKeys-Flyout-Modul</value>
+    <value>LockKeys Flyout-Modul</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Beim Start ausführen</value>
@@ -168,13 +168,13 @@
     <value>Global System Media Transport (Media) Controls in Volume Flyout anzeigen</value>
   </data>
   <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Volume-Steuerung in Global System Media Transport (Media) Controls Flyout anzeigen</value>
+    <value>Lautstärkesteuerung in Global System Media Transport (Media) Controls Flyout anzeigen</value>
   </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
-    <value>Tray Icon-Modus</value>
+    <value>Tray Icon Modus</value>
   </data>
   <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
-    <value>Farbigen</value>
+    <value>Farbig</value>
   </data>
   <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
     <value>Monochrom</value>

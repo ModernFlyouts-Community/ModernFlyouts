@@ -239,6 +239,34 @@
           <source>Unpin TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Losa TopBar</target>
         </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts</source>
+          <target state="new">ModernFlyouts</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
+          <source>None</source>
+          <target state="new">None</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
+          <source>Windows default</source>
+          <target state="new">Windows default</target>
+        </trans-unit>
+        <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
+          <source>Horizontal</source>
+          <target state="new">Horizontal</target>
+        </trans-unit>
+        <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
+          <source>Vertical</source>
+          <target state="new">Vertical</target>
+        </trans-unit>
+        <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
+          <source>Maximum Number of Media Session Controls vertically</source>
+          <target state="new">Maximum Number of Media Session Controls vertically</target>
+        </trans-unit>
+        <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
+          <source>Media Sessions Panel Orientation</source>
+          <target state="new">Media Sessions Panel Orientation</target>
+        </trans-unit>
       </group>
     </body>
   </file>

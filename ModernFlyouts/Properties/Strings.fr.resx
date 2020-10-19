@@ -33,15 +33,6 @@
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>ModernFlyouts</value>
-  </data>
-  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
-    <value>Aucun</value>
-  </data>
-  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Windows par défaut</value>
-  </data>
   <data name="ExitItem" xml:space="preserve">
     <value>Quitter</value>
   </data>
@@ -135,7 +126,7 @@
     <value>Sélectionner le menu volant par défaut</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Choisir le menu volant par défaut Windows comme par défaut ne fermera pas cette application. Cette application continuera à fonctionner en arrière-plan. Veuillez quitter cette application en toute sécurité pour améliorer les performances.</value>
+    <value>Choisir le menu volant par défaut Windows comme menu par défaut ne fermera pas cette application. Cette application continuera à fonctionner en arrière-plan. Veuillez quitter cette application en toute sécurité pour améliorer les performances.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Désactivé</value>
@@ -147,7 +138,7 @@
     <value>Opacité d’arrière-plan du menu volant</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Position par défaut de menu volant (pour le bouton Aligner)</value>
+    <value>Position par défaut du menu volant (pour le bouton Aligner)</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
     <value>Entrez la position au format 'X,Y' (par exemple 50,60)</value>

@@ -16,7 +16,7 @@
     <value>Sobre</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>O Modo Avião não está disponível :(</value>
+    <value>O modo avião não está disponível :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
     <value>Modo avião desligado</value>
@@ -43,21 +43,21 @@
     <value>Geral</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
-    <value>Modo de Inserção</value>
+    <value>Modo de inserção</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} está desligado.</value>
+    <value>{0} desligado</value>
     <comment>E.g. CapsLock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} está em</value>
+    <value>{0} ligado</value>
     <comment>E.g. CapsLock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
-    <value>Modo Sobrescrever</value>
+    <value>Modo de substituição</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Pin TopBar</value>
+    <value>Fixar barra superior</value>
   </data>
   <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
     <value>Digite o ponto no formato 'X,Y' (por exemplo, 50,60).</value>
@@ -68,17 +68,17 @@
     <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
   </data>
   <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>O valor não pode ser encoberto por string.</value>
+    <value>O valor não pode ser convertido para texto.</value>
     <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Restaurar padrão</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Restaura o flyout padrão do windows e sai com segurança deste aplicativo</value>
+    <value>Restaura o flyout padrão do Windows e sai com segurança deste aplicativo</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
-    <value>Mais Controles</value>
+    <value>Mais controles</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
     <value>Próximo</value>
@@ -93,19 +93,19 @@
     <value>Anterior</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>Repito: todos</value>
+    <value>Repetir: todos</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Repito: desligado</value>
+    <value>Repetir: desligado</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Repito: um</value>
+    <value>Repetir: um</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Shuffle: fora</value>
+    <value>Aleatório: desligado</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Shuffle: em</value>
+    <value>Aleatório: ligado</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Parar</value>
@@ -144,34 +144,34 @@
     <value>Digite a posição no formato 'X,Y' (por exemplo, 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Flyout TopBar</value>
+    <value>Barra superior do Flyout</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Módulos</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Módulo de voo do PlaneMode</value>
+    <value>Módulo do modo avião</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Módulo de voo de áudio</value>
+    <value>Módulo de áudio</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Módulo de voo de brilho</value>
+    <value>Módulo de brilho</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Módulo lockkeys-flyout</value>
+    <value>Módulo de teclas de bloqueio</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Executar durante a inicialização</value>
+    <value>Executar na inicialização</value>
   </data>
   <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Mostrar controles globais de transporte de mídia (mídia) em volume flyout</value>
+    <value>Mostrar controles de mídia no controle de volume</value>
   </data>
   <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Mostrar controle de volume em controle de mídia do sistema global (mídia) controles flyout</value>
+    <value>Mostrar controle de volume nos controles de mídia</value>
   </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
-    <value>Modo ícone da bandeja</value>
+    <value>Modo do ícone da bandeja</value>
   </data>
   <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
     <value>Colorido</value>
@@ -183,9 +183,9 @@
     <value>Configurações</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Janela de configurações abertas</value>
+    <value>Abrir janela de configurações</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Unpin TopBar</value>
+    <value>Desafixar a barra superior</value>
   </data>
 </root>
