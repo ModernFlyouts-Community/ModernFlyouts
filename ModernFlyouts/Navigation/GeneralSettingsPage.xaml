@@ -14,6 +14,9 @@
             <GroupBox Header="{x:Static resx:Strings.Settings_Behavior}">
                 <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_RunAtStartup}" IsOn="{Binding RunAtStartup}" />
             </GroupBox>
+            <ComboBox ui:ControlHelper.Header="{x:Static resx:Strings.Settings_Language}"
+                      ItemsSource="{x:Static utils:LocalizationHelper.SupportedLanguages}"
+                      SelectedItem="{Binding Path=(utils:LocalizationHelper.CurrentLanguage)}" />
             <GroupBox Header="{x:Static resx:Strings.Settings_DefaultFlyout}">
                 <StackPanel>
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"

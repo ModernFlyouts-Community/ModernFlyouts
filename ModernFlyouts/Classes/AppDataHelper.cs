@@ -259,6 +259,12 @@ namespace ModernFlyouts
             set => SetEnum(value);
         }
 
+        public static string Language
+        {
+            get => GetString();
+            set => SetString(value);
+        }
+
         #endregion
     }
 }

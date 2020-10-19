@@ -266,8 +266,14 @@
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Flyout TopBar</value>
   </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Please restart the app to change the language properly</value>
+  </data>
   <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Maximum Number of Media Session Controls vertically</value>
+    <value>Maximum Number of Media Session Controls to show vertically</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Modules</value>
@@ -295,6 +301,9 @@
   </data>
   <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
     <value>Show Volume control in Global System Media Transport (Media) Controls flyout</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>System Default</value>
   </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Tray Icon Mode</value>
