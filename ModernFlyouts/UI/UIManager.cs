@@ -19,6 +19,8 @@ namespace ModernFlyouts
 
         public const double DefaultSessionControlHeight = 138;
 
+        public const double DefaultSessionsPanelVerticalSpacing = 8;
+
         private FlyoutWindow _flyoutWindow;
         private ElementTheme currentTheme = ElementTheme.Dark;
         private ThemeResources themeResources;
@@ -109,6 +111,21 @@ namespace ModernFlyouts
                 if (calculatedSessionsPanelMaxHeight != value)
                 {
                     calculatedSessionsPanelMaxHeight = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private double calculatedSessionsPanelSpacing = 0;
+
+        public double CalculatedSessionsPanelSpacing
+        {
+            get { return calculatedSessionsPanelSpacing; }
+            private set
+            {
+                if (calculatedSessionsPanelSpacing != value)
+                {
+                    calculatedSessionsPanelSpacing = value;
                     OnPropertyChanged();
                 }
             }
@@ -255,11 +272,14 @@ namespace ModernFlyouts
         {
             if (sessionsPanelOrientation == Orientation.Vertical)
             {
-                CalculatedSessionsPanelMaxHeight = DefaultSessionControlHeight * maxVerticalSessionControlsCount;
+                var n = maxVerticalSessionControlsCount;
+                CalculatedSessionsPanelMaxHeight = (DefaultSessionControlHeight * n) + (DefaultSessionsPanelVerticalSpacing * (n - 1));
+                CalculatedSessionsPanelSpacing = DefaultSessionsPanelVerticalSpacing;
             }
             else
             {
                 CalculatedSessionsPanelMaxHeight = DefaultSessionControlHeight;
+                CalculatedSessionsPanelSpacing = 0;
             }
         }
 

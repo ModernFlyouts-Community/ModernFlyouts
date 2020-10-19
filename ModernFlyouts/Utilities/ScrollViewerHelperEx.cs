@@ -46,19 +46,19 @@ namespace ModernFlyouts.Utilities
 
         #region IsAnimating
 
-        private static readonly DependencyProperty IsAnimatingProperty =
+        internal static readonly DependencyProperty IsAnimatingProperty =
             DependencyProperty.RegisterAttached(
                 "IsAnimating",
                 typeof(bool),
                 typeof(ScrollViewerHelperEx),
                 new PropertyMetadata(false));
 
-        private static bool GetIsAnimating(ScrollViewer scrollViewer)
+        internal static bool GetIsAnimating(ScrollViewer scrollViewer)
         {
             return (bool)scrollViewer.GetValue(IsAnimatingProperty);
         }
 
-        private static void SetIsAnimating(ScrollViewer scrollViewer, bool value)
+        internal static void SetIsAnimating(ScrollViewer scrollViewer, bool value)
         {
             scrollViewer.SetValue(IsAnimatingProperty, value);
         }
