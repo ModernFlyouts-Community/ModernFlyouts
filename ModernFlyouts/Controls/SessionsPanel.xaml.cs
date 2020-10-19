@@ -23,28 +23,72 @@ namespace ModernFlyouts
             e.CanExecute = true;
         }
 
+        protected override void OnPreviewMouseWheel(MouseWheelEventArgs e)
+        {
+            base.OnPreviewMouseWheel(e);
+
+            bool isHorizontal = Keyboard.Modifiers == ModifierKeys.Shift;
+            if (isHorizontal)
+            {
+                if (e.Delta < 0)
+                {
+                    ScrollContent(ScrollBar.LineRightCommand);
+                }
+                else
+                {
+                    ScrollContent(ScrollBar.LineLeftCommand);
+                }
+            }
+            else
+            {
+                if (e.Delta < 0)
+                {
+                    ScrollContent(ScrollBar.LineDownCommand);
+                }
+                else
+                {
+                    ScrollContent(ScrollBar.LineUpCommand);
+                }
+            }
+        }
+
         private void OnScrollCommand(object sender, ExecutedRoutedEventArgs e)
         {
-            if (e.Command == ScrollBar.LineUpCommand)
+            ScrollContent(e.Command);
+        }
+
+        private void ScrollContent(ICommand command)
+        {
+            if (ScrollViewerHelperEx.GetIsAnimating(ContentScrollViewer))
             {
-                double offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset - UIManager.DefaultSessionControlHeight), ContentScrollViewer.ScrollableHeight);
-                ScrollViewerHelperEx.ScrollToVerticalOffset(ContentScrollViewer, offset);
+                return;
             }
-            else if (e.Command == ScrollBar.LineDownCommand)
+
+            double offset = 0;
+            Orientation orientation = Orientation.Horizontal;
+
+            if (command == ScrollBar.LineUpCommand)
             {
-                double offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset + UIManager.DefaultSessionControlHeight), ContentScrollViewer.ScrollableHeight);
-                ScrollViewerHelperEx.ScrollToVerticalOffset(ContentScrollViewer, offset);
+                offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset - UIManager.DefaultSessionControlHeight - UIManager.DefaultSessionsPanelVerticalSpacing), ContentScrollViewer.ScrollableHeight);
+                orientation = Orientation.Vertical;
             }
-            else if (e.Command == ScrollBar.LineLeftCommand)
+            else if (command == ScrollBar.LineDownCommand)
             {
-                double offset = Math.Min(Math.Max(0, ContentScrollViewer.HorizontalOffset - UIManager.FlyoutWidth), ContentScrollViewer.ScrollableWidth);
-                ScrollViewerHelperEx.ScrollToHorizontalOffset(ContentScrollViewer, offset);
+                offset = Math.Min(Math.Max(0, ContentScrollViewer.VerticalOffset + UIManager.DefaultSessionControlHeight + UIManager.DefaultSessionsPanelVerticalSpacing), ContentScrollViewer.ScrollableHeight);
+                orientation = Orientation.Vertical;
             }
-            else if (e.Command == ScrollBar.LineRightCommand)
+            else if (command == ScrollBar.LineLeftCommand)
             {
-                double offset = Math.Min(Math.Max(0, ContentScrollViewer.HorizontalOffset + UIManager.FlyoutWidth), ContentScrollViewer.ScrollableWidth);
-                ScrollViewerHelperEx.ScrollToHorizontalOffset(ContentScrollViewer, offset);
+                offset = Math.Min(Math.Max(0, ContentScrollViewer.HorizontalOffset - UIManager.FlyoutWidth), ContentScrollViewer.ScrollableWidth);
+                orientation = Orientation.Horizontal;
             }
+            else if (command == ScrollBar.LineRightCommand)
+            {
+                offset = Math.Min(Math.Max(0, ContentScrollViewer.HorizontalOffset + UIManager.FlyoutWidth), ContentScrollViewer.ScrollableWidth);
+                orientation = Orientation.Horizontal;
+            }
+
+            ScrollViewerHelperEx.ScrollToOffset(ContentScrollViewer, orientation, offset, 367);
         }
     }
 }

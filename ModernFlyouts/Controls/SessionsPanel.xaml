@@ -12,7 +12,7 @@
         <!--region: ScrollViewer-->
 
         <ControlTemplate x:Key="SecondaryContentScrollBarButtonTemplate" TargetType="Button">
-            <Border x:Name="Root" CornerRadius="10"
+            <Border x:Name="Root" CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
                     Background="{DynamicResource ScrollBarButtonBackground}"
                     BorderBrush="{DynamicResource ScrollBarButtonBorderBrush}"
                     SnapsToDevicePixels="True">
@@ -61,6 +61,7 @@
                                         IsTabStop="False"
                                         Margin="0"
                                         Grid.Row="0"
+                                        ui:ControlHelper.CornerRadius="0,0,4,4"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{StaticResource ChevronUp}"
                                         HorizontalAlignment="Center">
@@ -77,6 +78,7 @@
                                         IsTabStop="False"
                                         Margin="0"
                                         Grid.Row="2"
+                                        ui:ControlHelper.CornerRadius="4,4,0,0"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{StaticResource ChevronDown}"
                                         HorizontalAlignment="Center">
@@ -120,6 +122,7 @@
                                         IsTabStop="False"
                                         Margin="0"
                                         Grid.Column="0"
+                                        ui:ControlHelper.CornerRadius="0,4,4,0"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{StaticResource ChevronLeft}"
                                         VerticalAlignment="Center">
@@ -136,6 +139,7 @@
                                         IsTabStop="False"
                                         Margin="0"
                                         Grid.Column="2"
+                                        ui:ControlHelper.CornerRadius="4,0,0,4"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{StaticResource ChevronRight}"
                                         VerticalAlignment="Center">
@@ -205,7 +209,7 @@
     </UserControl.Resources>
     
     <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}" Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
-        <StackPanel x:Name="SessionsStackPanel" Orientation="{Binding UIManager.SessionsPanelOrientation}" />
+        <ui:SimpleStackPanel x:Name="SessionsStackPanel" Spacing="{Binding UIManager.CalculatedSessionsPanelSpacing}" Orientation="{Binding UIManager.SessionsPanelOrientation}" />
     </ScrollViewer>
     
 </UserControl>
