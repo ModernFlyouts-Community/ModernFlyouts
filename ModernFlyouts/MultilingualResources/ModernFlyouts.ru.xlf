@@ -79,9 +79,10 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a point's X or Y values goes out of int32 range</note>
         </trans-unit>
         <trans-unit id="PointValidationRule.StringConvertionErrorMessage" translate="yes" xml:space="preserve">
-          <source>Value cannot be converted to string.</source>
+          <source>Value cannot be coverted to string.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Значение не может быть преобразовано в строку.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore Default</source>
@@ -238,6 +239,34 @@
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Открепить верхнюю панель</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts</source>
+          <target state="new">ModernFlyouts</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
+          <source>None</source>
+          <target state="new">None</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
+          <source>Windows default</source>
+          <target state="new">Windows default</target>
+        </trans-unit>
+        <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
+          <source>Horizontal</source>
+          <target state="new">Horizontal</target>
+        </trans-unit>
+        <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
+          <source>Vertical</source>
+          <target state="new">Vertical</target>
+        </trans-unit>
+        <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
+          <source>Maximum Number of Media Session Controls vertically</source>
+          <target state="new">Maximum Number of Media Session Controls vertically</target>
+        </trans-unit>
+        <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
+          <source>Media Sessions Panel Orientation</source>
+          <target state="new">Media Sessions Panel Orientation</target>
         </trans-unit>
       </group>
     </body>
