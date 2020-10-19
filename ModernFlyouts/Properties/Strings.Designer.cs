@@ -493,7 +493,25 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximum Number of Media Session Controls vertically.
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Settings_Language {
+            get {
+                return ResourceManager.GetString("Settings.Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please restart the app to change the language properly.
+        /// </summary>
+        public static string Settings_LanguageDescription {
+            get {
+                return ResourceManager.GetString("Settings.LanguageDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Number of Media Session Controls to show vertically.
         /// </summary>
         public static string Settings_MaxVerticalSessionControlsCount {
             get {
@@ -579,6 +597,15 @@ namespace ModernFlyouts.Properties {
         public static string Settings_ShowVolumeControlInGSMTCFlyout {
             get {
                 return ResourceManager.GetString("Settings.ShowVolumeControlInGSMTCFlyout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Default.
+        /// </summary>
+        public static string Settings_SystemDefault {
+            get {
+                return ResourceManager.GetString("Settings.SystemDefault", resourceCulture);
             }
         }
         

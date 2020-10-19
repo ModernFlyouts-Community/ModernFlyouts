@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModernFlyouts.Utilities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Pipes;
@@ -22,6 +23,8 @@ namespace ModernFlyouts
                 CreateRemoteService(AppName);
 
                 DUIHandler.ForceFindDUIAndHide(false);
+
+                LocalizationHelper.Initialize();
 
                 var app = new App();
                 app.Run();
