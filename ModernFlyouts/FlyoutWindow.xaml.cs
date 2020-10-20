@@ -128,7 +128,7 @@ namespace ModernFlyouts
 
         private void SetupHideTimer()
         {
-            _elapsedTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2.75) };
+            _elapsedTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(DefaultValuesStore.FlyoutTimeout) };
 
             _elapsedTimer.Tick += (_, __) =>
             {
@@ -144,14 +144,24 @@ namespace ModernFlyouts
             };
         }
 
+        public void StartHideTimer()
+        {
+            if (!_elapsedTimer.IsEnabled) { _elapsedTimer.Start(); }
+        }
+
         public void StopHideTimer()
         {
             _elapsedTimer.Stop();
         }
 
-        public void StartHideTimer()
+        public void UpdateHideTimerInterval(int timeout)
         {
-            if (!_elapsedTimer.IsEnabled) { _elapsedTimer.Start(); }
+            var isRunning = _elapsedTimer.IsEnabled;
+
+            _elapsedTimer.Stop();
+            _elapsedTimer.Interval = TimeSpan.FromMilliseconds(timeout);
+
+            if (isRunning) _elapsedTimer.Start();
         }
 
         private void OtherPreps()
