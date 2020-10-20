@@ -169,70 +169,62 @@ namespace ModernFlyouts
 
         public static bool AudioModuleEnabled
         {
-            get => GetBool(true);
+            get => GetBool(DefaultValuesStore.AudioModuleEnabled);
             set => SetBool(value);
         }
 
         public static bool ShowGSMTCInVolumeFlyout
         {
-            get => GetBool(true);
+            get => GetBool(DefaultValuesStore.ShowGSMTCInVolumeFlyout);
             set => SetBool(value);
         }
 
         public static bool ShowVolumeControlInGSMTCFlyout
         {
-            get => GetBool(true);
-            set => SetBool(value);
-        }
-
-        public static bool AirplaneModeModuleEnabled
-        {
-            get => GetBool(true);
-            set => SetBool(value);
-        }
-
-        public static bool LockKeysModuleEnabled
-        {
-            get => GetBool(true);
+            get => GetBool(DefaultValuesStore.ShowVolumeControlInGSMTCFlyout);
             set => SetBool(value);
         }
 
         public static bool BrightnessModuleEnabled
         {
-            get => GetBool(true);
+            get => GetBool(DefaultValuesStore.BrightnessModuleEnabled);
+            set => SetBool(value);
+        }
+
+        public static bool AirplaneModeModuleEnabled
+        {
+            get => GetBool(DefaultValuesStore.AirplaneModeModuleEnabled);
+            set => SetBool(value);
+        }
+
+        public static bool LockKeysModuleEnabled
+        {
+            get => GetBool(DefaultValuesStore.LockKeysModuleEnabled);
             set => SetBool(value);
         }
 
         public static DefaultFlyout DefaultFlyout
         {
-            get => GetEnum(DefaultFlyout.ModernFlyouts);
+            get => GetEnum(DefaultValuesStore.PreferredFlyout);
             set => SetEnum(value);
         }
 
         public static bool TopBarEnabled
         {
-            get => GetBool(true);
+            get => GetBool(DefaultValuesStore.TopBarEnabled);
             set => SetBool(value);
         }
 
-        private static Point defaultFlyoutPosition = new Point(50, 60);
-
         public static Point DefaultFlyoutPosition
         {
-            get => GetPoint(defaultFlyoutPosition);
+            get => GetPoint(DefaultValuesStore.DefaultFlyoutPosition);
             set => SetPoint(value);
         }
 
         public static Point FlyoutPosition
         {
-            get => GetPoint(defaultFlyoutPosition);
+            get => GetPoint(DefaultValuesStore.DefaultFlyoutPosition);
             set => SetPoint(value);
-        }
-
-        public static bool UseColoredTrayIcon
-        {
-            get => GetBool(true);
-            set => SetBool(value);
         }
 
         public static string SettingsWindowPlacement
@@ -241,21 +233,33 @@ namespace ModernFlyouts
             set => SetString(value);
         }
 
+        public static int FlyoutTimeout
+        {
+            get => GetInteger(DefaultValuesStore.FlyoutTimeout);
+            set => SetInteger(value);
+        }
+
         public static double FlyoutBackgroundOpacity
         {
-            get => GetDouble(100.0);
+            get => GetDouble(DefaultValuesStore.FlyoutBackgroundOpacity);
             set => SetDouble(value);
+        }
+
+        public static bool UseColoredTrayIcon
+        {
+            get => GetBool(DefaultValuesStore.UseColoredTrayIcon);
+            set => SetBool(value);
         }
 
         public static int MaxVerticalSessionControlsCount
         {
-            get => GetInteger(1);
+            get => GetInteger(DefaultValuesStore.MaxVerticalSessionControlsCount);
             set => SetInteger(value);
         }
 
         public static Orientation SessionsPanelOrientation
         {
-            get => GetEnum(Orientation.Horizontal);
+            get => GetEnum(DefaultValuesStore.SessionsPanelOrientation);
             set => SetEnum(value);
         }
 

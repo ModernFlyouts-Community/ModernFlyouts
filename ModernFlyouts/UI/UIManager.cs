@@ -33,7 +33,23 @@ namespace ModernFlyouts
 
         #region General
 
-        private double flyoutBackgroundOpacity = 100.0;
+        private int flyoutTimeout = DefaultValuesStore.FlyoutTimeout;
+
+        public int FlyoutTimeout
+        {
+            get { return flyoutTimeout; }
+            set
+            {
+                if (flyoutTimeout != value)
+                {
+                    flyoutTimeout = value;
+                    OnPropertyChanged();
+                    OnFlyoutTimeoutChanged();
+                }
+            }
+        }
+
+        private double flyoutBackgroundOpacity = DefaultValuesStore.FlyoutBackgroundOpacity;
 
         public double FlyoutBackgroundOpacity
         {
@@ -49,7 +65,7 @@ namespace ModernFlyouts
             }
         }
 
-        private bool useColoredTrayIcon = false;
+        private bool useColoredTrayIcon = DefaultValuesStore.UseColoredTrayIcon;
 
         public bool UseColoredTrayIcon
         {
@@ -69,7 +85,7 @@ namespace ModernFlyouts
 
         #region Media Controls
 
-        private Orientation sessionsPanelOrientation = Orientation.Horizontal;
+        private Orientation sessionsPanelOrientation = DefaultValuesStore.SessionsPanelOrientation;
 
         public Orientation SessionsPanelOrientation
         {
@@ -85,7 +101,7 @@ namespace ModernFlyouts
             }
         }
 
-        private int maxVerticalSessionControlsCount = 1;
+        private int maxVerticalSessionControlsCount = DefaultValuesStore.MaxVerticalSessionControlsCount;
 
         public int MaxVerticalSessionControlsCount
         {
@@ -149,6 +165,7 @@ namespace ModernFlyouts
         {
             _flyoutWindow = flyoutWindow;
 
+            FlyoutTimeout = AppDataHelper.FlyoutTimeout;
             MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
             SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 
@@ -196,6 +213,12 @@ namespace ModernFlyouts
 
             SystemTheme.SystemThemeChanged += OnSystemThemeChange;
             SystemTheme.Initialize();
+        }
+
+        private void OnFlyoutTimeoutChanged()
+        {
+            _flyoutWindow.UpdateHideTimerInterval(flyoutTimeout);
+            AppDataHelper.FlyoutTimeout = flyoutTimeout;
         }
 
         private void OnFlyoutBackgroundOpacityChanged()
