@@ -10,35 +10,14 @@
                 <ui:ThemeResources>
                     <ui:ThemeResources.ThemeDictionaries>
                         <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light">
-                            <SolidColorBrush x:Key="MarkdownBorderBrush" Color="#FFBEBEBE" />
-                            <SolidColorBrush x:Key="MarkdownBackgroundBrush" Color="Transparent" />
-                            <SolidColorBrush x:Key="MarkdownInlineCodeBackgroundBrush" Color="#FFDDDFE1" />
-                            <SolidColorBrush x:Key="MarkdownInlineCodeForegroundBrush" Color="#FF6E6F70" />
-                            <SolidColorBrush x:Key="MarkdownQuoteForegroundBrush" Color="#FF6E747C" />
-                            <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#FFF6F8FA" />
-                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="Black" />
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />
                         </ResourceDictionary>
 
                         <ResourceDictionary x:Key="Dark" ui:ThemeDictionary.Key="Dark">
-                            <SolidColorBrush x:Key="MarkdownBorderBrush" Color="#FF424242" />
-                            <SolidColorBrush x:Key="MarkdownBackgroundBrush" Color="Transparent" />
-                            <SolidColorBrush x:Key="MarkdownInlineCodeBackgroundBrush" Color="#FF363636" />
-                            <SolidColorBrush x:Key="MarkdownInlineCodeForegroundBrush" Color="#FFB7B4B4" />
-                            <SolidColorBrush x:Key="MarkdownQuoteForegroundBrush" Color="#FFBEC1C5" />
-                            <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#FF202020" />
-                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="White" />
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#222222" />
                         </ResourceDictionary>
 
                         <ResourceDictionary x:Key="HighContrast" ui:ThemeDictionary.Key="HighContrast">
-                            <SolidColorBrush x:Key="MarkdownBorderBrush" Color="{DynamicResource SystemColorWindowColor}" />
-                            <SolidColorBrush x:Key="MarkdownBackgroundBrush" Color="#FFF6F8FA" />
-                            <SolidColorBrush x:Key="MarkdownInlineCodeBackgroundBrush" Color="#FF363636" />
-                            <SolidColorBrush x:Key="MarkdownInlineCodeForegroundBrush" Color="#FFB7B4B4" />
-                            <SolidColorBrush x:Key="MarkdownQuoteForegroundBrush" Color="#FFBEC1C5" />
-                            <SolidColorBrush x:Key="MarkdownCodeBackgroundBrush" Color="#FF202020" />
-                            <SolidColorBrush x:Key="MarkdownForegroundBrush" Color="Black" />
                             <SolidColorBrush x:Key="FlyoutBackground" Color="{ui:ThemeResource SystemColorWindowColor}" />
                         </ResourceDictionary>
                     </ui:ThemeResources.ThemeDictionaries>
@@ -57,7 +36,6 @@
 
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
             <system:Double x:Key="FlyoutWidth">354</system:Double>
-            <Thickness x:Key="MarkdownBorderThickness">0</Thickness>
 
             <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
                 <Setter Property="Width" Value="40" />
@@ -77,10 +55,6 @@
                 <Setter Property="Height" Value="40" />
                 <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
                 <Setter Property="Background" Value="Transparent" />
-            </Style>
-
-            <Style TargetType="ScrollViewer" BasedOn="{StaticResource DefaultScrollViewerStyle}">
-                <Setter Property="util:ScrollViewerHelperEx.IsSmoothScrollingEnabled" Value="True" />
             </Style>
 
             <Style x:Key="ValidatableTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">

@@ -1,8 +1,5 @@
-﻿using ModernWpf.Toolkit.UI.Controls;
-using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 
 namespace ModernFlyouts.Navigation
 {
@@ -13,50 +10,14 @@ namespace ModernFlyouts.Navigation
             InitializeComponent();
         }
 
-        private void MarkdownTextBlock_LinkClicked(object sender, LinkClickedEventArgs e)
+        private void RateAndReviewButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (Uri.TryCreate(e.Link, UriKind.Absolute, out Uri _))
+            var psi = new ProcessStartInfo()
             {
-                var psi = new ProcessStartInfo()
-                {
-                    FileName = e.Link,
-                    UseShellExecute = true
-                };
-                Process.Start(psi);
-            }
-        }
-
-        private void MarkdownTextBlock_ImageClicked(object sender, LinkClickedEventArgs e)
-        {
-            if (Uri.TryCreate(e.Link, UriKind.Absolute, out Uri _))
-            {
-                var psi = new ProcessStartInfo()
-                {
-                    FileName = e.Link,
-                    UseShellExecute = true
-                };
-                Process.Start(psi);
-            }
-        }
-
-        private void MarkdownTextBlock_ImageResolving(object sender, ImageResolvingEventArgs e)
-        {
-            if (Uri.TryCreate(e.Url, UriKind.Absolute, out Uri result))
-            {
-                e.Image = new BitmapImage(result);
-                e.Handled = true;
-                return;
-            }
-            else
-            {
-                try
-                {
-                    e.Image = new BitmapImage(PackUriHelper.GetAbsoluteUri(e.Url));
-                    e.Handled = true;
-                    return;
-                }
-                catch { return; }
-            }
+                FileName = "ms-windows-store://review/?ProductId=9mt60qv066rp",
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 }

@@ -1,49 +1,13 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Animation;
 
 namespace ModernFlyouts.Utilities
 {
     internal static class ScrollViewerHelperEx
     {
-        #region IsSmoothScrollingEnabled
-
-        public static readonly DependencyProperty IsSmoothScrollingEnabledProperty =
-            DependencyProperty.RegisterAttached(
-                "IsSmoothScrollingEnabled",
-                typeof(bool),
-                typeof(ScrollViewerHelperEx),
-                new PropertyMetadata(false, OnIsSmoothScrollingEnabledChanged));
-
-        public static bool GetIsSmoothScrollingEnabled(ScrollViewer scrollViewer)
-        {
-            return (bool)scrollViewer.GetValue(IsSmoothScrollingEnabledProperty);
-        }
-
-        public static void SetIsSmoothScrollingEnabled(ScrollViewer scrollViewer, bool value)
-        {
-            scrollViewer.SetValue(IsSmoothScrollingEnabledProperty, value);
-        }
-
-        private static void OnIsSmoothScrollingEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var scrollViewer = (ScrollViewer)d;
-            var newValue = (bool)e.NewValue;
-
-            if (newValue)
-            {
-                scrollViewer.PreviewMouseWheel += OnMouseWheel;
-                SetCurrentVerticalOffset(scrollViewer, scrollViewer.VerticalOffset);
-            }
-            else
-            {
-                scrollViewer.PreviewMouseWheel -= OnMouseWheel;
-            }
-        }
-
-        #endregion
-
         #region IsAnimating
 
         internal static readonly DependencyProperty IsAnimatingProperty =
@@ -121,18 +85,32 @@ namespace ModernFlyouts.Utilities
 
         #endregion
 
-        private static void OnMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        internal static void OnMouseWheel(object sender, MouseWheelEventArgs e)
         {
             var scrollViewer = sender as ScrollViewer;
-            e.Handled = true;
 
-            if (!GetIsAnimating(scrollViewer))
+            bool isHorizontal = Keyboard.Modifiers == ModifierKeys.Shift;
+
+            if (!isHorizontal)
             {
-                SetCurrentVerticalOffset(scrollViewer, scrollViewer.VerticalOffset);
-            }
+                if (!GetIsAnimating(scrollViewer))
+                {
+                    SetCurrentVerticalOffset(scrollViewer, scrollViewer.VerticalOffset);
+                }
 
-            double _totalVerticalOffset = Math.Min(Math.Max(0, scrollViewer.VerticalOffset - e.Delta), scrollViewer.ScrollableHeight);
-            ScrollToVerticalOffset(scrollViewer, _totalVerticalOffset);
+                double _totalVerticalOffset = Math.Min(Math.Max(0, scrollViewer.VerticalOffset - e.Delta), scrollViewer.ScrollableHeight);
+                ScrollToVerticalOffset(scrollViewer, _totalVerticalOffset);
+            }
+            else
+            {
+                if (!GetIsAnimating(scrollViewer))
+                {
+                    SetCurrentHorizontalOffset(scrollViewer, scrollViewer.HorizontalOffset);
+                }
+
+                double _totalHorizontalOffset = Math.Min(Math.Max(0, scrollViewer.HorizontalOffset - e.Delta), scrollViewer.ScrollableWidth);
+                ScrollToHorizontalOffset(scrollViewer, _totalHorizontalOffset);
+            }
         }
 
         public static void ScrollToOffset(ScrollViewer scrollViewer, Orientation orientation, double offset, double duration = 500, IEasingFunction easingFunction = null)

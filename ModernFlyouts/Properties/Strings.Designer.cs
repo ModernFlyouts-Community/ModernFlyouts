@@ -70,6 +70,60 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.
+        /// </summary>
+        public static string About_AppDescription {
+            get {
+                return ResourceManager.GetString("About.AppDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contributors.
+        /// </summary>
+        public static string About_Contributors {
+            get {
+                return ResourceManager.GetString("About.Contributors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GitHub repository.
+        /// </summary>
+        public static string About_GitHub {
+            get {
+                return ResourceManager.GetString("About.GitHub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open a new issue.
+        /// </summary>
+        public static string About_OpenNewIssue {
+            get {
+                return ResourceManager.GetString("About.OpenNewIssue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate and Review on Microsoft Store.
+        /// </summary>
+        public static string About_RateAndReview {
+            get {
+                return ResourceManager.GetString("About.RateAndReview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version : .
+        /// </summary>
+        public static string About_Version {
+            get {
+                return ResourceManager.GetString("About.Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Airplane Mode is not available :(.
         /// </summary>
         public static string AirplaneMode_NotAvailable {
