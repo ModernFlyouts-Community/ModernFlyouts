@@ -50,7 +50,7 @@ namespace ModernFlyouts
 
         public BrightnessFlyoutHelper BrightnessFlyoutHelper { get; set; }
 
-        private DefaultFlyout defaultFlyout = DefaultFlyout.ModernFlyouts;
+        private DefaultFlyout defaultFlyout = DefaultValuesStore.PreferredFlyout;
 
         public DefaultFlyout DefaultFlyout
         {
@@ -67,7 +67,7 @@ namespace ModernFlyouts
         }
 
 
-        private bool topBarEnabled = true;
+        private bool topBarEnabled = DefaultValuesStore.TopBarEnabled;
 
         public bool TopBarEnabled
         {
@@ -84,7 +84,7 @@ namespace ModernFlyouts
             }
         }
 
-        private Point defaultFlyoutPosition = new Point(50, 60);
+        private Point defaultFlyoutPosition = DefaultValuesStore.DefaultFlyoutPosition;
 
         public Point DefaultFlyoutPosition
         {
