@@ -19,7 +19,6 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="ModernWpf.Toolkit.UI.Controls.Markdown" Version="0.1.0-alpha" />
     <PackageReference Include="ModernWpfUI" Version="0.9.3-preview.201004.0" />
     <PackageReference Include="NAudio" Version="1.10.0" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.0-rc.2.20475.5" />

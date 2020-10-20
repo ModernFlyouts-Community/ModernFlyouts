@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Pipes;
+using System.Reflection;
 using System.Threading;
 
 namespace ModernFlyouts
@@ -132,6 +133,11 @@ namespace ModernFlyouts
                 default:
                     break;
             }
+        }
+
+        public static string AppVersion
+        {
+            get => Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         private enum CommandType
