@@ -208,8 +208,10 @@
         
     </UserControl.Resources>
     
-    <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}" Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
-        <ui:SimpleStackPanel x:Name="SessionsStackPanel" Spacing="{Binding UIManager.CalculatedSessionsPanelSpacing}" Orientation="{Binding UIManager.SessionsPanelOrientation}" />
+    <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}"
+                  Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
+        <ui:SimpleStackPanel x:Name="SessionsStackPanel" Spacing="{Binding UIManager.CalculatedSessionsPanelSpacing}"
+                             Orientation="{Binding UIManager.SessionsPanelOrientation}" />
     </ScrollViewer>
     
 </UserControl>

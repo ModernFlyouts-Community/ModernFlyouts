@@ -3,43 +3,29 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:system="clr-namespace:System;assembly=System.Runtime"
-      xmlns:md="clr-namespace:ModernWpf.Toolkit.UI.Controls;assembly=ModernWpf.Toolkit.UI.Controls.Markdown"
-      mc:Ignorable="d" 
+      xmlns:local="clr-namespace:ModernFlyouts"
+      xmlns:controls="clr-namespace:ModernFlyouts.Controls"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:resx="clr-namespace:ModernFlyouts.Properties"
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="About">
-    <Page.Resources>
-        <system:String xml:space="preserve" x:Key="About.md">
-## ModernFlyouts
-
-![ModernFlyouts](Assets/Images/ModernFlyouts_128.png =128x128)
-
-This app is a modern replacement for the metro theme flyouts/popups in Windows
-
-Source Code : [Github - ShankarBUS/ModernFlyouts](https://github.com/ShankarBUS/ModernFlyouts)
-
-[Contributors](https://github.com/ShankarBUS/ModernFlyouts/graphs/contributors)
-
-See the github repository for more info
-
-Version : **0.7.1**
-
-***If you find any bugs, file a new issue in the github repository.***
-            
-## Dependencies and References
-
-[NAudio](https://github.com/naudio/NAudio)
-
-[ModernWpf](https://github.com/Kinnara/ModernWpf)
-
-[Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
-
-## Credits
-
-This project is based on **[AudioFlyout by ADeltaX](https://github.com/ADeltaX/AudioFlyout)**.
-        </system:String>
-    </Page.Resources>
-    <md:MarkdownTextBlock Text="{StaticResource About.md}" Padding="10"
-                          Header2FontWeight="SemiBold" ImageResolving="MarkdownTextBlock_ImageResolving"
-                          LinkClicked="MarkdownTextBlock_LinkClicked" ImageClicked="MarkdownTextBlock_ImageClicked" />
+    <controls:ScrollViewerEx>
+        <ui:SimpleStackPanel Spacing="10" Margin="10">
+            <TextBlock FontWeight="SemiBold" Style="{DynamicResource TitleTextBlockStyle}"
+                       Text="{x:Static local:Program.AppName}" />
+            <Image Source="/Assets/Images/ModernFlyouts_128.png" HorizontalAlignment="Left" Height="128" />
+            <TextBlock TextWrapping="Wrap" Text="{x:Static resx:Strings.About_AppDescription}"/>
+            <TextBlock>
+                <Run Text="{x:Static resx:Strings.About_Version}"/>
+                <Bold>
+                    <Run Text="{x:Static local:Program.AppVersion}"/>
+                </Bold>
+            </TextBlock>
+            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_GitHub}" NavigateUri="https://github.com/ShankarBUS/ModernFlyouts" />
+            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_Contributors}" NavigateUri="https://github.com/ShankarBUS/ModernFlyouts/graphs/contributors" />
+            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_OpenNewIssue}" NavigateUri="https://github.com/ShankarBUS/ModernFlyouts/issues/new/choose" />
+            <Button Content="{x:Static resx:Strings.About_RateAndReview}" Click="RateAndReviewButton_Click" />
+        </ui:SimpleStackPanel>
+    </controls:ScrollViewerEx>
 </Page>
