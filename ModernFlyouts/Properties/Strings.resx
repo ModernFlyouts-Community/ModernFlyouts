@@ -121,10 +121,16 @@
     <value>About</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8</value>
+    <value>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Contributors</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Dependencies</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>If you find any bugs, please open a new issue in the github repository.</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
     <value>GitHub repository</value>

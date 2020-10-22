@@ -70,7 +70,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.
+        ///   Looks up a localized string similar to This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8..
         /// </summary>
         public static string About_AppDescription {
             get {
@@ -84,6 +84,24 @@ namespace ModernFlyouts.Properties {
         public static string About_Contributors {
             get {
                 return ResourceManager.GetString("About.Contributors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependencies.
+        /// </summary>
+        public static string About_Dependencies {
+            get {
+                return ResourceManager.GetString("About.Dependencies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you find any bugs, please open a new issue in the github repository..
+        /// </summary>
+        public static string About_FileABug {
+            get {
+                return ResourceManager.GetString("About.FileABug", resourceCulture);
             }
         }
         
