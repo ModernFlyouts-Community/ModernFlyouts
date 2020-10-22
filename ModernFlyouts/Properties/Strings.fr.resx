@@ -15,6 +15,30 @@
   <data name="About" xml:space="preserve">
     <value>À propos</value>
   </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Cette application est conçue pour être un remplacement moderne en Fluent Design des anciens menus volants de type Metro présents dans Windows depuis Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Contributeurs</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Dépendences</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Si vous trouvez des bugs, veuillez ouvrir un nouveau ticket dans le dépôt GitHub.</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>Dépôt GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Ouvrir un nouveau ticket</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Noter et passer en revue sur le Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Version : </value>
+  </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
     <value>Le Mode Avion n’est pas disponible :(</value>
   </data>
@@ -32,6 +56,21 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
+  </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Par défaut de Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Horizontale</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Verticale</value>
   </data>
   <data name="ExitItem" xml:space="preserve">
     <value>Quitter</value>
@@ -146,6 +185,15 @@
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Barre supérieure du menu volant</value>
   </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Veuillez redémarrer l'application pour bien changer la langue</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Nombre maximum de contrôles de Sessions Médias à afficher verticalement</value>
+  </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Modules</value>
   </data>
@@ -164,11 +212,17 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Lancer au démarrage</value>
   </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientation du panneau des Sessions Médias</value>
+  </data>
   <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Afficher les contrôles de transport global des médias systèmes (Media) dans le menu volant Volume</value>
+    <value>Afficher les contrôles de transport global de média système (GSMTC) dans le menu volant Volume</value>
   </data>
   <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Afficher le contrôle Volume dans le menu volant des contrôles de transport global des médias systèmes (Media)</value>
+    <value>Afficher le contrôle Volume dans le menu volant des contrôles de transport global de média système (GSMTC)</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Par défaut du système</value>
   </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Mode de l'icône de notification</value>
