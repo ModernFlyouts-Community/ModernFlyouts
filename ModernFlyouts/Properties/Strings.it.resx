@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Informazioni</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>La modalità Aereo non è disponibile :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>Modalità aereo disattivata</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>Modalità aereo attivata</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Allinea alla posizione predefinita</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>Nessun dispositivo audio connesso</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>Esci</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>Uscire dall'app in modo sicuro</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>Modalità inserimento</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} è spento</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} è su</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>Modalità sovrascrittura</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>Pin TopBar</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>Inserisci il punto nel formato 'X,Y' (ad es. 50,60).</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>Immettere i valori X,Y nell'intervallo {0} - {1}.</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>Il valore non può essere coperto in stringa.</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>Ripristina</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro questa app</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>Altri controlli</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>Successiva</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>Riproduci</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>Indietro</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>Ripeti: tutti</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>Ripeti: disattivato</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>Ripeti: uno</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>Riproduzione casuale: disattivata</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>Shuffle: su</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>Interrompi</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>Informazioni sequenza temporale</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>Aggiuntivo</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>Comportamento</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>Riquadro a comparsa predefinito</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>Selezionare il riquadro a comparsa predefinito</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>La scelta del riquadro a comparsa predefinito di Windows come predefinito non chiuderà questa app. Questa applicazione continuerà a funzionare in background. Si prega di uscire da questa applicazione in modo sicuro per migliorare le prestazioni.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>Disabilitato</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>Abilitato</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>Opacità sfondo riquadro a comparsa</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>Posizione predefinita riquadro a comparsa (per il pulsante Allinea)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>Digitare la posizione nel formato 'X,Y' (ad esempio 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>Barra superiore riquadro a comparsa</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>Moduli</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>Modulo AirplaneMode-flyout</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>Modulo audio-riquadro a comparsa</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>Modulo a comparsa Luminosità</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>Modulo LockKeys-flyout</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>Esegui all'avvio</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Mostra controlli globali di trasporto multimediale (media) di sistema nel riquadro a comparsa Volume</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Mostra controllo volume nel riquadro a comparsa Controlli di trasporto multimediale (media) di sistema globale</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>Modalità icona vassoio</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>Colorato</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>Monocromatico</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>impostazioni</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>Aprire la finestra delle impostazioni</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>Rimuovi TopBar</value>
+  </data>
+</root>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Um</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>Flugstilling er ekki tiltæk :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>Flugstilling af</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>Flugstilling á</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Stilla í sjálfgefna stöðu</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>Engin tengd hljómtæki</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Loka</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>Hætta</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>Hætta í forritinu á öruggan hátt</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Almennt</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>Innsetningarhamur</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} er slökkt</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} er á</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>Yfirgerðarhamur</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>Festa TopBar</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>Vinsamlegast sláðu inn punktinn í sniðinu 'X,Y' (t.d. 50,60).</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>Færðu inn X,Y gildi á bilinu {0} - {1}.</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>Ekki er hægt að hylja gildið í streng.</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>Endurheimta sjálfgildi</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>Endurheimtir windows default flyout og hættir örugglega í þessu forriti</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>Fleiri stýringar</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>Næsta</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>Hlé</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>Spila</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>Fyrri</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>Endurtakið: allt</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>Endurtakið: slökkt</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>Endurtakið: eitt</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>Stokkseyri: slökkt</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>Stokkseyri: á</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>Stöðva</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>Upplýsingar um tímalínu</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>Auka</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>Hegðun</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>Sjálfgefið Flyout</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>Veldu sjálfgefna flugútslið</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>Ef þú velur Windows Default Flyout sem sjálfgefið mun ekki loka þessu forriti. Þetta forrit mun samt halda áfram að keyra í bakgrunni. Vinsamlegast lokaðu þessu forriti á öruggan hátt til að bæta afköst.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>Óvirkt</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>Virkt</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>Flyout Bakgrunnur Opacity</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>Flyout Sjálfgefin staða (fyrir Align hnappinn)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>Sláðu stöðuna inn í 'X,Y' snið (t.d. 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>Flyout TopBar</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>Kerfiseiningar</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>AirplaneMode-flyout Eining</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>Hljóð-flyout Module</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>Birta-flyout Module</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>LockKeys-flyout eining</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>Keyra við ræsingu</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Sýna global System Media Transport (Media) Stýringar í Volume flyout</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Sýna hljóðstyrksstýringu í Global System Media Transport (Media) Controls flyout</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>Teiknshamur bakki</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>Litað</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>Svarthvítt</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>Stillingar</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>Opna stillingaglugga</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>Losa TopBar</value>
+  </data>
+</root>

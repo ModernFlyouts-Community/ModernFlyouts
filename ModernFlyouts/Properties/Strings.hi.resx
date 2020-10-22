@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>इसके बारे में</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>हवाई जहाज मोड उपलब्ध नहीं है :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>विमान मोड बंद करें</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>विमान मोड चालू करें</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>डिफ़ॉल्ट स्थिति में संरेखित करें</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>कोई कनेक्टेड ऑडियो डिवाइस नहीं</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>बाहर निकलें</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>ऐप को सुरक्षित रूप से बाहर निकलें</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>मोड डालें</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} बंद है</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} पर है</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>ओवरटाइप मोड</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>पिन टॉपबार</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>कृपया 'X, Y' प्रारूप में बिंदु दर्ज करें (उदाहरण के लिए 50,60)।</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>कृपया {0} रेंज में एक्स, वाई मानों दर्ज करें - {1}।</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>मूल्य को स्ट्रिंग में कवर नहीं किया जा सकता है।</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>डिफ़ॉल्ट पुनर्स्थापित करें</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>विंडोज डिफ़ॉल्ट फ्लाईआउट को पुनर्स्थापित करता है और सुरक्षित रूप से इस ऐप से बाहर हो जाता है</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>अधिक नियंत्रण</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>अगला</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>चलाएँ</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>पिछला</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>दोहराएं: सभी</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>दोहराएं: बंद</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>दोहराएं: एक</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>फेरबदल: बंद</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>साधा: पर</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>टाइमलाइन जानकारी</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>अतिरिक्त</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>व्यवहार</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>डिफ़ॉल्ट फ्लाईआउट</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>डिफ़ॉल्ट फ्लाईआउट चुनें</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>डिफ़ॉल्ट के रूप में विंडोज डिफ़ॉल्ट फ्लाईआउट चुनना इस ऐप को बंद नहीं करेगा। यह ऐप अभी भी बैकग्राउंड में चलता रहेगा। प्रदर्शन में सुधार करने के लिए कृपया इस ऐप को सुरक्षित रूप से बाहर निकलें।</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>अक्षम किया गया</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>सक्षम किया गया</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>फ्लाईआउट बैकग्राउंड अस्पष्टता</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>फ्लाईआउट डिफ़ॉल्ट स्थिति (संरेखित बटन के लिए)</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>'X, Y' प्रारूप में स्थिति टाइप करें (उदाहरण के लिए 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>फ्लाईआउट टॉपबार</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>मॉड्यूल</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>हवाई जहाज-फ्लाईआउट मॉड्यूल</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>ऑडियो-फ्लाईआउट मॉड्यूल</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>ब्राइटनेस-फ्लाईआउट मॉड्यूल</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>लॉककीज-फ्लाईआउट मॉड्यूल</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>स्टार्टअप पर भागो</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>वॉल्यूम फ्लाईआउट में ग्लोबल सिस्टम मीडिया ट्रांसपोर्ट (मीडिया) नियंत्रण दिखाएं</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>ग्लोबल सिस्टम मीडिया ट्रांसपोर्ट (मीडिया) नियंत्रण फ्लाईआउट में वॉल्यूम नियंत्रण दिखाएं</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>ट्रे आइकन मोड</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>मोनोक्रोम</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>सेटिंग्स</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>सेटिंग्स विंडो खोलें</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>अनपिन टॉपबार</value>
+  </data>
+</root>

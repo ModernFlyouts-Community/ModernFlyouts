@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>Η λειτουργία πτήσης δεν είναι διαθέσιμη :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>Λειτουργία πτήσης: Ανενεργή</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>Λειτουργία πτήσης: Ενεργή</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Στοίχιση στην προεπιλεγμένη θέση</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>Δεν υπάρχουν συνδεδεμένες συσκευές ήχου</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>Έξοδος</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>Έξοδος από την εφαρμογή με ασφάλεια</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Γενικά</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>Λειτουργία εισαγωγής</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} είναι απενεργοποιημένη</value>
+    <comment>E.g. CapsLock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} είναι σε</value>
+    <comment>E.g. CapsLock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>Λειτουργία αντικατάστασης κειμένου</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>Καρφίτσωμα επάνω γραμμής</value>
+  </data>
+  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
+    <value>Πληκτρολογήστε το σημείο με τη μορφή 'X,Y' (π.χ. 50,60).</value>
+    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
+  </data>
+  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
+    <value>Πληκτρολογήστε τιμές X,Y στην περιοχή {0} - {1}.</value>
+    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
+  </data>
+  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
+    <value>Δεν είναι δυνατή η κρυφά της τιμής σε συμβολοσειρά.</value>
+    <comment>Error message shown when there is problem in converting an object into a string</comment>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>Επαναφορά προεπιλογών</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>Επαναφέρει το προεπιλεγμένο αναδυόμενο στοιχείο των Windows και κλείνει με ασφάλεια αυτήν την εφαρμογή</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>Περισσότερα στοιχεία ελέγχου</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>Επόμενo</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>Παύση</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>Αναπαραγωγή</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>Προηγούμενη</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>Επανάληψη: όλα</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>Επανάληψη: απενεργοποίηση</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>Επανάληψη: ένα</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>Τυχαία σειρά: απενεργοποιημένη</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>Τυχαία σειρά: σε</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>Διακοπή</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>Πληροφορίες λωρίδας χρόνου</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>Πρόσθετα</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>Συμπεριφορά</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>Προεπιλεγμένο αναδυόμενο στοιχείο</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>Επιλογή του προεπιλεγμένου αναδυόμενου στοιχείου</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>Η επιλογή του προεπιλεγμένου αναδυόμενου στοιχείου των Windows ως προεπιλεγμένου δεν θα κλείσει αυτήν την εφαρμογή. Αυτή η εφαρμογή θα συνεχίσει να λειτουργεί στο παρασκήνιο. Κλείστε αυτήν την εφαρμογή με ασφάλεια για να βελτιώσετε τις επιδόσεις.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>ΑΠΕΝΕΡΓΟΠΟΙΗΜΕΝΟΣ</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>Ενεργοποιημένο</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>Αδιαφάνεια φόντου αναδυόμενου στοιχείου</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>Προεπιλεγμένη θέση αναδυόμενου στοιχείου (για το κουμπί "Στοίχιση")</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
+    <value>Πληκτρολογήστε τη θέση σε μορφή 'X,Y' (π.χ. 50,60)</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>Επάνω γραμμή αναδυόμενων στοιχείων</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>Λειτουργικές μονάδες</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>Μονάδα αναδυόμενου ελέγχου airplaneMode</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>Λειτουργική μονάδα αναδυόμενου στοιχείου ήχου</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>Μονάδα φωτεινότητας-αναδυόμενο στοιχείο</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>Λειτουργική μονάδα κλειδώματος-αναδυόμενο στοιχείο</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>Εκτέλεση κατά την εκκίνηση</value>
+  </data>
+  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Εμφάνιση στοιχείων ελέγχου μεταφοράς πολυμέσων καθολικού συστήματος (πολυμέσων) σε αναδυόμενο στοιχείο έντασης ήχου</value>
+  </data>
+  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Εμφάνιση στοιχείου ελέγχου έντασης ήχου σε αναδυόμενα στοιχεία ελέγχου μεταφοράς πολυμέσων καθολικού συστήματος (media)</value>
+  </data>
+  <data name="Settings.TrayIconMode" xml:space="preserve">
+    <value>Λειτουργία εικονιδίου κασέτας</value>
+  </data>
+  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
+    <value>Χρώματος</value>
+  </data>
+  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
+    <value>Μονόχρωμη</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>Άνοιγμα παραθύρου ρυθμίσεων</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>Ξεκαρφίτσωμα επάνω γραμμής</value>
+  </data>
+</root>
