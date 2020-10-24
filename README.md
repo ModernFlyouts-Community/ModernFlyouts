@@ -85,7 +85,7 @@ I could have improved the original project but the project is called **AUDIO**Fl
 
 **ModernFlyouts Flyout:** 
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; ***Dark Theme:***
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 
 ![Audio](docs/images/Audio.png)
 
@@ -94,6 +94,8 @@ _With TopBar_
 ![Audio_NoTop](docs/images/Audio_NoTop.png)
 
 _Without TopBar_
+
+&nbsp;
 
 **Windows Default SMTC audio playback session**
 
@@ -115,6 +117,8 @@ _Without TopBar_
 
 ![Audio_Session_Video](docs/images/Audio_Session_Video.png)
 
+&nbsp;
+
 ### Brightness Flyout
 
 **Windows Default Flyout**
@@ -123,7 +127,7 @@ _Without TopBar_
 
 **ModernFlyouts Flyout:** 
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 
 ![Brightness](docs/images/Brightness.png)
 
@@ -133,11 +137,14 @@ _With TopBar_
 
 _Without TopBar_
 
+&nbsp;
 
 ### Airplane-Mode Flyout
 
 **(On state)**
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
+
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
+
 ![Airplane_On](docs/images/Airplane_On.png)
 
 _With TopBar_
@@ -147,10 +154,13 @@ _With TopBar_
 _Without TopBar_
 
 &nbsp;
+
 ### Lock-keys flyout
 
 **(Caps-lock On)**
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
+
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
+
 ![LockKey_Caps](docs/images/LockKey_Caps.png)
 
 _With TopBar_
