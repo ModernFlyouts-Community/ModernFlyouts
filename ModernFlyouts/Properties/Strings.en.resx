@@ -75,7 +75,7 @@
     <value>Restore Default</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Restores the Windows default flyout and safely quits this app</value>
+    <value>Restores the windows default flyout and safely quits this app</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>More Controls</value>

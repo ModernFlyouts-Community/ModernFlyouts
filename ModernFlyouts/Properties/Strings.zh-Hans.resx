@@ -16,19 +16,19 @@
     <value>关于</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>飞行模式不支持 :(</value>
+    <value>飞行模式在:(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>飞行模式已关闭</value>
+    <value>关闭飞行模式</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>飞行模式已启用</value>
+    <value>启用飞行模式</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>移动到默认位置</value>
+    <value>与默认位置对齐</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
-    <value>没有已连接的音频设备</value>
+    <value>无已连接的音频设备</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>关闭</value>
@@ -40,48 +40,48 @@
     <value>安全退出应用</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
-    <value>常规</value>
+    <value>常规 </value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
     <value>插入模式</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0}已关闭</value>
+    <value>{0}关闭</value>
     <comment>E.g. CapsLock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0}已打开</value>
+    <value>{0}打开</value>
     <comment>E.g. CapsLock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
-    <value>覆写模式</value>
+    <value>改写模式</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>固定顶栏</value>
+    <value>引脚顶栏</value>
   </data>
   <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>请输入格式为"X,Y"（例如 50,60）的点。</value>
+    <value>请输入格式为"X，Y"（例如 50，60）的点。</value>
     <comment>Error message shown when there are problem parsing a string value into a Point</comment>
   </data>
   <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>请输入范围在 {0} - {1} 的 X,Y 坐标值。</value>
+    <value>请在"{0} - {1}"{1}。</value>
     <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
   </data>
   <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>数值不能隐藏到字符串中。</value>
+    <value>值不能隐藏到字符串中。</value>
     <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>还原默认值</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>还原 Windows 的默认弹框并安全退出此应用程序</value>
+    <value>还原窗口默认弹出窗口并安全地退出此应用程序</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>更多控件</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
-    <value>下一曲</value>
+    <value>下一步</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
     <value>暂停</value>
@@ -90,22 +90,22 @@
     <value>播放</value>
   </data>
   <data name="SessionControl.Previous" xml:space="preserve">
-    <value>上一曲</value>
+    <value>上一个</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>循环：全部循环</value>
+    <value>重复：全部</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>循环：关闭</value>
+    <value>重复：关闭</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>循环：单曲循环</value>
+    <value>重复：一</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
     <value>随机播放：关闭</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>随机播放：打开</value>
+    <value>随机播放： 打开</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>停止</value>
@@ -114,19 +114,19 @@
     <value>时间线信息</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
-    <value>额外</value>
+    <value>附加</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
     <value>行为</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>默认弹窗</value>
+    <value>默认飞出</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>选择默认的弹窗</value>
+    <value>选择默认的飞出</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>选择 Windows 默认弹窗不会关闭此应用。此应用程序仍将在后台继续运行。请安全地退出此应用程序以提高性能。</value>
+    <value>选择默认的 Windows 默认弹出窗口不会关闭此应用。此应用程序仍将在后台继续运行。请安全地退出此应用程序，以提高性能。</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>已禁用</value>
@@ -135,40 +135,40 @@
     <value>已启用</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>弹窗背景不透明度</value>
+    <value>飞出背景不透明度</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>弹窗默认位置（用于对齐按钮）</value>
+    <value>飞出默认位置（用于对齐按钮）</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>输入"X，Y"格式的位置（例如 50,60）</value>
+    <value>键入"X，Y"格式的位置（例如 50，60）</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>弹窗顶栏</value>
+    <value>飞出顶栏</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>模块</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>飞机模式弹窗模块</value>
+    <value>飞机模式出飞模块</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>音频弹窗模块</value>
+    <value>音频输出模块</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>亮度弹窗模块</value>
+    <value>亮度出飞模块</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>锁定键弹窗模块</value>
+    <value>锁键-飞出模块</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>开机时运行</value>
+    <value>启动时运行</value>
   </data>
   <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>在音量弹窗中显示系统全局媒体传输控制</value>
+    <value>在卷飞出中显示全局系统媒体传输（媒体）控制</value>
   </data>
   <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>在系统全局媒体传输弹窗中显示音量控制</value>
+    <value>显示全局系统媒体传输（媒体）中音量控制，控制飞出</value>
   </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>托盘图标模式</value>
@@ -186,6 +186,6 @@
     <value>打开设置窗口</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>取消固定顶栏</value>
+    <value>取消固定顶部栏</value>
   </data>
 </root>
