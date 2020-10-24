@@ -85,7 +85,7 @@ I could have improved the original project but the project is called **AUDIO**Fl
 
 **ModernFlyouts Flyout:** 
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ***Dark Theme:***
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 
 ![Audio](docs/images/Audio.png)
 
@@ -95,11 +95,11 @@ _With TopBar_
 
 _Without TopBar_
 
-**SMTC audio playback session in old one**
+**Windows Default SMTC audio playback session**
 
 ![Audio_Old_Session](docs/images/Audio_Old_Session.png)
 
-**SMTC audio playback session**
+**ModernFlyouts SMTC audio playback session**
 
 ![Audio_Session_Music_NoTop](docs/images/Audio_Session_Music_NoTop.png)
 
@@ -117,70 +117,44 @@ _Without TopBar_
 
 ### Brightness Flyout
 
-**Windows Default One**
+**Windows Default Flyout**
 
 ![Brightness_Old](docs/images/Brightness_Old.png)
 
-**Dark Theme :** 
+**ModernFlyouts Flyout:** 
 
-![Brightness_Dark](docs/images/Brightness_Dark.png)
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 
-_With TopBar_
-
-![Brightness_Dark_NoTop](docs/images/Brightness_Dark_NoTop.png)
-
-_Without TopBar_
-
-**Light Theme :** 
-
-![Brightness_Light](docs/images/Brightness_Light.png)
+![Brightness](docs/images/Brightness.png)
 
 _With TopBar_
 
-![Brightness_Light_NoTop](docs/images/Brightness_Light_NoTop.png)
+![Brightness_NoTop](docs/images/Brightness_NoTop.png)
 
 _Without TopBar_
+
 
 ### Airplane-Mode Flyout
 
-**Dark Theme : (On state)**
+**(On state)**
 
-![Airplane_On_Dark](docs/images/Airplane_On_Dark.png)
-
-_With TopBar_
-
-![Airplane_On_Dark_NoTop](docs/images/Airplane_On_Dark_NoTop.png)
-
-_Without TopBar_
-
-**Light Theme : (On state)**
-
-![Airplane_On_Light](docs/images/Airplane_On_Light.png)
+![Airplane_On](docs/images/Airplane_On.png)
 
 _With TopBar_
 
-![Airplane_On_Light_NoTop](docs/images/Airplane_On_Light_NoTop.png)
+![Airplane_On_NoTop](docs/images/Airplane_On_NoTop.png)
 
 _Without TopBar_
 
+&nbsp;
 ### Lock-keys flyout
 
-**Dark Theme : (Caps-lock On)**
+**(Caps-lock On)**
 
-![LockKey_Caps_Dark](docs/images/LockKey_Caps_Dark.png)
-
-_With TopBar_
-
-![LockKey_Caps_Dark_NoTop](docs/images/LockKey_Caps_Dark_NoTop.png)
-
-_Without TopBar_
-
-**Light Theme : (Caps-lock On)**
-
-![LockKey_Caps_Light](docs/images/LockKey_Caps_Light.png)
+![LockKey_Caps](docs/images/LockKey_Caps.png)
 
 _With TopBar_
 
-![LockKey_Caps_Light_NoTop](docs/images/LockKey_Caps_Light_NoTop.png)
+![LockKey_Caps_NoTop](docs/images/LockKey_Caps_NoTop.png)
 
 _Without TopBar_
