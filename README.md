@@ -79,27 +79,19 @@ I could have improved the original project but the project is called **AUDIO**Fl
 
 ### Audio Flyout
 
-**Windows Default One**
+**Windows Default Flyout**
 
 ![Audio_Old](docs/images/Audio_Old.png)
 
-**Dark Theme :** 
+**ModernFlyouts Flyout:** 
 
-![Audio_Dark](docs/images/Audio_Dark.png)
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ***Dark Theme:***
 
-_With TopBar_
-
-![Audio_Dark_NoTop](docs/images/Audio_Dark_NoTop.png)
-
-_Without TopBar_
-
-**Light Theme :** 
-
-![Audio_Light](docs/images/Audio_Light.png)
+![Audio](docs/images/Audio.png)
 
 _With TopBar_
 
-![Audio_Light_NoTop](docs/images/Audio_Light_NoTop.png)
+![Audio_NoTop](docs/images/Audio_NoTop.png)
 
 _Without TopBar_
 
