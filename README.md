@@ -103,13 +103,11 @@ _Without TopBar_
 
 ***ModernFlyouts SMTC audio playback session:*** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***audio playback session with additional info:***
 
-![Audio_Session_Music_NoTop](docs/images/Audio_Session_Music_NoTop.png)
-![Audio_Session_Music_NoTop_More](docs/images/Audio_Session_Music_NoTop_More.png)
+![Audio_Session_Music_NoTop](docs/images/Audio_Session_Music_NoTop.png) ![Audio_Session_Music_NoTop_More](docs/images/Audio_Session_Music_NoTop_More.png)
 
 ***Fallback thumbnail for music playback with no album art:*** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***SMTC video playback session with additional info:***
 
-![Audio_Session_Music_NoTop_NoAlbumArt](docs/images/Audio_Session_Music_NoTop_NoAlbumArt.png)
-![Audio_Session_Video](docs/images/Audio_Session_Video.png)
+![Audio_Session_Music_NoTop_NoAlbumArt](docs/images/Audio_Session_Music_NoTop_NoAlbumArt.png) ![Audio_Session_Video](docs/images/Audio_Session_Video.png)
 
 &nbsp;
 
