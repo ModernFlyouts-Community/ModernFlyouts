@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Bỏ ghim Thanh Trên cùng</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts (Hiện đạiFlyouts)</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Không có</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Mặc định của Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Theo chiều ngang</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Dọc</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Số điều khiển phiên phương tiện tối đa để hiển thị theo chiều dọc</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Định hướng Bảng điều khiển Phiên Phương tiện</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Ứng dụng này được thiết kế để thay thế Fluent Design hiện đại cho các tờ rơi theo chủ đề tàu điện ngầm cũ có trong Windows kể từ Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Người đóng góp</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>Kho lưu trữ GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Mở một vấn đề mới</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Xếp hạng và Đánh giá trên Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Phiên bản: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Vui lòng khởi động lại ứng dụng để thay đổi ngôn ngữ đúng cách</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Mặc định hệ thống</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Quan hệ phụ thuộc</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Nếu bạn tìm thấy bất kỳ lỗi nào, vui lòng mở một vấn đề mới trong kho github.</value>
+  </data>
 </root>

@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Losa TopBar</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Ekkert</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Sjálfgefin stilling í Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Lárétt</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Lóðrétt</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Hámarksfjöldi miðilssetustýringa sem sýna á lóðrétt</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Stefnumörkun fyrir stjórnborð miðilslota</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Þetta forrit er hannað til að vera nútíma Fluent Design skipti fyrir gamla Metro þema flyouts til staðar í Windows síðan Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Þátttakendur</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub geymsla</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Opna nýtt blað</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Taxti og umsögn í Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Útgáfa: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Tungumál</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Endurræstu forritið til að breyta tungumálinu á réttan hátt</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Kerfissjálfgildi</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Tengsl</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Ef þú finnur einhverjar galla skaltu opna nýtt mál í github geymslunni.</value>
+  </data>
 </root>

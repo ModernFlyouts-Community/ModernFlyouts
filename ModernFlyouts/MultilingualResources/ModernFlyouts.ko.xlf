@@ -241,75 +241,75 @@
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
-          <target state="new">ModernFlyouts</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">모던플라이아웃</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
           <source>None</source>
-          <target state="new">None</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">없음</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
           <source>Windows default</source>
-          <target state="new">Windows default</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Windows 기본값</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
           <source>Horizontal</source>
-          <target state="new">Horizontal</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">가로</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
           <source>Vertical</source>
-          <target state="new">Vertical</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">세로</target>
         </trans-unit>
         <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Maximum Number of Media Session Controls to show vertically</source>
-          <target state="new">Maximum Number of Media Session Controls to show vertically</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">세로로 표시할 최대 미디어 세션 컨트롤 수</target>
         </trans-unit>
         <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
           <source>Media Sessions Panel Orientation</source>
-          <target state="new">Media Sessions Panel Orientation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">미디어 세션 패널 방향</target>
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="new">This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">이 응용 프로그램은 윈도우 8 이후 윈도우에 존재하는 오래된 지하철 테마 비행에 대한 현대 유창한 디자인 교체하도록 설계되었습니다.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
-          <target state="new">Contributors</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">참가자</target>
         </trans-unit>
         <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
-          <target state="new">GitHub repository</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">GitHub 리포지토리</target>
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
-          <target state="new">Open a new issue</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">새 문제 열기</target>
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
-          <target state="new">Rate and Review on Microsoft Store</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Microsoft 스토어의 요금 및 검토</target>
         </trans-unit>
         <trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
-          <target state="new">Version : </target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">버전: </target>
         </trans-unit>
         <trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
           <source>Language</source>
-          <target state="new">Language</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">언어</target>
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Please restart the app to change the language properly</source>
-          <target state="new">Please restart the app to change the language properly</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">제대로 언어를 변경하려면 응용 프로그램을 다시 시작하십시오</target>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System Default</source>
-          <target state="new">System Default</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">시스템 기본값</target>
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
-          <target state="new">Dependencies</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">종속성</target>
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="new">If you find any bugs, please open a new issue in the github repository.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">버그가 발견되면 github 리포지토리에서 새 문제를 열어 주세요.</target>
         </trans-unit>
       </group>
     </body>

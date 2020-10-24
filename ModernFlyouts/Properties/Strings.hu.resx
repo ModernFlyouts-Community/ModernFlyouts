@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>TopBar rögzítésének feloldása</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>Modern Flyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Nincs</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows-alapérték</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Vízszintes</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Függőleges</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>A függőlegesen megjelenítandó médiamunkamenet-vezérlők maximális száma</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Médiamunkamenetek panel tájolása</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Ez az alkalmazás célja, hogy egy modern Fluent Design helyett a régi metró témájú úszó paneljelenik meg a Windows, mivel a Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Közreműködők</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub-tárház</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Új probléma megnyitása</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Értékelés és értékelés a Microsoft Store-ban</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Változat: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Nyelv</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>A nyelv megfelelő módosításához indítsa újra az alkalmazást</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Alapértelmezett</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Függőségek</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Ha hibát talál, nyisson meg egy új problémát a github-tárházban.</value>
+  </data>
 </root>

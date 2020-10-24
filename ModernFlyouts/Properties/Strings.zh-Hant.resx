@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>取消固定頂部欄。</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>現代飛行。</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows 預設</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>水平</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>垂直</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>要垂直顯示的媒體作業階段控制件的最大數量。</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>媒體會話面板方向。</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>這個程式被設計為一個現代的流暢設計替代舊的地鐵式元素的彈出視窗出現在Windows 8。</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>參與者</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub 存放庫</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>打開新問題。</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>微軟商店的費率和評論。</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>版本:</value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>請重新啟動應用程式以正確更改語言。</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>系統預設值</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>相依性</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>如果發現任何錯誤,請在 github 儲存庫中打開一個新問題。</value>
+  </data>
 </root>

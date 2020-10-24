@@ -241,75 +241,75 @@
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
-          <target state="new">ModernFlyouts</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ModernFlyouts</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
           <source>None</source>
-          <target state="new">None</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Brak</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
           <source>Windows default</source>
-          <target state="new">Windows default</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Domyślne dla systemu Windows</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
           <source>Horizontal</source>
-          <target state="new">Horizontal</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">W poziomie</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
           <source>Vertical</source>
-          <target state="new">Vertical</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pionowo</target>
         </trans-unit>
         <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Maximum Number of Media Session Controls to show vertically</source>
-          <target state="new">Maximum Number of Media Session Controls to show vertically</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Maksymalna liczba kontrolek sesji multimedialnej do wyświetlenia w pionie</target>
         </trans-unit>
         <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
           <source>Media Sessions Panel Orientation</source>
-          <target state="new">Media Sessions Panel Orientation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Orientacja panelu sesji multimediów</target>
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="new">This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ta aplikacja jest przeznaczona do nowoczesnego zamiennika Fluent Design dla starych wysuń wysuwowych tematów metra obecnych w systemie Windows od Windows 8.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
-          <target state="new">Contributors</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Współautorzy</target>
         </trans-unit>
         <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
-          <target state="new">GitHub repository</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Repozytorium GitHub</target>
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
-          <target state="new">Open a new issue</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Otwieranie nowego problemu</target>
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
-          <target state="new">Rate and Review on Microsoft Store</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Oceniaj i recenzuj w sklepie Microsoft Store</target>
         </trans-unit>
         <trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
-          <target state="new">Version : </target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Wersja: </target>
         </trans-unit>
         <trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
           <source>Language</source>
-          <target state="new">Language</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Język</target>
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Please restart the app to change the language properly</source>
-          <target state="new">Please restart the app to change the language properly</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uruchom ponownie aplikację, aby poprawnie zmienić język</target>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System Default</source>
-          <target state="new">System Default</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ustawienia domyślne systemu</target>
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
-          <target state="new">Dependencies</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Zależności</target>
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="new">If you find any bugs, please open a new issue in the github repository.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Jeśli znajdziesz jakieś błędy, otwórz nowy problem w repozytorium github.</target>
         </trans-unit>
       </group>
     </body>

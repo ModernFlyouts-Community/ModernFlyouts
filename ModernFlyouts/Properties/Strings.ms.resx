@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Buka Bar Teratas</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModenFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Tiada</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows lalai</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Melintang</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Menegak</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Bilangan Maksimum Kawalan Sesi Media untuk ditunjukkan secara menegak</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientasi Panel Sesi Media</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Aplikasi ini direka untuk menjadi penggantian Reka Bentuk Fasih moden untuk risalah bertemakan metro lama yang terdapat dalam Windows sejak Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Penyumbang</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>Repositori GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Buka isu baru</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Kadar dan Semakan di Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Versi: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Bahasa</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Sila mulakan semula aplikasi untuk menukar bahasa dengan betul</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Sistem Lalai</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Pergantungan</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Jika anda mendapati sebarang pepijat, sila buka isu baru dalam repositori github.</value>
+  </data>
 </root>

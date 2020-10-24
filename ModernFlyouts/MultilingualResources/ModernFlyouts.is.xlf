@@ -241,75 +241,75 @@
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
-          <target state="new">ModernFlyouts</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ModernFlyouts</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
           <source>None</source>
-          <target state="new">None</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ekkert</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
           <source>Windows default</source>
-          <target state="new">Windows default</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sjálfgefin stilling í Windows</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
           <source>Horizontal</source>
-          <target state="new">Horizontal</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Lárétt</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
           <source>Vertical</source>
-          <target state="new">Vertical</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Lóðrétt</target>
         </trans-unit>
         <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Maximum Number of Media Session Controls to show vertically</source>
-          <target state="new">Maximum Number of Media Session Controls to show vertically</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hámarksfjöldi miðilssetustýringa sem sýna á lóðrétt</target>
         </trans-unit>
         <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
           <source>Media Sessions Panel Orientation</source>
-          <target state="new">Media Sessions Panel Orientation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Stefnumörkun fyrir stjórnborð miðilslota</target>
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="new">This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Þetta forrit er hannað til að vera nútíma Fluent Design skipti fyrir gamla Metro þema flyouts til staðar í Windows síðan Windows 8.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
-          <target state="new">Contributors</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Þátttakendur</target>
         </trans-unit>
         <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
-          <target state="new">GitHub repository</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">GitHub geymsla</target>
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
-          <target state="new">Open a new issue</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opna nýtt blað</target>
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
-          <target state="new">Rate and Review on Microsoft Store</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Taxti og umsögn í Microsoft Store</target>
         </trans-unit>
         <trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
-          <target state="new">Version : </target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Útgáfa: </target>
         </trans-unit>
         <trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
           <source>Language</source>
-          <target state="new">Language</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tungumál</target>
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Please restart the app to change the language properly</source>
-          <target state="new">Please restart the app to change the language properly</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Endurræstu forritið til að breyta tungumálinu á réttan hátt</target>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System Default</source>
-          <target state="new">System Default</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kerfissjálfgildi</target>
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
-          <target state="new">Dependencies</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tengsl</target>
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="new">If you find any bugs, please open a new issue in the github repository.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ef þú finnur einhverjar galla skaltu opna nýtt mál í github geymslunni.</target>
         </trans-unit>
       </group>
     </body>

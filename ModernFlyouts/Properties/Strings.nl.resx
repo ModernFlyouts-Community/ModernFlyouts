@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Topbar losmaken</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows-standaard</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Horizontaal</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Verticaal</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Maximaal aantal besturingselementen voor mediasessies om verticaal weer te geven</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Mediasessiespaneeloriëntatie</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Deze app is ontworpen om een moderne Fluent Design vervanging voor de oude metro thema flyouts aanwezig in Windows sinds Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Bijdragers</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub-opslagplaats</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Een nieuw nummer openen</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Beoordelen en controleren in de Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Versie: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Taal</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Start de app opnieuw om de taal goed te wijzigen</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Systeemstandaard</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Afhankelijkheden</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Als je bugs vindt, open dan een nieuw probleem in de github repository.</value>
+  </data>
 </root>

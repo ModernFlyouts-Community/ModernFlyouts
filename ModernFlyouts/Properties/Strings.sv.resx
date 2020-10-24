@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Unpin TopBar</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernaFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows-standard</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Vågrät</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Lodrät</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Maximalt antal mediasessionskontroller som ska visas vertikalt</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Panelorientering för mediasessioner</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Denna app är utformad för att vara en modern Fluent Design ersättning för den gamla metro tema utfällda utst.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Medarbetare</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub-lagringsplats</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Öppna ett nytt nummer</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Betygsätt och granskning på Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Språk</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Vänligen starta om appen för att ändra språket ordentligt</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Systemstandard</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Beroenden</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Om du hittar några buggar, vänligen öppna ett nytt nummer i github-förvaret.</value>
+  </data>
 </root>

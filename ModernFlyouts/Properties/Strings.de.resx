@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Unpin TopBar</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Keine</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows-Standard</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Horizontale Bildlaufleiste</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Maximale Anzahl von Mediensitzungssteuerelementen, die vertikal angezeigt werden sollen</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Mediensitzungen Panel-Orientierung</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Diese App wurde entwickelt, um ein moderner Fluent Design Ersatz für die alten U-Bahn-Themen Flyouts in Windows seit Windows 8 vorhanden sein.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Mitwirkende</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub-Repository</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Öffnen einer neuen Ausgabe</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Bewerten und Überprüfen im Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Starten Sie die App neu, um die Sprache richtig zu ändern</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Systemstandard</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Abhängigkeiten</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Wenn Sie Fehler finden, öffnen Sie bitte ein neues Problem im github-Repository.</value>
+  </data>
 </root>

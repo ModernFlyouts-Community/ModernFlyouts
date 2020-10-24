@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>取消固定顶栏</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>现代飞行</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows 默认</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>水平</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>垂直</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>要垂直显示的媒体会话控件的最大数量</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>媒体会话面板方向</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>这个程序被设计为一个现代的流畅设计替代旧的地铁式元素的弹出窗口出现在Windows 8。</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>参与者</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub 存储库</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>打开新问题</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>微软商店的费率和评论</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>版本：</value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>请重新启动应用程序以正确更改语言</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>系统默认值</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>依赖项</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>如果发现任何错误，请在 github 存储库中打开一个新问题。</value>
+  </data>
 </root>
