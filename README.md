@@ -85,7 +85,7 @@ I could have improved the original project but the project is called **AUDIO**Fl
 
 **ModernFlyouts Flyout:** 
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; ***Dark Theme:***
 
 ![Audio](docs/images/Audio.png)
 
@@ -123,7 +123,7 @@ _Without TopBar_
 
 **ModernFlyouts Flyout:** 
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 
 ![Brightness](docs/images/Brightness.png)
 
@@ -137,7 +137,7 @@ _Without TopBar_
 ### Airplane-Mode Flyout
 
 **(On state)**
-
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 ![Airplane_On](docs/images/Airplane_On.png)
 
 _With TopBar_
@@ -150,7 +150,7 @@ _Without TopBar_
 ### Lock-keys flyout
 
 **(Caps-lock On)**
-
+***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 ![LockKey_Caps](docs/images/LockKey_Caps.png)
 
 _With TopBar_
