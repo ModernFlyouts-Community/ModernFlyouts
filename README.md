@@ -47,6 +47,7 @@ Both distribution methods will be supported, however the store version is recomm
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
 
+[Signup for Beta Builds of ModernFlyouts](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALdxYU9UQU9GMzQ2Rk40MDJFSkU5UzRKTVg2Nk1PTy4u) 
 &nbsp;
 
 **Alternatively download from Github:**
