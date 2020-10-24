@@ -441,7 +441,7 @@ namespace ModernFlyouts
 
                 UpdatePlaybackInfo(session);
 
-                await SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
+                /*await*/ SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
             }
             catch { }
 
@@ -450,21 +450,22 @@ namespace ModernFlyouts
 
         #region Thumbnail
 
-        private async Task SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
+        // TODO: Re-enable once C#/WinRT is stable and https://github.com/ShankarBUS/ModernFlyouts/issues/100 doesn't occur
+        private /*async Task*/ void SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
         {
-            if (thumbnail != null)
-            {
-                using var strm = await thumbnail.OpenReadAsync();
-                if (strm != null)
-                {
-                    using var nstream = strm.AsStream();
-                    if (nstream != null && nstream.Length > 0)
-                    {
-                        ThumbnailImageBrush.ImageSource = ThumbnailBackgroundBrush.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad); ;
-                        return;
-                    }
-                }
-            }
+            //if (thumbnail != null)
+            //{
+            //    using var strm = await thumbnail.OpenReadAsync();
+            //    if (strm != null)
+            //    {
+            //        using var nstream = strm.AsStream();
+            //        if (nstream != null && nstream.Length > 0)
+            //        {
+            //            ThumbnailImageBrush.ImageSource = ThumbnailBackgroundBrush.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad); ;
+            //            return;
+            //        }
+            //    }
+            //}
 
             ThumbnailImageBrush.ImageSource = GetDefaultThumbnail(playbackType);
             ThumbnailBackgroundBrush.ImageSource = null;
