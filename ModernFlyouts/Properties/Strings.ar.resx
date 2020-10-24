@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>إلغاء تثبيت الشريط العلوي</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>بلا</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>افتراضي Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>أفقي</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>عمودي</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>الحد الأقصى لعدد عناصر تحكم جلسة عمل الوسائط لإظهار عمودياً</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>اتجاه لوحة جلسات الوسائط</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>تم تصميم هذا التطبيق ليكون بديلا تصميم بطلاقة الحديثة للمترو القديمة التي تستهدف المنبثقة موجودة في ويندوز منذ ويندوز 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>‏‏المساهمون</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>مستودع GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>فتح إصدار جديد</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>معدل المراجعة والمراجعة على متجر Microsoft</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>الإصدار: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>الرجاء إعادة تشغيل التطبيق لتغيير اللغة بشكل صحيح</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>خيار النظام الافتراضي</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>التبعيات</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>إذا وجدت أي أخطاء، يرجى فتح مشكلة جديدة في مستودع github.</value>
+  </data>
 </root>

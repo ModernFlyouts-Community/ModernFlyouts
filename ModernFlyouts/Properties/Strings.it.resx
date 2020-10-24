@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Rimuovi TopBar</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Nessuno</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Impostazioni predefinite di Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Orizzontale</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Verticale</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Numero massimo di controlli della sessione multimediale da visualizzare verticalmente</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientamento del pannello Sessioni multimediali</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Questa applicazione è progettata per essere un moderno Fluent Design sostituzione per i vecchi flyout a tema metro presenti in Windows da Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Collaboratori</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>il repository GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Aprire un nuovo problema</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Valuta e rivedi su Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Versione: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>lingua</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Si prega di riavviare l'applicazione per cambiare la lingua correttamente</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Predefinito del sistema</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Dipendenze</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Se si trovano bug, si prega di aprire un nuovo problema nel repository github.</value>
+  </data>
 </root>

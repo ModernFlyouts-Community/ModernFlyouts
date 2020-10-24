@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Lepaskan Topbar</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Tidak ada</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Default Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Jumlah Maksimum Kontrol Sesi Media untuk ditampilkan secara vertikal</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientasi Panel Sesi Media</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Aplikasi ini dirancang untuk menjadi pengganti Desain Fasih modern untuk flyout bertema metro lama yang ada di Windows sejak Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Kontributor</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>Repositori GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Membuka masalah baru</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Menilai dan Meninjau di Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Versi: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Bahasa</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Silakan mulai ulang aplikasi untuk mengubah bahasa dengan benar</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Default Sistem</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Dependensi</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Jika Anda menemukan bug, silakan buka masalah baru di repositori github.</value>
+  </data>
 </root>

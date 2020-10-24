@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>باز کردن TopBar</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>هیچکدام</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>پیش فرض Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>افقی</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>عمودی</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>حداکثر تعداد کنترل های جلسه رسانه برای نشان دادن عمودی</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>رسانه جلسات پانل جهت گیری</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>این برنامه به عنوان یک جایگزین مدرن طراحی روان برای flyouts قدیمی مترو themed حاضر در ویندوز از ویندوز 8 طراحی شده است.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>همکاران</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>مخزن GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>باز کردن یک مسئله جدید</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>نرخ و بررسی در فروشگاه مایکروسافت</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>نسخهٔ: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>زبان</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>لطفا برنامه را راه اندازی مجدد کنید تا زبان به درستی تغییر کند</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>پیش‌فرض سیستم</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>وابستگی‌ها</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>اگر شما پیدا کردن هر گونه اشکالات، لطفا یک مسئله جدید در مخزن github باز کنید.</value>
+  </data>
 </root>

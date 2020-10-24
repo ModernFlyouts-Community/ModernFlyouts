@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Unpin TopBar</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Predeterminado de Windows</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Horiontal</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Número máximo de controles de sesión multimedia para mostrar verticalmente</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientación del panel de sesiones de medios</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Esta aplicación está diseñada para ser un moderno reemplazo de Fluent Design para los antiguos menús desplegables temáticos metro presentes en Windows desde Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Contribuyentes</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>Repositorio de GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Abrir un nuevo número</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Valoración y revisión en Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Versión: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Reinicie la aplicación para cambiar el idioma correctamente</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Valor predeterminado del sistema</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Dependencias</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Si encuentra algún error, abra un nuevo problema en el repositorio github.</value>
+  </data>
 </root>

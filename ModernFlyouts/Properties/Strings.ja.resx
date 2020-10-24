@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>トップバーの固定を解除する</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>モダンフライアウト</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows 既定</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>水平</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>垂直</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>縦方向に表示するメディア セッション コントロールの最大数</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>メディア セッション パネルの方向</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>このアプリは、Windows 8以来、Windowsに存在する古いメトロをテーマにしたポップアップのための近代的なFluentデザインの置き換えとして設計されています。</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>共同作成者</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub リポジトリ</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>新しい懸案事項を開く</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>マイクロソフト ストアでのレートとレビュー</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>バージョン：</value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>言語を正しく変更するには、アプリを再起動してください</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>システムの既定値</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>相互関係</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>バグが見つかる場合は、github リポジトリで新しい問題を開いてください。</value>
+  </data>
 </root>

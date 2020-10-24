@@ -188,4 +188,58 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>TopBar'ı Unpin</value>
   </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Yok</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows varsayılan</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Dikey olarak gösterilen maksimum Ortam Oturumu Denetimi Sayısı</value>
+  </data>
+  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
+    <value>Medya Oturumları Panel Oryantasyonu</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Bu uygulama, Windows 8'den bu yana Windows'da bulunan eski metro temalı flyout'ların modern bir Akıcı Tasarım yerine geçecek şekilde tasarlanmıştır.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Katkıda Bulunanlar</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub deposunu</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Yeni bir sorun açma</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Microsoft Mağazası'nda Fiyat ve İnceleme</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Sürüm: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>Dili düzgün değiştirmek için lütfen uygulamayı yeniden başlatın</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Sistem Varsayılanı</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Bağımlılıklar</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Herhangi bir hata bulursanız, lütfen github deposunda yeni bir sorun açın.</value>
+  </data>
 </root>
