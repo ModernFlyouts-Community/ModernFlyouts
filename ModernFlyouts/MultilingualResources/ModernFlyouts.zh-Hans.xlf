@@ -12,7 +12,7 @@
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane Mode is not available :(</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">飞行模式不支持 :(</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">设备不支持飞行模式 :(</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
@@ -52,12 +52,12 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0}已关闭</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} 已关闭</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. CapsLock is off</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0}已打开</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} 已打开</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. CapsLock is on</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
@@ -261,31 +261,31 @@
         </trans-unit>
         <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Maximum Number of Media Session Controls to show vertically</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">要垂直显示的媒体会话控件的最大数量</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">要垂直显示媒体控件的最大数量</target>
         </trans-unit>
         <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
           <source>Media Sessions Panel Orientation</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">媒体会话面板方向</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">媒体面板方向</target>
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">这个程序被设计为一个现代的流畅设计替代旧的地铁式元素的弹出窗口出现在Windows 8。</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">该程序用于将旧的 Windows 8 Metro 风格弹窗覆盖为 Fluent Design 风格弹窗。</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">参与者</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">贡献者</target>
         </trans-unit>
         <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">GitHub 存储库</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">GitHub 仓库</target>
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">打开新问题</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">创建新 Issue</target>
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">微软商店的费率和评论</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">去 Microsoft Store 评分</target>
         </trans-unit>
         <trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
@@ -297,7 +297,7 @@
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Please restart the app to change the language properly</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">请重新启动应用程序以正确更改语言</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请重新启动应用程序，以便完整更改语言</target>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System Default</source>
@@ -309,7 +309,7 @@
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果发现任何错误，请在 github 存储库中打开一个新问题。</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果发现任何 bug，请在 GitHub 仓库中打创建一个新 Issue。</target>
         </trans-unit>
       </group>
     </body>
