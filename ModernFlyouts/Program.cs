@@ -5,6 +5,7 @@ using System.IO;
 using System.IO.Pipes;
 using System.Reflection;
 using System.Threading;
+using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -32,7 +33,7 @@ namespace ModernFlyouts
             }
             else
             {
-                SignalFirstInstance(AppName);
+                SignalFirstInstance(AppName, args);
             }
         }
 
@@ -57,9 +58,9 @@ namespace ModernFlyouts
         {
             string arg = string.Empty;
 
-            if ((isFirstInstance && args?.Count > 0) || (!isFirstInstance && args?.Count > 1))
+            if (args?.Count > 0)
             {
-                arg = isFirstInstance ? args[0] : args[1];
+                arg = args[0];
             }
 
             if (arg == string.Empty)
@@ -83,19 +84,22 @@ namespace ModernFlyouts
             }
         }
 
-        private static async void SignalFirstInstance(string channelName)
+        private static void SignalFirstInstance(string channelName, string[] args)
         {
-            using NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", channelName, PipeDirection.Out);
-            await pipeClient.ConnectAsync(0).ConfigureAwait(false);
-            var args = Environment.GetCommandLineArgs();
-            StreamWriter writer = new StreamWriter(pipeClient) { AutoFlush = true };
-
+            string rawArgs = string.Empty;
             foreach (var arg in args)
             {
-                writer.Write(arg + JumpListHelper.arg_delimiter);
+                rawArgs += arg + JumpListHelper.arg_delimiter;
             }
-
+            
+            using NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", channelName, PipeDirection.Out);
+            pipeClient.Connect(0);
+            
+            StreamWriter writer = new StreamWriter(pipeClient) { AutoFlush = true };
+            writer.Write(rawArgs);
             writer.Flush();
+            writer.Close();
+            pipeClient.Dispose();
 
             Environment.Exit(0);
         }
