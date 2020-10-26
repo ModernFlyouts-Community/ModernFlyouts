@@ -44,7 +44,7 @@
         </trans-unit>
         <trans-unit id="GeneralSettings" translate="yes" xml:space="preserve">
           <source>General</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">常规 </target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">常规</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.InsertMode" translate="yes" xml:space="preserve">
           <source>Insert Mode</source>
@@ -89,7 +89,7 @@
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">还原 Windows 的默认弹框并安全退出此应用程序</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">还原 Windows 的默认弹窗并安全退出此应用程序</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
@@ -109,7 +109,7 @@
         </trans-unit>
         <trans-unit id="SessionControl.Previous" translate="yes" xml:space="preserve">
           <source>Previous</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">上一个</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">上一曲</target>
         </trans-unit>
         <trans-unit id="SessionControl.RepeatAll" translate="yes" xml:space="preserve">
           <source>Repeat: all</source>
@@ -173,7 +173,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout Default Position (for Align button)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">弹窗默认位置（用于对齐按钮）</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">弹窗默认位置（用于恢复默认位置按钮）</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
@@ -217,7 +217,7 @@
         </trans-unit>
         <trans-unit id="Settings.TrayIconMode" translate="yes" xml:space="preserve">
           <source>Tray Icon Mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">托盘图标模式</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">托盘图标样式</target>
         </trans-unit>
         <trans-unit id="Settings.TrayIconMode.Colored" translate="yes" xml:space="preserve">
           <source>Colored</source>
