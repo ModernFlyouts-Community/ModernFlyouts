@@ -42,12 +42,20 @@
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
                            Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=MediaTitleBlock}"
                            ToolTipService.IsEnabled="{Binding Text, ElementName=MediaTitleBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
-                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" />
+                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform x:Name="mediaTitleBlockTranslateTransform" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
                 <TextBlock Grid.Row="1" x:Name="MediaArtistBlock" Style="{DynamicResource CaptionTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
                            Text="Song Artist" ToolTip="{Binding Text, ElementName=MediaArtistBlock}"
                            ToolTipService.IsEnabled="{Binding Text, ElementName=MediaArtistBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
-                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" />
+                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform x:Name="mediaArtistBlockTranslateTransform" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
             </Grid>
 
             <Grid Grid.Column="1">

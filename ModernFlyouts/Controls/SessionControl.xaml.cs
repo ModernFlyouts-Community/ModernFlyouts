@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Windows.Media;
@@ -441,7 +442,7 @@ namespace ModernFlyouts
 
                 UpdatePlaybackInfo(session);
 
-                /*await*/ SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
+                await SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
             }
             catch { }
 
@@ -450,22 +451,28 @@ namespace ModernFlyouts
 
         #region Thumbnail
 
-        // TODO: Re-enable once C#/WinRT is stable and https://github.com/ShankarBUS/ModernFlyouts/issues/100 doesn't occur
-        private /*async Task*/ void SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
+        // TODO: Re-use `.AsStream()` extension method from `System.IO.WindowsRuntimeStreamExtensions` once https://github.com/ShankarBUS/ModernFlyouts/issues/100 doesn't occur
+        private async Task SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
         {
-            //if (thumbnail != null)
-            //{
-            //    using var strm = await thumbnail.OpenReadAsync();
-            //    if (strm != null)
-            //    {
-            //        using var nstream = strm.AsStream();
-            //        if (nstream != null && nstream.Length > 0)
-            //        {
-            //            ThumbnailImageBrush.ImageSource = ThumbnailBackgroundBrush.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad); ;
-            //            return;
-            //        }
-            //    }
-            //}
+            if (thumbnail != null)
+            {
+                using var strm = await thumbnail.OpenReadAsync();
+                if (strm != null && strm.Size > 0)
+                {
+                    using var dreader = new DataReader(strm);
+                    await dreader.LoadAsync((uint)strm.Size);
+                    var buffer = new byte[(int)strm.Size];
+                    dreader.ReadBytes(buffer);
+
+                    using var nstream = new MemoryStream(buffer);
+                    nstream.Seek(0, SeekOrigin.Begin);
+                    if (nstream != null && nstream.Length > 0)
+                    {
+                        ThumbnailImageBrush.ImageSource = ThumbnailBackgroundBrush.ImageSource = BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad); ;
+                        return;
+                    }
+                }
+            }
 
             ThumbnailImageBrush.ImageSource = GetDefaultThumbnail(playbackType);
             ThumbnailBackgroundBrush.ImageSource = null;
@@ -492,10 +499,14 @@ namespace ModernFlyouts
             ThumbnailBackgroundBrush.BeginAnimation(Brush.OpacityProperty, null);
             ThumbnailImageBrush.BeginAnimation(Brush.OpacityProperty, null);
             TextBlockGrid.BeginAnimation(OpacityProperty, null);
+            mediaArtistBlockTranslateTransform.BeginAnimation(TranslateTransform.YProperty, null);
+            mediaTitleBlockTranslateTransform.BeginAnimation(TranslateTransform.YProperty, null);
 
             ThumbnailBackgroundBrush.Opacity = 0.0;
             ThumbnailImageBrush.Opacity = 0.0;
             TextBlockGrid.Opacity = 0.0;
+            mediaArtistBlockTranslateTransform.Y = 0.0;
+            mediaTitleBlockTranslateTransform.Y = 0.0;
         }
 
         private void EndTrackTransition()
@@ -504,6 +515,23 @@ namespace ModernFlyouts
             ThumbnailBackgroundBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);
             ThumbnailImageBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);
             TextBlockGrid.BeginAnimation(OpacityProperty, fadeAnim);
+
+            var YAnim1 = new DoubleAnimationUsingKeyFrames()
+            {
+                KeyFrames =
+                {
+                    new DiscreteDoubleKeyFrame(40, TimeSpan.Zero),
+                    new SplineDoubleKeyFrame(0, TimeSpan.FromMilliseconds(367), new KeySpline(0.1, 0.9, 0.2, 1))
+                }
+            };
+            mediaTitleBlockTranslateTransform.BeginAnimation(TranslateTransform.YProperty, YAnim1);
+
+            var YAnim2 = new DoubleAnimationUsingKeyFrames()
+            {
+                BeginTime = TimeSpan.FromMilliseconds(100),
+                KeyFrames = YAnim1.KeyFrames
+            };
+            mediaArtistBlockTranslateTransform.BeginAnimation(TranslateTransform.YProperty, YAnim2);
         }
 
         #endregion
