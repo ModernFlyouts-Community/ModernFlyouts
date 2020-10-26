@@ -10,7 +10,7 @@
   <Identity
     Name="32669SamG.ModernFlyouts"
     Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
-    Version="0.7.5.0" />
+    Version="0.7.8.0" />
 
   <Properties>
     <DisplayName>ModernFlyouts</DisplayName>
