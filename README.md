@@ -141,28 +141,31 @@ _Without TopBar_
 
 **(On state)**
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
-
-![Airplane_On](docs/images/Airplane_On.png)
-
-_With TopBar_
-
-![Airplane_On_NoTop](docs/images/Airplane_On_NoTop.png)
-
-_Without TopBar_
-
-&nbsp;
+<table>
+    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+  </tr>
+   <tr>
+    <td><h4>insert image:</h4></td>
+    <td valign="top"><img src="docs/images/Airplane_On.png"></td>
+    <td valign="top"><img src="docs/images/Airplane_On_NoTop.png"></td>
+  </tr>
+ </table>
+ &nbsp;
 
 ### Lock-keys flyout
 
 **(Caps-lock On)**
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
-
-![LockKey_Caps](docs/images/LockKey_Caps.png)
-
-_With TopBar_
-
-![LockKey_Caps_NoTop](docs/images/LockKey_Caps_NoTop.png)
-
-_Without TopBar_
+<table>
+    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+  </tr>
+   <tr>
+    <td><h4>Windows doesn't have one</h4></td>
+    <td valign="top"><img src="docs/images/LockKey_Caps.png"></td>
+    <td valign="top"><img src="docs/images/LockKey_Caps_NoTop.png"></td>
+  </tr>
+ </table>
