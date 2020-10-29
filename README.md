@@ -121,7 +121,6 @@ _Without TopBar_
   </tr>
  </table>
 
-&nbsp;
 
 ### Brightness Flyout
 
@@ -136,10 +135,11 @@ _Without TopBar_
      <td>Without TopBar:</td>
   </tr>
    <tr>
-    <td valign="top"><img src="docs/images/Brightness.png"></td>
-    <td valign="top"><img src="docs/images/Brightness_NoTop.png"></td>
+    <td valign="top"><img src="docs/images/Brightness-Compacted.png"></td>
+    <td valign="top"><img src="docs/images/Brightness-Compacted_NoTop.png"></td>
   </tr>
  </table>
+ &nbsp;
 
 ### Airplane-Mode Flyout
 
