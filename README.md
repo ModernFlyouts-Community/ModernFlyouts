@@ -33,10 +33,9 @@ See the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) page for additi
 - Flyout is **Draggable** and autosaves the position
 - Flyout can be **aligned to a default position** (can be modified in the settings)
 - Smooth **Animations** & **Tranisitions**
-- This application works on **Windows 10 1809 and above** (v0.3.0 supports Windows 8+, however to simplify distribution and due to MSIX packaging limitations, v0.4.0+ won't support windows versions less than 1809)
 
 ## System Requirements
-- Windows 10 1809+
+- **Windows 10 1809 and above** (v0.1 - v0.3 support Windows 8 and above, however due to MSIX limitations, v0.4.0 and above won't)
 
 ## Installation
 Modern Flyouts is Available on GitHub, winget and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
@@ -132,17 +131,15 @@ _Without TopBar_
 
 **ModernFlyouts Flyout:** 
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
-
-![Brightness](docs/images/Brightness.png)
-
-_With TopBar_
-
-![Brightness_NoTop](docs/images/Brightness_NoTop.png)
-
-_Without TopBar_
-
-&nbsp;
+<table>
+    <td>With TopBar:</td>
+     <td>Without TopBar:</td>
+  </tr>
+   <tr>
+    <td valign="top"><img src="docs/images/Brightness.png"></td>
+    <td valign="top"><img src="docs/images/Brightness_NoTop.png"></td>
+  </tr>
+ </table>
 
 ### Airplane-Mode Flyout
 
