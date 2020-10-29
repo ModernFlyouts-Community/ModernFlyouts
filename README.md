@@ -124,17 +124,13 @@ _Without TopBar_
 
 ### Brightness Flyout
 
-**Windows Default Flyout**
-
-![Brightness_Old](docs/images/Brightness_Old.png)
-
-**ModernFlyouts Flyout:** 
-
 <table>
-    <td>With TopBar:</td>
-     <td>Without TopBar:</td>
+    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
   </tr>
    <tr>
+    <td valign="top"><img src="docs/images/Brightness_Old.png"></td>
     <td valign="top"><img src="docs/images/Brightness-Compacted.png"></td>
     <td valign="top"><img src="docs/images/Brightness-Compacted_NoTop.png"></td>
   </tr>
