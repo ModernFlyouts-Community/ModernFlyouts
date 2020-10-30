@@ -210,7 +210,7 @@
     <value>Mediensitzungen Panel-Orientierung</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Diese App wurde entwickelt, um ein moderner Fluent Design Ersatz für die alten U-Bahn-Themen Flyouts in Windows seit Windows 8 vorhanden sein.</value>
+    <value>Diese App wurde entwickelt, um ein moderner Fluent Design Ersatz für die in die Jahre gekommenes Deign der Flyouts seit Windows 8 zu haben.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Mitwirkende</value>
@@ -219,10 +219,10 @@
     <value>GitHub-Repository</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Öffnen einer neuen Ausgabe</value>
+    <value>Ein neues Problem Melden</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Bewerten und Überprüfen im Microsoft Store</value>
+    <value>Diese App im Microsoft Store anzeigen und bewerten</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Version: </value>
