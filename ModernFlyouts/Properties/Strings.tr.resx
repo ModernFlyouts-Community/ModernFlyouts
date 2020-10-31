@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} kapalı</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} üzerinde</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Üzerine Yazma Modu</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Başlangıçta çalıştırın</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Toplu uçuşta Küresel Sistem Medya Taşıma (Medya) Denetimlerini Göster</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Küresel Sistem Medya Taşıma (Medya) Denetimlerinde Ses denetimini göster</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Tepsi Simge Modu</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Dikey</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Dikey olarak gösterilen maksimum Ortam Oturumu Denetimi Sayısı</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Medya Oturumları Panel Oryantasyonu</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Bu uygulama, Windows 8'den bu yana Windows'da bulunan eski metro temalı flyout'ların modern bir Akıcı Tasarım yerine geçecek şekilde tasarlanmıştır.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Herhangi bir hata bulursanız, lütfen github deposunda yeni bir sorun açın.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Gösterilen oturum sayısı</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Medya oturumları panel oryantasyonu</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Küresel Sistem Medya Taşıma Denetimlerini Göster (GSMTC) nam-ı diğer Medya kontrollerini Ses uçuşunda göster</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Küresel Sistem Medya Taşıma Kontrolleri (GSMTC) aka Medya flyout ses kontrolü göster</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Küçük resim hizalama</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Koyu</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Otomatik gizle</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Daraltılmış</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Görünür</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Büyük harf kilidi</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num kilidi</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Kaydırma kilidi</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Uçuş için uçuş göstermek istediğiniz tuşları seçin</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Görünüm</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Uçak modu Flyout etkinleştirin</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Ses Flyout etkinleştirme</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Parlaklık Flyout etkinleştirin</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Kilit tuşlarını Flyout etkinleştirin</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Flyout teması</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Flyout zaman (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Sol</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Medya</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Birim</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Sağ</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>TopBar görünürlüğü</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Sistem tepsisi alanında simgeyi göster</value>
   </data>
 </root>

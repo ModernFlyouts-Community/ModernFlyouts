@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} jest wyłączony</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} jest włączony</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Tryb zastępowania</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Uruchom przy starcie</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Pokaż sterowanie globalnym transportem mediów systemowych (Media) w wysu wysu wysu wysu wysu podczas</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Pokaż kontrolę głośności w wysu wysu wysu wysu wysu wysu wysu wysu wysu podczas sterowania globalnym</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Tryb ikony zasobnika</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Pionowo</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Maksymalna liczba kontrolek sesji multimedialnej do wyświetlenia w pionie</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Orientacja panelu sesji multimediów</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Ta aplikacja jest przeznaczona do nowoczesnego zamiennika Fluent Design dla starych wysuń wysuwowych tematów metra obecnych w systemie Windows od Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Jeśli znajdziesz jakieś błędy, otwórz nowy problem w repozytorium github.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Liczba sesji do wyświetlenia</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientacja panelu sesji multimedialnych</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Pokaż globalne sterowanie transportem mediów systemowych (GSMTC) aka Sterowanie multimediami w wysu wysuwu woluminu</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Pokaż regulację głośności w globalnej kontroli transportu mediów systemowych (GSMTC) aka Media wysuń</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Wyrównanie miniatur</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Ciemny</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Jasny</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Autoukrywanie</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Zwinięte</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Widoczny</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Wstawianie</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num lock (Blokada liczba)</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Blokada przewijania</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Wybierz klawisze, dla których chcesz wyświetlić wysuw</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Wygląd</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Włącz wysuw w trybie samolotowym</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Włącz wysuw audio</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Włącz wysuw jasności</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Włącz wysuń klawiszy blokady</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Kompozycja Wysuń</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Limit czasu wysu podczas wysuń (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Do lewej</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Multimedia</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Wolumin</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Wyłączone</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Włączone</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Do prawej</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Widoczność na pasku górnym</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Pokaż ikonę na obszarze zasobnika systemowego</value>
   </data>
 </root>

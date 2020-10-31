@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} dimatikan</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} disalakan</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Mod Overtype</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Jalankan semasa permulaan</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Tayang Kawalan Pengangkutan Media Sistem Global (Media) dalam lalat</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Tayang kawalan kelantangan dalam risalah Kawalan Pengangkutan Media Sistem Global (Media)</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Mod Ikon Dulang</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Menegak</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Bilangan Maksimum Kawalan Sesi Media untuk ditunjukkan secara menegak</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Orientasi Panel Sesi Media</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Aplikasi ini direka untuk menjadi penggantian Reka Bentuk Fasih moden untuk risalah bertemakan metro lama yang terdapat dalam Windows sejak Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Jika anda mendapati sebarang pepijat, sila buka isu baru dalam repositori github.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Bilangan sesi untuk ditunjukkan</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientasi panel sesi media</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Tayang kawalan aka Kawalan Pengangkutan Media Sistem Global (GSMTC) dalam risalah Kelantangan</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Tayang kawalan kelantangan dalam Kawalan Pengangkutan Media Sistem Global (GSMTC) aka Media flyout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Jajaran lakaran kenit</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Gelap</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Cerah</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Auto sembunyi</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Diruntuhkan</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Boleh dilihat</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Huruf besar</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Sisip</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Kunci num</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Kunci tatal</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Pilih kekunci yang anda mahu tunjukkan</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Penampilan</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Dayakan Flyout mod kapal terbang</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Dayakan Flyout Audio</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Dayakan Flyout Kecerahan</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Dayakan Kekunci Kunci Flyout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Tema flyout</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Flyout timeout (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Kiri</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Alat</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Kelantangan</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Mati</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Hidup</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Kanan</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Penglihatan TopBar</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Tunjukkan ikon pada kawasan dulang sistem</value>
   </data>
 </root>

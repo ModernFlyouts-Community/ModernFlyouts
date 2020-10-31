@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} ki van kapcsolva.</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} van bekapcsolva</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Felülírás mód</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Futtatás indításkor</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Globális rendszermédia-átviteli (média) vezérlők megjelenítése a Kötet úszó panelen</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Hangerőszabályzó megjelenítése a globális rendszermédia-átviteli (media) vezérlők úszó panelén</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Tálca ikon mód</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Függőleges</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>A függőlegesen megjelenítandó médiamunkamenet-vezérlők maximális száma</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Médiamunkamenetek panel tájolása</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Ez az alkalmazás célja, hogy egy modern Fluent Design helyett a régi metró témájú úszó paneljelenik meg a Windows, mivel a Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Ha hibát talál, nyisson meg egy új problémát a github-tárházban.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>A megjelenítandó munkamenetek száma</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Médiamunkamenetek paneltájolása</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Globális rendszermédia-átviteli vezérlők (GSMTC) más néven médiavezérlők megjelenítése a Kötet úszó panelen</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Hangerőszabályzó megjelenítése a Globális rendszermédia-átviteli vezérlők (GSMTC) más néven Media úszó panelen</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Miniatűrigazítás</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Sötét</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Világos</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Automatikus elrejtés</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Összecsukva</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Látható</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Beszúrás</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num zár</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Görgetés reteszelése</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Jelölje ki azokat a billentyűket, amelyeknél az úszó panelt meg szeretné jelenjenek</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Megjelenés</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Repülési üzemmód engedélyezése úszó panel</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Audio úszó panel engedélyezése</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Fényerő úszó panel engedélyezése</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Zárolási kulcsok engedélyezése úszó panel</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Úszó panel téma</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Úszó kimenő időmeghosszabbítása (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Balra</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Média</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Kötet</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Kikapcsolva</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Be</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Jobbra</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>TopBar láthatóság</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Ikon megjelenítése a tálcán</value>
   </data>
 </root>

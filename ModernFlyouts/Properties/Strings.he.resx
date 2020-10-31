@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} כבוי.</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} הוא על</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>מצב הקלדה על טקסט קיים</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>הפעל בעת האתחול</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>הצג פקדי תעבורת מדיה של המערכת הכללית (מדיה) בנשל-נשלף של אמצעי אחסון</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>הצג בקרת עוצמה בנשלף נשלף של פקדי תעבורת מדיה של המערכת הכללית (מדיה)</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>מצב סמל מגש</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>אנכי</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>המספר המרבי של פקדי הפעלת מדיה לצג אנכי</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>כיוון החלונית 'הפעלות מדיה'</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>יישום זה נועד להיות תחליף עיצוב רהוט מודרני עבור תחליפים נושאים מטרו הישן הנוכחי ב- Windows מאז Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>אם אתה מוצא באגים כלשהם, נא פתח בעיה חדשה במאגר github.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>מספר הפעלות שיש להציג</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>כיוון החלונית 'הפעלות מדיה'</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>הצג פקדי תעבורה של מדיה של המערכת הכללית (GSMTC) המכונה פקדי מדיה בנשלף אמצעי אחסון</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>הצג בקרת עוצמה בפקדי תעבורת מדיה של המערכת הכללית (GSMTC) הידועה גם כנשלף למדיה</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>יישור תמונה ממוזערת</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>כהה</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>בהיר</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>הסתר אוטומטית</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>מכווץ</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>גלוי</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>נעילת Num</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>נעילת גלילה</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>בחר את המפתחות שברצונך להציג עבורו את התהנשלף</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>מראה</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>הפוך נשל-נשלף למצב טיסה לזמין</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>אפשר נשלף לשמע</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>אפשר תוף נשלף של בהירות</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>הפוך מקשי נעילה לזמינה</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>ערכת הנושא 'נשלף'</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>פסק זמן לתנון (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>לשמאל</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>מדיה</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>אמצעי אחסון</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>‏‏כבוי</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>‏‏פועל</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>לימין</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>ניראות של ה-TopBar</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>הצג סמל באזור מגש המערכת</value>
   </data>
 </root>

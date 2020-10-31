@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} är avstängd</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} är på</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Överskrivningsläge</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Kör vid start</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Visa globala systemmedietransport (media) kontroller i volym utfällningsfält</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Visa volymkontroll i den utfällningsfält globala systemmedietransport (Media) Kontroller</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Ikonläge för fack</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Lodrät</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Maximalt antal mediasessionskontroller som ska visas vertikalt</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Panelorientering för mediasessioner</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Denna app är utformad för att vara en modern Fluent Design ersättning för den gamla metro tema utfällda utst.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Om du hittar några buggar, vänligen öppna ett nytt nummer i github-förvaret.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Antal sessioner som ska visas</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Panelorientering för mediasessioner</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Visa GSMTC (Global System Media Transport Controls) aka Media-kontroller i utfällningsyta volym</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Visa volymkontroll i GSMTC (Global System Media Transport Controls) aka Media- utfällningsyta</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Miniatyrjustering</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Mörk</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Ljus</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Dölj automatiskt</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Komprimerad</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Synlig</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Infoga</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num lås</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Rulla lås</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Markera de tangenter du vill visa den utfällningsystna för</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Aktivera utfällningsläge för flygplansläge</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Aktivera utfällningsyt läge för ljud</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Aktivera utfällbara objekt för ljusstyrka</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Aktivera Låsnycklar Utfällbara uts.</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Temat Utfällningssyt</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Timeout för utfällning (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Vänster</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Volym</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Av</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>På</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Höger</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>TopBar synlighet</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Visa ikon på området för systembrickor</value>
   </data>
 </root>

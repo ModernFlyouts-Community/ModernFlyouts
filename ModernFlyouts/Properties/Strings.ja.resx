@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0}はオフです</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0}オン</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>上書きモード</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>起動時に実行</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>ボリューム フライアウトでグローバル システム メディア トランスポート (メディア) コントロールを表示する</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>グローバル システム メディア トランスポート (メディア) コントロール のポップアップでボリューム コントロールを表示</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>トレイ アイコン モード</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>垂直</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>縦方向に表示するメディア セッション コントロールの最大数</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>メディア セッション パネルの方向</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>このアプリは、Windows 8以来、Windowsに存在する古いメトロをテーマにしたポップアップのための近代的なFluentデザインの置き換えとして設計されています。</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>バグが見つかる場合は、github リポジトリで新しい問題を開いてください。</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>表示するセッション数</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>メディア セッションパネルの向き</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>ボリューム フライアウトでグローバル システム メディア トランスポート コントロール (GSMTC) 別名メディア コントロールを表示</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>グローバル システム メディア トランスポート コントロール(GSMTC)、別名メディア フライアウトでボリューム コントロールを表示します。</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>サムネイルの配置</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>暗い</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>簡易</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>自動的に隠す</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>折りたたみ</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>CapsLock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>挿入</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>数字ロック</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>スクロールロック</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>フライアウトを表示するキーを選択します。</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>外観</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>機内モードのフライアウトを有効にする</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>オーディオ ポップアップを有効にする</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>明るさのポップアップを有効にする</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>ロックキーのポップアップを有効にする</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>フライアウトテーマ</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>ポップアップ タイムアウト (ミリ秒)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>メディア</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>ボリューム</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>オン</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>トップバーの可視性</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>システム トレイ領域にアイコンを表示する</value>
   </data>
 </root>
