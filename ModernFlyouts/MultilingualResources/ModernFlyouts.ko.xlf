@@ -407,14 +407,6 @@
           <source>Volume</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">볼륨</target>
         </trans-unit>
-        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
-          <source>Off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">꺼짐</target>
-        </trans-unit>
-        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
-          <source>On</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">켜짐</target>
-        </trans-unit>
         <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">오른쪽</target>
@@ -426,6 +418,14 @@
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">시스템 트레이 영역에 아이콘 표시</target>
+        </trans-unit>
+        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">꺼짐</target>
+        </trans-unit>
+        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">켜짐</target>
         </trans-unit>
       </group>
     </body>

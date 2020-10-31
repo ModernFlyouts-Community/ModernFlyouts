@@ -407,14 +407,6 @@
           <source>Volume</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Volym</target>
         </trans-unit>
-        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
-          <source>Off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Av</target>
-        </trans-unit>
-        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
-          <source>On</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">På</target>
-        </trans-unit>
         <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Höger</target>
@@ -426,6 +418,14 @@
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Visa ikon på området för systembrickor</target>
+        </trans-unit>
+        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Av</target>
+        </trans-unit>
+        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">På</target>
         </trans-unit>
       </group>
     </body>

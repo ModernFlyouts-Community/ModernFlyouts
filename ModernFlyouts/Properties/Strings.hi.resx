@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>वॉल्यूम</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>बंद</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>चालू</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>दायाँ</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>सिस्टम ट्रे क्षेत्र पर आइकन दिखाएं</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>बंद</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>चालू</value>
   </data>
 </root>

@@ -407,14 +407,6 @@
           <source>Volume</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Volumen</target>
         </trans-unit>
-        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
-          <source>Off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Desactivado</target>
-        </trans-unit>
-        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
-          <source>On</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Activado</target>
-        </trans-unit>
         <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Derecha</target>
@@ -426,6 +418,14 @@
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostrar icono en el área de la bandeja del sistema</target>
+        </trans-unit>
+        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Desactivado</target>
+        </trans-unit>
+        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Activado</target>
         </trans-unit>
       </group>
     </body>

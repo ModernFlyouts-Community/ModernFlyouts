@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Âm lượng</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Tắt</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>Bật</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Phải</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Hiện biểu tượng trên vùng khay hệ thống</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Tắt</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Bật</value>
   </data>
 </root>

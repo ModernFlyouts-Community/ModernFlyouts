@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>ボリューム</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>オフ</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>オン</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>右</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>システム トレイ領域にアイコンを表示する</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>オン</value>
   </data>
 </root>

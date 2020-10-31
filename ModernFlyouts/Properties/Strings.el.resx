@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Τόμος</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Ανενεργό</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>Ενεργό</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Δεξιά</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Εμφάνιση εικονιδίου στην περιοχή της κασέτας συστήματος</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Ανενεργό</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Ενεργό</value>
   </data>
 </root>

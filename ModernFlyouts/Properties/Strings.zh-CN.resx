@@ -281,12 +281,6 @@
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
     <value>锁键</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>关闭</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>打开</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>靠右</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
     <value>取消固定顶部栏</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>打开</value>
   </data>
 </root>

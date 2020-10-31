@@ -408,14 +408,6 @@
           <source>Volume</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Том</target>
         </trans-unit>
-        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
-          <source>Off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Выкл.</target>
-        </trans-unit>
-        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
-          <source>On</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вкл.</target>
-        </trans-unit>
         <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Вправо</target>
@@ -427,6 +419,14 @@
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Показать значок на области лотка системы</target>
+        </trans-unit>
+        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Выкл.</target>
+        </trans-unit>
+        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вкл.</target>
         </trans-unit>
       </group>
     </body>

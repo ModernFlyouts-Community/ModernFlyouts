@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Birim</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Kapalı</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>Açık</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Sağ</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Sistem tepsisi alanında simgeyi göster</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Açık</value>
   </data>
 </root>

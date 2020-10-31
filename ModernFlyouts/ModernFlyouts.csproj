@@ -14,7 +14,7 @@
     <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>latest</LangVersion>
-    <Version>0.8.0.0-beta</Version>
+    <Version>0.8.0.1-beta</Version>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
   </PropertyGroup>
 

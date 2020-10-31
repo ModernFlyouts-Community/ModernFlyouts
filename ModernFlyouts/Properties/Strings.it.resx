@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Anno</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Disattivato</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>Attivato</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>A destra</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Mostra icona nell'area della barra delle applicazioni</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Disattivato</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Attivato</value>
   </data>
 </root>

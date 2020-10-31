@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Wolumin</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Wyłączone</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>Włączone</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Do prawej</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Pokaż ikonę na obszarze zasobnika systemowego</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Wyłączone</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Włączone</value>
   </data>
 </root>

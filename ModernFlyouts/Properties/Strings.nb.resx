@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Volum</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Av</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>På</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Høyre</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Vis ikon i systemstatusfeltet</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Av</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>På</value>
   </data>
 </root>

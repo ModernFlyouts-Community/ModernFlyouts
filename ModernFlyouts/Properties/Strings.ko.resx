@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>볼륨</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>꺼짐</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>켜짐</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>오른쪽</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>시스템 트레이 영역에 아이콘 표시</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>꺼짐</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>켜짐</value>
   </data>
 </root>

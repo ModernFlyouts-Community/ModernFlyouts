@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>音量</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>關閉</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>開啟</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>靠右</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>在系統托盤區域顯示圖示</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>開啟</value>
   </data>
 </root>

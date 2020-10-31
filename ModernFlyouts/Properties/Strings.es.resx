@@ -305,12 +305,6 @@
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Volumen</value>
   </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Desactivado</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>Activado</value>
-  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Derecha</value>
   </data>
@@ -319,5 +313,11 @@
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Mostrar icono en el área de la bandeja del sistema</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Activado</value>
   </data>
 </root>
