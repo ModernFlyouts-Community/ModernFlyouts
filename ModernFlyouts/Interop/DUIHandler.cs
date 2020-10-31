@@ -4,9 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using static ModernFlyouts.NativeMethods;
+using static ModernFlyouts.Interop.NativeMethods;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Interop
 {
     public static class DUIHandler
     {
@@ -18,7 +18,7 @@ namespace ModernFlyouts
 
         public static IntPtr HWndDUI { get; private set; } = IntPtr.Zero;
 
-        public static uint ProcessId { get; private set; } = 0;
+        public static uint ProcessId { get; private set; }
 
         #endregion
 

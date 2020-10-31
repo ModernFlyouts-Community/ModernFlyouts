@@ -3,9 +3,9 @@ using System.Diagnostics;
 using System.Management;
 using System.Security.Principal;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.UI
 {
-    public class SystemTheme
+    internal class SystemTheme
     {
         private const string PersonalizeKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
         private const string SysThemeValueName = "SystemUsesLightTheme";

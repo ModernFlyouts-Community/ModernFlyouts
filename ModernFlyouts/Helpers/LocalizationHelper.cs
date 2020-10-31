@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -6,13 +7,17 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using System.Windows.Data;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Helpers
 {
     public class LocalizationHelper
     {
         private static CultureInfo systemUICulture;
+
+        private static readonly Dictionary<Enum, string> EnumRedirectionMap = new Dictionary<Enum, string>
+        {
+            { ModernWpf.ElementTheme.Default, "Settings.SystemDefault" }
+        };
 
         #region Properties
 
@@ -20,7 +25,7 @@ namespace ModernFlyouts.Utilities
 
         public static LanguageInfo CurrentLanguage
         {
-            get { return currentLanguage; }
+            get => currentLanguage;
             set
             {
                 if (currentLanguage != value)
@@ -85,7 +90,13 @@ namespace ModernFlyouts.Utilities
 
         public static string GetLocalisedEnumValue(Enum value)
         {
-            var resourceId = $"Enums.{value.GetType().Name}.{value}";
+            string resourceId = $"Enums.{value.GetType().Name}.{value}";
+
+            if (EnumRedirectionMap.TryGetValue(value, out string result))
+            {
+                resourceId = result;
+            }
+
             Debug.WriteLine(resourceId);
             try
             {
@@ -145,24 +156,6 @@ namespace ModernFlyouts.Utilities
         public override string ToString()
         {
             return DisplayName;
-        }
-    }
-
-    public class EnumToLocalizedStringConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value is Enum @enum)
-            {
-                return LocalizationHelper.GetLocalisedEnumValue(@enum);
-            }
-
-            return string.Empty;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
         }
     }
 }

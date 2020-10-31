@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
@@ -46,6 +47,19 @@ namespace ModernFlyouts
             }
         }
 
+        public static readonly DependencyProperty AlignThumbnailToRightProperty =
+            DependencyProperty.Register(
+                nameof(AlignThumbnailToRight),
+                typeof(bool),
+                typeof(SessionControl),
+                new PropertyMetadata(true, OnAlignThumbnailToRightChanged));
+
+        public bool AlignThumbnailToRight
+        {
+            get => (bool)GetValue(AlignThumbnailToRightProperty);
+            set => SetValue(AlignThumbnailToRightProperty, value);
+        }
+
         #endregion
 
         public SessionControl()
@@ -62,6 +76,10 @@ namespace ModernFlyouts
 
             Loaded += SessionControl_Loaded;
             Unloaded += SessionControl_Unloaded;
+
+            AlignThumbnailToRight = FlyoutHandler.Instance.UIManager.AlignGSMTCThumbnailToRight;
+            BindingOperations.SetBinding(this, AlignThumbnailToRightProperty,
+                new Binding(nameof(UI.UIManager.AlignGSMTCThumbnailToRight)) { Source = FlyoutHandler.Instance.UIManager });
         }
 
         public SessionControl(GlobalSystemMediaTransportControlsSession session) : this()
@@ -537,6 +555,30 @@ namespace ModernFlyouts
         #endregion
 
         #endregion
+
+        private static void OnAlignThumbnailToRightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var sessionControl = d as SessionControl;
+            var alignThumbnailToRight = (bool)e.NewValue;
+
+            var C0 = sessionControl.ContentGrid.ColumnDefinitions[0];
+            var C2 = sessionControl.ContentGrid.ColumnDefinitions[2];
+
+            if (alignThumbnailToRight)
+            {
+                C0.Width = new GridLength(15, GridUnitType.Pixel);
+                C2.Width = new GridLength(0, GridUnitType.Auto);
+                sessionControl.TGParent.SetValue(Grid.ColumnProperty, 2);
+                sessionControl.thumbnailBGOpacityBrush.GradientOrigin = sessionControl.thumbnailBGOpacityBrush.Center = new Point(1, 0.5);
+            }
+            else
+            {
+                C0.Width = new GridLength(0, GridUnitType.Auto);
+                C2.Width = new GridLength(15, GridUnitType.Pixel);
+                sessionControl.TGParent.SetValue(Grid.ColumnProperty, 0);
+                sessionControl.thumbnailBGOpacityBrush.GradientOrigin = sessionControl.thumbnailBGOpacityBrush.Center = new Point(0, 0.5);
+            }
+        }
 
         public void DisposeSession()
         {

@@ -1,16 +1,18 @@
-﻿using System;
+﻿using ModernFlyouts.UI;
+using ModernWpf;
+using System;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using Windows.Storage;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Helpers
 {
     public class AppDataHelper
     {
         #region Methods
 
-        private static bool GetBool(bool defaultValue, [CallerMemberName] string propertyName = "")
+        internal static bool GetBool(bool defaultValue, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -28,7 +30,7 @@ namespace ModernFlyouts
             return defaultValue;
         }
 
-        private static void SetBool(bool value, [CallerMemberName] string propertyName = "")
+        internal static void SetBool(bool value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -37,7 +39,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static int GetInteger(int defaultValue, [CallerMemberName] string propertyName = "")
+        internal static int GetInteger(int defaultValue, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -55,7 +57,7 @@ namespace ModernFlyouts
             return defaultValue;
         }
 
-        private static void SetInteger(int value, [CallerMemberName] string propertyName = "")
+        internal static void SetInteger(int value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -64,7 +66,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static double GetDouble(double defaultValue, [CallerMemberName] string propertyName = "")
+        internal static double GetDouble(double defaultValue, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -82,7 +84,7 @@ namespace ModernFlyouts
             return defaultValue;
         }
 
-        private static void SetDouble(double value, [CallerMemberName] string propertyName = "")
+        internal static void SetDouble(double value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -91,7 +93,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static string GetString([CallerMemberName] string propertyName = "")
+        internal static string GetString([CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -106,7 +108,7 @@ namespace ModernFlyouts
             return string.Empty;
         }
 
-        private static void SetString(string value, [CallerMemberName] string propertyName = "")
+        internal static void SetString(string value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -115,7 +117,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static T GetEnum<T>(T defaultValue, [CallerMemberName] string propertyName = "") where T : Enum
+        internal static T GetEnum<T>(T defaultValue, [CallerMemberName] string propertyName = "") where T : Enum
         {
             try
             {
@@ -130,7 +132,7 @@ namespace ModernFlyouts
             return defaultValue;
         }
 
-        private static void SetEnum<T>(T value, [CallerMemberName] string propertyName = "") where T : Enum
+        internal static void SetEnum<T>(T value, [CallerMemberName] string propertyName = "") where T : Enum
         {
             try
             {
@@ -139,7 +141,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        private static Point GetPoint(Point defaultPoint, [CallerMemberName] string propertyName = "")
+        internal static Point GetPoint(Point defaultPoint, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -154,7 +156,7 @@ namespace ModernFlyouts
             return defaultPoint;
         }
 
-        private static void SetPoint(Point value, [CallerMemberName] string propertyName = "")
+        internal static void SetPoint(Point value, [CallerMemberName] string propertyName = "")
         {
             try
             {
@@ -167,21 +169,17 @@ namespace ModernFlyouts
 
         #region Properties
 
+        #region General
+
+        public static string Language
+        {
+            get => GetString();
+            set => SetString(value);
+        }
+
         public static bool AudioModuleEnabled
         {
             get => GetBool(DefaultValuesStore.AudioModuleEnabled);
-            set => SetBool(value);
-        }
-
-        public static bool ShowGSMTCInVolumeFlyout
-        {
-            get => GetBool(DefaultValuesStore.ShowGSMTCInVolumeFlyout);
-            set => SetBool(value);
-        }
-
-        public static bool ShowVolumeControlInGSMTCFlyout
-        {
-            get => GetBool(DefaultValuesStore.ShowVolumeControlInGSMTCFlyout);
             set => SetBool(value);
         }
 
@@ -205,14 +203,8 @@ namespace ModernFlyouts
 
         public static DefaultFlyout DefaultFlyout
         {
-            get => GetEnum(DefaultValuesStore.PreferredFlyout);
+            get => GetEnum(DefaultValuesStore.PreferredDefaultFlyout);
             set => SetEnum(value);
-        }
-
-        public static bool TopBarEnabled
-        {
-            get => GetBool(DefaultValuesStore.TopBarEnabled);
-            set => SetBool(value);
         }
 
         public static Point DefaultFlyoutPosition
@@ -233,6 +225,70 @@ namespace ModernFlyouts
             set => SetString(value);
         }
 
+        #endregion
+
+        #region Module Specific
+
+        #region Audio module related
+
+        public static bool ShowGSMTCInVolumeFlyout
+        {
+            get => GetBool(DefaultValuesStore.ShowGSMTCInVolumeFlyout);
+            set => SetBool(value);
+        }
+
+        public static bool ShowVolumeControlInGSMTCFlyout
+        {
+            get => GetBool(DefaultValuesStore.ShowVolumeControlInGSMTCFlyout);
+            set => SetBool(value);
+        }
+
+        #endregion
+
+        #region Lock keys module related
+
+        public static bool LockKeysModule_CapsLockEnabled
+        {
+            get => GetBool(DefaultValuesStore.LockKeysModule_CapsLockEnabled);
+            set => SetBool(value);
+        }
+        
+        public static bool LockKeysModule_NumLockEnabled
+        {
+            get => GetBool(DefaultValuesStore.LockKeysModule_NumLockEnabled);
+            set => SetBool(value);
+        }
+        
+        public static bool LockKeysModule_ScrollLockEnabled
+        {
+            get => GetBool(DefaultValuesStore.LockKeysModule_ScrollLockEnabled);
+            set => SetBool(value);
+        }
+        
+        public static bool LockKeysModule_InsertEnabled
+        {
+            get => GetBool(DefaultValuesStore.LockKeysModule_InsertEnabled);
+            set => SetBool(value);
+        }
+
+        #endregion
+
+        #endregion
+
+        #region UI
+
+        public static TopBarVisibility TopBarVisibility
+        {
+            get => GetEnum(DefaultValuesStore.DefaultTopBarVisibility);
+            set => SetEnum(value);
+        }
+
+        public static ElementTheme FlyoutTheme
+        {
+            get => GetEnum(DefaultValuesStore.FlyoutTheme);
+            set => SetEnum(value);
+        }
+
         public static int FlyoutTimeout
         {
             get => GetInteger(DefaultValuesStore.FlyoutTimeout);
@@ -245,9 +301,21 @@ namespace ModernFlyouts
             set => SetDouble(value);
         }
 
+        public static bool TrayIconEnabled
+        {
+            get => GetBool(DefaultValuesStore.TrayIconEnabled);
+            set => SetBool(value);
+        }
+
         public static bool UseColoredTrayIcon
         {
             get => GetBool(DefaultValuesStore.UseColoredTrayIcon);
+            set => SetBool(value);
+        }
+
+        public static bool AlignGSMTCThumbnailToRight
+        {
+            get => GetBool(DefaultValuesStore.AlignGSMTCThumbnailToRight);
             set => SetBool(value);
         }
 
@@ -263,11 +331,7 @@ namespace ModernFlyouts
             set => SetEnum(value);
         }
 
-        public static string Language
-        {
-            get => GetString();
-            set => SetString(value);
-        }
+        #endregion
 
         #endregion
     }

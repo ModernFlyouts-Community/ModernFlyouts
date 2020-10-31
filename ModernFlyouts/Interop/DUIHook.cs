@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using static ModernFlyouts.NativeMethods;
+using static ModernFlyouts.Interop.NativeMethods;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Interop
 {
     public class DUIHook
     {

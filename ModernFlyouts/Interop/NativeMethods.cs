@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Interop
 {
     public static class NativeMethods
     {

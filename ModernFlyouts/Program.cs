@@ -1,11 +1,8 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.AppLifecycle;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Interop;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Pipes;
 using System.Reflection;
-using System.Threading;
-using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -13,16 +10,12 @@ namespace ModernFlyouts
     {
         public const string AppName = "ModernFlyouts";
 
-        private static Mutex mutex = new Mutex(true, AppName);
-
         [STAThread]
         static void Main(string[] args)
         {
-            if (mutex.WaitOne(TimeSpan.Zero, true))
+            AppLifecycleManager.StartApplication(args, () =>
             {
-                ProcessCommandLineArgs(args);
-
-                CreateRemoteService(AppName);
+                AppDataMigration.Perform();
 
                 DUIHandler.ForceFindDUIAndHide(false);
 
@@ -30,85 +23,14 @@ namespace ModernFlyouts
 
                 var app = new App();
                 app.Run();
-            }
-            else
-            {
-                SignalFirstInstance(AppName, args);
-            }
+            });
         }
 
-        private static async void CreateRemoteService(string channelName)
+        internal static void RunCommand(RunCommandType runCommandType)
         {
-            using NamedPipeServerStream pipeServer = new NamedPipeServerStream(channelName, PipeDirection.In);
-            while (true)
+            switch (runCommandType)
             {
-                await pipeServer.WaitForConnectionAsync().ConfigureAwait(false);
-                StreamReader reader = new StreamReader(pipeServer);
-                var rawArgs = await reader.ReadToEndAsync();
-
-                IList<string> args = rawArgs.Split(JumpListHelper.arg_delimiter);
-
-                ProcessCommandLineArgs(args, false);
-
-                pipeServer.Disconnect();
-            }
-        }
-
-        public static void ProcessCommandLineArgs(IList<string> args, bool isFirstInstance = true)
-        {
-            string arg = string.Empty;
-
-            if (args?.Count > 0)
-            {
-                arg = args[0];
-            }
-
-            if (arg == string.Empty)
-            {
-                if (!isFirstInstance)
-                {
-                    RunCommand(CommandType.ShowSettings);
-                }
-            }
-            else if (arg.ToLowerInvariant() == JumpListHelper.arg_settings)
-            {
-                RunCommand(CommandType.ShowSettings);
-            }
-            else if (arg.ToLowerInvariant() == JumpListHelper.arg_restore)
-            {
-                RunCommand(CommandType.RestoreDefault);
-            }
-            else if (arg.ToLowerInvariant() == JumpListHelper.arg_exit)
-            {
-                RunCommand(CommandType.SafeExit);
-            }
-        }
-
-        private static void SignalFirstInstance(string channelName, string[] args)
-        {
-            string rawArgs = string.Empty;
-            foreach (var arg in args)
-            {
-                rawArgs += arg + JumpListHelper.arg_delimiter;
-            }
-            
-            using NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", channelName, PipeDirection.Out);
-            pipeClient.Connect(0);
-            
-            StreamWriter writer = new StreamWriter(pipeClient) { AutoFlush = true };
-            writer.Write(rawArgs);
-            writer.Flush();
-            writer.Close();
-            pipeClient.Dispose();
-
-            Environment.Exit(0);
-        }
-
-        private static void RunCommand(CommandType commandType)
-        {
-            switch (commandType)
-            {
-                case CommandType.ShowSettings:
+                case RunCommandType.ShowSettings:
                     {
                         if (FlyoutHandler.HasInitialized)
                         {
@@ -120,7 +42,7 @@ namespace ModernFlyouts
                         }
                         break;
                     }
-                case CommandType.RestoreDefault:
+                case RunCommandType.RestoreDefault:
                     {
                         if (!DUIHandler.IsDUIAvailable())
                         {
@@ -129,7 +51,7 @@ namespace ModernFlyouts
                         FlyoutHandler.SafelyExitApplication();
                         break;
                     }
-                case CommandType.SafeExit:
+                case RunCommandType.SafeExit:
                     {
                         FlyoutHandler.SafelyExitApplication();
                         break;
@@ -143,12 +65,12 @@ namespace ModernFlyouts
         {
             get => Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
+    }
 
-        private enum CommandType
-        {
-            ShowSettings = 0,
-            RestoreDefault = 1,
-            SafeExit = 2
-        }
+    internal enum RunCommandType
+    {
+        ShowSettings = 0,
+        RestoreDefault = 1,
+        SafeExit = 2
     }
 }

@@ -1,4 +1,5 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Helpers;
+using ModernFlyouts.Utilities;
 using System;
 using System.Diagnostics;
 using System.Management;
@@ -51,7 +52,7 @@ namespace ModernFlyouts
 
         private void AirplaneModeWatcher_Changed(object sender, AirplaneModeChangedEventArgs e)
         {
-            Dispatcher.Invoke(() =>
+            App.Current.Dispatcher.Invoke(() =>
             {
                 Prepare(e);
                 ShowFlyoutRequested?.Invoke(this);
@@ -99,7 +100,7 @@ namespace ModernFlyouts
 
     public class AirplaneModeWatcher
     {
-        private ManagementEventWatcher watcher;
+        private readonly ManagementEventWatcher watcher;
 
         public event EventHandler<AirplaneModeChangedEventArgs> Changed;
         public AirplaneModeWatcher()

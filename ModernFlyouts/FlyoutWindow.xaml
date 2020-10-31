@@ -99,7 +99,7 @@
                             <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Cancel}" FontSize="12" />
                         </Button>
 
-                        <Rectangle Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Grid.Row="1" Grid.Column="2"
+                        <Rectangle x:Name="TopBarOverlayIndicator" Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Grid.Row="1" Grid.Column="2"
                                    RadiusX="1" RadiusY="1" Width="30" Height="2" />
                     </Grid>
 

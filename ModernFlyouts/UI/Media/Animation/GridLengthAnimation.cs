@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media.Animation;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.UI.Media.Animation
 {
     internal class GridLengthAnimation : AnimationTimeline
     {

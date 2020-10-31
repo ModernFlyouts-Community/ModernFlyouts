@@ -36,6 +36,10 @@
 
         public const string MobSignal5 = "\uEC3B";
 
+        public const string Audio = "\uE189";
+
+        public const string Media = "\uEA69";
+
         public const string Mute = "\uE74F";
 
         public const string Volume0 = "\uE992";
@@ -48,7 +52,11 @@
 
         public const string PowerButton = "\uE7E8";
 
+        public const string Light = "\uE793";
+
         public const string Brightness = "\uE706";
+
+        public const string LowerBrightness = "\uEC8A";
 
         public const string Shuffle = "\uE14B";
 
@@ -67,5 +75,7 @@
         public const string Lock = "\uE72E";
 
         public const string Unlock = "\uE785";
+
+        public const string Personalization = "\uE771";
     }
 }

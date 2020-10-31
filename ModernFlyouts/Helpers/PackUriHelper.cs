@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Helpers
 {
     internal static class PackUriHelper
     {

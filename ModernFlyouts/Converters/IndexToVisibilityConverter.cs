@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Converters
 {
     public class IndexToVisibilityConverter : IValueConverter
     {

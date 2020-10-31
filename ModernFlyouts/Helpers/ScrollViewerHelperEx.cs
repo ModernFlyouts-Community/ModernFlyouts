@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Helpers
 {
     internal static class ScrollViewerHelperEx
     {

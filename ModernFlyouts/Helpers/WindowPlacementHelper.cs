@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using static ModernFlyouts.NativeMethods;
+using static ModernFlyouts.Interop.NativeMethods;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Helpers
 {
-    public static class WindowPlacement
+    public static class WindowPlacementHelper
     {
         private static Encoding encoding = new UTF8Encoding();
         private static XmlSerializer serializer = new XmlSerializer(typeof(WINDOWPLACEMENT));
@@ -46,15 +46,11 @@ namespace ModernFlyouts.Utilities
             WINDOWPLACEMENT placement = new WINDOWPLACEMENT();
             GetWindowPlacement(windowHandle, out placement);
 
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                using (XmlTextWriter xmlTextWriter = new XmlTextWriter(memoryStream, Encoding.UTF8))
-                {
-                    serializer.Serialize(xmlTextWriter, placement);
-                    byte[] xmlBytes = memoryStream.ToArray();
-                    return encoding.GetString(xmlBytes);
-                }
-            }
+            using MemoryStream memoryStream = new MemoryStream();
+            using XmlTextWriter xmlTextWriter = new XmlTextWriter(memoryStream, Encoding.UTF8);
+            serializer.Serialize(xmlTextWriter, placement);
+            byte[] xmlBytes = memoryStream.ToArray();
+            return encoding.GetString(xmlBytes);
         }
     }
 }

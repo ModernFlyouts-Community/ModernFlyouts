@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Converters
 {
     [ValueConversion(typeof(ReadOnlyObservableCollection<ValidationError>), typeof(string))]
     public class ValidationErrorsToStringConverter : MarkupExtension, IValueConverter

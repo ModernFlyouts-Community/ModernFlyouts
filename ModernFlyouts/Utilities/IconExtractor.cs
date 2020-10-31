@@ -36,7 +36,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Utilities
 {
     public sealed class IconExtractor
     {
@@ -57,7 +57,7 @@ namespace ModernFlyouts
         ////////////////////////////////////////////////////////////////////////
         // Fields
 
-        private byte[][] iconData = null;   // Binary data of each icon.
+        private byte[][] iconData;   // Binary data of each icon.
 
         ////////////////////////////////////////////////////////////////////////
         // Public properties
@@ -97,7 +97,7 @@ namespace ModernFlyouts
         public Icon GetIcon(int index)
         {
             if (index < 0 || Count <= index)
-                throw new ArgumentOutOfRangeException("index");
+                throw new ArgumentOutOfRangeException(nameof(index));
 
             // Create an Icon based on a .ico file in memory.
 
@@ -122,7 +122,7 @@ namespace ModernFlyouts
         private void Initialize(string fileName)
         {
             if (fileName == null)
-                throw new ArgumentNullException("fileName");
+                throw new ArgumentNullException(nameof(fileName));
 
             IntPtr hModule = IntPtr.Zero;
             try
@@ -198,7 +198,7 @@ namespace ModernFlyouts
             }
         }
 
-        private byte[] GetDataFromResource(IntPtr hModule, IntPtr type, IntPtr name)
+        private static byte[] GetDataFromResource(IntPtr hModule, IntPtr type, IntPtr name)
         {
             // Load the binary data from the specified resource.
 
@@ -224,7 +224,7 @@ namespace ModernFlyouts
             return buf;
         }
 
-        private string GetFileName(IntPtr hModule)
+        private static string GetFileName(IntPtr hModule)
         {
             // Alternative to GetModuleFileName() for the module loaded with
             // LOAD_LIBRARY_AS_DATAFILE option.
@@ -256,7 +256,7 @@ namespace ModernFlyouts
 
                 var devPath = buf.ToString();
                 if (fileName.StartsWith(devPath))
-                    return drive + fileName.Substring(devPath.Length);
+                    return drive + fileName[devPath.Length..];
             }
 
             return fileName;
@@ -317,7 +317,7 @@ namespace ModernFlyouts
     {
         private delegate byte[] GetIconDataDelegate(Icon icon);
 
-        static GetIconDataDelegate getIconData;
+        static readonly GetIconDataDelegate getIconData;
 
         static IconUtil()
         {
@@ -351,7 +351,7 @@ namespace ModernFlyouts
         public static Icon[] Split(Icon icon)
         {
             if (icon == null)
-                throw new ArgumentNullException("icon");
+                throw new ArgumentNullException(nameof(icon));
 
             // Create an .ico file in memory, then split it into separate icons.
 
@@ -399,7 +399,7 @@ namespace ModernFlyouts
         public static Bitmap ToBitmap(Icon icon)
         {
             if (icon == null)
-                throw new ArgumentNullException("icon");
+                throw new ArgumentNullException(nameof(icon));
 
             // Quick workaround: Create an .ico file in memory, then load it as a Bitmap.
 
@@ -436,7 +436,7 @@ namespace ModernFlyouts
         public static int GetBitCount(Icon icon)
         {
             if (icon == null)
-                throw new ArgumentNullException("icon");
+                throw new ArgumentNullException(nameof(icon));
 
             // Create an .ico file in memory, then read the header.
 

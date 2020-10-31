@@ -1,4 +1,5 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Helpers;
+using ModernFlyouts.Utilities;
 using NAudio.CoreAudioApi;
 using NAudio.CoreAudioApi.Interfaces;
 using System;
@@ -21,70 +22,40 @@ namespace ModernFlyouts
         private VolumeControl volumeControl;
         private SessionsPanel sessionsPanel;
         private TextBlock noDeviceMessageBlock;
-        private bool _isinit = false;
-        private bool _SMTCAvail = false;
+        private bool _isinit;
+        private bool _SMTCAvail;
         private bool isVolumeFlyout = true;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
         #region Properties
 
-        public static readonly DependencyProperty ShowGSMTCInVolumeFlyoutProperty =
-            DependencyProperty.Register(
-                nameof(ShowGSMTCInVolumeFlyout),
-                typeof(bool),
-                typeof(AudioFlyoutHelper),
-                new PropertyMetadata(true, OnShowGSMTCInVolumeFlyoutChanged));
+        private bool showGSMTCInVolumeFlyout = true;
 
         public bool ShowGSMTCInVolumeFlyout
         {
-            get => (bool)GetValue(ShowGSMTCInVolumeFlyoutProperty);
-            set => SetValue(ShowGSMTCInVolumeFlyoutProperty, value);
+            get => showGSMTCInVolumeFlyout;
+            set
+            {
+                if (SetProperty(ref showGSMTCInVolumeFlyout, value))
+                {
+                    OnShowGSMTCInVolumeFlyoutChanged();
+                }
+            }
         }
 
-        private static void OnShowGSMTCInVolumeFlyoutChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var helper = d as AudioFlyoutHelper;
-            bool value = (bool)e.NewValue;
-            if (helper.isVolumeFlyout)
-            {
-                helper.SecondaryContentVisible = helper._SMTCAvail ? value : false;
-            }
-            else
-            {
-                helper.SecondaryContentVisible = helper._SMTCAvail;
-            }
-
-            AppDataHelper.ShowGSMTCInVolumeFlyout = value;
-        }
-
-        public static readonly DependencyProperty ShowVolumeControlInGSMTCFlyoutProperty =
-            DependencyProperty.Register(
-                nameof(ShowVolumeControlInGSMTCFlyout),
-                typeof(bool),
-                typeof(AudioFlyoutHelper),
-                new PropertyMetadata(true, OnShowVolumeControlInGSMTCFlyoutChanged));
+        private bool showVolumeControlInGSMTCFlyout = true;
 
         public bool ShowVolumeControlInGSMTCFlyout
         {
-            get => (bool)GetValue(ShowVolumeControlInGSMTCFlyoutProperty);
-            set => SetValue(ShowVolumeControlInGSMTCFlyoutProperty, value);
-        }
-
-        private static void OnShowVolumeControlInGSMTCFlyoutChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var helper = d as AudioFlyoutHelper;
-            bool value = (bool)e.NewValue;
-            if (helper.isVolumeFlyout)
+            get => showVolumeControlInGSMTCFlyout;
+            set
             {
-                helper.PrimaryContentVisible = true;
+                if (SetProperty(ref showVolumeControlInGSMTCFlyout, value))
+                {
+                    OnShowVolumeControlInGSMTCFlyoutChanged();
+                }
             }
-            else
-            {
-                helper.PrimaryContentVisible = value;
-            }
-
-            AppDataHelper.ShowVolumeControlInGSMTCFlyout = value;
         }
 
         #endregion
@@ -153,7 +124,7 @@ namespace ModernFlyouts
                 if (isVolumeFlyout)
                 {
                     PrimaryContentVisible = true;
-                    SecondaryContentVisible = _SMTCAvail ? ShowGSMTCInVolumeFlyout : false;
+                    SecondaryContentVisible = _SMTCAvail && ShowGSMTCInVolumeFlyout;
                 }
                 else
                 {
@@ -164,6 +135,35 @@ namespace ModernFlyouts
                 ShowFlyoutRequested?.Invoke(this);
             }
         }
+
+        private void OnShowGSMTCInVolumeFlyoutChanged()
+        {
+            if (isVolumeFlyout)
+            {
+                SecondaryContentVisible = _SMTCAvail && showGSMTCInVolumeFlyout;
+            }
+            else
+            {
+                SecondaryContentVisible = _SMTCAvail;
+            }
+
+            AppDataHelper.ShowGSMTCInVolumeFlyout = showGSMTCInVolumeFlyout;
+        }
+
+        private void OnShowVolumeControlInGSMTCFlyoutChanged()
+        {
+            if (isVolumeFlyout)
+            {
+                PrimaryContentVisible = true;
+            }
+            else
+            {
+                PrimaryContentVisible = showVolumeControlInGSMTCFlyout;
+            }
+
+            AppDataHelper.ShowVolumeControlInGSMTCFlyout = showVolumeControlInGSMTCFlyout;
+        }
+
 
         #region Volume
 
@@ -185,9 +185,9 @@ namespace ModernFlyouts
             {
                 UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
                 device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
-                Dispatcher.Invoke(() => PrimaryContent = volumeControl);
+                App.Current.Dispatcher.Invoke(() => PrimaryContent = volumeControl);
             }
-            else { Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
+            else { App.Current.Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
         }
 
         private void AudioEndpointVolume_OnVolumeNotification(AudioVolumeNotificationData data)
@@ -195,11 +195,11 @@ namespace ModernFlyouts
             UpdateVolume(data.MasterVolume * 100);
         }
 
-        private bool _isInCodeValueChange = false; //Prevents a LOOP between changing volume.
+        private bool _isInCodeValueChange; //Prevents a LOOP between changing volume.
 
         private void UpdateVolume(double volume)
         {
-            Dispatcher.Invoke(() =>
+            App.Current.Dispatcher.Invoke(() =>
             {
                 UpdateVolumeGlyph(volume);
                 volumeControl.textVal.Text = Math.Round(volume).ToString("00");
@@ -225,7 +225,6 @@ namespace ModernFlyouts
 
                 volumeControl.textVal.ClearValue(TextBlock.ForegroundProperty);
                 volumeControl.VolumeSlider.IsEnabled = true;
-
             }
             else
             {
@@ -337,7 +336,7 @@ namespace ModernFlyouts
         [MethodImpl(MethodImplOptions.NoInlining)]
         private void SMTC_SessionsChanged(GlobalSystemMediaTransportControlsSessionManager sender, SessionsChangedEventArgs args)
         {
-            Dispatcher.BeginInvoke(DispatcherPriority.Send, new Action(LoadSessionControls));
+            App.Current.Dispatcher.BeginInvoke(DispatcherPriority.Send, new Action(LoadSessionControls));
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -361,7 +360,7 @@ namespace ModernFlyouts
 
                 if (sessionsPanel.SessionsStackPanel.Children.Count > 0)
                 {
-                    SecondaryContentVisible = isVolumeFlyout ? ShowGSMTCInVolumeFlyout : true;
+                    SecondaryContentVisible = !isVolumeFlyout || ShowGSMTCInVolumeFlyout;
                     _SMTCAvail = true;
                 }
             }
@@ -399,7 +398,7 @@ namespace ModernFlyouts
             }
             else { PrimaryContent = noDeviceMessageBlock; }
 
-            PrimaryContentVisible = isVolumeFlyout ? true : ShowVolumeControlInGSMTCFlyout;
+            PrimaryContentVisible = isVolumeFlyout || ShowVolumeControlInGSMTCFlyout;
 
             if (_isinit)
             {

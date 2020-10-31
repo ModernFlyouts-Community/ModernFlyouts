@@ -1,19 +1,14 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
-using ModernFlyouts.Utilities;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ModernFlyouts.Helpers;
 using ModernWpf;
-using ModernWpf.Controls;
-using System;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.UI
 {
-    public class UIManager : INotifyPropertyChanged
+    public class UIManager : ObservableObject
     {
         public const double FlyoutWidth = 354;
 
@@ -22,28 +17,57 @@ namespace ModernFlyouts
         public const double DefaultSessionsPanelVerticalSpacing = 8;
 
         private FlyoutWindow _flyoutWindow;
+        private ElementTheme currentSystemTheme = ElementTheme.Dark;
         private ElementTheme currentTheme = ElementTheme.Dark;
         private ThemeResources themeResources;
         private ResourceDictionary lightResources;
         private ResourceDictionary darkResources;
 
-        private bool _isThemeUpdated = false;
+        private bool _isThemeUpdated;
 
         #region Properties
 
         #region General
 
+        private TopBarVisibility topBarVisibility = TopBarVisibility.Visible;
+
+        public TopBarVisibility TopBarVisibility
+        {
+            get => topBarVisibility;
+            set
+            {
+                if (SetProperty(ref topBarVisibility, value))
+                {
+                    _flyoutWindow.OnTopBarVisibilityChanged(value);
+                    AppDataHelper.TopBarVisibility = value;
+                }
+            }
+        }
+
+        private ElementTheme flyoutTheme = DefaultValuesStore.FlyoutTheme;
+
+        public ElementTheme FlyoutTheme
+        {
+            get => flyoutTheme;
+            set
+            {
+                if (SetProperty(ref flyoutTheme, value))
+                {
+                    UpdateTheme();
+                    AppDataHelper.FlyoutTheme = value;
+                }
+            }
+        }
+
         private int flyoutTimeout = DefaultValuesStore.FlyoutTimeout;
 
         public int FlyoutTimeout
         {
-            get { return flyoutTimeout; }
+            get => flyoutTimeout;
             set
             {
-                if (flyoutTimeout != value)
+                if (SetProperty(ref flyoutTimeout, value))
                 {
-                    flyoutTimeout = value;
-                    OnPropertyChanged();
                     OnFlyoutTimeoutChanged();
                 }
             }
@@ -53,14 +77,26 @@ namespace ModernFlyouts
 
         public double FlyoutBackgroundOpacity
         {
-            get { return flyoutBackgroundOpacity; }
+            get => flyoutBackgroundOpacity;
             set
             {
-                if (flyoutBackgroundOpacity != value)
+                if (SetProperty(ref flyoutBackgroundOpacity, value))
                 {
-                    flyoutBackgroundOpacity = value;
-                    OnPropertyChanged();
                     OnFlyoutBackgroundOpacityChanged();
+                }
+            }
+        }
+
+        private bool trayIconEnabled = DefaultValuesStore.TrayIconEnabled;
+
+        public bool TrayIconEnabled
+        {
+            get => trayIconEnabled;
+            set
+            {
+                if (SetProperty(ref trayIconEnabled, value))
+                {
+                    OnTrayIconEnabledChanged();
                 }
             }
         }
@@ -69,13 +105,11 @@ namespace ModernFlyouts
 
         public bool UseColoredTrayIcon
         {
-            get { return useColoredTrayIcon; }
+            get => useColoredTrayIcon;
             set
             {
-                if (useColoredTrayIcon != value)
+                if (SetProperty(ref useColoredTrayIcon, value))
                 {
-                    useColoredTrayIcon = value;
-                    OnPropertyChanged();
                     OnUseColoredTrayIconChanged();
                 }
             }
@@ -85,17 +119,29 @@ namespace ModernFlyouts
 
         #region Media Controls
 
+        private bool alignGSMTCThumbnailToRight = DefaultValuesStore.AlignGSMTCThumbnailToRight;
+
+        public bool AlignGSMTCThumbnailToRight
+        {
+            get => alignGSMTCThumbnailToRight;
+            set
+            {
+                if (SetProperty(ref alignGSMTCThumbnailToRight, value))
+                {
+                    AppDataHelper.AlignGSMTCThumbnailToRight = value;
+                }
+            }
+        }
+
         private Orientation sessionsPanelOrientation = DefaultValuesStore.SessionsPanelOrientation;
 
         public Orientation SessionsPanelOrientation
         {
-            get { return sessionsPanelOrientation; }
+            get => sessionsPanelOrientation;
             set
             {
-                if (sessionsPanelOrientation != value)
+                if (SetProperty(ref sessionsPanelOrientation, value))
                 {
-                    sessionsPanelOrientation = value;
-                    OnPropertyChanged();
                     OnSessionsPanelOrientation();
                 }
             }
@@ -105,13 +151,11 @@ namespace ModernFlyouts
 
         public int MaxVerticalSessionControlsCount
         {
-            get { return maxVerticalSessionControlsCount; }
+            get => maxVerticalSessionControlsCount;
             set
             {
-                if (maxVerticalSessionControlsCount != value)
+                if (SetProperty(ref maxVerticalSessionControlsCount, value))
                 {
-                    maxVerticalSessionControlsCount = value;
-                    OnPropertyChanged();
                     OnMaxVerticalSessionControlsCount();
                 }
             }
@@ -121,41 +165,17 @@ namespace ModernFlyouts
 
         public double CalculatedSessionsPanelMaxHeight
         {
-            get { return calculatedSessionsPanelMaxHeight; }
-            private set
-            {
-                if (calculatedSessionsPanelMaxHeight != value)
-                {
-                    calculatedSessionsPanelMaxHeight = value;
-                    OnPropertyChanged();
-                }
-            }
+            get => calculatedSessionsPanelMaxHeight;
+            private set => SetProperty(ref calculatedSessionsPanelMaxHeight, value);
         }
 
-        private double calculatedSessionsPanelSpacing = 0;
+        private double calculatedSessionsPanelSpacing;
 
         public double CalculatedSessionsPanelSpacing
         {
-            get { return calculatedSessionsPanelSpacing; }
-            private set
-            {
-                if (calculatedSessionsPanelSpacing != value)
-                {
-                    calculatedSessionsPanelSpacing = value;
-                    OnPropertyChanged();
-                }
-            }
+            get => calculatedSessionsPanelSpacing;
+            private set => SetProperty(ref calculatedSessionsPanelSpacing, value);
         }
-
-        #endregion
-
-        #region Tray Icon
-
-        public TaskbarIcon TaskbarIcon { get; private set; }
-
-        public ContextMenu TaskbarIconContextMenu { get; private set; }
-
-        public ToolTip TaskbarIconToolTip { get; private set; }
 
         #endregion
 
@@ -165,7 +185,9 @@ namespace ModernFlyouts
         {
             _flyoutWindow = flyoutWindow;
 
+            TopBarVisibility = AppDataHelper.TopBarVisibility;
             FlyoutTimeout = AppDataHelper.FlyoutTimeout;
+            AlignGSMTCThumbnailToRight = AppDataHelper.AlignGSMTCThumbnailToRight;
             MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
             SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 
@@ -175,43 +197,14 @@ namespace ModernFlyouts
 
             FlyoutBackgroundOpacity = AppDataHelper.FlyoutBackgroundOpacity;
 
-            #region Setup TaskbarIcon
+            TrayIconManager.SetupTrayIcon();
 
-            var settingsItem = new MenuItem()
-            {
-                Header = Properties.Strings.SettingsItem,
-                ToolTip = Properties.Strings.SettingsItemDescription,
-                Icon = new SymbolIcon() { Symbol = Symbol.Setting }
-            };
-            settingsItem.Click += (_, __) => FlyoutHandler.ShowSettingsWindow();
-
-            var exitItem = new MenuItem()
-            {
-                Header = Properties.Strings.ExitItem,
-                ToolTip = Properties.Strings.ExitItemDescription,
-                Icon = new FontIcon() { Glyph = CommonGlyphs.PowerButton }
-            };
-            exitItem.Click += (_, __) => FlyoutHandler.SafelyExitApplication();
-
-            TaskbarIconContextMenu = new ContextMenu()
-            {
-                Items = { settingsItem, exitItem }
-            };
-
-            TaskbarIconToolTip = new ToolTip() { Content = Program.AppName };
-
-            TaskbarIcon = new TaskbarIcon()
-            {
-                TrayToolTip = TaskbarIconToolTip,
-                ContextMenu = TaskbarIconContextMenu
-            };
-            TaskbarIcon.TrayMouseDoubleClick += (_, __) => FlyoutHandler.ShowSettingsWindow();
-
-            #endregion
-
+            TrayIconEnabled = AppDataHelper.TrayIconEnabled;
             UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
 
-            SystemTheme.SystemThemeChanged += OnSystemThemeChange;
+            FlyoutTheme = AppDataHelper.FlyoutTheme;
+
+            SystemTheme.SystemThemeChanged += OnSystemThemeChanged;
             SystemTheme.Initialize();
         }
 
@@ -227,34 +220,45 @@ namespace ModernFlyouts
             AppDataHelper.FlyoutBackgroundOpacity = flyoutBackgroundOpacity;
         }
 
+        private void OnTrayIconEnabledChanged()
+        {
+            TrayIconManager.UpdateTrayIconVisibility(trayIconEnabled);
+            AppDataHelper.TrayIconEnabled = TrayIconEnabled;
+        }
+
         private void OnUseColoredTrayIconChanged()
         {
             UpdateTrayIcon();
             AppDataHelper.UseColoredTrayIcon = useColoredTrayIcon;
         }
 
-        private void OnSystemThemeChange(object sender, SystemThemeChangedEventArgs args)
+        private void OnSystemThemeChanged(object sender, SystemThemeChangedEventArgs args)
         {
             _flyoutWindow.Dispatcher.Invoke(() =>
             {
-                currentTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
-                ThemeManager.SetRequestedTheme(_flyoutWindow, currentTheme);
-                ThemeManager.SetRequestedTheme(TaskbarIconContextMenu, currentTheme);
-                ThemeManager.SetRequestedTheme(TaskbarIconToolTip, currentTheme);
-
-                if (!_isThemeUpdated)
-                {
-                    _isThemeUpdated = true;
-                }
-
-                UpdateFlyoutBackgroundOpacity();
-                UpdateTrayIcon();
+                currentSystemTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
+                UpdateTheme();
             });
+        }
+
+        private void UpdateTheme()
+        {
+            currentTheme = flyoutTheme == ElementTheme.Default ? currentSystemTheme : flyoutTheme;
+            ThemeManager.SetRequestedTheme(_flyoutWindow, currentTheme);
+
+            if (!_isThemeUpdated)
+            {
+                _isThemeUpdated = true;
+            }
+
+            UpdateFlyoutBackgroundOpacity();
+            UpdateTrayIcon();
         }
 
         private void UpdateFlyoutBackgroundOpacity()
         {
             if (!_isThemeUpdated) return;
+
             var themeResource = currentTheme == ElementTheme.Light ? lightResources : darkResources;
             var brush = themeResource["FlyoutBackground"] as Brush;
             brush = brush.Clone();
@@ -266,17 +270,7 @@ namespace ModernFlyouts
         {
             if (!_isThemeUpdated) return;
 
-            Uri iconUri;
-            if (useColoredTrayIcon)
-            {
-                iconUri = PackUriHelper.GetAbsoluteUri(@"Assets\Logo.ico");
-            }
-            else
-            {
-                iconUri = PackUriHelper.GetAbsoluteUri(currentTheme == ElementTheme.Light ? @"Assets\Logo_Tray_Black.ico" : @"Assets\Logo_Tray_White.ico");
-            }
-
-            TaskbarIcon.IconSource = BitmapFrame.Create(iconUri);
+            TrayIconManager.UpdateTrayIconInternal(currentSystemTheme, useColoredTrayIcon);
         }
 
         private void OnMaxVerticalSessionControlsCount()
@@ -305,12 +299,12 @@ namespace ModernFlyouts
                 CalculatedSessionsPanelSpacing = 0;
             }
         }
+    }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+    public enum TopBarVisibility
+    {
+        Visible = 0,
+        AutoHide = 1,
+        Collapsed = 2
     }
 }

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Helpers
 {
     internal class StartupHelper
     {

@@ -1,15 +1,20 @@
-﻿using System;
+﻿using ModernFlyouts.Helpers;
+using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Converters
 {
-    public class TextToTooltipEnabledConverter : IValueConverter
+    public class EnumToLocalizedStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var text = (string)value;
-            return !string.IsNullOrEmpty(text) && !string.IsNullOrWhiteSpace(text);
+            if (value is Enum @enum)
+            {
+                return LocalizationHelper.GetLocalisedEnumValue(@enum);
+            }
+
+            return string.Empty;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
