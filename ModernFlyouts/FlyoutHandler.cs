@@ -1,13 +1,17 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Interop;
+using ModernFlyouts.UI;
+using ModernFlyouts.Utilities;
+using ModernFlyouts.Workarounds;
+using System;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Threading;
 
 namespace ModernFlyouts
 {
-    public class FlyoutHandler : INotifyPropertyChanged
+    public class FlyoutHandler : ObservableObject
     {
 
         public static event EventHandler Initialized;
@@ -30,7 +34,7 @@ namespace ModernFlyouts
 
         public static FlyoutHandler Instance { get; set; }
 
-        public static bool HasInitialized = false;
+        public static bool HasInitialized;
 
         public KeyboardHook KeyboardHook { get; private set; }
 
@@ -50,36 +54,16 @@ namespace ModernFlyouts
 
         public BrightnessFlyoutHelper BrightnessFlyoutHelper { get; set; }
 
-        private DefaultFlyout defaultFlyout = DefaultValuesStore.PreferredFlyout;
+        private DefaultFlyout defaultFlyout = DefaultValuesStore.PreferredDefaultFlyout;
 
         public DefaultFlyout DefaultFlyout
         {
-            get { return defaultFlyout; }
+            get => defaultFlyout;
             set
             {
-                if (defaultFlyout != value)
+                if (SetProperty(ref defaultFlyout, value))
                 {
-                    defaultFlyout = value;
-                    OnPropertyChanged();
                     OnDefaultFlyoutChanged();
-                }
-            }
-        }
-
-
-        private bool topBarEnabled = DefaultValuesStore.TopBarEnabled;
-
-        public bool TopBarEnabled
-        {
-            get { return topBarEnabled; }
-            set
-            {
-                if (topBarEnabled != value)
-                {
-                    topBarEnabled = value;
-                    OnPropertyChanged();
-                    FlyoutWindow.OnTopBarEnabledChanged(value);
-                    AppDataHelper.TopBarEnabled = value;
                 }
             }
         }
@@ -88,29 +72,25 @@ namespace ModernFlyouts
 
         public Point DefaultFlyoutPosition
         {
-            get { return defaultFlyoutPosition; }
+            get => defaultFlyoutPosition;
             set
             {
-                if (defaultFlyoutPosition != value)
+                if (SetProperty(ref defaultFlyoutPosition, value))
                 {
-                    defaultFlyoutPosition = value;
-                    OnPropertyChanged();
                     AppDataHelper.DefaultFlyoutPosition = value;
                 }
             }
         }
 
-        private bool runAtStartup = false;
+        private bool runAtStartup;
 
         public bool RunAtStartup
         {
-            get { return runAtStartup; }
+            get => runAtStartup;
             set
             {
-                if (runAtStartup != value)
+                if (SetProperty(ref runAtStartup, value))
                 {
-                    runAtStartup = value;
-                    OnPropertyChanged();
                     OnRunAtStartupChanged();
                 }
             }
@@ -122,6 +102,8 @@ namespace ModernFlyouts
         {
             FlyoutWindow = new FlyoutWindow();
             CreateWndProc();
+
+            RenderLoopFix.Initialize();
 
             UIManager = new UIManager();
             UIManager.Initialize(FlyoutWindow);
@@ -144,7 +126,6 @@ namespace ModernFlyouts
 
             DefaultFlyout = AppDataHelper.DefaultFlyout;
 
-            TopBarEnabled = AppDataHelper.TopBarEnabled;
             DefaultFlyoutPosition = AppDataHelper.DefaultFlyoutPosition;
 
             async void getStartupStatus()
@@ -330,14 +311,9 @@ namespace ModernFlyouts
             {
                 Instance.SettingsWindow ??= new SettingsWindow();
                 Instance.SettingsWindow.Show();
+                Instance.SettingsWindow.Activate();
+                Instance.SettingsWindow.Focus();
             });
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 

@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} is af</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} is op</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Oortipe modus</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Laat loop by begin</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Wys globale stelselmediavervoer (Media) kontroles in volumevlieguitvlieg</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Wys volumebeheer in Global System Media Transport (Media) kontroles vlieg uit</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Skinkbordikoonmodus</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Vertikaal</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Maksimum Aantal Mediasessiekontroles om vertikaal te wys</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Media sessies paneel Oriëntasie</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Hierdie inligting is ontwerp om 'n moderne Vlot Ontwerp vervanging vir die ou metro tema flyouts teenwoordig in Windows sedert Windows wees sedert Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>As jy enige foute vind, maak asseblief 'n nuwe probleem in die repository oop.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Aantal sessies om te wys</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Mediasessies paneel oriëntasie</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Wys Global System Media Vervoerkontroles (GSMTC) aka Media-kontroles in volumevliegout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Wys volumebeheer in Global System Media Transport Controls (GSMTC)</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Posseëlprendige belyning</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Donker</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Lig</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Outoverskuil</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Ingevou</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Sigbaar</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Hoofletters</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Voeg in</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num slot</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Rol slot</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Kies die sleutels waarna jy die vlieguitleg wil wys</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Voorkoms</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Aktiveer vliegtuigmodus Vliegout</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Aktiveer oudio-vliegout</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Aktiveer helderheid vliegout</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Aktiveer slotsleutels vliegout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Vlieënde tema</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Vlieg uit tydstip (me)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Regs</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Topbar sigbaarheid</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Wys ikoon op stelsellaaiarea</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Af</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Aan</value>
   </data>
 </root>

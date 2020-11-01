@@ -1,4 +1,5 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Helpers;
+using ModernFlyouts.UI;
 using System;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;

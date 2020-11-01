@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} er av</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} er på</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Overskrivingsmodus</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Kjør ved oppstart</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Vis globale systemmedietransportkontroller (Media) i volum undermeny</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Vis volumkontroll i undermeny for globale systemmediertransport (Media)</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Skuff Ikon Modus</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Loddrett</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Maksimalt antall medieøktkontroller som skal vises vertikalt</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Retning for medieøkter-panelet</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Dette programmet er designet for å være en moderne Fluent Design erstatning for de gamle metro tema undermenyer til stede i Windows siden Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Hvis du finner noen feil, kan du åpne et nytt problem i github-repositoriet.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Antall økter som skal vises</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Papirsesjoner panelretning</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Vis globale systemmedietransportkontroller (GSMTC) også kalt Mediekontroller i volumutformeny</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Vis volumkontroll i Globale System Media Transport Controls (GSMTC) aka Media undermeny</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Justering av miniatyrbilde</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Mørk</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Lys</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Skjul automatisk</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Skjult</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Synlig</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Sett inn</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num lås</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Rullelås</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Velg tastene du vil vise undermeny for</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Aktivere flymodus undermeny</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Aktivere lyd undermeny</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Aktivere undermeny for lysstyrke</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Aktivere undermeny med låsnøkler</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Flyout-tema</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Tidsavbrudd for undermenyer (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Medier</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Volum</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Høyre</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Synlighet på topbar</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Vis ikon i systemstatusfeltet</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Av</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>På</value>
   </data>
 </root>

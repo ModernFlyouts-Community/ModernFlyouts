@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} вимкнено</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} на</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Режим заміни</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Запуск під час запуску</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Показати глобальні елементи керування медіатранспортом системи (носії) у виліті гучності</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Показати регулятор гучності в глобальному обльоту елементів керування медіатранспортом (media)</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Режим піктограм лотка</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>По вертикалі</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Максимальна кількість елементів керування сеансом мультимедіа для вертикального відображення</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Орієнтація панелі сеансів мультимедіа</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Ця програма призначена для сучасної заміни fluent Design для старих тематичних вилітів метро, присутніх у Windows, починаючи з Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Якщо ви знайшли помилки, будь ласка, відкрийте нову проблему в репозиторії github.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Кількість сеансів для відображення</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Орієнтація панелі сеансів мультимедіа</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Показати глобальні елементи керування медіатранспортом (GSMTC) aka Media у виліті гучності</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Показати регулятор гучності у глобальному системному елементі керування медіатранспортом (GSMTC) aka Media flyout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Вирівнювання мініатюр</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Темний</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Світло</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Автоматично приховувати</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Згорнуто</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Видимий</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Вставити</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num блокування</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Блокування прокрутки</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Виберіть клавіші, для яких потрібно відобразити</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Оформлення</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Увімкнути виліт режиму польоту в режимі польоту</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Увімкнути виліт звуку</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Увімкнути виліт яскравості</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Увімкнути виліт клавіш блокування</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Тема "Виліт"</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Час очікування виліту (мс)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Зліва</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Медіа</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Гучність</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Справа</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Видимість верхньої панелі</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Показувати піктограму в області системного лотка</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Вимкнуто</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Увімкнуто</value>
   </data>
 </root>

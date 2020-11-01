@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} خاموش است</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} در است</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>حالت Overtype</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>اجرا در راه اندازی</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>نمایش کنترل های حمل و نقل رسانه ای سیستم جهانی (رسانه ها) در پرواز حجم</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>نمایش کنترل حجم در حمل و نقل رسانه ای سیستم جهانی (رسانه) کنترل پرواز</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>حالت آیکون سینی</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>عمودی</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>حداکثر تعداد کنترل های جلسه رسانه برای نشان دادن عمودی</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>رسانه جلسات پانل جهت گیری</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>این برنامه به عنوان یک جایگزین مدرن طراحی روان برای flyouts قدیمی مترو themed حاضر در ویندوز از ویندوز 8 طراحی شده است.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>اگر شما پیدا کردن هر گونه اشکالات، لطفا یک مسئله جدید در مخزن github باز کنید.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>تعداد جلسات برای نشان دادن</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>رسانه جلسات جهت گیری پانل</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>نمایش کنترل حمل و نقل رسانه ای سیستم جهانی (GSMTC) ملقب به کنترل رسانه ها در پرواز حجم</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>نشان دادن کنترل حجم در سیستم جهانی رسانه کنترل حمل و نقل (GSMTC) ملقب به پرواز رسانه ها</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>تراز بندانگشتی</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>تیره</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>پنهان کردن خودکار</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>‏‏کوچک شد</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>قابل مشاهده</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>درج</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>قفل Num</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>قفل اسکرول</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>انتخاب کلید شما می خواهید برای نشان دادن flyout برای</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>ظاهر</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>فعال کردن حالت هواپیما Flyout</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>فعال کردن پرواز صوتی</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>فعال کردن فلایوت روشنایی</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>فعال کردن قفل کلید Flyout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>تم فلایوت</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>تایم آوت فلای آوت (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>چپ</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>رسانه</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>میزان صدا</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>راست</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>دید TopBar</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>نمایش نماد در منطقه سینی سیستم</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>روشن</value>
   </data>
 </root>

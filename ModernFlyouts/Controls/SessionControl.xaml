@@ -9,8 +9,9 @@
              mc:Ignorable="d"
              Width="{DynamicResource FlyoutWidth}" VerticalAlignment="Top">
     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
-        <Grid>
+        <Grid x:Name="ContentGrid">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -19,9 +20,9 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True">
+            <Border Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True">
                 <Border.OpacityMask>
-                    <RadialGradientBrush GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
+                    <RadialGradientBrush x:Name="thumbnailBGOpacityBrush" x:FieldModifier="private" GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
                         <GradientStop Color="White" Offset="0" />
                         <GradientStop Color="Transparent" Offset="1" />
                     </RadialGradientBrush>
@@ -33,7 +34,7 @@
                 </Border.Background>
             </Border>
 
-            <Grid x:Name="TextBlockGrid" Grid.Column="0" VerticalAlignment="Center" Margin="15,25,0,0" Cursor="Hand">
+            <Grid x:Name="TextBlockGrid" Grid.Column="1" VerticalAlignment="Center" Margin="0,25,0,0" Cursor="Hand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -42,15 +43,23 @@
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
                            Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=MediaTitleBlock}"
                            ToolTipService.IsEnabled="{Binding Text, ElementName=MediaTitleBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
-                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" />
+                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform x:Name="mediaTitleBlockTranslateTransform" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
                 <TextBlock Grid.Row="1" x:Name="MediaArtistBlock" Style="{DynamicResource CaptionTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
                            Text="Song Artist" ToolTip="{Binding Text, ElementName=MediaArtistBlock}"
                            ToolTipService.IsEnabled="{Binding Text, ElementName=MediaArtistBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
-                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" />
+                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform x:Name="mediaArtistBlockTranslateTransform" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
             </Grid>
 
-            <Grid Grid.Column="1">
+            <Grid x:Name="TGParent" x:FieldModifier="private" Grid.Column="2">
                 <Grid Height="64" Width="64" Margin="16,16,16,6" x:Name="ThumbnailGrid" Cursor="Hand">
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}" Background="#333333" />
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
@@ -61,7 +70,7 @@
                 </Grid>
             </Grid>
 
-            <StackPanel x:Name="AppInfoPanel" Margin="15,15,0,0" Grid.RowSpan="2" Grid.Column="0"
+            <StackPanel x:Name="AppInfoPanel" Margin="0,15,0,0" Grid.RowSpan="2" Grid.Column="1"
                         VerticalAlignment="Top" Orientation="Horizontal" Cursor="Hand">
                 <Image x:Name="AppImage" Source="/Assets/Logo.ico" Width="16" Height="16" RenderOptions.BitmapScalingMode="Fant" />
                 <TextBlock x:Name="AppNameBlock" Text="ModernFlyouts" VerticalAlignment="Center"
@@ -69,7 +78,7 @@
                            Style="{DynamicResource CaptionTextBlockStyle}" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" />
             </StackPanel>
 
-            <ui:SplitView x:Name="ControlsSplitView" Grid.ColumnSpan="2" Grid.Row="1"
+            <ui:SplitView x:Name="ControlsSplitView" Grid.ColumnSpan="3" Grid.Row="1"
                           Margin="0,0,0,12" VerticalAlignment="Center" OpenPaneLength="{DynamicResource FlyoutWidth}"
                           PaneBackground="Transparent" DisplayMode="Inline" IsPaneOpen="False">
                 <ui:SplitView.Pane>
@@ -102,13 +111,13 @@
                 </StackPanel>
             </ui:SplitView>
 
-            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
+            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" 
                           ToolTip="{x:Static resx:Strings.SessionControl_MoreControls}" Margin="16,0,0,12"
                           IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" FontSize="16" />
             </ToggleButton>
 
-            <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center"
+            <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center"
                     ToolTip="{x:Static resx:Strings.SessionControl_TimelineInfo}" Margin="0,0,16,12">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.TimelineInfo}" FontSize="16" />
                 <ui:FlyoutService.Flyout>

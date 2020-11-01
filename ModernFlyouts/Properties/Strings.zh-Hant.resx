@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0}關閉。</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0}打開。</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>取代模式</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>在啟動時執行</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>在捲飛出中顯示全域系統媒體傳輸(媒體)控制。</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>顯示全域系統媒體傳輸(媒體)中音量控制,控制飛出。</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>托盤圖示模式。</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>垂直</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>要垂直顯示的媒體作業階段控制件的最大數量。</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>媒體會話面板方向。</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>這個程式被設計為一個現代的流暢設計替代舊的地鐵式元素的彈出視窗出現在Windows 8。</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>如果發現任何錯誤,請在 github 儲存庫中打開一個新問題。</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>要顯示的會話數</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>媒體會話面板方向</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>顯示全域系統媒體傳輸控制 (GSMTC) aka 卷出出中的媒體控制項</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>顯示全域系統媒體傳輸控制 (GSMTC) 中的音量控制,又名媒體飛出</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>縮略圖對齊</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>精簡</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>自動隱藏</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>已折疊</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>可見</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>數位鎖</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>滾動鎖定</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>選擇要顯示的飛出鍵</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>外觀</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>啟用飛出</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>啟用音訊飛出</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>啟用亮度飛出</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>啟用鎖定鍵飛出</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>"飛出"主題</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>飛出逾時 (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>靠左</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>媒體</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>音量</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>靠右</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>頂欄可見性</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>在系統托盤區域顯示圖示</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>開啟</value>
   </data>
 </root>

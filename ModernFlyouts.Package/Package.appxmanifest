@@ -10,10 +10,10 @@
   <Identity
     Name="32669SamG.ModernFlyouts"
     Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
-    Version="0.7.5.0" />
+    Version="0.8.0.1" />
 
   <Properties>
-    <DisplayName>ModernFlyouts</DisplayName>
+    <DisplayName>ModernFlyouts (Preview)</DisplayName>
     <PublisherDisplayName>Sam G</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ModernFlyouts"
+        DisplayName="ModernFlyouts (Preview)"
         Description="ModernFlyouts"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"

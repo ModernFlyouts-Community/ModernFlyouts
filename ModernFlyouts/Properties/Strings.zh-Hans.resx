@@ -72,7 +72,7 @@
     <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>还原默认值</value>
+    <value>还原默认弹窗</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
     <value>还原 Windows 的默认弹窗并安全退出此应用程序</value>
@@ -147,7 +147,7 @@
     <value>弹窗顶栏</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>模块</value>
+    <value>弹窗模块</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
     <value>飞行模式弹窗模块</value>
@@ -234,12 +234,102 @@
     <value>请重新启动应用程序以正确更改语言</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>系统默认值</value>
+    <value>系统默认</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
     <value>依赖项</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>如果发现任何 bug，请在 GitHub 仓库中打创建一个新 Issue。</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>显示的会话数</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>媒体面板方向</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>在音量弹窗中显示系统全局媒体传输</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>在媒体弹窗中显示音量控制</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>缩略图对齐方向</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>自动隐藏</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>折叠</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>可见</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>大写锁定</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>数字锁定</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>滚动锁定</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>选择要显示的弹窗</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>启用飞行模式弹窗</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>启用音频弹窗</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>启用亮度弹窗</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>启用锁定键弹窗</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>弹窗主题</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>弹窗超时（毫秒 / ms）</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>左侧</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>媒体</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>音量</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>右侧</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>顶栏可见性</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>在系统托盘显示图标</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>打开</value>
   </data>
 </root>

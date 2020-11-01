@@ -142,7 +142,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Airplane Mode is not available :(.
+        ///   Looks up a localized string similar to Airplane mode is not available :(.
         /// </summary>
         public static string AirplaneMode_NotAvailable {
             get {
@@ -178,11 +178,56 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of sessions to show.
+        /// </summary>
+        public static string AudioFlyoutHelper_MaxVerticalSessionControlsCount {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.MaxVerticalSessionControlsCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Connected Audio Devices.
         /// </summary>
         public static string AudioFlyoutHelper_NoDevices {
             get {
                 return ResourceManager.GetString("AudioFlyoutHelper.NoDevices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Media sessions panel orientation.
+        /// </summary>
+        public static string AudioFlyoutHelper_SessionsPanelOrientation {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.SessionsPanelOrientation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout.
+        /// </summary>
+        public static string AudioFlyoutHelper_ShowGSMTCInVolumeFlyout {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.ShowGSMTCInVolumeFlyout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout.
+        /// </summary>
+        public static string AudioFlyoutHelper_ShowVolumeControlInGSMTCFlyout {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnail alignment.
+        /// </summary>
+        public static string AudioFlyoutHelper_ThumbnailAlignment {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.ThumbnailAlignment", resourceCulture);
             }
         }
         
@@ -223,6 +268,24 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string Enums_ElementTheme_Dark {
+            get {
+                return ResourceManager.GetString("Enums.ElementTheme.Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        public static string Enums_ElementTheme_Light {
+            get {
+                return ResourceManager.GetString("Enums.ElementTheme.Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Horizontal.
         /// </summary>
         public static string Enums_Orientation_Horizontal {
@@ -237,6 +300,33 @@ namespace ModernFlyouts.Properties {
         public static string Enums_Orientation_Vertical {
             get {
                 return ResourceManager.GetString("Enums.Orientation.Vertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-hide.
+        /// </summary>
+        public static string Enums_TopBarVisibility_AutoHide {
+            get {
+                return ResourceManager.GetString("Enums.TopBarVisibility.AutoHide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collapsed.
+        /// </summary>
+        public static string Enums_TopBarVisibility_Collapsed {
+            get {
+                return ResourceManager.GetString("Enums.TopBarVisibility.Collapsed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visible.
+        /// </summary>
+        public static string Enums_TopBarVisibility_Visible {
+            get {
+                return ResourceManager.GetString("Enums.TopBarVisibility.Visible", resourceCulture);
             }
         }
         
@@ -268,6 +358,24 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Caps lock.
+        /// </summary>
+        public static string LockKeysFlyoutHelper_CapsLock {
+            get {
+                return ResourceManager.GetString("LockKeysFlyoutHelper.CapsLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert.
+        /// </summary>
+        public static string LockKeysFlyoutHelper_Insert {
+            get {
+                return ResourceManager.GetString("LockKeysFlyoutHelper.Insert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Insert Mode.
         /// </summary>
         public static string LockKeysFlyoutHelper_InsertMode {
@@ -295,11 +403,38 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Num lock.
+        /// </summary>
+        public static string LockKeysFlyoutHelper_NumLock {
+            get {
+                return ResourceManager.GetString("LockKeysFlyoutHelper.NumLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overtype Mode.
         /// </summary>
         public static string LockKeysFlyoutHelper_OvertypeMode {
             get {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.OvertypeMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scroll lock.
+        /// </summary>
+        public static string LockKeysFlyoutHelper_ScrollLock {
+            get {
+                return ResourceManager.GetString("LockKeysFlyoutHelper.ScrollLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the keys you want to show the flyout for.
+        /// </summary>
+        public static string LockKeysFlyoutHelper_SelectKeyDescription {
+            get {
+                return ResourceManager.GetString("LockKeysFlyoutHelper.SelectKeyDescription", resourceCulture);
             }
         }
         
@@ -340,7 +475,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restore Default.
+        ///   Looks up a localized string similar to Restore legacy flyout.
         /// </summary>
         public static string RestoreDefaultItem {
             get {
@@ -475,6 +610,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appearance.
+        /// </summary>
+        public static string Settings_Appearance {
+            get {
+                return ResourceManager.GetString("Settings.Appearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Behavior.
         /// </summary>
         public static string Settings_Behavior {
@@ -529,7 +673,43 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flyout Background Opacity.
+        ///   Looks up a localized string similar to Enable Airplane mode Flyout.
+        /// </summary>
+        public static string Settings_EnableModule_Airplane {
+            get {
+                return ResourceManager.GetString("Settings.EnableModule.Airplane", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Audio Flyout.
+        /// </summary>
+        public static string Settings_EnableModule_Audio {
+            get {
+                return ResourceManager.GetString("Settings.EnableModule.Audio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Brightness Flyout.
+        /// </summary>
+        public static string Settings_EnableModule_Brightness {
+            get {
+                return ResourceManager.GetString("Settings.EnableModule.Brightness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Lock keys Flyout.
+        /// </summary>
+        public static string Settings_EnableModule_LockKeys {
+            get {
+                return ResourceManager.GetString("Settings.EnableModule.LockKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flyout background opacity.
         /// </summary>
         public static string Settings_FlyoutBackgroundOpacity {
             get {
@@ -538,7 +718,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flyout Default Position (for Align button).
+        ///   Looks up a localized string similar to Flyout default position.
         /// </summary>
         public static string Settings_FlyoutDefaultPosition {
             get {
@@ -552,6 +732,24 @@ namespace ModernFlyouts.Properties {
         public static string Settings_FlyoutDefaultPositionDescription {
             get {
                 return ResourceManager.GetString("Settings.FlyoutDefaultPositionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flyout theme.
+        /// </summary>
+        public static string Settings_FlyoutTheme {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flyout timeout (ms).
+        /// </summary>
+        public static string Settings_FlyoutTimeout {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutTimeout", resourceCulture);
             }
         }
         
@@ -574,7 +772,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please restart the app to change the language properly.
+        ///   Looks up a localized string similar to Restart required to apply language change properly.
         /// </summary>
         public static string Settings_LanguageDescription {
             get {
@@ -583,16 +781,16 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximum Number of Media Session Controls to show vertically.
+        ///   Looks up a localized string similar to Left.
         /// </summary>
-        public static string Settings_MaxVerticalSessionControlsCount {
+        public static string Settings_Left {
             get {
-                return ResourceManager.GetString("Settings.MaxVerticalSessionControlsCount", resourceCulture);
+                return ResourceManager.GetString("Settings.Left", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modules.
+        ///   Looks up a localized string similar to Flyout Modules.
         /// </summary>
         public static string Settings_Modules {
             get {
@@ -601,7 +799,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AirplaneMode-flyout Module.
+        ///   Looks up a localized string similar to Airplane mode.
         /// </summary>
         public static string Settings_Modules_Airplane {
             get {
@@ -610,7 +808,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Audio-flyout Module.
+        ///   Looks up a localized string similar to Audio.
         /// </summary>
         public static string Settings_Modules_Audio {
             get {
@@ -619,7 +817,25 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brightness-flyout Module.
+        ///   Looks up a localized string similar to Media.
+        /// </summary>
+        public static string Settings_Modules_Audio_Media {
+            get {
+                return ResourceManager.GetString("Settings.Modules.Audio.Media", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume.
+        /// </summary>
+        public static string Settings_Modules_Audio_Volume {
+            get {
+                return ResourceManager.GetString("Settings.Modules.Audio.Volume", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brightness.
         /// </summary>
         public static string Settings_Modules_Brightness {
             get {
@@ -628,11 +844,38 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LockKeys-flyout Module.
+        ///   Looks up a localized string similar to Lock keys.
         /// </summary>
         public static string Settings_Modules_LockKeys {
             get {
                 return ResourceManager.GetString("Settings.Modules.LockKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Off.
+        /// </summary>
+        public static string Settings_Off {
+            get {
+                return ResourceManager.GetString("Settings.Off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        public static string Settings_On {
+            get {
+                return ResourceManager.GetString("Settings.On", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        public static string Settings_Right {
+            get {
+                return ResourceManager.GetString("Settings.Right", resourceCulture);
             }
         }
         
@@ -646,34 +889,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Media Sessions Panel Orientation.
-        /// </summary>
-        public static string Settings_SessionsPanelOrientation {
-            get {
-                return ResourceManager.GetString("Settings.SessionsPanelOrientation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show Global System Media Transport (Media) Controls in Volume flyout.
-        /// </summary>
-        public static string Settings_ShowGSMTCInVolumeFlyout {
-            get {
-                return ResourceManager.GetString("Settings.ShowGSMTCInVolumeFlyout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show Volume control in Global System Media Transport (Media) Controls flyout.
-        /// </summary>
-        public static string Settings_ShowVolumeControlInGSMTCFlyout {
-            get {
-                return ResourceManager.GetString("Settings.ShowVolumeControlInGSMTCFlyout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to System Default.
+        ///   Looks up a localized string similar to System default.
         /// </summary>
         public static string Settings_SystemDefault {
             get {
@@ -682,7 +898,25 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tray Icon Mode.
+        ///   Looks up a localized string similar to TopBar visibility.
+        /// </summary>
+        public static string Settings_TopBarVisibility {
+            get {
+                return ResourceManager.GetString("Settings.TopBarVisibility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show icon on system tray area.
+        /// </summary>
+        public static string Settings_TrayIconEnabled {
+            get {
+                return ResourceManager.GetString("Settings.TrayIconEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tray icon color mode.
         /// </summary>
         public static string Settings_TrayIconMode {
             get {

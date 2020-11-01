@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} είναι απενεργοποιημένη</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} είναι σε</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Λειτουργία αντικατάστασης κειμένου</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Εκτέλεση κατά την εκκίνηση</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Εμφάνιση στοιχείων ελέγχου μεταφοράς πολυμέσων καθολικού συστήματος (πολυμέσων) σε αναδυόμενο στοιχείο έντασης ήχου</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Εμφάνιση στοιχείου ελέγχου έντασης ήχου σε αναδυόμενα στοιχεία ελέγχου μεταφοράς πολυμέσων καθολικού συστήματος (media)</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Λειτουργία εικονιδίου κασέτας</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Κατακόρυφα</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Μέγιστος αριθμός στοιχείων ελέγχου περιόδου λειτουργίας πολυμέσων για κατακόρυφη εμφάνιση</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Προσανατολισμός πίνακα "Περίοδοι λειτουργίας πολυμέσων"</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Αυτή η εφαρμογή έχει σχεδιαστεί για να είναι μια σύγχρονη αντικατάσταση Fluent Design για το παλιό μετρό θέμα flyouts παρόντες στα Windows από τα Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Εάν βρείτε σφάλματα, ανοίξτε ένα νέο τεύχος στο αποθετήριο github.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Αριθμός περιόδων λειτουργίας που θα εμφανίζονται</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Προσανατολισμός πίνακα περιόδων λειτουργίας πολυμέσων</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Εμφάνιση στοιχείων ελέγχου μεταφοράς πολυμέσων καθολικού συστήματος (GSMTC) γνωστός και ως έλεγχοι πολυμέσων στο αναδυόμενο στοιχείο έντασης ήχου</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Εμφάνιση ελέγχου έντασης ήχου σε ελέγχους μεταφοράς πολυμέσων παγκόσμιου συστήματος (GSMTC) γνωστός και ως αναδυόμενο στοιχείο πολυμέσων</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Στοίχιση μικρογραφιών</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Σκούρο</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Ανοιχτό</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Αυτόματη απόκρυψη</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Συμπτυγμένη</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Ορατό</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Κλείδωμα κεφαλαίων</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Προσθήκη</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Κλείδωμα num</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Κλείδωμα κύλισης</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Επιλέξτε τα πλήκτρα για τα οποία θέλετε να εμφανίζεται το αναδυόμενο στοιχείο</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Εμφάνιση</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Ενεργοποίηση αναδυόμενου στοιχείου λειτουργίας πτήσης</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Ενεργοποίηση αναδυόμενου στοιχείου ήχου</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Ενεργοποίηση αναδυόμενου στοιχείου φωτεινότητας</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Αναδυόμενο στοιχείο ενεργοποίησης πλήκτρων κλειδώματος</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Θέμα αναδυόμενου στοιχείου</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Χρονικό όριο αναδυόμενου στοιχείου (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Αριστερά</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Πολυμέσα</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Τόμος</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Δεξιά</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Ορατότητα επάνω γραμμής</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Εμφάνιση εικονιδίου στην περιοχή της κασέτας συστήματος</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Ανενεργό</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Ενεργό</value>
   </data>
 </root>

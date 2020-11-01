@@ -33,10 +33,9 @@ See the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) page for additi
 - Flyout is **Draggable** and autosaves the position
 - Flyout can be **aligned to a default position** (can be modified in the settings)
 - Smooth **Animations** & **Tranisitions**
-- This application works on **Windows 10 1809 and above** (v0.3.0 supports Windows 8+, however to simplify distribution and due to MSIX packaging limitations, v0.4.0+ won't support windows versions less than 1809)
 
 ## System Requirements
-- Windows 10 1809+
+- **Windows 10 1809 and above** (v0.1 - v0.3 support Windows 8 and above, however due to MSIX limitations, v0.4.0 and above won't)
 
 ## Installation
 Modern Flyouts is Available on GitHub, winget and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
@@ -122,54 +121,51 @@ _Without TopBar_
   </tr>
  </table>
 
-&nbsp;
 
 ### Brightness Flyout
 
-**Windows Default Flyout**
-
-![Brightness_Old](docs/images/Brightness_Old.png)
-
-**ModernFlyouts Flyout:** 
-
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
-
-![Brightness](docs/images/Brightness.png)
-
-_With TopBar_
-
-![Brightness_NoTop](docs/images/Brightness_NoTop.png)
-
-_Without TopBar_
-
-&nbsp;
+<table>
+    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+  </tr>
+   <tr>
+    <td valign="top"><img src="docs/images/Brightness_Old.png"></td>
+    <td valign="top"><img src="docs/images/Brightness-Compacted.png"></td>
+    <td valign="top"><img src="docs/images/Brightness-Compacted_NoTop.png"></td>
+  </tr>
+ </table>
+ &nbsp;
 
 ### Airplane-Mode Flyout
 
 **(On state)**
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
-
-![Airplane_On](docs/images/Airplane_On.png)
-
-_With TopBar_
-
-![Airplane_On_NoTop](docs/images/Airplane_On_NoTop.png)
-
-_Without TopBar_
-
-&nbsp;
+<table>
+    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+  </tr>
+   <tr>
+    <td><h4>insert image:</h4></td>
+    <td valign="top"><img src="docs/images/Airplane_On.png"></td>
+    <td valign="top"><img src="docs/images/Airplane_On_NoTop.png"></td>
+  </tr>
+ </table>
+ &nbsp;
 
 ### Lock-keys flyout
 
 **(Caps-lock On)**
 
-***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
-
-![LockKey_Caps](docs/images/LockKey_Caps.png)
-
-_With TopBar_
-
-![LockKey_Caps_NoTop](docs/images/LockKey_Caps_NoTop.png)
-
-_Without TopBar_
+<table>
+    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+  </tr>
+   <tr>
+    <td><h4>Windows doesn't have one</h4></td>
+    <td valign="top"><img src="docs/images/LockKey_Caps.png"></td>
+    <td valign="top"><img src="docs/images/LockKey_Caps_NoTop.png"></td>
+  </tr>
+ </table>

@@ -11,8 +11,9 @@
           <target state="needs-review-translation" state-qualifier="tm-suggestion">אודות</target>
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
-          <source>Airplane Mode is not available :(</source>
+          <source>Airplane mode is not available :(</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מצב טיסה אינו זמין :(</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
@@ -53,12 +54,12 @@
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} כבוי.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">E.g. CapsLock is off</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is off</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} הוא על</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">E.g. CapsLock is on</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is on</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
           <source>Overtype Mode</source>
@@ -84,8 +85,9 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
-          <source>Restore Default</source>
+          <source>Restore legacy flyout</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">שחזר ברירת מחדל</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
@@ -168,12 +170,14 @@
           <target state="needs-review-translation" state-qualifier="tm-suggestion">זמין</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
-          <source>Flyout Background Opacity</source>
+          <source>Flyout background opacity</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">אטימות רקע נשלף</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
-          <source>Flyout Default Position (for Align button)</source>
+          <source>Flyout default position</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מיקום ברירת מחדל של נשלף (עבור לחצן ישר)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
@@ -184,40 +188,38 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מקש עליון לתוסס</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
-          <source>Modules</source>
+          <source>Flyout Modules</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">מודולים</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
-          <source>AirplaneMode-flyout Module</source>
+          <source>Airplane mode</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מודול נשלף של מטוס</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
-          <source>Audio-flyout Module</source>
+          <source>Audio</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מודול נשלף לשמע</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
-          <source>Brightness-flyout Module</source>
+          <source>Brightness</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מודול נשלף בהירות</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
-          <source>LockKeys-flyout Module</source>
+          <source>Lock keys</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מודול נשלף של מקשי נעילה</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">הפעל בעת האתחול</target>
         </trans-unit>
-        <trans-unit id="Settings.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
-          <source>Show Global System Media Transport (Media) Controls in Volume flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">הצג פקדי תעבורת מדיה של המערכת הכללית (מדיה) בנשל-נשלף של אמצעי אחסון</target>
-        </trans-unit>
-        <trans-unit id="Settings.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
-          <source>Show Volume control in Global System Media Transport (Media) Controls flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">הצג בקרת עוצמה בנשלף נשלף של פקדי תעבורת מדיה של המערכת הכללית (מדיה)</target>
-        </trans-unit>
         <trans-unit id="Settings.TrayIconMode" translate="yes" xml:space="preserve">
-          <source>Tray Icon Mode</source>
+          <source>Tray icon color mode</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">מצב סמל מגש</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.TrayIconMode.Colored" translate="yes" xml:space="preserve">
           <source>Colored</source>
@@ -259,14 +261,6 @@
           <source>Vertical</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">אנכי</target>
         </trans-unit>
-        <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
-          <source>Maximum Number of Media Session Controls to show vertically</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">המספר המרבי של פקדי הפעלת מדיה לצג אנכי</target>
-        </trans-unit>
-        <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
-          <source>Media Sessions Panel Orientation</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">כיוון החלונית 'הפעלות מדיה'</target>
-        </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">יישום זה נועד להיות תחליף עיצוב רהוט מודרני עבור תחליפים נושאים מטרו הישן הנוכחי ב- Windows מאז Windows 8.</target>
@@ -296,12 +290,14 @@
           <target state="needs-review-translation" state-qualifier="tm-suggestion">שפה</target>
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
-          <source>Please restart the app to change the language properly</source>
+          <source>Restart required to apply language change properly</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">נא הפעל מחדש את האפליקציה כדי לשנות את השפה כראוי</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
-          <source>System Default</source>
+          <source>System default</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">ברירת המחדל של המערכת</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
@@ -310,6 +306,126 @@
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">אם אתה מוצא באגים כלשהם, נא פתח בעיה חדשה במאגר github.</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
+          <source>Number of sessions to show</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">מספר הפעלות שיש להציג</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.SessionsPanelOrientation" translate="yes" xml:space="preserve">
+          <source>Media sessions panel orientation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">כיוון החלונית 'הפעלות מדיה'</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
+          <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">הצג פקדי תעבורה של מדיה של המערכת הכללית (GSMTC) המכונה פקדי מדיה בנשלף אמצעי אחסון</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
+          <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">הצג בקרת עוצמה בפקדי תעבורת מדיה של המערכת הכללית (GSMTC) הידועה גם כנשלף למדיה</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
+          <source>Thumbnail alignment</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">יישור תמונה ממוזערת</target>
+        </trans-unit>
+        <trans-unit id="Enums.ElementTheme.Dark" translate="yes" xml:space="preserve">
+          <source>Dark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">כהה</target>
+        </trans-unit>
+        <trans-unit id="Enums.ElementTheme.Light" translate="yes" xml:space="preserve">
+          <source>Light</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">בהיר</target>
+        </trans-unit>
+        <trans-unit id="Enums.TopBarVisibility.AutoHide" translate="yes" xml:space="preserve">
+          <source>Auto-hide</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">הסתר אוטומטית</target>
+        </trans-unit>
+        <trans-unit id="Enums.TopBarVisibility.Collapsed" translate="yes" xml:space="preserve">
+          <source>Collapsed</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">מכווץ</target>
+        </trans-unit>
+        <trans-unit id="Enums.TopBarVisibility.Visible" translate="yes" xml:space="preserve">
+          <source>Visible</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">גלוי</target>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
+          <source>Caps lock</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Caps lock</target>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
+          <source>Insert</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">הוסף</target>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
+          <source>Num lock</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">נעילת Num</target>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
+          <source>Scroll lock</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">נעילת גלילה</target>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
+          <source>Select the keys you want to show the flyout for</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">בחר את המפתחות שברצונך להציג עבורו את התהנשלף</target>
+        </trans-unit>
+        <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
+          <source>Appearance</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">מראה</target>
+        </trans-unit>
+        <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
+          <source>Enable Airplane mode Flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">הפוך נשל-נשלף למצב טיסה לזמין</target>
+        </trans-unit>
+        <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
+          <source>Enable Audio Flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">אפשר נשלף לשמע</target>
+        </trans-unit>
+        <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
+          <source>Enable Brightness Flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">אפשר תוף נשלף של בהירות</target>
+        </trans-unit>
+        <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
+          <source>Enable Lock keys Flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">הפוך מקשי נעילה לזמינה</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
+          <source>Flyout theme</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ערכת הנושא 'נשלף'</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
+          <source>Flyout timeout (ms)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">פסק זמן לתנון (ms)</target>
+        </trans-unit>
+        <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
+          <source>Left</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">לשמאל</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Audio.Media" translate="yes" xml:space="preserve">
+          <source>Media</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">מדיה</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Audio.Volume" translate="yes" xml:space="preserve">
+          <source>Volume</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">אמצעי אחסון</target>
+        </trans-unit>
+        <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
+          <source>Right</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">לימין</target>
+        </trans-unit>
+        <trans-unit id="Settings.TopBarVisibility" translate="yes" xml:space="preserve">
+          <source>TopBar visibility</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ניראות של ה-TopBar</target>
+        </trans-unit>
+        <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
+          <source>Show icon on system tray area</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">הצג סמל באזור מגש המערכת</target>
+        </trans-unit>
+        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">‏‏כבוי</target>
+        </trans-unit>
+        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">‏‏פועל</target>
         </trans-unit>
       </group>
     </body>

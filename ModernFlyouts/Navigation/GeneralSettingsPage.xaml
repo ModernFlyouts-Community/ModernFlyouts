@@ -5,60 +5,63 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
-      xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
+      xmlns:utils="clr-namespace:ModernFlyouts.Utilities" xmlns:helpers="clr-namespace:ModernFlyouts.Helpers"
       xmlns:resx="clr-namespace:ModernFlyouts.Properties"
       mc:Ignorable="d"
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="General Settings" DataContext="{x:Static local:FlyoutHandler.Instance}">
+      d:DesignHeight="450" d:DesignWidth="800" DataContext="{x:Static local:FlyoutHandler.Instance}">
     <controls:ScrollViewerEx VerticalScrollBarVisibility="Auto">
-        <StackPanel Margin="20">
+        <StackPanel Margin="20,10">
             <GroupBox Header="{x:Static resx:Strings.Settings_Behavior}">
-                <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_RunAtStartup}" IsOn="{Binding RunAtStartup}" />
+                <ui:SimpleStackPanel Spacing="10">
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_RunAtStartup}" IsOn="{Binding RunAtStartup}"
+                                     OnContent="{x:Static resx:Strings.Settings_On}"
+                                     OffContent="{x:Static resx:Strings.Settings_Off}" />
+                    <ComboBox ItemsSource="{x:Static helpers:LocalizationHelper.SupportedLanguages}"
+                              SelectedItem="{Binding Path=(helpers:LocalizationHelper.CurrentLanguage)}"
+                              MinWidth="240">
+                        <ui:ControlHelper.Header>
+                            <ui:SimpleStackPanel Orientation="Horizontal" Spacing="4"
+                                                 ToolTip="{x:Static resx:Strings.Settings_LanguageDescription}">
+                                <TextBlock Text="{x:Static resx:Strings.Settings_Language}" />
+                                <ui:FontIcon FontSize="14" Glyph="{x:Static utils:CommonGlyphs.Info}" />
+                            </ui:SimpleStackPanel>
+                        </ui:ControlHelper.Header>
+                    </ComboBox>
+                </ui:SimpleStackPanel>
             </GroupBox>
-            <ComboBox ui:ControlHelper.Header="{x:Static resx:Strings.Settings_Language}"
-                      ItemsSource="{x:Static utils:LocalizationHelper.SupportedLanguages}"
-                      SelectedItem="{Binding Path=(utils:LocalizationHelper.CurrentLanguage)}" />
             <GroupBox Header="{x:Static resx:Strings.Settings_DefaultFlyout}">
-                <StackPanel>
+                <ui:SimpleStackPanel Spacing="10">
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"
                         Header="{x:Static resx:Strings.Settings_DefaultFlyoutDescription}"
                         ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
-                        ItemsSource="{Binding Source={x:Type local:DefaultFlyout}, Converter={StaticResource EnumValuesConverter}}"
+                        ItemsSource="{Binding Source={x:Type local:DefaultFlyout},
+                            Converter={StaticResource EnumValuesConverter}}"
                         SelectedItem="{Binding DefaultFlyout}" />
-                    <StackPanel x:Name="WarningPanel"
-                                Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
-                                    Converter={StaticResource IndexToVisibilityConverter}}">
+                    <ui:SimpleStackPanel x:Name="WarningPanel" Spacing="10"
+                                         Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
+                                            Converter={StaticResource IndexToVisibilityConverter}}">
                         <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
                                    TextWrapping="Wrap" Text="{x:Static resx:Strings.Settings_DefaultFlyoutWarningMessage}" />
                         <Button Content="{x:Static resx:Strings.ExitItemDescription}" Click="Button_Click" />
-                    </StackPanel>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="{x:Static resx:Strings.Settings_Modules}"
-                      Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
-                          Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
-                <ui:SimpleStackPanel Spacing="10">
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_Audio}" IsOn="{Binding AudioFlyoutHelper.IsEnabled}"
-                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_Airplane}" IsOn="{Binding AirplaneModeFlyoutHelper.IsEnabled}"
-                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_LockKeys}" IsOn="{Binding LockKeysFlyoutHelper.IsEnabled}"
-                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_Modules_Brightness}" IsOn="{Binding BrightnessFlyoutHelper.IsEnabled}"
-                                     OnContent="{x:Static resx:Strings.Settings_Enabled}" OffContent="{x:Static resx:Strings.Settings_Disabled}" />
+                    </ui:SimpleStackPanel>
                 </ui:SimpleStackPanel>
             </GroupBox>
             <GroupBox Header="{x:Static resx:Strings.Settings_Additional}"
                       Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
                           Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
                 <ui:SimpleStackPanel Spacing="10">
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_FlyoutTopBar}" IsOn="{Binding TopBarEnabled}"
-                                     OnContent="Always Visible" OffContent="Auto Hide" />
-                    <TextBox ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutDefaultPosition}" HorizontalAlignment="Left"
-                             Style="{DynamicResource ValidatableTextBoxStyle}"
-                             ui:ControlHelper.Description="{x:Static resx:Strings.Settings_FlyoutDefaultPositionDescription}">
+                    <TextBox HorizontalAlignment="Left"
+                             Style="{DynamicResource ValidatableTextBoxStyle}" MinWidth="240">
+                        <ui:ControlHelper.Header>
+                            <ui:SimpleStackPanel Orientation="Horizontal" Spacing="4"
+                                             ToolTip="{x:Static resx:Strings.Settings_FlyoutDefaultPositionDescription}">
+                                <TextBlock Text="{x:Static resx:Strings.Settings_FlyoutDefaultPosition}" />
+                                <ui:FontIcon FontSize="14" Glyph="{x:Static utils:CommonGlyphs.Info}" />
+                            </ui:SimpleStackPanel>
+                        </ui:ControlHelper.Header>
                         <TextBox.Text>
-                            <Binding Path="DefaultFlyoutPosition" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource PointToStringConverter}"
+                            <Binding Path="DefaultFlyoutPosition" UpdateSourceTrigger="PropertyChanged"
+                                     Converter="{StaticResource PointToStringConverter}"
                                      ValidatesOnNotifyDataErrors="True" ValidatesOnDataErrors="True" NotifyOnValidationError="True">
                                 <Binding.ValidationRules>
                                     <utils:PointValidationRule ValidatesOnTargetUpdated="True" />
@@ -66,24 +69,6 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_TrayIconMode}" IsOn="{Binding UIManager.UseColoredTrayIcon}"
-                                     OnContent="{x:Static resx:Strings.Settings_TrayIconMode_Colored}"
-                                     OffContent="{x:Static resx:Strings.Settings_TrayIconMode_Monochrome}" />
-                    <Slider ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutBackgroundOpacity}" Minimum="0" Maximum="100"
-                            HorizontalAlignment="Left" AutoToolTipPlacement="TopLeft" Width="300"
-                            IsMoveToPointEnabled="True" Value="{Binding UIManager.FlyoutBackgroundOpacity}" />
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_ShowGSMTCInVolumeFlyout}"
-                                     IsOn="{Binding AudioFlyoutHelper.ShowGSMTCInVolumeFlyout}" />
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_ShowVolumeControlInGSMTCFlyout}"
-                                     IsOn="{Binding AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout}" />
-                    <ComboBox ui:ControlHelper.Header="{x:Static resx:Strings.Settings_SessionsPanelOrientation}"
-                        ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
-                        ItemsSource="{Binding Source={x:Type Orientation}, Converter={StaticResource EnumValuesConverter}}"
-                        SelectedItem="{Binding UIManager.SessionsPanelOrientation}" />
-                    <ui:NumberBox Header="{x:Static resx:Strings.Settings_MaxVerticalSessionControlsCount}"
-                                  HorizontalAlignment="Left"
-                                  Minimum="1" Maximum="10" SmallChange="1" LargeChange="2" SpinButtonPlacementMode="Inline"
-                                  Value="{Binding UIManager.MaxVerticalSessionControlsCount}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>
