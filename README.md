@@ -105,19 +105,19 @@ _Without TopBar_
 <table>
   <tr>
     <td>SMTC audio playback session:</td>
-     <td>audio playback session with additional info:</td>
+     <td>Audio playback session with additional info:</td>
   </tr>
   <tr>
-    <td valign="top"><img src="docs/images/Audio_Session_Music_NoTop.png"></td>
-    <td valign="top"><img src="docs/images/Audio_Session_Music_NoTop_More.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Audio_Session_Music_NoTop.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Audio_Session_Music_NoTop_More.png"></td>
    </tr>
     <tr>
     <td>Fallback thumbnail for music playback with no album art:</td>
      <td>SMTC video playback session with additional info:</td>
   </tr>
    <tr>
-    <td valign="top"><img src="docs/images/Audio_Session_Music_NoTop_NoAlbumArt.png"></td>
-    <td valign="top"><img src="docs/images/Audio_Session_Video.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Audio_Session_Music_NoTop_NoAlbumArt.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Audio_Session_Video.png"></td>
   </tr>
  </table>
 
@@ -125,14 +125,14 @@ _Without TopBar_
 ### Brightness Flyout
 
 <table>
-    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>Legacy Flyout:</h4></td>
     <td><h4>ModernFlyout (With TopBar):</h4></td>
      <td><h4>ModernFlyout (Without TopBar):</h4></td>
   </tr>
    <tr>
-    <td valign="top"><img src="docs/images/Brightness_Old.png"></td>
-    <td valign="top"><img src="docs/images/Brightness-Compacted.png"></td>
-    <td valign="top"><img src="docs/images/Brightness-Compacted_NoTop.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Brightness_Old.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Brightness-Compacted.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Brightness-Compacted_NoTop.png"></td>
   </tr>
  </table>
  &nbsp;
@@ -142,14 +142,14 @@ _Without TopBar_
 **(On state)**
 
 <table>
-    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>Legacy Flyout:</h4></td>
     <td><h4>ModernFlyout (With TopBar):</h4></td>
      <td><h4>ModernFlyout (Without TopBar):</h4></td>
   </tr>
    <tr>
-    <td><h4>insert image:</h4></td>
-    <td valign="top"><img src="docs/images/Airplane_On.png"></td>
-    <td valign="top"><img src="docs/images/Airplane_On_NoTop.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Airplane_Old.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Airplane_On.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/Airplane_On_NoTop.png"></td>
   </tr>
  </table>
  &nbsp;
@@ -159,13 +159,13 @@ _Without TopBar_
 **(Caps-lock On)**
 
 <table>
-    <td><h4>Windows-Default Flyout:</h4></td>
+    <td><h4>Legacy Flyout:</h4></td>
     <td><h4>ModernFlyout (With TopBar):</h4></td>
      <td><h4>ModernFlyout (Without TopBar):</h4></td>
   </tr>
    <tr>
-    <td><h4>Windows doesn't have one</h4></td>
-    <td valign="top"><img src="docs/images/LockKey_Caps.png"></td>
-    <td valign="top"><img src="docs/images/LockKey_Caps_NoTop.png"></td>
+    <td halign="center" valign="center"><h4>Not available</h4></td>
+    <td valign="center" halign="center"><img src="docs/images/LockKey_Caps.png"></td>
+    <td valign="center" halign="center"><img src="docs/images/LockKey_Caps_NoTop.png"></td>
   </tr>
  </table>
