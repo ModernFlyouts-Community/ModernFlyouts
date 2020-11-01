@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="zh-Hans" original="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" datatype="resx">
+        <trans-unit id="About" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">关于</target>
+        </trans-unit>
+        <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
+          <source>Airplane Mode is not available :(</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">设备不支持飞行模式 :(</target>
+        </trans-unit>
+        <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
+          <source>Airplane mode off</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">飞行模式已关闭</target>
+        </trans-unit>
+        <trans-unit id="AirplaneModeOn" translate="yes" xml:space="preserve">
+          <source>Airplane mode on</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">飞行模式已启用</target>
+        </trans-unit>
+        <trans-unit id="Align" translate="yes" xml:space="preserve">
+          <source>Align to default position</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">移动到默认位置</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.NoDevices" translate="yes" xml:space="preserve">
+          <source>No Connected Audio Devices</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">没有已连接的音频设备</target>
+        </trans-unit>
+        <trans-unit id="Close" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">关闭</target>
+        </trans-unit>
+        <trans-unit id="ExitItem" translate="yes" xml:space="preserve">
+          <source>Exit</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">退出</target>
+        </trans-unit>
+        <trans-unit id="ExitItemDescription" translate="yes" xml:space="preserve">
+          <source>Exit the app safely</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">安全退出应用</target>
+        </trans-unit>
+        <trans-unit id="GeneralSettings" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">常规</target>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.InsertMode" translate="yes" xml:space="preserve">
+          <source>Insert Mode</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">插入模式</target>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
+          <source>{0} is off</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} 已关闭</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">E.g. CapsLock is off</note>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
+          <source>{0} is on</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} 已打开</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">E.g. CapsLock is on</note>
+        </trans-unit>
+        <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
+          <source>Overtype Mode</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">覆写模式</target>
+        </trans-unit>
+        <trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
+          <source>Pin TopBar</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">固定顶栏</target>
+        </trans-unit>
+        <trans-unit id="PointValidationRule.PointFormatInvalidMessage" translate="yes" xml:space="preserve">
+          <source>Please enter the point in the format 'X,Y' (for e.g. 50,60).</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请输入格式为"X,Y"（例如 50,60）的点。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there are problem parsing a string value into a Point</note>
+        </trans-unit>
+        <trans-unit id="PointValidationRule.PointOutOfRangeMessage" translate="yes" xml:space="preserve">
+          <source>Please enter X,Y values in the range {0} - {1}.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请输入范围在 {0} - {1} 的 X,Y 坐标值。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a point's X or Y values goes out of int32 range</note>
+        </trans-unit>
+        <trans-unit id="PointValidationRule.StringConvertionErrorMessage" translate="yes" xml:space="preserve">
+          <source>Value cannot be coverted to string.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">数值不能隐藏到字符串中。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
+        </trans-unit>
+        <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
+          <source>Restore Default</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">还原默认值</target>
+        </trans-unit>
+        <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
+          <source>Restores the windows default flyout and safely quits this app</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">还原 Windows 的默认弹窗并安全退出此应用程序</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
+          <source>More Controls</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">更多控件</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.Next" translate="yes" xml:space="preserve">
+          <source>Next</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">下一曲</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.Pause" translate="yes" xml:space="preserve">
+          <source>Pause</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">暂停</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.Play" translate="yes" xml:space="preserve">
+          <source>Play</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">播放</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.Previous" translate="yes" xml:space="preserve">
+          <source>Previous</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">上一曲</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.RepeatAll" translate="yes" xml:space="preserve">
+          <source>Repeat: all</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">循环：全部循环</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.RepeatOff" translate="yes" xml:space="preserve">
+          <source>Repeat: off</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">循环：关闭</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.RepeatOne" translate="yes" xml:space="preserve">
+          <source>Repeat: one</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">循环：单曲循环</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.ShuffleOff" translate="yes" xml:space="preserve">
+          <source>Shuffle: off</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">随机播放：关闭</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.ShuffleOn" translate="yes" xml:space="preserve">
+          <source>Shuffle: on</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">随机播放：打开</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.Stop" translate="yes" xml:space="preserve">
+          <source>Stop</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">停止</target>
+        </trans-unit>
+        <trans-unit id="SessionControl.TimelineInfo" translate="yes" xml:space="preserve">
+          <source>Timeline Info</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">时间线信息</target>
+        </trans-unit>
+        <trans-unit id="Settings.Additional" translate="yes" xml:space="preserve">
+          <source>Additional</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">额外</target>
+        </trans-unit>
+        <trans-unit id="Settings.Behavior" translate="yes" xml:space="preserve">
+          <source>Behavior</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">行为</target>
+        </trans-unit>
+        <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
+          <source>Default Flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">默认弹窗</target>
+        </trans-unit>
+        <trans-unit id="Settings.DefaultFlyoutDescription" translate="yes" xml:space="preserve">
+          <source>Select the default flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">选择默认的弹窗</target>
+        </trans-unit>
+        <trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
+          <source>Choosing the Windows Default Flyout as default won't close this app. This app will still keep running in the background. Please exit this app safely to improve performance.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">选择 Windows 默认弹窗不会关闭此应用。此应用程序仍将在后台继续运行。请安全地退出此应用程序以提高性能。</target>
+        </trans-unit>
+        <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
+          <source>Disabled</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">已禁用</target>
+        </trans-unit>
+        <trans-unit id="Settings.Enabled" translate="yes" xml:space="preserve">
+          <source>Enabled</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">已启用</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
+          <source>Flyout Background Opacity</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">弹窗背景不透明度</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
+          <source>Flyout Default Position (for Align button)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">弹窗默认位置（用于恢复默认位置按钮）</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
+          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">输入"X，Y"格式的位置（例如 50,60）</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
+          <source>Flyout TopBar</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">弹窗顶栏</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
+          <source>Modules</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">模块</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
+          <source>AirplaneMode-flyout Module</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">飞行模式弹窗模块</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
+          <source>Audio-flyout Module</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">音频弹窗模块</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
+          <source>Brightness-flyout Module</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">亮度弹窗模块</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
+          <source>LockKeys-flyout Module</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">锁定键弹窗模块</target>
+        </trans-unit>
+        <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
+          <source>Run at startup</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">开机时运行</target>
+        </trans-unit>
+        <trans-unit id="Settings.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
+          <source>Show Global System Media Transport (Media) Controls in Volume flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">在音量弹窗中显示系统全局媒体传输控制</target>
+        </trans-unit>
+        <trans-unit id="Settings.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
+          <source>Show Volume control in Global System Media Transport (Media) Controls flyout</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">在媒体弹窗中显示音量控制</target>
+        </trans-unit>
+        <trans-unit id="Settings.TrayIconMode" translate="yes" xml:space="preserve">
+          <source>Tray Icon Mode</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">托盘图标样式</target>
+        </trans-unit>
+        <trans-unit id="Settings.TrayIconMode.Colored" translate="yes" xml:space="preserve">
+          <source>Colored</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">彩色</target>
+        </trans-unit>
+        <trans-unit id="Settings.TrayIconMode.Monochrome" translate="yes" xml:space="preserve">
+          <source>Monochrome</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">单色</target>
+        </trans-unit>
+        <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">设置</target>
+        </trans-unit>
+        <trans-unit id="SettingsItemDescription" translate="yes" xml:space="preserve">
+          <source>Open settings window</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">打开设置窗口</target>
+        </trans-unit>
+        <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
+          <source>Unpin TopBar</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">取消固定顶栏</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ModernFlyouts</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
+          <source>None</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">无</target>
+        </trans-unit>
+        <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
+          <source>Windows default</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Windows 默认</target>
+        </trans-unit>
+        <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
+          <source>Horizontal</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">水平</target>
+        </trans-unit>
+        <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
+          <source>Vertical</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">垂直</target>
+        </trans-unit>
+        <trans-unit id="Settings.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
+          <source>Maximum Number of Media Session Controls to show vertically</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">要垂直显示媒体控件的最大数量</target>
+        </trans-unit>
+        <trans-unit id="Settings.SessionsPanelOrientation" translate="yes" xml:space="preserve">
+          <source>Media Sessions Panel Orientation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">媒体面板方向</target>
+        </trans-unit>
+        <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
+          <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">该程序用于将旧的 Windows 8 Metro 风格弹窗覆盖为 Fluent Design 风格弹窗。</target>
+        </trans-unit>
+        <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
+          <source>Contributors</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">贡献者</target>
+        </trans-unit>
+        <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
+          <source>GitHub repository</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">GitHub 仓库</target>
+        </trans-unit>
+        <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
+          <source>Open a new issue</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">创建新 Issue</target>
+        </trans-unit>
+        <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
+          <source>Rate and Review on Microsoft Store</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">去 Microsoft Store 评分</target>
+        </trans-unit>
+        <trans-unit id="About.Version" translate="yes" xml:space="preserve">
+          <source>Version : </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">版本：</target>
+        </trans-unit>
+        <trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">语言</target>
+        </trans-unit>
+        <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
+          <source>Please restart the app to change the language properly</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请重新启动应用程序，以便完整更改语言</target>
+        </trans-unit>
+        <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
+          <source>System Default</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">系统默认值</target>
+        </trans-unit>
+        <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
+          <source>Dependencies</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">依赖项</target>
+        </trans-unit>
+        <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
+          <source>If you find any bugs, please open a new issue in the github repository.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果发现任何 bug，请在 GitHub 仓库中打创建一个新 Issue。</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
