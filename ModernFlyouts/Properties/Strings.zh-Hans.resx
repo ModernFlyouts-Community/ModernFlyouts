@@ -16,7 +16,7 @@
     <value>关于</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>飞行模式不支持 :(</value>
+    <value>设备不支持飞行模式 :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
     <value>飞行模式已关闭</value>
@@ -46,11 +46,11 @@
     <value>插入模式</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0}已关闭</value>
+    <value>{0} 已关闭</value>
     <comment>E.g. CapsLock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0}已打开</value>
+    <value>{0} 已打开</value>
     <comment>E.g. CapsLock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
@@ -75,7 +75,7 @@
     <value>还原默认值</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>还原 Windows 的默认弹框并安全退出此应用程序</value>
+    <value>还原 Windows 的默认弹窗并安全退出此应用程序</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>更多控件</value>
@@ -138,10 +138,10 @@
     <value>弹窗背景不透明度</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>弹窗默认位置（用于对齐按钮）</value>
+    <value>弹窗默认位置（用于恢复默认位置按钮）</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>输入"X，Y"格式的位置（例如 50,60）</value>
+    <value>输入"X,Y"格式的位置（例如 50,60）</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>弹窗顶栏</value>
@@ -150,7 +150,7 @@
     <value>模块</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>飞机模式弹窗模块</value>
+    <value>飞行模式弹窗模块</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
     <value>音频弹窗模块</value>
@@ -168,10 +168,10 @@
     <value>在音量弹窗中显示系统全局媒体传输控制</value>
   </data>
   <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>在系统全局媒体传输弹窗中显示音量控制</value>
+    <value>在媒体弹窗中显示音量控制</value>
   </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
-    <value>托盘图标模式</value>
+    <value>托盘图标样式</value>
   </data>
   <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
     <value>彩色</value>
@@ -189,7 +189,7 @@
     <value>取消固定顶栏</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>现代飞行</value>
+    <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>无</value>
@@ -204,25 +204,25 @@
     <value>垂直</value>
   </data>
   <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>要垂直显示的媒体会话控件的最大数量</value>
+    <value>要垂直显示媒体控件的最大数量</value>
   </data>
   <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>媒体会话面板方向</value>
+    <value>媒体面板方向</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>这个程序被设计为一个现代的流畅设计替代旧的地铁式元素的弹出窗口出现在Windows 8。</value>
+    <value>该程序用于将旧的 Windows 8 Metro 风格弹窗覆盖为 Fluent Design 风格弹窗。</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
-    <value>参与者</value>
+    <value>贡献者</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>GitHub 存储库</value>
+    <value>GitHub 仓库</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>打开新问题</value>
+    <value>创建新 Issue</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>微软商店的费率和评论</value>
+    <value>去 Microsoft Store 评分</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>版本：</value>
@@ -240,6 +240,6 @@
     <value>依赖项</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>如果发现任何错误，请在 github 存储库中打开一个新问题。</value>
+    <value>如果发现任何 bug，请在 GitHub 仓库中打创建一个新 Issue。</value>
   </data>
 </root>
