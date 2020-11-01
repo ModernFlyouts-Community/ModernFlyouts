@@ -82,7 +82,7 @@ I could have improved the original project but the project is called **AUDIO**Fl
 
 ![Audio_Old](docs/images/Audio_Old.png)
 
-**ModernFlyouts Flyout:** 
+**ModernFlyout:** 
 
 ***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 
@@ -126,8 +126,8 @@ _Without TopBar_
 
 <table>
     <td><h4>Windows-Default Flyout:</h4></td>
-    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
-     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+    <td><h4>ModernFlyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyout (Without TopBar):</h4></td>
   </tr>
    <tr>
     <td valign="top"><img src="docs/images/Brightness_Old.png"></td>
@@ -143,8 +143,8 @@ _Without TopBar_
 
 <table>
     <td><h4>Windows-Default Flyout:</h4></td>
-    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
-     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+    <td><h4>ModernFlyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyout (Without TopBar):</h4></td>
   </tr>
    <tr>
     <td><h4>insert image:</h4></td>
@@ -160,8 +160,8 @@ _Without TopBar_
 
 <table>
     <td><h4>Windows-Default Flyout:</h4></td>
-    <td><h4>ModernFlyouts Flyout (With TopBar):</h4></td>
-     <td><h4>ModernFlyouts Flyout (Without TopBar):</h4></td>
+    <td><h4>ModernFlyout (With TopBar):</h4></td>
+     <td><h4>ModernFlyout (Without TopBar):</h4></td>
   </tr>
    <tr>
     <td><h4>Windows doesn't have one</h4></td>
