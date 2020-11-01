@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ModernFlyouts.Helpers;
+using ModernFlyouts.Utilities;
+using System;
 using System.Diagnostics;
 using System.Management;
 using System.Windows.Controls;
@@ -39,16 +41,17 @@ namespace ModernFlyouts
 
         #region Brightness
 
-        private bool _isInCodeValueChange = false; //Prevents a LOOP between changing brightness
+        private bool _isInCodeValueChange; //Prevents a LOOP between changing brightness
 
         private void UpdateBrightness(int brightness)
         {
-            Dispatcher.Invoke(() =>
+            App.Current.Dispatcher.Invoke(() =>
             {
+                brightnessControl.BrightnessGlyph.Glyph = brightness > 50 ? CommonGlyphs.Brightness : CommonGlyphs.LowerBrightness; 
+                brightnessControl.textVal.Text = brightness.ToString("00");
                 _isInCodeValueChange = true;
                 brightnessControl.BrightnessSlider.Value = brightness;
                 _isInCodeValueChange = false;
-                brightnessControl.textVal.Text = brightness.ToString("00");
             });
         }
 
@@ -94,7 +97,7 @@ namespace ModernFlyouts
             UpdateBrightness(e.NewValue);
         }
 
-        private int GetBrightnessLevel()
+        private static int GetBrightnessLevel()
         {
             try
             {
@@ -125,11 +128,11 @@ namespace ModernFlyouts
             return 0;
         }
 
-        private void SetBrightnessLevel(int brightnessLevel)
+        private static void SetBrightnessLevel(int brightnessLevel)
         {
             if (brightnessLevel < 0 ||
                 brightnessLevel > 100)
-                throw new ArgumentOutOfRangeException("brightnessLevel");
+                throw new ArgumentOutOfRangeException(nameof(brightnessLevel));
 
             try
             {
@@ -202,7 +205,7 @@ namespace ModernFlyouts
 
     public class BrightnessWatcher
     {
-        private ManagementEventWatcher watcher;
+        private readonly ManagementEventWatcher watcher;
 
         public event EventHandler<BrightnessChangedEventArgs> Changed;
         public BrightnessWatcher()

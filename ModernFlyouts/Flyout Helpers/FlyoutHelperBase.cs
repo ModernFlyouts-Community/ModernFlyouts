@@ -1,8 +1,9 @@
-﻿using System.Windows;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System.Windows;
 
 namespace ModernFlyouts
 {
-    public abstract class FlyoutHelperBase : DependencyObject
+    public abstract class FlyoutHelperBase : ObservableObject
     {
         public FlyoutHelperBase Instance { get; set; }
 
@@ -12,87 +13,66 @@ namespace ModernFlyouts
 
         #region Properties
 
-        public static readonly DependencyProperty PrimaryContentProperty =
-            DependencyProperty.Register(
-                nameof(PrimaryContent),
-                typeof(FrameworkElement),
-                typeof(FlyoutHelperBase),
-                new PropertyMetadata(null));
+        private FrameworkElement primaryContent;
 
         public FrameworkElement PrimaryContent
         {
-            get => (FrameworkElement)GetValue(PrimaryContentProperty);
-            set => SetValue(PrimaryContentProperty, value);
+            get => primaryContent;
+            set => SetProperty(ref primaryContent, value);
         }
 
-        public static readonly DependencyProperty SecondaryContentProperty =
-            DependencyProperty.Register(
-                nameof(SecondaryContent),
-                typeof(FrameworkElement),
-                typeof(FlyoutHelperBase),
-                new PropertyMetadata(null));
-
+        private FrameworkElement secondaryContent;
         public FrameworkElement SecondaryContent
         {
-            get => (FrameworkElement)GetValue(SecondaryContentProperty);
-            set => SetValue(SecondaryContentProperty, value);
+            get => secondaryContent;
+            set => SetProperty(ref secondaryContent, value);
         }
 
-        public static readonly DependencyProperty PrimaryContentVisibleProperty =
-            DependencyProperty.Register(
-                nameof(PrimaryContentVisible),
-                typeof(bool),
-                typeof(FlyoutHelperBase),
-                new PropertyMetadata(true));
-
+        private bool primaryContentVisible = true;
+        
         public bool PrimaryContentVisible
         {
-            get => (bool)GetValue(PrimaryContentVisibleProperty);
-            set => SetValue(PrimaryContentVisibleProperty, value);
+            get => primaryContentVisible;
+            set => SetProperty(ref primaryContentVisible, value);
         }
 
-        public static readonly DependencyProperty SecondaryContentVisibleProperty =
-            DependencyProperty.Register(
-                nameof(SecondaryContentVisible),
-                typeof(bool),
-                typeof(FlyoutHelperBase),
-                new PropertyMetadata(false));
+        private bool secondaryContentVisible;
 
         public bool SecondaryContentVisible
         {
-            get => (bool)GetValue(SecondaryContentVisibleProperty);
-            set => SetValue(SecondaryContentVisibleProperty, value);
+            get => secondaryContentVisible;
+            set => SetProperty(ref secondaryContentVisible, value);
         }
 
-        public bool AlwaysHandleDefaultFlyout { get; protected set; } = false;
+        public bool AlwaysHandleDefaultFlyout { get; protected set; }
 
-        public static readonly DependencyProperty IsEnabledProperty =
-            DependencyProperty.Register(
-                nameof(IsEnabled),
-                typeof(bool),
-                typeof(FlyoutHelperBase),
-                new PropertyMetadata(true, OnIsEnabledChanged));
+        private bool isEnabled = true;
 
         public bool IsEnabled
         {
-            get => (bool)GetValue(IsEnabledProperty);
-            set => SetValue(IsEnabledProperty, value);
-        }
-
-        private static void OnIsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var helper = d as FlyoutHelperBase;
-            if ((bool)e.NewValue)
+            get => isEnabled;
+            set
             {
-                helper.OnEnabled();
-            }
-            else
-            {
-                helper.OnDisabled();
+                if (SetProperty(ref isEnabled, value))
+                {
+                    OnIsEnabledChanged();
+                }
             }
         }
 
         #endregion
+
+        private void OnIsEnabledChanged()
+        {
+            if (isEnabled)
+            {
+                OnEnabled();
+            }
+            else
+            {
+                OnDisabled();
+            }
+        }
 
         protected virtual void OnEnabled()
         {

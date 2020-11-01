@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ModernFlyouts.Utilities;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
-using static ModernFlyouts.NativeMethods;
+using static ModernFlyouts.Interop.NativeMethods;
 
 namespace ModernFlyouts
 {
@@ -52,7 +53,7 @@ namespace ModernFlyouts
 
             await Task.Run(() =>
             {
-                var processName = AppId.Substring(0, AppId.Length - 4);
+                var processName = AppId[..^4];
                 var processes = Process.GetProcessesByName(processName);
 
                 if (processes?.Length > 0)
@@ -86,9 +87,9 @@ namespace ModernFlyouts
             InfoFetched?.Invoke(this, null);
         }
 
-        #region Window Activation things
+        #region Window activation things
 
-        public WindowSizeState GetWindowSizeState(IntPtr hWnd)
+        public static WindowSizeState GetWindowSizeState(IntPtr hWnd)
         {
             GetWindowPlacement(hWnd, out WINDOWPLACEMENT placement);
 

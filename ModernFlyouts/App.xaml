@@ -2,8 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             xmlns:local="clr-namespace:ModernFlyouts"
+             xmlns:local="clr-namespace:ModernFlyouts" xmlns:localui="clr-namespace:ModernFlyouts.UI"
              xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:converters="clr-namespace:ModernFlyouts.Converters"
              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
         <ResourceDictionary>
@@ -26,17 +27,17 @@
                 <ui:XamlControlsResources />
             </ResourceDictionary.MergedDictionaries>
 
-            <util:EnumValuesConverter x:Key="EnumValuesConverter" />
-            <util:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter" />
-            <util:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
-            <util:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
-            <util:PointToStringConverter x:Key="PointToStringConverter" />
-            <util:ValidationErrorsToStringConverter x:Key="ValidationErrorsToStringConverter" />
-            <util:EnumToLocalizedStringConverter x:Key="EnumToLocalizedStringConverter" />
+            <converters:EnumValuesConverter x:Key="EnumValuesConverter" />
+            <converters:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter" />
+            <converters:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
+            <converters:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
+            <converters:PointToStringConverter x:Key="PointToStringConverter" />
+            <converters:ValidationErrorsToStringConverter x:Key="ValidationErrorsToStringConverter" />
+            <converters:EnumToLocalizedStringConverter x:Key="EnumToLocalizedStringConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
-            <x:Static x:Key="FlyoutWidth" Member="local:UIManager.FlyoutWidth" />
+            <x:Static x:Key="FlyoutWidth" Member="localui:UIManager.FlyoutWidth" />
 
             <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
                 <Setter Property="Width" Value="40" />

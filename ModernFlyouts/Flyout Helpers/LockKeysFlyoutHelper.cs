@@ -1,4 +1,5 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Helpers;
+using ModernFlyouts.Utilities;
 using System.Windows.Input;
 
 namespace ModernFlyouts
@@ -9,6 +10,66 @@ namespace ModernFlyouts
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
+        #region Properties
+
+        private bool capsLockEnabled = DefaultValuesStore.LockKeysModule_CapsLockEnabled;
+
+        public bool CapsLockEnabled
+        {
+            get => capsLockEnabled;
+            set
+            {
+                if (SetProperty(ref capsLockEnabled, value))
+                {
+                    AppDataHelper.LockKeysModule_CapsLockEnabled = value;
+                }
+            }
+        }
+
+        private bool numLockEnabled = DefaultValuesStore.LockKeysModule_NumLockEnabled;
+
+        public bool NumLockEnabled
+        {
+            get => numLockEnabled;
+            set
+            {
+                if (SetProperty(ref numLockEnabled, value))
+                {
+                    AppDataHelper.LockKeysModule_NumLockEnabled = value;
+                }
+            }
+        }
+
+        private bool scrollLockEnabled = DefaultValuesStore.LockKeysModule_ScrollLockEnabled;
+
+        public bool ScrollLockEnabled
+        {
+            get => scrollLockEnabled;
+            set
+            {
+                if (SetProperty(ref scrollLockEnabled, value))
+                {
+                    AppDataHelper.LockKeysModule_ScrollLockEnabled = value;
+                }
+            }
+        }
+
+        private bool insertEnabled = DefaultValuesStore.LockKeysModule_InsertEnabled;
+
+        public bool InsertEnabled
+        {
+            get => insertEnabled;
+            set
+            {
+                if (SetProperty(ref insertEnabled, value))
+                {
+                    AppDataHelper.LockKeysModule_InsertEnabled = value;
+                }
+            }
+        }
+
+        #endregion
+
         public LockKeysFlyoutHelper()
         {
             Initialize();
@@ -17,6 +78,11 @@ namespace ModernFlyouts
         public void Initialize()
         {
             AlwaysHandleDefaultFlyout = false;
+
+            CapsLockEnabled = AppDataHelper.LockKeysModule_CapsLockEnabled;
+            NumLockEnabled = AppDataHelper.LockKeysModule_NumLockEnabled;
+            ScrollLockEnabled = AppDataHelper.LockKeysModule_ScrollLockEnabled;
+            InsertEnabled = AppDataHelper.LockKeysModule_InsertEnabled;
 
             lockKeysControl = new LockKeysControl();
 
@@ -38,7 +104,14 @@ namespace ModernFlyouts
 
             if (lockKey.HasValue)
             {
-                Prepare(lockKey.Value, !Keyboard.IsKeyToggled(key));
+                var lk = lockKey.Value;
+                if ((lk == LockKeys.CapsLock && !capsLockEnabled) || (lk == LockKeys.NumLock && !numLockEnabled)
+                    || (lk == LockKeys.ScrollLock && !scrollLockEnabled) || (lk == LockKeys.Insert && !insertEnabled))
+                {
+                    return;
+                }
+
+                Prepare(lk, !Keyboard.IsKeyToggled(key));
                 ShowFlyout();
             }
 
@@ -51,9 +124,18 @@ namespace ModernFlyouts
         private void Prepare(LockKeys key, bool islock)
         {
             string msg;
+
             if (key != LockKeys.Insert)
             {
-                msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, key.ToString());
+                string keyName = key switch
+                {
+                    LockKeys.CapsLock => Properties.Strings.LockKeysFlyoutHelper_CapsLock,
+                    LockKeys.NumLock => Properties.Strings.LockKeysFlyoutHelper_NumLock,
+                    LockKeys.ScrollLock => Properties.Strings.LockKeysFlyoutHelper_ScrollLock,
+                    _ => string.Empty,
+                };
+
+                msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, keyName);
                 lockKeysControl.LockGlyph.Glyph = islock ? CommonGlyphs.Lock : CommonGlyphs.Unlock;
             }
             else

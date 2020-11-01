@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} ist aus</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} ist an</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Überschreibmodus</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Beim Start ausführen</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Global System Media Transport (Media) Controls in Volume Flyout anzeigen</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Lautstärkesteuerung in Global System Media Transport (Media) Controls Flyout anzeigen</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Tray Icon Modus</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Vertikal</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Maximale Anzahl von Mediensitzungssteuerelementen, die vertikal angezeigt werden sollen</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Mediensitzungen Panel-Orientierung</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Diese App wurde entwickelt, um ein moderner Fluent Design Ersatz für die in die Jahre gekommenes Deign der Flyouts seit Windows 8 zu haben.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Wenn Sie Fehler finden, öffnen Sie bitte ein neues Problem im github-Repository.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Anzahl der anzuzeigenden Sitzungen</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Ausrichtung des Bedienfelds für Mediensitzungen</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Global System Media Transport Controls (GSMTC) aka Media Controls in Volume Flyout anzeigen</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Volume-Kontrolle in Global System Media Transport Controls (GSMTC) aka Media Flyout anzeigen</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Thumbnail-Ausrichtung</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Automatisch im Hintergrund</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Reduziert</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Sichtbar</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Feststelltaste</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Einfügen</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Num-Sperre</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Scroll-Sperre</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Wählen Sie die Schlüssel aus, für die Sie das Flyout anzeigen möchten.</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Darstellung</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Flugzeugmodus Flyout aktivieren</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Aktivieren von Audio Flyout</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Aktivieren von Brightness Flyout</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Lock-Tasten aktivieren Flyout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Flyout-Thema</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Flyout-Timeout (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Medien</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Lautstärke</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>TopBar-Sichtbarkeit</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Symbol im Bereich der Taskleiste anzeigen</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Ein</value>
   </data>
 </root>

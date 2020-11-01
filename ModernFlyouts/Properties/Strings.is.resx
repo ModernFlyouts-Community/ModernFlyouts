@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} er slökkt</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} er á</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Yfirgerðarhamur</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Keyra við ræsingu</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Sýna global System Media Transport (Media) Stýringar í Volume flyout</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Sýna hljóðstyrksstýringu í Global System Media Transport (Media) Controls flyout</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Teiknshamur bakki</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Lóðrétt</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Hámarksfjöldi miðilssetustýringa sem sýna á lóðrétt</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Stefnumörkun fyrir stjórnborð miðilslota</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Þetta forrit er hannað til að vera nútíma Fluent Design skipti fyrir gamla Metro þema flyouts til staðar í Windows síðan Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Ef þú finnur einhverjar galla skaltu opna nýtt mál í github geymslunni.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Fjöldi lota sem á að sýna</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Stefnumörkun fyrir miðilssetur</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Sýna Global System Media Transport Controls (GSMTC) aka Media stjórna í Volume flyout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Sýna hljóðstyrk í Global System Media Transport Controls (GSMTC) aka Media flyout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Smámyndajöfnun</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Dökkt</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Ljóst</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Fela sjálfkrafa</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Dregið saman</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Sýnilegt</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Hástafalás</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Setja inn</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Hjálmar lás</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Skrunlæsing</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Veldu lyklana sem þú vilt sýna flyout fyrir</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Útlit</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Virkja flugstillingu Flyout</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Gera hljóðflutning virkt</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Virkja birtustig Flyout</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Virkja láslykla Flyout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Flyout þema</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Tímamörk flugs (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Vinstri</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Miðlar</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Hljóðstyrkur</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Hægri</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>TopBar sýnileiki</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Sýna teikn á kerfisbakkasvæði</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Slökkt</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Kveikt</value>
   </data>
 </root>

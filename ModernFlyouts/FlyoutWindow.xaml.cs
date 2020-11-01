@@ -1,4 +1,7 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Helpers;
+using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media.Animation;
+using ModernFlyouts.Utilities;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -47,7 +50,6 @@ namespace ModernFlyouts
                 typeof(FlyoutHelperBase),
                 typeof(FlyoutWindow),
                 new PropertyMetadata(null));
-
 
         public FlyoutHelperBase FlyoutHelper
         {
@@ -172,7 +174,7 @@ namespace ModernFlyouts
             {
                 _elapsedTimer.Stop();
 
-                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsMousePointerWithinBounds(TopBarGrid, e))
+                if (!_topBarOverlay && _topBarVisibility == TopBarVisibility.AutoHide && IsMousePointerWithinBounds(TopBarGrid, e))
                 {
                     _topBarOverlay = true;
                     UpdateTopBar(true);
@@ -182,7 +184,7 @@ namespace ModernFlyouts
             {
                 _elapsedTimer.Start();
 
-                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled)
+                if (_topBarOverlay && _topBarVisibility == TopBarVisibility.AutoHide)
                 {
                     _topBarOverlay = false;
                     UpdateTopBar(false);
@@ -190,13 +192,13 @@ namespace ModernFlyouts
             };
             MouseMove += (_, e) =>
             {
-                if (_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && !IsMousePointerWithinBounds(TopBarGrid, e))
+                if (_topBarOverlay && _topBarVisibility == TopBarVisibility.AutoHide && !IsMousePointerWithinBounds(TopBarGrid, e))
                 {
                     _topBarOverlay = false;
                     UpdateTopBar(false);
                 }
 
-                if (!_topBarOverlay && !FlyoutHandler.Instance.TopBarEnabled && IsMousePointerWithinBounds(TopBarGrid, e))
+                if (!_topBarOverlay && _topBarVisibility == TopBarVisibility.AutoHide && IsMousePointerWithinBounds(TopBarGrid, e))
                 {
                     _topBarOverlay = true;
                     UpdateTopBar(true);
@@ -232,19 +234,22 @@ namespace ModernFlyouts
             AppDataHelper.FlyoutPosition = new Point(Left + leftShadowMargin, Top);
         }
 
-        public void OnTopBarEnabledChanged(bool value)
+        internal void OnTopBarVisibilityChanged(TopBarVisibility value)
         {
-            TopBarPinButtonIcon.Glyph = value ? CommonGlyphs.UnPin : CommonGlyphs.Pin;
-            TopBarPinButton.ToolTip = value ? Properties.Strings.UnpinTopBar : Properties.Strings.PinTopBar;
+            _topBarVisibility = value;
+            _topBarVisible = value == TopBarVisibility.Visible;
+
+            TopBarPinButtonIcon.Glyph = _topBarVisible ? CommonGlyphs.UnPin : CommonGlyphs.Pin;
+            TopBarPinButton.ToolTip = _topBarVisible ? Properties.Strings.UnpinTopBar : Properties.Strings.PinTopBar;
             _topBarOverlay = false;
             var pos = Mouse.GetPosition(TopBarGrid);
             if (pos.Y > 0 && pos.Y < 32)
             {
                 _topBarOverlay = true;
-                value = true;
+                _topBarVisible = true;
             }
 
-            UpdateTopBar(value);
+            UpdateTopBar(_topBarVisible);
         }
 
         private void UpdateTopBar(bool showTopBar)
@@ -266,6 +271,8 @@ namespace ModernFlyouts
             }
             else
             {
+                TopBarOverlayIndicator.Visibility = _topBarVisibility == TopBarVisibility.Collapsed ? Visibility.Collapsed : Visibility.Visible;
+
                 this.TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
                 R2.Height = new GridLength(10);
                 var glAnim = new GridLengthAnimation()
@@ -281,7 +288,14 @@ namespace ModernFlyouts
 
         private void TopBarPinButton_Click(object sender, RoutedEventArgs e)
         {
-            FlyoutHandler.Instance.TopBarEnabled = !FlyoutHandler.Instance.TopBarEnabled;
+            if (FlyoutHandler.Instance.UIManager.TopBarVisibility == TopBarVisibility.Visible)
+            {
+                FlyoutHandler.Instance.UIManager.TopBarVisibility = TopBarVisibility.AutoHide;
+            }
+            else if (FlyoutHandler.Instance.UIManager.TopBarVisibility == TopBarVisibility.AutoHide)
+            {
+                FlyoutHandler.Instance.UIManager.TopBarVisibility = TopBarVisibility.Visible;
+            }
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
@@ -296,6 +310,8 @@ namespace ModernFlyouts
         }
 
         private int leftShadowMargin = 20;
-        private bool _topBarOverlay = false;
+        private bool _topBarOverlay;
+        private bool _topBarVisible = true;
+        private TopBarVisibility _topBarVisibility = TopBarVisibility.Visible;
     }
 }

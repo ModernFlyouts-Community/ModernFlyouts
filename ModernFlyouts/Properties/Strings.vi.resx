@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} đã tắt</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} đang bật</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Chế độ ghi công</value>
@@ -164,12 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Chạy khi khởi động</value>
   </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Hiện Điều khiển Truyền phương tiện Truyền thông Hệ thống Toàn cầu (Phương tiện) trong phần bỏ qua khối lượng</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Hiện điều khiển âm lượng trong tờ rơi Điều khiển Phương tiện Truyền thông Hệ thống Toàn cầu (Phương tiện)</value>
-  </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>Chế độ Biểu tượng Khay</value>
   </data>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Dọc</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Số điều khiển phiên phương tiện tối đa để hiển thị theo chiều dọc</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>Định hướng Bảng điều khiển Phiên Phương tiện</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>Ứng dụng này được thiết kế để thay thế Fluent Design hiện đại cho các tờ rơi theo chủ đề tàu điện ngầm cũ có trong Windows kể từ Windows 8.</value>
   </data>
@@ -241,5 +229,95 @@
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Nếu bạn tìm thấy bất kỳ lỗi nào, vui lòng mở một vấn đề mới trong kho github.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Số phiên để hiển thị</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Hướng bảng điều khiển phiên phương tiện</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Hiển thị Điều khiển Truyền tải Phương tiện Truyền thông Hệ thống Toàn cầu (GSMTC) hay còn gọi là Điều khiển Phương tiện trong phần phát ra Ổ đĩa</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Hiển thị điều khiển âm lượng trong điều khiển truyền thông truyền thông toàn cầu (GSMTC) aka phương tiện truyền thông flyout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Căn chỉnh hình thu nhỏ</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Tối</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Sáng</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Tự ẩn</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Đã thu gọn</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Hiển thị</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Chèn</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Khóa Num</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Khóa cuộn</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Chọn các phím bạn muốn hiển thị hộp chú thích cho</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Diện mạo</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Bật Chế độ máy bay Flyout</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Bật Hộp bay Ra Âm thanh</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Bật Hộp bay Có Độ sáng</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Bật Khóa phím Flyout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Chủ đề Bay ra</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Thời gian chờ bay ra (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Trái</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Phương tiện</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Âm lượng</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Phải</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Khả năng hiển thị Thanh Trên cùng</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Hiện biểu tượng trên vùng khay hệ thống</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Tắt</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Bật</value>
   </data>
 </root>

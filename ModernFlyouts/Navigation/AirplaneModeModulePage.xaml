@@ -1,0 +1,22 @@
+﻿<Page x:Class="ModernFlyouts.Navigation.AirplaneModeModulePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:controls="clr-namespace:ModernFlyouts.Controls"
+      xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
+      xmlns:resx="clr-namespace:ModernFlyouts.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" DataContext="{x:Static local:FlyoutHandler.Instance}">
+    <controls:ScrollViewerEx VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20,10">
+            <GroupBox>
+                <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_EnableModule_Airplane}"
+                                 IsOn="{Binding AirplaneModeFlyoutHelper.IsEnabled}"
+                                 OnContent="{x:Static resx:Strings.Settings_On}"
+                                 OffContent="{x:Static resx:Strings.Settings_Off}" />
+            </GroupBox>
+        </StackPanel>
+    </controls:ScrollViewerEx>
+</Page>

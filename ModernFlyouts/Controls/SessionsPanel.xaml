@@ -17,11 +17,10 @@
                     Background="{DynamicResource ScrollBarButtonBackground}"
                     BorderBrush="{DynamicResource ScrollBarButtonBorderBrush}"
                     SnapsToDevicePixels="True">
-                <ui:FontIconFallback
-                        x:Name="Arrow"
-                        FontFamily="{DynamicResource SymbolThemeFontFamily}"
-                        Data="{TemplateBinding Content}"
-                        Foreground="{DynamicResource ScrollBarButtonArrowForeground}" />
+                <ui:FontIcon x:Name="Arrow" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             FontFamily="{DynamicResource SymbolThemeFontFamily}"
+                             Glyph="{TemplateBinding Content}"
+                             Foreground="{DynamicResource ScrollBarButtonArrowForeground}" />
             </Border>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -60,8 +59,8 @@
                                         Grid.Row="0"
                                         ui:ControlHelper.CornerRadius="0,0,4,4"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
+                                        Content="{x:Static utils:CommonGlyphs.ChevronUp}"
                                         HorizontalAlignment="Center">
-                                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.ChevronUp}" />
                                     <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&gt;">
                                             <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value" />
@@ -77,8 +76,8 @@
                                         Grid.Row="2"
                                         ui:ControlHelper.CornerRadius="4,4,0,0"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
+                                        Content="{x:Static utils:CommonGlyphs.ChevronDown}"
                                         HorizontalAlignment="Center">
-                                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.ChevronDown}" />
                                     <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&lt;">
                                             <Binding RelativeSource="{RelativeSource Mode=TemplatedParent}" Path="Value" />
@@ -102,10 +101,6 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ScrollBar">
-                        <ControlTemplate.Resources>
-                            <StreamGeometry x:Key="ChevronLeft">M 14.091797 19.970703 L 4.111328 10 L 14.091797 0.029297 L 14.970703 0.908203 L 5.888672 10 L 14.970703 19.091797 Z</StreamGeometry>
-                            <StreamGeometry x:Key="ChevronRight">M 5.029297 19.091797 L 14.111328 10 L 5.029297 0.908203 L 5.908203 0.029297 L 15.888672 10 L 5.908203 19.970703 Z</StreamGeometry>
-                        </ControlTemplate.Resources>
                         <Border x:Name="Root" SnapsToDevicePixels="true">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -121,7 +116,7 @@
                                         Grid.Column="0"
                                         ui:ControlHelper.CornerRadius="0,4,4,0"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
-                                        Content="{StaticResource ChevronLeft}"
+                                        Content="{x:Static utils:CommonGlyphs.ChevronLeft}"
                                         VerticalAlignment="Center">
                                     <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&gt;">
@@ -138,7 +133,7 @@
                                         Grid.Column="2"
                                         ui:ControlHelper.CornerRadius="4,0,0,4"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
-                                        Content="{StaticResource ChevronRight}"
+                                        Content="{x:Static utils:CommonGlyphs.ChevronRight}"
                                         VerticalAlignment="Center">
                                     <Button.Visibility>
                                         <MultiBinding Converter="{StaticResource ScrollButtonVisibilityConverter}" ConverterParameter="&lt;">

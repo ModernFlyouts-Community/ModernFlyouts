@@ -23,7 +23,7 @@ namespace ModernFlyouts
         public override event EventHandler InfoFetched;
 
         private AppListEntry sourceApp;
-        private int currentAppIndex = 0;
+        private int currentAppIndex;
 
         public override void Activate()
         {
@@ -137,7 +137,7 @@ namespace ModernFlyouts
             string ext = Path.GetExtension(resourceName);
 
             string finalSizeToken;
-            if (Directory.EnumerateFiles(Path.Combine(appPath, Path.GetDirectoryName(resourceName)), name + targetSizeToken + "*" + ext).Count() > 0)
+            if (Directory.EnumerateFiles(Path.Combine(appPath, Path.GetDirectoryName(resourceName)), name + targetSizeToken + "*" + ext).Any())
             {
                 finalSizeToken = targetSizeToken;
             }
@@ -150,7 +150,7 @@ namespace ModernFlyouts
             {
                 string fileName = Path.GetFileNameWithoutExtension(file);
                 int pos = fileName.IndexOf(finalSizeToken) + finalSizeToken.Length;
-                string sizeText = fileName.Substring(pos);
+                string sizeText = fileName[pos..];
                 if (int.TryParse(sizeText, out int size))
                 {
                     sizes.Add(size);
