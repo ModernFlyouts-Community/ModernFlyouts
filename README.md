@@ -7,51 +7,47 @@
 
 ## Overview
 
-**Default Flyout:**  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  **New Flyout:**
+**Default Flyout:**  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  **ModernFlyouts:**
 
 ![Overview](docs/images/Overview.png)
 
-This application will replace the default audio/airplane/brightness flyouts found in Windows shown when the volume or brightness changes or when airplane mode key is pressed with a new modern UI.
+This application will replace the default audio/airplane/brightness flyouts found in Windows shown when the volume or brightness changes or when airplane mode key is pressed with a new fluent UI.
 
 This project is based on [ADeltaX/AudioFlyout](https://github.com/ADeltaX/AudioFlyout). With additional implementation for airplane mode and brightness flyouts. This project also includes a flyout for lock keys (caps lock, scroll lock, num lock & insert key).
 
 > Note : The native flyout is not permanently closed but will be hidden when this flyout is shown
-> Thus, users have the freedom to choose between the windows default one, this modern one or none.
+> Thus, users have the freedom to choose between the Windows Default, Modernflyouts' or None.
 
 See the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) page for additional infos
 
 ## Features
-- Fluent UI (similar to the one in Windows 10X)
-- Follows system Light/Dark theme
-- Media session controls have additional features such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
-- AirplaneMode-flyout Module
-- LockKeys-flyout Module
-- Brightness-flyout Module
+- Fluent UI (similar to Windows 10X)
+- Follows system theme, user-customizable
+- Media session controls have additional options such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
+- Redesigned audio and brightness flyouts along with additional flyouts for Airplane mode, Lock keys and Insert/Overtype
 - Each Module can be disabled separately
-- Can Choose either Windows Default Flyout, ModernFlyouts or None
-- Flyout's TopBar can be unpinned
-- Flyout is **Draggable** and autosaves the position
-- Flyout can be **aligned to a default position** (can be modified in the settings)
+- Flyout's TopBar can be pinned, unpinned or hidden.
+- Flyout is **Draggable** and autosaves the position. It also has feature for default position. (Check out the settings)
 - Smooth **Animations** & **Tranisitions**
 
 ## System Requirements
 - **Windows 10 1809 and above** (v0.1 - v0.3 support Windows 8 and above, however due to MSIX limitations, v0.4.0 and above won't)
 
 ## Installation
-Modern Flyouts is Available on GitHub, winget and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
+Modern Flyouts is Available via GitHub, winget and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
-Both distribution methods will be supported, however the store version is recommended as it is easier to install and will automatically remain up to date.
+All distribution methods will be supported, however the **store version** is **recommended** as it is easier to install and will automatically remain up to date.
 
 ### _Microsoft Store:_
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
 
-[Signup for Beta Builds of ModernFlyouts](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALdxYU9UQU9GMzQ2Rk40MDJFSkU5UzRKTVg2Nk1PTy4u) 
+Sign up [here](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALdxYU9UQU9GMzQ2Rk40MDJFSkU5UzRKTVg2Nk1PTy4u) for Beta Builds of ModernFlyouts for experimental features
 &nbsp;
 
 **Alternatively download from Github:**
 
-1. Go to the [latest releases' page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
+1. Go to the [Releases page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
 2. Download the latest ***.msix** file from the assets.
 3. Install the downloaded ***.msix** file and launch the app.
 
@@ -78,11 +74,11 @@ I could have improved the original project but the project is called **AUDIO**Fl
 
 ### Audio Flyout
 
-**Windows Default Flyout**
+**Legacy Flyout**
 
 ![Audio_Old](docs/images/Audio_Old.png)
 
-**ModernFlyout:** 
+**ModernFlyouts:** 
 
 ***Light Theme:***  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; ***Dark Theme:***
 
@@ -96,7 +92,7 @@ _Without TopBar_
 
 &nbsp;
 
-**Windows Default SMTC audio playback session**
+**Legacy SMTC audio playback session**
 
 ![Audio_Old_Session](docs/images/Audio_Old_Session.png)
 
@@ -104,16 +100,16 @@ _Without TopBar_
 
 <table>
   <tr>
-    <td>SMTC audio playback session:</td>
-     <td>Audio playback session with additional info:</td>
+    <td>SMTC audio playback session</td>
+     <td>Audio playback session with additional info</td>
   </tr>
   <tr>
     <td valign="center" halign="center"><img src="docs/images/Audio_Session_Music_NoTop.png"></td>
     <td valign="center" halign="center"><img src="docs/images/Audio_Session_Music_NoTop_More.png"></td>
    </tr>
     <tr>
-    <td>Fallback thumbnail for music playback with no album art:</td>
-     <td>SMTC video playback session with additional info:</td>
+    <td>Fallback thumbnail for music playback with no album art</td>
+     <td>SMTC video playback session with additional info</td>
   </tr>
    <tr>
     <td valign="center" halign="center"><img src="docs/images/Audio_Session_Music_NoTop_NoAlbumArt.png"></td>
@@ -125,9 +121,9 @@ _Without TopBar_
 ### Brightness Flyout
 
 <table>
-    <td><h4>Legacy Flyout:</h4></td>
-    <td><h4>ModernFlyout (With TopBar):</h4></td>
-     <td><h4>ModernFlyout (Without TopBar):</h4></td>
+    <td><h4>Legacy Flyout</h4></td>
+    <td><h4>ModernFlyouts' (With TopBar)</h4></td>
+     <td><h4>ModernFlyouts' (Without TopBar)</h4></td>
   </tr>
    <tr>
     <td valign="center" halign="center"><img src="docs/images/Brightness_Old.png"></td>
@@ -142,9 +138,9 @@ _Without TopBar_
 **(On state)**
 
 <table>
-    <td><h4>Legacy Flyout:</h4></td>
-    <td><h4>ModernFlyout (With TopBar):</h4></td>
-     <td><h4>ModernFlyout (Without TopBar):</h4></td>
+    <td><h4>Legacy Flyout</h4></td>
+    <td><h4>ModernFlyouts' (With TopBar)</h4></td>
+     <td><h4>ModernFlyouts' (Without TopBar)</h4></td>
   </tr>
    <tr>
     <td valign="center" halign="center"><img src="docs/images/Airplane_Old.png"></td>
@@ -159,12 +155,12 @@ _Without TopBar_
 **(Caps-lock On)**
 
 <table>
-    <td><h4>Legacy Flyout:</h4></td>
-    <td><h4>ModernFlyout (With TopBar):</h4></td>
-     <td><h4>ModernFlyout (Without TopBar):</h4></td>
+    <td><h4>Legacy Flyout</h4></td>
+    <td><h4>ModernFlyouts' (With TopBar)</h4></td>
+     <td><h4>ModernFlyouts' (Without TopBar)</h4></td>
   </tr>
    <tr>
-    <td halign="center" valign="center"><h4>Not available</h4></td>
+    <td halign="center" valign="center"><h4>Not Available</h4></td>
     <td valign="center" halign="center"><img src="docs/images/LockKey_Caps.png"></td>
     <td valign="center" halign="center"><img src="docs/images/LockKey_Caps_NoTop.png"></td>
   </tr>
