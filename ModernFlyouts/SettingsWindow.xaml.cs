@@ -15,6 +15,7 @@ namespace ModernFlyouts
 	public partial class SettingsWindow : Window
 	{
 		private bool _isActive;
+        public double OpenPaneLength { get; set; }
 
         public SettingsWindow()
 		{
@@ -136,5 +137,10 @@ namespace ModernFlyouts
         }
 
         #endregion
+
+        private void ContentFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
     }
 }

@@ -47,11 +47,11 @@
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} 已关闭</value>
-    <comment>E.g. CapsLock is off</comment>
+    <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
     <value>{0} 已打开</value>
-    <comment>E.g. CapsLock is on</comment>
+    <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>覆写模式</value>
@@ -141,7 +141,7 @@
     <value>弹窗默认位置（用于恢复默认位置按钮）</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>输入"X,Y"格式的位置（例如 50,60）</value>
+    <value>输入"X，Y"格式的位置（例如 50,60）</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>弹窗顶栏</value>
@@ -163,12 +163,6 @@
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>开机时运行</value>
-  </data>
-  <data name="Settings.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>在音量弹窗中显示系统全局媒体传输控制</value>
-  </data>
-  <data name="Settings.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>在媒体弹窗中显示音量控制</value>
   </data>
   <data name="Settings.TrayIconMode" xml:space="preserve">
     <value>托盘图标样式</value>
@@ -203,12 +197,6 @@
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>垂直</value>
   </data>
-  <data name="Settings.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>要垂直显示媒体控件的最大数量</value>
-  </data>
-  <data name="Settings.SessionsPanelOrientation" xml:space="preserve">
-    <value>媒体面板方向</value>
-  </data>
   <data name="About.AppDescription" xml:space="preserve">
     <value>该程序用于将旧的 Windows 8 Metro 风格弹窗覆盖为 Fluent Design 风格弹窗。</value>
   </data>
@@ -222,7 +210,7 @@
     <value>创建新 Issue</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>去 Microsoft Store 评分</value>
+    <value>去 Microsoft Store 评分并发送评价</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>版本：</value>
@@ -231,7 +219,7 @@
     <value>语言</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>请重新启动应用程序以正确更改语言</value>
+    <value>请重新启动应用程序，以便完整更改语言</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
     <value>系统默认</value>
@@ -249,7 +237,7 @@
     <value>媒体面板方向</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>在音量弹窗中显示系统全局媒体传输</value>
+    <value>在音量弹窗中显示系统全局媒体传输 / 媒体控制</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
     <value>在媒体弹窗中显示音量控制</value>
