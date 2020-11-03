@@ -43,7 +43,7 @@
                                   SelectedItem="{Binding UIManager.SessionsPanelOrientation}" />
                         <ui:NumberBox Header="{x:Static resx:Strings.AudioFlyoutHelper_MaxVerticalSessionControlsCount}" MinWidth="240"
                                       HorizontalAlignment="Left" Minimum="1" Maximum="10" SmallChange="1" LargeChange="2"
-                                      SpinButtonPlacementMode="Compact" Value="{Binding UIManager.MaxVerticalSessionControlsCount}"
+                                      SpinButtonPlacementMode="Inline" Value="{Binding UIManager.MaxVerticalSessionControlsCount}"
                                       Visibility="{Binding ElementName=orientationCmbBox, Path=SelectedIndex,
                                         Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}" />
                     </ui:SimpleStackPanel>

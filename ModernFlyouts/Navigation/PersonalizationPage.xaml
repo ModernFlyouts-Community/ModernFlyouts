@@ -49,7 +49,7 @@
                     <ui:NumberBox Header="{x:Static resx:Strings.Settings_FlyoutTimeout}"
                                   HorizontalAlignment="Left" Minimum="100"
                                   SmallChange="50" LargeChange="100" MinWidth="240"
-                                  SpinButtonPlacementMode="Compact" Value="{Binding UIManager.FlyoutTimeout}" />
+                                  SpinButtonPlacementMode="Inline" Value="{Binding UIManager.FlyoutTimeout}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

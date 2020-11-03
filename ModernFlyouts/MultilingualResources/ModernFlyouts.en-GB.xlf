@@ -316,8 +316,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout theme</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
-          <source>Flyout timeout (ms)</source>
+          <source>Flyout timeout (ms) -  [Default 2750]</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout timeout (ms)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>

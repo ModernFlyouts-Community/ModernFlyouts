@@ -392,8 +392,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">"飛出"主題</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
-          <source>Flyout timeout (ms)</source>
+          <source>Flyout timeout (ms) -  [Default 2750]</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">飛出逾時 (ms)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
