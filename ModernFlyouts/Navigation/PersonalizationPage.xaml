@@ -19,6 +19,11 @@
                                      ItemsSource="{Binding Source={x:Type ui:ElementTheme},
                                             Converter={StaticResource EnumValuesConverter}}"
                                      SelectedItem="{Binding UIManager.FlyoutTheme}" />
+                    <ui:RadioButtons Header="{x:Static resx:Strings.Settings_AppTheme}"
+                                     ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
+                                     ItemsSource="{Binding Source={x:Type ui:ElementTheme},
+                                            Converter={StaticResource EnumValuesConverter}}"
+                                     SelectedItem="{Binding UIManager.AppTheme}" />
                     <ui:RadioButtons Header="{x:Static resx:Strings.Settings_TopBarVisibility}"
                                      ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
                                      ItemsSource="{Binding Source={x:Type localui:TopBarVisibility},

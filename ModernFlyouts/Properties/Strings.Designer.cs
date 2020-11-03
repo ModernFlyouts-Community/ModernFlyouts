@@ -619,6 +619,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to App Theme.
+        /// </summary>
+        public static string Settings_AppTheme {
+            get {
+                return ResourceManager.GetString("Settings.AppTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Behavior.
         /// </summary>
         public static string Settings_Behavior {
@@ -786,6 +795,15 @@ namespace ModernFlyouts.Properties {
         public static string Settings_Left {
             get {
                 return ResourceManager.GetString("Settings.Left", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ModernFlyouts.
+        /// </summary>
+        public static string Settings_ModernFlyouts {
+            get {
+                return ResourceManager.GetString("Settings.ModernFlyouts", resourceCulture);
             }
         }
         

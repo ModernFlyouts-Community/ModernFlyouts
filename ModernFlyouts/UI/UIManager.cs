@@ -59,6 +59,22 @@ namespace ModernFlyouts.UI
             }
         }
 
+        private ElementTheme appTheme = DefaultValuesStore.AppTheme;
+
+        public ElementTheme AppTheme
+        {
+            get => appTheme;
+            set
+            {
+                if (SetProperty(ref appTheme, value))
+                {
+                    UpdateTheme();
+                    AppDataHelper.AppTheme = value;
+                }
+            }
+        }
+
+
         private int flyoutTimeout = DefaultValuesStore.FlyoutTimeout;
 
         public int FlyoutTimeout
@@ -203,6 +219,7 @@ namespace ModernFlyouts.UI
             UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
 
             FlyoutTheme = AppDataHelper.FlyoutTheme;
+            AppTheme = AppDataHelper.AppTheme;
 
             SystemTheme.SystemThemeChanged += OnSystemThemeChanged;
             SystemTheme.Initialize();

@@ -289,6 +289,12 @@ namespace ModernFlyouts.Helpers
             set => SetEnum(value);
         }
 
+        public static ElementTheme AppTheme
+        {
+            get => GetEnum(DefaultValuesStore.AppTheme);
+            set => SetEnum(value);
+        }
+
         public static int FlyoutTimeout
         {
             get => GetInteger(DefaultValuesStore.FlyoutTimeout);

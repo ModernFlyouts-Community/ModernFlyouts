@@ -53,6 +53,8 @@ namespace ModernFlyouts.Helpers
 
         public const ElementTheme FlyoutTheme = ElementTheme.Dark;
 
+        public const ElementTheme AppTheme = ElementTheme.Light;
+
         public const int FlyoutTimeout = 2750;
 
         public const double FlyoutBackgroundOpacity = 100.0;

@@ -308,6 +308,9 @@
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Appearance</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>App Theme</value>
+  </data>
   <data name="Settings.Behavior" xml:space="preserve">
     <value>Behavior</value>
   </data>
@@ -364,6 +367,9 @@
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Left</value>
+  </data>
+  <data name="Settings.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Flyout Modules</value>

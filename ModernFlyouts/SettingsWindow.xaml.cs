@@ -142,5 +142,10 @@ namespace ModernFlyouts
         {
 
         }
+
+        private void SettingsWindow_OnBackRequested(object? sender, BackRequestedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

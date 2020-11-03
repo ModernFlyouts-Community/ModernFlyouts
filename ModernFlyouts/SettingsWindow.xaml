@@ -6,11 +6,25 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
         xmlns:resx="clr-namespace:ModernFlyouts.Properties"
-        mc:Ignorable="d" ui:WindowHelper.UseModernWindowStyle="True" ui:TitleBar.ExtendViewIntoTitleBar="True"
-        Title="{x:Static resx:Strings.SettingsItem}" d:DesignHeight="450" d:DesignWidth="800" MinWidth="350" Icon="Assets\Logo.ico" Height="700" Width="900">
-    <ui:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="True" IsSettingsVisible="False"
-                       IsTabStop="False" SelectionChanged="NavView_SelectionChanged" IsPaneOpen="True"
-                       BackRequested="NavView_BackRequested" PaneDisplayMode="Auto" OpenPaneLength="224" ExpandedModeThresholdWidth="800" CompactModeThresholdWidth="350">
+        mc:Ignorable="d"
+        ui:ThemeManager.IsThemeAware="True"
+        ui:WindowHelper.UseModernWindowStyle="True" 
+        ui:TitleBar.ExtendViewIntoTitleBar="True"
+        ui:TitleBar.Background="Transparent"
+        Height="700" Width="900"
+        WindowStartupLocation="CenterOwner">
+    <!--ui:TitleBar.IsBackButtonVisible="True" ui:TitleBar.IsBackEnabled="True"-->
+    <ui:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="True" IsSettingsVisible="False" IsBackButtonVisible="Collapsed"
+                       IsTabStop="False" SelectionChanged="NavView_SelectionChanged" IsPaneOpen="True" 
+                       PaneDisplayMode="Auto" OpenPaneLength="224" ExpandedModeThresholdWidth="800" CompactModeThresholdWidth="350">
+        <ui:NavigationView.PaneHeader>
+            <Image Width="155">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="155" UriSource="Assets/Images/NAVviewHeader.png" />
+                </Image.Source>
+            </Image>
+        </ui:NavigationView.PaneHeader>
+
         <ui:NavigationView.MenuItems>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.GeneralSettings}" Icon="Setting" Tag="general" />
             <ui:NavigationViewItem Content="Personalization" Tag="personalization">

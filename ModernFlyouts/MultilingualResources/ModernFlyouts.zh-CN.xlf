@@ -392,7 +392,7 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">弹窗主题</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
-          <source>Flyout timeout (ms) -  [Default 2750]</source>
+          <source>Flyout timeout (ms)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">弹窗超时（毫秒 / ms）</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -427,6 +427,14 @@
         <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
           <source>On</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">打开</target>
+        </trans-unit>
+        <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
+          <source>App Theme</source>
+          <target state="new">App Theme</target>
+        </trans-unit>
+        <trans-unit id="Settings.ModernFlyouts" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts</source>
+          <target state="new">ModernFlyouts</target>
         </trans-unit>
       </group>
     </body>
