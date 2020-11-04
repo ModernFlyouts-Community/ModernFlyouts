@@ -43,10 +43,12 @@
                                      IsOn="{Binding UIManager.TrayIconEnabled}"
                                      OnContent="{x:Static resx:Strings.Settings_On}"
                                      OffContent="{x:Static resx:Strings.Settings_Off}" />
-                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_TrayIconMode}"
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_UseColoredTrayIcon}"
                                      IsOn="{Binding UIManager.UseColoredTrayIcon}"
-                                     OnContent="{x:Static resx:Strings.Settings_TrayIconMode_Colored}"
-                                     OffContent="{x:Static resx:Strings.Settings_TrayIconMode_Monochrome}" />
+                                     OnContent="{x:Static resx:Strings.Settings_On}"
+                                     OffContent="{x:Static resx:Strings.Settings_Off}"
+                                     Visibility="{Binding UIManager.TrayIconEnabled,
+                                        Converter={StaticResource BooleanToVisibilityConverter}}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
             <GroupBox Header="{x:Static resx:Strings.Settings_Behavior}">

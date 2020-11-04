@@ -36,11 +36,11 @@
                         <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_ThumbnailAlignment}"
                                          OnContent="{x:Static resx:Strings.Settings_Right}" OffContent="{x:Static resx:Strings.Settings_Left}"
                                          IsOn="{Binding UIManager.AlignGSMTCThumbnailToRight}" />
-                        <ComboBox x:Name="orientationCmbBox" x:FieldModifier="private"
-                                  ui:ControlHelper.Header="{x:Static resx:Strings.AudioFlyoutHelper_SessionsPanelOrientation}"
-                                  ItemTemplate="{StaticResource LocalizedEnumItemTemplate}" MinWidth="240"
-                                  ItemsSource="{Binding Source={x:Type Orientation}, Converter={StaticResource EnumValuesConverter}}"
-                                  SelectedItem="{Binding UIManager.SessionsPanelOrientation}" />
+                        <ui:RadioButtons x:Name="orientationCmbBox" x:FieldModifier="private"
+                                         Header="{x:Static resx:Strings.AudioFlyoutHelper_SessionsPanelOrientation}"
+                                         ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
+                                         ItemsSource="{Binding Source={x:Type Orientation}, Converter={StaticResource EnumValuesConverter}}"
+                                         SelectedItem="{Binding UIManager.SessionsPanelOrientation}" />
                         <ui:NumberBox Header="{x:Static resx:Strings.AudioFlyoutHelper_MaxVerticalSessionControlsCount}" MinWidth="240"
                                       HorizontalAlignment="Left" Minimum="1" Maximum="10" SmallChange="1" LargeChange="2"
                                       SpinButtonPlacementMode="Inline" Value="{Binding UIManager.MaxVerticalSessionControlsCount}"

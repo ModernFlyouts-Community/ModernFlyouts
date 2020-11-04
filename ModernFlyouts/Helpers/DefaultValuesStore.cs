@@ -51,9 +51,9 @@ namespace ModernFlyouts.Helpers
 
         public const TopBarVisibility DefaultTopBarVisibility = TopBarVisibility.Visible;
 
-        public const ElementTheme FlyoutTheme = ElementTheme.Dark;
+        public const ElementTheme FlyoutTheme = ElementTheme.Default;
 
-        public const ElementTheme AppTheme = ElementTheme.Light;
+        public const ElementTheme AppTheme = ElementTheme.Default;
 
         public const int FlyoutTimeout = 2750;
 

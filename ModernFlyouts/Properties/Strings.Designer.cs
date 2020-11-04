@@ -925,29 +925,11 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tray icon color mode.
+        ///   Looks up a localized string similar to Use colored tray icon.
         /// </summary>
-        public static string Settings_TrayIconMode {
+        public static string Settings_UseColoredTrayIcon {
             get {
-                return ResourceManager.GetString("Settings.TrayIconMode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Colored.
-        /// </summary>
-        public static string Settings_TrayIconMode_Colored {
-            get {
-                return ResourceManager.GetString("Settings.TrayIconMode.Colored", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Monochrome.
-        /// </summary>
-        public static string Settings_TrayIconMode_Monochrome {
-            get {
-                return ResourceManager.GetString("Settings.TrayIconMode.Monochrome", resourceCulture);
+                return ResourceManager.GetString("Settings.UseColoredTrayIcon", resourceCulture);
             }
         }
         

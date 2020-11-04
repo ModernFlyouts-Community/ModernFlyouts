@@ -54,11 +54,9 @@
     <None Remove="Assets\Images\ModernFlyouts_White_36.png" />
     <None Remove="Assets\Images\ModernFlyouts_White_48.png" />
     <None Remove="Assets\Images\ModernFlyouts_White_96.png" />
-    <None Remove="Assets\Images\NAVviewHeader.png" />
     <None Remove="Assets\Logo.ico" />
     <None Remove="Assets\Logo_Tray_Black.ico" />
     <None Remove="Assets\Logo_Tray_White.ico" />
-    <None Remove="Navigation\LockKeysModulePage.xaml~RF1479043.TMP" />
   </ItemGroup>
   
   <ItemGroup>
@@ -84,7 +82,6 @@
     <Resource Include="Assets\Images\ModernFlyouts_White_36.png" />
     <Resource Include="Assets\Images\ModernFlyouts_White_48.png" />
     <Resource Include="Assets\Images\ModernFlyouts_White_96.png" />
-    <Resource Include="Assets\Images\NAVviewHeader.png" />
     <Resource Include="Assets\Logo.ico" />
     <Resource Include="Assets\Logo_Tray_Black.ico" />
     <Resource Include="Assets\Logo_Tray_White.ico" />

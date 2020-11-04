@@ -15,7 +15,6 @@ namespace ModernFlyouts
 	public partial class SettingsWindow : Window
 	{
 		private bool _isActive;
-        public double OpenPaneLength { get; set; }
 
         public SettingsWindow()
 		{
@@ -131,21 +130,11 @@ namespace ModernFlyouts
                     .OfType<NavigationViewItem>()
                     .FirstOrDefault(n => n.Tag.Equals(item.Tag));
 
-                NavView.Header =
+                HeaderBlock.Text =
                     ((NavigationViewItem)NavView.SelectedItem)?.Content?.ToString();
             }
         }
 
         #endregion
-
-        private void ContentFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-
-        }
-
-        private void SettingsWindow_OnBackRequested(object? sender, BackRequestedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
