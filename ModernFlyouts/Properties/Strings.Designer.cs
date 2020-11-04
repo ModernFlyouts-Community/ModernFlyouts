@@ -799,15 +799,6 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ModernFlyouts.
-        /// </summary>
-        public static string Settings_ModernFlyouts {
-            get {
-                return ResourceManager.GetString("Settings.ModernFlyouts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Flyout Modules.
         /// </summary>
         public static string Settings_Modules {
