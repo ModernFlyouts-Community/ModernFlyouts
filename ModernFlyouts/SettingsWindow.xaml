@@ -6,12 +6,12 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
         xmlns:resx="clr-namespace:ModernFlyouts.Properties"
-        mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800"
+        mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800" Height="700" Width="900"
         ui:WindowHelper.UseModernWindowStyle="True" ui:TitleBar.ExtendViewIntoTitleBar="True"
         Title="{x:Static resx:Strings.SettingsItem}" MinWidth="350" Icon="Assets\Logo.ico">
     <ui:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False" IsSettingsVisible="False"
-                       IsTabStop="False" SelectionChanged="NavView_SelectionChanged" IsPaneOpen="False"
-                       BackRequested="NavView_BackRequested" PaneDisplayMode="Auto">
+                       IsTabStop="False" SelectionChanged="NavView_SelectionChanged" IsPaneOpen="True"
+                       BackRequested="NavView_BackRequested" PaneDisplayMode="Auto" OpenPaneLength="224" ExpandedModeThresholdWidth="800" CompactModeThresholdWidth="350">
         <ui:NavigationView.MenuItems>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.GeneralSettings}" Icon="Setting" Tag="general" />
             <ui:NavigationViewItem Content="Personalization" Tag="personalization">
@@ -60,10 +60,6 @@
                            Margin="12,45,0,11" Style="{DynamicResource TitleTextBlockStyle}" />
             </Grid>
             <ui:Frame x:Name="ContentFrame" Grid.Row="1" IsTabStop="True" />
-            <ui:CommandBar Grid.Row="2">
-                <ui:AppBarButton Label="Reset all settings to defaults" Icon="Refresh" />
-                <ui:AppBarButton Label="{x:Static resx:Strings.ExitItem}" ToolTip="{x:Static resx:Strings.ExitItemDescription}" Icon="Cancel" />
-            </ui:CommandBar>
         </Grid>
     </ui:NavigationView>
 </Window>

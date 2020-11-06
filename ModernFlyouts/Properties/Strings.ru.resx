@@ -164,15 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Запускать при включении компьютера</value>
   </data>
-  <data name="Settings.TrayIconMode" xml:space="preserve">
-    <value>Отображение иконки в Tray</value>
-  </data>
-  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
-    <value>Цветной</value>
-  </data>
-  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
-    <value>Монохромный</value>
-  </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Настройки</value>
   </data>

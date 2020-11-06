@@ -164,15 +164,6 @@
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Lancer au démarrage</value>
   </data>
-  <data name="Settings.TrayIconMode" xml:space="preserve">
-    <value>Mode de l'icône de notification</value>
-  </data>
-  <data name="Settings.TrayIconMode.Colored" xml:space="preserve">
-    <value>Colorée</value>
-  </data>
-  <data name="Settings.TrayIconMode.Monochrome" xml:space="preserve">
-    <value>Monochrome</value>
-  </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Paramètres</value>
   </data>

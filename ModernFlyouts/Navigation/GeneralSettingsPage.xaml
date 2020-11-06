@@ -72,6 +72,15 @@
                     <Button Content="Align flyout to this position" />
                 </ui:SimpleStackPanel>
             </GroupBox>
+
+            <ui:SimpleStackPanel Spacing="10">
+                <GroupBox Header="{x:Static resx:Strings.Settings_ResetToDefaults}">
+                    <ui:SimpleStackPanel Spacing="10">
+                        <Button Content="{x:Static resx:Strings.Settings_Reset}"/>
+                </ui:SimpleStackPanel>
+            </GroupBox>
+            </ui:SimpleStackPanel>
+
         </StackPanel>
     </controls:ScrollViewerEx>
 </Page>

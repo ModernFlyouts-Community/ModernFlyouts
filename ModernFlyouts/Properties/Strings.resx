@@ -422,4 +422,13 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Unpin TopBar</value>
   </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs.Settings_Reset}</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Reset all settings to defaults</value>
+  </data>
 </root>
