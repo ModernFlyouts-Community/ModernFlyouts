@@ -216,19 +216,6 @@
           <source>Run at startup</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">اجرا در راه اندازی</target>
         </trans-unit>
-        <trans-unit id="Settings.TrayIconMode" translate="yes" xml:space="preserve">
-          <source>Tray icon color mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">حالت آیکون سینی</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="Settings.TrayIconMode.Colored" translate="yes" xml:space="preserve">
-          <source>Colored</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">رنگی</target>
-        </trans-unit>
-        <trans-unit id="Settings.TrayIconMode.Monochrome" translate="yes" xml:space="preserve">
-          <source>Monochrome</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">مونوکروم</target>
-        </trans-unit>
         <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
           <source>Settings</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">تنظیمات</target>
@@ -432,9 +419,21 @@
           <source>App Theme</source>
           <target state="new">App Theme</target>
         </trans-unit>
-        <trans-unit id="Settings.ModernFlyouts" translate="yes" xml:space="preserve">
-          <source>ModernFlyouts</source>
-          <target state="new">ModernFlyouts</target>
+        <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
+          <source>Use colored tray icon</source>
+          <target state="new">Use colored tray icon</target>
+        </trans-unit>
+        <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
+          <source>ngs.Settings_Reset}</source>
+          <target state="new">ngs.Settings_Reset}</target>
+        </trans-unit>
+        <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
+          <source>Reset</source>
+          <target state="new">Reset</target>
+        </trans-unit>
+        <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
+          <source>Reset all settings to defaults</source>
+          <target state="new">Reset all settings to defaults</target>
         </trans-unit>
       </group>
     </body>
