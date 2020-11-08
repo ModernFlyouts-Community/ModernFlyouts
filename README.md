@@ -38,7 +38,7 @@ This project has its roots on [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 ## Installation
 Modern Flyouts is available for you to install via [GitHub](https://github.com/ShankarBUS/ModernFlyouts/releases/latest), **winget** and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
-All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **heavily recommended** as it is easier to install and will automatically remain up to date.
+All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **recommended** as it is easier to install and will automatically remain up to date.
 
 **Microsoft Store:**
 
