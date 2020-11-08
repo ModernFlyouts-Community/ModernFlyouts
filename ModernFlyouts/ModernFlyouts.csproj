@@ -14,7 +14,7 @@
     <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>latest</LangVersion>
-    <Version>0.8.1.7-beta</Version>
+    <Version>0.8.1.8-beta</Version>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
   </PropertyGroup>
 
@@ -23,6 +23,9 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="Microsoft.AppCenter" Version="3.4.3" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.4.3" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.4.3" />
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.0-preview3" />
     <PackageReference Include="ModernWpfUI" Version="0.9.3-preview.201004.0" />
     <PackageReference Include="NAudio" Version="1.10.0" />
