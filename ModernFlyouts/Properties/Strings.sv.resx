@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>På</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>App-tema</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Använda ikonen för färgat fack</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Återställ</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Återställ alla inställningar till standardvärden</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Anpassning</value>
+  </data>
 </root>

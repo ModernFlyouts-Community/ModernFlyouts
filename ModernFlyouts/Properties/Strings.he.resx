@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>‏‏פועל</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>ערכת נושא של אפליקציה</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>השתמש בסמל מגש צבעוני</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>אני לא יודע מה לעשות. Settings_Reset.</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>איפוס</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>אפס את כל ההגדרות להגדרות ברירות המחדל</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>התאמה אישית</value>
+  </data>
 </root>

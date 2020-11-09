@@ -14,7 +14,7 @@
                        BackRequested="NavView_BackRequested" PaneDisplayMode="Auto" OpenPaneLength="224" ExpandedModeThresholdWidth="800" CompactModeThresholdWidth="350">
         <ui:NavigationView.MenuItems>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.GeneralSettings}" Icon="Setting" Tag="general" />
-            <ui:NavigationViewItem Content="Personalization" Tag="personalization">
+            <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Personalization}" Tag="personalization">
                 <ui:NavigationViewItem.Icon>
                     <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Personalization}" />
                 </ui:NavigationViewItem.Icon>

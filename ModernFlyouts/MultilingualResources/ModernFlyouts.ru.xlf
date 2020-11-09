@@ -418,23 +418,30 @@
         </trans-unit>
         <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
           <source>App Theme</source>
+
           <target state="new">Тема приложения</target>
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
           <target state="new">Использовать цветной значок в трее</target>
+          
         </trans-unit>
         <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
-          <target state="new">ngs.Settings_Reset}</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngs. Settings_Reset»</target>
         </trans-unit>
         <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
           <source>Reset</source>
+          
           <target state="new">Сброс</target>
         </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="new">Сбросить все настройки до значений по умолчанию</target>
+          
+        <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
+          <source>Personalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Персонализация</target>
         </trans-unit>
       </group>
     </body>
