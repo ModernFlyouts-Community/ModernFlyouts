@@ -431,4 +431,13 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>ngs.Settings_Reset}</value>
   </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Reset all settings to defaults</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Personalization</value>
+  </data>
 </root>

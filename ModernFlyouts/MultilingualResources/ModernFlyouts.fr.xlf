@@ -176,6 +176,10 @@
           <source>Select the keys you want to show the flyout for</source>
           <target state="translated">Selectionnez les touches dont vous voulez un menu volant</target>
         </trans-unit>
+        <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
+          <source>ngs.Settings_Reset}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngs. Settings_Reset}</target>
+        </trans-unit>
         <trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
           <source>Pin TopBar</source>
           <target state="translated">Épingler la barre supérieure</target>
@@ -327,6 +331,14 @@
           <source>Flyout TopBar</source>
           <target state="translated">Barre supérieure du menu volant</target>
         </trans-unit>
+        <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="translated">Paramètres</target>
+        </trans-unit>
+        <trans-unit id="SettingsItemDescription" translate="yes" xml:space="preserve">
+          <source>Open settings window</source>
+          <target state="translated">Ouvrir la fenêtre des paramètres</target>
+        </trans-unit>
         <trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
           <source>Language</source>
           <target state="translated">Langue</target>
@@ -375,6 +387,10 @@
           <source>On</source>
           <target state="translated">Activé</target>
         </trans-unit>
+        <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
+          <source>Personalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Personnalisation</target>
+        </trans-unit>
         <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
           <source>Reset</source>
           <target state="translated">Réinitialiser</target>
@@ -407,21 +423,9 @@
           <source>Use colored tray icon</source>
           <target state="translated">Utiliser une icone de notification colorée</target>
         </trans-unit>
-        <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
-          <source>Settings</source>
-          <target state="translated">Paramètres</target>
-        </trans-unit>
-        <trans-unit id="SettingsItemDescription" translate="yes" xml:space="preserve">
-          <source>Open settings window</source>
-          <target state="translated">Ouvrir la fenêtre des paramètres</target>
-        </trans-unit>
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
           <target state="translated">Désépingler la barre supérieure</target>
-        </trans-unit>
-        <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
-          <source>ngs.Settings_Reset}</source>
-          <target state="new">ngs.Settings_Reset}</target>
         </trans-unit>
       </group>
     </body>

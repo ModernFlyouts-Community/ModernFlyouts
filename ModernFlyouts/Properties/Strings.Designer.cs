@@ -889,6 +889,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personalization.
+        /// </summary>
+        public static string Settings_Personalization {
+            get {
+                return ResourceManager.GetString("Settings.Personalization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
         public static string Settings_Reset {

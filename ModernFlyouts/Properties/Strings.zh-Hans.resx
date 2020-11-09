@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>打开</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>应用主题</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>使用彩色托盘图标</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs。Settings_Reset]</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>默认设置</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>将所有设置重置为默认值</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>个性化</value>
+  </data>
 </root>

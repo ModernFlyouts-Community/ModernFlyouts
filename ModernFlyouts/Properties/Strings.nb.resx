@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>På</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>App Tema</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Bruk farget skuffikon</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset.</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Tilbakestill</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Tilbakestill alle innstillingene til standardinnstillingene</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Tilpassing</value>
+  </data>
 </root>
