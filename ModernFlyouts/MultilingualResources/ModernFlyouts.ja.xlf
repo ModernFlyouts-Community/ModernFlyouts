@@ -316,11 +316,11 @@
         </trans-unit>
         <trans-unit id="Enums.ElementTheme.Dark" translate="yes" xml:space="preserve">
           <source>Dark</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">暗い</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ダーク</target>
         </trans-unit>
         <trans-unit id="Enums.ElementTheme.Light" translate="yes" xml:space="preserve">
           <source>Light</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">簡易</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ライト</target>
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.AutoHide" translate="yes" xml:space="preserve">
           <source>Auto-hide</source>
@@ -417,23 +417,27 @@
         </trans-unit>
         <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
           <source>App Theme</source>
-          <target state="new">App Theme</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">アプリのテーマ</target>
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
-          <target state="new">Use colored tray icon</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">色付きトレイ アイコンを使用する</target>
         </trans-unit>
         <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
-          <target state="new">ngs.Settings_Reset}</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngs。Settings_Reset}</target>
         </trans-unit>
         <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
           <source>Reset</source>
-          <target state="new">Reset</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">リセット</target>
         </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
-          <target state="new">Reset all settings to defaults</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">すべての設定をデフォルトにリセット</target>
+        </trans-unit>
+        <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
+          <source>Personalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">個人用設定</target>
         </trans-unit>
       </group>
     </body>

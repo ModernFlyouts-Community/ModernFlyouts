@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Açık</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Uygulama Teması</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Renkli tepsi simgesini kullanma</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Sıfırla</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Tüm ayarları varsayılanlara sıfırlama</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Kişiselleştirme</value>
+  </data>
 </root>

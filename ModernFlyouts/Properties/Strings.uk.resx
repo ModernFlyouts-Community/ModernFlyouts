@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Увімкнуто</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Тема програми</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Використовувати кольорову піктограму лотка</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ні, ні, ні, ні, ні, Settings_Reset}</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Скидання</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Скидання всіх настройок за замовчуванням</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Персоналізація</value>
+  </data>
 </root>

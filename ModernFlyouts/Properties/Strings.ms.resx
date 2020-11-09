@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Hidup</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Tema Aplikasi</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Gunakan ikon dulang berwarna</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Set Semula</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Set semula semua pengesetan ke lalai</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Pemeribadian</value>
+  </data>
 </root>

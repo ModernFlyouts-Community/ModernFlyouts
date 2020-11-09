@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Ativado</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Tema do aplicativo</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Use o ícone da bandeja colorida</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Redefinir</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Redefinir todas as configurações para padrões</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Personalização</value>
+  </data>
 </root>

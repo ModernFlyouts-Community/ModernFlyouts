@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Aan</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Programtema</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Gebruik gekleurde skinkbordikoon</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs. Settings_Reset.</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Stel terug</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Stel alle instellings terug na verstek</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Verpersoonliking</value>
+  </data>
 </root>

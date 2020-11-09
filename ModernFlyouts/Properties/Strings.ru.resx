@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Вкл.</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Тема приложения</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Используйте цветной значок лотка</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset»</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Сброс всех настроек по умолчанию</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Персонализация</value>
+  </data>
 </root>

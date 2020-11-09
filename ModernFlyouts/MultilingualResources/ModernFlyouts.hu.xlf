@@ -417,23 +417,27 @@
         </trans-unit>
         <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
           <source>App Theme</source>
-          <target state="new">App Theme</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alkalmazás téma</target>
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
-          <target state="new">Use colored tray icon</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Színes tálca használata ikon</target>
         </trans-unit>
         <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
-          <target state="new">ngs.Settings_Reset}</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ngs. Settings_Reset}</target>
         </trans-unit>
         <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
           <source>Reset</source>
-          <target state="new">Reset</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Alaphelyzetbe állítás</target>
         </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
-          <target state="new">Reset all settings to defaults</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Az összes beállítás visszaállítása az alapértelmezett értékre</target>
+        </trans-unit>
+        <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
+          <source>Personalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Személyre szabás</target>
         </trans-unit>
       </group>
     </body>

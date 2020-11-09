@@ -311,4 +311,22 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Ενεργό</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Θέμα εφαρμογής</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Χρήση έγχρωμου εικονιδίου κασέτας</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset.</value>
+  </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Επαναφορά</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Επαναφορά όλων των ρυθμίσεων στις προεπιλογές</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Εξατομίκευση</value>
+  </data>
 </root>
