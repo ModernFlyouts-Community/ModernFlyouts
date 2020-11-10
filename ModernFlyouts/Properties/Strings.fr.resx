@@ -15,30 +15,6 @@
   <data name="About" xml:space="preserve">
     <value>À propos</value>
   </data>
-  <data name="About.AppDescription" xml:space="preserve">
-    <value>Cette application est conçue pour être un remplacement moderne en Fluent Design pour les anciens menus volants de type Metro présents dans Windows depuis Windows 8.</value>
-  </data>
-  <data name="About.Contributors" xml:space="preserve">
-    <value>Contributeurs</value>
-  </data>
-  <data name="About.Dependencies" xml:space="preserve">
-    <value>Dépendances</value>
-  </data>
-  <data name="About.FileABug" xml:space="preserve">
-    <value>Si vous trouvez des bogues, veuillez ouvrir un nouveau ticket dans le dépôt GitHub.</value>
-  </data>
-  <data name="About.GitHub" xml:space="preserve">
-    <value>Dépôt GitHub</value>
-  </data>
-  <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Ouvrir un nouveau ticket</value>
-  </data>
-  <data name="About.RateAndReview" xml:space="preserve">
-    <value>Notez et passez en revue sur le Microsoft Store</value>
-  </data>
-  <data name="About.Version" xml:space="preserve">
-    <value>Version : </value>
-  </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
     <value>Le Mode Avion n’est pas disponible :(</value>
   </data>
@@ -51,56 +27,11 @@
   <data name="Align" xml:space="preserve">
     <value>Aligner sur la position par défaut</value>
   </data>
-  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Nombre de sessions à afficher</value>
-  </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
     <value>Aucun périphérique audio connecté</value>
   </data>
-  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>Orientation du panneau des sessions médias</value>
-  </data>
-  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Afficher les contrôles de transport global des médias systèmes (GSMTC) alias les contrôles médias, dans le menu volant Volume</value>
-  </data>
-  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Afficher le contrôle Volume dans le menu volant des contrôles de transport global des médias systèmes (GSMTC) alias le menu volant des médias</value>
-  </data>
-  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>Alignement de la miniature</value>
-  </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
-  </data>
-  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>ModernFlyouts</value>
-  </data>
-  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
-    <value>Aucun</value>
-  </data>
-  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Windows par défaut</value>
-  </data>
-  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
-    <value>Sombre</value>
-  </data>
-  <data name="Enums.ElementTheme.Light" xml:space="preserve">
-    <value>Clair</value>
-  </data>
-  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
-    <value>Horizontale</value>
-  </data>
-  <data name="Enums.Orientation.Vertical" xml:space="preserve">
-    <value>Verticale</value>
-  </data>
-  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
-    <value>Masquer automatiquement</value>
-  </data>
-  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>Réduite</value>
-  </data>
-  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
-    <value>Visible</value>
   </data>
   <data name="ExitItem" xml:space="preserve">
     <value>Quitter</value>
@@ -111,14 +42,8 @@
   <data name="GeneralSettings" xml:space="preserve">
     <value>Général</value>
   </data>
-  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>Verr Maj</value>
-  </data>
-  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>Insérer</value>
-  </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
-    <value>Mode Insertion</value>
+    <value>Mode insertion</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} est désactivé</value>
@@ -128,17 +53,8 @@
     <value>{0} est activé</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
-  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Verr Num</value>
-  </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
-    <value>Mode Refrappe</value>
-  </data>
-  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Verr Défil</value>
-  </data>
-  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Selectionnez les touches dont vous voulez un menu volant</value>
+    <value>Mode refrappe</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
     <value>Épingler la barre supérieure</value>
@@ -156,10 +72,10 @@
     <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Restaurer l'ancien menu volant</value>
+    <value>Restaurer les paramètres par défaut</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Restaure le menu volant par défaut de Windows et quitte en toute sécurité cette application</value>
+    <value>Restaure le menu volant par défaut windows et quitte en toute sécurité cette application</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Autres contrôles</value>
@@ -200,12 +116,6 @@
   <data name="Settings.Additional" xml:space="preserve">
     <value>Additionnel</value>
   </data>
-  <data name="Settings.Appearance" xml:space="preserve">
-    <value>Apparence</value>
-  </data>
-  <data name="Settings.AppTheme" xml:space="preserve">
-    <value>Thème de l'application</value>
-  </data>
   <data name="Settings.Behavior" xml:space="preserve">
     <value>Comportement</value>
   </data>
@@ -224,18 +134,6 @@
   <data name="Settings.Enabled" xml:space="preserve">
     <value>Activé</value>
   </data>
-  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Activer le menu volant du Mode Avion</value>
-  </data>
-  <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Activer le menu volant de l'Audio</value>
-  </data>
-  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Activer le menu volant de la Luminosité</value>
-  </data>
-  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Activer le menu volant des Touches de verrouillage</value>
-  </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
     <value>Opacité d’arrière-plan du menu volant</value>
   </data>
@@ -245,74 +143,26 @@
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
     <value>Entrez la position au format 'X,Y' (par exemple 50,60)</value>
   </data>
-  <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Thème du menu volant</value>
-  </data>
-  <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Temps d'affichage du menu volant (ms)</value>
-  </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Barre supérieure du menu volant</value>
   </data>
-  <data name="Settings.Language" xml:space="preserve">
-    <value>Langue</value>
-  </data>
-  <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>Redémarrage de l’application nécessaire pour changer la langue correctement</value>
-  </data>
-  <data name="Settings.Left" xml:space="preserve">
-    <value>Gauche</value>
-  </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Modules de menus volants</value>
+    <value>Modules</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Mode Avion</value>
+    <value>Module menu volant Mode Avion</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Audio</value>
-  </data>
-  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
-    <value>Media</value>
-  </data>
-  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Volume</value>
+    <value>Module menu volant Audio</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Luminosité</value>
+    <value>Module menu volant Luminosité</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Touches de verrouillage</value>
-  </data>
-  <data name="Settings.Off" xml:space="preserve">
-    <value>Désactivé</value>
-  </data>
-  <data name="Settings.On" xml:space="preserve">
-    <value>Activé</value>
-  </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Réinitialiser</value>
-  </data>
-  <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Réinitialiser tous les paramètres aux valeurs par défaut</value>
-  </data>
-  <data name="Settings.Right" xml:space="preserve">
-    <value>Droite</value>
+    <value>Module menu volant Touches de verrouillage</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Lancer au démarrage</value>
-  </data>
-  <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Par défaut du système</value>
-  </data>
-  <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Visibilité de la barre supérieure</value>
-  </data>
-  <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Afficher l'icône dans la zone de notification</value>
-  </data>
-  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Utiliser une icone de notification colorée</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Paramètres</value>
@@ -322,6 +172,144 @@
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Désépingler la barre supérieure</value>
+  </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows par défaut</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Horizontalement</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Verticale</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Cette application est conçue pour être un remplacement moderne fluent design pour les anciens flyouts sur le thème du métro présents dans Windows depuis Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Collaborateurs</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>Dépôt GitHub</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Ouvrir un nouveau numéro</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Taux et révision sur Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>S’il vous plaît redémarrer l’application pour changer la langue correctement</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Valeur système par défaut</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Dépendances</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Si vous trouvez des bogues, ouvrez un nouveau problème dans le référentiel github.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Nombre de séances à afficher</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientation du panel des sessions de médias</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Afficher global system media transport controls (GSMTC) aka Media controls in Volume flyout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Afficher le contrôle du volume dans Global System Media Transport Controls (GSMTC) aka Media flyout</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Alignement des miniatures</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Sombre</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Clair</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Masquer automatiquement</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Réduit</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Verr. maj</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Verrouillage num</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Verrouillage de défilement</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Sélectionnez les touches pour lesquelle vous souhaitez afficher le menu volant</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Apparence</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Activer le mode Flyout</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Activer le vol d’envol audio</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Activer le flyout de luminosité</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Activer les clés de verrouillage Flyout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Thème Flyout</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Délai d’expiration de vol d’arrêt (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Média</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Année</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Droite</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Visibilité TopBar</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Afficher l’icône sur la zone du plateau système</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Activé</value>
   </data>
   <data name="Settings.AppTheme" xml:space="preserve">
     <value>Thème de l’application</value>
