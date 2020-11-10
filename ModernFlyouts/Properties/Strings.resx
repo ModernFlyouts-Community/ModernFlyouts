@@ -395,6 +395,12 @@
   <data name="Settings.On" xml:space="preserve">
     <value>On</value>
   </data>
+  <data name="Settings.Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Reset all settings to defaults</value>
+  </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Right</value>
   </data>
