@@ -1,7 +1,4 @@
 ﻿using System.Windows;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 
 
 namespace ModernFlyouts
@@ -19,8 +16,6 @@ namespace ModernFlyouts
         {
             FlyoutHandler.Instance = new FlyoutHandler();
             FlyoutHandler.Instance.Initialize();
-            AppCenter.Start("26393d67-ab03-4e26-a6db-aa76bf989c21",
-                typeof(Analytics), typeof(Crashes));
         }
     }
 }

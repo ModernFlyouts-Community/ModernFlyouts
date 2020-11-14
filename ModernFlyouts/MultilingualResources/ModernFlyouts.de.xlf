@@ -13,6 +13,7 @@
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
           <target state="translated" state-qualifier="mt-suggestion">Der Flugzeugmodus ist nicht verfügbar :(</target>
+
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
