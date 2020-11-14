@@ -46,7 +46,7 @@ namespace ModernWpf.Input
             }
         }
 
-        #endregion
+        #endregion IsTapEnabled
 
         #region IsPressed
 
@@ -74,7 +74,7 @@ namespace ModernWpf.Input
             }
         }
 
-        #endregion
+        #endregion IsPressed
 
         #region Tapped
 
@@ -102,7 +102,7 @@ namespace ModernWpf.Input
             element.RaiseEvent(e);
         }
 
-        #endregion
+        #endregion Tapped
 
         private static void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

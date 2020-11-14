@@ -19,7 +19,7 @@ namespace ModernFlyouts.Utilities
             {
                 point = Point.Parse(strValue);
             }
-            catch 
+            catch
             {
                 return new ValidationResult(false, Properties.Strings.PointValidationRule_PointFormatInvalidMessage);
             }

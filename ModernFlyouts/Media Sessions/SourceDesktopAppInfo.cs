@@ -97,11 +97,14 @@ namespace ModernFlyouts
             {
                 case ShowWindowCommands.Normal:
                     return WindowSizeState.Normal;
+
                 case ShowWindowCommands.Minimize:
                 case ShowWindowCommands.ShowMinimized:
                     return WindowSizeState.Minimized;
+
                 case ShowWindowCommands.Maximize:
                     return WindowSizeState.Maximized;
+
                 default:
                     return WindowSizeState.Unknown;
             }
@@ -115,6 +118,6 @@ namespace ModernFlyouts
             Unknown,
         }
 
-        #endregion
+        #endregion Window activation things
     }
 }

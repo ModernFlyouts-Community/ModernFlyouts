@@ -20,7 +20,7 @@ namespace ModernFlyouts.Interop
 
         public static uint ProcessId { get; private set; }
 
-        #endregion
+        #endregion Properties
 
         public static Point GetCoordinates()
         {

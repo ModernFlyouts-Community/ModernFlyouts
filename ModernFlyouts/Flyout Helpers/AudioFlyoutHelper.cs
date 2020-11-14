@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Windows.Media.Control;
+using ModernFlyouts.Controls;
 
 namespace ModernFlyouts
 {
@@ -58,11 +59,11 @@ namespace ModernFlyouts
             }
         }
 
-        #endregion
+        #endregion Properties
 
         public AudioFlyoutHelper()
         {
-           Initialize();
+            Initialize();
         }
 
         public void Initialize()
@@ -89,7 +90,7 @@ namespace ModernFlyouts
             };
             noDeviceMessageBlock.SetResourceReference(TextBlock.StyleProperty, "BaseTextBlockStyle");
 
-            #endregion
+            #endregion Creating Volume Control
 
             #region Creating Session Controls
 
@@ -98,8 +99,8 @@ namespace ModernFlyouts
 
             try { SetupSMTCAsync(); } catch { }
 
-            #endregion
-            
+            #endregion Creating Session Controls
+
             PrimaryContent = volumeControl;
             client = new AudioDeviceNotificationClient();
 
@@ -163,7 +164,6 @@ namespace ModernFlyouts
 
             AppDataHelper.ShowVolumeControlInGSMTCFlyout = showVolumeControlInGSMTCFlyout;
         }
-
 
         #region Volume
 
@@ -278,7 +278,6 @@ namespace ModernFlyouts
                 return;
             }
 
-
             if (device != null)
             {
                 device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100);
@@ -288,7 +287,7 @@ namespace ModernFlyouts
             e.Handled = true;
         }
 
-        #endregion
+        #endregion Volume
 
         #region SMTC
 
@@ -366,7 +365,7 @@ namespace ModernFlyouts
             }
         }
 
-        #endregion
+        #endregion SMTC
 
         #region SMTC Thumbnails
 
@@ -376,7 +375,7 @@ namespace ModernFlyouts
 
         public static ImageSource GetDefaultVideoThumbnail() => new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultVideoThumbnail.png"));
 
-        #endregion
+        #endregion SMTC Thumbnails
 
         protected override void OnEnabled()
         {

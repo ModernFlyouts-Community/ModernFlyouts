@@ -33,20 +33,20 @@ namespace ModernFlyouts
 
         private void Prepare(AirplaneModeChangedEventArgs e)
         {
-            if (e.NotAvailable) 
+            if (e.NotAvailable)
             {
-                airplaneModeControl.txt.Text = Properties.Strings.AirplaneMode_NotAvailable;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Info;
+                airplaneModeControl.txt.SetCurrentValue(System.Windows.Controls.TextBlock.TextProperty, Properties.Strings.AirplaneMode_NotAvailable);
+                airplaneModeControl.AirplaneGlyph.SetCurrentValue(ModernWpf.Controls.FontIcon.GlyphProperty, CommonGlyphs.Info);
             }
             if (e.IsEnabled)
             {
-                airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOn;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Airplane;
+                airplaneModeControl.txt.SetCurrentValue(System.Windows.Controls.TextBlock.TextProperty, Properties.Strings.AirplaneModeOn);
+                airplaneModeControl.AirplaneGlyph.SetCurrentValue(ModernWpf.Controls.FontIcon.GlyphProperty, CommonGlyphs.Airplane);
             }
             else
             {
-                airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOff;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.MobSignal5;
+                airplaneModeControl.txt.SetCurrentValue(System.Windows.Controls.TextBlock.TextProperty, Properties.Strings.AirplaneModeOff);
+                airplaneModeControl.AirplaneGlyph.SetCurrentValue(ModernWpf.Controls.FontIcon.GlyphProperty, CommonGlyphs.MobSignal5);
             }
         }
 
@@ -85,7 +85,6 @@ namespace ModernFlyouts
 
     public class AirplaneModeChangedEventArgs : EventArgs
     {
-
         public AirplaneModeChangedEventArgs(bool enabled, bool notAvail)
         {
             IsEnabled = enabled;
@@ -95,7 +94,6 @@ namespace ModernFlyouts
         public bool IsEnabled { get; set; }
 
         public bool NotAvailable { get; set; }
-
     }
 
     public class AirplaneModeWatcher
@@ -103,6 +101,7 @@ namespace ModernFlyouts
         private readonly ManagementEventWatcher watcher;
 
         public event EventHandler<AirplaneModeChangedEventArgs> Changed;
+
         public AirplaneModeWatcher()
         {
             try

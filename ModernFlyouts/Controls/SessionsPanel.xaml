@@ -1,15 +1,15 @@
 ﻿<UserControl x:Class="ModernFlyouts.SessionsPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:local="clr-namespace:ModernFlyouts"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d"
              d:DesignHeight="138" d:DesignWidth="354"
              MaxWidth="{DynamicResource FlyoutWidth}" DataContext="{x:Static local:FlyoutHandler.Instance}">
     <UserControl.Resources>
-        
+
         <!--region: ScrollViewer-->
 
         <ControlTemplate x:Key="SecondaryContentScrollBarButtonTemplate" TargetType="Button">
@@ -91,7 +91,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <Style x:Key="SecondaryContentScrollBarStyleHorizontal" TargetType="ScrollBar">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Orientation" Value="Horizontal" />
@@ -197,13 +197,11 @@
         </Style>
 
         <!--endregion-->
-        
     </UserControl.Resources>
-    
+
     <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}"
                   Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
         <ui:SimpleStackPanel x:Name="SessionsStackPanel" Spacing="{Binding UIManager.CalculatedSessionsPanelSpacing}"
                              Orientation="{Binding UIManager.SessionsPanelOrientation}" />
     </ScrollViewer>
-    
 </UserControl>

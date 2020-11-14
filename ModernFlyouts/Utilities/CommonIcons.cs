@@ -3,11 +3,11 @@
     public static class CommonGlyphs
     {
         public const string ChevronLeft = "\uE00E";
-        
+
         public const string ChevronRight = "\uE00F";
-        
+
         public const string ChevronUp = "\uE010";
-        
+
         public const string ChevronDown = "\uE011";
 
         public const string Refresh = "\uE149";

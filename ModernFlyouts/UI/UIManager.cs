@@ -74,7 +74,6 @@ namespace ModernFlyouts.UI
             }
         }
 
-
         private int flyoutTimeout = DefaultValuesStore.FlyoutTimeout;
 
         public int FlyoutTimeout
@@ -131,7 +130,7 @@ namespace ModernFlyouts.UI
             }
         }
 
-        #endregion
+        #endregion General
 
         #region Media Controls
 
@@ -193,9 +192,9 @@ namespace ModernFlyouts.UI
             private set => SetProperty(ref calculatedSessionsPanelSpacing, value);
         }
 
-        #endregion
+        #endregion Media Controls
 
-        #endregion
+        #endregion Properties
 
         public void Initialize(FlyoutWindow flyoutWindow)
         {

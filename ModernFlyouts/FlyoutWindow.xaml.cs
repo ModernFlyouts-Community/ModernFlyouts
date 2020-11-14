@@ -57,7 +57,7 @@ namespace ModernFlyouts
             set => SetValue(FlyoutHelperProperty, value);
         }
 
-        #endregion
+        #endregion Properties
 
         #region Events
 
@@ -66,8 +66,8 @@ namespace ModernFlyouts
 
         public event RoutedEventHandler FlyoutShown
         {
-            add { AddHandler(FlyoutShownEvent, value); }
-            remove { RemoveHandler(FlyoutShownEvent, value); }
+            add => AddHandler(FlyoutShownEvent, value);
+            remove => RemoveHandler(FlyoutShownEvent, value);
         }
 
         private void ShowFlyout()
@@ -84,16 +84,16 @@ namespace ModernFlyouts
 
         public event RoutedEventHandler FlyoutHidden
         {
-            add { AddHandler(FlyoutHiddenEvent, value); }
-            remove { RemoveHandler(FlyoutHiddenEvent, value); }
+            add => AddHandler(FlyoutHiddenEvent, value);
+            remove => RemoveHandler(FlyoutHiddenEvent, value);
         }
 
         public static readonly RoutedEvent FlyoutTimedHidingEvent = EventManager.RegisterRoutedEvent(nameof(FlyoutTimedHiding), RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(FlyoutWindow));
 
         public event RoutedEventHandler FlyoutTimedHiding
         {
-            add { AddHandler(FlyoutTimedHidingEvent, value); }
-            remove { RemoveHandler(FlyoutTimedHidingEvent, value); }
+            add => AddHandler(FlyoutTimedHidingEvent, value);
+            remove => RemoveHandler(FlyoutTimedHidingEvent, value);
         }
 
         private void HideFlyout()
@@ -102,7 +102,7 @@ namespace ModernFlyouts
             RaiseEvent(args);
         }
 
-        #endregion
+        #endregion Events
 
         public FlyoutWindow()
         {
@@ -213,15 +213,15 @@ namespace ModernFlyouts
 
         internal void SetUpAnimPreps()
         {
-            T1.Y = -40;
-            ContentGrid.Opacity = 0;
+            T1.SetCurrentValue(System.Windows.Media.TranslateTransform.YProperty, (double)-40);
+            if (ContentGrid != null) ContentGrid.SetCurrentValue(OpacityProperty, (double)0);
         }
 
         private void AlignFlyout(bool toDefault = true)
         {
             var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : AppDataHelper.FlyoutPosition;
 
-            Left = defaultPosition.X - leftShadowMargin; Top = defaultPosition.Y;
+            Left = defaultPosition.X - leftShadowMargin; SetCurrentValue(TopProperty, defaultPosition.Y);
 
             if (toDefault)
             {
@@ -239,7 +239,7 @@ namespace ModernFlyouts
             _topBarVisibility = value;
             _topBarVisible = value == TopBarVisibility.Visible;
 
-            TopBarPinButtonIcon.Glyph = _topBarVisible ? CommonGlyphs.UnPin : CommonGlyphs.Pin;
+            TopBarPinButtonIcon.SetCurrentValue(ModernWpf.Controls.FontIcon.GlyphProperty, _topBarVisible ? CommonGlyphs.UnPin : CommonGlyphs.Pin);
             TopBarPinButton.ToolTip = _topBarVisible ? Properties.Strings.UnpinTopBar : Properties.Strings.PinTopBar;
             _topBarOverlay = false;
             var pos = Mouse.GetPosition(TopBarGrid);
@@ -258,7 +258,7 @@ namespace ModernFlyouts
             var R2 = this.TopBarGrid.RowDefinitions[1];
             if (showTopBar)
             {
-                this.TopBarGrid.Margin = new Thickness(0);
+                TopBarGrid.SetCurrentValue(MarginProperty, new Thickness(0));
                 R2.Height = new GridLength(0);
                 var glAnim = new GridLengthAnimation()
                 {
@@ -273,7 +273,7 @@ namespace ModernFlyouts
             {
                 TopBarOverlayIndicator.Visibility = _topBarVisibility == TopBarVisibility.Collapsed ? Visibility.Collapsed : Visibility.Visible;
 
-                this.TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
+                TopBarGrid.SetCurrentValue(MarginProperty, new Thickness(0, 0, 0, -10));
                 R2.Height = new GridLength(10);
                 var glAnim = new GridLengthAnimation()
                 {

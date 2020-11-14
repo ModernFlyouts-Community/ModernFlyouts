@@ -21,7 +21,7 @@ namespace ModernFlyouts.Helpers
 
         public static readonly Point DefaultFlyoutPosition = new Point(50, 60);
 
-        #endregion
+        #endregion General
 
         #region Module specific
 
@@ -31,7 +31,7 @@ namespace ModernFlyouts.Helpers
 
         public const bool ShowVolumeControlInGSMTCFlyout = true;
 
-        #endregion
+        #endregion Audio module related
 
         #region Lock keys module related
 
@@ -43,9 +43,9 @@ namespace ModernFlyouts.Helpers
 
         public const bool LockKeysModule_InsertEnabled = true;
 
-        #endregion
+        #endregion Lock keys module related
 
-        #endregion
+        #endregion Module specific
 
         #region UI
 
@@ -69,6 +69,6 @@ namespace ModernFlyouts.Helpers
 
         public const Orientation SessionsPanelOrientation = Orientation.Horizontal;
 
-        #endregion
+        #endregion UI
     }
 }

@@ -27,7 +27,7 @@ namespace ModernFlyouts.Helpers
             scrollViewer.SetValue(IsAnimatingProperty, value);
         }
 
-        #endregion
+        #endregion IsAnimating
 
         #region CurrentVerticalOffset
 
@@ -55,7 +55,7 @@ namespace ModernFlyouts.Helpers
             }
         }
 
-        #endregion
+        #endregion CurrentVerticalOffset
 
         #region CurrentHorizontalOffset
 
@@ -83,7 +83,7 @@ namespace ModernFlyouts.Helpers
             }
         }
 
-        #endregion
+        #endregion CurrentHorizontalOffset
 
         internal static void OnMouseWheel(object sender, MouseWheelEventArgs e)
         {

@@ -23,13 +23,13 @@ namespace ModernFlyouts.Utilities
         private const int WM_SYSKEYUP = 0x105;
 
         private KBDLLHookProc KBDLLHookProcDelegate;
-        private IntPtr HHookID = IntPtr.Zero;
+        private readonly IntPtr HHookID = IntPtr.Zero;
 
         #region Properties
 
         public Key? CurrentKey { get; private set; }
 
-        #endregion
+        #endregion Properties
 
         private int KeyboardProc(int nCode, IntPtr wParam, IntPtr lParam)
         {
@@ -56,7 +56,7 @@ namespace ModernFlyouts.Utilities
 
         public KeyboardHook()
         {
-            KBDLLHookProcDelegate =  new KBDLLHookProc(KeyboardProc);
+            KBDLLHookProcDelegate = new KBDLLHookProc(KeyboardProc);
             var module = System.Diagnostics.Process.GetCurrentProcess().MainModule;
             IntPtr handle = GetModuleHandle(module.ModuleName);
             HHookID = (IntPtr)SetWindowsHookEx(WH_KEYBOARD_LL, KBDLLHookProcDelegate, handle, 0);

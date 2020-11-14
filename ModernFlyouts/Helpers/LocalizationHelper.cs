@@ -39,7 +39,7 @@ namespace ModernFlyouts.Helpers
 
         public static ObservableCollection<LanguageInfo> SupportedLanguages { get; private set; }
 
-        #endregion
+        #endregion Properties
 
         public static void Initialize()
         {
@@ -74,7 +74,6 @@ namespace ModernFlyouts.Helpers
                 }
                 catch (CultureNotFoundException)
                 {
-
                 }
             }
 

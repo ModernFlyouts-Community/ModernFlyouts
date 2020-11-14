@@ -20,7 +20,7 @@ namespace ModernFlyouts.UI
 
         public static ToolTip TaskbarIconToolTip { get; private set; }
 
-        #endregion
+        #endregion Properties
 
         public static void SetupTrayIcon()
         {
@@ -55,9 +55,10 @@ namespace ModernFlyouts.UI
             TaskbarIcon.TrayMouseDoubleClick += (_, __) => FlyoutHandler.ShowSettingsWindow();
         }
 
+        /// <exception cref="T:System.InvalidOperationException">Attempted to modify a read-only dependency property, or a property on a sealed <see cref="T:System.Windows.DependencyObject" />.</exception>
         public static void UpdateTrayIconVisibility(bool isVisible)
         {
-            TaskbarIcon.Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
+            TaskbarIcon.SetCurrentValue(UIElement.VisibilityProperty, isVisible ? Visibility.Visible : Visibility.Collapsed);
         }
 
         public static void UpdateTrayIconInternal(ElementTheme currentTheme, bool useColoredTrayIcon)
@@ -75,7 +76,7 @@ namespace ModernFlyouts.UI
                 iconUri = PackUriHelper.GetAbsoluteUri(currentTheme == ElementTheme.Light ? @"Assets\Logo_Tray_Black.ico" : @"Assets\Logo_Tray_White.ico");
             }
 
-            TaskbarIcon.IconSource = BitmapFrame.Create(iconUri);
+            TaskbarIcon.SetCurrentValue(TaskbarIcon.IconSourceProperty, BitmapFrame.Create(iconUri));
         }
     }
 }

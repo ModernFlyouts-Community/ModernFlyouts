@@ -1,7 +1,4 @@
-﻿using ModernFlyouts.Utilities;
-using ModernWpf.Input;
-using ModernWpf.Media.Animation;
-using System;
+﻿using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,8 +11,11 @@ using System.Windows.Threading;
 using Windows.Media;
 using Windows.Media.Control;
 using Windows.Storage.Streams;
+using ModernFlyouts.Utilities;
+using ModernWpf.Input;
+using ModernWpf.Media.Animation;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     public partial class SessionControl : UserControl
     {
@@ -60,7 +60,7 @@ namespace ModernFlyouts
             set => SetValue(AlignThumbnailToRightProperty, value);
         }
 
-        #endregion
+        #endregion Properties
 
         public SessionControl()
         {
@@ -294,7 +294,7 @@ namespace ModernFlyouts
             catch { }
         }
 
-        #endregion
+        #endregion Session Methods
 
         #region Updating View
 
@@ -331,7 +331,6 @@ namespace ModernFlyouts
             }
             catch { }
         }
-
 
         private void UpdateShuffleButton(GlobalSystemMediaTransportControlsSession session)
         {
@@ -410,10 +409,10 @@ namespace ModernFlyouts
                     TimeBar.Maximum = timeline.EndTime.TotalSeconds;
                     TimeBar.Value = timeline.Position.TotalSeconds;
 
-                    CurrentTimeBlock.Text = timeline.Position.ToString("hh\\:mm\\:ss");
-                    TotalTimeBlock.Text = timeline.EndTime.ToString("hh\\:mm\\:ss");
+                    CurrentTimeBlock.SetCurrentValue(TextBlock.TextProperty, timeline.Position.ToString("hh\\:mm\\:ss"));
+                    TotalTimeBlock.SetCurrentValue(TextBlock.TextProperty, timeline.EndTime.ToString("hh\\:mm\\:ss"));
 
-                    TimelineInfoButton.Visibility = Visibility.Visible;
+                    TimelineInfoButton.SetCurrentValue(VisibilityProperty, Visibility.Visible);
                 }
                 else
                 {
@@ -421,10 +420,13 @@ namespace ModernFlyouts
                     TimeBar.Maximum = 100;
                     TimeBar.Value = 0;
 
-                    TimelineInfoButton.Visibility = Visibility.Collapsed;
+                    TimelineInfoButton.SetCurrentValue(VisibilityProperty, Visibility.Collapsed);
                 }
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private async void UpdateSessionInfo(GlobalSystemMediaTransportControlsSession session)
@@ -441,16 +443,15 @@ namespace ModernFlyouts
                     MediaArtistBlock.Text = mediaInfo.Artist;
                 }
 
-                var playback = session.GetPlaybackInfo();
 
-                if (playback != null)
+                if (session.GetPlaybackInfo() != null)
                 {
-                    NextButton.IsEnabled = playback.Controls.IsNextEnabled;
-                    PreviousButton.IsEnabled = playback.Controls.IsPreviousEnabled;
-                    PlayPauseButton.IsEnabled = playback.Controls.IsPauseEnabled || playback.Controls.IsPlayEnabled;
-                    ShuffleButton.IsEnabled = playback.Controls.IsShuffleEnabled;
-                    RepeatButton.IsEnabled = playback.Controls.IsRepeatEnabled;
-                    StopButton.IsEnabled = playback.Controls.IsStopEnabled;
+                    NextButton.SetCurrentValue(IsEnabledProperty, session.GetPlaybackInfo().Controls.IsNextEnabled);
+                    PreviousButton.SetCurrentValue(IsEnabledProperty, session.GetPlaybackInfo().Controls.IsPreviousEnabled);
+                    PlayPauseButton.SetCurrentValue(IsEnabledProperty, session.GetPlaybackInfo().Controls.IsPauseEnabled || session.GetPlaybackInfo().Controls.IsPlayEnabled);
+                    ShuffleButton.SetCurrentValue(IsEnabledProperty, session.GetPlaybackInfo().Controls.IsShuffleEnabled);
+                    RepeatButton.SetCurrentValue(IsEnabledProperty, session.GetPlaybackInfo().Controls.IsRepeatEnabled);
+                    StopButton.SetCurrentValue(IsEnabledProperty, session.GetPlaybackInfo().Controls.IsStopEnabled);
                 }
 
                 MoreControlsButton.Visibility = (ShuffleButton.IsEnabled ||
@@ -460,7 +461,7 @@ namespace ModernFlyouts
 
                 UpdatePlaybackInfo(session);
 
-                await SetThumbnailAsync(mediaInfo.Thumbnail, playback.PlaybackType);
+                await SetThumbnailAsync(mediaInfo.Thumbnail, session.GetPlaybackInfo().PlaybackType);
             }
             catch { }
 
@@ -508,7 +509,7 @@ namespace ModernFlyouts
             };
         }
 
-        #endregion
+        #endregion Thumbnail
 
         #region Transitions
 
@@ -520,11 +521,11 @@ namespace ModernFlyouts
             mediaArtistBlockTranslateTransform.BeginAnimation(TranslateTransform.YProperty, null);
             mediaTitleBlockTranslateTransform.BeginAnimation(TranslateTransform.YProperty, null);
 
-            ThumbnailBackgroundBrush.Opacity = 0.0;
-            ThumbnailImageBrush.Opacity = 0.0;
-            TextBlockGrid.Opacity = 0.0;
-            mediaArtistBlockTranslateTransform.Y = 0.0;
-            mediaTitleBlockTranslateTransform.Y = 0.0;
+            ThumbnailBackgroundBrush.SetCurrentValue(Brush.OpacityProperty, 0.0);
+            ThumbnailImageBrush.SetCurrentValue(Brush.OpacityProperty, 0.0);
+            TextBlockGrid.SetCurrentValue(OpacityProperty, 0.0);
+            mediaArtistBlockTranslateTransform.SetCurrentValue(TranslateTransform.YProperty, 0.0);
+            mediaTitleBlockTranslateTransform.SetCurrentValue(TranslateTransform.YProperty, 0.0);
         }
 
         private void EndTrackTransition()
@@ -552,31 +553,34 @@ namespace ModernFlyouts
             mediaArtistBlockTranslateTransform.BeginAnimation(TranslateTransform.YProperty, YAnim2);
         }
 
-        #endregion
+        #endregion Transitions
 
-        #endregion
+        #endregion Updating View
 
         private static void OnAlignThumbnailToRightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var sessionControl = d as SessionControl;
             var alignThumbnailToRight = (bool)e.NewValue;
 
-            var C0 = sessionControl.ContentGrid.ColumnDefinitions[0];
-            var C2 = sessionControl.ContentGrid.ColumnDefinitions[2];
+            if (sessionControl != null)
+            {
+                var C0 = sessionControl.ContentGrid.ColumnDefinitions[0];
+                var C2 = sessionControl.ContentGrid.ColumnDefinitions[2];
 
-            if (alignThumbnailToRight)
-            {
-                C0.Width = new GridLength(15, GridUnitType.Pixel);
-                C2.Width = new GridLength(0, GridUnitType.Auto);
-                sessionControl.TGParent.SetValue(Grid.ColumnProperty, 2);
-                sessionControl.thumbnailBGOpacityBrush.GradientOrigin = sessionControl.thumbnailBGOpacityBrush.Center = new Point(1, 0.5);
-            }
-            else
-            {
-                C0.Width = new GridLength(0, GridUnitType.Auto);
-                C2.Width = new GridLength(15, GridUnitType.Pixel);
-                sessionControl.TGParent.SetValue(Grid.ColumnProperty, 0);
-                sessionControl.thumbnailBGOpacityBrush.GradientOrigin = sessionControl.thumbnailBGOpacityBrush.Center = new Point(0, 0.5);
+                if (alignThumbnailToRight)
+                {
+                    C0.Width = new GridLength(15, GridUnitType.Pixel);
+                    C2.Width = new GridLength(0, GridUnitType.Auto);
+                    sessionControl.TGParent.SetCurrentValue(Grid.ColumnProperty, 2);
+                    sessionControl.thumbnailBGOpacityBrush.SetCurrentValue(RadialGradientBrush.GradientOriginProperty, sessionControl.thumbnailBGOpacityBrush.Center = new Point(1, 0.5));
+                }
+                else
+                {
+                    C0.Width = new GridLength(0, GridUnitType.Auto);
+                    C2.Width = new GridLength(15, GridUnitType.Pixel);
+                    sessionControl.TGParent.SetCurrentValue(Grid.ColumnProperty, 0);
+                    sessionControl.thumbnailBGOpacityBrush.GradientOrigin = sessionControl.thumbnailBGOpacityBrush.Center = new Point(0, 0.5);
+                }
             }
         }
 

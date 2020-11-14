@@ -22,7 +22,7 @@ namespace ModernFlyouts.Controls
         {
             if (e.Handled) { return; }
             ScrollViewerHelperEx.OnMouseWheel(this, e);
-            e.Handled = true;    
+            e.Handled = true;
         }
     }
 }

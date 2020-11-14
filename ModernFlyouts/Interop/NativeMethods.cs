@@ -94,7 +94,6 @@ namespace ModernFlyouts.Interop
             WS_EX_COMPOSITED = 0x02000000,
             WS_EX_NOACTIVATE = 0x08000000
             //#endif /* WIN32WINNT >= 0x0500 */
-
         }
 
         public static class SWP
@@ -134,7 +133,7 @@ namespace ModernFlyouts.Interop
             ForceMinimize = 11
         }
 
-        #endregion
+        #endregion Enums
 
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
         private static extern IntPtr GetWindowLongPtr32(IntPtr hWnd, int nIndex);
@@ -296,7 +295,6 @@ namespace ModernFlyouts.Interop
                 }
             }
         }
-
 
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]

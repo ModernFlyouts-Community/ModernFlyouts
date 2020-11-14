@@ -22,6 +22,7 @@ namespace ModernFlyouts
         }
 
         private FrameworkElement secondaryContent;
+
         public FrameworkElement SecondaryContent
         {
             get => secondaryContent;
@@ -29,7 +30,7 @@ namespace ModernFlyouts
         }
 
         private bool primaryContentVisible = true;
-        
+
         public bool PrimaryContentVisible
         {
             get => primaryContentVisible;
@@ -60,7 +61,7 @@ namespace ModernFlyouts
             }
         }
 
-        #endregion
+        #endregion Properties
 
         private void OnIsEnabledChanged()
         {
@@ -76,7 +77,6 @@ namespace ModernFlyouts
 
         protected virtual void OnEnabled()
         {
-
         }
 
         protected virtual void OnDisabled()

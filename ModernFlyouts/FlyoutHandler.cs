@@ -13,10 +13,9 @@ namespace ModernFlyouts
 {
     public class FlyoutHandler : ObservableObject
     {
-
         public static event EventHandler Initialized;
 
-        enum HookMessageEnum : uint
+        private enum HookMessageEnum : uint
         {
             HOOK_MEDIA_PLAYPAUSE = 917504,
             HOOK_MEDIA_PREVIOUS = 786432,
@@ -27,8 +26,8 @@ namespace ModernFlyouts
             HOOK_MEDIA_VOLMUTE = 524288
         }
 
-        DispatcherTimer rehooktimer;
-        uint messageShellHookId;
+        private DispatcherTimer rehooktimer;
+        private uint messageShellHookId;
 
         #region Properties
 
@@ -96,7 +95,7 @@ namespace ModernFlyouts
             }
         }
 
-        #endregion
+        #endregion Properties
 
         public void Initialize()
         {
@@ -135,7 +134,7 @@ namespace ModernFlyouts
 
             getStartupStatus();
 
-            #endregion
+            #endregion App Data
 
             #region Initiate Helpers
 
@@ -149,7 +148,7 @@ namespace ModernFlyouts
             LockKeysFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
             BrightnessFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
 
-            #endregion
+            #endregion Initiate Helpers
 
             HasInitialized = true;
             Initialized?.Invoke(null, null);
@@ -278,12 +277,14 @@ namespace ModernFlyouts
                             //Media
                             AudioFlyoutHelper?.OnExternalUpdated(true);
                             break;
+
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLMINUS:
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLMUTE:
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLPLUS:
                             //Volume
                             AudioFlyoutHelper?.OnExternalUpdated(false);
                             break;
+
                         default:
                             //Ignore mouse side buttons and other keyboard special keys
                             break;

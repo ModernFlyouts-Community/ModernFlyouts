@@ -17,7 +17,7 @@ namespace ModernFlyouts.UI.Media.Animation
             get => (GridLength)GetValue(FromProperty);
             set => SetValue(FromProperty, value);
         }
-        
+
         public static readonly DependencyProperty ToProperty =
             DependencyProperty.Register(
                 nameof(To),

@@ -49,8 +49,8 @@ namespace ModernFlyouts.Utilities
 
         // Resource types for EnumResourceNames().
 
-        private readonly static IntPtr RT_ICON = (IntPtr)3;
-        private readonly static IntPtr RT_GROUP_ICON = (IntPtr)14;
+        private static readonly IntPtr RT_ICON = (IntPtr)3;
+        private static readonly IntPtr RT_GROUP_ICON = (IntPtr)14;
 
         private const int MAX_PATH = 260;
 
@@ -74,10 +74,7 @@ namespace ModernFlyouts.Utilities
         /// <summary>
         /// Gets the count of the icons in the associated file.
         /// </summary>
-        public int Count
-        {
-            get { return iconData.Length; }
-        }
+        public int Count => iconData.Length;
 
         /// <summary>
         /// Initializes a new instance of the IconExtractor class from the specified file name.
@@ -263,6 +260,7 @@ namespace ModernFlyouts.Utilities
         }
 
         #region NativeMethods
+
         private static class NativeMethods
         {
             [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
@@ -309,15 +307,15 @@ namespace ModernFlyouts.Utilities
         [UnmanagedFunctionPointer(CallingConvention.Winapi, SetLastError = true, CharSet = CharSet.Unicode)]
         [SuppressUnmanagedCodeSecurity]
         internal delegate bool ENUMRESNAMEPROC(IntPtr hModule, IntPtr lpszType, IntPtr lpszName, IntPtr lParam);
-        #endregion
 
+        #endregion NativeMethods
     }
 
     public static class IconUtil
     {
         private delegate byte[] GetIconDataDelegate(Icon icon);
 
-        static readonly GetIconDataDelegate getIconData;
+        private static readonly GetIconDataDelegate getIconData;
 
         static IconUtil()
         {
@@ -325,7 +323,7 @@ namespace ModernFlyouts.Utilities
 
             var dm = new DynamicMethod(
                 "GetIconData", typeof(byte[]), new Type[] { typeof(Icon) }, typeof(Icon));
-            
+
             var fi = typeof(Icon).GetField(
 #if NETCOREAPP
                 "_iconData",

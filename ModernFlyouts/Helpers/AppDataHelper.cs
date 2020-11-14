@@ -165,7 +165,7 @@ namespace ModernFlyouts.Helpers
             catch { }
         }
 
-        #endregion
+        #endregion Methods
 
         #region Properties
 
@@ -225,7 +225,7 @@ namespace ModernFlyouts.Helpers
             set => SetString(value);
         }
 
-        #endregion
+        #endregion General
 
         #region Module Specific
 
@@ -243,7 +243,7 @@ namespace ModernFlyouts.Helpers
             set => SetBool(value);
         }
 
-        #endregion
+        #endregion Audio module related
 
         #region Lock keys module related
 
@@ -252,28 +252,28 @@ namespace ModernFlyouts.Helpers
             get => GetBool(DefaultValuesStore.LockKeysModule_CapsLockEnabled);
             set => SetBool(value);
         }
-        
+
         public static bool LockKeysModule_NumLockEnabled
         {
             get => GetBool(DefaultValuesStore.LockKeysModule_NumLockEnabled);
             set => SetBool(value);
         }
-        
+
         public static bool LockKeysModule_ScrollLockEnabled
         {
             get => GetBool(DefaultValuesStore.LockKeysModule_ScrollLockEnabled);
             set => SetBool(value);
         }
-        
+
         public static bool LockKeysModule_InsertEnabled
         {
             get => GetBool(DefaultValuesStore.LockKeysModule_InsertEnabled);
             set => SetBool(value);
         }
 
-        #endregion
+        #endregion Lock keys module related
 
-        #endregion
+        #endregion Module Specific
 
         #region UI
 
@@ -337,8 +337,8 @@ namespace ModernFlyouts.Helpers
             set => SetEnum(value);
         }
 
-        #endregion
+        #endregion UI
 
-        #endregion
+        #endregion Properties
     }
 }

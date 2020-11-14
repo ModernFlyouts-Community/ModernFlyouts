@@ -24,7 +24,7 @@
                 <SplineDoubleKeyFrame KeyTime="0:0:0.367" Value="0" KeySpline="0.1, 0.9, 0.2, 1" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        
+
         <Storyboard x:Key="HideFlyout">
             <ui:FadeOutThemeAnimation Storyboard.TargetName="ContentGrid" />
 
@@ -38,7 +38,7 @@
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    
+
     <Window.Triggers>
         <EventTrigger RoutedEvent="local:FlyoutWindow.FlyoutShown">
             <BeginStoryboard Storyboard="{StaticResource ShowFlyout}" />

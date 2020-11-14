@@ -13,7 +13,7 @@ namespace ModernFlyouts
 
         protected string AppId { get; set; }
 
-        #endregion
+        #endregion Properties
 
         public abstract event EventHandler InfoFetched;
 

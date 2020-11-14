@@ -16,6 +16,7 @@ namespace ModernFlyouts.AppLifecycle
         public const bool IsBuildBetaChannel =
 #if BETA
             true;
+
 #else
             false;
 #endif
@@ -52,7 +53,7 @@ namespace ModernFlyouts.AppLifecycle
             {
                 await pipeServer.WaitForConnectionAsync().ConfigureAwait(false);
                 StreamReader reader = new StreamReader(pipeServer);
-                var rawArgs = await reader.ReadToEndAsync();
+                var rawArgs = await reader.ReadToEndAsync().ConfigureAwait(false);
 
                 IList<string> args = rawArgs.Split(JumpListHelper.arg_delimiter);
 
@@ -112,6 +113,6 @@ namespace ModernFlyouts.AppLifecycle
             Environment.Exit(0);
         }
 
-#endregion
+        #endregion App activation & Single instancing
     }
 }
