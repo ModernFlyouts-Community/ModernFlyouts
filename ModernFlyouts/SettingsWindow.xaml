@@ -11,7 +11,8 @@
         Title="{x:Static resx:Strings.SettingsItem}" MinWidth="350" Icon="Assets\Logo.ico">
     <ui:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False" IsSettingsVisible="False"
                        IsTabStop="False" SelectionChanged="NavView_SelectionChanged" IsPaneOpen="True"
-                       BackRequested="NavView_BackRequested" PaneDisplayMode="Auto" OpenPaneLength="224" ExpandedModeThresholdWidth="800" CompactModeThresholdWidth="350">
+                       BackRequested="NavView_BackRequested" PaneDisplayMode="Auto"
+                       OpenPaneLength="300" ExpandedModeThresholdWidth="800" CompactModeThresholdWidth="350">
         <ui:NavigationView.MenuItems>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.GeneralSettings}" Icon="Setting" Tag="general" />
             <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Personalization}" Tag="personalization">
