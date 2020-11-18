@@ -46,7 +46,7 @@ namespace ModernFlyouts
             else
             {
                 airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOff;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.MobSignal5;
+                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.SignalBars;
             }
         }
 

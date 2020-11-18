@@ -217,7 +217,7 @@ namespace ModernFlyouts
             ContentGrid.Opacity = 0;
         }
 
-        private void AlignFlyout(bool toDefault = true)
+        public void AlignFlyout(bool toDefault = true)
         {
             var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : AppDataHelper.FlyoutPosition;
 

@@ -619,6 +619,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Align flyout to this position.
+        /// </summary>
+        public static string Settings_AlignFlyout {
+            get {
+                return ResourceManager.GetString("Settings.AlignFlyout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Appearance.
         /// </summary>
         public static string Settings_Appearance {
@@ -898,20 +907,20 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reset.
-        /// </summary>
-        public static string Settings_Reset {
-            get {
-                return ResourceManager.GetString("Settings.Reset", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reset all settings to defaults.
         /// </summary>
         public static string Settings_ResetToDefaults {
             get {
                 return ResourceManager.GetString("Settings.ResetToDefaults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart required to apply some changes.
+        /// </summary>
+        public static string Settings_RestartRequired {
+            get {
+                return ResourceManager.GetString("Settings.RestartRequired", resourceCulture);
             }
         }
         

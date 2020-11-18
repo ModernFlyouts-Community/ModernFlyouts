@@ -36,7 +36,7 @@
                                 IsMoveToPointEnabled="True" Value="{Binding UIManager.FlyoutBackgroundOpacity}" />
                         <TextBlock Style="{DynamicResource BaseTextBlockStyle}"
                                    VerticalAlignment="Center" Margin="0,22,0,0">
-                            <Run Text="{Binding Path=UIManager.FlyoutBackgroundOpacity, StringFormat={}{0:#0}%}"/>
+                            <Run Text="{Binding Path=UIManager.FlyoutBackgroundOpacity, StringFormat={}{0:#0}%}" />
                         </TextBlock>
                     </ui:SimpleStackPanel>
                     <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_TrayIconEnabled}"

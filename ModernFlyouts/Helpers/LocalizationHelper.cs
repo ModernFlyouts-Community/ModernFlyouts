@@ -47,6 +47,8 @@ namespace ModernFlyouts.Helpers
             SupportedLanguages = GetAllSupportedLanguages();
             var language = AppDataHelper.Language;
             CurrentLanguage = SupportedLanguages.First(x => x.LanguageName == language);
+
+            Thread.CurrentThread.CurrentUICulture = CurrentLanguage.CultureInfo ?? systemUICulture;
         }
 
         private static ObservableCollection<LanguageInfo> GetAllSupportedLanguages()
@@ -83,8 +85,11 @@ namespace ModernFlyouts.Helpers
 
         private static void OnCurrentLanguageChanged()
         {
-            var uiCulture = CurrentLanguage.CultureInfo ?? systemUICulture;
-            Thread.CurrentThread.CurrentUICulture = uiCulture;
+            if (FlyoutHandler.HasInitialized)
+            {
+                FlyoutHandler.Instance.UIManager.RestartRequired = true;
+            }
+
             AppDataHelper.Language = CurrentLanguage.LanguageName;
         }
 

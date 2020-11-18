@@ -377,7 +377,7 @@ namespace ModernFlyouts
                         if (playback.AutoRepeatMode == MediaPlaybackAutoRepeatMode.None)
                         {
                             RepeatButton.IsChecked = false;
-                            RepeatIcon.Glyph = CommonGlyphs.RepeatAll;
+                            RepeatIcon.Glyph = CommonGlyphs.RepeatOff;
                             RepeatButton.ToolTip = Properties.Strings.SessionControl_RepeatOff;
                         }
                         else if (playback.AutoRepeatMode == MediaPlaybackAutoRepeatMode.Track)

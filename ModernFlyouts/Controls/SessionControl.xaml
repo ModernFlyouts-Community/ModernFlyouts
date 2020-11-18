@@ -11,7 +11,7 @@
     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
         <Grid x:Name="ContentGrid">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -85,28 +85,30 @@
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                         <ToggleButton x:Name="ShuffleButton" ToolTip="{x:Static resx:Strings.SessionControl_ShuffleOff}"
                                       Style="{DynamicResource MediaToggleButtonStyle}">
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Shuffle}" FontSize="16.0" />
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Shuffle}"
+                                         FontFamily="Segoe MDL2 Assets" FontSize="16.0" />
                         </ToggleButton>
                         <ToggleButton x:Name="RepeatButton" ToolTip="{x:Static resx:Strings.SessionControl_RepeatOff}"
                                       Margin="40,0" Style="{DynamicResource MediaToggleButtonStyle}">
-                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static utils:CommonGlyphs.RepeatAll}" FontSize="16" />
+                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static utils:CommonGlyphs.RepeatAll}"
+                                         FontFamily="Segoe MDL2 Assets" FontSize="16.0" />
                         </ToggleButton>
                         <Button x:Name="StopButton" ToolTip="{x:Static resx:Strings.SessionControl_Stop}"
                                 Margin="2,0" Width="40" Style="{DynamicResource MediaButtonStyle}">
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Stop}" FontSize="16" />
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Stop}" />
                         </Button>
                     </StackPanel>
                 </ui:SplitView.Pane>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <Button x:Name="PreviousButton" ToolTip="{x:Static resx:Strings.SessionControl_Previous}" Style="{DynamicResource MediaButtonStyle}">
-                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Previous}" FontSize="16" />
+                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Previous}" />
                     </Button>
                     <Button x:Name="PlayPauseButton" ToolTip="{x:Static resx:Strings.SessionControl_Play}"
                             Margin="40,0" Style="{DynamicResource HighlightedMediaButtonStyle}">
-                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static utils:CommonGlyphs.Play}" FontSize="16" />
+                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static utils:CommonGlyphs.Play}" />
                     </Button>
                     <Button x:Name="NextButton" ToolTip="{x:Static resx:Strings.SessionControl_Next}" Style="{DynamicResource MediaButtonStyle}">
-                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Next}" FontSize="16" />
+                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Next}" />
                     </Button>
                 </StackPanel>
             </ui:SplitView>
@@ -114,12 +116,12 @@
             <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" 
                           ToolTip="{x:Static resx:Strings.SessionControl_MoreControls}" Margin="16,0,0,12"
                           IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
-                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" FontSize="16" />
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" />
             </ToggleButton>
 
             <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center"
                     ToolTip="{x:Static resx:Strings.SessionControl_TimelineInfo}" Margin="0,0,16,12">
-                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.TimelineInfo}" FontSize="16" />
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.TimelineInfo}" />
                 <ui:FlyoutService.Flyout>
                     <ui:Flyout x:Name="TimelineInfoFlyout">
                         <Grid Margin="0, 0, 0, 4" Width="{DynamicResource FlyoutWidth}">

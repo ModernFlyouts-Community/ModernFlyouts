@@ -46,8 +46,7 @@ namespace ModernFlyouts
         private void UpdateBrightness(int brightness)
         {
             App.Current.Dispatcher.Invoke(() =>
-            {
-                brightnessControl.BrightnessGlyph.Glyph = brightness > 50 ? CommonGlyphs.Brightness : CommonGlyphs.LowerBrightness; 
+            { 
                 brightnessControl.textVal.Text = brightness.ToString("00");
                 _isInCodeValueChange = true;
                 brightnessControl.BrightnessSlider.Value = brightness;

@@ -17,7 +17,7 @@
                     Background="{DynamicResource ScrollBarButtonBackground}"
                     BorderBrush="{DynamicResource ScrollBarButtonBorderBrush}"
                     SnapsToDevicePixels="True">
-                <ui:FontIcon x:Name="Arrow" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <ui:FontIcon x:Name="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center"
                              FontFamily="{DynamicResource SymbolThemeFontFamily}"
                              Glyph="{TemplateBinding Content}"
                              Foreground="{DynamicResource ScrollBarButtonArrowForeground}" />

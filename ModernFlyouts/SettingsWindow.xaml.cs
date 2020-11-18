@@ -12,54 +12,54 @@ using System.Windows.Interop;
 
 namespace ModernFlyouts
 {
-	public partial class SettingsWindow : Window
-	{
-		private bool _isActive;
+    public partial class SettingsWindow : Window
+    {
+        private bool _isActive;
 
         public SettingsWindow()
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
-			WindowPlacementHelper.SetPlacement(new WindowInteropHelper(this).EnsureHandle(), AppDataHelper.SettingsWindowPlacement);
+            WindowPlacementHelper.SetPlacement(new WindowInteropHelper(this).EnsureHandle(), AppDataHelper.SettingsWindowPlacement);
 
-			ContentFrame.Navigated += OnNavigated;
+            ContentFrame.Navigated += OnNavigated;
 
-			NavView_Navigate("general", new EntranceNavigationTransitionInfo());
+            NavView_Navigate("general", new EntranceNavigationTransitionInfo());
 
-			KeyDown += (s, e) =>
-			{
-				if (e.Key == Key.Back || (e.Key == Key.Left && Keyboard.Modifiers == ModifierKeys.Alt))
-				{
-					BackRequested();
-				}
-			};
-		}
+            KeyDown += (s, e) =>
+            {
+                if (e.Key == Key.Back || (e.Key == Key.Left && Keyboard.Modifiers == ModifierKeys.Alt))
+                {
+                    BackRequested();
+                }
+            };
+        }
 
         protected override void OnActivated(EventArgs e)
         {
-			if (!_isActive)
-			{
-				Workarounds.RenderLoopFix.ApplyFix();
-				_isActive = true;
-			}
+            if (!_isActive)
+            {
+                Workarounds.RenderLoopFix.ApplyFix();
+                _isActive = true;
+            }
 
-			base.OnActivated(e);
+            base.OnActivated(e);
         }
 
         protected override void OnDeactivated(EventArgs e)
         {
-			_isActive = false;
+            _isActive = false;
 
             base.OnDeactivated(e);
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
-			AppDataHelper.SettingsWindowPlacement = WindowPlacementHelper.GetPlacement(new WindowInteropHelper(this).Handle);
-			e.Cancel = true;
-			Hide();
+            AppDataHelper.SettingsWindowPlacement = WindowPlacementHelper.GetPlacement(new WindowInteropHelper(this).Handle);
+            e.Cancel = true;
+            Hide();
 
-			base.OnClosing(e);
+            base.OnClosing(e);
         }
 
         #region Navigation

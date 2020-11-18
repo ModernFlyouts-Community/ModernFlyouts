@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:local="clr-namespace:ModernFlyouts"
         xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
         xmlns:resx="clr-namespace:ModernFlyouts.Properties"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800" Height="700" Width="900"
@@ -14,7 +15,11 @@
                        BackRequested="NavView_BackRequested" PaneDisplayMode="Auto"
                        OpenPaneLength="224" ExpandedModeThresholdWidth="800" CompactModeThresholdWidth="350">
         <ui:NavigationView.MenuItems>
-            <ui:NavigationViewItem Content="{x:Static resx:Strings.GeneralSettings}" Icon="Setting" Tag="general" />
+            <ui:NavigationViewItem Content="{x:Static resx:Strings.GeneralSettings}" Tag="general">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Settings}" />
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Personalization}" Tag="personalization">
                 <ui:NavigationViewItem.Icon>
                     <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Personalization}" />
@@ -29,7 +34,7 @@
             </ui:NavigationViewItem>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Modules_Brightness}" Tag="brightness_module">
                 <ui:NavigationViewItem.Icon>
-                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Light}" />
+                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Brightness}" />
                 </ui:NavigationViewItem.Icon>
             </ui:NavigationViewItem>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Modules_Airplane}" Tag="airplane_mode_module">
@@ -61,6 +66,18 @@
                            Margin="12,45,0,11" Style="{DynamicResource TitleTextBlockStyle}" />
             </Grid>
             <ui:Frame x:Name="ContentFrame" Grid.Row="1" IsTabStop="True" />
+            <Grid Grid.Row="2" Height="48"
+                  Background="{DynamicResource NavigationViewExpandedPaneBackground}"
+                  Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance},
+                      Path=UIManager.RestartRequired, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Info}"
+                             VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{x:Static resx:Strings.Settings_RestartRequired}" />
+            </Grid>
         </Grid>
     </ui:NavigationView>
 </Window>

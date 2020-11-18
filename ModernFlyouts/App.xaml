@@ -79,6 +79,15 @@
                 </Style.Triggers>
             </Style>
 
+            <FontFamily x:Key="SymbolThemeFontFamily">pack://application:,,,/ModernFlyouts;component/Assets/Fonts/#FluentSystemIcons-Regular</FontFamily>
+
+            <Style x:Key="DefaultFontIconStyle" TargetType="{x:Type ui:FontIcon}">
+                <Setter Property="FontFamily" Value="{DynamicResource SymbolThemeFontFamily}" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style TargetType="{x:Type ui:FontIcon}" BasedOn="{StaticResource DefaultFontIconStyle}" />
+
             <DataTemplate x:Key="LocalizedEnumItemTemplate">
                 <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />
             </DataTemplate>

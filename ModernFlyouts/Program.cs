@@ -3,9 +3,6 @@ using ModernFlyouts.Helpers;
 using ModernFlyouts.Interop;
 using System;
 using System.Reflection;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 
 namespace ModernFlyouts
 {
@@ -18,8 +15,12 @@ namespace ModernFlyouts
         {
             AppLifecycleManager.StartApplication(args, () =>
             {
-                AppCenter.Start("26393d67-ab03-4e26-a6db-aa76bf989c21",
-                    typeof(Analytics), typeof(Crashes));
+                InitializePrivateUseClasses();
+
+#if RELEASE
+                Microsoft.AppCenter.AppCenter.Start("26393d67-ab03-4e26-a6db-aa76bf989c21",
+                    typeof(Microsoft.AppCenter.Analytics.Analytics), typeof(Microsoft.AppCenter.Crashes.Crashes));
+#endif
 
                 AppDataMigration.Perform();
 
@@ -70,6 +71,13 @@ namespace ModernFlyouts
         public static string AppVersion
         {
             get => Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+
+        internal static void InitializePrivateUseClasses()
+        {
+#if Screenshots
+            FlyoutHandler.Initialized += (_, __) => Private.ScreenshotHelper.Initialize();
+#endif
         }
     }
 

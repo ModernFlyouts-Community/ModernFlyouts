@@ -214,14 +214,12 @@ namespace ModernFlyouts
             if (device != null && !device.AudioEndpointVolume.Mute)
             {
                 volumeControl.VolumeShadowGlyph.Visibility = Visibility.Visible;
-                if (volume >= 66)
-                    volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume3;
+                if (volume >= 50)
+                    volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume2;
                 else if (volume < 1)
                     volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume0;
-                else if (volume < 33)
+                else if (volume < 50)
                     volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume1;
-                else if (volume < 66)
-                    volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume2;
 
                 volumeControl.textVal.ClearValue(TextBlock.ForegroundProperty);
                 volumeControl.VolumeSlider.IsEnabled = true;
