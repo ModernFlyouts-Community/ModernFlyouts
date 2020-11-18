@@ -292,7 +292,7 @@
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果发现任何 bug，请在 GitHub 仓库中打创建一个新 Issue。</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果发现任何 bug，请在 GitHub 仓库中创建一个新 Issue。</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Number of sessions to show</source>
@@ -425,7 +425,7 @@
         </trans-unit>
         <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngs。Settings_Reset]</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ngs.Settings_Reset}</target>
         </trans-unit>
         <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
           <source>Reset</source>
