@@ -42,8 +42,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Fonts\FluentSystemIcons-Filled.ttf" />
-    <None Remove="Assets\Fonts\FluentSystemIcons-Regular.ttf" />
     <None Remove="Assets\Images\DefaultAudioThumbnail.png" />
     <None Remove="Assets\Images\DefaultImageThumbnail.png" />
     <None Remove="Assets\Images\DefaultVideoThumbnail.png" />
@@ -72,8 +70,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Fonts\FluentSystemIcons-Filled.ttf" />
-    <Resource Include="Assets\Fonts\FluentSystemIcons-Regular.ttf" />
     <Resource Include="Assets\Images\DefaultAudioThumbnail.png" />
     <Resource Include="Assets\Images\DefaultImageThumbnail.png" />
     <Resource Include="Assets\Images\DefaultVideoThumbnail.png" />

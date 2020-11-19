@@ -1,8 +1,8 @@
 ﻿<UserControl x:Class="ModernFlyouts.SessionControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              xmlns:resx="clr-namespace:ModernFlyouts.Properties"
@@ -41,7 +41,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" x:Name="MediaTitleBlock" Style="{DynamicResource BaseTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
-                           Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=MediaTitleBlock}"
+                           d:Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=MediaTitleBlock}"
                            ToolTipService.IsEnabled="{Binding Text, ElementName=MediaTitleBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
                     <TextBlock.RenderTransform>
@@ -50,7 +50,7 @@
                 </TextBlock>
                 <TextBlock Grid.Row="1" x:Name="MediaArtistBlock" Style="{DynamicResource CaptionTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
-                           Text="Song Artist" ToolTip="{Binding Text, ElementName=MediaArtistBlock}"
+                           d:Text="Song Artist" ToolTip="{Binding Text, ElementName=MediaArtistBlock}"
                            ToolTipService.IsEnabled="{Binding Text, ElementName=MediaArtistBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
                     <TextBlock.RenderTransform>
@@ -72,8 +72,8 @@
 
             <StackPanel x:Name="AppInfoPanel" Margin="0,15,0,0" Grid.RowSpan="2" Grid.Column="1"
                         VerticalAlignment="Top" Orientation="Horizontal" Cursor="Hand">
-                <Image x:Name="AppImage" Source="/Assets/Logo.ico" Width="16" Height="16" RenderOptions.BitmapScalingMode="Fant" />
-                <TextBlock x:Name="AppNameBlock" Text="ModernFlyouts" VerticalAlignment="Center"
+                <Image x:Name="AppImage" d:Source="/Assets/Logo.ico" Width="16" Height="16" RenderOptions.BitmapScalingMode="Fant" />
+                <TextBlock x:Name="AppNameBlock" d:Text="ModernFlyouts" VerticalAlignment="Center"
                            Margin="5,0,0,0" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
                            Style="{DynamicResource CaptionTextBlockStyle}" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" />
             </StackPanel>
@@ -85,35 +85,33 @@
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                         <ToggleButton x:Name="ShuffleButton" ToolTip="{x:Static resx:Strings.SessionControl_ShuffleOff}"
                                       Style="{DynamicResource MediaToggleButtonStyle}">
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Shuffle}"
-                                         FontFamily="Segoe MDL2 Assets" FontSize="16.0" />
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Shuffle}" FontSize="16.0" />
                         </ToggleButton>
                         <ToggleButton x:Name="RepeatButton" ToolTip="{x:Static resx:Strings.SessionControl_RepeatOff}"
                                       Margin="40,0" Style="{DynamicResource MediaToggleButtonStyle}">
-                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static utils:CommonGlyphs.RepeatAll}"
-                                         FontFamily="Segoe MDL2 Assets" FontSize="16.0" />
+                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static utils:CommonGlyphs.RepeatAll}" FontSize="16" />
                         </ToggleButton>
                         <Button x:Name="StopButton" ToolTip="{x:Static resx:Strings.SessionControl_Stop}"
                                 Margin="2,0" Width="40" Style="{DynamicResource MediaButtonStyle}">
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Stop}" />
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Stop}" FontSize="16" />
                         </Button>
                     </StackPanel>
                 </ui:SplitView.Pane>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <Button x:Name="PreviousButton" ToolTip="{x:Static resx:Strings.SessionControl_Previous}" Style="{DynamicResource MediaButtonStyle}">
-                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Previous}" />
+                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Previous}" FontSize="16" />
                     </Button>
                     <Button x:Name="PlayPauseButton" ToolTip="{x:Static resx:Strings.SessionControl_Play}"
                             Margin="40,0" Style="{DynamicResource HighlightedMediaButtonStyle}">
-                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static utils:CommonGlyphs.Play}" />
+                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static utils:CommonGlyphs.Play}" FontSize="16" />
                     </Button>
                     <Button x:Name="NextButton" ToolTip="{x:Static resx:Strings.SessionControl_Next}" Style="{DynamicResource MediaButtonStyle}">
-                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Next}" />
+                        <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Next}" FontSize="16" />
                     </Button>
                 </StackPanel>
             </ui:SplitView>
 
-            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" 
+            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center"
                           ToolTip="{x:Static resx:Strings.SessionControl_MoreControls}" Margin="16,0,0,12"
                           IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" />
@@ -131,10 +129,10 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="CurrentTimeBlock" Grid.Column="0" Margin="5,0"
-                                       Text="00:00:00" VerticalAlignment="Center" />
+                                       d:Text="00:00:00" VerticalAlignment="Center" />
                             <ui:ProgressBar x:Name="TimeBar" Grid.Column="1" Margin="10,0" />
                             <TextBlock x:Name="TotalTimeBlock" Margin="5,0" Grid.Column="2"
-                                       Text="00:00:00" VerticalAlignment="Center" />
+                                       d:Text="00:00:00" VerticalAlignment="Center" />
                         </Grid>
                     </ui:Flyout>
                 </ui:FlyoutService.Flyout>

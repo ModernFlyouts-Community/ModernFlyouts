@@ -1,5 +1,5 @@
-﻿using ModernFlyouts.Navigation;
-using ModernFlyouts.Helpers;
+﻿using ModernFlyouts.Helpers;
+using ModernFlyouts.Navigation;
 using ModernWpf.Controls;
 using ModernWpf.Media.Animation;
 using System;
@@ -64,7 +64,7 @@ namespace ModernFlyouts
 
         #region Navigation
 
-        private readonly List<(string Tag, Type PageType)> _pages = new List<(string Tag, Type PageType)>
+        private readonly List<(string Tag, Type PageType)> _pages = new()
         {
             ("general", typeof(GeneralSettingsPage)),
             ("about", typeof(AboutPage)),

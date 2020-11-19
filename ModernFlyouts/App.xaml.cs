@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 
-
 namespace ModernFlyouts
 {
     public partial class App : Application
@@ -11,7 +10,7 @@ namespace ModernFlyouts
             Startup += App_Startup;
             JumpListHelper.CreateJumpList();
         }
-        
+
         private void App_Startup(object sender, StartupEventArgs e)
         {
             FlyoutHandler.Instance = new FlyoutHandler();

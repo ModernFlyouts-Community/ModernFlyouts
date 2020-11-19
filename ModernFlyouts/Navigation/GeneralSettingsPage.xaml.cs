@@ -14,7 +14,7 @@ namespace ModernFlyouts.Navigation
         {
             FlyoutHandler.Instance.FlyoutWindow.AlignFlyout();
         }
-        
+
         private void ExitButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             FlyoutHandler.SafelyExitApplication();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ModernFlyouts.AppLifecycle;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Interop;
 using ModernFlyouts.UI;
@@ -13,10 +14,9 @@ namespace ModernFlyouts
 {
     public class FlyoutHandler : ObservableObject
     {
-
         public static event EventHandler Initialized;
 
-        enum HookMessageEnum : uint
+        private enum HookMessageEnum : uint
         {
             HOOK_MEDIA_PLAYPAUSE = 917504,
             HOOK_MEDIA_PREVIOUS = 786432,
@@ -27,14 +27,14 @@ namespace ModernFlyouts
             HOOK_MEDIA_VOLMUTE = 524288
         }
 
-        DispatcherTimer rehooktimer;
-        uint messageShellHookId;
+        private DispatcherTimer rehooktimer;
+        private uint messageShellHookId;
 
         #region Properties
 
         public static FlyoutHandler Instance { get; set; }
 
-        public static bool HasInitialized;
+        public static bool HasInitialized { get; private set; }
 
         public KeyboardHook KeyboardHook { get; private set; }
 
@@ -239,6 +239,7 @@ namespace ModernFlyouts
         private const int MA_NOACTIVATE = 0x3;
         private const int WM_MOUSEACTIVATE = 0x21;
         private const int WM_EXITSIZEMOVE = 0x0232;
+        private const int WM_QUERYENDSESSION = 0x11;
 
         private void CreateWndProc()
         {
@@ -278,17 +279,28 @@ namespace ModernFlyouts
                             //Media
                             AudioFlyoutHelper?.OnExternalUpdated(true);
                             break;
+
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLMINUS:
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLMUTE:
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLPLUS:
                             //Volume
                             AudioFlyoutHelper?.OnExternalUpdated(false);
                             break;
+
                         default:
                             //Ignore mouse side buttons and other keyboard special keys
                             break;
                     }
                 }
+            }
+
+            if (msg == WM_QUERYENDSESSION)
+            {
+                _ = RelaunchHelper.RegisterApplicationRestart(
+                    JumpListHelper.arg_appupdated,
+                    RelaunchHelper.RestartFlags.RESTART_NO_CRASH |
+                    RelaunchHelper.RestartFlags.RESTART_NO_HANG |
+                    RelaunchHelper.RestartFlags.RESTART_NO_REBOOT);
             }
 
             if (msg == WM_EXITSIZEMOVE)

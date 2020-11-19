@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Windows;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using Windows.Management.Deployment;
-using Windows.ApplicationModel.Core;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media.Imaging;
+using Windows.ApplicationModel.Core;
+using Windows.Management.Deployment;
 
 namespace ModernFlyouts
 {
@@ -66,12 +66,11 @@ namespace ModernFlyouts
                 sourceApp = await GetAppListEntry();
                 AppName = sourceApp.DisplayInfo.DisplayName;
 
-                
                 var logoPath = GetRefinedLogoPath(path);
 
                 if (File.Exists(logoPath))
                 {
-                    MemoryStream memoryStream = new MemoryStream();
+                    MemoryStream memoryStream = new();
                     byte[] fileBytes = File.ReadAllBytes(logoPath);
                     memoryStream.Write(fileBytes, 0, fileBytes.Length);
                     memoryStream.Position = 0;
@@ -174,6 +173,7 @@ namespace ModernFlyouts
         private interface IAppxFactory
         {
             void _VtblGap0_2(); // skip 2 methods
+
             IAppxManifestReader CreateManifestReader(IStream inputStream);
         }
 
@@ -181,8 +181,11 @@ namespace ModernFlyouts
         private interface IAppxManifestReader
         {
             void _VtblGap0_1(); // skip 1 method
+
             IAppxManifestProperties GetProperties();
+
             void _VtblGap1_5(); // skip 5 methods
+
             IAppxManifestApplicationsEnumerator GetApplications();
         }
 
@@ -190,7 +193,9 @@ namespace ModernFlyouts
         private interface IAppxManifestApplicationsEnumerator
         {
             IAppxManifestApplication GetCurrent();
+
             bool GetHasCurrent();
+
             bool MoveNext();
         }
 
@@ -206,6 +211,7 @@ namespace ModernFlyouts
         {
             [PreserveSig]
             int GetBoolValue([MarshalAs(UnmanagedType.LPWStr)] string name, out bool value);
+
             [PreserveSig]
             int GetStringValue([MarshalAs(UnmanagedType.LPWStr)] string name, [MarshalAs(UnmanagedType.LPWStr)] out string vaue);
         }
