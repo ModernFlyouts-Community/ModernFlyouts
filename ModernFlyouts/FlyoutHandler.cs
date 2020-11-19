@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ModernFlyouts.AppLifecycle;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Interop;
 using ModernFlyouts.UI;
@@ -238,6 +239,7 @@ namespace ModernFlyouts
         private const int MA_NOACTIVATE = 0x3;
         private const int WM_MOUSEACTIVATE = 0x21;
         private const int WM_EXITSIZEMOVE = 0x0232;
+        private const int WM_QUERYENDSESSION = 0x11;
 
         private void CreateWndProc()
         {
@@ -290,6 +292,15 @@ namespace ModernFlyouts
                             break;
                     }
                 }
+            }
+
+            if (msg == WM_QUERYENDSESSION)
+            {
+                _ = RelaunchHelper.RegisterApplicationRestart(
+                    JumpListHelper.arg_appupdated,
+                    RelaunchHelper.RestartFlags.RESTART_NO_CRASH |
+                    RelaunchHelper.RestartFlags.RESTART_NO_HANG |
+                    RelaunchHelper.RestartFlags.RESTART_NO_REBOOT);
             }
 
             if (msg == WM_EXITSIZEMOVE)

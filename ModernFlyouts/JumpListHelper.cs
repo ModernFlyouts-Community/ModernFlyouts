@@ -10,6 +10,7 @@ namespace ModernFlyouts
         internal const string arg_settings = "/settings";
         internal const string arg_exit = "/exit-safe";
         internal const string arg_restore = "/restore";
+        internal const string arg_appupdated = "/app-restarted-after-update";
         internal const char arg_delimiter = ' ';
 
         public static void CreateJumpList()

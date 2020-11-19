@@ -90,6 +90,10 @@ namespace ModernFlyouts.AppLifecycle
             {
                 Program.RunCommand(RunCommandType.SafeExit);
             }
+            else if (arg.ToLowerInvariant() == JumpListHelper.arg_appupdated)
+            {
+                Program.RunCommand(RunCommandType.AppUpdated);
+            }
         }
 
         private static void SignalFirstInstance(string channelName, string[] args)

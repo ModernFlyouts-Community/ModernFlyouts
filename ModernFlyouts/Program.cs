@@ -3,6 +3,7 @@ using ModernFlyouts.Helpers;
 using ModernFlyouts.Interop;
 using System;
 using System.Reflection;
+using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -63,6 +64,11 @@ namespace ModernFlyouts
                         FlyoutHandler.SafelyExitApplication();
                         break;
                     }
+                case RunCommandType.AppUpdated:
+                    {
+                        MessageBox.Show("App update successfully!", AppName);
+                        break;
+                    }
                 default:
                     break;
             }
@@ -85,6 +91,7 @@ namespace ModernFlyouts
     {
         ShowSettings = 0,
         RestoreDefault = 1,
-        SafeExit = 2
+        SafeExit = 2,
+        AppUpdated = 3
     }
 }
