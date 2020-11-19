@@ -320,9 +320,6 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>एनजी। Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>रीसेट</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>सभी सेटिंग को चूक में रीसेट करें</value>
   </data>

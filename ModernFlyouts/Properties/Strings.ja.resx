@@ -320,9 +320,6 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>Ngs。Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>リセット</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>すべての設定をデフォルトにリセット</value>
   </data>

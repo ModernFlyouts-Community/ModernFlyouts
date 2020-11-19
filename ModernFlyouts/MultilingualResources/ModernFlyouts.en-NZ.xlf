@@ -318,7 +318,6 @@
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout timeout (ms)</target>
-          
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -416,10 +415,6 @@
           <source>ngs.Settings_Reset}</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">ngs. Settings_Reset}</target>
         </trans-unit>
-        <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
-          <source>Reset</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Reset</target>
-        </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Reset all settings to defaults</target>
@@ -427,6 +422,14 @@
         <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
           <source>Personalization</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Personalisation</target>
+        </trans-unit>
+        <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
+          <source>Align flyout to this position</source>
+          <target state="new">Align flyout to this position</target>
+        </trans-unit>
+        <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
+          <source>Restart required to apply some changes</source>
+          <target state="new">Restart required to apply some changes</target>
         </trans-unit>
       </group>
     </body>

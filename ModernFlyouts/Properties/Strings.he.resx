@@ -320,9 +320,6 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>אני לא יודע מה לעשות. Settings_Reset.</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>איפוס</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>אפס את כל ההגדרות להגדרות ברירות המחדל</value>
   </data>

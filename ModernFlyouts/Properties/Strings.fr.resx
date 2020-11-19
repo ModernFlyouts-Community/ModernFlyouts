@@ -302,9 +302,6 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personnalisation</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Réinitialiser</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Réinitialiser tous les paramètres aux valeurs par défaut</value>
   </data>

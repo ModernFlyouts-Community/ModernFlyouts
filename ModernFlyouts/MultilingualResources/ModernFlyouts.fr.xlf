@@ -391,10 +391,6 @@
           <source>Personalization</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Personnalisation</target>
         </trans-unit>
-        <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
-          <source>Reset</source>
-          <target state="translated">Réinitialiser</target>
-        </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="translated">Réinitialiser tous les paramètres aux valeurs par défaut</target>
@@ -426,6 +422,14 @@
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
           <target state="translated">Désépingler la barre supérieure</target>
+        </trans-unit>
+        <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
+          <source>Align flyout to this position</source>
+          <target state="new">Align flyout to this position</target>
+        </trans-unit>
+        <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
+          <source>Restart required to apply some changes</source>
+          <target state="new">Restart required to apply some changes</target>
         </trans-unit>
       </group>
     </body>

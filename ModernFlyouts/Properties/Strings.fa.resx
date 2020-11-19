@@ -320,9 +320,6 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>ngs. Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>بازنشانی</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>تنظیم مجدد همه تنظیمات به پیش فرض ها</value>
   </data>

@@ -754,7 +754,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type the position in &apos;X,Y&apos; format (for e.g. 50,60).
+        ///   Looks up a localized string similar to Type the position in &apos;X,Y&apos; format (Default: 50,60).
         /// </summary>
         public static string Settings_FlyoutDefaultPositionDescription {
             get {

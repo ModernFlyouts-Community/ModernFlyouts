@@ -13,7 +13,6 @@
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Режим "В Самолете" недоступен :(</target>
-          
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
@@ -83,12 +82,10 @@
           <source>Value cannot be coverted to string.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Значение не может быть преобразовано в строку.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
-          
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Восстановить значения по умолчанию</target>
-          
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
@@ -173,12 +170,10 @@
         <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
           <source>Flyout background opacity</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Непрозрачность фона Flyout</target>
-          
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Позиция Flyout по умолчанию (для кнопки сброса выравнивания)</target>
-          
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
@@ -191,27 +186,22 @@
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout Modules</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Модули</target>
-          
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Модуль "В самолете"</target>
-          
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
           <source>Audio</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Модуль "Аудио"</target>
-          
         </trans-unit>
         <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
           <source>Brightness</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Модуль "Яркость"</target>
-          
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Модуль "Клавиши блокировки (NumLock, CapsLock, ...)"</target>
-          
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
@@ -280,12 +270,10 @@
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Restart required to apply language change properly</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Пожалуйста, перезапустите приложение, чтобы изменить язык должным образом</target>
-          
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System default</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Системный по умолчанию</target>
-          
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
@@ -382,7 +370,6 @@
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Тайм-аут на вылет (мс)</target>
-          
         </trans-unit>
         <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
@@ -428,10 +415,6 @@
           <source>ngs.Settings_Reset}</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngs. Settings_Reset»</target>
         </trans-unit>
-        <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
-          <source>Reset</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Сбросить</target>
-        </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Сброс всех настроек по умолчанию</target>
@@ -439,6 +422,14 @@
         <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
           <source>Personalization</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Персонализация</target>
+        </trans-unit>
+        <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
+          <source>Align flyout to this position</source>
+          <target state="new">Align flyout to this position</target>
+        </trans-unit>
+        <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
+          <source>Restart required to apply some changes</source>
+          <target state="new">Restart required to apply some changes</target>
         </trans-unit>
       </group>
     </body>

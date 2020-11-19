@@ -320,9 +320,6 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>ngs. Settings_Reset)</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Đặt lại</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Đặt lại tất cả các thiết đặt về mặc định</value>
   </data>

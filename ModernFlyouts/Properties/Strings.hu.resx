@@ -320,9 +320,6 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>ngs. Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Alaphelyzetbe állítás</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Az összes beállítás visszaállítása az alapértelmezett értékre</value>
   </data>
