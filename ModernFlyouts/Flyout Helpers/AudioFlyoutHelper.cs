@@ -3,9 +3,6 @@ using ModernFlyouts.Utilities;
 using NAudio.CoreAudioApi;
 using NAudio.CoreAudioApi.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -64,7 +61,7 @@ namespace ModernFlyouts
 
         public AudioFlyoutHelper()
         {
-           Initialize();
+            Initialize();
         }
 
         public void Initialize()
@@ -101,7 +98,7 @@ namespace ModernFlyouts
             try { SetupSMTCAsync(); } catch { }
 
             #endregion
-            
+
             PrimaryContent = volumeControl;
             client = new AudioDeviceNotificationClient();
 
@@ -165,7 +162,6 @@ namespace ModernFlyouts
 
             AppDataHelper.ShowVolumeControlInGSMTCFlyout = showVolumeControlInGSMTCFlyout;
         }
-
 
         #region Volume
 
@@ -279,7 +275,6 @@ namespace ModernFlyouts
             {
                 return;
             }
-
 
             if (device != null)
             {

@@ -49,7 +49,7 @@ namespace ModernFlyouts
 
         private async void FetchInfos()
         {
-            Bitmap bitmap = new Bitmap(16, 16);
+            Bitmap bitmap = new(16, 16);
 
             await Task.Run(() =>
             {
@@ -93,18 +93,13 @@ namespace ModernFlyouts
         {
             GetWindowPlacement(hWnd, out WINDOWPLACEMENT placement);
 
-            switch (placement.ShowCmd)
+            return placement.ShowCmd switch
             {
-                case ShowWindowCommands.Normal:
-                    return WindowSizeState.Normal;
-                case ShowWindowCommands.Minimize:
-                case ShowWindowCommands.ShowMinimized:
-                    return WindowSizeState.Minimized;
-                case ShowWindowCommands.Maximize:
-                    return WindowSizeState.Maximized;
-                default:
-                    return WindowSizeState.Unknown;
-            }
+                ShowWindowCommands.Normal => WindowSizeState.Normal,
+                ShowWindowCommands.Minimize or ShowWindowCommands.ShowMinimized => WindowSizeState.Minimized,
+                ShowWindowCommands.Maximize => WindowSizeState.Maximized,
+                _ => WindowSizeState.Unknown,
+            };
         }
 
         public enum WindowSizeState

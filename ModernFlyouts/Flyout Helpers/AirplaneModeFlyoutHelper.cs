@@ -33,7 +33,7 @@ namespace ModernFlyouts
 
         private void Prepare(AirplaneModeChangedEventArgs e)
         {
-            if (e.NotAvailable) 
+            if (e.NotAvailable)
             {
                 airplaneModeControl.txt.Text = Properties.Strings.AirplaneMode_NotAvailable;
                 airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Info;
@@ -85,7 +85,6 @@ namespace ModernFlyouts
 
     public class AirplaneModeChangedEventArgs : EventArgs
     {
-
         public AirplaneModeChangedEventArgs(bool enabled, bool notAvail)
         {
             IsEnabled = enabled;
@@ -95,7 +94,6 @@ namespace ModernFlyouts
         public bool IsEnabled { get; set; }
 
         public bool NotAvailable { get; set; }
-
     }
 
     public class AirplaneModeWatcher
@@ -103,12 +101,13 @@ namespace ModernFlyouts
         private readonly ManagementEventWatcher watcher;
 
         public event EventHandler<AirplaneModeChangedEventArgs> Changed;
+
         public AirplaneModeWatcher()
         {
             try
             {
                 if (GetAirplaneMode() == -1) { Debug.WriteLine("Nope!"); return; }
-                WqlEventQuery query = new WqlEventQuery(
+                WqlEventQuery query = new(
                      "SELECT * FROM RegistryValueChangeEvent WHERE " +
                      "Hive = 'HKEY_LOCAL_MACHINE'" +
                      @"AND KeyPath = 'SYSTEM\\CurrentControlSet\\Control\\RadioManagement\\SystemRadioState' AND ValueName=''");

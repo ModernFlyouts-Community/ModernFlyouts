@@ -11,7 +11,7 @@ namespace ModernFlyouts
         public const string AppName = "ModernFlyouts";
 
         [STAThread]
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             AppLifecycleManager.StartApplication(args, () =>
             {

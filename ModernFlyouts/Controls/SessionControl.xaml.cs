@@ -330,7 +330,6 @@ namespace ModernFlyouts
             catch { }
         }
 
-
         private void UpdateShuffleButton(GlobalSystemMediaTransportControlsSession session)
         {
             try
@@ -494,7 +493,7 @@ namespace ModernFlyouts
             ThumbnailBackgroundBrush.ImageSource = null;
         }
 
-        private ImageSource GetDefaultThumbnail(MediaPlaybackType? playbackType)
+        private static ImageSource GetDefaultThumbnail(MediaPlaybackType? playbackType)
         {
             return playbackType switch
             {

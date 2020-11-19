@@ -74,7 +74,7 @@ namespace ModernFlyouts
         {
             Show();
             _elapsedTimer.Stop();
-            RoutedEventArgs args = new RoutedEventArgs(FlyoutShownEvent);
+            RoutedEventArgs args = new(FlyoutShownEvent);
             RaiseEvent(args);
             _elapsedTimer.Start();
         }
@@ -98,7 +98,7 @@ namespace ModernFlyouts
 
         private void HideFlyout()
         {
-            RoutedEventArgs args = new RoutedEventArgs(FlyoutHiddenEvent);
+            RoutedEventArgs args = new(FlyoutHiddenEvent);
             RaiseEvent(args);
         }
 
@@ -136,7 +136,7 @@ namespace ModernFlyouts
             {
                 _elapsedTimer.Stop();
 
-                RoutedEventArgs args = new RoutedEventArgs(FlyoutTimedHidingEvent);
+                RoutedEventArgs args = new(FlyoutTimedHidingEvent);
                 RaiseEvent(args);
 
                 if (!IsMouseOver && !args.Handled)
@@ -221,7 +221,7 @@ namespace ModernFlyouts
         {
             var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : AppDataHelper.FlyoutPosition;
 
-            Left = defaultPosition.X - leftShadowMargin; Top = defaultPosition.Y;
+            Left = defaultPosition.X - _leftShadowMargin; Top = defaultPosition.Y;
 
             if (toDefault)
             {
@@ -231,7 +231,7 @@ namespace ModernFlyouts
 
         public void SaveFlyoutPosition()
         {
-            AppDataHelper.FlyoutPosition = new Point(Left + leftShadowMargin, Top);
+            AppDataHelper.FlyoutPosition = new Point(Left + _leftShadowMargin, Top);
         }
 
         internal void OnTopBarVisibilityChanged(TopBarVisibility value)
@@ -309,7 +309,7 @@ namespace ModernFlyouts
             return point.X >= 0 && point.Y >= 0 && point.X <= frameworkElement.ActualWidth && point.Y <= frameworkElement.ActualHeight;
         }
 
-        private int leftShadowMargin = 20;
+        private int _leftShadowMargin = 20;
         private bool _topBarOverlay;
         private bool _topBarVisible = true;
         private TopBarVisibility _topBarVisibility = TopBarVisibility.Visible;

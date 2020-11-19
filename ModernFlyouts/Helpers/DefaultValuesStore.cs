@@ -19,7 +19,7 @@ namespace ModernFlyouts.Helpers
 
         public const DefaultFlyout PreferredDefaultFlyout = DefaultFlyout.ModernFlyouts;
 
-        public static readonly Point DefaultFlyoutPosition = new Point(50, 60);
+        public static readonly Point DefaultFlyoutPosition = new(50, 60);
 
         #endregion
 

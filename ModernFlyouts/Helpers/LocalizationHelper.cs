@@ -14,7 +14,7 @@ namespace ModernFlyouts.Helpers
     {
         private static CultureInfo systemUICulture;
 
-        private static readonly Dictionary<Enum, string> EnumRedirectionMap = new Dictionary<Enum, string>
+        private static readonly Dictionary<Enum, string> EnumRedirectionMap = new()
         {
             { ModernWpf.ElementTheme.Default, "Settings.SystemDefault" }
         };
@@ -53,9 +53,10 @@ namespace ModernFlyouts.Helpers
 
         private static ObservableCollection<LanguageInfo> GetAllSupportedLanguages()
         {
-            var supportedLanguages = new ObservableCollection<LanguageInfo>();
-
-            supportedLanguages.Add(new LanguageInfo(string.Empty));
+            var supportedLanguages = new ObservableCollection<LanguageInfo>
+            {
+                new LanguageInfo(string.Empty)
+            };
 
             var resourceManager = Properties.Strings.ResourceManager;
             var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
@@ -76,7 +77,6 @@ namespace ModernFlyouts.Helpers
                 }
                 catch (CultureNotFoundException)
                 {
-
                 }
             }
 

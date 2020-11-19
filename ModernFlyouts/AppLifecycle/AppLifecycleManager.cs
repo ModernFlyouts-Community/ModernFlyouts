@@ -22,7 +22,7 @@ namespace ModernFlyouts.AppLifecycle
 
         #region App activation & Single instancing
 
-        private static Mutex mutex = new Mutex(true, Program.AppName);
+        private static readonly Mutex mutex = new(true, Program.AppName);
 
         /// <summary>
         /// Starts the application as single instance and redirects the command line arguments from subsequent instances to the first instance.
@@ -47,11 +47,11 @@ namespace ModernFlyouts.AppLifecycle
 
         private static async void CreateRemoteService(string channelName)
         {
-            using NamedPipeServerStream pipeServer = new NamedPipeServerStream(channelName, PipeDirection.In);
+            using NamedPipeServerStream pipeServer = new(channelName, PipeDirection.In);
             while (true)
             {
                 await pipeServer.WaitForConnectionAsync().ConfigureAwait(false);
-                StreamReader reader = new StreamReader(pipeServer);
+                StreamReader reader = new(pipeServer);
                 var rawArgs = await reader.ReadToEndAsync();
 
                 IList<string> args = rawArgs.Split(JumpListHelper.arg_delimiter);
@@ -100,10 +100,10 @@ namespace ModernFlyouts.AppLifecycle
                 rawArgs += arg + JumpListHelper.arg_delimiter;
             }
 
-            using NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", channelName, PipeDirection.Out);
+            using NamedPipeClientStream pipeClient = new(".", channelName, PipeDirection.Out);
             pipeClient.Connect(0);
 
-            StreamWriter writer = new StreamWriter(pipeClient) { AutoFlush = true };
+            StreamWriter writer = new(pipeClient) { AutoFlush = true };
             writer.Write(rawArgs);
             writer.Flush();
             writer.Close();
@@ -112,6 +112,6 @@ namespace ModernFlyouts.AppLifecycle
             Environment.Exit(0);
         }
 
-#endregion
+        #endregion
     }
 }
