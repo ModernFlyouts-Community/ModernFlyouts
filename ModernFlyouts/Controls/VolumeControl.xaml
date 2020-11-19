@@ -17,9 +17,9 @@
                 ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
                 Width="48" Padding="0" Height="48" Background="Transparent">
             <Grid>
-                <ui:FontIcon x:Name="VolumeShadowGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume2}"
+                <ui:FontIcon x:Name="VolumeShadowGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16"
                              Foreground="{DynamicResource SystemControlForegroundChromeGrayBrush}" />
-                <ui:FontIcon x:Name="VolumeGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume2}" />
+                <ui:FontIcon x:Name="VolumeGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16" />
             </Grid>
         </Button>
 

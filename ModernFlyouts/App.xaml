@@ -1,9 +1,8 @@
 ﻿<Application x:Class="ModernFlyouts.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             xmlns:local="clr-namespace:ModernFlyouts" xmlns:localui="clr-namespace:ModernFlyouts.UI"
-             xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:localui="clr-namespace:ModernFlyouts.UI"
              xmlns:converters="clr-namespace:ModernFlyouts.Converters"
              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
@@ -78,15 +77,6 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
-
-            <FontFamily x:Key="SymbolThemeFontFamily">pack://application:,,,/ModernFlyouts;component/Assets/Fonts/#FluentSystemIcons-Regular</FontFamily>
-
-            <Style x:Key="DefaultFontIconStyle" TargetType="{x:Type ui:FontIcon}">
-                <Setter Property="FontFamily" Value="{DynamicResource SymbolThemeFontFamily}" />
-                <Setter Property="FontSize" Value="20" />
-            </Style>
-
-            <Style TargetType="{x:Type ui:FontIcon}" BasedOn="{StaticResource DefaultFontIconStyle}" />
 
             <DataTemplate x:Key="LocalizedEnumItemTemplate">
                 <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />

@@ -65,8 +65,6 @@ namespace ModernFlyouts
         public SessionControl()
         {
             InitializeComponent();
-            MediaTitleBlock.Text = "";
-            MediaArtistBlock.Text = "";
             PreviousButton.Click += (_, __) => PreviousTrack();
             PlayPauseButton.Click += (_, __) => PlayOrPause();
             NextButton.Click += (_, __) => NextTrack();

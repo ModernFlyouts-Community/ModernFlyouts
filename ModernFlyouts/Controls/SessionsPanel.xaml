@@ -19,7 +19,7 @@
                     SnapsToDevicePixels="True">
                 <ui:FontIcon x:Name="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center"
                              FontFamily="{DynamicResource SymbolThemeFontFamily}"
-                             Glyph="{TemplateBinding Content}"
+                             FontSize="14" Glyph="{TemplateBinding Content}"
                              Foreground="{DynamicResource ScrollBarButtonArrowForeground}" />
             </Border>
             <ControlTemplate.Triggers>

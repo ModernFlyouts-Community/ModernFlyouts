@@ -71,16 +71,16 @@
                         </Grid.ColumnDefinitions>
 
                         <Button x:Name="SettingsButton" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                ui:ControlHelper.CornerRadius="8,2,2,2"
-                                Width="32" Padding="0" Height="32" Background="Transparent"
+                                ui:ControlHelper.CornerRadius="8,2,2,2" Padding="0" 
+                                Width="32" Height="32" Background="Transparent"
                                 ToolTip="{x:Static resx:Strings.SettingsItem}" Click="SettingsButton_Click">
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Settings}" />
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Settings}" FontSize="16" />
                         </Button>
 
                         <Button x:Name="AlignButton" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                                 ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
                                 Width="32" Padding="0" Height="32" Background="Transparent" ToolTip="{x:Static resx:Strings.Align}">
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Align}" />
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Align}" FontSize="14" />
                         </Button>
 
                         <Border x:Name="MovableAreaBorder" Grid.Column="2" VerticalAlignment="Bottom" Height="32"
@@ -93,13 +93,13 @@
                                 ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
                                 Width="32" Padding="0" Height="32" Background="Transparent"
                                 ToolTip="{x:Static resx:Strings.UnpinTopBar}" Click="TopBarPinButton_Click">
-                            <ui:FontIcon x:Name="TopBarPinButtonIcon" Glyph="{x:Static utils:CommonGlyphs.UnPin}" />
+                            <ui:FontIcon x:Name="TopBarPinButtonIcon" Glyph="{x:Static utils:CommonGlyphs.UnPin}" FontSize="16" />
                         </Button>
 
                         <Button x:Name="HideFlyoutButton" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Right"
                                 ui:ControlHelper.CornerRadius="2,8,2,2" Width="32" Padding="0" Height="32"
                                 Background="Transparent" ToolTip="{x:Static resx:Strings.Close}">
-                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Close}" />
+                            <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Close}" FontSize="14" />
                         </Button>
 
                         <Border x:Name="TopBarOverlayIndicator" Background="{DynamicResource SystemControlBackgroundBaseMediumBrush}"
