@@ -338,7 +338,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bloqueo de pergamino</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bloqueo de desplazamiento</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
