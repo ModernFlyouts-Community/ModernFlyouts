@@ -326,4 +326,10 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Désépingler la barre supérieure</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Aligner le flyout à cette position</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Redémarrage requis pour appliquer certaines modifications</value>
+  </data>
 </root>

@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Verpersoonliking</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Rig vlieg uit na hierdie posisie</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Herbegin vereis om sekere veranderinge toe te pas</value>
+  </data>
 </root>

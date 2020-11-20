@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personalización</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Alinear control flotante a esta posición</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Reinicio necesario para aplicar algunos cambios</value>
+  </data>
 </root>

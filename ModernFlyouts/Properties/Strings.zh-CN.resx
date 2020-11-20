@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>个性化</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>将飞出对齐到此位置</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>重新启动以应用某些更改</value>
+  </data>
 </root>

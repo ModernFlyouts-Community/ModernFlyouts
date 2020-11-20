@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Персонализация</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Выровнять вылет в эту позицию</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Перезагрузка, необходимая для внесения некоторых изменений</value>
+  </data>
 </root>

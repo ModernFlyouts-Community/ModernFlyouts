@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Persoonlijke instellingen</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Flyout uitlijnen op deze positie</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Opnieuw opstarten vereist om een aantal wijzigingen toe te passen</value>
+  </data>
 </root>

@@ -176,8 +176,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Standardposisjon for undermeny (for Juster-knappen)</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
+          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Skriv inn posisjonen i X,Y-format (for eksempel 50,60)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -425,11 +426,11 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="new">Align flyout to this position</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Juster undermeny til denne posisjonen</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="new">Restart required to apply some changes</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Omstart kreves for å bruke noen endringer</target>
         </trans-unit>
       </group>
     </body>

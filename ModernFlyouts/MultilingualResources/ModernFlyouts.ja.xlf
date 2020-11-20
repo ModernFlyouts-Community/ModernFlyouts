@@ -176,8 +176,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">フライアウトの既定の位置 ([配置] ボタンの場合)</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
+          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">「X,Y」形式でポジションを入力します(例えば50,60の場合)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -425,11 +426,11 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="new">Align flyout to this position</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">フライアウトをこの位置に揃える</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="new">Restart required to apply some changes</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">いくつかの変更を適用するために再起動が必要</target>
         </trans-unit>
       </group>
     </body>

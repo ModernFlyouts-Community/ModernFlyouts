@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Személyre szabás</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Úszó panel igazítása ehhez a pozícióhoz</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Néhány módosítás alkalmazásához újraindítás szükséges</value>
+  </data>
 </root>

@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Tilpassing</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Juster undermeny til denne posisjonen</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Omstart kreves for å bruke noen endringer</value>
+  </data>
 </root>

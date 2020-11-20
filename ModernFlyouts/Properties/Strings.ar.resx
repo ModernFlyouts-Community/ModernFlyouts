@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>إضفاء طابع شخصي</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>محاذاة منبثقة إلى هذا الموضع</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>إعادة التشغيل المطلوبة لتطبيق بعض التغييرات</value>
+  </data>
 </root>

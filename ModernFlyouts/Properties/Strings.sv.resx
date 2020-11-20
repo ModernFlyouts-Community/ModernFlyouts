@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Anpassning</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Justera utfällningsplats till den här positionen</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Omstart krävs för att tillämpa vissa ändringar</value>
+  </data>
 </root>

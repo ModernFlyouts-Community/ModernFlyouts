@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Sérsnið</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Stilla flyout í þessa stöðu</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Endurræsa þarf til að gera nokkrar breytingar</value>
+  </data>
 </root>

@@ -176,8 +176,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Προεπιλεγμένη θέση αναδυόμενου στοιχείου (για το κουμπί "Στοίχιση")</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
+          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Πληκτρολογήστε τη θέση σε μορφή 'X,Y' (π.χ. 50,60)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -425,11 +426,11 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="new">Align flyout to this position</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Στοίχιση αναδυόμενου στοιχείου σε αυτήν τη θέση</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="new">Restart required to apply some changes</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Απαιτείται επανεκκίνηση για την εφαρμογή ορισμένων αλλαγών</target>
         </trans-unit>
       </group>
     </body>

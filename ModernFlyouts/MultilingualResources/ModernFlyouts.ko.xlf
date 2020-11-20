@@ -176,8 +176,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃 기본 위치(정렬 버튼용)</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
+          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">'X, Y' 형식으로 위치를 입력합니다(예: 50,60)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -425,11 +426,11 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="new">Align flyout to this position</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃을 이 위치에 정렬</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="new">Restart required to apply some changes</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">일부 변경 사항을 적용하는 데 필요한 다시 시작</target>
         </trans-unit>
       </group>
     </body>

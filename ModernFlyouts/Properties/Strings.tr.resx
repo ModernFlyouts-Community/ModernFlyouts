@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Kişiselleştirme</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Flyout'u bu konuma hizala</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Bazı değişiklikleri uygulamak için yeniden başlatma</value>
+  </data>
 </root>

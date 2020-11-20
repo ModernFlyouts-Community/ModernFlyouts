@@ -326,4 +326,10 @@
   <data name="Settings.Personalization" xml:space="preserve">
     <value>شخصی‌سازی</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>تراز پرواز به این موقعیت</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>راه اندازی مجدد مورد نیاز برای اعمال برخی از تغییرات</value>
+  </data>
 </root>
