@@ -16,16 +16,16 @@
     <value>О Программе</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Режим "В Самолете" недоступен :(</value>
+    <value>Режим полёта недоступен :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>Режим "В Самолете" отключен</value>
+    <value>Режим полёта отключен</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>Режим "В Самолете" включен</value>
+    <value>Режим полёта включен</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>Выравнять к позиции по умолчанию</value>
+    <value>Выровнять к позиции по умолчанию</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
     <value>Нет подключенных аудиоустройств</value>
@@ -60,11 +60,11 @@
     <value>Закрепить верхнюю панель</value>
   </data>
   <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Пожалуйста, введите точку в формате 'X,Y' (например, 50,60).</value>
+    <value>Пожалуйста, введите точку в формате X и Y (например, 50,60).</value>
     <comment>Error message shown when there are problem parsing a string value into a Point</comment>
   </data>
   <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Пожалуйста, введите значения X,Y в диапазоне {0} - {1}.</value>
+    <value>Пожалуйста, введите значения X и Y в диапазоне {0} - {1}.</value>
     <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
   </data>
   <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
@@ -75,7 +75,7 @@
     <value>Восстановить значения по умолчанию</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Восстанавливает Windows Default Flyout и безопасно завершает приложение</value>
+    <value>Восстанавливает всплывающие окна по умолчанию и безопасно отключает приложение</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Другие элементы</value>
@@ -99,7 +99,7 @@
     <value>Повтор: выключен</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Повтор: один</value>
+    <value>Повтор: один раз</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
     <value>Перемешать: выключено</value>
@@ -123,10 +123,10 @@
     <value>Flyout по умолчанию</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Выберите Flyout по умолчанию</value>
+    <value>Выберите всплывающих окон по умолчанию.</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Выбор Windows Default Flyout по умолчанию не будет закрывать это приложение. Это приложение будет по-прежнему работать в фоновом режиме. Пожалуйста, выйдете из этого приложения безопасно, чтобы улучшить производительность.</value>
+    <value>Выбор всплывающих окон по умолчанию не отключит данное приложение, и оно останется работать в фоновом режиме. Пожалуйста, выйдите безопасно в настройках.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Выключено</value>
@@ -135,22 +135,22 @@
     <value>Включено</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Непрозрачность фона Flyout</value>
+    <value>Непрозрачность фона всплывающих окон.</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Позиция Flyout по умолчанию (для кнопки сброса выравнивания)</value>
+    <value>Позиция всплюыващих окон по умолчанию (для кнопки сброса выравнивания)</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Введите позицию в формате 'X,Y' (например, 50,60)</value>
+    <value>Введите позицию в формате X и Y (например, 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Верхняя панель Flyout</value>
+    <value>Верхняя панель всплывающих окон</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Модули</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Модуль "В самолете"</value>
+    <value>Модуль "Режим полёта"</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
     <value>Модуль "Аудио"</value>
@@ -159,10 +159,10 @@
     <value>Модуль "Яркость"</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Модуль "Клавиши блокировки (NumLock, CapsLock, ...)"</value>
+    <value>Модуль "Клавиши блокировки (Num Lock и т.д.)"</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Запускать при включении компьютера</value>
+    <value>Запускать при загрузке системы</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Настройки</value>
@@ -174,7 +174,7 @@
     <value>Открепить верхнюю панель</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>Современныефлайуты</value>
+    <value>Современные всплывающие окна</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>Нет</value>
@@ -285,16 +285,16 @@
     <value>Тема вылета</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Тайм-аут на вылет (мс)</value>
+    <value>Задержка всплывающего окна (мс)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Влево</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
-    <value>мультимедиа</value>
+    <value>Мультимедиа</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Том</value>
+    <value>Громкость</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Вправо</value>
@@ -327,7 +327,7 @@
     <value>Персонализация</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Выровнять вылет в эту позицию</value>
+    <value>Выровнять всплывающее окно в эту позицию</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Перезагрузка, необходимая для внесения некоторых изменений</value>
