@@ -3,6 +3,5 @@
                     xmlns:ui="http://schemas.modernwpf.com/2019">
     <ResourceDictionary.MergedDictionaries>
         <ui:IntellisenseResources Source="/ModernWpf;component/DesignTime/DesignTimeResources.xaml" />
-        <ui:IntellisenseResources Source="/ModernWpf;component/ThemeResources/Dark.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

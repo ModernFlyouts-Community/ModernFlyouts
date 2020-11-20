@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
         xmlns:resx="clr-namespace:ModernFlyouts.Properties"
+        mc:Ignorable="d"
         Background="Transparent" SizeToContent="WidthAndHeight" WindowStyle="None"
-        AllowsTransparency="True" mc:Ignorable="d" ResizeMode="NoResize" Topmost="True"
+        AllowsTransparency="True" ResizeMode="NoResize" Topmost="True"
         ShowInTaskbar="False" Title="ModernFlyouts" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}">
 
     <Window.Resources>
