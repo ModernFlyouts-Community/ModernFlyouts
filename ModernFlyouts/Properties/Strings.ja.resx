@@ -27,9 +27,6 @@
   <data name="Align" xml:space="preserve">
     <value>既定の位置に揃える</value>
   </data>
-    <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>表示上限セッション数</value>
-  </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
     <value>オーディオ デバイスなし</value>
   </data>  
