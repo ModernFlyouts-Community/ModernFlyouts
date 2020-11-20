@@ -261,7 +261,7 @@
     <value>Bloqueo numérico</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Bloqueo de pergamino</value>
+    <value>Bloqueo de desplazamiento</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>Seleccione las teclas para las que desea mostrar el control flotante</value>
