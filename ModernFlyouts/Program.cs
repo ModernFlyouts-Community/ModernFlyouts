@@ -66,7 +66,11 @@ namespace ModernFlyouts
                     }
                 case RunCommandType.AppUpdated:
                     {
-                        MessageBox.Show("App update successfully!", AppName);
+                        if (AppLifecycleManager.IsBuildBetaChannel)
+                        {
+                            MessageBox.Show("App update successfully!", AppName);
+                        }
+
                         break;
                     }
                 default:
