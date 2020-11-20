@@ -57,6 +57,8 @@ namespace ModernFlyouts.Helpers
 
         public const int FlyoutTimeout = 2750;
 
+        public static string RecommendedFlyoutTimeout = FlyoutTimeout.ToString();
+
         public const double FlyoutBackgroundOpacity = 100.0;
 
         public const bool TrayIconEnabled = true;
