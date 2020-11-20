@@ -320,13 +320,16 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>ngs. Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Set Semula</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Set semula semua pengesetan ke lalai</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Pemeribadian</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Sejajar dengan terbang ke kedudukan ini</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Mula semula diperlukan untuk menggunakan beberapa perubahan</value>
   </data>
 </root>

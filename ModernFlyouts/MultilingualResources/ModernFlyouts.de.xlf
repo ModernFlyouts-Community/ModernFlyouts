@@ -13,7 +13,6 @@
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
           <target state="translated" state-qualifier="mt-suggestion">Der Flugzeugmodus ist nicht verfügbar :(</target>
-
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
@@ -177,8 +176,9 @@
           <target state="translated" state-qualifier="mt-suggestion">Flyout Standardposition</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
-          <target state="translated" state-qualifier="mt-suggestion">Geben Sie die Position im 'X,Y'-Format ein (z.B. 50,60)</target>
+          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Geben Sie die Position im 'X,Y'-Format ein (z.B. 50,60)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -416,10 +416,6 @@
           <source>ngs.Settings_Reset}</source>
           <target state="translated" state-qualifier="mt-suggestion">Ngs. Settings_Reset</target>
         </trans-unit>
-        <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
-          <source>Reset</source>
-          <target state="translated" state-qualifier="tm-suggestion">Zurücksetzen</target>
-        </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="translated">Alle Einstellungen auf die Standardeinstellungen zurücksetzen</target>
@@ -427,6 +423,14 @@
         <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
           <source>Personalization</source>
           <target state="translated" state-qualifier="tm-suggestion">Personalisierung</target>
+        </trans-unit>
+        <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
+          <source>Align flyout to this position</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ausrichten von Flyouts an dieser Position</target>
+        </trans-unit>
+        <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
+          <source>Restart required to apply some changes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Neustart erforderlich, um einige Änderungen anzuwenden</target>
         </trans-unit>
       </group>
     </body>

@@ -266,6 +266,9 @@
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>フライアウトを表示するキーの選択</value>
   </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>フライアウトをこの位置に揃える</value>
+  </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>外観</value>
   </data>
@@ -320,13 +323,12 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>Ngs.Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>リセット</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>すべての設定を既定にリセット</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>いくつかの変更を適用するために再起動が必要</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>個人用設定</value>
   </data>
-</root>

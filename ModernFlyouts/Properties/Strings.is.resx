@@ -320,13 +320,16 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>ngs. Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Endurstilla</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Endurstilla allar stillingar á sjálfgildi</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Sérsnið</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Stilla flyout í þessa stöðu</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Endurræsa þarf til að gera nokkrar breytingar</value>
   </data>
 </root>

@@ -320,13 +320,16 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>Ngs. Settings_Reset.</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Tilbakestill</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Tilbakestill alle innstillingene til standardinnstillingene</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Tilpassing</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Juster undermeny til denne posisjonen</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Omstart kreves for å bruke noen endringer</value>
   </data>
 </root>

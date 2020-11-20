@@ -316,8 +316,9 @@
           <target state="translated">Position par défaut du menu volant (pour le bouton Aligner)</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
-          <target state="translated">Entrez la position au format 'X,Y' (par exemple 50,60)</target>
+          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
+          <target state="needs-review-translation">Entrez la position au format 'X,Y' (par exemple 50,60)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
@@ -391,10 +392,6 @@
           <source>Personalization</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Personnalisation</target>
         </trans-unit>
-        <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
-          <source>Reset</source>
-          <target state="translated">Réinitialiser</target>
-        </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="translated">Réinitialiser tous les paramètres aux valeurs par défaut</target>
@@ -426,6 +423,14 @@
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
           <target state="translated">Désépingler la barre supérieure</target>
+        </trans-unit>
+        <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
+          <source>Align flyout to this position</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aligner le flyout à cette position</target>
+        </trans-unit>
+        <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
+          <source>Restart required to apply some changes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Redémarrage requis pour appliquer certaines modifications</target>
         </trans-unit>
       </group>
     </body>

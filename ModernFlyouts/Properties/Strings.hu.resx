@@ -320,13 +320,16 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>ngs. Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Alaphelyzetbe állítás</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Az összes beállítás visszaállítása az alapértelmezett értékre</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Személyre szabás</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Úszó panel igazítása ehhez a pozícióhoz</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Néhány módosítás alkalmazásához újraindítás szükséges</value>
   </data>
 </root>

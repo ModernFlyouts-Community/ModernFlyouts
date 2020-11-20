@@ -320,13 +320,16 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>एनजी। Settings_Reset}</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>रीसेट</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>सभी सेटिंग को चूक में रीसेट करें</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>वैयक्तिकरण</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>इस स्थिति के लिए फ्लाईआउट संरेखित करें</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>कुछ बदलावों को लागू करने के लिए पुनः आरंभ करना आवश्यक है</value>
   </data>
 </root>

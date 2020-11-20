@@ -348,7 +348,7 @@
     <value>Flyout default position</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Type the position in 'X,Y' format (for e.g. 50,60)</value>
+    <value>Type the position in 'X,Y' format (Default: 50,60)</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
     <value>Flyout theme</value>

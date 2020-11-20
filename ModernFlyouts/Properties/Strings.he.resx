@@ -320,13 +320,16 @@
   <data name="NgsSettings_Reset" xml:space="preserve">
     <value>אני לא יודע מה לעשות. Settings_Reset.</value>
   </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>איפוס</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>אפס את כל ההגדרות להגדרות ברירות המחדל</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>התאמה אישית</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>ישר נשלף למיקום זה</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>דרושה הפעלה מחדש כדי להחיל מספר שינויים</value>
   </data>
 </root>
