@@ -243,7 +243,7 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Данное приложение предназначено для замены старых всплывающих окон стиля Metro на современные окна современного стиля.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Данное приложение разработано для замены старых всплывающих окон, присутствующих в Windows со времен Windows 8, на современные.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
