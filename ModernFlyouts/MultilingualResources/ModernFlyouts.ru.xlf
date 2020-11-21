@@ -371,7 +371,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Тайм-аут всплывающего окна (в мс)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Время отображения (мс)</target>
         </trans-unit>
         <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
