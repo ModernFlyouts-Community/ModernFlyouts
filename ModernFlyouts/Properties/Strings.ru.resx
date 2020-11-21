@@ -162,7 +162,7 @@
     <value>Модуль "Клавиши блокировки (Num Lock и т.д.)"</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Запускать при загрузке системы</value>
+    <value>Автозагрузка</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Настройки</value>
