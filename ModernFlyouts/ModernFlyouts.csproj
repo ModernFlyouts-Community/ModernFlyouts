@@ -120,6 +120,10 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
 
+   <!--<PropertyGroup>
+	<TargetFrameworkSDKToolsDirectory Condition=" '$(Platform)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(Platform)\</TargetFrameworkSDKToolsDirectory>
+   </PropertyGroup>-->
+
   <PropertyGroup>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>

@@ -178,7 +178,6 @@
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">「X,Y」形式でポジションを入力します(例えば50,60の場合)</target>
-          
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
