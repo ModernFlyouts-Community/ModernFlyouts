@@ -395,7 +395,7 @@
         </trans-unit>
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Отображать иконку в трее системы</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Отображать в трее</target>
         </trans-unit>
         <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
           <source>Off</source>
