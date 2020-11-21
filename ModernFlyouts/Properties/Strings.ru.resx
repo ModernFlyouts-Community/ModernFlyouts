@@ -150,13 +150,13 @@
     <value>Модули</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Модуль "Режим полёта"</value>
+    <value>Режим полёта</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Модуль "Аудио"</value>
+    <value>Медиа</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Модуль "Яркость"</value>
+    <value>Яркость</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
     <value>Клавиши блокировки</value>
