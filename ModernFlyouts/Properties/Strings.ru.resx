@@ -174,7 +174,7 @@
     <value>Открепить верхнюю панель</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>Современные всплывающие окна</value>
+    <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>Нет</value>
