@@ -207,7 +207,7 @@
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Запускать при загрузке системы</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Автозагрузка</target>
         </trans-unit>
         <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
           <source>Settings</source>
