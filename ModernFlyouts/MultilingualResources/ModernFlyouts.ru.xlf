@@ -283,7 +283,7 @@
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Если вы обнаружите какие-либо ошибки, пожалуйста, откройте новую проблему в репозитории на GitHub.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Если вы обнаружите какие-либо ошибки, пожалуйста, сообщите о них в репозитории на GitHub.</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Number of sessions to show</source>
