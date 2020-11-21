@@ -285,7 +285,7 @@
     <value>Тема вылета</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Задержка всплывающего окна (мс)</value>
+    <value>Время отображения всплывающего окна (мс)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Влево</value>
