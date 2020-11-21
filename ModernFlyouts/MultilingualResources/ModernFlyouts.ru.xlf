@@ -359,11 +359,11 @@
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
           <source>Enable Brightness Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Включить всплывающее окно яркости</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Включить модуль</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Включить всплывающее окно клавиш блокировки</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Включить модуль</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>

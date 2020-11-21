@@ -123,7 +123,7 @@
     <value>Flyout по умолчанию</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Выберите всплывающих окон по умолчанию.</value>
+    <value>Выберите стиль</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
     <value>Выбор всплывающих окон по умолчанию не отключит данное приложение, и оно останется работать в фоновом режиме. Пожалуйста, выйдите безопасно в настройках.</value>
@@ -135,16 +135,16 @@
     <value>Включено</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Непрозрачность фона всплывающих окон.</value>
+    <value>Непрозрачность всплывающего окна</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Позиция всплюыващих окон по умолчанию (для кнопки сброса выравнивания)</value>
+    <value>Положение всплывающего окна по умолчанию (для кнопки сброса выравнивания)</value>
   </data>
   <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
     <value>Введите позицию в формате X и Y (например, 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Верхняя панель всплывающих окон</value>
+    <value>Верхняя панель</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Модули</value>
