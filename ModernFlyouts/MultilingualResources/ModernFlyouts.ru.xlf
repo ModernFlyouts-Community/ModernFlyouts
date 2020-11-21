@@ -287,7 +287,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Number of sessions to show</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Количество сеансов для показов</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Количество отображаемых сеансов</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.SessionsPanelOrientation" translate="yes" xml:space="preserve">
           <source>Media sessions panel orientation</source>
