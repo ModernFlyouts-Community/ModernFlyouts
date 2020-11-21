@@ -159,7 +159,7 @@
     <value>Модуль "Яркость"</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Модуль "Клавиши блокировки (Num Lock и т.д.)"</value>
+    <value>Клавиши блокировки</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Автозагрузка</value>
