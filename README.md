@@ -11,16 +11,18 @@
 
 ![Overview](docs/images/Overview.png)
 
-This application aims at providing a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts present in **Windows** *(they are not updated since Windows 8 LOL)* which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
+This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts present in **Windows** *(they are not updated since Windows 8 LOL)* which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
 
-This project has its roots on [AudioFlyout](https://github.com/ADeltaX/AudioFlyout) (made by [@ADeltaX](https://github.com/ADeltaX/)). With additional implementation for **"Airplane mode"**, **"Brightness"** and **"LockKeys"** *(includes Insert key, Caps, Num & Scroll lock keys)* flyouts, this project stands as a complete replacement for the built-in one.
+This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyout) by [@ADeltaX](https://github.com/ADeltaX/) with additional implementations for **"Airplane mode"**, **"Brightness"** and **"LockKeys"** *(includes Insert key, Caps, Num & Scroll lock keys)* flyouts. This project stands as a complete replacement for the built-in one.
 
-> Note : The built-in flyout will not be permanently affected. It will be hidden temporarily while this application is running. So, no reasons to fear breaking your system.
+> Note : The built-in flyout will not be permanently affected. It will be hidden temporarily while this application is running. So, no reason to fear breaking your system.
 > For more information on how to recover the original flyouts, [check out this How To page](https://github.com/ShankarBUS/ModernFlyouts/wiki/How-To).
 
 > Users are provided the freedom to choose between the Windows built-in flyouts or modern flyouts from ModernFlyouts or neither of them.
 
-### Please checkout the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) for additional information, guides and how-tos.
+> It is impossible to have a flyout for the keyboard backlight brightness or for the function (Fn) key because they are not passed as keys but as hardware signals (which the OEMs decide).  Any OS can receive those signals if they have the required driver.
+
+### Please check out the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) for additional information, guides and how-tos.
 
 ## Features
 - Fluent UI (similar to Windows 10X).
@@ -31,6 +33,8 @@ This project has its roots on [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 - Flyout's TopBar can be pinned, unpinned or hidden.
 - Flyout is **Draggable** and autosaves the position. It also has feature for default position. (Check out the settings)
 - Smooth **Animations** & **Transitions**
+- **Opacity** of the background of flyouts can be changed
+- **Timeout** of flyouts can be changed
 
 ## System Requirements
 - **Windows 10 1809 and above** (older versions such as v0.3 and below supports Windows downlevel to Windows 8, however v0.4 and above won't)
@@ -38,7 +42,7 @@ This project has its roots on [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 ## Installation
 Modern Flyouts is available for you to install via [GitHub](https://github.com/ShankarBUS/ModernFlyouts/releases/latest), **winget** and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
-All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **heavily recommended** as it is easier to install and will automatically remain up to date.
+All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **recommended** as it is easier to install and will automatically remain up to date.
 
 **Microsoft Store:**
 
@@ -71,7 +75,7 @@ I must admit that this project wouldn't be here *how it is* without **[@ADeltaX]
 ### Our Contributors 💗💕
 
 **Code:**
-- [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we could even identify 😅 [#113](https://github.com/ShankarBUS/ModernFlyouts/pull/113).
+- [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we couldn't even identify 😅 [#113](https://github.com/ShankarBUS/ModernFlyouts/pull/113).
 
 **Translators (sorted old to new):**
 - [yukiokun057](https://github.com/yukiokun057) - Russian translator (сука блять).
@@ -92,4 +96,4 @@ I must admit that this project wouldn't be here *how it is* without **[@ADeltaX]
 
 ## Screenshots
 
-Coming backing soon 😅.
+Coming back soon 😅.

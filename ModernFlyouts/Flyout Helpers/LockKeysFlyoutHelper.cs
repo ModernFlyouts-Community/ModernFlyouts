@@ -143,7 +143,7 @@ namespace ModernFlyouts
                 msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
                 lockKeysControl.LockGlyph.Glyph = string.Empty;
             }
-            
+
             lockKeysControl.txt.Text = msg;
         }
 

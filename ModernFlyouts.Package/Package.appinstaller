@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppInstaller
+	Uri="https://github.com/ShankarBUS/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller"
+	Version="0.8.2.0"
+	xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
+
+	<MainBundle
+		Name="ModernFlyouts"
+		Publisher="Sam G"
+		Version="0.8.2.0"
+		Uri="https://github.com/ShankarBUS/ModernFlyouts/releases/download/0.8.2/ModernFlyouts_0.8.2.0_neutral.Msixbundle" />
+
+	<UpdateSettings>
+		<OnLaunch HoursBetweenUpdateChecks="6" ShowPrompt="true"/>
+		<AutomaticBackgroundTask/>
+		<ForceUpdateFromAnyVersion>true</ForceUpdateFromAnyVersion>
+	</UpdateSettings>
+
+</AppInstaller>
+
+
+<!--<Dependencies>
+		<Package Name="Microsoft.VCLibs.140.00" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="14.0.24605.0" ProcessorArchitecture="x86" Uri="https://download.visualstudio.microsoft.com/download/pr/b2780d75-e54a-448a-95fc-da9721b2b4c2/62310a9e9f0ba7b18741944cbae9f592/windowsdesktop-runtime-5.0.0-win-x86.exe" />
+		<Package Name="Microsoft.VCLibs.140.00" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="14.0.24605.0" ProcessorArchitecture="x64" Uri="https://download.visualstudio.microsoft.com/download/pr/1b3a8899-127a-4465-a3c2-7ce5e4feb07b/1e153ad470768baa40ed3f57e6e7a9d8/windowsdesktop-runtime-5.0.0-win-x64.exe" />
+	</Dependencies>-->

@@ -311,4 +311,25 @@
   <data name="Settings.On" xml:space="preserve">
     <value>켜짐</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>앱 테마</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>컬러 트레이 아이콘 사용</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>모든 설정을 기본값으로 재설정합니다.</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>개인 설정</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>플라이아웃을 이 위치에 정렬</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>일부 변경 사항을 적용하는 데 필요한 다시 시작</value>
+  </data>
 </root>

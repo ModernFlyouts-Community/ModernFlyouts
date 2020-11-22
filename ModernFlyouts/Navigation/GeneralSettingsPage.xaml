@@ -42,7 +42,7 @@
                                             Converter={StaticResource IndexToVisibilityConverter}}">
                         <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
                                    TextWrapping="Wrap" Text="{x:Static resx:Strings.Settings_DefaultFlyoutWarningMessage}" />
-                        <Button Content="{x:Static resx:Strings.ExitItemDescription}" Click="Button_Click" />
+                        <Button Content="{x:Static resx:Strings.ExitItemDescription}" Click="ExitButton_Click" />
                     </ui:SimpleStackPanel>
                 </ui:SimpleStackPanel>
             </GroupBox>
@@ -69,18 +69,10 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <Button Content="Align flyout to this position" />
+                    <Button Content="{x:Static resx:Strings.Settings_AlignFlyout}" Click="AlignButton_Click" />
+                    <Button Content="{x:Static resx:Strings.Settings_ResetToDefaults}" Click="ResetButton_Click" />
                 </ui:SimpleStackPanel>
             </GroupBox>
-
-            <ui:SimpleStackPanel Spacing="10">
-                <GroupBox Header="{x:Static resx:Strings.Settings_ResetToDefaults}">
-                    <ui:SimpleStackPanel Spacing="10">
-                        <Button Content="{x:Static resx:Strings.Settings_Reset}"/>
-                </ui:SimpleStackPanel>
-            </GroupBox>
-            </ui:SimpleStackPanel>
-
         </StackPanel>
     </controls:ScrollViewerEx>
 </Page>

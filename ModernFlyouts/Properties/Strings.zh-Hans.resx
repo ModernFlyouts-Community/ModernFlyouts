@@ -219,7 +219,7 @@
     <value>依赖项</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>如果发现任何 bug，请在 GitHub 仓库中打创建一个新 Issue。</value>
+    <value>如果发现任何 bug，请在 GitHub 仓库中创建一个新 Issue。</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>显示的会话数</value>
@@ -310,5 +310,26 @@
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>打开</value>
+  </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>应用主题</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>使用彩色托盘图标</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs.Settings_Reset}</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>将所有设置重置为默认值</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>个性化</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>将飞出对齐到此位置</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>重新启动以应用某些更改</value>
   </data>
 </root>

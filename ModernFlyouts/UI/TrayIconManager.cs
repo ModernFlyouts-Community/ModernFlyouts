@@ -28,7 +28,7 @@ namespace ModernFlyouts.UI
             {
                 Header = Properties.Strings.SettingsItem,
                 ToolTip = Properties.Strings.SettingsItemDescription,
-                Icon = new SymbolIcon() { Symbol = Symbol.Setting }
+                Icon = new FontIcon() { Glyph = CommonGlyphs.Settings }
             };
             settingsItem.Click += (_, __) => FlyoutHandler.ShowSettingsWindow();
 

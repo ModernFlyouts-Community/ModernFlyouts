@@ -263,6 +263,7 @@ namespace ModernFlyouts.Utilities
         }
 
         #region NativeMethods
+
         private static class NativeMethods
         {
             [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
@@ -309,15 +310,15 @@ namespace ModernFlyouts.Utilities
         [UnmanagedFunctionPointer(CallingConvention.Winapi, SetLastError = true, CharSet = CharSet.Unicode)]
         [SuppressUnmanagedCodeSecurity]
         internal delegate bool ENUMRESNAMEPROC(IntPtr hModule, IntPtr lpszType, IntPtr lpszName, IntPtr lParam);
-        #endregion
 
+        #endregion
     }
 
     public static class IconUtil
     {
         private delegate byte[] GetIconDataDelegate(Icon icon);
 
-        static readonly GetIconDataDelegate getIconData;
+        private static readonly GetIconDataDelegate getIconData;
 
         static IconUtil()
         {
@@ -325,7 +326,7 @@ namespace ModernFlyouts.Utilities
 
             var dm = new DynamicMethod(
                 "GetIconData", typeof(byte[]), new Type[] { typeof(Icon) }, typeof(Icon));
-            
+
             var fi = typeof(Icon).GetField(
 #if NETCOREAPP
                 "_iconData",

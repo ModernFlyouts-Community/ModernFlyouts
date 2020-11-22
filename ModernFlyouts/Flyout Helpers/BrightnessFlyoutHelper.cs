@@ -38,7 +38,6 @@ namespace ModernFlyouts
             OnEnabled();
         }
 
-
         #region Brightness
 
         private bool _isInCodeValueChange; //Prevents a LOOP between changing brightness
@@ -47,7 +46,7 @@ namespace ModernFlyouts
         {
             App.Current.Dispatcher.Invoke(() =>
             {
-                brightnessControl.BrightnessGlyph.Glyph = brightness > 50 ? CommonGlyphs.Brightness : CommonGlyphs.LowerBrightness; 
+                brightnessControl.BrightnessGlyph.Glyph = brightness > 50 ? CommonGlyphs.Brightness : CommonGlyphs.LowerBrightness;
                 brightnessControl.textVal.Text = brightness.ToString("00");
                 _isInCodeValueChange = true;
                 brightnessControl.BrightnessSlider.Value = brightness;
@@ -85,7 +84,6 @@ namespace ModernFlyouts
             {
                 return;
             }
-
 
             SetBrightnessLevel((int)brightness);
 
@@ -193,14 +191,12 @@ namespace ModernFlyouts
 
     public class BrightnessChangedEventArgs : EventArgs
     {
-
         public BrightnessChangedEventArgs(int newValue)
         {
             NewValue = newValue;
         }
 
         public int NewValue { get; set; }
-
     }
 
     public class BrightnessWatcher
@@ -208,6 +204,7 @@ namespace ModernFlyouts
         private readonly ManagementEventWatcher watcher;
 
         public event EventHandler<BrightnessChangedEventArgs> Changed;
+
         public BrightnessWatcher()
         {
             try

@@ -19,7 +19,7 @@ namespace ModernFlyouts.Helpers
 
         public const DefaultFlyout PreferredDefaultFlyout = DefaultFlyout.ModernFlyouts;
 
-        public static readonly Point DefaultFlyoutPosition = new Point(50, 60);
+        public static readonly Point DefaultFlyoutPosition = new(50, 60);
 
         #endregion
 
@@ -51,11 +51,13 @@ namespace ModernFlyouts.Helpers
 
         public const TopBarVisibility DefaultTopBarVisibility = TopBarVisibility.Visible;
 
-        public const ElementTheme FlyoutTheme = ElementTheme.Default;
-
         public const ElementTheme AppTheme = ElementTheme.Default;
 
+        public const ElementTheme FlyoutTheme = ElementTheme.Default;
+
         public const int FlyoutTimeout = 2750;
+
+        public static string RecommendedFlyoutTimeout = FlyoutTimeout.ToString();
 
         public const double FlyoutBackgroundOpacity = 100.0;
 

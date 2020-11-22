@@ -311,4 +311,25 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Kveikt</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Þema forrits</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Nota litabakkatákn</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Endurstilla allar stillingar á sjálfgildi</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Sérsnið</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Stilla flyout í þessa stöðu</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Endurræsa þarf til að gera nokkrar breytingar</value>
+  </data>
 </root>

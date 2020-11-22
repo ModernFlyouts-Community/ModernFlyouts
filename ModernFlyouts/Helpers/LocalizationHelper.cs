@@ -14,7 +14,7 @@ namespace ModernFlyouts.Helpers
     {
         private static CultureInfo systemUICulture;
 
-        private static readonly Dictionary<Enum, string> EnumRedirectionMap = new Dictionary<Enum, string>
+        private static readonly Dictionary<Enum, string> EnumRedirectionMap = new()
         {
             { ModernWpf.ElementTheme.Default, "Settings.SystemDefault" }
         };
@@ -47,13 +47,16 @@ namespace ModernFlyouts.Helpers
             SupportedLanguages = GetAllSupportedLanguages();
             var language = AppDataHelper.Language;
             CurrentLanguage = SupportedLanguages.First(x => x.LanguageName == language);
+
+            Thread.CurrentThread.CurrentUICulture = CurrentLanguage.CultureInfo ?? systemUICulture;
         }
 
         private static ObservableCollection<LanguageInfo> GetAllSupportedLanguages()
         {
-            var supportedLanguages = new ObservableCollection<LanguageInfo>();
-
-            supportedLanguages.Add(new LanguageInfo(string.Empty));
+            var supportedLanguages = new ObservableCollection<LanguageInfo>
+            {
+                new LanguageInfo(string.Empty)
+            };
 
             var resourceManager = Properties.Strings.ResourceManager;
             var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
@@ -74,7 +77,6 @@ namespace ModernFlyouts.Helpers
                 }
                 catch (CultureNotFoundException)
                 {
-
                 }
             }
 
@@ -83,8 +85,11 @@ namespace ModernFlyouts.Helpers
 
         private static void OnCurrentLanguageChanged()
         {
-            var uiCulture = CurrentLanguage.CultureInfo ?? systemUICulture;
-            Thread.CurrentThread.CurrentUICulture = uiCulture;
+            if (FlyoutHandler.HasInitialized)
+            {
+                FlyoutHandler.Instance.UIManager.RestartRequired = true;
+            }
+
             AppDataHelper.Language = CurrentLanguage.LanguageName;
         }
 

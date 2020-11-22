@@ -1,15 +1,17 @@
 ﻿<Application x:Class="ModernFlyouts.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             xmlns:local="clr-namespace:ModernFlyouts" xmlns:localui="clr-namespace:ModernFlyouts.UI"
-             xmlns:util="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:localui="clr-namespace:ModernFlyouts.UI"
              xmlns:converters="clr-namespace:ModernFlyouts.Converters"
+             mc:Ignorable="d"
              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources>
+                <ui:ThemeResources d:RequestedTheme="Dark">
                     <ui:ThemeResources.ThemeDictionaries>
                         <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />

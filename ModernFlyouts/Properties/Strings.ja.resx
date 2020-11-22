@@ -237,10 +237,10 @@
     <value>サムネイルの配置</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
-    <value>暗い</value>
+    <value>ダーク</value>
   </data>
   <data name="Enums.ElementTheme.Light" xml:space="preserve">
-    <value>簡易</value>
+    <value>ライト</value>
   </data>
   <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
     <value>自動的に隠す</value>
@@ -310,5 +310,26 @@
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>オン</value>
+  </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>アプリのテーマ</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>色付きトレイ アイコンを使用する</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs。Settings_Reset}</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>すべての設定をデフォルトにリセット</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>個人用設定</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>フライアウトをこの位置に揃える</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>いくつかの変更を適用するために再起動が必要</value>
   </data>
 </root>

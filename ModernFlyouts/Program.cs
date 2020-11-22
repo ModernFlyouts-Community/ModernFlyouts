@@ -3,6 +3,7 @@ using ModernFlyouts.Helpers;
 using ModernFlyouts.Interop;
 using System;
 using System.Reflection;
+using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -11,10 +12,17 @@ namespace ModernFlyouts
         public const string AppName = "ModernFlyouts";
 
         [STAThread]
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             AppLifecycleManager.StartApplication(args, () =>
             {
+                InitializePrivateUseClasses();
+
+#if RELEASE
+                Microsoft.AppCenter.AppCenter.Start("26393d67-ab03-4e26-a6db-aa76bf989c21",
+                    typeof(Microsoft.AppCenter.Analytics.Analytics), typeof(Microsoft.AppCenter.Crashes.Crashes));
+#endif
+
                 AppDataMigration.Perform();
 
                 DUIHandler.ForceFindDUIAndHide(false);
@@ -56,6 +64,15 @@ namespace ModernFlyouts
                         FlyoutHandler.SafelyExitApplication();
                         break;
                     }
+                case RunCommandType.AppUpdated:
+                    {
+                        if (AppLifecycleManager.IsBuildBetaChannel)
+                        {
+                            MessageBox.Show("App update successfully!", AppName);
+                        }
+
+                        break;
+                    }
                 default:
                     break;
             }
@@ -65,12 +82,20 @@ namespace ModernFlyouts
         {
             get => Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
+
+        internal static void InitializePrivateUseClasses()
+        {
+#if Screenshots
+            FlyoutHandler.Initialized += (_, __) => Private.ScreenshotHelper.Initialize();
+#endif
+        }
     }
 
     internal enum RunCommandType
     {
         ShowSettings = 0,
         RestoreDefault = 1,
-        SafeExit = 2
+        SafeExit = 2,
+        AppUpdated = 3
     }
 }

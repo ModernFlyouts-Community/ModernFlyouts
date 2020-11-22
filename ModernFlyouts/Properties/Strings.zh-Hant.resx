@@ -311,4 +311,25 @@
   <data name="Settings.On" xml:space="preserve">
     <value>開啟</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>應用主題</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>使用彩色托盤圖示</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs。Settings_Reset]</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>將所有設置重置為預設值</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>個人化</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>將飛出對齊到此位置</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>重新啟動以應用某些更改</value>
+  </data>
 </root>

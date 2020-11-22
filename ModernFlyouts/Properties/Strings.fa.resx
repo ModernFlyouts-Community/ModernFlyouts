@@ -311,4 +311,25 @@
   <data name="Settings.On" xml:space="preserve">
     <value>روشن</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>تم برنامه</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>استفاده از نماد سینی رنگی</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>تنظیم مجدد همه تنظیمات به پیش فرض ها</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>شخصی‌سازی</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>تراز پرواز به این موقعیت</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>راه اندازی مجدد مورد نیاز برای اعمال برخی از تغییرات</value>
+  </data>
 </root>

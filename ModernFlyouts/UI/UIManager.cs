@@ -27,6 +27,14 @@ namespace ModernFlyouts.UI
 
         #region Properties
 
+        private bool restartRequired;
+
+        public bool RestartRequired
+        {
+            get => restartRequired;
+            set => SetProperty(ref restartRequired, value);
+        }
+
         #region General
 
         private TopBarVisibility topBarVisibility = TopBarVisibility.Visible;
@@ -40,6 +48,21 @@ namespace ModernFlyouts.UI
                 {
                     _flyoutWindow.OnTopBarVisibilityChanged(value);
                     AppDataHelper.TopBarVisibility = value;
+                }
+            }
+        }
+
+        private ElementTheme appTheme = DefaultValuesStore.AppTheme;
+
+        public ElementTheme AppTheme
+        {
+            get => appTheme;
+            set
+            {
+                if (SetProperty(ref appTheme, value))
+                {
+                    UpdateAppTheme();
+                    AppDataHelper.AppTheme = value;
                 }
             }
         }
@@ -58,22 +81,6 @@ namespace ModernFlyouts.UI
                 }
             }
         }
-
-        private ElementTheme appTheme = DefaultValuesStore.AppTheme;
-
-        public ElementTheme AppTheme
-        {
-            get => appTheme;
-            set
-            {
-                if (SetProperty(ref appTheme, value))
-                {
-                    UpdateTheme();
-                    AppDataHelper.AppTheme = value;
-                }
-            }
-        }
-
 
         private int flyoutTimeout = DefaultValuesStore.FlyoutTimeout;
 
@@ -256,6 +263,17 @@ namespace ModernFlyouts.UI
                 currentSystemTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
                 UpdateTheme();
             });
+        }
+
+        private void UpdateAppTheme()
+        {
+            ThemeManager.Current.ApplicationTheme = appTheme switch
+            {
+                ElementTheme.Default => null,
+                ElementTheme.Light => ApplicationTheme.Light,
+                ElementTheme.Dark => ApplicationTheme.Dark,
+                _ => null,
+            };
         }
 
         private void UpdateTheme()

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<default>
+	<qualifier name="Language" value="en-US;en-GB,en-NZ;af;ar;de-DE;es-ES;fa;fr;he;hi-IN;hu-HU;it-IT;ja-JP;nl-NL;or-IN;pl-PL;pt-BR;ru-RU;ta;tr-TR;uk-UA;zh-Hans;zh-Hant;zh-CN" />
+</default>

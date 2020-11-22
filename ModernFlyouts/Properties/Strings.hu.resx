@@ -311,4 +311,25 @@
   <data name="Settings.On" xml:space="preserve">
     <value>Be</value>
   </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Alkalmazás téma</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Színes tálca használata ikon</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs. Settings_Reset}</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Az összes beállítás visszaállítása az alapértelmezett értékre</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Személyre szabás</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Úszó panel igazítása ehhez a pozícióhoz</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Néhány módosítás alkalmazásához újraindítás szükséges</value>
+  </data>
 </root>

@@ -94,7 +94,6 @@ namespace ModernFlyouts.Interop
             WS_EX_COMPOSITED = 0x02000000,
             WS_EX_NOACTIVATE = 0x08000000
             //#endif /* WIN32WINNT >= 0x0500 */
-
         }
 
         public static class SWP
@@ -297,7 +296,6 @@ namespace ModernFlyouts.Interop
             }
         }
 
-
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
@@ -312,7 +310,7 @@ namespace ModernFlyouts.Interop
         internal static void SetToolWindow(IntPtr hWnd)
         {
             var exstyle = GetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_EXSTYLE);
-            IntPtr style = new IntPtr((uint)GetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_STYLE) & ~(uint)WindowStyles.WS_SYSMENU);
+            IntPtr style = new((uint)GetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_STYLE) & ~(uint)WindowStyles.WS_SYSMENU);
             SetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_STYLE, style);
             var ex = (uint)exstyle | (uint)WindowStyles.WS_EX_TOPMOST | (uint)WindowStyles.WS_EX_NOACTIVATE | (uint)WindowStyles.WS_EX_TOOLWINDOW;
             SetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_EXSTYLE, new IntPtr(ex));

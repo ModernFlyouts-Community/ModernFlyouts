@@ -308,8 +308,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout default position</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (for e.g. 50,60)</source>
+          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Type the position in 'X,Y' format (for e.g. 50,60)</target>
+          
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
@@ -318,7 +319,6 @@
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout timeout (ms)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -406,23 +406,31 @@
         </trans-unit>
         <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
           <source>App Theme</source>
-          <target state="new">App Theme</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">App Theme</target>
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
-          <target state="new">Use colored tray icon</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use colored tray icon</target>
         </trans-unit>
         <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
-          <target state="new">ngs.Settings_Reset}</target>
-        </trans-unit>
-        <trans-unit id="Settings.Reset" translate="yes" xml:space="preserve">
-          <source>Reset</source>
-          <target state="new">Reset</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ngs. Settings_Reset}</target>
         </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
-          <target state="new">Reset all settings to defaults</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Reset all settings to defaults</target>
+        </trans-unit>
+        <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
+          <source>Personalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Personalisation</target>
+        </trans-unit>
+        <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
+          <source>Align flyout to this position</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Align flyout to this position</target>
+        </trans-unit>
+        <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
+          <source>Restart required to apply some changes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Restart required to apply some changes</target>
         </trans-unit>
       </group>
     </body>

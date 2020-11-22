@@ -619,6 +619,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Align flyout to this position.
+        /// </summary>
+        public static string Settings_AlignFlyout {
+            get {
+                return ResourceManager.GetString("Settings.AlignFlyout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Appearance.
         /// </summary>
         public static string Settings_Appearance {
@@ -745,7 +754,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type the position in &apos;X,Y&apos; format (for e.g. 50,60).
+        ///   Looks up a localized string similar to Type the position in &apos;X,Y&apos; format (Default: 50,60).
         /// </summary>
         public static string Settings_FlyoutDefaultPositionDescription {
             get {
@@ -889,11 +898,11 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reset.
+        ///   Looks up a localized string similar to Personalization.
         /// </summary>
-        public static string Settings_Reset {
+        public static string Settings_Personalization {
             get {
-                return ResourceManager.GetString("Settings.Reset", resourceCulture);
+                return ResourceManager.GetString("Settings.Personalization", resourceCulture);
             }
         }
         
@@ -903,6 +912,15 @@ namespace ModernFlyouts.Properties {
         public static string Settings_ResetToDefaults {
             get {
                 return ResourceManager.GetString("Settings.ResetToDefaults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart required to apply some changes.
+        /// </summary>
+        public static string Settings_RestartRequired {
+            get {
+                return ResourceManager.GetString("Settings.RestartRequired", resourceCulture);
             }
         }
         

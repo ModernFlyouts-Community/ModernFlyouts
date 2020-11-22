@@ -261,7 +261,7 @@
     <value>Bloqueo numérico</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Bloqueo de pergamino</value>
+    <value>Bloqueo de desplazamiento</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>Seleccione las teclas para las que desea mostrar el control flotante</value>
@@ -310,5 +310,26 @@
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>Activado</value>
+  </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>Tema de la aplicación</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Usar icono de bandeja de color</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Restablecer todos los ajustes a los valores predeterminados</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Personalización</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Alinear control flotante a esta posición</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Reinicio necesario para aplicar algunos cambios</value>
   </data>
 </root>

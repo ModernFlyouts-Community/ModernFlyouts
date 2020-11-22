@@ -37,7 +37,7 @@
     <value>Beenden</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Die App sicher beenden</value>
+    <value>App sicher beenden</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
     <value>Allgemein</value>
@@ -57,7 +57,7 @@
     <value>Überschreibmodus</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Pin TopBar</value>
+    <value>Kopfleiste anheften</value>
   </data>
   <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
     <value>Bitte geben Sie den Punkt im Format 'X,Y' (z.B. 50,60) ein.</value>
@@ -72,7 +72,7 @@
     <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Standard wiederherstellen</value>
+    <value>Standard-Flyout wiederherstellen</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
     <value>Stellt das Windows Standard Flyout wieder her und beendet die App sicher</value>
@@ -102,16 +102,16 @@
     <value>Wiederholen: Titel</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Shuffle: aus</value>
+    <value>Zufallswiedergabe: aus</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Shuffle: an</value>
+    <value>Zufallswiedergabe: an</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Beenden</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Zeitleiste Info</value>
+    <value>Zeitleisteninformation</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
     <value>Zusätzlich</value>
@@ -144,22 +144,22 @@
     <value>Geben Sie die Position im 'X,Y'-Format ein (z.B. 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Flyout TopBar</value>
+    <value>Flyout Kopfleiste</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Modul</value>
+    <value>Flyout Module</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>AirplaneMode Flyout-Modul</value>
+    <value>Flugzeugmodus</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Audio Flyout-Modul</value>
+    <value>Audio</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Helligkeits Flyout-Modul</value>
+    <value>Helligkeit</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>LockKeys Flyout-Modul</value>
+    <value>Feststelltasten</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Beim Start ausführen</value>
@@ -168,10 +168,10 @@
     <value>Einstellungen</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Fenster "Einstellungen öffnen"</value>
+    <value>Einstellungen öffnen</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Unpin TopBar</value>
+    <value>Kopfleiste lösen</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
@@ -183,13 +183,13 @@
     <value>Windows-Standard</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
-    <value>Horizontale Bildlaufleiste</value>
+    <value>Horizontal</value>
   </data>
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Vertikal</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Diese App wurde entwickelt, um ein moderner Fluent Design Ersatz für die alten U-Bahn-Themen Flyouts in Windows seit Windows 8 vorhanden sein.</value>
+    <value>Diese App wurde als moderner Fluent Design Ersatz für die alten Metro-Flyouts in Windows entwickelt.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Mitwirkende</value>
@@ -198,7 +198,7 @@
     <value>GitHub-Repository</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Öffnen einer neuen Ausgabe</value>
+    <value>Neuen Supportfall eröffnen</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
     <value>Bewerten und Überprüfen im Microsoft Store</value>
@@ -219,7 +219,7 @@
     <value>Abhängigkeiten</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Wenn Sie Fehler finden, öffnen Sie bitte ein neues Problem im github-Repository.</value>
+    <value>Wenn Sie Fehler finden, öffnen Sie bitte einen neuen Fall im github-Repository.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>Anzahl der anzuzeigenden Sitzungen</value>
@@ -231,7 +231,7 @@
     <value>Global System Media Transport Controls (GSMTC) aka Media Controls in Volume Flyout anzeigen</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Volume-Kontrolle in Global System Media Transport Controls (GSMTC) aka Media Flyout anzeigen</value>
+    <value>Lautstärkeregelung in Global System Media Transport Controls (GSMTC) aka Media Flyout anzeigen</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Thumbnail-Ausrichtung</value>
@@ -264,7 +264,7 @@
     <value>Scroll-Sperre</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Wählen Sie die Schlüssel aus, für die Sie das Flyout anzeigen möchten.</value>
+    <value>Wählen Sie die Tasten aus, für die Sie das Flyout anzeigen möchten.</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Darstellung</value>
@@ -273,13 +273,13 @@
     <value>Flugzeugmodus Flyout aktivieren</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Aktivieren von Audio Flyout</value>
+    <value>Audio Flyout aktivieren</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Aktivieren von Brightness Flyout</value>
+    <value>Helligkeit Flyout aktivieren</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Lock-Tasten aktivieren Flyout</value>
+    <value>Lock-Tasten Flyout aktivieren</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
     <value>Flyout-Thema</value>
@@ -300,15 +300,36 @@
     <value>Rechts</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>TopBar-Sichtbarkeit</value>
+    <value>Kopfleiste Sichtbarkeit</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Symbol im Bereich der Taskleiste anzeigen</value>
+    <value>Symbol im Systemtray anzeigen</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>Aus</value>
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>Ein</value>
+  </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>App-Thema</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Verwenden des farbigen Tray-Symbols</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>Ngs. Settings_Reset</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Alle Einstellungen auf die Standardeinstellungen zurücksetzen</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Personalisierung</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Ausrichten von Flyouts an dieser Position</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Neustart erforderlich, um einige Änderungen anzuwenden</value>
   </data>
 </root>

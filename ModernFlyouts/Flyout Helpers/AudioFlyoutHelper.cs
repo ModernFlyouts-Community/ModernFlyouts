@@ -3,7 +3,6 @@ using ModernFlyouts.Utilities;
 using NAudio.CoreAudioApi;
 using NAudio.CoreAudioApi.Interfaces;
 using System;
-using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -62,7 +61,7 @@ namespace ModernFlyouts
 
         public AudioFlyoutHelper()
         {
-           Initialize();
+            Initialize();
         }
 
         public void Initialize()
@@ -99,7 +98,7 @@ namespace ModernFlyouts
             try { SetupSMTCAsync(); } catch { }
 
             #endregion
-            
+
             PrimaryContent = volumeControl;
             client = new AudioDeviceNotificationClient();
 
@@ -163,7 +162,6 @@ namespace ModernFlyouts
 
             AppDataHelper.ShowVolumeControlInGSMTCFlyout = showVolumeControlInGSMTCFlyout;
         }
-
 
         #region Volume
 
@@ -278,7 +276,6 @@ namespace ModernFlyouts
                 return;
             }
 
-
             if (device != null)
             {
                 device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100);
@@ -290,11 +287,10 @@ namespace ModernFlyouts
 
         #endregion
 
-        #region SMTC
+        #region GSMTC
 
-        private GlobalSystemMediaTransportControlsSessionManager GSMTC;
+        private GlobalSystemMediaTransportControlsSessionManager GSMTCSessionManager;
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
         private async void SetupSMTCAsync()
         {
             if (!IsEnabled)
@@ -302,19 +298,18 @@ namespace ModernFlyouts
                 return;
             }
 
-            GSMTC = await GlobalSystemMediaTransportControlsSessionManager.RequestAsync();
-            GSMTC.SessionsChanged += SMTC_SessionsChanged;
+            GSMTCSessionManager = await GlobalSystemMediaTransportControlsSessionManager.RequestAsync();
+            GSMTCSessionManager.SessionsChanged += GSMTC_SessionsChanged;
 
             LoadSessionControls();
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
         private void DetachSMTC()
         {
-            if (GSMTC != null)
+            if (GSMTCSessionManager != null)
             {
-                GSMTC.SessionsChanged -= SMTC_SessionsChanged;
-                GSMTC = null;
+                GSMTCSessionManager.SessionsChanged -= GSMTC_SessionsChanged;
+                GSMTCSessionManager = null;
             }
 
             ClearSessionControls();
@@ -333,13 +328,11 @@ namespace ModernFlyouts
             _SMTCAvail = false;
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        private void SMTC_SessionsChanged(GlobalSystemMediaTransportControlsSessionManager sender, SessionsChangedEventArgs args)
+        private void GSMTC_SessionsChanged(GlobalSystemMediaTransportControlsSessionManager sender, SessionsChangedEventArgs args)
         {
             App.Current.Dispatcher.BeginInvoke(DispatcherPriority.Send, new Action(LoadSessionControls));
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
         private void LoadSessionControls()
         {
             ClearSessionControls();
@@ -349,9 +342,9 @@ namespace ModernFlyouts
                 return;
             }
 
-            if (GSMTC != null)
+            if (GSMTCSessionManager != null)
             {
-                var sessions = GSMTC.GetSessions();
+                var sessions = GSMTCSessionManager.GetSessions();
 
                 foreach (var session in sessions)
                 {

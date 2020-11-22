@@ -65,8 +65,6 @@ namespace ModernFlyouts
         public SessionControl()
         {
             InitializeComponent();
-            MediaTitleBlock.Text = "";
-            MediaArtistBlock.Text = "";
             PreviousButton.Click += (_, __) => PreviousTrack();
             PlayPauseButton.Click += (_, __) => PlayOrPause();
             NextButton.Click += (_, __) => NextTrack();
@@ -332,7 +330,6 @@ namespace ModernFlyouts
             catch { }
         }
 
-
         private void UpdateShuffleButton(GlobalSystemMediaTransportControlsSession session)
         {
             try
@@ -377,7 +374,7 @@ namespace ModernFlyouts
                         if (playback.AutoRepeatMode == MediaPlaybackAutoRepeatMode.None)
                         {
                             RepeatButton.IsChecked = false;
-                            RepeatIcon.Glyph = CommonGlyphs.RepeatAll;
+                            RepeatIcon.Glyph = CommonGlyphs.RepeatOff;
                             RepeatButton.ToolTip = Properties.Strings.SessionControl_RepeatOff;
                         }
                         else if (playback.AutoRepeatMode == MediaPlaybackAutoRepeatMode.Track)
@@ -496,7 +493,7 @@ namespace ModernFlyouts
             ThumbnailBackgroundBrush.ImageSource = null;
         }
 
-        private ImageSource GetDefaultThumbnail(MediaPlaybackType? playbackType)
+        private static ImageSource GetDefaultThumbnail(MediaPlaybackType? playbackType)
         {
             return playbackType switch
             {

@@ -14,12 +14,12 @@ namespace ModernFlyouts.Utilities
             if (string.IsNullOrEmpty(strValue))
                 return new ValidationResult(false, Properties.Strings.PointValidationRule_StringConvertionErrorMessage);
 
-            Point point = default;
+            Point point;
             try
             {
                 point = Point.Parse(strValue);
             }
-            catch 
+            catch
             {
                 return new ValidationResult(false, Properties.Strings.PointValidationRule_PointFormatInvalidMessage);
             }
