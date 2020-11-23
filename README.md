@@ -78,7 +78,7 @@ I must admit that this project wouldn't be here *how it is* without **[@ADeltaX]
 - [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we couldn't even identify 😅 [#113](https://github.com/ShankarBUS/ModernFlyouts/pull/113).
 
 **Translators (sorted old to new):**
-- [yukiokun057](https://github.com/yukiokun057) - Russian translator (сука блять).
+- [yukiokun057](https://github.com/yukiokun057) - Russian translator.
 - [knurzl](https://github.com/knurzl) - German translator.
 - [lucasskluser](https://github.com/lucasskluser) - Portuguese translator.
 - [Stealnoob](https://github.com/Stealnoob) - French translator.
