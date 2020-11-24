@@ -255,16 +255,16 @@
     <value>Панелі</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Панель режиму "У літаку"</value>
+    <value>У літаку</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Панель аудіо</value>
+    <value>Аудіо</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Панель яскравості</value>
+    <value>Яскравість</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Панель перемикачів</value>
+    <value>Перемикачі</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Запускати разом з Windows</value>
@@ -279,7 +279,7 @@
     <value>Відкріпити хедер</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>Сучасні панелі</value>
+    <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>Вимкнути</value>
@@ -294,7 +294,7 @@
     <value>Вертикально</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Ця програма розроблена для замыни старих метро-панелей , присунтіх у Windows починаючи з Windows 8, на нові в стилі Fluent Design.</value>
+    <value>Ця програма розроблена для заміни старих метро-панелей, присунтіх у Windows починаючи з Windows 8, на нові в стилі Fluent Design.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Внесли свій вклад в розробку</value>
@@ -303,10 +303,10 @@
     <value>Репозиторій GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Відкриття нового Issue</value>
+    <value>Повідомити про проблему</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Оцінити та переглянути у Магазині Microsoft</value>
+    <value>Оцінити у Microsoft Store</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Версія: </value>
@@ -324,7 +324,7 @@
     <value>Залежності</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Якщо ви знайшли якісь помилки, будь ласка, відкрийте новий issue у репозиторії на GitHub.</value>
+    <value>Якщо ви знайшли якісь помилки, будь ласка, повідомте про них в репозиторії на GitHub.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>Максимальна кількість сеансів для відображення</value>
@@ -333,7 +333,7 @@
     <value>Орієнтація панелі сеансів мультимедіа</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Показати глобальні елементи керування медіатранспортом (GSMTC) aka Media у панелі гучності</value>
+    <value>Відображати елементи керування медіа на панелі гучності</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
     <value>Показати регулятор гучності у глобальному системному елементі керування медіатранспортом (GSMTC) aka Media-панель</value>
