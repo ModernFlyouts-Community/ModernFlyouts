@@ -198,7 +198,7 @@ namespace ModernFlyouts.Interop
         internal static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
 
         [DllImport("User32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
-        internal static extern int SetWindowsHookEx(int idHook, KBDLLHookProc HookProc, IntPtr hInstance, int wParam);
+        internal static extern int SetWindowsHookEx(int idHook, HookProc hookProc, IntPtr hInstance, int wParam);
 
         [DllImport("User32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         internal static extern int CallNextHookEx(int idHook, int nCode, IntPtr wParam, IntPtr lParam);
@@ -303,7 +303,7 @@ namespace ModernFlyouts.Interop
         [DllImport("user32.dll")]
         internal static extern bool SetWindowPlacement(IntPtr hWnd, [In] ref WINDOWPLACEMENT lpwndpl);
 
-        internal delegate int KBDLLHookProc(int nCode, IntPtr wParam, IntPtr lParam);
+        internal delegate int HookProc(int nCode, IntPtr wParam, IntPtr lParam);
 
         internal delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hWnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
 

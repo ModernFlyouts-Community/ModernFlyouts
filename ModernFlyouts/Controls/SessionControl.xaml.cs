@@ -205,7 +205,8 @@ namespace ModernFlyouts
                         }
                         else if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Paused
                             || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Stopped
-                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Opened)
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Opened
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Closed)
                         {
                             await _SMTCSession.TryPlayAsync();
                         }
@@ -319,7 +320,8 @@ namespace ModernFlyouts
                         }
                         else if (playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Paused
                             || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Stopped
-                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Opened)
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Opened
+                            || playback.PlaybackStatus == GlobalSystemMediaTransportControlsSessionPlaybackStatus.Closed)
                         {
                             PlayPauseIcon.Glyph = CommonGlyphs.Play;
                             PlayPauseButton.ToolTip = Properties.Strings.SessionControl_Play;

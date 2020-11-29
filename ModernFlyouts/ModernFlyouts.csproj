@@ -120,8 +120,8 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
 
-   <!--<PropertyGroup>
-	<TargetFrameworkSDKToolsDirectory Condition=" '$(Platform)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(Platform)\</TargetFrameworkSDKToolsDirectory>
+  <!--<PropertyGroup>
+    <TargetFrameworkSDKToolsDirectory Condition=" '$(Platform)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(Platform)\</TargetFrameworkSDKToolsDirectory>
    </PropertyGroup>-->
 
   <PropertyGroup>

@@ -22,7 +22,7 @@ namespace ModernFlyouts.Utilities
         private const int WM_SYSKEYDOWN = 0x104;
         private const int WM_SYSKEYUP = 0x105;
 
-        private KBDLLHookProc KBDLLHookProcDelegate;
+        private HookProc _procDelegate;
         private IntPtr HHookID = IntPtr.Zero;
 
         #region Properties
@@ -30,6 +30,18 @@ namespace ModernFlyouts.Utilities
         public Key? CurrentKey { get; private set; }
 
         #endregion
+
+        public KeyboardHook()
+        {
+            _procDelegate = new HookProc(KeyboardProc);
+            var module = System.Diagnostics.Process.GetCurrentProcess().MainModule;
+            IntPtr handle = GetModuleHandle(module.ModuleName);
+            HHookID = (IntPtr)SetWindowsHookEx(WH_KEYBOARD_LL, _procDelegate, handle, 0);
+            if (HHookID == IntPtr.Zero)
+            {
+                throw new Exception("Could not set keyboard hook");
+            }
+        }
 
         private int KeyboardProc(int nCode, IntPtr wParam, IntPtr lParam)
         {
@@ -54,21 +66,9 @@ namespace ModernFlyouts.Utilities
             return CallNextHookEx((int)IntPtr.Zero, nCode, wParam, lParam);
         }
 
-        public KeyboardHook()
-        {
-            KBDLLHookProcDelegate = new KBDLLHookProc(KeyboardProc);
-            var module = System.Diagnostics.Process.GetCurrentProcess().MainModule;
-            IntPtr handle = GetModuleHandle(module.ModuleName);
-            HHookID = (IntPtr)SetWindowsHookEx(WH_KEYBOARD_LL, KBDLLHookProcDelegate, handle, 0);
-            if (HHookID == IntPtr.Zero)
-            {
-                throw new Exception("Could not set keyboard hook");
-            }
-        }
-
         ~KeyboardHook()
         {
-            if (!(HHookID == IntPtr.Zero))
+            if (HHookID != IntPtr.Zero)
             {
                 UnhookWindowsHookEx((int)HHookID);
             }
