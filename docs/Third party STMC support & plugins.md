@@ -9,7 +9,7 @@
 | Dopamine-Windows                | Yes               |
 | Foobar                          | Yes V1.5.1 & higher |
 | Microsoft Edge                  | Yes               |
-| Chrome                          | Yes               |
+| Chromium based Browsers         | Yes               |
 | Firefox                         | Yes               |
 | VLC [Store Version]             | Yes               |
 | VLC Windows                     | No * See Below    |
