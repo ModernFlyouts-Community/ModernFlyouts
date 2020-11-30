@@ -1,4 +1,4 @@
-## Some popular Apps which currently support STMC:
+## Some popular Apps which support STMC:
  
  | App:                            | Supported         |
 |---------------------------------|-------------------|
@@ -11,6 +11,8 @@
 | Microsoft Edge                  | Yes               |
 | Chrome                          | Yes               |
 | Firefox                         | Yes               |
+| VLC [Store Version]             | Yes               |
+| VLC Windows                     | No * See Below    |
 |                                 |                   |
 |                                 |                   |
 |                                 |                   |
@@ -19,5 +21,6 @@
 |                                 |                   |
 |                                 |                   |
 |                                 |                   |
-|                                 |                   |
-|                                 |                   |
+
+
+* VLC: We have filed a request with VLC to ask for STMC Support for the win32 app [See Here] (https://trac.videolan.org/vlc/ticket/25258#ticket). Hopefully if enough people request it they will add it  
