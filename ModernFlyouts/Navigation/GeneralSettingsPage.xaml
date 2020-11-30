@@ -69,8 +69,10 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <Button Content="{x:Static resx:Strings.Settings_AlignFlyout}" Click="AlignButton_Click" />
-                    <Button Content="{x:Static resx:Strings.Settings_ResetToDefaults}" Click="ResetButton_Click" />
+                    <Button Style="{DynamicResource ButtonRevealStyle}"
+                            Content="{x:Static resx:Strings.Settings_AlignFlyout}" Click="AlignButton_Click" />
+                    <Button Style="{DynamicResource ButtonRevealStyle}"
+                            Content="{x:Static resx:Strings.Settings_ResetToDefaults}" Click="ResetButton_Click" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

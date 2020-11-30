@@ -32,6 +32,12 @@
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" />
                         <Border
+                            x:Name="ExtraHighlight"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                            media:RevealBrushHelper.RevealBrushMode="Border" />
+                        <Border
                             x:Name="Border"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
@@ -46,7 +52,10 @@
                                 Content="{TemplateBinding Content}"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -55,17 +64,20 @@
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ButtonRevealBackgroundPointerOver}" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonRevealBorderBrushPointerOver}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
+                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Background" Property="media:RevealBrushHelper.State" Value="Pressed" />
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ButtonRevealBackgroundPressed}" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonRevealBorderBrushPressed}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ButtonForegroundPressed}" />
+                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ButtonRevealBackgroundDisabled}" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonRevealBorderBrushDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
+                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -86,10 +98,4 @@
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
-    <Style x:Key="MediaToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource DefaultToggleButtonStyle}">
-        <Setter Property="Width" Value="40" />
-        <Setter Property="Height" Value="40" />
-        <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
 </ResourceDictionary>

@@ -24,7 +24,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                 Source = target,
                 Path = new PropertyPath(RevealBrushHelper.IsMouseOverRootVisualProperty),
                 Converter = new OpacityConverter(),
-                ConverterParameter = 1.0 // opacity has been reduced by 5% as per WinUI design guidelines
+                ConverterParameter = 1.0
             };
             BindingOperations.SetBinding(brush, RadialGradientBrush.OpacityProperty, opacityBinding);
 

@@ -33,7 +33,10 @@ namespace ModernFlyouts
                 if (value != null)
                 {
                     sourceAppInfo = SourceAppInfo.FromAppId(value.SourceAppUserModelId);
-                    sourceAppInfo.InfoFetched += SourceAppInfo_InfoFetched;
+                    if (sourceAppInfo != null)
+                    {
+                        sourceAppInfo.InfoFetched += SourceAppInfo_InfoFetched;
+                    }
                     UpdateSessionInfo(value);
                     value.MediaPropertiesChanged += Session_MediaPropertiesChanged;
                     value.PlaybackInfoChanged += Session_PlaybackInfoChanged;

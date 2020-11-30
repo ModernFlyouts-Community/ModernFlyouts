@@ -113,11 +113,13 @@
 
             <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center"
                           ToolTip="{x:Static resx:Strings.SessionControl_MoreControls}" Margin="16,0,0,12"
+                          Style="{DynamicResource ToggleButtonRevealStyle}"
                           IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" FontSize="16" />
             </ToggleButton>
 
             <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center"
+                    Style="{DynamicResource ButtonRevealStyle}"
                     ToolTip="{x:Static resx:Strings.SessionControl_TimelineInfo}" Margin="0,0,16,12">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.TimelineInfo}" FontSize="16" />
                 <ui:FlyoutService.Flyout>
