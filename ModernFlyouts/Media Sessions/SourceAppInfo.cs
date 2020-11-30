@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Media;
 
 namespace ModernFlyouts
@@ -19,7 +20,7 @@ namespace ModernFlyouts
 
         public static SourceAppInfo FromAppId(string appId)
         {
-            if (appId == null)
+            if (string.IsNullOrEmpty(appId) || string.IsNullOrWhiteSpace(appId))
             {
                 return null;
             }
@@ -38,6 +39,7 @@ namespace ModernFlyouts
 
         internal static bool IsAppWin32(string appId)
         {
+            Debug.WriteLine($"{nameof(SourceAppInfo)}: appId:{appId}");
             return appId.EndsWith(".exe", StringComparison.OrdinalIgnoreCase);
         }
     }

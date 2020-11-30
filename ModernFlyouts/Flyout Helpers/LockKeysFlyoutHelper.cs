@@ -1,5 +1,6 @@
 ﻿using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
+using System;
 using System.Windows.Input;
 
 namespace ModernFlyouts
@@ -107,6 +108,11 @@ namespace ModernFlyouts
                 var lk = lockKey.Value;
                 if ((lk == LockKeys.CapsLock && !capsLockEnabled) || (lk == LockKeys.NumLock && !numLockEnabled)
                     || (lk == LockKeys.ScrollLock && !scrollLockEnabled) || (lk == LockKeys.Insert && !insertEnabled))
+                {
+                    return;
+                }
+
+                if (lk == LockKeys.Insert && Keyboard.Modifiers != ModifierKeys.None)
                 {
                     return;
                 }

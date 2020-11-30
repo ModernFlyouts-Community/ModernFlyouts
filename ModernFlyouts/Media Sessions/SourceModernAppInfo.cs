@@ -64,6 +64,9 @@ namespace ModernFlyouts
                 }
 
                 sourceApp = await GetAppListEntry();
+                if (sourceApp == null)
+                    return;
+
                 AppName = sourceApp.DisplayInfo.DisplayName;
 
                 var logoPath = GetRefinedLogoPath(path);
