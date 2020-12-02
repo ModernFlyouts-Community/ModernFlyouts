@@ -3,7 +3,7 @@
  | App:                            | Supported         |
 |---------------------------------|-------------------|
 | Chrome                          | Yes               |
-| Spotify                         | Yes (Store Version)|
+| Spotify                         | Yes               |
 | Groove Music                    | Yes               |
 | Movies & TV                     | Yes               |
 | Dopamine-Windows                | Yes               |
