@@ -141,11 +141,11 @@
         </trans-unit>
         <trans-unit id="Settings.Additional" translate="yes" xml:space="preserve">
           <source>Additional</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">追加</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">追加設定</target>
         </trans-unit>
         <trans-unit id="Settings.Behavior" translate="yes" xml:space="preserve">
           <source>Behavior</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">動作</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">動作設定</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
           <source>Default Flyout</source>
@@ -325,7 +325,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
           <source>Caps lock</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Caps Lock</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">CapsLock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
           <source>Insert</source>
