@@ -1,5 +1,5 @@
 # ModernFlyouts
-### A modern **Fluent Design** replacement for the old **Metro themed** flyouts present in Windows since Windows 8
+### A modern **Fluent Design** replacement for the old **Metro themed** flyouts present in Windows since Windows 8.
 
 ![ModernFlyouts](ModernFlyouts/Assets/Images/ModernFlyouts_128.png)
 
@@ -24,6 +24,8 @@ This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 
 ### Please check out the [Wiki](https://github.com/ShankarBUS/ModernFlyouts/wiki) for additional information, guides and how-tos.
 
+### Please check out [this document](https://github.com/ShankarBUS/ModernFlyouts/blob/main/docs/Third%20party%20STMC%20support%20%26%20plugins.md) for support regarding your media player/browser.
+
 ## Features
 - Fluent UI (similar to Windows 10X).
 - Supports **Light**, **Dark** & **High contrast** themes.
@@ -37,7 +39,7 @@ This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 - **Timeout** of flyouts can be changed
 
 ## System Requirements
-- **Windows 10 1809 and above** (older versions such as v0.3 and below supports Windows downlevel to Windows 8, however v0.4 and above won't)
+- **Windows 10 1809 and above** (older versions such as v0.3 and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't)
 
 ## Installation
 Modern Flyouts is available for you to install via [GitHub](https://github.com/ShankarBUS/ModernFlyouts/releases/latest), **winget** and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
@@ -48,13 +50,13 @@ All the distribution methods mentioned above are supported, however installing t
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
 
-You can [sign up here](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALdxYU9UQU9GMzQ2Rk40MDJFSkU5UzRKTVg2Nk1PTy4u) for **Beta Builds** of ModernFlyouts which will include new experimental features
+You can [sign up here](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALdxYU9UQU9GMzQ2Rk40MDJFSkU5UzRKTVg2Nk1PTy4u) for **Beta Builds** of ModernFlyouts which will include new experimental features.
 
 **GitHub:**
 
 1. Go to the [latest release on the Releases page](https://github.com/ShankarBUS/ModernFlyouts/releases/latest).
-2. Download the latest ***.msix** file from the assets.
-3. Install the downloaded ***.msix** file and launch the app from the **Start Menu**.
+2. Download the latest ***.msixbundle** file from the assets.
+3. Install the downloaded ***.msixbundle** file and launch the app from the **Start Menu**.
 
 **winget:**
 
@@ -66,7 +68,7 @@ _please note that due to how winget processes package updates, updates may take 
 
 ### Credits
 First of all, we must thank our good friend **[@ADeltaX](https://github.com/ADeltaX/)** for one of his marvelous works **"[AudioFlyout](https://github.com/ADeltaX/AudioFlyout)"**. Since the project was stale for a while and it lacked support for brightness and airplane mode flyouts, this project was born. He not only let us use his source code but also helped us improve this app. And he still supports us 😄.
-I must admit that this project wouldn't be here *how it is* without **[@ADeltaX](https://github.com/ADeltaX/)**. Our heartful thanks to him (and our contributors too obviously 😅) ❤.
+I must admit that this project wouldn't be here *how it is* without **[@ADeltaX](https://github.com/ADeltaX/)**. Our heartful thanks to him (and our contributors too!) ❤.
 
 ### Our Team
 - **[@ShankarBUS](https://github.com/ShankarBUS/)**.
@@ -77,7 +79,7 @@ I must admit that this project wouldn't be here *how it is* without **[@ADeltaX]
 **Code:**
 - [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we couldn't even identify 😅 [#113](https://github.com/ShankarBUS/ModernFlyouts/pull/113).
 
-**Translators (sorted old to new):**
+**Translators :**
 - [yukiokun057](https://github.com/yukiokun057) - Russian translator.
 - [knurzl](https://github.com/knurzl) - German translator.
 - [lucasskluser](https://github.com/lucasskluser) - Portuguese translator.
