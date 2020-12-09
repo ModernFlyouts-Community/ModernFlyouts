@@ -25,7 +25,8 @@ namespace ModernFlyouts
 
                 AppDataMigration.Perform();
 
-                DUIHandler.ForceFindDUIAndHide(false);
+                NativeFlyoutHandler.Instance = new NativeFlyoutHandler();
+                NativeFlyoutHandler.Instance.Initialize();
 
                 LocalizationHelper.Initialize();
 
@@ -52,10 +53,7 @@ namespace ModernFlyouts
                     }
                 case RunCommandType.RestoreDefault:
                     {
-                        if (!DUIHandler.IsDUIAvailable())
-                        {
-                            DUIHandler.GetAllInfos();
-                        }
+                        NativeFlyoutHandler.Instance.VerifyNativeFlyoutCreated();
                         FlyoutHandler.SafelyExitApplication();
                         break;
                     }

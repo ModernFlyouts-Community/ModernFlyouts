@@ -8,7 +8,6 @@ using ModernFlyouts.Utilities;
 using ModernFlyouts.Workarounds;
 using System;
 using System.Windows.Interop;
-using System.Windows.Threading;
 
 namespace ModernFlyouts
 {
@@ -27,7 +26,6 @@ namespace ModernFlyouts
             HOOK_MEDIA_VOLMUTE = 524288
         }
 
-        private DispatcherTimer rehooktimer;
         private uint messageShellHookId;
 
         #region Properties
@@ -37,8 +35,6 @@ namespace ModernFlyouts
         public static bool HasInitialized { get; private set; }
 
         public KeyboardHook KeyboardHook { get; private set; }
-
-        public DUIHook DUIHook { get; private set; }
 
         public FlyoutWindow FlyoutWindow { get; set; }
 
@@ -109,13 +105,7 @@ namespace ModernFlyouts
             UIManager = new UIManager();
             UIManager.Initialize(FlyoutWindow);
 
-            DUIHook = new DUIHook();
-            DUIHook.Hook();
-            DUIHook.DUIShown += DUIShown;
-            DUIHook.DUIDestroyed += DUIDestroyed;
-            rehooktimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(3), IsEnabled = false };
-            rehooktimer.Tick += (_, __) => TryRehook();
-
+            NativeFlyoutHandler.Instance.NativeFlyoutShown += (_, _) => OnNativeFlyoutShown();
             KeyboardHook = new KeyboardHook();
 
             #region App Data
@@ -156,33 +146,15 @@ namespace ModernFlyouts
             Initialized?.Invoke(null, null);
         }
 
-        private void DUIDestroyed()
+        private void OnNativeFlyoutShown()
         {
-            rehooktimer.Start();
-        }
-
-        private void TryRehook()
-        {
-            if (DUIHandler.GetAllInfos())
+            if ((DefaultFlyout == DefaultFlyout.ModernFlyouts && Handled()) || DefaultFlyout == DefaultFlyout.None)
             {
-                rehooktimer.Stop();
-                DUIHook.Rehook();
-            }
-        }
-
-        private void DUIShown()
-        {
-            if (DefaultFlyout == DefaultFlyout.ModernFlyouts && Handled())
-            {
-                DUIHandler.FindDUIAndHide();
-            }
-            else if (DefaultFlyout == DefaultFlyout.None)
-            {
-                DUIHandler.FindDUIAndHide();
+                NativeFlyoutHandler.Instance.HideNativeFlyout();
             }
             else
             {
-                DUIHandler.FindDUIAndShow();
+                NativeFlyoutHandler.Instance.ShowNativeFlyout();
             }
         }
 
@@ -195,11 +167,11 @@ namespace ModernFlyouts
 
             FlyoutWindow.StopHideTimer();
 
-            DUIHandler.VerifyDUI();
+            NativeFlyoutHandler.Instance.VerifyNativeFlyoutCreated();
 
             if (helper.AlwaysHandleDefaultFlyout)
             {
-                DUIHandler.FindDUIAndHide();
+                NativeFlyoutHandler.Instance.HideNativeFlyout();
             }
 
             FlyoutWindow.FlyoutHelper = helper;
@@ -226,7 +198,7 @@ namespace ModernFlyouts
             }
             if (defaultFlyout != DefaultFlyout.WindowsDefault)
             {
-                DUIHandler.FindDUIAndHide();
+                NativeFlyoutHandler.Instance.HideNativeFlyout();
             }
 
             AppDataHelper.DefaultFlyout = defaultFlyout;
@@ -314,7 +286,7 @@ namespace ModernFlyouts
 
         public static void SafelyExitApplication()
         {
-            DUIHandler.FindDUIAndShow();
+            NativeFlyoutHandler.Instance.ShowNativeFlyout();
             Environment.Exit(0);
         }
 

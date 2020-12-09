@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
+using System.Windows.Threading;
 using static ModernFlyouts.Interop.NativeMethods;
 
 namespace ModernFlyouts.Interop
 {
-    public class DUIHook
+    public class NativeFlyoutHandler
     {
         #region Constants
 
@@ -152,56 +154,98 @@ namespace ModernFlyouts.Interop
 
         #endregion
 
+        #region Properties
+
+        public static NativeFlyoutHandler Instance { get; set; }
+
+        public IntPtr HWndHost { get; private set; } = IntPtr.Zero;
+
+        public IntPtr HWndDUI { get; private set; } = IntPtr.Zero;
+
+        public uint ShellProcessId { get; private set; }
+
+        #endregion
+
+        private bool _hasNativeFlyoutCreated;
+
         private WinEventDelegate _procDelegate;
         private IntPtr HHookID = IntPtr.Zero;
 
-        public event DUIHookEventHandler DUIShown;
+        private DispatcherTimer rehooktimer;
 
-        public event DUIHookEventHandler DUIHidden;
+        public event EventHandler NativeFlyoutShown;
 
-        public event DUIHookEventHandler DUIDestroyed;
-
-        public delegate void DUIHookEventHandler();
-
-        public DUIHook()
+        public NativeFlyoutHandler()
         {
             _procDelegate = new WinEventDelegate(WinEventProc);
         }
 
-        public void Hook()
+        public void Initialize()
         {
-            HHookID = SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_STATECHANGE, IntPtr.Zero, _procDelegate, DUIHandler.ProcessId, 0, WINEVENT_OUTOFCONTEXT);
-            if (HHookID == IntPtr.Zero)
-            {
-                throw new Exception("Could not set DUI hook");
-            }
+            _hasNativeFlyoutCreated = GetAllInfos();
+            Debug.WriteLine($"{nameof(NativeFlyoutHandler)}: Native Flyout Host has been created - {_hasNativeFlyoutCreated}");
+            Hook();
 
-            Debug.WriteLine(nameof(DUIHook) + ": Hooked!");
+            rehooktimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(3), IsEnabled = false };
+            rehooktimer.Tick += (_, __) => TryRehook();
         }
 
-        private void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
+        #region Native Flyout Hooking
+
+        private void Hook()
+        {
+            if (!_hasNativeFlyoutCreated)
+            {
+                ShellProcessId = (uint)GetShellProcessId();
+            }
+
+            if (ShellProcessId != 0)
+            {
+                HHookID = SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_STATECHANGE, IntPtr.Zero, _procDelegate, ShellProcessId, 0, WINEVENT_OUTOFCONTEXT);
+
+                if (HHookID == IntPtr.Zero)
+                {
+                    throw new Exception("Could not set Native Flyout hook");
+                }
+
+                Debug.WriteLine(nameof(NativeFlyoutHandler) + ": Hooked!");
+            }
+        }
+
+        private void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hWnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
         {
             if (idObject != 0 || idChild != 0)
             {
                 return;
             }
-            if (hwnd == DUIHandler.HWndHost)
+
+            if (!_hasNativeFlyoutCreated && (eventType == EVENT_OBJECT_CREATE || eventType == EVENT_OBJECT_SHOW))
+            {
+                if (GetWindowClassName(hWnd) == "NativeHWNDHost")
+                {
+                    _hasNativeFlyoutCreated = GetAllInfos();
+
+                    if (eventType == EVENT_OBJECT_SHOW)
+                    {
+                        OnNativeFlyoutShown();
+                    }
+                }
+            }
+
+            if (hWnd == HWndHost)
             {
                 switch (eventType)
                 {
                     case EVENT_OBJECT_SHOW:
-                        DUIShown?.Invoke();
-                        Debug.WriteLine(nameof(DUIHook) + ": DUI Shown!");
+                        OnNativeFlyoutShown();
                         break;
 
                     case EVENT_OBJECT_DESTROY:
-                        DUIDestroyed?.Invoke();
-                        Debug.WriteLine(nameof(DUIHook) + ": DUI Destroyed!");
+                        OnNativeFlyoutDestroyed();
                         break;
 
                     case EVENT_OBJECT_HIDE:
-                        DUIHidden?.Invoke();
-                        Debug.WriteLine(nameof(DUIHook) + ": DUI Hidden!");
+                        OnNativeFlyoutHidden();
                         break;
 
                     default:
@@ -210,24 +254,134 @@ namespace ModernFlyouts.Interop
             }
         }
 
-        public void Rehook()
+        private void OnNativeFlyoutShown()
+        {
+            Debug.WriteLine(nameof(NativeFlyoutHandler) + ": Native Flyout Shown!");
+            NativeFlyoutShown?.Invoke(this, null);
+        }
+
+        private void OnNativeFlyoutHidden()
+        {
+            Debug.WriteLine(nameof(NativeFlyoutHandler) + ": Native Flyout Hidden!");
+        }
+
+        private void OnNativeFlyoutDestroyed()
+        {
+            Debug.WriteLine(nameof(NativeFlyoutHandler) + ": Native Flyout Destroyed!");
+
+            HWndHost = IntPtr.Zero;
+            HWndDUI = IntPtr.Zero;
+            ShellProcessId = 0;
+            _hasNativeFlyoutCreated = false;
+            rehooktimer.Start();
+        }
+
+        private void Rehook()
         {
             Unhook();
             Hook();
 
-            Debug.WriteLine(nameof(DUIHook) + ": Rehooked!");
+            Debug.WriteLine(nameof(NativeFlyoutHandler) + ": Rehooked!");
         }
 
-        public void Unhook()
+        private void Unhook()
         {
             if (!(HHookID == IntPtr.Zero))
             {
                 UnhookWinEvent(HHookID);
-                Debug.WriteLine(nameof(DUIHook) + ": Unhooked!");
+                Debug.WriteLine(nameof(NativeFlyoutHandler) + ": Unhooked!");
             }
         }
 
-        ~DUIHook()
+        private void TryRehook()
+        {
+            ShellProcessId = (uint)GetShellProcessId();
+            if (ShellProcessId != 0)
+            {
+                rehooktimer.Stop();
+                Rehook();
+            }
+        }
+
+        #endregion
+
+        #region Da agjhtual mnadive phlyout ghantling
+
+        private static int GetShellProcessId()
+        {
+            return Process.GetProcessesByName("explorer").FirstOrDefault(p => IsShellProcess(p.Id))?.Id ?? 0;
+        }
+
+        private static bool IsShellProcess(int id)
+        {
+            var hWndShell = GetShellWindow();
+            GetWindowThreadProcessId(hWndShell, out int pid);
+
+            return id == pid;
+        }
+
+        private bool GetAllInfos()
+        {
+            IntPtr hWndHost;
+            while ((hWndHost = FindWindowEx(IntPtr.Zero, IntPtr.Zero, "NativeHWNDHost", "")) != IntPtr.Zero)
+            {
+                IntPtr hWndDUI;
+                if ((hWndDUI = FindWindowEx(hWndHost, IntPtr.Zero, "DirectUIHWND", "")) != IntPtr.Zero)
+                {
+                    GetWindowThreadProcessId(hWndHost, out int pid);
+                    if (Process.GetProcessById(pid).ProcessName.ToLower() == "explorer")
+                    {
+                        HWndHost = hWndHost;
+                        HWndDUI = hWndDUI;
+                        ShellProcessId = (uint)pid;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public void HideNativeFlyout()
+        {
+            _hasNativeFlyoutCreated = GetAllInfos();
+            if (_hasNativeFlyoutCreated)
+            {
+                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Minimize);
+                ShowWindowAsync(HWndHost, (int)ShowWindowCommands.Hide);
+            }
+        }
+
+        public void PermanentlyHideNativeFlyout()
+        {
+            if (_hasNativeFlyoutCreated)
+            {
+                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Minimize);
+                ShowWindowAsync(HWndHost, (int)ShowWindowCommands.Minimize);
+                ShowWindowAsync(HWndHost, (int)ShowWindowCommands.ForceMinimize);
+            }
+        }
+
+        public void ShowNativeFlyout()
+        {
+            if (_hasNativeFlyoutCreated)
+            {
+                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Restore);
+            }
+        }
+
+        internal void VerifyNativeFlyoutCreated()
+        {
+            if (!_hasNativeFlyoutCreated)
+            {
+                GetAllInfos();
+                Rehook();
+            }
+        }
+
+        #endregion
+
+        ~NativeFlyoutHandler()
         {
             Unhook();
         }

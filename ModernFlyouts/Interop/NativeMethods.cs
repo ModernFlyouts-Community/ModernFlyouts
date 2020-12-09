@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace ModernFlyouts.Interop
 {
@@ -306,6 +307,29 @@ namespace ModernFlyouts.Interop
         internal delegate int HookProc(int nCode, IntPtr wParam, IntPtr lParam);
 
         internal delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hWnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
+
+        [DllImport("user32.dll", SetLastError = false)]
+        internal static extern IntPtr GetShellWindow();
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        internal static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
+
+        internal static string GetWindowClassName(IntPtr hWnd)
+        {
+            int nRet;
+            // Pre-allocate 256 characters, since this is the maximum class name length.
+            StringBuilder className = new StringBuilder(256);
+            //Get the window class name
+            nRet = GetClassName(hWnd, className, className.Capacity);
+            if (nRet != 0)
+            {
+                return className.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
 
         internal static void SetToolWindow(IntPtr hWnd)
         {
