@@ -1,6 +1,5 @@
 ﻿using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
-using System;
 using System.Windows.Input;
 
 namespace ModernFlyouts

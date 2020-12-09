@@ -3,10 +3,10 @@ using ModernFlyouts.AppLifecycle;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Interop;
 using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media;
 using ModernFlyouts.Utilities;
 using ModernFlyouts.Workarounds;
 using System;
-using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Threading;
 
@@ -68,17 +68,18 @@ namespace ModernFlyouts
             }
         }
 
-        private Point defaultFlyoutPosition = DefaultValuesStore.DefaultFlyoutPosition;
+        private BindablePoint defaultFlyoutPosition;
 
-        public Point DefaultFlyoutPosition
+        public BindablePoint DefaultFlyoutPosition
         {
             get => defaultFlyoutPosition;
-            set
+            private set
             {
-                if (SetProperty(ref defaultFlyoutPosition, value))
+                defaultFlyoutPosition = value;
+                defaultFlyoutPosition.ValueChanged += (s, _) =>
                 {
-                    AppDataHelper.DefaultFlyoutPosition = value;
-                }
+                    AppDataHelper.SavePropertyValue(s.ToString(), nameof(AppDataHelper.DefaultFlyoutPosition));
+                };
             }
         }
 

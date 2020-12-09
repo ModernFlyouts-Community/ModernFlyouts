@@ -1,5 +1,6 @@
 ﻿using ModernFlyouts.Helpers;
 using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media;
 using ModernFlyouts.UI.Media.Animation;
 using ModernFlyouts.Utilities;
 using System;
@@ -219,7 +220,9 @@ namespace ModernFlyouts
 
         public void AlignFlyout(bool toDefault = true)
         {
-            var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : AppDataHelper.FlyoutPosition;
+            flyoutPosition ??= AppDataHelper.FlyoutPosition;
+
+            var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : flyoutPosition;
 
             Left = defaultPosition.X - _leftShadowMargin; Top = defaultPosition.Y;
 
@@ -231,7 +234,9 @@ namespace ModernFlyouts
 
         public void SaveFlyoutPosition()
         {
-            AppDataHelper.FlyoutPosition = new Point(Left + _leftShadowMargin, Top);
+            flyoutPosition.X = Left + _leftShadowMargin;
+            flyoutPosition.Y = Top;
+            AppDataHelper.SavePropertyValue(flyoutPosition.ToString(), nameof(AppDataHelper.FlyoutPosition));
         }
 
         internal void OnTopBarVisibilityChanged(TopBarVisibility value)
@@ -309,6 +314,7 @@ namespace ModernFlyouts
             return point.X >= 0 && point.Y >= 0 && point.X <= frameworkElement.ActualWidth && point.Y <= frameworkElement.ActualHeight;
         }
 
+        private BindablePoint flyoutPosition;
         private int _leftShadowMargin = 20;
         private bool _topBarOverlay;
         private bool _topBarVisible = true;
