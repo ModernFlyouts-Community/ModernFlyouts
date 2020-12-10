@@ -11,7 +11,7 @@
 
 ![Overview](docs/images/Overview.png)
 
-This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts present in **Windows** *(they are not updated since Windows 8 LOL)* which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
+This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts present in **Windows** *(which haven't been updated since Windows 8 LOL)* which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
 
 This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyout) by [@ADeltaX](https://github.com/ADeltaX/) with additional implementations for **"Airplane mode"**, **"Brightness"** and **"LockKeys"** *(includes Insert key, Caps, Num & Scroll lock keys)* flyouts. This project stands as a complete replacement for the built-in one.
 
