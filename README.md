@@ -89,6 +89,7 @@ I must admit that this project wouldn't be here *how it is* without **[@ADeltaX]
 - [ArmasF31](https://github.com/ArmasF31) - German translator.
 - [Tarik02](https://github.com/Tarik02) - Ukrainian translator.
 - [Per-Terra](https://github.com/Per-Terra) - Japanese translator.
+- [Renzo904](https://github.com/Renzo904) - Spanish translator.
 
 **Others:**
 - [Cyberdroid1](https://github.com/Cyberdroid1) - Wiki.
