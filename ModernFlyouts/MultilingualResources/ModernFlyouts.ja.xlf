@@ -197,7 +197,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
           <source>Brightness</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"明るさ</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">明るさ</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
@@ -293,7 +293,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"ボリュームのフライアウトにメディアコントロール(Global System Media Transport Controls)を表示</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ボリュームのフライアウトにメディアコントロール(Global System Media Transport Controls)を表示</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
