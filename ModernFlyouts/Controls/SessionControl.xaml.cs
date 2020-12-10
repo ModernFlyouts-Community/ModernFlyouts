@@ -471,7 +471,6 @@ namespace ModernFlyouts
 
         #region Thumbnail
 
-        // TODO: Re-use `.AsStream()` extension method from `System.IO.WindowsRuntimeStreamExtensions` once https://github.com/ShankarBUS/ModernFlyouts/issues/100 doesn't occur
         private async Task SetThumbnailAsync(IRandomAccessStreamReference thumbnail, MediaPlaybackType? playbackType)
         {
             if (thumbnail != null)

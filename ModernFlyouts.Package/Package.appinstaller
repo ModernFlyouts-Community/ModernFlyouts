@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-	Uri="https://github.com/ShankarBUS/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller"
+	Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller"
 	Version="0.8.2.0"
 	xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
 
@@ -8,7 +8,7 @@
 		Name="ModernFlyouts"
 		Publisher="Sam G"
 		Version="0.8.2.0"
-		Uri="https://github.com/ShankarBUS/ModernFlyouts/releases/download/0.8.2/ModernFlyouts_0.8.2.0_neutral.Msixbundle" />
+		Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/download/0.8.2/ModernFlyouts_0.8.2.0_neutral.Msixbundle" />
 
 	<UpdateSettings>
 		<OnLaunch HoursBetweenUpdateChecks="6" ShowPrompt="true"/>
