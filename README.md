@@ -3,7 +3,7 @@
 
 ![ModernFlyouts](ModernFlyouts/Assets/Images/ModernFlyouts_128.png)
 
-[Overview](#overview) | [Features](#features) | [System Requirements](#system-requirements) | [Installation](#installation) | [Screenshots](#screenshots)
+[Overview](#overview) • [Features](#features) • [System Requirements](#system-requirements) • [Installation](#installation) • [Connect with us](#connect-with-us) • [Screenshots](#screenshots)
 
 ## Overview
 
@@ -63,6 +63,9 @@ You can [sign up here](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIk
 _please note that due to how winget processes package updates, updates may take **longer** to be released to winget_
 
 `winget install --id=ModernFlyouts.ModernFlyouts -e`
+
+## Connect with us
+You can join our [Discord Server](https://discord.gg/PqWAkWWPJH) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback (people who don't have a GitHub account may be benefitted).
 
 ## NOTES
 
