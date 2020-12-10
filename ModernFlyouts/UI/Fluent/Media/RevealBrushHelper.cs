@@ -21,7 +21,8 @@ namespace ModernFlyouts.UI.Fluent.Media
     {
         None = 0,
         Border = 1,
-        Background = 2
+        Background = 2,
+        BackgroundPressed = 3
     }
 
     public static class RevealBrushHelper
@@ -33,7 +34,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                 "State",
                 typeof(RevealBrushState),
                 typeof(RevealBrushHelper),
-                new PropertyMetadata(RevealBrushState.Normal));
+                new FrameworkPropertyMetadata(RevealBrushState.Normal, FrameworkPropertyMetadataOptions.Inherits, OnRevealBrushStateChanged));
 
         public static RevealBrushState GetState(DependencyObject obj)
         {
@@ -43,6 +44,29 @@ namespace ModernFlyouts.UI.Fluent.Media
         public static void SetState(DependencyObject obj, RevealBrushState value)
         {
             obj.SetValue(StateProperty, value);
+        }
+
+        private static void OnRevealBrushStateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is UIElement uiElement)
+            {
+                var revealBrushMode = GetRevealBrushMode(uiElement);
+                if (revealBrushMode != RevealBrushMode.None)
+                {
+                    switch (revealBrushMode)
+                    {
+                        case RevealBrushMode.Border:
+                            RevealBorderBrushHelper.UpdateBrush(uiElement);
+                            break;
+                        case RevealBrushMode.Background:
+                        case RevealBrushMode.BackgroundPressed:
+                            RevealBackgroundBrushHelper.UpdateBrush(uiElement);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
         }
 
         #endregion
@@ -117,7 +141,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                 "IsMouseOverRootVisual",
                 typeof(bool),
                 typeof(RevealBrushHelper),
-                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits, OnIsMouseOverRootVisualChanged));
 
         internal static bool GetIsMouseOverRootVisual(DependencyObject obj)
         {
@@ -127,6 +151,17 @@ namespace ModernFlyouts.UI.Fluent.Media
         internal static void SetIsMouseOverRootVisual(DependencyObject obj, bool value)
         {
             obj.SetValue(IsMouseOverRootVisualProperty, value);
+        }
+
+        private static void OnIsMouseOverRootVisualChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is UIElement uiElement)
+            {
+                if (GetRevealBrushMode(uiElement) == RevealBrushMode.Border)
+                {
+                    RevealBorderBrushHelper.UpdateBrush(uiElement);
+                }
+            }
         }
 
         #endregion
@@ -195,7 +230,7 @@ namespace ModernFlyouts.UI.Fluent.Media
 
         #endregion
 
-        #region RevealMode
+        #region RevealBrushMode
 
         public static readonly DependencyProperty RevealBrushModeProperty =
             DependencyProperty.RegisterAttached(
@@ -204,12 +239,12 @@ namespace ModernFlyouts.UI.Fluent.Media
                 typeof(RevealBrushHelper),
                 new PropertyMetadata(RevealBrushMode.None, OnRevealBrushModeChanged));
 
-        internal static RevealBrushMode GetRevealBrushMode(DependencyObject obj)
+        public static RevealBrushMode GetRevealBrushMode(DependencyObject obj)
         {
             return (RevealBrushMode)obj.GetValue(RevealBrushModeProperty);
         }
 
-        internal static void SetRevealBrushMode(DependencyObject obj, RevealBrushMode value)
+        public static void SetRevealBrushMode(DependencyObject obj, RevealBrushMode value)
         {
             obj.SetValue(RevealBrushModeProperty, value);
         }
@@ -221,12 +256,75 @@ namespace ModernFlyouts.UI.Fluent.Media
                 uiElement.OpacityMask = revealBrushMode switch
                 {
                     RevealBrushMode.Border => RevealBorderBrushHelper.GetRevealBrush(uiElement),
-                    RevealBrushMode.Background => throw new NotImplementedException(),
-
+                    RevealBrushMode.Background => RevealBackgroundBrushHelper.GetHoverRevealBrush(uiElement),
+                    RevealBrushMode.BackgroundPressed => RevealBackgroundBrushHelper.GetPressedRevealBrush(uiElement),
                     // Could be set to any colour given that its alpha is 100%. I just use YellowGreen because it's my favourite colour.
                     _ => Brushes.YellowGreen,
                 };
             }
+        }
+
+        #endregion
+
+        #region IsBorderRevealBrush
+
+        public static readonly DependencyProperty IsBorderRevealBrushProperty =
+            DependencyProperty.RegisterAttached(
+                "IsBorderRevealBrush",
+                typeof(bool),
+                typeof(RevealBrushHelper),
+                new PropertyMetadata(false));
+
+        public static bool GetIsBorderRevealBrush(Brush obj)
+        {
+            return (bool)obj.GetValue(IsBorderRevealBrushProperty);
+        }
+
+        public static void SetIsBorderRevealBrush(Brush obj, bool value)
+        {
+            obj.SetValue(IsBorderRevealBrushProperty, value);
+        }
+
+        #endregion
+
+        #region IsBackgroundRevealBrush
+
+        public static readonly DependencyProperty IsBackgroundRevealBrushProperty =
+            DependencyProperty.RegisterAttached(
+                "IsBackgroundRevealBrush",
+                typeof(bool),
+                typeof(RevealBrushHelper),
+                new PropertyMetadata(false));
+
+        public static bool GetIsBackgroundRevealBrush(Brush obj)
+        {
+            return (bool)obj.GetValue(IsBackgroundRevealBrushProperty);
+        }
+
+        public static void SetIsBackgroundRevealBrush(Brush obj, bool value)
+        {
+            obj.SetValue(IsBackgroundRevealBrushProperty, value);
+        }
+
+        #endregion
+
+        #region RevealBrush
+
+        internal static readonly DependencyProperty RevealBrushProperty =
+            DependencyProperty.RegisterAttached(
+                "RevealBrush",
+                typeof(Brush),
+                typeof(RevealBrushHelper),
+                new PropertyMetadata(null));
+
+        internal static Brush GetRevealBrush(UIElement obj)
+        {
+            return (Brush)obj.GetValue(RevealBrushProperty);
+        }
+
+        internal static void SetRevealBrush(UIElement obj, Brush value)
+        {
+            obj.SetValue(RevealBrushProperty, value);
         }
 
         #endregion
@@ -257,20 +355,6 @@ namespace ModernFlyouts.UI.Fluent.Media
             {
                 SetIsMouseOverRootVisual(ctrl, false);
             }
-        }
-    }
-    internal class OpacityConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            var isEnter = (bool)value;
-            var opacity = (double)parameter;
-            return isEnter ? opacity : 0.0;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
         }
     }
 

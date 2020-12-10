@@ -1,12 +1,13 @@
 ﻿// TODO: Move this to ModernWpf community toolkit and reference it
 
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
 namespace ModernFlyouts.UI.Fluent.Media
 {
-    public class RevealBorderBrushHelper
+    internal class RevealBorderBrushHelper
     {
         private const double DefaultRevealBorderBrushRadius = 80.0;
 
@@ -19,15 +20,6 @@ namespace ModernFlyouts.UI.Fluent.Media
                 RadiusY = DefaultRevealBorderBrushRadius
             };
 
-            Binding opacityBinding = new("Opacity")
-            {
-                Source = target,
-                Path = new PropertyPath(RevealBrushHelper.IsMouseOverRootVisualProperty),
-                Converter = new OpacityConverter(),
-                ConverterParameter = 1.0
-            };
-            BindingOperations.SetBinding(brush, RadialGradientBrush.OpacityProperty, opacityBinding);
-
             var binding = new MultiBinding
             {
                 Converter = new RelativePositionConverter()
@@ -39,7 +31,20 @@ namespace ModernFlyouts.UI.Fluent.Media
             BindingOperations.SetBinding(brush, RadialGradientBrush.CenterProperty, binding);
             BindingOperations.SetBinding(brush, RadialGradientBrush.GradientOriginProperty, binding);
 
+            RevealBrushHelper.SetRevealBrush(target, brush);
+
             return brush;
+        }
+
+        public static void UpdateBrush(UIElement uiElement)
+        {
+            RevealBrushState revealBrushState = RevealBrushHelper.GetState(uiElement);
+            bool isMouseOverRootVisual = RevealBrushHelper.GetIsMouseOverRootVisual(uiElement);
+
+            if (RevealBrushHelper.GetRevealBrush(uiElement) is Brush brush)
+            {
+                brush.Opacity = (isMouseOverRootVisual && revealBrushState == RevealBrushState.Normal) ? 1.0 : 0.0;
+            }
         }
     }
 }
