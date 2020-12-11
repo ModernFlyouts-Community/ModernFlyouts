@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
-using static ModernFlyouts.Interop.NativeMethods;
+using static ModernFlyouts.Core.Interop.NativeMethods;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Core.Interop
 {
     public class KeyboardHook
     {

@@ -457,33 +457,6 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter the point in the format &apos;X,Y&apos; (for e.g. 50,60)..
-        /// </summary>
-        public static string PointValidationRule_PointFormatInvalidMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.PointFormatInvalidMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please enter X,Y values in the range {0} - {1}..
-        /// </summary>
-        public static string PointValidationRule_PointOutOfRangeMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.PointOutOfRangeMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Value cannot be coverted to string..
-        /// </summary>
-        public static string PointValidationRule_StringConvertionErrorMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.StringConvertionErrorMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Restore legacy flyout.
         /// </summary>
         public static string RestoreDefaultItem {
@@ -750,15 +723,6 @@ namespace ModernFlyouts.Properties {
         public static string Settings_FlyoutDefaultPosition {
             get {
                 return ResourceManager.GetString("Settings.FlyoutDefaultPosition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Type the position in &apos;X,Y&apos; format (Default: 50,60).
-        /// </summary>
-        public static string Settings_FlyoutDefaultPositionDescription {
-            get {
-                return ResourceManager.GetString("Settings.FlyoutDefaultPositionDescription", resourceCulture);
             }
         }
         

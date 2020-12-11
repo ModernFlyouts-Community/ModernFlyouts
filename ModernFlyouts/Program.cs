@@ -1,6 +1,6 @@
 ﻿using ModernFlyouts.AppLifecycle;
 using ModernFlyouts.Helpers;
-using ModernFlyouts.Interop;
+using ModernFlyouts.Core.Interop;
 using System;
 using System.Reflection;
 using System.Windows;

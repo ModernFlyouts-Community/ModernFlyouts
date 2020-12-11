@@ -248,18 +248,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Pin TopBar</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Please enter the point in the format 'X,Y' (for e.g. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Please enter X,Y values in the range {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Value cannot be coverted to string.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Restore legacy flyout</value>
   </data>
@@ -346,9 +334,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Flyout default position</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Type the position in 'X,Y' format (Default: 50,60)</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
     <value>Flyout theme</value>

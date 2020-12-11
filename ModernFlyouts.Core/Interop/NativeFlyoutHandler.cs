@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Threading;
-using static ModernFlyouts.Interop.NativeMethods;
+using static ModernFlyouts.Core.Interop.NativeMethods;
 
-namespace ModernFlyouts.Interop
+namespace ModernFlyouts.Core.Interop
 {
     public class NativeFlyoutHandler
     {
@@ -370,7 +370,7 @@ namespace ModernFlyouts.Interop
             }
         }
 
-        internal void VerifyNativeFlyoutCreated()
+        public void VerifyNativeFlyoutCreated()
         {
             if (!_hasNativeFlyoutCreated)
             {

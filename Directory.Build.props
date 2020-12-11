@@ -1,0 +1,7 @@
+﻿<Project>
+  <PropertyGroup>
+    <Authors>ModernFlyouts Community</Authors>
+    <LangVersion>latest</LangVersion>
+    <Version>0.8.4.1-beta</Version>
+  </PropertyGroup>
+</Project>

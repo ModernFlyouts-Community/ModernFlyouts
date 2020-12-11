@@ -41,7 +41,7 @@ namespace ModernFlyouts.UI.Fluent.Media
         public static Brush GetPressedRevealBrush(UIElement target)
         {
             var gradientStops = new GradientStopCollection(
-                new []
+                new[]
                 {
                     new GradientStop(Color.FromArgb(30, 255, 255, 255), 0),
                     new GradientStop(Color.FromArgb(40, 255, 255, 255), 0),

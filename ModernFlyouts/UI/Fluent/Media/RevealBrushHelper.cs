@@ -58,10 +58,12 @@ namespace ModernFlyouts.UI.Fluent.Media
                         case RevealBrushMode.Border:
                             RevealBorderBrushHelper.UpdateBrush(uiElement);
                             break;
+
                         case RevealBrushMode.Background:
                         case RevealBrushMode.BackgroundPressed:
                             RevealBackgroundBrushHelper.UpdateBrush(uiElement);
                             break;
+
                         default:
                             break;
                     }

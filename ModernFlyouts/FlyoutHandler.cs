@@ -1,10 +1,9 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ModernFlyouts.AppLifecycle;
 using ModernFlyouts.Helpers;
-using ModernFlyouts.Interop;
+using ModernFlyouts.Core.Interop;
 using ModernFlyouts.UI;
 using ModernFlyouts.UI.Media;
-using ModernFlyouts.Utilities;
 using ModernFlyouts.Workarounds;
 using System;
 using System.Windows.Interop;

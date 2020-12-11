@@ -65,7 +65,6 @@ namespace ModernFlyouts.UI.Media
 
         public BindablePoint() : this(0.0, 0.0)
         {
-
         }
 
         private void OnValueChanged()

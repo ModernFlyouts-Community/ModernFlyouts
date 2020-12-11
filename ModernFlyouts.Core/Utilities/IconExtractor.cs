@@ -36,7 +36,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 
-namespace ModernFlyouts.Utilities
+namespace ModernFlyouts.Core.Utilities
 {
     public sealed class IconExtractor
     {

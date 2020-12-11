@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace ModernFlyouts.Interop
+namespace ModernFlyouts.Core.Interop
 {
     public static class NativeMethods
     {
@@ -214,10 +214,10 @@ namespace ModernFlyouts.Interop
         internal static extern bool UnhookWinEvent(IntPtr hWinEventHook);
 
         [DllImport("user32.dll", SetLastError = true)]
-        internal static extern bool RegisterShellHookWindow(IntPtr hWnd);
+        public static extern bool RegisterShellHookWindow(IntPtr hWnd);
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        internal static extern uint RegisterWindowMessage(string lpString);
+        public static extern uint RegisterWindowMessage(string lpString);
 
         [Serializable]
         [StructLayout(LayoutKind.Sequential)]
@@ -299,10 +299,10 @@ namespace ModernFlyouts.Interop
 
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+        public static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
 
         [DllImport("user32.dll")]
-        internal static extern bool SetWindowPlacement(IntPtr hWnd, [In] ref WINDOWPLACEMENT lpwndpl);
+        public static extern bool SetWindowPlacement(IntPtr hWnd, [In] ref WINDOWPLACEMENT lpwndpl);
 
         internal delegate int HookProc(int nCode, IntPtr wParam, IntPtr lParam);
 
@@ -331,7 +331,7 @@ namespace ModernFlyouts.Interop
             }
         }
 
-        internal static void SetToolWindow(IntPtr hWnd)
+        public static void SetToolWindow(IntPtr hWnd)
         {
             var exstyle = GetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_EXSTYLE);
             IntPtr style = new((uint)GetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_STYLE) & ~(uint)WindowStyles.WS_SYSMENU);

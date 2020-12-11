@@ -1,7 +1,7 @@
-﻿using ModernFlyouts.Helpers;
+﻿using ModernFlyouts.Core.Utilities;
+using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
 using NAudio.CoreAudioApi;
-using NAudio.CoreAudioApi.Interfaces;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -416,30 +416,5 @@ namespace ModernFlyouts
 
             AppDataHelper.AudioModuleEnabled = IsEnabled;
         }
-    }
-
-    public class AudioDeviceNotificationClient : IMMNotificationClient
-    {
-        public event EventHandler<string> DefaultDeviceChanged;
-
-        public void OnDefaultDeviceChanged(DataFlow dataFlow, Role deviceRole, string defaultDeviceId)
-        {
-            if (dataFlow == DataFlow.Render && deviceRole == Role.Multimedia)
-            {
-                DefaultDeviceChanged?.Invoke(this, defaultDeviceId);
-            }
-        }
-
-        public void OnDeviceAdded(string deviceId)
-        { }
-
-        public void OnDeviceRemoved(string deviceId)
-        { }
-
-        public void OnDeviceStateChanged(string deviceId, DeviceState newState)
-        { }
-
-        public void OnPropertyValueChanged(string deviceId, PropertyKey propertyKey)
-        { }
     }
 }

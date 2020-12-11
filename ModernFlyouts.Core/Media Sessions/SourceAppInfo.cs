@@ -4,7 +4,7 @@ using System.Windows.Media;
 
 namespace ModernFlyouts
 {
-    internal abstract class SourceAppInfo
+    public abstract class SourceAppInfo
     {
         #region Properties
 

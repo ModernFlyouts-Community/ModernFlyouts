@@ -1,4 +1,4 @@
-﻿using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Core.Utilities;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
-using static ModernFlyouts.Interop.NativeMethods;
+using static ModernFlyouts.Core.Interop.NativeMethods;
 
 namespace ModernFlyouts
 {
@@ -89,7 +89,7 @@ namespace ModernFlyouts
 
         #region Window activation things
 
-        public static WindowSizeState GetWindowSizeState(IntPtr hWnd)
+        private static WindowSizeState GetWindowSizeState(IntPtr hWnd)
         {
             GetWindowPlacement(hWnd, out WINDOWPLACEMENT placement);
 
@@ -102,7 +102,7 @@ namespace ModernFlyouts
             };
         }
 
-        public enum WindowSizeState
+        private enum WindowSizeState
         {
             Normal,
             Minimized,
