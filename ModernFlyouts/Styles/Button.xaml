@@ -86,6 +86,9 @@
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ButtonRevealBackgroundDisabled}" />
                             <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ButtonRevealBorderBrushDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
+
+                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Border" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

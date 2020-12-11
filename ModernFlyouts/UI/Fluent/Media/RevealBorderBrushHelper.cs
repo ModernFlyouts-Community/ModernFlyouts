@@ -1,6 +1,5 @@
 ﻿// TODO: Move this to ModernWpf community toolkit and reference it
 
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
@@ -16,6 +15,7 @@ namespace ModernFlyouts.UI.Fluent.Media
             RadialGradientBrush brush = new(Colors.White, Colors.Transparent)
             {
                 MappingMode = BrushMappingMode.Absolute,
+                Opacity = 0.0,
                 RadiusX = DefaultRevealBorderBrushRadius,
                 RadiusY = DefaultRevealBorderBrushRadius
             };

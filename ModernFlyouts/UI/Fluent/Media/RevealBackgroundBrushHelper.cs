@@ -17,9 +17,9 @@ namespace ModernFlyouts.UI.Fluent.Media
             RadialGradientBrush brush = new(Colors.White, Colors.Transparent)
             {
                 MappingMode = BrushMappingMode.Absolute,
+                Opacity = 0.0,
                 RadiusX = DefaultRevealBackgroudBrushRadius,
-                RadiusY = DefaultRevealBackgroudBrushRadius,
-                Opacity = 0.0
+                RadiusY = DefaultRevealBackgroudBrushRadius
             };
 
             var binding = new MultiBinding
@@ -51,9 +51,9 @@ namespace ModernFlyouts.UI.Fluent.Media
             RadialGradientBrush brush = new(gradientStops)
             {
                 MappingMode = BrushMappingMode.Absolute,
+                Opacity = 0.0,
                 RadiusX = 200.0,
-                RadiusY = 200.0,
-                Opacity = 0.0
+                RadiusY = 200.0
             };
 
             var binding = new MultiBinding
@@ -105,14 +105,14 @@ namespace ModernFlyouts.UI.Fluent.Media
                         brush.BeginAnimation(RadialGradientBrush.RadiusXProperty, radiusAnimation);
                         brush.BeginAnimation(RadialGradientBrush.RadiusYProperty, radiusAnimation);
 
-                        //var gradientStop = brush.GradientStops[1];
+                        var gradientStop = brush.GradientStops[1];
 
-                        //var offsetAnimation = new DoubleAnimation(0, 0.8, time)
-                        //{
-                        //    EasingFunction = easingFunction
-                        //};
+                        var offsetAnimation = new DoubleAnimation(0, 0.8, time)
+                        {
+                            EasingFunction = easingFunction
+                        };
 
-                        //gradientStop.BeginAnimation(GradientStop.OffsetProperty, offsetAnimation);
+                        gradientStop.BeginAnimation(GradientStop.OffsetProperty, offsetAnimation);
                     }
                     else
                     {
