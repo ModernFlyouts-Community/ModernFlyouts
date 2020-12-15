@@ -1,6 +1,4 @@
-﻿// TODO: Move this to ModernWpf community toolkit and reference it
-
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;

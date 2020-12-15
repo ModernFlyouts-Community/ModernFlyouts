@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Media;
@@ -15,11 +16,6 @@ namespace ModernFlyouts.Core.Media.Control
         private GlobalSystemMediaTransportControlsSession GSMTCSession;
         private SourceAppInfo sourceAppInfo;
         private int currentTrackNumber;
-
-        public GSMTCMediaSession()
-        {
-
-        }
 
         public GSMTCMediaSession(GlobalSystemMediaTransportControlsSession globalSystemMediaTransportControlsSession)
         {
@@ -125,7 +121,7 @@ namespace ModernFlyouts.Core.Media.Control
                 {
                     TimelineStartTime = timeline.StartTime;
                     TimelineEndTime = timeline.EndTime;
-                    PlaybackPosition = timeline.Position;
+                    SetPlaybackPosition(timeline.Position);
 
                     IsTimelinePropertiesEnabled = true;
                 }
@@ -153,14 +149,19 @@ namespace ModernFlyouts.Core.Media.Control
                 {
                     Title = mediaInfo.Title;
                     Artist = mediaInfo.Artist;
-                    TrackChangeDirection = (mediaInfo.TrackNumber - currentTrackNumber) switch
+                    if (currentTrackNumber != mediaInfo.TrackNumber)
                     {
-                        0 => MediaPlaybackTrackChangeDirection.Unknown,
-                        > 0 => MediaPlaybackTrackChangeDirection.Forward,
-                        < 0 => MediaPlaybackTrackChangeDirection.Backward
-                    };
+                        TrackChangeDirection = (mediaInfo.TrackNumber - currentTrackNumber) switch
+                        {
+                            > 0 => MediaPlaybackTrackChangeDirection.Forward,
+                            < 0 => MediaPlaybackTrackChangeDirection.Backward,
+                            _ => throw new NotImplementedException()
+                        };
+                    }
 
                     currentTrackNumber = mediaInfo.TrackNumber;
+
+                    Debug.WriteLine(nameof(mediaInfo.Subtitle) + ": " + mediaInfo.Subtitle);
                 }
 
                 var playback = session.GetPlaybackInfo();
@@ -253,7 +254,7 @@ namespace ModernFlyouts.Core.Media.Control
             {
                 if (IsShuffleActive.HasValue)
                 {
-                    await GSMTCSession?.TryChangeShuffleActiveAsync(IsShuffleActive.Value);
+                    await GSMTCSession?.TryChangeShuffleActiveAsync(!IsShuffleActive.Value);
                 }
             }
             catch { }
@@ -288,7 +289,7 @@ namespace ModernFlyouts.Core.Media.Control
 
         /// <summary>
         /// This function won't work properly since the <see cref="GlobalSystemMediaTransportControlsSession.TryChangePlaybackPositionAsync(long)"/>
-        /// is un-reliable
+        /// is un-reliable. But implemented it anyways thinking it could work in the future.
         /// </summary>
         /// <param name="playbackPosition"></param>
         protected override async void PlaybackPositionChanged(TimeSpan playbackPosition)

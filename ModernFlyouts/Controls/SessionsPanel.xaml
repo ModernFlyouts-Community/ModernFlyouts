@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:local="clr-namespace:ModernFlyouts"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:mediaControl="clr-namespace:ModernFlyouts.Core.Media.Control;assembly=ModernFlyouts.Core"
              mc:Ignorable="d"
              d:DesignHeight="138" d:DesignWidth="354"
              MaxWidth="{DynamicResource FlyoutWidth}" DataContext="{x:Static local:FlyoutHandler.Instance}">
@@ -202,8 +203,20 @@
 
     <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}"
                   Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
-        <ui:SimpleStackPanel x:Name="SessionsStackPanel" Spacing="{Binding UIManager.CalculatedSessionsPanelSpacing}"
-                             Orientation="{Binding UIManager.SessionsPanelOrientation}" />
+        <ItemsControl x:Name="sessionsList">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ui:SimpleStackPanel
+                        Orientation="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.SessionsPanelOrientation}"
+                        Spacing="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.CalculatedSessionsPanelSpacing}" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.Resources>
+                <DataTemplate DataType="{x:Type mediaControl:MediaSession}">
+                    <local:SessionControl />
+                </DataTemplate>
+            </ItemsControl.Resources>
+        </ItemsControl>
     </ScrollViewer>
 
 </UserControl>

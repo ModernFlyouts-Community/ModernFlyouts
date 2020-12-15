@@ -6,7 +6,9 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              xmlns:resx="clr-namespace:ModernFlyouts.Properties"
-             mc:Ignorable="d"
+             xmlns:input="clr-namespace:ModernFlyouts.Input"
+             xmlns:designTime="clr-namespace:ModernFlyouts.DesignTime"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance designTime:MockMediaSession}"
              Width="{DynamicResource FlyoutWidth}" VerticalAlignment="Top">
     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
         <Grid x:Name="ContentGrid">
@@ -22,36 +24,38 @@
 
             <Border Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True">
                 <Border.OpacityMask>
-                    <RadialGradientBrush x:Name="thumbnailBGOpacityBrush" x:FieldModifier="private" GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
+                    <RadialGradientBrush x:Name="thumbnailBGOpacityBrush" x:FieldModifier="private"
+                                         GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
                         <GradientStop Color="White" Offset="0" />
                         <GradientStop Color="Transparent" Offset="1" />
                     </RadialGradientBrush>
                 </Border.OpacityMask>
                 <Border.Background>
-                    <ImageBrush x:Name="ThumbnailBackgroundBrush"
-                                Stretch="UniformToFill" RenderOptions.BitmapScalingMode="Fant" RenderOptions.EdgeMode="Aliased">
+                    <ImageBrush x:Name="ThumbnailBackgroundBrush" ImageSource="{Binding Thumbnail}" Stretch="UniformToFill"
+                                RenderOptions.BitmapScalingMode="HighQuality">
                     </ImageBrush>
                 </Border.Background>
             </Border>
 
-            <Grid x:Name="TextBlockGrid" Grid.Column="1" VerticalAlignment="Center" Margin="0,25,0,0" Cursor="Hand">
+            <Grid x:Name="TextBlockGrid" Grid.Column="1" VerticalAlignment="Center" Margin="0,25,0,0" Cursor="Hand"
+                  input:InputHelper.IsTapEnabled="True" input:InputHelper.TappedCommand="{Binding ActivateMediaSourceCommand}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" x:Name="MediaTitleBlock" Style="{DynamicResource BaseTextBlockStyle}"
+                <TextBlock Grid.Row="0" Style="{DynamicResource BaseTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
-                           d:Text="Song Nameaaaasadasdasdaaaa" ToolTip="{Binding Text, ElementName=MediaTitleBlock}"
-                           ToolTipService.IsEnabled="{Binding Text, ElementName=MediaTitleBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
+                           Text="{Binding Title}" ToolTip="{Binding Title}"
+                           ToolTipService.IsEnabled="{Binding Title, Converter={StaticResource TextToTooltipEnabledConverter}}"
                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
                     <TextBlock.RenderTransform>
                         <TranslateTransform x:Name="mediaTitleBlockTranslateTransform" />
                     </TextBlock.RenderTransform>
                 </TextBlock>
-                <TextBlock Grid.Row="1" x:Name="MediaArtistBlock" Style="{DynamicResource CaptionTextBlockStyle}"
+                <TextBlock Grid.Row="1" Style="{DynamicResource CaptionTextBlockStyle}"
                            Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
-                           d:Text="Song Artist" ToolTip="{Binding Text, ElementName=MediaArtistBlock}"
-                           ToolTipService.IsEnabled="{Binding Text, ElementName=MediaArtistBlock, Converter={StaticResource TextToTooltipEnabledConverter}}"
+                           Text="{Binding Artist}" ToolTip="{Binding Artist}"
+                           ToolTipService.IsEnabled="{Binding Artist, Converter={StaticResource TextToTooltipEnabledConverter}}"
                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
                     <TextBlock.RenderTransform>
                         <TranslateTransform x:Name="mediaArtistBlockTranslateTransform" />
@@ -59,82 +63,115 @@
                 </TextBlock>
             </Grid>
 
-            <Grid x:Name="TGParent" x:FieldModifier="private" Grid.Column="2">
-                <Grid Height="64" Width="64" Margin="16,16,16,6" x:Name="ThumbnailGrid" Cursor="Hand">
+            <Grid x:Name="ThumbnailGrid" x:FieldModifier="private" Grid.Column="2">
+                <Grid Height="64" Width="64" Margin="16,16,16,6" Cursor="Hand"
+                      input:InputHelper.IsTapEnabled="True" input:InputHelper.TappedCommand="{Binding ActivateMediaSourceCommand}">
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}" Background="#333333" />
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
                         <Border.Background>
-                            <ImageBrush x:Name="ThumbnailImageBrush" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" />
+                            <ImageBrush x:Name="ThumbnailImageBrush" ImageSource="{Binding Thumbnail}"
+                                        Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" />
                         </Border.Background>
                     </Border>
                 </Grid>
             </Grid>
 
-            <StackPanel x:Name="AppInfoPanel" Margin="0,15,0,0" Grid.RowSpan="2" Grid.Column="1"
-                        VerticalAlignment="Top" Orientation="Horizontal" Cursor="Hand">
-                <Image x:Name="AppImage" d:Source="/Assets/Logo.ico" Width="16" Height="16" RenderOptions.BitmapScalingMode="Fant" />
-                <TextBlock x:Name="AppNameBlock" d:Text="ModernFlyouts" VerticalAlignment="Center"
-                           Margin="5,0,0,0" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
-                           Style="{DynamicResource CaptionTextBlockStyle}" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" />
-            </StackPanel>
+            <Grid x:Name="AppInfoPanel" Margin="0,15,0,0" Grid.RowSpan="2" Grid.Column="1"
+                  VerticalAlignment="Top" Cursor="Hand"
+                  input:InputHelper.IsTapEnabled="True" input:InputHelper.TappedCommand="{Binding ActivateMediaSourceCommand}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding MediaSourceIcon}" Grid.Column="0"
+                       Width="16" Height="16" RenderOptions.BitmapScalingMode="Fant" />
+                <TextBlock Text="{Binding MediaSourceName}"
+                           VerticalAlignment="Center" Margin="5,0,0,0" Grid.Column="1"
+                           TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
+                           Style="{DynamicResource CaptionTextBlockStyle}"
+                           Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" />
+                <!--<Button Grid.Column="2" Margin="5,0,0,0" Padding="6,2">
+                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.ChevronDown}" FontSize="12" />
+                    <ui:FlyoutService.Flyout>
+                        <ui:CommandBarFlyout>
+                            <ui:AppBarButton Icon="Save"/>
+                            <ui:AppBarButton Icon="Delete"/>
+                            <ui:AppBarButton Icon="Edit"/>
+                        </ui:CommandBarFlyout>
+                    </ui:FlyoutService.Flyout>
+                </Button>-->
+            </Grid>
 
             <ui:SplitView x:Name="ControlsSplitView" Grid.ColumnSpan="3" Grid.Row="1"
                           Margin="0,0,0,12" VerticalAlignment="Center" OpenPaneLength="{DynamicResource FlyoutWidth}"
                           PaneBackground="Transparent" DisplayMode="Inline" IsPaneOpen="False">
                 <ui:SplitView.Pane>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                        <ToggleButton x:Name="ShuffleButton" ToolTip="{x:Static resx:Strings.SessionControl_ShuffleOff}"
+                        <ToggleButton x:Name="ShuffleButton" Command="{Binding ChangeShuffleActiveCommand}"
+                                      IsChecked="{Binding IsShuffleActive, Mode=OneWay}"
+                                      ToolTip="{Binding IsShuffleActive, Converter={StaticResource ShuffleButtonTooltipConverter}}"
                                       Style="{DynamicResource MediaToggleButtonStyle}">
                             <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Shuffle}" FontSize="16.0" />
                         </ToggleButton>
-                        <ToggleButton x:Name="RepeatButton" ToolTip="{x:Static resx:Strings.SessionControl_RepeatOff}"
+                        <ToggleButton x:Name="RepeatButton" Command="{Binding ChangeAutoRepeatModeCommand}"
+                                      IsChecked="{Binding AutoRepeatMode, Mode=OneWay, Converter={StaticResource RepeatButtonIsCheckedConverter}}"
+                                      ToolTip="{Binding AutoRepeatMode, Converter={StaticResource RepeatButtonTooltipConverter}}"
                                       Margin="40,0" Style="{DynamicResource MediaToggleButtonStyle}">
-                            <ui:FontIcon x:Name="RepeatIcon" Glyph="{x:Static utils:CommonGlyphs.RepeatAll}" FontSize="16" />
+                            <ui:FontIcon Glyph="{Binding AutoRepeatMode, Converter={StaticResource RepeatButtonGlyphConverter}}" FontSize="16" />
                         </ToggleButton>
-                        <Button x:Name="StopButton" ToolTip="{x:Static resx:Strings.SessionControl_Stop}"
+                        <Button x:Name="StopButton" Command="{Binding StopCommand}"
+                                ToolTip="{x:Static resx:Strings.SessionControl_Stop}"
                                 Margin="2,0" Width="40" Style="{DynamicResource MediaButtonStyle}">
                             <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Stop}" FontSize="16" />
                         </Button>
                     </StackPanel>
                 </ui:SplitView.Pane>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button x:Name="PreviousButton" ToolTip="{x:Static resx:Strings.SessionControl_Previous}" Style="{DynamicResource MediaButtonStyle}">
+                    <Button x:Name="PreviousButton" Command="{Binding PreviousTrackCommand}"
+                            ToolTip="{x:Static resx:Strings.SessionControl_Previous}" Style="{DynamicResource MediaButtonStyle}">
                         <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Previous}" FontSize="16" />
                     </Button>
-                    <Button x:Name="PlayPauseButton" ToolTip="{x:Static resx:Strings.SessionControl_Play}"
+                    <Button x:Name="PlayPauseButton" Command="{Binding PlayOrPauseCommand}"
+                            ToolTip="{Binding IsPlaying, Converter={StaticResource PlayPauseButtonTooltipConverter}}"
                             Margin="40,0" Style="{DynamicResource HighlightedMediaButtonStyle}">
-                        <ui:FontIcon x:Name="PlayPauseIcon" Glyph="{x:Static utils:CommonGlyphs.Play}" FontSize="16" />
+                        <ui:FontIcon Glyph="{Binding IsPlaying, Converter={StaticResource PlayPauseButtonGlyphConverter}}" FontSize="16" />
                     </Button>
-                    <Button x:Name="NextButton" ToolTip="{x:Static resx:Strings.SessionControl_Next}" Style="{DynamicResource MediaButtonStyle}">
+                    <Button x:Name="NextButton" Command="{Binding NextTrackCommand}"
+                            ToolTip="{x:Static resx:Strings.SessionControl_Next}" Style="{DynamicResource MediaButtonStyle}">
                         <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Next}" FontSize="16" />
                     </Button>
                 </StackPanel>
             </ui:SplitView>
 
-            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center"
+            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
                           ToolTip="{x:Static resx:Strings.SessionControl_MoreControls}" Margin="16,0,0,12"
                           Style="{DynamicResource ToggleButtonRevealStyle}"
+                          Visibility="{Binding CalculatedMoreControlsButtonVisibility}"
                           IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" FontSize="16" />
             </ToggleButton>
 
             <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center"
-                    Style="{DynamicResource ButtonRevealStyle}"
+                    Style="{DynamicResource ButtonRevealStyle}" IsEnabled="{Binding IsTimelinePropertiesEnabled}"
+                    Visibility="{Binding IsTimelinePropertiesEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
                     ToolTip="{x:Static resx:Strings.SessionControl_TimelineInfo}" Margin="0,0,16,12">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.TimelineInfo}" FontSize="16" />
                 <ui:FlyoutService.Flyout>
                     <ui:Flyout x:Name="TimelineInfoFlyout">
-                        <Grid Margin="0, 0, 0, 4" Width="{DynamicResource FlyoutWidth}">
+                        <Grid Margin="-5" Width="{DynamicResource FlyoutWidth}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="CurrentTimeBlock" Grid.Column="0" Margin="5,0"
-                                       d:Text="00:00:00" VerticalAlignment="Center" />
-                            <ui:ProgressBar x:Name="TimeBar" Grid.Column="1" Margin="10,0" />
-                            <TextBlock x:Name="TotalTimeBlock" Margin="5,0" Grid.Column="2"
-                                       d:Text="00:00:00" VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="0" Margin="5,0" Text="{Binding TimelineStartTime, StringFormat='hh\\:mm\\:ss'}" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Margin="10,0"
+                                    Minimum="{Binding TimelineStartTime, Mode=OneWay, Converter={StaticResource TimeSpanConverter}}"
+                                    Maximum="{Binding TimelineEndTime, Mode=OneWay, Converter={StaticResource TimeSpanConverter}}"
+                                    Value="{Binding PlaybackPosition, Converter={StaticResource TimeSpanConverter}}" />
+                            <TextBlock Margin="5,0" Grid.Column="2" Text="{Binding TimelineEndTime, StringFormat='hh\\:mm\\:ss'}" VerticalAlignment="Center" />
                         </Grid>
                     </ui:Flyout>
                 </ui:FlyoutService.Flyout>

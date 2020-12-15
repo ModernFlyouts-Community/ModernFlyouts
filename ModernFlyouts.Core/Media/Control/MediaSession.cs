@@ -273,10 +273,17 @@ namespace ModernFlyouts.Core.Media.Control
 
         private TimeSpan playbackPosition = TimeSpan.Zero;
 
+        /// <summary>
+        /// Gets or sets the position of the media playback.
+        /// </summary>
+        /// <remarks>
+        /// Please use <see cref="SetPlaybackPosition"/> to set the playback position internally.
+        /// This property's setter is only intended for binding purposes.
+        /// </remarks>
         public TimeSpan PlaybackPosition
         {
             get => playbackPosition;
-            protected set
+            set
             {
                 if (SetProperty(ref playbackPosition, value))
                 {
@@ -382,6 +389,14 @@ namespace ModernFlyouts.Core.Media.Control
         protected abstract void PlaybackPositionChanged(TimeSpan playbackPosition);
 
         #endregion
+
+        /// <summary>
+        /// Sets the <see cref="PlaybackPosition"/> propety's value internally and updates it without causing a callback loop
+        /// </summary>
+        protected void SetPlaybackPosition(TimeSpan value)
+        {
+            SetProperty(ref playbackPosition, value, nameof(PlaybackPosition));
+        }
 
         protected void RaiseMediaPropertiesChanging()
         {

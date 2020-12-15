@@ -1,6 +1,4 @@
-﻿// TODO: Move this to ModernWpf community toolkit and reference it
-
-using System;
+﻿using System;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
