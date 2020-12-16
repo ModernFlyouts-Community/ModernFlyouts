@@ -4,8 +4,8 @@
 [![Microsoft Store](https://img.shields.io/badge/Microsoft-Store-blue?style=flat&logo=microsoft)](https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge)
 [![Github All Releases](https://img.shields.io/github/downloads/ModernFlyouts-Community/ModernFlyouts/total.svg?style=flat&logo=github)](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases)
 [![GitHub release](https://img.shields.io/github/release/ModernFlyouts-Community/ModernFlyouts.svg?style=flat&logo=github)](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases)
-[![Discord](https://discordapp.com/api/guilds/772367965307404298/widget.png)](https://discord.gg/PqWAkWWPJH)
 [![Telegram](https://img.shields.io/badge/Telegram-channel-blue?style=flat&logo=telegram)](https://t.me/modernflyouts)
+[![Discord](https://discordapp.com/api/guilds/772367965307404298/widget.png)](https://discord.gg/TcYskeyaYE)
 
 ![ModernFlyouts](ModernFlyouts/Assets/Images/ModernFlyouts_128.png)
 
@@ -71,7 +71,7 @@ _please note that due to how winget processes package updates, updates may take 
 `winget install --id=ModernFlyouts.ModernFlyouts -e`
 
 ## Connect with us
-You can join our [Discord Server](https://discord.gg/PqWAkWWPJH) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback (people who don't have a GitHub account may be benefitted).
+You can join our [Discord Server](https://discord.gg/TcYskeyaYE) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback (people who don't have a GitHub account may be benefitted).
 
 ## NOTES
 
