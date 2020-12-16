@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows;
 
 namespace ModernFlyouts.Core.Interop
 {
@@ -170,6 +171,9 @@ namespace ModernFlyouts.Core.Interop
         [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
         private static extern IntPtr SetWindowLongPtr64(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
 
+        [DllImport("user32.dll", SetLastError = false)]
+        internal static extern IntPtr GetForegroundWindow();
+
         [DllImport("user32.dll")]
         internal static extern int SetForegroundWindow(IntPtr hWnd);
 
@@ -234,6 +238,19 @@ namespace ModernFlyouts.Core.Interop
                 Top = top;
                 Right = right;
                 Bottom = bottom;
+            }
+
+            public RECT(Rect rect)
+            {
+                Left = (int)rect.Left;
+                Right = (int)rect.Right;
+                Top = (int)rect.Top;
+                Bottom = (int)rect.Bottom;
+            }
+
+            public Size Size
+            {
+                get => new(Right - Left, Bottom - Top);
             }
         }
 
@@ -311,6 +328,9 @@ namespace ModernFlyouts.Core.Interop
         [DllImport("user32.dll", SetLastError = false)]
         internal static extern IntPtr GetShellWindow();
 
+        [DllImport("user32.dll", SetLastError = false)]
+        internal static extern IntPtr GetDesktopWindow();
+
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         internal static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
 
@@ -318,7 +338,7 @@ namespace ModernFlyouts.Core.Interop
         {
             int nRet;
             // Pre-allocate 256 characters, since this is the maximum class name length.
-            StringBuilder className = new StringBuilder(256);
+            StringBuilder className = new(256);
             //Get the window class name
             nRet = GetClassName(hWnd, className, className.Capacity);
             if (nRet != 0)
@@ -339,5 +359,168 @@ namespace ModernFlyouts.Core.Interop
             var ex = (uint)exstyle | (uint)WindowStyles.WS_EX_TOPMOST | (uint)WindowStyles.WS_EX_NOACTIVATE | (uint)WindowStyles.WS_EX_TOOLWINDOW;
             SetWindowLongPtr(hWnd, (int)GetWindowLongFields.GWL_EXSTYLE, new IntPtr(ex));
         }
+
+        #region Detect Fullscreen Window
+
+        // This part of the source code is borrowed from the PowerToys codebase
+        // https://github.com/microsoft/PowerToys/blob/master/src/modules/launcher/PowerLauncher/Helper/WindowsInteropHelper.cs#L112
+
+        private const string WindowClassConsole = "ConsoleWindowClass";
+        private const string WindowClassWinTab = "Flip3D";
+        private const string WindowClassProgman = "Progman";
+        private const string WindowClassWorkerW = "WorkerW";
+
+        public static bool IsWindowFullscreen()
+        {
+            var hWnd = GetForegroundWindow();
+
+            if (hWnd != IntPtr.Zero)
+            {
+                if (hWnd != GetDesktopWindow() && hWnd != GetShellWindow())
+                {
+                    var windowClass = GetWindowClassName(hWnd);
+
+                    // for Win+Tab (Flip3D)
+                    if (windowClass == WindowClassWinTab)
+                    {
+                        return false;
+                    }
+
+                    GetWindowRect(hWnd, out RECT appBounds);
+
+                    // for console (ConsoleWindowClass), we have to check for negative dimensions
+                    if (windowClass == WindowClassConsole)
+                    {
+                        return appBounds.Top < 0 && appBounds.Bottom < 0;
+                    }
+
+                    // for desktop (Progman or WorkerW, depends on the system), we have to check
+                    if (windowClass == WindowClassProgman || windowClass == WindowClassWorkerW)
+                    {
+                        var hWndDesktop = FindWindowEx(hWnd, IntPtr.Zero, "SHELLDLL_DefView", null);
+                        hWndDesktop = FindWindowEx(hWndDesktop, IntPtr.Zero, "SysListView32", "FolderView");
+                        if (hWndDesktop != IntPtr.Zero)
+                        {
+                            return false;
+                        }
+                    }
+
+                    Rect screenBounds = Display.Screen.FromWindow(hWnd).Bounds;
+                    if ((appBounds.Bottom - appBounds.Top) == screenBounds.Height && (appBounds.Right - appBounds.Left) == screenBounds.Width)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
+
+        #region Screen APIs
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern bool GetMonitorInfo(HandleRef hmonitor, [In, Out] MONITORINFOEX info);
+
+        [DllImport("user32.dll", ExactSpelling = true)]
+        internal static extern bool EnumDisplayMonitors(HandleRef hdc, COMRECT rcClip, MonitorEnumProc lpfnEnum, IntPtr dwData);
+
+        [DllImport("user32.dll", ExactSpelling = true)]
+        internal static extern IntPtr MonitorFromWindow(HandleRef handle, int flags);
+
+        [DllImport("user32.dll", ExactSpelling = true, CharSet = CharSet.Auto)]
+        internal static extern int GetSystemMetrics(int nIndex);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern bool SystemParametersInfo(int nAction, int nParam, ref RECT rc, int nUpdate);
+
+        [DllImport("user32.dll", ExactSpelling = true)]
+        internal static extern IntPtr MonitorFromPoint(POINTSTRUCT pt, int flags);
+
+        internal delegate bool MonitorEnumProc(IntPtr monitor, IntPtr hdc, IntPtr lprcMonitor, IntPtr lParam);
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto, Pack = 4)]
+        internal class MONITORINFOEX
+        {
+            internal int cbSize = Marshal.SizeOf(typeof(MONITORINFOEX));
+            internal RECT rcMonitor = new();
+            internal RECT rcWork = new();
+            internal int dwFlags = 0;
+
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+            internal char[] szDevice = new char[32];
+        }
+
+        // use this in cases where the Native API takes a POINT not a POINT*
+        // classes marshal by ref.
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct POINTSTRUCT
+        {
+            public int x;
+            public int y;
+            public POINTSTRUCT(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal class COMRECT
+        {
+            public int left;
+            public int top;
+            public int right;
+            public int bottom;
+
+            public COMRECT()
+            {
+            }
+
+            public COMRECT(Rect r)
+            {
+                left = (int)r.X;
+                top = (int)r.Y;
+                right = (int)r.Right;
+                bottom = (int)r.Bottom;
+            }
+
+            public COMRECT(int left, int top, int right, int bottom)
+            {
+                this.left = left;
+                this.top = top;
+                this.right = right;
+                this.bottom = bottom;
+            }
+
+            public static COMRECT FromXYWH(int x, int y, int width, int height)
+            {
+                return new COMRECT(x, y, x + width, y + height);
+            }
+
+            public override string ToString()
+            {
+                return "Left = " + left + " Top " + top + " Right = " + right + " Bottom = " + bottom;
+            }
+        }
+
+        internal const int SM_CMONITORS = 80;
+        internal const int SM_CXSCREEN = 0;
+        internal const int SM_CYSCREEN = 1;
+        internal const int SPI_GETWORKAREA = 48;
+        internal const int SPI_SETWORKAREA = 47;
+
+        #endregion
+
+        #region Window Message Constants
+
+        public const int WM_MOUSEACTIVATE = 0x21;
+        public const int WM_EXITSIZEMOVE = 0x0232;
+        public const int WM_QUERYENDSESSION = 0x11;
+        public const int WM_DISPLAYCHANGE = 0x7E;
+        public const int WM_SETTINGCHANGE = 0x1A;
+
+        #endregion
     }
 }

@@ -1,31 +1,20 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ModernFlyouts.AppLifecycle;
-using ModernFlyouts.Helpers;
 using ModernFlyouts.Core.Interop;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Interop;
 using ModernFlyouts.UI;
 using ModernFlyouts.UI.Media;
 using ModernFlyouts.Workarounds;
 using System;
 using System.Windows.Interop;
+using static ModernFlyouts.Core.Interop.NativeMethods;
 
 namespace ModernFlyouts
 {
     public class FlyoutHandler : ObservableObject
     {
         public static event EventHandler Initialized;
-
-        private enum HookMessageEnum : uint
-        {
-            HOOK_MEDIA_PLAYPAUSE = 917504,
-            HOOK_MEDIA_PREVIOUS = 786432,
-            HOOK_MEDIA_NEXT = 720896,
-            HOOK_MEDIA_STOP = 851968,
-            HOOK_MEDIA_VOLPLUS = 655360,
-            HOOK_MEDIA_VOLMINUS = 589824,
-            HOOK_MEDIA_VOLMUTE = 524288
-        }
-
-        private uint messageShellHookId;
 
         #region Properties
 
@@ -208,79 +197,48 @@ namespace ModernFlyouts
             StartupHelper.SetRunAtStartupEnabled(runAtStartup);
         }
 
-        private const int MA_NOACTIVATE = 0x3;
-        private const int WM_MOUSEACTIVATE = 0x21;
-        private const int WM_EXITSIZEMOVE = 0x0232;
-        private const int WM_QUERYENDSESSION = 0x11;
+        private const int MA_NOACTIVATE = 3;
 
         private void CreateWndProc()
         {
+            ShellMessageHookHandler _ = new();
+
             var wih = new WindowInteropHelper(FlyoutWindow);
             var hWnd = wih.EnsureHandle();
+
+            WndProcHookManager.OnHwndCreated(hWnd);
+
+            WndProcHookManager.RegisterCallbackForMessage(WM_MOUSEACTIVATE,
+                (IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled) =>
+                {
+                    handled = true;
+
+                    return new IntPtr(MA_NOACTIVATE);
+                });
+
+            WndProcHookManager.RegisterCallbackForMessage(WM_QUERYENDSESSION,
+                (IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled) =>
+                {
+                    RelaunchHelper.RegisterApplicationRestart(
+                        JumpListHelper.arg_appupdated,
+                        RelaunchHelper.RestartFlags.RESTART_NO_CRASH |
+                        RelaunchHelper.RestartFlags.RESTART_NO_HANG |
+                        RelaunchHelper.RestartFlags.RESTART_NO_REBOOT);
+
+                    return IntPtr.Zero;
+                });
+
+            WndProcHookManager.RegisterCallbackForMessage(WM_EXITSIZEMOVE,
+                (IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled) =>
+                {
+                    FlyoutWindow.SaveFlyoutPosition();
+
+                    return IntPtr.Zero;
+                });
+
             var source = HwndSource.FromHwnd(hWnd);
-            source.AddHook(WndProc);
-            NativeMethods.SetToolWindow(hWnd);
-
-            NativeMethods.RegisterShellHookWindow(hWnd);
-            messageShellHookId = NativeMethods.RegisterWindowMessage("SHELLHOOK");
-        }
-
-        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
-        {
-            if (msg == WM_MOUSEACTIVATE)
-            {
-                handled = true;
-                return new IntPtr(MA_NOACTIVATE);
-            }
-
-            if (msg == messageShellHookId)
-            {
-                if (wParam == (IntPtr)55)
-                {
-                    //Brightness
-                    BrightnessFlyoutHelper?.OnExternalUpdated();
-                }
-                else if (wParam == (IntPtr)12)
-                {
-                    switch ((long)lParam)
-                    {
-                        case (long)HookMessageEnum.HOOK_MEDIA_NEXT:
-                        case (long)HookMessageEnum.HOOK_MEDIA_PREVIOUS:
-                        case (long)HookMessageEnum.HOOK_MEDIA_PLAYPAUSE:
-                        case (long)HookMessageEnum.HOOK_MEDIA_STOP:
-                            //Media
-                            AudioFlyoutHelper?.OnExternalUpdated(true);
-                            break;
-
-                        case (long)HookMessageEnum.HOOK_MEDIA_VOLMINUS:
-                        case (long)HookMessageEnum.HOOK_MEDIA_VOLMUTE:
-                        case (long)HookMessageEnum.HOOK_MEDIA_VOLPLUS:
-                            //Volume
-                            AudioFlyoutHelper?.OnExternalUpdated(false);
-                            break;
-
-                        default:
-                            //Ignore mouse side buttons and other keyboard special keys
-                            break;
-                    }
-                }
-            }
-
-            if (msg == WM_QUERYENDSESSION)
-            {
-                _ = RelaunchHelper.RegisterApplicationRestart(
-                    JumpListHelper.arg_appupdated,
-                    RelaunchHelper.RestartFlags.RESTART_NO_CRASH |
-                    RelaunchHelper.RestartFlags.RESTART_NO_HANG |
-                    RelaunchHelper.RestartFlags.RESTART_NO_REBOOT);
-            }
-
-            if (msg == WM_EXITSIZEMOVE)
-            {
-                FlyoutWindow.SaveFlyoutPosition();
-            }
-
-            return IntPtr.Zero;
+            source.AddHook(WndProcHookManager.TryHandleWindowMessage);
+            SetToolWindow(hWnd);
         }
 
         public static void SafelyExitApplication()

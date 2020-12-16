@@ -113,7 +113,7 @@ namespace ModernFlyouts
 
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this)) { return; }
 
-            this.IsVisibleChanged += (s, e) =>
+            IsVisibleChanged += (s, e) =>
             {
                 if (!(bool)e.NewValue)
                 {
@@ -259,11 +259,11 @@ namespace ModernFlyouts
 
         private void UpdateTopBar(bool showTopBar)
         {
-            var R1 = this.TopBarGrid.RowDefinitions[0];
-            var R2 = this.TopBarGrid.RowDefinitions[1];
+            var R1 = TopBarGrid.RowDefinitions[0];
+            var R2 = TopBarGrid.RowDefinitions[1];
             if (showTopBar)
             {
-                this.TopBarGrid.Margin = new Thickness(0);
+                TopBarGrid.Margin = new Thickness(0);
                 R2.Height = new GridLength(0);
                 var glAnim = new GridLengthAnimation()
                 {
@@ -278,7 +278,7 @@ namespace ModernFlyouts
             {
                 TopBarOverlayIndicator.Visibility = _topBarVisibility == TopBarVisibility.Collapsed ? Visibility.Collapsed : Visibility.Visible;
 
-                this.TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
+                TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
                 R2.Height = new GridLength(10);
                 var glAnim = new GridLengthAnimation()
                 {
