@@ -21,26 +21,12 @@ namespace ModernFlyouts
                 typeof(bool),
                 typeof(SessionControl),
                 new PropertyMetadata(true, OnAlignThumbnailToRightChanged));
-        
-        public static readonly DependencyProperty ShowThumbnailInBackgroundProperty =
-            DependencyProperty.Register(
-                nameof(ShowThumbnailInBackground),
-                typeof(bool),
-                typeof(SessionControl),
-                new PropertyMetadata(true, OnShowThumbnailInBackgroundChanged));
 
         public bool AlignThumbnailToRight
         {
             get => (bool)GetValue(AlignThumbnailToRightProperty);
             set => SetValue(AlignThumbnailToRightProperty, value);
         }
-        
-        public bool ShowThumbnailInBackground
-        {
-            get => (bool)GetValue(ShowThumbnailInBackgroundProperty);
-            set => SetValue(ShowThumbnailInBackgroundProperty, value);
-        }
-
         #endregion
 
         public SessionControl()
@@ -54,9 +40,6 @@ namespace ModernFlyouts
             AlignThumbnailToRight = FlyoutHandler.Instance.UIManager.AlignGSMTCThumbnailToRight;
             BindingOperations.SetBinding(this, AlignThumbnailToRightProperty,
                 new Binding(nameof(UI.UIManager.AlignGSMTCThumbnailToRight)) { Source = FlyoutHandler.Instance.UIManager });
-            ShowThumbnailInBackground = FlyoutHandler.Instance.UIManager.ShowGSMTCThumbnailInBackground;
-            BindingOperations.SetBinding(this, ShowThumbnailInBackgroundProperty,
-                new Binding(nameof(UI.UIManager.ShowGSMTCThumbnailInBackground)) { Source = FlyoutHandler.Instance.UIManager });
         }
 
         private void SessionControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -189,20 +172,6 @@ namespace ModernFlyouts
                 KeyFrames = anim1.KeyFrames
             };
             mediaArtistBlockTranslateTransform.BeginAnimation(property, anim2);
-        }
-
-        private static void OnShowThumbnailInBackgroundChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var sessionControl = d as SessionControl;
-            var showThumbnailInBackground = (bool) e.NewValue;
-            if (showThumbnailInBackground)
-            {
-                sessionControl.ThumbnailBackgroundBrush.ImageSource = sessionControl._mediaSession.Thumbnail;
-            }
-            else
-            {
-                sessionControl.ThumbnailBackgroundBrush.ImageSource = null;
-            }
         }
 
         private static void OnAlignThumbnailToRightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
