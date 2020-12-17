@@ -155,6 +155,20 @@ namespace ModernFlyouts.UI
                 }
             }
         }
+        
+        private bool showGSMTCThumbnailInBackground = DefaultValuesStore.ShowGSMTCThumbnailInBackground;
+
+        public bool ShowGSMTCThumbnailInBackground
+        {
+            get => showGSMTCThumbnailInBackground;
+            set
+            {
+                if (SetProperty(ref showGSMTCThumbnailInBackground, value))
+                {
+                    AppDataHelper.ShowGSMTCThumbnailInBackground = value;
+                }
+            }
+        }
 
         private Orientation sessionsPanelOrientation = DefaultValuesStore.SessionsPanelOrientation;
 
@@ -211,6 +225,7 @@ namespace ModernFlyouts.UI
             TopBarVisibility = AppDataHelper.TopBarVisibility;
             FlyoutTimeout = AppDataHelper.FlyoutTimeout;
             AlignGSMTCThumbnailToRight = AppDataHelper.AlignGSMTCThumbnailToRight;
+            ShowGSMTCThumbnailInBackground = AppDataHelper.ShowGSMTCThumbnailInBackground;
             MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
             SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 
