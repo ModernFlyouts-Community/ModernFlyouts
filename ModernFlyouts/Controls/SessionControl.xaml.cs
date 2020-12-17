@@ -27,7 +27,6 @@ namespace ModernFlyouts
             get => (bool)GetValue(AlignThumbnailToRightProperty);
             set => SetValue(AlignThumbnailToRightProperty, value);
         }
-
         #endregion
 
         public SessionControl()

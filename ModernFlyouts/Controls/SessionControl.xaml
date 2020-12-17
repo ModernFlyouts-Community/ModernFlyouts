@@ -8,6 +8,7 @@
              xmlns:resx="clr-namespace:ModernFlyouts.Properties"
              xmlns:input="clr-namespace:ModernFlyouts.Input"
              xmlns:designTime="clr-namespace:ModernFlyouts.DesignTime"
+             xmlns:local="clr-namespace:ModernFlyouts"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance designTime:MockMediaSession}"
              Width="{DynamicResource FlyoutWidth}" VerticalAlignment="Top">
     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
@@ -22,7 +23,8 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Border Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True">
+            <Border Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
+                    Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.ShowGSMTCThumbnailInBackground, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.OpacityMask>
                     <RadialGradientBrush x:Name="thumbnailBGOpacityBrush" x:FieldModifier="private"
                                          GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
