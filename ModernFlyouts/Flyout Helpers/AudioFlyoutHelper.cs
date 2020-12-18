@@ -271,7 +271,7 @@ namespace ModernFlyouts
         private void VolumeSlider_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             var slider = sender as Slider;
-            var value = Math.Truncate(slider.Value);
+            var value = Math.Round(slider.Value);
             var change = e.Delta / 120;
 
             var volume = value + change;
