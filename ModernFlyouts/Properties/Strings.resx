@@ -130,7 +130,7 @@
     <value>Dependencies</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Jeśli znajdziesz jakieś błędy, otwórz nowe issue w repozytorium aplikacji w serwisie GitHub.</value>
+    <value>If you find any bugs, please open a new issue in the github repository.</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
     <value>GitHub repository</value>
