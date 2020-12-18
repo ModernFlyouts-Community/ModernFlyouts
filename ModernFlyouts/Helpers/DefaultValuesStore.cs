@@ -66,6 +66,8 @@ namespace ModernFlyouts.Helpers
         public const bool UseColoredTrayIcon = true;
 
         public const bool AlignGSMTCThumbnailToRight = true;
+        
+        public const bool ShowGSMTCThumbnailInBackground = true;
 
         public const int MaxVerticalSessionControlsCount = 1;
 

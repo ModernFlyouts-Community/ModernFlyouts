@@ -12,7 +12,7 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="translated">Cette application est conçue pour être un remplacement moderne en Fluent Design pour les anciens menus volants de type Metro présents dans Windows depuis Windows 8.</target>
+          <target state="translated">Cette application est conçue pour être un remplaçant Fluent Design des anciens menus volants de type Metro présents dans Windows depuis Windows 8.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
@@ -36,7 +36,7 @@
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
-          <target state="translated">Notez et passez en revue sur le Microsoft Store</target>
+          <target state="translated">Notez et commentez sur le Microsoft Store</target>
         </trans-unit>
         <trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
@@ -72,11 +72,11 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="translated">Afficher les contrôles de transport global des médias systèmes (GSMTC) alias les contrôles médias, dans le menu volant Volume</target>
+          <target state="translated">Afficher les contrôles GSMTC également appelés "Contrôles médias", dans le menu volant Volume</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
-          <target state="translated">Afficher le contrôle Volume dans le menu volant des contrôles de transport global des médias systèmes (GSMTC) alias le menu volant des médias</target>
+          <target state="translated">Afficher le contrôle Volume dans le menu volant GSMTC également appelé "Menu volant des médias"</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
@@ -170,7 +170,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
-          <target state="translated">Verr Défil</target>
+          <target state="translated">Arrêt Défil</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
@@ -186,7 +186,7 @@
         </trans-unit>
         <trans-unit id="PointValidationRule.PointFormatInvalidMessage" translate="yes" xml:space="preserve">
           <source>Please enter the point in the format 'X,Y' (for e.g. 50,60).</source>
-          <target state="translated">Veuillez entrer le point dans le format 'X,Y' (par exemple 50,60).</target>
+          <target state="translated">Veuillez entrer la position au format 'X,Y' (par exemple 50,60).</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there are problem parsing a string value into a Point</note>
         </trans-unit>
         <trans-unit id="PointValidationRule.PointOutOfRangeMessage" translate="yes" xml:space="preserve">
@@ -217,7 +217,7 @@
         </trans-unit>
         <trans-unit id="SessionControl.Pause" translate="yes" xml:space="preserve">
           <source>Pause</source>
-          <target state="translated">Suspendre</target>
+          <target state="translated">Pause</target>
         </trans-unit>
         <trans-unit id="SessionControl.Play" translate="yes" xml:space="preserve">
           <source>Play</source>
@@ -237,15 +237,15 @@
         </trans-unit>
         <trans-unit id="SessionControl.RepeatOne" translate="yes" xml:space="preserve">
           <source>Repeat: one</source>
-          <target state="translated">Répéter : un</target>
+          <target state="translated">Répéter : piste</target>
         </trans-unit>
         <trans-unit id="SessionControl.ShuffleOff" translate="yes" xml:space="preserve">
           <source>Shuffle: off</source>
-          <target state="translated">Mélanger : non</target>
+          <target state="translated">Aléatoire : non</target>
         </trans-unit>
         <trans-unit id="SessionControl.ShuffleOn" translate="yes" xml:space="preserve">
           <source>Shuffle: on</source>
-          <target state="translated">Mélanger : oui</target>
+          <target state="translated">Aléatoire : oui</target>
         </trans-unit>
         <trans-unit id="SessionControl.Stop" translate="yes" xml:space="preserve">
           <source>Stop</source>
@@ -253,7 +253,7 @@
         </trans-unit>
         <trans-unit id="SessionControl.TimelineInfo" translate="yes" xml:space="preserve">
           <source>Timeline Info</source>
-          <target state="translated">Informations de la chronologie</target>
+          <target state="translated">Informations sur la position</target>
         </trans-unit>
         <trans-unit id="Settings.Additional" translate="yes" xml:space="preserve">
           <source>Additional</source>
@@ -318,7 +318,7 @@
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation">Entrez la position au format 'X,Y' (par exemple 50,60)</target>
-          
+
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
@@ -366,7 +366,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio.Media" translate="yes" xml:space="preserve">
           <source>Media</source>
-          <target state="translated">Media</target>
+          <target state="translated">Média</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio.Volume" translate="yes" xml:space="preserve">
           <source>Volume</source>
@@ -426,7 +426,7 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aligner le flyout à cette position</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aligner le menu à cette position</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>

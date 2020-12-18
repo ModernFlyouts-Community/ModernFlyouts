@@ -251,6 +251,12 @@ namespace ModernFlyouts.Helpers
             get => GetValue(DefaultValuesStore.AlignGSMTCThumbnailToRight);
             set => SetValue(value);
         }
+        
+        public static bool ShowGSMTCThumbnailInBackground
+        {
+            get => GetValue(DefaultValuesStore.ShowGSMTCThumbnailInBackground);
+            set => SetValue(value);
+        }
 
         public static int MaxVerticalSessionControlsCount
         {
