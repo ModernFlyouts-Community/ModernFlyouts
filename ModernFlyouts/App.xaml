@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:localui="clr-namespace:ModernFlyouts.UI"
+             xmlns:local="clr-namespace:ModernFlyouts"
              xmlns:converters="clr-namespace:ModernFlyouts.Converters"
              mc:Ignorable="d"
              ShutdownMode="OnExplicitShutdown">
@@ -13,73 +14,44 @@
             <ResourceDictionary.MergedDictionaries>
                 <ui:ThemeResources d:RequestedTheme="Dark">
                     <ui:ThemeResources.ThemeDictionaries>
-                        <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light">
+                        <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light" local:ToolkitThemeDictionary.Key="Light">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />
                         </ResourceDictionary>
 
-                        <ResourceDictionary x:Key="Dark" ui:ThemeDictionary.Key="Dark">
+                        <ResourceDictionary x:Key="Dark" ui:ThemeDictionary.Key="Dark" local:ToolkitThemeDictionary.Key="Dark">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#222222" />
                         </ResourceDictionary>
 
-                        <ResourceDictionary x:Key="HighContrast" ui:ThemeDictionary.Key="HighContrast">
+                        <ResourceDictionary x:Key="HighContrast" ui:ThemeDictionary.Key="HighContrast" local:ToolkitThemeDictionary.Key="HighContrast">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="{ui:ThemeResource SystemColorWindowColor}" />
                         </ResourceDictionary>
                     </ui:ThemeResources.ThemeDictionaries>
                 </ui:ThemeResources>
                 <ui:XamlControlsResources />
+                <ResourceDictionary Source="Styles/Button.xaml" />
+                <ResourceDictionary Source="Styles/ToggleButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <converters:EnumValuesConverter x:Key="EnumValuesConverter" />
             <converters:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter" />
             <converters:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
             <converters:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
-            <converters:PointToStringConverter x:Key="PointToStringConverter" />
-            <converters:ValidationErrorsToStringConverter x:Key="ValidationErrorsToStringConverter" />
             <converters:EnumToLocalizedStringConverter x:Key="EnumToLocalizedStringConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
+            <converters:PlayPauseButtonTooltipConverter x:Key="PlayPauseButtonTooltipConverter" />
+            <converters:RepeatButtonTooltipConverter x:Key="RepeatButtonTooltipConverter" />
+            <converters:ShuffleButtonTooltipConverter x:Key="ShuffleButtonTooltipConverter" />
+
+            <converters:PlayPauseButtonGlyphConverter x:Key="PlayPauseButtonGlyphConverter" />
+            <converters:RepeatButtonGlyphConverter x:Key="RepeatButtonGlyphConverter" />
+
+            <converters:RepeatButtonIsCheckedConverter x:Key="RepeatButtonIsCheckedConverter" />
+
+            <converters:TimeSpanConverter x:Key="TimeSpanConverter" />
+            
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
             <x:Static x:Key="FlyoutWidth" Member="localui:UIManager.FlyoutWidth" />
-
-            <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
-                <Setter Property="Width" Value="40" />
-                <Setter Property="Height" Value="40" />
-                <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
-            </Style>
-
-            <Style x:Key="MediaButtonStyle" TargetType="Button" BasedOn="{StaticResource HighlightedMediaButtonStyle}">
-                <Setter Property="Width" Value="40" />
-                <Setter Property="Height" Value="40" />
-                <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
-                <Setter Property="Background" Value="Transparent" />
-            </Style>
-
-            <Style x:Key="MediaToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource DefaultToggleButtonStyle}">
-                <Setter Property="Width" Value="40" />
-                <Setter Property="Height" Value="40" />
-                <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
-                <Setter Property="Background" Value="Transparent" />
-            </Style>
-
-            <Style x:Key="ValidatableTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
-                <Style.Triggers>
-                    <Trigger Property="Validation.HasError" Value="True">
-                        <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors),
-                        Converter={StaticResource ValidationErrorsToStringConverter}}" />
-                        <Setter Property="Validation.ErrorTemplate">
-                            <Setter.Value>
-                                <ControlTemplate>
-                                    <Grid>
-                                        <AdornedElementPlaceholder />
-                                        <Border BorderBrush="Red" CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                BorderThickness="{DynamicResource TextControlBorderThemeThicknessFocused}" />
-                                    </Grid>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
 
             <DataTemplate x:Key="LocalizedEnumItemTemplate">
                 <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />

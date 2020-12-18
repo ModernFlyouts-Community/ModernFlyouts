@@ -22,11 +22,16 @@
                     <Run Text="{x:Static local:Program.AppVersion}" />
                 </Bold>
             </TextBlock>
-            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_GitHub}" NavigateUri="https://github.com/ShankarBUS/ModernFlyouts" />
-            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_Contributors}" NavigateUri="https://github.com/ShankarBUS/ModernFlyouts/graphs/contributors" />
-            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_Dependencies}" NavigateUri="https://github.com/ShankarBUS/ModernFlyouts/network/dependencies" />
-            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_OpenNewIssue}" NavigateUri="https://github.com/ShankarBUS/ModernFlyouts/issues/new/choose" />
-            <Button Content="{x:Static resx:Strings.About_RateAndReview}" Click="RateAndReviewButton_Click" />
+            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_GitHub}"
+                                NavigateUri="https://github.com/ModernFlyouts-Community/ModernFlyouts" />
+            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_Contributors}"
+                                NavigateUri="https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributors" />
+            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_Dependencies}"
+                                NavigateUri="https://github.com/ModernFlyouts-Community/ModernFlyouts/network/dependencies" />
+            <ui:HyperlinkButton Content="{x:Static resx:Strings.About_OpenNewIssue}"
+                                NavigateUri="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose" />
+            <Button Style="{DynamicResource ButtonRevealStyle}"
+                    Content="{x:Static resx:Strings.About_RateAndReview}" Click="RateAndReviewButton_Click" />
         </ui:SimpleStackPanel>
     </controls:ScrollViewerEx>
 </Page>

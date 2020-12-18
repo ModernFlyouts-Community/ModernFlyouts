@@ -91,8 +91,14 @@ namespace ModernFlyouts
             OnEnabled();
         }
 
+        private bool IsKeyPressed;
         private void KeyPressed(Key key, int virtualKey)
         {
+            if (IsKeyPressed)
+            {
+                return;
+            }
+            IsKeyPressed = true;
             LockKeys? lockKey = key switch
             {
                 Key.CapsLock => LockKeys.CapsLock,
@@ -111,6 +117,11 @@ namespace ModernFlyouts
                     return;
                 }
 
+                if (lk == LockKeys.Insert && Keyboard.Modifiers != ModifierKeys.None)
+                {
+                    return;
+                }
+
                 Prepare(lk, !Keyboard.IsKeyToggled(key));
                 ShowFlyout();
             }
@@ -119,6 +130,11 @@ namespace ModernFlyouts
             {
                 ShowFlyoutRequested?.Invoke(this);
             }
+        }
+
+        private void KeyReleased(Key key, int virtualKey)
+        {
+            IsKeyPressed = false;
         }
 
         private void Prepare(LockKeys key, bool islock)
@@ -164,6 +180,7 @@ namespace ModernFlyouts
             if (IsEnabled)
             {
                 FlyoutHandler.Instance.KeyboardHook.KeyDown += KeyPressed;
+                FlyoutHandler.Instance.KeyboardHook.KeyUp += KeyReleased;
             }
         }
 
@@ -172,6 +189,7 @@ namespace ModernFlyouts
             base.OnDisabled();
 
             FlyoutHandler.Instance.KeyboardHook.KeyDown -= KeyPressed;
+            FlyoutHandler.Instance.KeyboardHook.KeyUp -= KeyReleased;
 
             AppDataHelper.LockKeysModuleEnabled = IsEnabled;
         }

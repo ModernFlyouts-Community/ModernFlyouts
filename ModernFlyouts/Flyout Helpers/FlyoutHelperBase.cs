@@ -5,8 +5,6 @@ namespace ModernFlyouts
 {
     public abstract class FlyoutHelperBase : ObservableObject
     {
-        public FlyoutHelperBase Instance { get; set; }
-
         public abstract event ShowFlyoutEventHandler ShowFlyoutRequested;
 
         public delegate void ShowFlyoutEventHandler(FlyoutHelperBase sender);

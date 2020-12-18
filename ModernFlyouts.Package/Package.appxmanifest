@@ -10,7 +10,7 @@
   <Identity
     Name="32669SamG.ModernFlyouts"
     Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
-    Version="0.8.2.0" />
+    Version="0.8.4.1" />
 
   <Properties>
     <DisplayName>ModernFlyouts (Preview)</DisplayName>
@@ -45,7 +45,6 @@
           </uap:ShowNameOnTiles>
         </uap:DefaultTile >
         <uap:SplashScreen Image="Images\SplashScreen.png" />
-        <uap:LockScreen BadgeLogo="Images\BadgeLogo.png" Notification="badge"/>
       </uap:VisualElements>
       <Extensions>
         <uap5:Extension
@@ -63,7 +62,7 @@
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
-    <rescap:Capability Name="packageManagement" />
+    <!--<rescap:Capability Name="packageManagement" />-->
     <Capability Name="internetClient"/>
   </Capabilities>
 </Package>

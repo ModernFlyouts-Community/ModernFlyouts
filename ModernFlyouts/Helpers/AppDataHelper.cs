@@ -1,9 +1,9 @@
 ﻿using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media;
 using ModernWpf;
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using Windows.Storage;
 
@@ -52,9 +52,12 @@ namespace ModernFlyouts.Helpers
                         {
                             return (T)Enum.Parse(typeof(T), value);
                         }
-                        else if (typeof(T) == typeof(Point))
+                        else if (typeof(T) == typeof(BindablePoint))
                         {
-                            return (T)(object)Point.Parse(value);
+                            if (BindablePoint.TryParse(value, out BindablePoint result))
+                            {
+                                return (T)(object)result;
+                            }
                         }
                     }
                 }
@@ -78,6 +81,15 @@ namespace ModernFlyouts.Helpers
             try
             {
                 await ApplicationData.Current.ClearAsync();
+            }
+            catch { }
+        }
+
+        internal static void SavePropertyValue(string value, string propertyName = "")
+        {
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value;
             }
             catch { }
         }
@@ -124,16 +136,14 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
-        public static Point DefaultFlyoutPosition
+        public static BindablePoint DefaultFlyoutPosition
         {
             get => GetValue(DefaultValuesStore.DefaultFlyoutPosition);
-            set => SetValue(value);
         }
 
-        public static Point FlyoutPosition
+        public static BindablePoint FlyoutPosition
         {
             get => GetValue(DefaultValuesStore.DefaultFlyoutPosition);
-            set => SetValue(value);
         }
 
         public static string SettingsWindowPlacement
@@ -239,6 +249,12 @@ namespace ModernFlyouts.Helpers
         public static bool AlignGSMTCThumbnailToRight
         {
             get => GetValue(DefaultValuesStore.AlignGSMTCThumbnailToRight);
+            set => SetValue(value);
+        }
+        
+        public static bool ShowGSMTCThumbnailInBackground
+        {
+            get => GetValue(DefaultValuesStore.ShowGSMTCThumbnailInBackground);
             set => SetValue(value);
         }
 

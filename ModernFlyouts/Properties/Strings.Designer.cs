@@ -19,7 +19,7 @@ namespace ModernFlyouts.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
@@ -228,6 +228,15 @@ namespace ModernFlyouts.Properties {
         public static string AudioFlyoutHelper_ThumbnailAlignment {
             get {
                 return ResourceManager.GetString("AudioFlyoutHelper.ThumbnailAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display thumbnail in background.
+        /// </summary>
+        public static string AudioFlyoutHelper_ThumbnailInBackground {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.ThumbnailInBackground", resourceCulture);
             }
         }
         
@@ -453,33 +462,6 @@ namespace ModernFlyouts.Properties {
         public static string PinTopBar {
             get {
                 return ResourceManager.GetString("PinTopBar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please enter the point in the format &apos;X,Y&apos; (for e.g. 50,60)..
-        /// </summary>
-        public static string PointValidationRule_PointFormatInvalidMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.PointFormatInvalidMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please enter X,Y values in the range {0} - {1}..
-        /// </summary>
-        public static string PointValidationRule_PointOutOfRangeMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.PointOutOfRangeMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Value cannot be coverted to string..
-        /// </summary>
-        public static string PointValidationRule_StringConvertionErrorMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.StringConvertionErrorMessage", resourceCulture);
             }
         }
         
@@ -750,15 +732,6 @@ namespace ModernFlyouts.Properties {
         public static string Settings_FlyoutDefaultPosition {
             get {
                 return ResourceManager.GetString("Settings.FlyoutDefaultPosition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Type the position in &apos;X,Y&apos; format (Default: 50,60).
-        /// </summary>
-        public static string Settings_FlyoutDefaultPositionDescription {
-            get {
-                return ResourceManager.GetString("Settings.FlyoutDefaultPositionDescription", resourceCulture);
             }
         }
         

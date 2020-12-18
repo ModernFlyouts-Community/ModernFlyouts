@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
         xmlns:resx="clr-namespace:ModernFlyouts.Properties"
-        mc:Ignorable="d"
+        xmlns:media="clr-namespace:ModernFlyouts.UI.Fluent.Media"
+        mc:Ignorable="d" media:RevealBrushHelper.TrackThisElement="True"
         Background="Transparent" SizeToContent="WidthAndHeight" WindowStyle="None"
         AllowsTransparency="True" ResizeMode="NoResize" Topmost="True"
         ShowInTaskbar="False" Title="ModernFlyouts" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}">
@@ -38,6 +39,7 @@
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
+
     </Window.Resources>
 
     <Window.Triggers>
@@ -55,8 +57,25 @@
                 <TranslateTransform x:Name="T1" />
             </ui:ThemeShadowChrome.RenderTransform>
 
-            <Border Margin="0" Background="{DynamicResource FlyoutBackground}"
-                    CornerRadius="{DynamicResource FlyoutCornerRadius}" RenderTransformOrigin="0.5,0.5">
+            <Grid Margin="0" RenderTransformOrigin="0.5,0.5">
+                <Border Background="{DynamicResource FlyoutBackground}"
+                        CornerRadius="{DynamicResource FlyoutCornerRadius}" />
+                <Border BorderThickness="2"
+                        CornerRadius="{DynamicResource FlyoutCornerRadius}"
+                        media:RevealBrushHelper.RevealBrushMode="None"
+                        Visibility="Collapsed">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush>
+                            <GradientStop Color="Violet" Offset="0" />
+                            <GradientStop Color="Indigo" Offset="0.1667" />
+                            <GradientStop Color="Blue" Offset="0.3334" />
+                            <GradientStop Color="Green" Offset="0.501" />
+                            <GradientStop Color="Yellow" Offset="0.6668" />
+                            <GradientStop Color="Orange" Offset="0.8335" />
+                            <GradientStop Color="Red" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
                 <StackPanel Width="{DynamicResource FlyoutWidth}">
                     <Grid x:Name="TopBarGrid">
                         <Grid.RowDefinitions>
@@ -115,7 +134,7 @@
                         Visibility="{Binding FlyoutHelper.SecondaryContentVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"
                         Content="{Binding FlyoutHelper.SecondaryContent}" />
                 </StackPanel>
-            </Border>
+            </Grid>
         </ui:ThemeShadowChrome>
     </Grid>
 </Window>

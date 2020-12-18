@@ -6,8 +6,6 @@
 //using ModernFlyouts.Helpers;
 //using System.Threading.Tasks;
 
-
-
 //private StoreContext context = null;
 
 //public async Task DownloadAndInstallAllUpdatesAsync()
@@ -53,11 +51,6 @@
 //    }
 //}
 
-
-
-
-
-
 //async void GetEasyUpdates()
 //{
 //    StoreContext updateManager = StoreContext.GetDefault();
@@ -70,7 +63,6 @@
 //        StorePackageUpdateResult result = await downloadOperation.AsTask();
 //    }
 //}
-
 
 //using Windows.ApplicationModel;
 //using Windows.Management.Deployment;
@@ -105,7 +97,6 @@
 //    }
 //}
 
-
 //// Queue up the update and close the current app instance.
 //private async void CommandInvokedHandler(IUICommand command)
 //{
@@ -119,4 +110,3 @@
 //        );
 //    }
 //}
-

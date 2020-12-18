@@ -1,5 +1,6 @@
 ﻿using ModernFlyouts.Helpers;
 using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media;
 using ModernFlyouts.UI.Media.Animation;
 using ModernFlyouts.Utilities;
 using System;
@@ -112,7 +113,7 @@ namespace ModernFlyouts
 
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this)) { return; }
 
-            this.IsVisibleChanged += (s, e) =>
+            IsVisibleChanged += (s, e) =>
             {
                 if (!(bool)e.NewValue)
                 {
@@ -219,7 +220,9 @@ namespace ModernFlyouts
 
         public void AlignFlyout(bool toDefault = true)
         {
-            var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : AppDataHelper.FlyoutPosition;
+            flyoutPosition ??= AppDataHelper.FlyoutPosition;
+
+            var defaultPosition = toDefault ? FlyoutHandler.Instance.DefaultFlyoutPosition : flyoutPosition;
 
             Left = defaultPosition.X - _leftShadowMargin; Top = defaultPosition.Y;
 
@@ -231,7 +234,9 @@ namespace ModernFlyouts
 
         public void SaveFlyoutPosition()
         {
-            AppDataHelper.FlyoutPosition = new Point(Left + _leftShadowMargin, Top);
+            flyoutPosition.X = Left + _leftShadowMargin;
+            flyoutPosition.Y = Top;
+            AppDataHelper.SavePropertyValue(flyoutPosition.ToString(), nameof(AppDataHelper.FlyoutPosition));
         }
 
         internal void OnTopBarVisibilityChanged(TopBarVisibility value)
@@ -254,11 +259,11 @@ namespace ModernFlyouts
 
         private void UpdateTopBar(bool showTopBar)
         {
-            var R1 = this.TopBarGrid.RowDefinitions[0];
-            var R2 = this.TopBarGrid.RowDefinitions[1];
+            var R1 = TopBarGrid.RowDefinitions[0];
+            var R2 = TopBarGrid.RowDefinitions[1];
             if (showTopBar)
             {
-                this.TopBarGrid.Margin = new Thickness(0);
+                TopBarGrid.Margin = new Thickness(0);
                 R2.Height = new GridLength(0);
                 var glAnim = new GridLengthAnimation()
                 {
@@ -273,7 +278,7 @@ namespace ModernFlyouts
             {
                 TopBarOverlayIndicator.Visibility = _topBarVisibility == TopBarVisibility.Collapsed ? Visibility.Collapsed : Visibility.Visible;
 
-                this.TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
+                TopBarGrid.Margin = new Thickness(0, 0, 0, -10);
                 R2.Height = new GridLength(10);
                 var glAnim = new GridLengthAnimation()
                 {
@@ -309,6 +314,7 @@ namespace ModernFlyouts
             return point.X >= 0 && point.Y >= 0 && point.X <= frameworkElement.ActualWidth && point.Y <= frameworkElement.ActualHeight;
         }
 
+        private BindablePoint flyoutPosition;
         private int _leftShadowMargin = 20;
         private bool _topBarOverlay;
         private bool _topBarVisible = true;

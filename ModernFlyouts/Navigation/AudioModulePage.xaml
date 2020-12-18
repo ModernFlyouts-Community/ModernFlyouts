@@ -36,6 +36,9 @@
                         <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_ThumbnailAlignment}"
                                          OnContent="{x:Static resx:Strings.Settings_Right}" OffContent="{x:Static resx:Strings.Settings_Left}"
                                          IsOn="{Binding UIManager.AlignGSMTCThumbnailToRight}" />
+                        <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_ThumbnailInBackground}"
+                                         OnContent="{x:Static resx:Strings.Settings_On}" OffContent="{x:Static resx:Strings.Settings_Off}"
+                                         IsOn="{Binding UIManager.ShowGSMTCThumbnailInBackground}" />
                         <ui:RadioButtons x:Name="orientationCmbBox" x:FieldModifier="private"
                                          Header="{x:Static resx:Strings.AudioFlyoutHelper_SessionsPanelOrientation}"
                                          ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"

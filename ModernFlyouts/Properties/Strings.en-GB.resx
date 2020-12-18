@@ -332,4 +332,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Restart required to apply some changes</value>
   </data>
+  <data name="AudioFlyoutHelper.ThumbnailInBackground" xml:space="preserve">
+    <value>Display thumbnail in background</value>
+  </data>
 </root>

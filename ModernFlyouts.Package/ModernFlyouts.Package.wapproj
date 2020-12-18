@@ -56,14 +56,14 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\ModernFlyouts\ModernFlyouts.csproj</EntryPointProjectUniqueName>
-    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
     <PackageCertificateThumbprint>BC4C8DAC3E018D7B1C0AEE7B40C2DEA2F3DD2BE0</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <GenerateTestArtifacts>False</GenerateTestArtifacts>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <AppInstallerUri>https://github.com/ShankarBUS/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
+    <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <AppxBundle>Always</AppxBundle>
@@ -101,11 +101,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\BadgeLogo.scale-100.png" />
-    <Content Include="Images\BadgeLogo.scale-125.png" />
-    <Content Include="Images\BadgeLogo.scale-150.png" />
-    <Content Include="Images\BadgeLogo.scale-200.png" />
-    <Content Include="Images\BadgeLogo.scale-400.png" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
@@ -157,6 +152,7 @@
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
+    <Content Include="Package.appinstaller" />
     <Content Include="priconfig.default.xml" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>

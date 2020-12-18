@@ -1,6 +1,6 @@
 ﻿using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media;
 using ModernWpf;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace ModernFlyouts.Helpers
@@ -19,7 +19,7 @@ namespace ModernFlyouts.Helpers
 
         public const DefaultFlyout PreferredDefaultFlyout = DefaultFlyout.ModernFlyouts;
 
-        public static readonly Point DefaultFlyoutPosition = new(50, 60);
+        public static BindablePoint DefaultFlyoutPosition => new(50, 60);
 
         #endregion
 
@@ -66,6 +66,8 @@ namespace ModernFlyouts.Helpers
         public const bool UseColoredTrayIcon = true;
 
         public const bool AlignGSMTCThumbnailToRight = true;
+        
+        public const bool ShowGSMTCThumbnailInBackground = true;
 
         public const int MaxVerticalSessionControlsCount = 1;
 

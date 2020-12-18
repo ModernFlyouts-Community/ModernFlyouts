@@ -178,7 +178,7 @@
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Πληκτρολογήστε τη θέση σε μορφή 'X,Y' (π.χ. 50,60)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
