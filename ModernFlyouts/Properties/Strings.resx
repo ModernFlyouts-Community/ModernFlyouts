@@ -130,7 +130,7 @@
     <value>Dependencies</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>If you find any bugs, please open a new issue in the github repository.</value>
+    <value>Jeśli znajdziesz jakieś błędy, otwórz nowe issue w repozytorium aplikacji w serwisie GitHub.</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
     <value>GitHub repository</value>
@@ -357,7 +357,7 @@
     <value>Left</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Flyout Modules</value>
+    <value></value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
     <value>Airplane mode</value>
