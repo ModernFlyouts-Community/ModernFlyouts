@@ -252,9 +252,9 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
         
-        public static bool ShowGSMTCThumbnailInBackground
+        public static bool UseGSMTCThumbnailAsBackground
         {
-            get => GetValue(DefaultValuesStore.ShowGSMTCThumbnailInBackground);
+            get => GetValue(DefaultValuesStore.UseGSMTCThumbnailAsBackground);
             set => SetValue(value);
         }
 

@@ -67,7 +67,7 @@ namespace ModernFlyouts.Helpers
 
         public const bool AlignGSMTCThumbnailToRight = true;
         
-        public const bool ShowGSMTCThumbnailInBackground = true;
+        public const bool UseGSMTCThumbnailAsBackground = true;
 
         public const int MaxVerticalSessionControlsCount = 1;
 

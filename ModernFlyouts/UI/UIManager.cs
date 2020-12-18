@@ -155,17 +155,17 @@ namespace ModernFlyouts.UI
                 }
             }
         }
-        
-        private bool showGSMTCThumbnailInBackground = DefaultValuesStore.ShowGSMTCThumbnailInBackground;
 
-        public bool ShowGSMTCThumbnailInBackground
+        private bool useGSMTCThumbnailAsBackground = DefaultValuesStore.UseGSMTCThumbnailAsBackground;
+
+        public bool UseGSMTCThumbnailAsBackground
         {
-            get => showGSMTCThumbnailInBackground;
+            get => useGSMTCThumbnailAsBackground;
             set
             {
-                if (SetProperty(ref showGSMTCThumbnailInBackground, value))
+                if (SetProperty(ref useGSMTCThumbnailAsBackground, value))
                 {
-                    AppDataHelper.ShowGSMTCThumbnailInBackground = value;
+                    AppDataHelper.UseGSMTCThumbnailAsBackground = value;
                 }
             }
         }
@@ -225,7 +225,7 @@ namespace ModernFlyouts.UI
             TopBarVisibility = AppDataHelper.TopBarVisibility;
             FlyoutTimeout = AppDataHelper.FlyoutTimeout;
             AlignGSMTCThumbnailToRight = AppDataHelper.AlignGSMTCThumbnailToRight;
-            ShowGSMTCThumbnailInBackground = AppDataHelper.ShowGSMTCThumbnailInBackground;
+            UseGSMTCThumbnailAsBackground = AppDataHelper.UseGSMTCThumbnailAsBackground;
             MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
             SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 
