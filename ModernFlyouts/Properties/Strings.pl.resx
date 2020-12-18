@@ -278,12 +278,6 @@
   <data name="Align" xml:space="preserve">
     <value>Wyrównaj do pozycji domyślnej</value>
   </data>
-  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>???</value>
-  </data>
-  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>???</value>
-  </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>Poziomo</value>
   </data>
@@ -294,10 +288,10 @@
     <value>Autoukrywanie</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>???</value>
+    <value>Zwinięte</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
-    <value>???</value>
+    <value>Widoczne</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
     <value>Tryb wprowadzania</value>
@@ -325,5 +319,14 @@
   </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Prawo</value>
+  </data>
+  <data name="NgsSettings_Reset" xml:space="preserve">
+    <value>ngs.Settings_Reset}</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Pokaż kontrolki dźwięku (GSMTC) w nakładce głośności</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Pokaż kontrolki dźwięku w nakładce multimediów (GSMTC)</value>
   </data>
 </root>
