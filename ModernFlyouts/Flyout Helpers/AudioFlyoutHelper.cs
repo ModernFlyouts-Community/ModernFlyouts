@@ -242,21 +242,19 @@ namespace ModernFlyouts
         {
             if (!_isInCodeValueChange)
             {
-                var value = Math.Truncate(e.NewValue);
-                var oldValue = Math.Truncate(e.OldValue);
+                var value = e.NewValue;
+                var oldValue = e.OldValue;
 
                 if (value == oldValue)
                 {
                     return;
                 }
 
-                if (device != null)
+                if (oldValue != value && device != null)
                 {
                     device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
-                    device.AudioEndpointVolume.Mute = false;
+                    e.Handled = true;
                 }
-
-                e.Handled = true;
             }
         }
 
@@ -271,23 +269,15 @@ namespace ModernFlyouts
         private void VolumeSlider_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             var slider = sender as Slider;
-            var value = Math.Round(slider.Value);
-            var change = e.Delta / 120;
+            var change = e.Delta / 120.0;
 
-            var volume = value + change;
-
-            if (volume > 100 || volume < 0)
-            {
-                return;
-            }
+            var volume = Math.Min(Math.Max(slider.Value + change, 0.0), 100.0);
 
             if (device != null)
             {
-                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100);
-                device.AudioEndpointVolume.Mute = false;
+                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100.0);
+                e.Handled = true;
             }
-
-            e.Handled = true;
         }
 
         #endregion

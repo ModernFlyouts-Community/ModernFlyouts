@@ -24,7 +24,8 @@
             </Grid.RowDefinitions>
 
             <Border Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
-                    Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.ShowGSMTCThumbnailInBackground, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.UseGSMTCThumbnailAsBackground,
+                        Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.OpacityMask>
                     <RadialGradientBrush x:Name="thumbnailBGOpacityBrush" x:FieldModifier="private"
                                          GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
@@ -72,7 +73,7 @@
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
                         <Border.Background>
                             <ImageBrush x:Name="ThumbnailImageBrush" ImageSource="{Binding Thumbnail}"
-                                        Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" />
+                                        Stretch="Uniform" RenderOptions.BitmapScalingMode="NearestNeighbor" />
                         </Border.Background>
                     </Border>
                 </Grid>
@@ -168,8 +169,9 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Margin="5,0" Text="{Binding TimelineStartTime, StringFormat='hh\\:mm\\:ss'}" VerticalAlignment="Center" />
-                            <Slider Grid.Column="1" Margin="10,0"
+                            <TextBlock Grid.Column="0" Margin="5,0" Text="{Binding PlaybackPosition, StringFormat='hh\\:mm\\:ss'}" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Margin="10,0" IsMoveToPointEnabled="True"
+                                    IsEnabled="{Binding IsPlaybackPositionEnabled}"
                                     Minimum="{Binding TimelineStartTime, Mode=OneWay, Converter={StaticResource TimeSpanConverter}}"
                                     Maximum="{Binding TimelineEndTime, Mode=OneWay, Converter={StaticResource TimeSpanConverter}}"
                                     Value="{Binding PlaybackPosition, Converter={StaticResource TimeSpanConverter}}" />

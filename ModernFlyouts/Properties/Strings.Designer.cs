@@ -232,11 +232,11 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display thumbnail in background.
+        ///   Looks up a localized string similar to Use media&apos;s thumbnail as media control&apos;s background.
         /// </summary>
-        public static string AudioFlyoutHelper_ThumbnailInBackground {
+        public static string AudioFlyoutHelper_UseThumbnailAsBackground {
             get {
-                return ResourceManager.GetString("AudioFlyoutHelper.ThumbnailInBackground", resourceCulture);
+                return ResourceManager.GetString("AudioFlyoutHelper.UseThumbnailAsBackground", resourceCulture);
             }
         }
         
