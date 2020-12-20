@@ -425,4 +425,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Restart required to apply some changes</value>
   </data>
+  <data name="Settings.FlyoutPosition" xml:space="preserve">
+    <value>Flyout Position</value>
+  </data>
 </root>
