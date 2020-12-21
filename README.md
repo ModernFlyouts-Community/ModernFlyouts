@@ -96,10 +96,11 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 
 ### Our Team
 
-- **[@Samuel12321](https://github.com/Samuel12321/)** - Maintainer/Owner of this repository and application publisher (including **Microsoft Store**).
+- **[@Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
+- **[@ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
 - **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
 - **[@ADeltaX](https://github.com/ADeltaX/)** - Our savior! Helps us at critical times.
-- **[@ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/Ex-Owner & Developer.
+
 
 ### Our Contributors 💗💕
 
