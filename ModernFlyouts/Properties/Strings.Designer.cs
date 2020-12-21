@@ -19,7 +19,7 @@ namespace ModernFlyouts.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
@@ -232,11 +232,11 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display thumbnail in background.
+        ///   Looks up a localized string similar to Use media&apos;s thumbnail as media control&apos;s background.
         /// </summary>
-        public static string AudioFlyoutHelper_ThumbnailInBackground {
+        public static string AudioFlyoutHelper_UseThumbnailAsBackground {
             get {
-                return ResourceManager.GetString("AudioFlyoutHelper.ThumbnailInBackground", resourceCulture);
+                return ResourceManager.GetString("AudioFlyoutHelper.UseThumbnailAsBackground", resourceCulture);
             }
         }
         

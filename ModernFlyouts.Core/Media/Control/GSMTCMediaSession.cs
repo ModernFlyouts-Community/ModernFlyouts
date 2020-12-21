@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
@@ -177,6 +178,7 @@ namespace ModernFlyouts.Core.Media.Control
                     IsShuffleEnabled = playbackControls.IsShuffleEnabled;
                     IsRepeatEnabled = playbackControls.IsRepeatEnabled;
                     IsStopEnabled = playbackControls.IsStopEnabled;
+                    IsPlaybackPositionEnabled = playbackControls.IsPlaybackPositionEnabled;
 
                     PlaybackType = playback.PlaybackType switch
                     {
@@ -201,6 +203,12 @@ namespace ModernFlyouts.Core.Media.Control
 
         #region Thumbnail fetching
 
+        private const string SpotifyPackagedAUMID = "SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify";
+        private const string SpotifyUnpackagedAUMID = "Spotify.exe";
+
+        private bool IsSourceAppSpotify() => string.Equals(GSMTCSession.SourceAppUserModelId, SpotifyPackagedAUMID)
+            || string.Equals(GSMTCSession.SourceAppUserModelId, SpotifyUnpackagedAUMID);
+
         private async Task<ImageSource> GetThumbnailImageSourceAsync(IRandomAccessStreamReference thumbnail)
         {
             if (thumbnail != null)
@@ -217,12 +225,41 @@ namespace ModernFlyouts.Core.Media.Control
                     nstream.Seek(0, SeekOrigin.Begin);
                     if (nstream != null && nstream.Length > 0)
                     {
-                        return BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+                        return GetModifiedThumbnail(BitmapFrame.Create(nstream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad));
                     }
                 }
             }
 
             return null;
+        }
+
+        private BitmapSource GetModifiedThumbnail(BitmapSource bitmapSource)
+        {
+            if (IsSourceAppSpotify())
+            {
+                return GetModifiedThumbnailForSpotify(bitmapSource);
+            }
+
+            return bitmapSource;
+        }
+
+        /// <summary>
+        /// Gets a modified version of the original thumbnail provided by Spotify.
+        /// It crops and removes extra padding and Spotify branding from the original thumbnail provided by Spotify.
+        /// </summary>
+        /// <param name="bitmapSource">The original thumbnail provided by the source.</param>
+        /// <returns>A cropped variant of the original thumbnail with extra padding and Spotify branding removed.</returns>
+        /// <remarks>F*** you Spotify!</remarks>
+        private BitmapSource GetModifiedThumbnailForSpotify(BitmapSource bitmapSource)
+        {
+            CroppedBitmap croppedBitmap = null;
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                croppedBitmap = new CroppedBitmap(bitmapSource, new Int32Rect(33, 0, 234, 234));
+            });
+
+            return croppedBitmap;
         }
 
         #endregion
@@ -287,16 +324,11 @@ namespace ModernFlyouts.Core.Media.Control
             catch { }
         }
 
-        /// <summary>
-        /// This function won't work properly since the <see cref="GlobalSystemMediaTransportControlsSession.TryChangePlaybackPositionAsync(long)"/>
-        /// is un-reliable. But implemented it anyways thinking it could work in the future.
-        /// </summary>
-        /// <param name="playbackPosition"></param>
         protected override async void PlaybackPositionChanged(TimeSpan playbackPosition)
         {
             try
             {
-                await GSMTCSession?.TryChangePlaybackPositionAsync((long)TimelineEndTime.TotalMilliseconds);
+                await GSMTCSession?.TryChangePlaybackPositionAsync(playbackPosition.Ticks);
             }
             catch { }
         }
