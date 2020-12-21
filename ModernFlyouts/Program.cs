@@ -62,15 +62,15 @@ namespace ModernFlyouts
                         FlyoutHandler.SafelyExitApplication();
                         break;
                     }
-                case RunCommandType.AppUpdated:
-                    {
-                        if (AppLifecycleManager.IsBuildBetaChannel)
-                        {
-                            MessageBox.Show("App update successfully!", AppName);
-                        }
+                //case RunCommandType.AppUpdated:
+                //    {
+                //        if (AppLifecycleManager.IsBuildBetaChannel)
+                //        {
+                //            MessageBox.Show("App update successfully!", AppName);
+                //        }
 
-                        break;
-                    }
+                //        break;
+                //    }
                 default:
                     break;
             }

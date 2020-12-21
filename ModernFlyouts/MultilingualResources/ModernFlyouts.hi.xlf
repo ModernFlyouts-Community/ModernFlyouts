@@ -68,21 +68,6 @@
           <source>Pin TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">पिन टॉपबार</target>
         </trans-unit>
-        <trans-unit id="PointValidationRule.PointFormatInvalidMessage" translate="yes" xml:space="preserve">
-          <source>Please enter the point in the format 'X,Y' (for e.g. 50,60).</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">कृपया 'X, Y' प्रारूप में बिंदु दर्ज करें (उदाहरण के लिए 50,60)।</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there are problem parsing a string value into a Point</note>
-        </trans-unit>
-        <trans-unit id="PointValidationRule.PointOutOfRangeMessage" translate="yes" xml:space="preserve">
-          <source>Please enter X,Y values in the range {0} - {1}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">कृपया {0} रेंज में एक्स, वाई मानों दर्ज करें - {1}।</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a point's X or Y values goes out of int32 range</note>
-        </trans-unit>
-        <trans-unit id="PointValidationRule.StringConvertionErrorMessage" translate="yes" xml:space="preserve">
-          <source>Value cannot be coverted to string.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">मूल्य को स्ट्रिंग में कवर नहीं किया जा सकता है।</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
-        </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">डिफ़ॉल्ट पुनर्स्थापित करें</target>
@@ -174,11 +159,6 @@
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">फ्लाईआउट डिफ़ॉल्ट स्थिति (संरेखित बटन के लिए)</target>
-        </trans-unit>
-        <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">'X, Y' प्रारूप में स्थिति टाइप करें (उदाहरण के लिए 50,60)</target>
-          
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
@@ -431,6 +411,14 @@
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">कुछ बदलावों को लागू करने के लिए पुनः आरंभ करना आवश्यक है</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
+          <source>Use media's thumbnail as media control's background</source>
+          <target state="new">Use media's thumbnail as media control's background</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutPosition" translate="yes" xml:space="preserve">
+          <source>Flyout Position</source>
+          <target state="new">Flyout Position</target>
         </trans-unit>
       </group>
     </body>

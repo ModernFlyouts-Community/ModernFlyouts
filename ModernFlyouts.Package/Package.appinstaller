@@ -2,16 +2,16 @@
 <AppInstaller
 	Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller"
 	Version="0.8.2.0"
-	xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
+	xmlns="http://schemas.microsoft.com/appx/appinstaller/2018">
 
 	<MainBundle
 		Name="ModernFlyouts"
-		Publisher="Sam G"
-		Version="0.8.2.0"
+		Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
+		Version="0.8.5.0"
 		Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/download/0.8.2/ModernFlyouts_0.8.2.0_neutral.Msixbundle" />
 
 	<UpdateSettings>
-		<OnLaunch HoursBetweenUpdateChecks="6" ShowPrompt="true"/>
+		<OnLaunch HoursBetweenUpdateChecks="0" ShowPrompt="false"/>
 		<AutomaticBackgroundTask/>
 		<ForceUpdateFromAnyVersion>true</ForceUpdateFromAnyVersion>
 	</UpdateSettings>
