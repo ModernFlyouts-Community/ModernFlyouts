@@ -1,4 +1,5 @@
 # ModernFlyouts
+
 ### A modern **Fluent Design** replacement for the old **Metro themed** flyouts present in Windows since Windows 8.
 
 [![Microsoft Store](https://img.shields.io/badge/Microsoft-Store-blue?style=flat&logo=microsoft)](https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge)
@@ -9,7 +10,7 @@
 
 ![ModernFlyouts](ModernFlyouts/Assets/Images/ModernFlyouts_128.png)
 
-[Overview](#overview) • [Features](#features) • [System Requirements](#system-requirements) • [Installation](#installation) • [Connect with us](#connect-with-us) • [Screenshots](#screenshots)
+[Overview](#overview) • [Features](#features) • [System Requirements](#system-requirements) • [Installation](#installation) • [Connect with us](#connect-with-us) • [Contributing](#contributing) • [Screenshots](#screenshots)
 
 ## Overview
 
@@ -33,21 +34,24 @@ This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 ### Please check out [this document](docs/GSMTC-Support-And-Popular-Apps.md) for support regarding your media player/browser.
 
 ## Features
+
 - Fluent UI (similar to Windows 10X).
 - Supports **Light**, **Dark** & **High contrast** themes.
-- Media session controls have additional options such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**
-- Redesigned audio and brightness flyouts along with additional flyouts for **Airplane mode**, **Lock keys** and **Insert/Overtype**
+- Media session controls have additional options such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**.
+- Redesigned audio and brightness flyouts along with additional flyouts for **Airplane mode**, **Lock keys** and **Insert/Overtype**.
 - Each module can be **disabled individually**.
 - Flyout's TopBar can be pinned, unpinned or hidden.
 - Flyout is **Draggable** and autosaves the position. It also has feature for default position. (Check out the settings)
-- Smooth **Animations** & **Transitions**
-- **Opacity** of the background of flyouts can be changed
-- **Timeout** of flyouts can be changed
+- Smooth **Animations** & **Transitions**.
+- **Opacity** of the background of flyouts can be changed.
+- **Timeout** of flyouts can be changed.
 
 ## System Requirements
-- **Windows 10 1809 and above** (older versions such as v0.3 and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't)
+
+- **Windows 10 1809 and above** (older versions such as v0.3 and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't).
 
 ## Installation
+
 Modern Flyouts is available for you to install via [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), **winget** and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
 
 All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **recommended** as it is easier to install and will automatically remain up to date.
@@ -66,29 +70,48 @@ You can [sign up here](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIk
 
 **winget:**
 
-_please note that due to how winget processes package updates, updates may take **longer** to be released to winget_
+_please note that due to how winget processes package updates, updates may take **longer** to be released to winget_.
 
 `winget install --id=ModernFlyouts.ModernFlyouts -e`
 
 ## Connect with us
 You can join our [Discord Server](https://discord.gg/TcYskeyaYE) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback (people who don't have a GitHub account may be benefitted).
 
+## Contributing
+
+This project welcomes all types of contributions such help planning, design, documentation, finding bugs are ways everyone can help on top of coding features / bug fixes. We are excited to work with the community to make this project reach its goals and beyond.
+
+We ask that **before you start work on a feature that you would like to contribute**, please read our [Contributor's Guide](CONTRIBUTING.md). We will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
+
+For guidance on developing for ModernFlyouts, please read the [developer guide](docs/developer_guide.md) for a detailed breakdown. This includes how to setup your computer to build and run the app.
+
 ## NOTES
 
 ### Credits
+
 First of all, we must thank our good friend **[@ADeltaX](https://github.com/ADeltaX/)** for one of his marvelous works **"[AudioFlyout](https://github.com/ADeltaX/AudioFlyout)"**. Since the project was stale for a while and it lacked support for brightness and airplane mode flyouts, this project was born. He not only let us use his source code but also helped us improve this app. And he still supports us 😄.
-I must admit that this project wouldn't be here *how it is* without **[@ADeltaX](https://github.com/ADeltaX/)**. Our heartful thanks to him (and our contributors too!) ❤.
+I must admit that this project wouldn't be here *how it is* without **[@ADeltaX](https://github.com/ADeltaX/)**. Our heartful thanks to him ❤.
+
+Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our invite and allowing us to integrate parts of [EarTrumpet](https://github.com/File-New-Project/EarTrumpet) into ModernFlyouts.
 
 ### Our Team
-- **[@Samuel12321](https://github.com/Samuel12321/)** - Maintainer/Owner of this repository and application publisher (including **Microsoft Store**).
-- **[@ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/Owner & Developer.
+
+- **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
+- **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
+- **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
+- **[ADeltaX](https://github.com/ADeltaX/)** - Our savior! Helps us at critical times.
+
 
 ### Our Contributors 💗💕
 
 **Code:**
+
 - [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we couldn't even identify 😅 [#113](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/113).
+- [Renzo904](https://github.com/Renzo904) - Fixed some important and annoying bugs [#306](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/306) and [#313](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/313).
+- [fheck](https://github.com/fheck) - Added the ability to toggle the usage of media session controls' thumbnail as background [#315](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/315).
 
 **Translators :**
+
 - [yukiokun057](https://github.com/yukiokun057) - Russian translator.
 - [knurzl](https://github.com/knurzl) - German translator.
 - [lucasskluser](https://github.com/lucasskluser) - Portuguese translator.
@@ -105,12 +128,14 @@ I must admit that this project wouldn't be here *how it is* without **[@ADeltaX]
 - [MichelangeloDePascale02](https://github.com/MichelangeloDePascale02) - Italian translator.
 - [Per-Terra](https://github.com/Per-Terra) - Japanese translator.
 - [Renzo904](https://github.com/Renzo904) - Spanish translator.
+- [Arno500](https://github.com/Arno500) - French translator.
 
 **Others:**
-- [Cyberdroid1](https://github.com/Cyberdroid1) - Wiki & Docs.
+
 - [Poopooracoocoo](https://github.com/Poopooracoocoo) - README.
 
 ### Dependencies and References
+
 - [NAudio](https://github.com/naudio/NAudio)
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (Inspired the name **Modern**Flyouts)
 - [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
