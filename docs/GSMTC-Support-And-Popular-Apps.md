@@ -6,14 +6,13 @@ The built-in Windows Media Flyout will also only support those apps.
 
 Users tend to know which functionalities are supported by ModernFlyouts' Media Sessions Controls for their apps of interest ([#230](https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/230) for instance).
 
-So, let's check the compatibility or support report.
 
 ### Legend
 
 #### App support type
 
 - 🟢 - Supported by the app out-of-the-box i.e. built-in support for SMTC
-- 🟡 - No built-in support for SMTC but could be overcame around by **[plugins or extensions or add-ons or add-ins and etc.](#plugins)**
+- 🟡 - No built-in support for SMTC but could be overcame around by **[additional software (plugins, add-ons, etc.](#plugins)**
 - 🔴 - **Not supported by any means** (see [Help us include support for more applications that are currently unsupported](#help-us-include-support-for-more-applications-that-are-currently-unsupported))
 
 #### Feature support type
