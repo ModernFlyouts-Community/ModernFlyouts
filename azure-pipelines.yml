@@ -1,9 +1,7 @@
 trigger:
   branches:
     include:
-      - master
-      - review/*
-      - experiment/*
+      - main
       - dev
   paths:
     exclude:
@@ -23,11 +21,11 @@ variables:
 - name: DOTNET_SKIP_FIRST_TIME_EXPERIENCE
   value: true
 - name: Solution
-  value: 'EarTrumpet.vs15.sln'
+  value: 'ModernFlyouts.sln'
 - name: BuildConfiguration
   value: 'Release'
 - name: BuildPlatform
-  value: 'x86'
+  value: 'x86 , x64'
 
 jobs:
 - job: Build
@@ -85,19 +83,19 @@ jobs:
     inputs:
       targetType: inline
       script: |
-        $cfg = Get-Content ".\EarTrumpet\app.config"
+        $cfg = Get-Content ".\ModernFlyouts\app.config"
         $cfg | ForEach-Object { $_.Replace("{bugsnag.apikey}", "$(bugsnag.apikey)") } | Set-Content ".\EarTrumpet\app.config"
   - task: PowerShell@2
     displayName: 'Adjust manifest and store association'
     inputs:
       targetType: inline
       script: |
-        $manifestPath = ".\EarTrumpet.Package\Package.appxmanifest"
-        $storeAssociationPath = ".\EarTrumpet.Package\Package.StoreAssociation.xml"
+        $manifestPath = ".\ModernFlyouts.Package\Package.appxmanifest"
+        $storeAssociationPath = ".\ModernFlyouts.Package\Package.StoreAssociation.xml"
         $manifest = [xml](Get-Content $manifestPath)
         $manifest.Package.Identity.Publisher = "$(Publisher)"
         if("$(Channel)" -eq "AppInstaller") {
-          $manifest.Package.Properties.DisplayName = "EarTrumpet ($(GitVersion.BranchName))"
+          $manifest.Package.Properties.DisplayName = "ModernFlyouts ($(GitVersion.BranchName))"
           $manifest.Package.Applications.Application.VisualElements.DisplayName = "EarTrumpet ($(GitVersion.BranchName))"
         }
         $manifest.Save($manifestPath)
@@ -108,9 +106,9 @@ jobs:
         }
         $storeAssociation.Save($storeAssociationPath)
   - task: MSBuild@1
-    displayName: 'Build EarTrumpet appxupload package'
+    displayName: 'Build ModernFlyouts appxupload package'
     inputs:
-      solution: 'EarTrumpet.Package/EarTrumpet.Package.wapproj'
+      solution: 'ModernFlyouts.Package/EarTrModernFlyouts.Package.wapproj'
       platform: 'x86'
       configuration: '$(buildConfiguration)'
       msbuildArguments: '/p:AppxBundle=Always /p:Channel=$(Channel) /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)/AppxUpload" /p:AppxPackageSigningEnabled=false /p:UapAppxPackageBuildMode=CI'
@@ -125,9 +123,9 @@ jobs:
     condition: and(succeeded(), eq(variables['Channel'], 'Store'))
 
   - task: MSBuild@1
-    displayName: 'Build EarTrumpet appinstaller/sideload package'
+    displayName: 'Build ModernFlyouts appinstaller/sideload package'
     inputs:
-      solution: 'EarTrumpet.Package/EarTrumpet.Package.wapproj'
+      solution: 'ModernFlyouts.Package/ModernFlyouts.Package.wapproj'
       platform: 'x86'
       configuration: '$(buildConfiguration)'
       msbuildArguments: '/p:AppxBundle=Always /p:Channel=$(Channel) /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)/Sideload" /p:AppxPackageSigningEnabled=false /p:UapAppxPackageBuildMode=SideloadOnly /p:GenerateAppInstallerFile=true /p:AppxPackageTestDir="$(Build.ArtifactStagingDirectory)/Sideload/" /p:AppInstallerUri=https://install.eartrumpet.app'
@@ -139,10 +137,10 @@ jobs:
     inputs:
       targetType: inline
       script: |
-        $manifestPath = "$(Build.ArtifactStagingDirectory)/Sideload/EarTrumpet.Package.appinstaller"
+        $manifestPath = "$(Build.ArtifactStagingDirectory)/Sideload/ModernFlyouts.Package.appinstaller"
         $manifest = [xml](Get-Content $manifestPath)
-        $manifest.AppInstaller.Uri = "https://install.eartrumpet.app/$(GitVersion.BranchName)/EarTrumpet.Package.appinstaller"
-        $manifest.AppInstaller.MainBundle.Uri = "https://install.eartrumpet.app/$(GitVersion.BranchName)/EarTrumpet.Package_$(GitVersion.MajorMinorPatch).$(GitVersion.CommitsSinceVersionSource)_x86.appxbundle"
+        $manifest.AppInstaller.Uri = "https://install.ModernFlyouts.app/$(GitVersion.BranchName)/ModernFlyouts.Package.appinstaller"
+        $manifest.AppInstaller.MainBundle.Uri = "https://install.ModernFlyouts.app/$(GitVersion.BranchName)/ModernFlyouts.Package_$(GitVersion.MajorMinorPatch).$(GitVersion.CommitsSinceVersionSource)_x86.appxbundle"
         $manifest.AppInstaller.MainBundle.Publisher = "$(Publisher)"
         $manifest.Save($manifestPath)
       pwsh: true
