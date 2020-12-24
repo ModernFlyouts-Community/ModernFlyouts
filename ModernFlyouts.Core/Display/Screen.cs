@@ -48,7 +48,7 @@ namespace ModernFlyouts.Core.Display
                     info.rcMonitor.Right - info.rcMonitor.Left,
                     info.rcMonitor.Bottom - info.rcMonitor.Top);
 
-                IsPrimary = ((info.dwFlags & MONITORINFOF_PRIMARY) != 0);
+                IsPrimary = (info.dwFlags & MONITORINFOF_PRIMARY) != 0;
 
                 DeviceName = new string(info.szDevice).TrimEnd((char)0);
             }
@@ -115,7 +115,7 @@ namespace ModernFlyouts.Core.Display
             }
         }
 
-        public static Screen FromWindow(IntPtr hwnd)
+        public static Screen FromHWnd(IntPtr hwnd)
         {
             if (multiMonitorSupport)
             {
