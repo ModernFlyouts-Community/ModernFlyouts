@@ -26,10 +26,8 @@
                 <ui:NavigationViewItem.Icon>
                     <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Personalization}" />
                 </ui:NavigationViewItem.Icon>
-                <ui:NavigationViewItem.MenuItems>
-                    <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_FlyoutPosition}" Icon="PreviewLink" Tag="Flyout Position"/>
-                 </ui:NavigationViewItem.MenuItems>
             </ui:NavigationViewItem>
+            <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_FlyoutPosition}" Icon="SwitchApps" Tag="flyout_position" />
             <ui:NavigationViewItemSeparator />
             <ui:NavigationViewItemHeader Content="{x:Static resx:Strings.Settings_Modules}" />
             <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Modules_Audio}" Tag="audio_module">
