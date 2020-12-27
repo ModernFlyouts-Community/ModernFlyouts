@@ -10,9 +10,9 @@
         <Border.Effect>
             <DropShadowEffect Opacity="0.4" ShadowDepth="10" Direction="-90" BlurRadius="28.8" />
         </Border.Effect>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="300" TextBlock.Foreground="White">
-            <TextBlock Text="{Binding Left}" />
-            <TextBlock Text="{Binding Top}" />
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="200" TextBlock.Foreground="White">
+            <TextBlock Text="{Binding ActualLeft}" />
+            <TextBlock Text="{Binding ActualTop}" />
             <TextBlock Text="{Binding ActualExpandDirection}" />
             <ToggleButton IsChecked="True" Content="Change offset" Click="Button_Click" />
             <TextBox />

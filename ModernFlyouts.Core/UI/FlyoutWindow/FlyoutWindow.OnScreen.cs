@@ -6,6 +6,8 @@ namespace ModernFlyouts.Core.UI
     {
         private void PositionOnScreenFlyout(ref double x, ref double y, double width, double height)
         {
+            var margin = Margin;
+            var offset = Offset;
             var screen = Screen.PrimaryScreen;
             double screenX = screen.WorkingArea.X;
             double screenY = screen.WorkingArea.Y;
@@ -15,23 +17,25 @@ namespace ModernFlyouts.Core.UI
             bool xHandled = false;
             bool yHandled = false;
 
-            if (Alignment.HasFlag(FlyoutWindowAlignment.Left))
+            var alignment = Alignment;
+
+            if (alignment.HasFlag(FlyoutWindowAlignment.Left))
             {
                 x = screenX + effectiveMarginLeft;
                 xHandled = true;
             }
-            else if (Alignment.HasFlag(FlyoutWindowAlignment.Right))
+            else if (alignment.HasFlag(FlyoutWindowAlignment.Right))
             {
                 x = screenX + screenWidth - width - effectiveMarginRight;
                 xHandled = true;
             }
 
-            if (Alignment.HasFlag(FlyoutWindowAlignment.Top))
+            if (alignment.HasFlag(FlyoutWindowAlignment.Top))
             {
                 y = screenY + effectiveMarginTop;
                 yHandled = true;
             }
-            else if (Alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+            else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
             {
                 y = screenY + screenHeight - height - effectiveMarginBottom;
                 yHandled = true;
@@ -40,13 +44,79 @@ namespace ModernFlyouts.Core.UI
             // Which means x should be center aligned
             if (!xHandled)
             {
-                x = screenX + (screenWidth / 2) - (width / 2) + effectiveMarginLeft - effectiveMarginRight;
+                double offsetX = ((offset.Left + offset.Right) / 2 - offset.Left) * DpiScale;
+                x = screenX + (screenWidth / 2) - (width / 2) + margin.Left - margin.Right + offsetX;
             }
             // Which means y should be center aligned
             if (!yHandled)
             {
-                y = screenX + (screenHeight / 2) - (height / 2) + effectiveMarginTop - effectiveMarginBottom;
+                double offsetY = ((offset.Top + offset.Bottom) / 2 - offset.Top) * DpiScale;
+                y = screenX + (screenHeight / 2) - (height / 2) + margin.Top - margin.Bottom + offsetY;
             }
+        }
+
+        private FlyoutWindowExpandDirection CalculatedActualExpandDirectionOnScreen()
+        {
+            FlyoutWindowExpandDirection expandDirection = FlyoutWindowExpandDirection.Down;
+            var margin = Margin;
+
+            if (PlacementMode == FlyoutWindowPlacementMode.Auto)
+            {
+                var alignment = Alignment;
+
+                if (alignment.HasFlag(FlyoutWindowAlignment.Left))
+                {
+                    if (alignment.HasFlag(FlyoutWindowAlignment.Top))
+                    {
+                        expandDirection = (margin.Left < margin.Top) ?
+                            FlyoutWindowExpandDirection.Right : FlyoutWindowExpandDirection.Down;
+                    }
+                    else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+                    {
+                        expandDirection = (margin.Left < margin.Bottom) ?
+                            FlyoutWindowExpandDirection.Right : FlyoutWindowExpandDirection.Up;
+                    }
+                    else
+                    {
+                        expandDirection = FlyoutWindowExpandDirection.Right;
+                    }
+                }
+                else if (alignment.HasFlag(FlyoutWindowAlignment.Right))
+                {
+                    if (alignment.HasFlag(FlyoutWindowAlignment.Top))
+                    {
+                        expandDirection = (margin.Right < margin.Top) ?
+                            FlyoutWindowExpandDirection.Left : FlyoutWindowExpandDirection.Down;
+                    }
+                    else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+                    {
+                        expandDirection = (margin.Right < margin.Bottom) ?
+                            FlyoutWindowExpandDirection.Left : FlyoutWindowExpandDirection.Up;
+                    }
+                    else
+                    {
+                        expandDirection = FlyoutWindowExpandDirection.Left;
+                    }
+                }
+                else
+                {
+                    if (alignment.HasFlag(FlyoutWindowAlignment.Top))
+                    {
+                        expandDirection = FlyoutWindowExpandDirection.Down;
+                    }
+                    else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+                    {
+                        expandDirection = FlyoutWindowExpandDirection.Up;
+                    }
+                    else
+                    {
+                        expandDirection = (margin.Bottom < margin.Top) ?
+                            FlyoutWindowExpandDirection.Up : FlyoutWindowExpandDirection.Down;
+                    }
+                }
+            }
+
+            return expandDirection;
         }
     }
 }

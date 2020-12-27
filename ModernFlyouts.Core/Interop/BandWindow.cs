@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Interop;
 using System.Windows.Media;
 using static ModernFlyouts.Core.Interop.NativeMethods;
@@ -32,7 +33,7 @@ namespace ModernFlyouts.Core.Interop
         AboveLockUX = 0x12,
     };
 
-    public class BandWindow : DependencyObject
+    public class BandWindow : ContentControl
     {
         private delegate IntPtr WndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
 
@@ -86,7 +87,7 @@ namespace ModernFlyouts.Core.Interop
         {
             if (d is BandWindow bandWindow)
             {
-                if (bandWindow.IsLoaded)
+                if (bandWindow.IsSourceCreated)
                 {
                     if ((bool)e.NewValue)
                     {
@@ -98,42 +99,6 @@ namespace ModernFlyouts.Core.Interop
                     }
                 }
             }
-        }
-
-        #endregion
-
-        #region ActualWidth
-
-        private static readonly DependencyPropertyKey ActualWidthPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(ActualWidth),
-            typeof(double),
-            typeof(BandWindow),
-            new PropertyMetadata(0.0));
-
-        public static readonly DependencyProperty ActualWidthProperty = ActualWidthPropertyKey.DependencyProperty;
-
-        public double ActualWidth
-        {
-            get => (double)GetValue(ActualWidthProperty);
-            private set => SetValue(ActualWidthPropertyKey, value);
-        }
-
-        #endregion
-
-        #region ActualHeight
-
-        private static readonly DependencyPropertyKey ActualHeightPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(ActualHeight),
-            typeof(double),
-            typeof(BandWindow),
-            new PropertyMetadata(0.0));
-
-        public static readonly DependencyProperty ActualHeightProperty = ActualHeightPropertyKey.DependencyProperty;
-
-        public double ActualHeight
-        {
-            get => (double)GetValue(ActualHeightProperty);
-            private set => SetValue(ActualHeightPropertyKey, value);
         }
 
         #endregion
@@ -174,56 +139,6 @@ namespace ModernFlyouts.Core.Interop
 
         #endregion
 
-        #region Content
-
-        public static readonly DependencyProperty ContentProperty = DependencyProperty.Register(
-            nameof(Content),
-            typeof(FrameworkElement),
-            typeof(BandWindow),
-            new PropertyMetadata(null, OnContentPropertyChanged));
-
-        public FrameworkElement Content
-        {
-            get => (FrameworkElement)GetValue(ContentProperty);
-            set => SetValue(ContentProperty, value);
-        }
-
-        private static void OnContentPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is BandWindow bandWindow)
-            {
-                if (e.OldValue is FrameworkElement oldContent)
-                {
-                    oldContent.ClearValue(BandWindowProperty);
-                    oldContent.SizeChanged -= OnContentSizeChanged;
-                }
-                if (e.NewValue is FrameworkElement newContent)
-                {
-                    newContent.SizeChanged += OnContentSizeChanged;
-                    newContent.SetValue(BandWindowProperty, bandWindow);
-
-                    if (bandWindow.hwndSource != null)
-                    {
-                        bandWindow.hwndSource.RootVisual = newContent;
-                    }
-                }
-            }
-        }
-
-        private static void OnContentSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            if (sender is FrameworkElement element)
-            {
-                var bandWindow = GetBandWindow(element);
-                if (bandWindow.IsLoaded)
-                {
-                    bandWindow.UpdateSize();
-                }
-            }
-        }
-
-        #endregion
-
         #region Handle
 
         private static readonly DependencyPropertyKey HandlePropertyKey = DependencyProperty.RegisterReadOnly(
@@ -260,38 +175,38 @@ namespace ModernFlyouts.Core.Interop
 
         #endregion
 
-        #region IsLoaded
+        #region IsDragMoving
 
-        private static readonly DependencyPropertyKey IsLoadedPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsLoaded),
+        private static readonly DependencyPropertyKey IsDragMovingPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(IsDragMoving),
             typeof(bool),
             typeof(BandWindow),
             new PropertyMetadata(false));
 
-        public static readonly DependencyProperty IsLoadedProperty = IsLoadedPropertyKey.DependencyProperty;
+        public static readonly DependencyProperty IsDragMovingProperty = IsDragMovingPropertyKey.DependencyProperty;
 
-        public bool IsLoaded
+        public bool IsDragMoving
         {
-            get => (bool)GetValue(IsLoadedProperty);
-            private set => SetValue(IsLoadedPropertyKey, value);
+            get => (bool)GetValue(IsDragMovingProperty);
+            private set => SetValue(IsDragMovingPropertyKey, value);
         }
 
         #endregion
 
-        #region IsVisible
+        #region IsSourceCreated
 
-        private static readonly DependencyPropertyKey IsVisiblePropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsVisible),
+        private static readonly DependencyPropertyKey IsSourceCreatedPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(IsSourceCreated),
             typeof(bool),
             typeof(BandWindow),
             new PropertyMetadata(false));
 
-        public static readonly DependencyProperty IsVisibleProperty = IsVisiblePropertyKey.DependencyProperty;
+        public static readonly DependencyProperty IsSourceCreatedProperty = IsSourceCreatedPropertyKey.DependencyProperty;
 
-        public bool IsVisible
+        public bool IsSourceCreated
         {
-            get => (bool)GetValue(IsVisibleProperty);
-            private set => SetValue(IsVisiblePropertyKey, value);
+            get => (bool)GetValue(IsSourceCreatedProperty);
+            private set => SetValue(IsSourceCreatedPropertyKey, value);
         }
 
         #endregion
@@ -314,7 +229,7 @@ namespace ModernFlyouts.Core.Interop
         {
             if (d is BandWindow bandWindow)
             {
-                if (bandWindow.IsLoaded)
+                if (bandWindow.IsSourceCreated)
                 {
                     if ((bool)e.NewValue)
                     {
@@ -347,7 +262,7 @@ namespace ModernFlyouts.Core.Interop
 
         private static void OnZBandIDPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is BandWindow bandWindow && bandWindow.IsLoaded)
+            if (d is BandWindow bandWindow && bandWindow.IsSourceCreated)
                 throw new AccessViolationException("ZBandID should not be changed after the window creation");
         }
 
@@ -355,16 +270,54 @@ namespace ModernFlyouts.Core.Interop
 
         #endregion
 
+        static BandWindow()
+        {
+            ContentProperty.OverrideMetadata(typeof(BandWindow), new FrameworkPropertyMetadata(OnContentPropertyChanged));
+            VisibilityProperty.OverrideMetadata(typeof(BandWindow), new FrameworkPropertyMetadata(Visibility.Hidden, OnVisibilityPropertyChanged));
+        }
+
+        private static void OnVisibilityPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is BandWindow bandWindow)
+            {
+                if (e.NewValue is Visibility visibility)
+                {
+                    if (visibility == Visibility.Visible)
+                    {
+                        bandWindow.Show();
+                    }
+                    else
+                    {
+                        bandWindow.Hide();
+                    }
+                }
+            }
+        }
+
+        private static void OnContentPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is BandWindow bandWindow)
+            {
+                SetBandWindow(e.NewValue as FrameworkElement, bandWindow);
+            }
+        }
+
         public BandWindow()
         {
             delegWndProc = myWndProc;
+            SizeChanged += BandWindow_SizeChanged;
+        }
+
+        private void BandWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            UpdateSize();
         }
 
         #region Actual window handling
 
         public void CreateWindow()
         {
-            if (IsLoaded)
+            if (IsSourceCreated)
                 return;
 
             WNDCLASSEX wind_class = new()
@@ -418,28 +371,29 @@ namespace ModernFlyouts.Core.Interop
 
             hwndSource = new(param)
             {
-                RootVisual = Content
+                RootVisual = this
             };
 
             hwndSource.CompositionTarget.BackgroundColor = Colors.Transparent;
             hwndSource.SizeToContent = SizeToContent.WidthAndHeight;
-            hwndSource.DpiChanged += HwndSource_DpiChanged;
             hwndSource.ContentRendered += HwndSource_ContentRendered;
 
             UpdateWindow(hWnd);
 
-            IsLoaded = true;
-        }
-
-        private void HwndSource_DpiChanged(object sender, HwndDpiChangedEventArgs e)
-        {
-            OnDpiChanged(e.NewDpi.DpiScaleX);
-            UpdateSize();
+            IsSourceCreated = true;
         }
 
         private void HwndSource_ContentRendered(object sender, EventArgs e)
         {
             OnDpiChanged(GetDpiForWindow(Handle) / 96.0);
+            UpdateSize();
+        }
+
+        protected override void OnDpiChanged(DpiScale oldDpi, DpiScale newDpi)
+        {
+            base.OnDpiChanged(oldDpi, newDpi);
+
+            OnDpiChanged(newDpi.DpiScaleX);
             UpdateSize();
         }
 
@@ -488,19 +442,14 @@ namespace ModernFlyouts.Core.Interop
 
         private void UpdateSize()
         {
-            var width = Content?.ActualWidth * dpiScale ?? 0.0;
-            var height = Content?.ActualHeight * dpiScale ?? 0.0;
+            var width = ActualWidth * dpiScale;
+            var height = ActualHeight * dpiScale;
             SetWindowPos(Handle, IntPtr.Zero, 0, 0,
                 (int)Math.Round(width),
                 (int)Math.Round(height),
                 SWP.NOZORDER | SWP.NOMOVE);
 
             UpdateWindow(Handle);
-
-            ActualWidth = width;
-            ActualHeight = height;
-
-            OnSizeChanged();
         }
 
         #endregion
@@ -509,7 +458,7 @@ namespace ModernFlyouts.Core.Interop
 
         protected void SetPosition(double x, double y)
         {
-            if (!IsLoaded)
+            if (!IsSourceCreated)
                 return;
 
             SetWindowPos(Handle, IntPtr.Zero,
@@ -539,13 +488,10 @@ namespace ModernFlyouts.Core.Interop
             DpiChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        protected virtual void OnIsVisibleChanged()
-        {
-            IsVisibleChanged?.Invoke(this, EventArgs.Empty);
-        }
-
         protected virtual void OnDragMoved()
         {
+            IsDragMoving = false;
+
             GetWindowRect(Handle, out var rect);
             ActualLeft = rect.Left;
             ActualTop = rect.Top;
@@ -553,9 +499,9 @@ namespace ModernFlyouts.Core.Interop
             DragMoved?.Invoke(this, EventArgs.Empty);
         }
 
-        protected virtual void OnSizeChanged()
+        protected virtual void OnShown()
         {
-            SizeChanged?.Invoke(this, EventArgs.Empty);
+            Shown?.Invoke(this, EventArgs.Empty);
         }
 
         #endregion
@@ -564,16 +510,18 @@ namespace ModernFlyouts.Core.Interop
 
         public void DragMove()
         {
-            if (!IsLoaded)
+            if (!IsSourceCreated)
                 return;
 
             SendMessage(Handle, WM_SYSCOMMAND, SC_MOUSEMOVE, 0);
             SendMessage(Handle, WM_LBUTTONUP, 0, 0);
+
+            IsDragMoving = true;
         }
 
         public void Activate()
         {
-            if (!IsLoaded)
+            if (!IsSourceCreated)
                 return;
 
             SetForegroundWindow(Handle);
@@ -581,29 +529,37 @@ namespace ModernFlyouts.Core.Interop
 
         public void Show()
         {
-            if (!IsLoaded)
-            {
+            if (!IsSourceCreated)
                 CreateWindow();
-            }
+
+            if (_isVisibilityChanging)
+                return;
+
+            _isVisibilityChanging = true;
+            Visibility = Visibility.Visible;
+            _isVisibilityChanging = false;
 
             ShowWindowAsync(Handle, Activatable ?
                 (int)ShowWindowCommands.ShowNoActivate : (int)ShowWindowCommands.ShowDefault);
 
             if (Activatable) SetForegroundWindow(Handle);
 
-            IsVisible = true;
-            OnIsVisibleChanged();
+            OnShown();
         }
 
         public void Hide()
         {
-            if (!IsLoaded)
+            if (!IsSourceCreated || _isVisibilityChanging)
                 return;
 
             ShowWindowAsync(Handle, (int)ShowWindowCommands.Hide);
-            IsVisible = false;
-            OnIsVisibleChanged();
+
+            _isVisibilityChanging = true;
+            Visibility = Visibility.Hidden;
+            _isVisibilityChanging = false;
         }
+
+        private bool _isVisibilityChanging;
 
         #endregion
 
@@ -613,10 +569,8 @@ namespace ModernFlyouts.Core.Interop
 
         public event EventHandler DpiChanged;
 
-        public event EventHandler IsVisibleChanged;
-
         public event EventHandler DragMoved;
 
-        public event EventHandler SizeChanged;
+        public event EventHandler Shown;
     }
 }

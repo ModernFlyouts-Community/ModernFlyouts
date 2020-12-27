@@ -1,211 +1,33 @@
 ﻿using ModernFlyouts.Core.Interop;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace ModernFlyouts.Core.UI
 {
     public partial class FlyoutWindow : BandWindow
     {
-        #region Properties
-
-        #region Alignment
-
-        public static readonly DependencyProperty AlignmentProperty = DependencyProperty.Register(
-            nameof(Alignment),
-            typeof(FlyoutWindowAlignment),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowAlignment.Top | FlyoutWindowAlignment.Left, OnAlignmentPropertyChanged));
-
-        public FlyoutWindowAlignment Alignment
+        public FlyoutWindow()
         {
-            get => (FlyoutWindowAlignment)GetValue(AlignmentProperty);
-            set => SetValue(AlignmentProperty, value);
+            PrepareAnimations();
+            SizeChanged += FlyoutWindow_SizeChanged;
         }
 
-        private static void OnAlignmentPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        protected override void OnShown()
         {
-            if (d is FlyoutWindow flyoutWindow)
-            {
-                flyoutWindow.PositionFlyout();
-            }
+            base.OnShown();
+
+            PositionFlyout();
         }
-
-        #endregion
-
-        #region ActualExpandDirection
-
-        private static readonly DependencyPropertyKey ActualExpandDirectionPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(ActualExpandDirection),
-            typeof(FlyoutWindowExpandDirection),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowExpandDirection.Down));
-
-        public static readonly DependencyProperty ActualExpandDirectionProperty = ActualExpandDirectionPropertyKey.DependencyProperty;
-
-        public FlyoutWindowExpandDirection ActualExpandDirection
-        {
-            get => (FlyoutWindowExpandDirection)GetValue(ActualExpandDirectionProperty);
-            private set => SetValue(ActualExpandDirectionPropertyKey, value);
-        }
-
-        #endregion
-
-        #region ExpandDirection
-
-        public static readonly DependencyProperty ExpandDirectionProperty = DependencyProperty.Register(
-            nameof(ExpandDirection),
-            typeof(FlyoutWindowExpandDirection),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowExpandDirection.Auto));
-
-        public FlyoutWindowExpandDirection ExpandDirection
-        {
-            get => (FlyoutWindowExpandDirection)GetValue(ExpandDirectionProperty);
-            set => SetValue(ExpandDirectionProperty, value);
-        }
-
-        #endregion
-
-        #region FlyoutWindowType
-
-        public static readonly DependencyProperty FlyoutWindowTypeProperty = DependencyProperty.Register(
-            nameof(FlyoutWindowType),
-            typeof(FlyoutWindowType),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowType.OnScreen, OnFlyoutWindowTypePropertyChanged));
-
-        public FlyoutWindowType FlyoutWindowType
-        {
-            get => (FlyoutWindowType)GetValue(FlyoutWindowTypeProperty);
-            set => SetValue(FlyoutWindowTypeProperty, value);
-        }
-
-        private static void OnFlyoutWindowTypePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is FlyoutWindow flyoutWindow)
-            {
-                flyoutWindow.PositionFlyout();
-            }
-        }
-
-        #endregion
-
-        #region Margin
-
-        public static readonly DependencyProperty MarginProperty = FrameworkElement.MarginProperty.AddOwner(
-            typeof(FlyoutWindow), new PropertyMetadata(OnMarginPropertyChanged));
-
-        public Thickness Margin
-        {
-            get => (Thickness)GetValue(MarginProperty);
-            set => SetValue(MarginProperty, value);
-        }
-
-        private static void OnMarginPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is FlyoutWindow flyoutWindow)
-            {
-                flyoutWindow.RePositionFlyout();
-            }
-        }
-
-        #endregion
-
-        #region Offset
-
-        public static readonly DependencyProperty OffsetProperty = DependencyProperty.RegisterAttached(
-            nameof(Offset),
-            typeof(Thickness),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(new Thickness(), OnOffsetPropertyChanged));
-
-        public Thickness Offset
-        {
-            get => (Thickness)GetValue(OffsetProperty);
-            set => SetValue(OffsetProperty, value);
-        }
-
-        private static void OnOffsetPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is FlyoutWindow flyoutWindow)
-            {
-                flyoutWindow.RePositionFlyout();
-            }
-        }
-
-        #endregion
-
-        #region PlacementMode
-
-        public static readonly DependencyProperty PlacementModeProperty = DependencyProperty.Register(
-            nameof(PlacementMode),
-            typeof(FlyoutWindowPlacementMode),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowPlacementMode.Auto, OnPlacementModePropertyChanged));
-
-        public FlyoutWindowPlacementMode PlacementMode
-        {
-            get => (FlyoutWindowPlacementMode)GetValue(PlacementModeProperty);
-            set => SetValue(PlacementModeProperty, value);
-        }
-
-        private static void OnPlacementModePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is FlyoutWindow flyoutWindow)
-            {
-                flyoutWindow.PositionFlyout();
-            }
-        }
-
-        #endregion
-
-        #region Left
-
-        public static readonly DependencyProperty LeftProperty = Canvas.LeftProperty.AddOwner(typeof(FlyoutWindow));
-
-        public double Left
-        {
-            get => (double)GetValue(LeftProperty);
-            set => SetValue(LeftProperty, value);
-        }
-
-        #endregion
-
-        #region Top
-
-        public static readonly DependencyProperty TopProperty = Canvas.TopProperty.AddOwner(typeof(FlyoutWindow));
-
-        public double Top
-        {
-            get => (double)GetValue(TopProperty);
-            set => SetValue(TopProperty, value);
-        }
-
-        #endregion
-
-        #endregion
 
         protected override void OnDpiChanged(double newDpiScale)
         {
             base.OnDpiChanged(newDpiScale);
-            CalculateEffectiveMargin();
+
+            RePositionFlyout();
         }
 
-        protected override void OnIsVisibleChanged()
+        private void FlyoutWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            base.OnIsVisibleChanged();
-
-            if (IsVisible)
-            {
-                PositionFlyout();
-            }
-        }
-
-        protected override void OnSizeChanged()
-        {
-            base.OnSizeChanged();
-
             PositionFlyout();
         }
 
@@ -229,10 +51,12 @@ namespace ModernFlyouts.Core.UI
 
         private void CalculateEffectiveMargin()
         {
-            effectiveMarginLeft = Margin.Left - (DpiScale * Offset.Left);
-            effectiveMarginRight = Margin.Right - (DpiScale * Offset.Right);
-            effectiveMarginTop = Margin.Top - (DpiScale * Offset.Top);
-            effectiveMarginBottom = Margin.Bottom - (DpiScale * Offset.Bottom);
+            var margin = Margin;
+            var offset = Offset;
+            effectiveMarginLeft = margin.Left - (DpiScale * offset.Left);
+            effectiveMarginRight = margin.Right - (DpiScale * offset.Right);
+            effectiveMarginTop = margin.Top - (DpiScale * offset.Top);
+            effectiveMarginBottom = margin.Bottom - (DpiScale * offset.Bottom);
         }
 
         private void RePositionFlyout()
@@ -243,15 +67,15 @@ namespace ModernFlyouts.Core.UI
 
         private void PositionFlyout()
         {
-            if (!IsLoaded)
+            if (!IsSourceCreated)
                 return;
 
             if (PlacementMode == FlyoutWindowPlacementMode.Auto)
             {
                 double x = 0;
                 double y = 0;
-                double width = ActualWidth;
-                double height = ActualHeight;
+                double width = ActualWidth * DpiScale;
+                double height = ActualHeight * DpiScale;
 
                 if (FlyoutWindowType == FlyoutWindowType.OnScreen)
                 {
@@ -263,6 +87,8 @@ namespace ModernFlyouts.Core.UI
                 }
 
                 SetPosition(x, y);
+
+                CalculateActualExpandDirection();
             }
             else if (PlacementMode == FlyoutWindowPlacementMode.Manual)
             {
@@ -272,6 +98,9 @@ namespace ModernFlyouts.Core.UI
 
         public void AlignToPosition()
         {
+            if (IsDragMoving)
+                return;
+
             if (PlacementMode != FlyoutWindowPlacementMode.Manual)
             {
                 throw new InvalidOperationException(nameof(AlignToPosition)
@@ -285,10 +114,29 @@ namespace ModernFlyouts.Core.UI
                     + FlyoutWindowType.OnScreen);
             }
 
-            double x = Left - (DpiScale * Offset.Left);
-            double y = Top - (DpiScale * Offset.Top);
+            var offset = Offset;
+            double x = Left - (DpiScale * offset.Left);
+            double y = Top - (DpiScale * offset.Top);
 
             SetPosition(x, y);
+        }
+
+        private void CalculateActualExpandDirection()
+        {
+            var expandDirection = ExpandDirection;
+            if (expandDirection == FlyoutWindowExpandDirection.Auto)
+            {
+                if (FlyoutWindowType == FlyoutWindowType.OnScreen)
+                {
+                    expandDirection = CalculatedActualExpandDirectionOnScreen();
+                }
+                else if (FlyoutWindowType == FlyoutWindowType.Tray)
+                {
+                    expandDirection = CalculatedActualExpandDirectionTray();
+                }
+            }
+
+            ActualExpandDirection = expandDirection;
         }
     }
 }

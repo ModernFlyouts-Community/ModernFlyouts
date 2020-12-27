@@ -20,23 +20,24 @@ namespace ModernFlyouts.Internal.Playground
             flyoutWindow = new FlyoutWindow()
             {
                 Activatable = true,
-                ZBandID = ZBandID.Default,
+                ZBandID = ZBandID.Desktop,
                 Content = myView,
-                Alignment = FlyoutWindowAlignment.Bottom | FlyoutWindowAlignment.Right,
-                Margin = new(10),
+                Alignment = FlyoutWindowAlignment.Center | FlyoutWindowAlignment.Center,
                 FlyoutWindowType = FlyoutWindowType.Tray,
+                Margin = new(10),
                 Offset = new(20, 1, 20, 30)
             };
-            flyoutWindow.Show();
+            flyoutWindow.IsOpen = true;
 
             myView.DataContext = flyoutWindow;
+            //BandWindow.SetBandWindow(myView, flyoutWindow);
 
-            flyoutWindow.Deactivated += (s, e) => flyoutWindow.Hide();
+            flyoutWindow.Deactivated += (s, e) => flyoutWindow.IsOpen = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            flyoutWindow.Show();
+            flyoutWindow.IsOpen = true;
         }
     }
 }

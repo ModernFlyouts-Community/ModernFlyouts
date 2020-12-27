@@ -53,13 +53,45 @@ namespace ModernFlyouts.Core.Interop
             public int lParam;
         }
 
-        public struct State
+        public struct State : IEquatable<State>
         {
             public Position Location;
             public Rect Bounds;
             public Screen ContainingScreen;
             public bool IsAutoHideEnabled;
             public bool IsRightToLeftLayout;
+
+            public bool Equals(State other)
+            {
+                return Location == other.Location
+                    && Bounds == other.Bounds
+                    && ContainingScreen == other.ContainingScreen
+                    && IsAutoHideEnabled == other.IsAutoHideEnabled
+                    && IsRightToLeftLayout == other.IsRightToLeftLayout;
+            }
+
+            public override bool Equals(object obj)
+            {
+                return (obj is State other) && Equals(other);
+            }
+
+            public override int GetHashCode()
+            {
+                return Location.GetHashCode() ^ Bounds.GetHashCode()
+                    ^ ContainingScreen.GetHashCode()
+                    ^ IsAutoHideEnabled.GetHashCode()
+                    ^ IsRightToLeftLayout.GetHashCode();
+            }
+
+            public static bool operator ==(State left, State right)
+            {
+                return left.Equals(right);
+            }
+
+            public static bool operator !=(State left, State right)
+            {
+                return !(left == right);
+            }
         }
 
         #endregion

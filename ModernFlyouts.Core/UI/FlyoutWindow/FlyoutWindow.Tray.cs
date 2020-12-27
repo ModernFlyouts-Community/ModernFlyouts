@@ -1,5 +1,4 @@
 ﻿using ModernFlyouts.Core.Interop;
-using System.Windows;
 
 namespace ModernFlyouts.Core.UI
 {
@@ -9,6 +8,7 @@ namespace ModernFlyouts.Core.UI
         {
             var taskbar = WindowsTaskbar.Current;
             var tbBounds = taskbar.Bounds;
+
             //var maxHeight = taskbar.ContainingScreen.WorkingArea.Height;
             //if (taskbar.IsAutoHideEnabled && (taskbar.Location == WindowsTaskbar.Position.Top || taskbar.Location == WindowsTaskbar.Position.Bottom))
             //{
@@ -20,26 +20,39 @@ namespace ModernFlyouts.Core.UI
                 case WindowsTaskbar.Position.Left:
                     x = tbBounds.Right + effectiveMarginLeft;
                     y = tbBounds.Bottom - height - effectiveMarginBottom;
-                    ActualExpandDirection = FlyoutWindowExpandDirection.Right;
                     break;
+
                 case WindowsTaskbar.Position.Right:
                     x = tbBounds.Left - width - effectiveMarginRight;
                     y = tbBounds.Bottom - height - effectiveMarginBottom;
-                    ActualExpandDirection = FlyoutWindowExpandDirection.Left;
                     break;
+
                 case WindowsTaskbar.Position.Top:
                     x = taskbar.IsRightToLeftLayout ?
                         tbBounds.Left + effectiveMarginLeft : tbBounds.Right - width - effectiveMarginRight;
                     y = tbBounds.Bottom + effectiveMarginTop;
-                    ActualExpandDirection = FlyoutWindowExpandDirection.Down;
                     break;
+
                 case WindowsTaskbar.Position.Bottom:
                     x = taskbar.IsRightToLeftLayout ?
                         tbBounds.Left + effectiveMarginLeft : tbBounds.Right - width - effectiveMarginRight;
                     y = tbBounds.Top - height - effectiveMarginBottom;
-                    ActualExpandDirection = FlyoutWindowExpandDirection.Up;
                     break;
             }
+        }
+
+        private FlyoutWindowExpandDirection CalculatedActualExpandDirectionTray()
+        {
+            var taskbar = WindowsTaskbar.Current;
+
+            return taskbar.Location switch
+            {
+                WindowsTaskbar.Position.Left => FlyoutWindowExpandDirection.Right,
+                WindowsTaskbar.Position.Top => FlyoutWindowExpandDirection.Down,
+                WindowsTaskbar.Position.Right => FlyoutWindowExpandDirection.Left,
+                WindowsTaskbar.Position.Bottom => FlyoutWindowExpandDirection.Up,
+                _ => throw new System.NotImplementedException(),
+            };
         }
     }
 }

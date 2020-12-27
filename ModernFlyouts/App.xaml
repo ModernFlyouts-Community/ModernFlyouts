@@ -12,7 +12,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources d:RequestedTheme="Dark">
+                <ui:ThemeResources>
                     <ui:ThemeResources.ThemeDictionaries>
                         <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light" local:ToolkitThemeDictionary.Key="Light">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />
