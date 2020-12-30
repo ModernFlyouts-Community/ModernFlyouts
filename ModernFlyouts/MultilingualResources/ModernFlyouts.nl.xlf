@@ -12,7 +12,7 @@
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
-          <target state="final" state-qualifier="mt-suggestion">Vliegtuigmodus is niet beschikbaar :(</target>
+          <target state="final" state-qualifier="mt-suggestion">Vliegtuigstand is niet beschikbaar :(</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
@@ -28,7 +28,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.NoDevices" translate="yes" xml:space="preserve">
           <source>No Connected Audio Devices</source>
-          <target state="final" state-qualifier="mt-suggestion">Geen verbonden audioapparaten</target>
+          <target state="final" state-qualifier="mt-suggestion">Geen audioapparaten verbonden</target>
         </trans-unit>
         <trans-unit id="Close" translate="yes" xml:space="preserve">
           <source>Close</source>
@@ -52,12 +52,12 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
-          <target state="final" state-qualifier="mt-suggestion">{0} is uitgeschakeld</target>
+          <target state="final" state-qualifier="mt-suggestion">{0} staat uit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is off</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
-          <target state="final" state-qualifier="mt-suggestion">{0} is aan</target>
+          <target state="final" state-qualifier="mt-suggestion">{0} staat aan</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is on</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
@@ -89,7 +89,7 @@
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="final" state-qualifier="mt-suggestion">Herstelt de standaard flyout van Windows en sluit deze app veilig af</target>
+          <target state="final" state-qualifier="mt-suggestion">Herstel de standaard flyout van Windows en sluit deze app veilig af</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
@@ -169,7 +169,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
           <source>Flyout background opacity</source>
-          <target state="final" state-qualifier="mt-suggestion">Ondoorzichtigheid van flyout-achtergrond</target>
+          <target state="final" state-qualifier="mt-suggestion">Opaciteit van flyout-achtergrond</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
@@ -177,7 +177,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (Default: 50,60)</source>
-          <target state="final" state-qualifier="mt-suggestion">Typ de positie in het formaat 'X,Y' (voor bijvoorbeeld 50,60)</target>
+          <target state="final" state-qualifier="mt-suggestion">Typ de positie in het formaat 'X,Y' (bijvoorbeeld 50,60)</target>
           
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
@@ -202,7 +202,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
-          <target state="final" state-qualifier="mt-suggestion">Lock Keys</target>
+          <target state="final" state-qualifier="mt-suggestion">Lock keys</target>
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
@@ -326,7 +326,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
           <source>Caps lock</source>
-          <target state="final" state-qualifier="tm-suggestion">Caps Lock</target>
+          <target state="final" state-qualifier="tm-suggestion">Caps lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
           <source>Insert</source>
@@ -362,7 +362,7 @@
         </trans-unit>
         <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="final" state-qualifier="mt-suggestion">Vergrendelingstoetsen Flyout aanzetten</target>
+          <target state="final" state-qualifier="mt-suggestion">Lock keys Flyout aanzetten</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
@@ -410,9 +410,9 @@
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
-          <target state="final" state-qualifier="mt-suggestion">Gekleurde pictogram gebruiken op systeemvak</target>
+          <target state="final" state-qualifier="mt-suggestion">Gekleurde pictogrammen gebruiken op systeemvak</target>
         </trans-unit>
-        <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
+        <trans-unit id="needs-review-translation" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
           <target state="final" state-qualifier="mt-suggestion">Ngs. Settings_Reset}</target>
         </trans-unit>
@@ -430,7 +430,7 @@
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="final" state-qualifier="mt-suggestion">Start de app opnieuw op wijzigingen toe te passen</target>
+          <target state="final" state-qualifier="mt-suggestion">Start de app opnieuw op om wijzigingen toe te passen</target>
         </trans-unit>
       </group>
     </body>
