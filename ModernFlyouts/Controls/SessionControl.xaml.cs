@@ -59,8 +59,8 @@ namespace ModernFlyouts
 
         private void SessionControl_Loaded(object sender, RoutedEventArgs e)
         {
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding += FlyoutWindow_FlyoutTimedHiding;
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden += FlyoutWindow_FlyoutHidden;
+            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closing += FlyoutWindow_FlyoutTimedHiding;
+            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closed += FlyoutWindow_FlyoutHidden;
 
             if (_mediaSession != null)
             {
@@ -86,8 +86,8 @@ namespace ModernFlyouts
         {
             TimelineInfoFlyout.Hide();
 
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding -= FlyoutWindow_FlyoutTimedHiding;
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden -= FlyoutWindow_FlyoutHidden;
+            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closing -= FlyoutWindow_FlyoutTimedHiding;
+            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closed -= FlyoutWindow_FlyoutHidden;
 
             if (_mediaSession != null)
             {

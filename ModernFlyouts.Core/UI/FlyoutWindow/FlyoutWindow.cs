@@ -6,10 +6,30 @@ namespace ModernFlyouts.Core.UI
 {
     public partial class FlyoutWindow : BandWindow
     {
+        static FlyoutWindow()
+        {
+            ContentProperty.OverrideMetadata(typeof(BandWindow), new FrameworkPropertyMetadata(OnContentPropertyChanged));
+        }
+
         public FlyoutWindow()
         {
             PrepareAnimations();
             SizeChanged += FlyoutWindow_SizeChanged;
+        }
+
+        private static void OnContentPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is FlyoutWindow flyoutWindow)
+            {
+                if (e.OldValue is FrameworkElement oldContent)
+                {
+                    SetFlyoutWindow(oldContent, null);
+                }
+                if (e.NewValue is FrameworkElement newContent)
+                {
+                    SetFlyoutWindow(newContent, flyoutWindow);
+                }
+            }
         }
 
         protected override void OnShown()
@@ -35,8 +55,12 @@ namespace ModernFlyouts.Core.UI
         {
             base.OnDragMoved();
 
-            Left = ActualLeft + Offset.Left;
-            Top = ActualTop + Offset.Top;
+            StartCloseTimer();
+
+            var offset = Offset;
+
+            Left = ActualLeft + (DpiScale * offset.Left);
+            Top = ActualTop + (DpiScale * Offset.Top);
 
             if (PlacementMode != FlyoutWindowPlacementMode.Manual)
             {

@@ -5,13 +5,35 @@ namespace ModernFlyouts.Core.UI
 {
     public partial class FlyoutWindow
     {
+        #region Attached DPs
+
+        public static readonly DependencyProperty FlyoutWindowProperty =
+            DependencyProperty.RegisterAttached(
+                "FlyoutWindow",
+                typeof(FlyoutWindow),
+                typeof(FlyoutWindow),
+                new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static FlyoutWindow GetFlyoutWindow(DependencyObject obj)
+        {
+            return (FlyoutWindow)obj?.GetValue(FlyoutWindowProperty);
+        }
+
+        public static void SetFlyoutWindow(DependencyObject obj, FlyoutWindow flyoutWindow)
+        {
+            obj?.SetValue(FlyoutWindowProperty, flyoutWindow);
+        }
+
+        #endregion
+
         #region Alignment
 
-        public static readonly DependencyProperty AlignmentProperty = DependencyProperty.Register(
-            nameof(Alignment),
-            typeof(FlyoutWindowAlignment),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowAlignment.Top | FlyoutWindowAlignment.Left, OnAlignmentPropertyChanged));
+        public static readonly DependencyProperty AlignmentProperty =
+            DependencyProperty.Register(
+                nameof(Alignment),
+                typeof(FlyoutWindowAlignment),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(FlyoutWindowAlignment.Top | FlyoutWindowAlignment.Left, OnAlignmentPropertyChanged));
 
         public FlyoutWindowAlignment Alignment
         {
@@ -31,11 +53,12 @@ namespace ModernFlyouts.Core.UI
 
         #region ActualExpandDirection
 
-        private static readonly DependencyPropertyKey ActualExpandDirectionPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(ActualExpandDirection),
-            typeof(FlyoutWindowExpandDirection),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowExpandDirection.Down, OnActualExpandDirectionPropertyChanged));
+        private static readonly DependencyPropertyKey ActualExpandDirectionPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(ActualExpandDirection),
+                typeof(FlyoutWindowExpandDirection),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(FlyoutWindowExpandDirection.Down, OnActualExpandDirectionPropertyChanged));
 
         public static readonly DependencyProperty ActualExpandDirectionProperty = ActualExpandDirectionPropertyKey.DependencyProperty;
 
@@ -57,11 +80,12 @@ namespace ModernFlyouts.Core.UI
 
         #region ExpandDirection
 
-        public static readonly DependencyProperty ExpandDirectionProperty = DependencyProperty.Register(
-            nameof(ExpandDirection),
-            typeof(FlyoutWindowExpandDirection),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowExpandDirection.Auto, OnExpandDirectionPropertyChanged));
+        public static readonly DependencyProperty ExpandDirectionProperty =
+            DependencyProperty.Register(
+                nameof(ExpandDirection),
+                typeof(FlyoutWindowExpandDirection),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(FlyoutWindowExpandDirection.Auto, OnExpandDirectionPropertyChanged));
 
         public FlyoutWindowExpandDirection ExpandDirection
         {
@@ -81,11 +105,12 @@ namespace ModernFlyouts.Core.UI
 
         #region FlyoutWindowType
 
-        public static readonly DependencyProperty FlyoutWindowTypeProperty = DependencyProperty.Register(
-            nameof(FlyoutWindowType),
-            typeof(FlyoutWindowType),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowType.OnScreen, OnFlyoutWindowTypePropertyChanged));
+        public static readonly DependencyProperty FlyoutWindowTypeProperty =
+            DependencyProperty.Register(
+                nameof(FlyoutWindowType),
+                typeof(FlyoutWindowType),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(FlyoutWindowType.OnScreen, OnFlyoutWindowTypePropertyChanged));
 
         public FlyoutWindowType FlyoutWindowType
         {
@@ -105,11 +130,12 @@ namespace ModernFlyouts.Core.UI
 
         #region Margin
 
-        public static readonly new DependencyProperty MarginProperty = DependencyProperty.RegisterAttached(
-            nameof(Margin),
-            typeof(Thickness),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(new Thickness(), OnMarginPropertyChanged));
+        public static readonly new DependencyProperty MarginProperty =
+            DependencyProperty.Register(
+                nameof(Margin),
+                typeof(Thickness),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(new Thickness(), OnMarginPropertyChanged));
 
         public new Thickness Margin
         {
@@ -129,11 +155,12 @@ namespace ModernFlyouts.Core.UI
 
         #region Offset
 
-        public static readonly DependencyProperty OffsetProperty = DependencyProperty.RegisterAttached(
-            nameof(Offset),
-            typeof(Thickness),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(new Thickness(), OnOffsetPropertyChanged));
+        public static readonly DependencyProperty OffsetProperty =
+            DependencyProperty.Register(
+                nameof(Offset),
+                typeof(Thickness),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(new Thickness(), OnOffsetPropertyChanged));
 
         public Thickness Offset
         {
@@ -153,11 +180,12 @@ namespace ModernFlyouts.Core.UI
 
         #region PlacementMode
 
-        public static readonly DependencyProperty PlacementModeProperty = DependencyProperty.Register(
-            nameof(PlacementMode),
-            typeof(FlyoutWindowPlacementMode),
-            typeof(FlyoutWindow),
-            new PropertyMetadata(FlyoutWindowPlacementMode.Auto, OnPlacementModePropertyChanged));
+        public static readonly DependencyProperty PlacementModeProperty =
+            DependencyProperty.Register(
+                nameof(PlacementMode),
+                typeof(FlyoutWindowPlacementMode),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(FlyoutWindowPlacementMode.Auto, OnPlacementModePropertyChanged));
 
         public FlyoutWindowPlacementMode PlacementMode
         {
@@ -195,6 +223,38 @@ namespace ModernFlyouts.Core.UI
         {
             get => (double)GetValue(TopProperty);
             set => SetValue(TopProperty, value);
+        }
+
+        #endregion
+
+        #region IsTimeoutEnabled
+
+        public static readonly DependencyProperty IsTimeoutEnabledProperty =
+            DependencyProperty.Register(
+                nameof(IsTimeoutEnabled),
+                typeof(bool),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(false, OnIsTimeoutEnabledPropertyChanged));
+
+        public bool IsTimeoutEnabled
+        {
+            get => (bool)GetValue(IsTimeoutEnabledProperty);
+            set => SetValue(IsTimeoutEnabledProperty, value);
+        }
+
+        private static void OnIsTimeoutEnabledPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is FlyoutWindow flyoutWindow)
+            {
+                if ((bool)e.NewValue)
+                {
+                    flyoutWindow.SetupCloseTimer();
+                }
+                else
+                {
+                    flyoutWindow.StopCloseTimer();
+                }
+            }
         }
 
         #endregion

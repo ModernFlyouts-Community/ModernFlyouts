@@ -16,9 +16,7 @@ namespace ModernFlyouts.UI
 
         public const double DefaultSessionsPanelVerticalSpacing = 8;
 
-        private FlyoutWindow _flyoutWindow;
         private ElementTheme currentSystemTheme = ElementTheme.Dark;
-        private ElementTheme currentTheme = ElementTheme.Dark;
         private ThemeResources themeResources;
         private ResourceDictionary lightResources;
         private ResourceDictionary darkResources;
@@ -46,7 +44,6 @@ namespace ModernFlyouts.UI
             {
                 if (SetProperty(ref topBarVisibility, value))
                 {
-                    _flyoutWindow.OnTopBarVisibilityChanged(value);
                     AppDataHelper.TopBarVisibility = value;
                 }
             }
@@ -82,6 +79,14 @@ namespace ModernFlyouts.UI
             }
         }
 
+        private ElementTheme actualFlyoutTheme = ElementTheme.Dark;
+
+        public ElementTheme ActualFlyoutTheme
+        {
+            get => actualFlyoutTheme;
+            private set => SetProperty(ref actualFlyoutTheme, value);
+        }
+
         private int flyoutTimeout = DefaultValuesStore.FlyoutTimeout;
 
         public int FlyoutTimeout
@@ -91,7 +96,7 @@ namespace ModernFlyouts.UI
             {
                 if (SetProperty(ref flyoutTimeout, value))
                 {
-                    OnFlyoutTimeoutChanged();
+                    AppDataHelper.FlyoutTimeout = flyoutTimeout;
                 }
             }
         }
@@ -218,10 +223,8 @@ namespace ModernFlyouts.UI
 
         #endregion
 
-        public void Initialize(FlyoutWindow flyoutWindow)
+        public void Initialize()
         {
-            _flyoutWindow = flyoutWindow;
-
             TopBarVisibility = AppDataHelper.TopBarVisibility;
             FlyoutTimeout = AppDataHelper.FlyoutTimeout;
             AlignGSMTCThumbnailToRight = AppDataHelper.AlignGSMTCThumbnailToRight;
@@ -229,7 +232,8 @@ namespace ModernFlyouts.UI
             MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
             SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 
-            themeResources = (ThemeResources)App.Current.Resources.MergedDictionaries.FirstOrDefault(x => x is ThemeResources);
+            themeResources = (ThemeResources)Application.Current.Resources
+                .MergedDictionaries.FirstOrDefault(x => x is ThemeResources);
             lightResources = themeResources.ThemeDictionaries["Light"];
             darkResources = themeResources.ThemeDictionaries["Dark"];
 
@@ -245,12 +249,6 @@ namespace ModernFlyouts.UI
 
             SystemTheme.SystemThemeChanged += OnSystemThemeChanged;
             SystemTheme.Initialize();
-        }
-
-        private void OnFlyoutTimeoutChanged()
-        {
-            _flyoutWindow.UpdateHideTimerInterval(flyoutTimeout);
-            AppDataHelper.FlyoutTimeout = flyoutTimeout;
         }
 
         private void OnFlyoutBackgroundOpacityChanged()
@@ -273,11 +271,8 @@ namespace ModernFlyouts.UI
 
         private void OnSystemThemeChanged(object sender, SystemThemeChangedEventArgs args)
         {
-            _flyoutWindow.Dispatcher.Invoke(() =>
-            {
-                currentSystemTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
-                UpdateTheme();
-            });
+            currentSystemTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
+            UpdateTheme();
         }
 
         private void UpdateAppTheme()
@@ -293,8 +288,7 @@ namespace ModernFlyouts.UI
 
         private void UpdateTheme()
         {
-            currentTheme = flyoutTheme == ElementTheme.Default ? currentSystemTheme : flyoutTheme;
-            ThemeManager.SetRequestedTheme(_flyoutWindow, currentTheme);
+            ActualFlyoutTheme = flyoutTheme == ElementTheme.Default ? currentSystemTheme : flyoutTheme;
 
             if (!_isThemeUpdated)
             {
@@ -309,7 +303,7 @@ namespace ModernFlyouts.UI
         {
             if (!_isThemeUpdated) return;
 
-            var themeResource = currentTheme == ElementTheme.Light ? lightResources : darkResources;
+            var themeResource = actualFlyoutTheme == ElementTheme.Light ? lightResources : darkResources;
             var brush = themeResource["FlyoutBackground"] as Brush;
             brush = brush.Clone();
             brush.Opacity = flyoutBackgroundOpacity * 0.01;

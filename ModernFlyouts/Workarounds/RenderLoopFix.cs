@@ -29,17 +29,17 @@ namespace ModernFlyouts.Workarounds
         {
             if (FlyoutHandler.HasInitialized)
             {
-                var flyoutWindow = FlyoutHandler.Instance.FlyoutWindow;
-                flyoutWindow.Show();
+                var flyoutWindow = FlyoutHandler.Instance.OnScreenFlyoutWindow;
+                flyoutWindow?.Show();
 
                 Task.Run(() =>
                 {
                     Thread.Sleep(1000);
                     App.Current.Dispatcher.Invoke(() =>
                     {
-                        if (!flyoutWindow.Visible)
+                        if (flyoutWindow != null && !flyoutWindow.IsOpen)
                         {
-                            flyoutWindow.Hide();
+                            flyoutWindow?.Hide();
                         }
                     });
                 });

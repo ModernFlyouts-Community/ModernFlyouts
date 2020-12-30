@@ -79,9 +79,9 @@ namespace ModernFlyouts
 
         protected virtual void OnDisabled()
         {
-            if (FlyoutHandler.Instance.FlyoutWindow.FlyoutHelper == this)
+            if (FlyoutHandler.Instance.OnScreenFlyoutView.FlyoutHelper == this)
             {
-                FlyoutHandler.Instance.FlyoutWindow.Visible = false;
+                FlyoutHandler.Instance.OnScreenFlyoutWindow.IsOpen = false;
             }
         }
     }

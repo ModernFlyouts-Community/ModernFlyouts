@@ -13,6 +13,8 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="200" TextBlock.Foreground="White">
             <TextBlock Text="{Binding ActualLeft}" />
             <TextBlock Text="{Binding ActualTop}" />
+            <TextBlock Text="{Binding ActualWidth}" />
+            <TextBlock Text="{Binding ActualHeight}" />
             <TextBlock Text="{Binding ActualExpandDirection}" />
             <ToggleButton IsChecked="True" Content="Change offset" Click="Button_Click" />
             <TextBox />

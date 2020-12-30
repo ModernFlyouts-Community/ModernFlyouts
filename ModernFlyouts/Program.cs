@@ -3,7 +3,6 @@ using ModernFlyouts.Helpers;
 using ModernFlyouts.Core.Interop;
 using System;
 using System.Reflection;
-using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -64,10 +63,10 @@ namespace ModernFlyouts
                     }
                 case RunCommandType.AppUpdated:
                     {
-                        if (AppLifecycleManager.IsBuildBetaChannel)
-                        {
-                            MessageBox.Show("App update successfully!", AppName);
-                        }
+                        //if (AppLifecycleManager.IsBuildBetaChannel)
+                        //{
+                        //    MessageBox.Show("App update successfully!", AppName);
+                        //}
 
                         break;
                     }

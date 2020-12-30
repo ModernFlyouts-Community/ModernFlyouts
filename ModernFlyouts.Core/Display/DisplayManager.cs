@@ -12,15 +12,12 @@ namespace ModernFlyouts.Core.Display
 
         private DisplayManager()
         {
-            WndProcHookManager.RegisterHookHandlerForMessage(WM_SETTINGCHANGE, this);
         }
 
-        public override IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        public override IntPtr OnWndProc(IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam)
         {
             if ((msg == WM_SETTINGCHANGE) && (wParam == ((IntPtr)SPI_SETWORKAREA)))
             {
-                handled = true;
-
                 DisplayUpdated?.Invoke(this, EventArgs.Empty);
             }
             return IntPtr.Zero;

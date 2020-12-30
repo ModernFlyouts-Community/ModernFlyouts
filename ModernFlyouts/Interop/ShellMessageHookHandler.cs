@@ -21,20 +21,19 @@ namespace ModernFlyouts.Interop
 
         public ShellMessageHookHandler()
         {
-            WndProcHookManager.RegisterHookHandler(this);
         }
 
-        public override void OnHwndCreated(IntPtr hWnd)
+        public override uint OnHwndCreated(IntPtr hWnd, out bool register)
         {
-            base.OnHwndCreated(hWnd);
-
             RegisterShellHookWindow(hWnd);
             messageShellHookId = RegisterWindowMessage("SHELLHOOK");
 
-            WndProcHookManager.RegisterHookHandlerForMessage((int)messageShellHookId, this);
+            register = true;
+
+            return messageShellHookId;
         }
 
-        public override IntPtr WndProc(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        public override IntPtr OnWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
         {
             if (msg == messageShellHookId)
             {

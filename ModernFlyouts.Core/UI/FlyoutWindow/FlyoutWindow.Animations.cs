@@ -41,6 +41,9 @@ namespace ModernFlyouts.Core.UI
             {
                 timer.Stop();
 
+                if (!IsTimeoutEnabled || IsDragMoving)
+                    return;
+
                 RoutedEventArgs args = new(ClosingEvent);
                 RaiseEvent(args);
 
@@ -61,18 +64,20 @@ namespace ModernFlyouts.Core.UI
 
             PreviewMouseDown += (_, __) => timer.Stop();
             PreviewStylusDown += (_, __) => timer.Stop();
+            PreviewTouchDown += (_, __) => timer.Stop();
             PreviewMouseUp += (_, __) => { timer.Stop(); timer.Start(); };
             PreviewStylusUp += (_, __) => { timer.Stop(); timer.Start(); };
+            PreviewTouchUp += (_, __) => { timer.Stop(); timer.Start(); };
         }
 
         public void StartCloseTimer()
         {
-            if (!timer.IsEnabled) { timer.Start(); }
+            if (IsTimeoutEnabled && timer != null && !timer.IsEnabled) { timer?.Start(); }
         }
 
         public void StopCloseTimer()
         {
-            timer.Stop();
+            timer?.Stop();
         }
 
         public void UpdateCloseTimerInterval(double timeout)
@@ -85,7 +90,7 @@ namespace ModernFlyouts.Core.UI
             timer.Stop();
             timer.Interval = TimeSpan.FromMilliseconds(timeout);
 
-            if (isRunning) timer.Start();
+            if (IsTimeoutEnabled && isRunning) timer.Start();
         }
 
         #endregion
@@ -122,13 +127,15 @@ namespace ModernFlyouts.Core.UI
             }
 
             hasAnimationsCreated = true;
+
+            UpdateAnimations(ActualExpandDirection);
         }
 
         private void EnsureOpeningStoryboard()
         {
             if (m_openingStoryboard == null)
             {
-                var visibilityAnim = new ObjectAnimationUsingKeyFrames
+                ObjectAnimationUsingKeyFrames visibilityAnim = new()
                 {
                     KeyFrames =
                     {
@@ -138,7 +145,7 @@ namespace ModernFlyouts.Core.UI
                 Storyboard.SetTarget(visibilityAnim, this);
                 Storyboard.SetTargetProperty(visibilityAnim, s_visibilityPath);
 
-                var opacityAnim = new DoubleAnimationUsingKeyFrames
+                DoubleAnimationUsingKeyFrames opacityAnim = new()
                 {
                     KeyFrames =
                     {
@@ -150,7 +157,7 @@ namespace ModernFlyouts.Core.UI
                 Storyboard.SetTarget(opacityAnim, this);
                 Storyboard.SetTargetProperty(opacityAnim, s_opacityPath);
 
-                var xAnim = new DoubleAnimationUsingKeyFrames
+                DoubleAnimationUsingKeyFrames xAnim = new()
                 {
                     KeyFrames =
                     {
@@ -161,7 +168,7 @@ namespace ModernFlyouts.Core.UI
                 Storyboard.SetTarget(xAnim, this);
                 Storyboard.SetTargetProperty(xAnim, s_translateXPath);
 
-                var yAnim = new DoubleAnimationUsingKeyFrames
+                DoubleAnimationUsingKeyFrames yAnim = new()
                 {
                     KeyFrames =
                     {
@@ -172,7 +179,7 @@ namespace ModernFlyouts.Core.UI
                 Storyboard.SetTarget(yAnim, this);
                 Storyboard.SetTargetProperty(yAnim, s_translateYPath);
 
-                m_openingStoryboard = new Storyboard
+                m_openingStoryboard = new()
                 {
                     Children = { visibilityAnim, opacityAnim, xAnim, yAnim },
                 };
@@ -183,7 +190,7 @@ namespace ModernFlyouts.Core.UI
         {
             if (m_closingStoryboard == null)
             {
-                var opacityAnim = new DoubleAnimationUsingKeyFrames
+                DoubleAnimationUsingKeyFrames opacityAnim = new()
                 {
                     KeyFrames =
                     {
@@ -195,7 +202,7 @@ namespace ModernFlyouts.Core.UI
                 Storyboard.SetTarget(opacityAnim, this);
                 Storyboard.SetTargetProperty(opacityAnim, s_opacityPath);
 
-                var xAnim = new DoubleAnimationUsingKeyFrames
+                DoubleAnimationUsingKeyFrames xAnim = new()
                 {
                     KeyFrames =
                     {
@@ -207,7 +214,7 @@ namespace ModernFlyouts.Core.UI
                 Storyboard.SetTarget(xAnim, this);
                 Storyboard.SetTargetProperty(xAnim, s_translateXPath);
 
-                var yAnim = new DoubleAnimationUsingKeyFrames
+                DoubleAnimationUsingKeyFrames yAnim = new()
                 {
                     KeyFrames =
                     {
@@ -219,17 +226,17 @@ namespace ModernFlyouts.Core.UI
                 Storyboard.SetTarget(yAnim, this);
                 Storyboard.SetTargetProperty(yAnim, s_translateYPath);
 
-                var visibilityAnim = new ObjectAnimationUsingKeyFrames
+                ObjectAnimationUsingKeyFrames visibilityAnim = new()
                 {
                     KeyFrames =
                     {
-                        new DiscreteObjectKeyFrame(Visibility.Collapsed, TimeSpan.FromMilliseconds(250))
+                        new DiscreteObjectKeyFrame(Visibility.Hidden, TimeSpan.FromMilliseconds(250))
                     }
                 };
                 Storyboard.SetTarget(visibilityAnim, this);
                 Storyboard.SetTargetProperty(visibilityAnim, s_visibilityPath);
 
-                m_closingStoryboard = new Storyboard
+                m_closingStoryboard = new()
                 {
                     Children = { opacityAnim, xAnim, yAnim, visibilityAnim },
                 };

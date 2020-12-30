@@ -44,7 +44,8 @@
                                             Converter={StaticResource IndexToVisibilityConverter}}">
                         <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
                                    TextWrapping="Wrap" Text="{x:Static resx:Strings.Settings_DefaultFlyoutWarningMessage}" />
-                        <Button Content="{x:Static resx:Strings.ExitItemDescription}" Click="ExitButton_Click" />
+                        <Button Content="{x:Static resx:Strings.ExitItemDescription}"
+                                Command="{x:Static utils:CommonCommands.ExitAppCommand}" />
                     </ui:SimpleStackPanel>
                 </ui:SimpleStackPanel>
             </GroupBox>
@@ -77,9 +78,11 @@
                         </toolkitControls:SimpleWrapPanel>
                     </ui:SimpleStackPanel>
                     <Button Style="{DynamicResource ButtonRevealStyle}"
-                            Content="{x:Static resx:Strings.Settings_AlignFlyout}" Click="AlignButton_Click" />
+                            Content="{x:Static resx:Strings.Settings_AlignFlyout}"
+                            Command="{x:Static utils:CommonCommands.AlignOnScreenFlyoutToDefaultPosition}" />
                     <Button Style="{DynamicResource ButtonRevealStyle}"
-                            Content="{x:Static resx:Strings.Settings_ResetToDefaults}" Click="ResetButton_Click" />
+                            Content="{x:Static resx:Strings.Settings_ResetToDefaults}"
+                            Command="{x:Static utils:CommonCommands.ResetAppDataCommand}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

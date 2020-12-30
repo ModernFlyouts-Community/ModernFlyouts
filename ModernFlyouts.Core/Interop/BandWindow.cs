@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,15 +32,17 @@ namespace ModernFlyouts.Core.Interop
         AboveLockUX = 0x12,
     };
 
+    public delegate IntPtr WndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+
     public class BandWindow : ContentControl
     {
-        private delegate IntPtr WndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
-
         private readonly WndProc delegWndProc;
 
         private HwndSource hwndSource;
-
         private double dpiScale = 1.0;
+        private WndProcHookManager hookManager;
+        private bool _isSizeChanging;
+        private bool _isVisibilityChanging;
 
         #region Properties
 
@@ -49,33 +50,14 @@ namespace ModernFlyouts.Core.Interop
 
         protected HwndSource HwndSource => hwndSource;
 
-        #region Attached DPs
-
-        public static readonly DependencyProperty BandWindowProperty = DependencyProperty.Register(
-            "BandWindow",
-            typeof(BandWindow),
-            typeof(BandWindow),
-            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static BandWindow GetBandWindow(FrameworkElement element)
-        {
-            return (BandWindow)element.GetValue(BandWindowProperty);
-        }
-
-        public static void SetBandWindow(FrameworkElement element, BandWindow bandWindow)
-        {
-            element.SetValue(BandWindowProperty, bandWindow);
-        }
-
-        #endregion
-
         #region Activatable
 
-        public static readonly DependencyProperty ActivatableProperty = DependencyProperty.Register(
-            nameof(Activatable),
-            typeof(bool),
-            typeof(BandWindow),
-            new PropertyMetadata(false, OnActivatablePropertyChanged));
+        public static readonly DependencyProperty ActivatableProperty =
+            DependencyProperty.Register(
+                nameof(Activatable),
+                typeof(bool),
+                typeof(BandWindow),
+                new PropertyMetadata(false, OnActivatablePropertyChanged));
 
         public bool Activatable
         {
@@ -105,11 +87,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region ActualLeft
 
-        private static readonly DependencyPropertyKey ActualLeftPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(ActualLeft),
-            typeof(double),
-            typeof(BandWindow),
-            new PropertyMetadata(0.0));
+        private static readonly DependencyPropertyKey ActualLeftPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(ActualLeft),
+                typeof(double),
+                typeof(BandWindow),
+                new PropertyMetadata(0.0));
 
         public static readonly DependencyProperty ActualLeftProperty = ActualLeftPropertyKey.DependencyProperty;
 
@@ -123,11 +106,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region ActualTop
 
-        private static readonly DependencyPropertyKey ActualTopPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(ActualTop),
-            typeof(double),
-            typeof(BandWindow),
-            new PropertyMetadata(0.0));
+        private static readonly DependencyPropertyKey ActualTopPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(ActualTop),
+                typeof(double),
+                typeof(BandWindow),
+                new PropertyMetadata(0.0));
 
         public static readonly DependencyProperty ActualTopProperty = ActualTopPropertyKey.DependencyProperty;
 
@@ -141,11 +125,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region Handle
 
-        private static readonly DependencyPropertyKey HandlePropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(Handle),
-            typeof(IntPtr),
-            typeof(BandWindow),
-            new PropertyMetadata(IntPtr.Zero));
+        private static readonly DependencyPropertyKey HandlePropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(Handle),
+                typeof(IntPtr),
+                typeof(BandWindow),
+                new PropertyMetadata(IntPtr.Zero));
 
         public static readonly DependencyProperty HandleProperty = HandlePropertyKey.DependencyProperty;
 
@@ -159,11 +144,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region IsActive
 
-        private static readonly DependencyPropertyKey IsActivePropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsActive),
-            typeof(bool),
-            typeof(BandWindow),
-            new PropertyMetadata(false));
+        private static readonly DependencyPropertyKey IsActivePropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(IsActive),
+                typeof(bool),
+                typeof(BandWindow),
+                new PropertyMetadata(false));
 
         public static readonly DependencyProperty IsActiveProperty = IsActivePropertyKey.DependencyProperty;
 
@@ -177,11 +163,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region IsDragMoving
 
-        private static readonly DependencyPropertyKey IsDragMovingPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsDragMoving),
-            typeof(bool),
-            typeof(BandWindow),
-            new PropertyMetadata(false));
+        private static readonly DependencyPropertyKey IsDragMovingPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(IsDragMoving),
+                typeof(bool),
+                typeof(BandWindow),
+                new PropertyMetadata(false));
 
         public static readonly DependencyProperty IsDragMovingProperty = IsDragMovingPropertyKey.DependencyProperty;
 
@@ -195,11 +182,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region IsSourceCreated
 
-        private static readonly DependencyPropertyKey IsSourceCreatedPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsSourceCreated),
-            typeof(bool),
-            typeof(BandWindow),
-            new PropertyMetadata(false));
+        private static readonly DependencyPropertyKey IsSourceCreatedPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(IsSourceCreated),
+                typeof(bool),
+                typeof(BandWindow),
+                new PropertyMetadata(false));
 
         public static readonly DependencyProperty IsSourceCreatedProperty = IsSourceCreatedPropertyKey.DependencyProperty;
 
@@ -213,11 +201,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region TopMost
 
-        public static readonly DependencyProperty TopMostProperty = DependencyProperty.Register(
-            nameof(TopMost),
-            typeof(bool),
-            typeof(BandWindow),
-            new PropertyMetadata(true, OnTopMostPropertyChanged));
+        public static readonly DependencyProperty TopMostProperty =
+            DependencyProperty.Register(
+                nameof(TopMost),
+                typeof(bool),
+                typeof(BandWindow),
+                new PropertyMetadata(true, OnTopMostPropertyChanged));
 
         public bool TopMost
         {
@@ -248,11 +237,12 @@ namespace ModernFlyouts.Core.Interop
 
         #region ZBandID
 
-        public static readonly DependencyProperty ZBandIDProperty = DependencyProperty.Register(
-            nameof(ZBandID),
-            typeof(ZBandID),
-            typeof(BandWindow),
-            new PropertyMetadata(ZBandID.Default, OnZBandIDPropertyChanged));
+        public static readonly DependencyProperty ZBandIDProperty =
+            DependencyProperty.Register(
+                nameof(ZBandID),
+                typeof(ZBandID),
+                typeof(BandWindow),
+                new PropertyMetadata(ZBandID.Default, OnZBandIDPropertyChanged));
 
         public ZBandID ZBandID
         {
@@ -272,7 +262,6 @@ namespace ModernFlyouts.Core.Interop
 
         static BandWindow()
         {
-            ContentProperty.OverrideMetadata(typeof(BandWindow), new FrameworkPropertyMetadata(OnContentPropertyChanged));
             VisibilityProperty.OverrideMetadata(typeof(BandWindow), new FrameworkPropertyMetadata(Visibility.Hidden, OnVisibilityPropertyChanged));
         }
 
@@ -294,18 +283,12 @@ namespace ModernFlyouts.Core.Interop
             }
         }
 
-        private static void OnContentPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is BandWindow bandWindow)
-            {
-                SetBandWindow(e.NewValue as FrameworkElement, bandWindow);
-            }
-        }
-
         public BandWindow()
         {
             delegWndProc = myWndProc;
             SizeChanged += BandWindow_SizeChanged;
+
+            hookManager = WndProcHookManager.RegisterForBandWindow(this);
         }
 
         private void BandWindow_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -326,7 +309,7 @@ namespace ModernFlyouts.Core.Interop
                 hbrBackground = (IntPtr)1 + 1,
                 cbClsExtra = 0,
                 cbWndExtra = 0,
-                hInstance = Process.GetCurrentProcess().Handle,
+                hInstance = Marshal.GetHINSTANCE(typeof(BandWindow).Module),
                 hIcon = IntPtr.Zero,
                 lpszMenuName = string.Empty,
                 lpszClassName = "WIB_" + Guid.NewGuid(),
@@ -360,6 +343,8 @@ namespace ModernFlyouts.Core.Interop
 
             Handle = hWnd;
 
+            hookManager.OnHwndCreated(hWnd);
+
             WindowCompositionHelper.MakeWindowTransparent(hWnd);
 
             HwndSourceParameters param = new()
@@ -386,7 +371,7 @@ namespace ModernFlyouts.Core.Interop
         private void HwndSource_ContentRendered(object sender, EventArgs e)
         {
             OnDpiChanged(GetDpiForWindow(Handle) / 96.0);
-            UpdateSize();
+            UpdateSize(true);
         }
 
         protected override void OnDpiChanged(DpiScale oldDpi, DpiScale newDpi)
@@ -394,7 +379,7 @@ namespace ModernFlyouts.Core.Interop
             base.OnDpiChanged(oldDpi, newDpi);
 
             OnDpiChanged(newDpi.DpiScaleX);
-            UpdateSize();
+            UpdateSize(true);
         }
 
         private IntPtr myWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
@@ -415,12 +400,14 @@ namespace ModernFlyouts.Core.Interop
 
                 case WM_DPICHANGED:
                     OnDpiChanged((wParam.ToInt32() & 0xFFFF) / 96.0);
-                    UpdateSize();
+                    UpdateSize(true);
                     break;
 
                 default:
                     break;
             }
+
+            hookManager.TryHandleWindowMessage(hWnd, msg, wParam, lParam);
 
             return DefWindowProc(hWnd, msg, wParam, lParam);
         }
@@ -440,16 +427,40 @@ namespace ModernFlyouts.Core.Interop
             }
         }
 
-        private void UpdateSize()
+        private void UpdateSize(bool sizeToContent = false)
         {
-            var width = ActualWidth * dpiScale;
-            var height = ActualHeight * dpiScale;
+            if (_isSizeChanging)
+                return;
+
+            _isSizeChanging = true;
+
+            double actualWidth = 0.0;
+            double actualHeight = 0.0;
+
+            if (sizeToContent)
+            {
+                if (Content is UIElement content)
+                {
+                    actualWidth = content.RenderSize.Width;
+                    actualHeight = content.RenderSize.Height;
+                }
+            }
+            else
+            {
+                actualWidth = ActualWidth;
+                actualHeight = ActualHeight;
+            }
+
+            var width = (int)Math.Round(actualWidth * dpiScale);
+            var height = (int)Math.Round(actualHeight * dpiScale);
             SetWindowPos(Handle, IntPtr.Zero, 0, 0,
-                (int)Math.Round(width),
-                (int)Math.Round(height),
-                SWP.NOZORDER | SWP.NOMOVE);
+                width,
+                height,
+                SWP.NOZORDER | SWP.NOMOVE | SWP.NOACTIVATE);
 
             UpdateWindow(Handle);
+
+            _isSizeChanging = false;
         }
 
         #endregion
@@ -464,7 +475,7 @@ namespace ModernFlyouts.Core.Interop
             SetWindowPos(Handle, IntPtr.Zero,
                 (int)Math.Round(x),
                 (int)Math.Round(y),
-                0, 0, SWP.NOZORDER | SWP.NOSIZE);
+                0, 0, SWP.NOZORDER | SWP.NOSIZE | SWP.NOACTIVATE);
 
             UpdateWindow(Handle);
 
@@ -539,8 +550,17 @@ namespace ModernFlyouts.Core.Interop
             Visibility = Visibility.Visible;
             _isVisibilityChanging = false;
 
-            ShowWindowAsync(Handle, Activatable ?
-                (int)ShowWindowCommands.ShowNoActivate : (int)ShowWindowCommands.ShowDefault);
+            if (TopMost)
+            {
+                SetWindowPos(Handle, new IntPtr(-1),
+                    0, 0, 0, 0,
+                    (Activatable ? 0 : SWP.NOACTIVATE) | SWP.NOMOVE | SWP.NOSIZE | SWP.NOOWNERZORDER | SWP.SHOWWINDOW);
+            }
+            else
+            {
+                ShowWindowAsync(Handle, Activatable ?
+                (int)ShowWindowCommands.Show : (int)ShowWindowCommands.ShowNoActivate);
+            }
 
             if (Activatable) SetForegroundWindow(Handle);
 
@@ -558,8 +578,6 @@ namespace ModernFlyouts.Core.Interop
             Visibility = Visibility.Hidden;
             _isVisibilityChanging = false;
         }
-
-        private bool _isVisibilityChanging;
 
         #endregion
 
