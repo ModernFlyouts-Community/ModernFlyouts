@@ -349,18 +349,18 @@ namespace ModernFlyouts.Core.Interop
 
             HwndSourceParameters param = new()
             {
-                WindowStyle = 0x10000000 | 0x40000000,
+                WindowStyle = (int)(WindowStyles.WS_VISIBLE | WindowStyles.WS_CHILD),
                 ParentWindow = hWnd,
-                UsesPerPixelOpacity = true
+                UsesPerPixelTransparency = true
             };
 
             hwndSource = new(param)
             {
+                SizeToContent = SizeToContent.WidthAndHeight,
                 RootVisual = this
             };
 
             hwndSource.CompositionTarget.BackgroundColor = Colors.Transparent;
-            hwndSource.SizeToContent = SizeToContent.WidthAndHeight;
             hwndSource.ContentRendered += HwndSource_ContentRendered;
 
             UpdateWindow(hWnd);
@@ -384,23 +384,28 @@ namespace ModernFlyouts.Core.Interop
 
         private IntPtr myWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
         {
-            switch (msg)
+            var message = (WindowMessage)msg;
+            switch (message)
             {
-                case WM_ACTIVATE:
+                case WindowMessage.WM_ACTIVATE:
                     HandleWindowActivation(wParam);
                     break;
 
-                case WM_EXITSIZEMOVE:
+                case WindowMessage.WM_EXITSIZEMOVE:
                     OnDragMoved();
                     break;
 
-                case WM_DESTROY:
+                case WindowMessage.WM_DESTROY:
                     DestroyWindow(hWnd);
                     break;
 
-                case WM_DPICHANGED:
+                case WindowMessage.WM_DPICHANGED:
                     OnDpiChanged((wParam.ToInt32() & 0xFFFF) / 96.0);
                     UpdateSize(true);
+                    break;
+
+                case WindowMessage.WM_MOVE:
+                    HandleWindowMove();
                     break;
 
                 default:
@@ -410,6 +415,14 @@ namespace ModernFlyouts.Core.Interop
             hookManager.TryHandleWindowMessage(hWnd, msg, wParam, lParam);
 
             return DefWindowProc(hWnd, msg, wParam, lParam);
+        }
+
+        private void HandleWindowMove()
+        {
+            if (hwndSource == null)
+                return;
+
+            SetWindowPos(hwndSource.Handle, IntPtr.Zero, 0, 0, 0, 0, SWP.NOSIZE | SWP.NOZORDER | SWP.NOACTIVATE);
         }
 
         private void HandleWindowActivation(IntPtr wParam)
@@ -524,8 +537,8 @@ namespace ModernFlyouts.Core.Interop
             if (!IsSourceCreated)
                 return;
 
-            SendMessage(Handle, WM_SYSCOMMAND, SC_MOUSEMOVE, 0);
-            SendMessage(Handle, WM_LBUTTONUP, 0, 0);
+            SendMessage(Handle, (int)WindowMessage.WM_SYSCOMMAND, SC_MOUSEMOVE, 0);
+            SendMessage(Handle, (int)WindowMessage.WM_LBUTTONUP, 0, 0);
 
             IsDragMoving = true;
         }

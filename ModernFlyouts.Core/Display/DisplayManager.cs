@@ -16,7 +16,7 @@ namespace ModernFlyouts.Core.Display
 
         public override IntPtr OnWndProc(IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam)
         {
-            if ((msg == WM_SETTINGCHANGE) && (wParam == ((IntPtr)SPI_SETWORKAREA)))
+            if (wParam == ((IntPtr)SPI_SETWORKAREA))
             {
                 DisplayUpdated?.Invoke(this, EventArgs.Empty);
             }

@@ -13,7 +13,6 @@ using ModernWpf;
 using System;
 using System.Windows;
 using System.Windows.Data;
-using static ModernFlyouts.Core.Interop.NativeMethods;
 
 namespace ModernFlyouts
 {
@@ -256,12 +255,12 @@ namespace ModernFlyouts
             ShellMessageHookHandler shellHook = new();
             var hookManager = WndProcHookManager.GetForBandWindow(OnScreenFlyoutWindow);
             hookManager.RegisterHookHandler(shellHook);
-            hookManager.RegisterHookHandlerForMessage(WM_SETTINGCHANGE, DisplayManager.Instance);
+            hookManager.RegisterHookHandlerForMessage((uint)WindowMessage.WM_SETTINGCHANGE, DisplayManager.Instance);
 
             OnScreenFlyoutWindow.CreateWindow();
 
-            hookManager.RegisterCallbackForMessage(WM_QUERYENDSESSION,
-                (IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam) =>
+            hookManager.RegisterCallbackForMessage((uint)WindowMessage.WM_QUERYENDSESSION,
+                (_, _, _, _) =>
                 {
                     RelaunchHelper.RegisterApplicationRestart(
                         JumpListHelper.arg_appupdated,

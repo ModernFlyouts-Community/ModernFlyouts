@@ -1,4 +1,5 @@
-﻿using ModernFlyouts.Core.Utilities;
+﻿using ModernFlyouts.Core.Interop;
+using ModernFlyouts.Core.Utilities;
 using System;
 using System.Diagnostics;
 using System.Drawing;
