@@ -254,7 +254,7 @@
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Abrir un nuevo número</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Abrir un nuevo problema en GitHub</target>
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
@@ -431,6 +431,10 @@
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Reinicio necesario para aplicar algunos cambios</target>
+        </trans-unit>
+		<trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
+          <source>Use media's thumbnail as media control's background</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Usar la miniatura multimedia como fondo del control multimedia</target>
         </trans-unit>
       </group>
     </body>
