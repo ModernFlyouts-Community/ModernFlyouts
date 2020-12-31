@@ -365,6 +365,10 @@ namespace ModernFlyouts.Core.Interop
 
             UpdateWindow(hWnd);
 
+            //Force update because it may not be triggered on ContentRendered event
+            OnDpiChanged(GetDpiForWindow(Handle) / 96.0);
+            UpdateSize(true);
+
             IsSourceCreated = true;
         }
 

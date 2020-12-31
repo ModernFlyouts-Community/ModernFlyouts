@@ -11,6 +11,8 @@ using ModernFlyouts.Views;
 using ModernFlyouts.Workarounds;
 using ModernWpf;
 using System;
+using System.Diagnostics;
+using System.Security.Principal;
 using System.Windows;
 using System.Windows.Data;
 
@@ -148,11 +150,21 @@ namespace ModernFlyouts
                 FlyoutTopBar = new()
             };
 
+            ZBandID zbid = ZBandID.Default;
+
+            using (var proc = Process.GetCurrentProcess())
+            {
+                var isImmersive = NativeMethods.IsImmersiveProcess(proc.Handle);
+                var hasUiAccess = NativeMethods.HasUiAccessProcess(proc.Handle);
+
+                zbid = isImmersive ? ZBandID.AboveLockUX : (hasUiAccess ? ZBandID.UIAccess : ZBandID.Desktop);
+            }
+
             var flyoutWindow = new FlyoutWindow()
             {
                 Activatable = false,
                 Content = OnScreenFlyoutView,
-                ZBandID = ZBandID.Desktop,
+                ZBandID = zbid,
                 Alignment = FlyoutWindowAlignment.Top | FlyoutWindowAlignment.Left,
                 FlyoutWindowType = FlyoutWindowType.OnScreen,
                 PlacementMode = FlyoutWindowPlacementMode.Manual,

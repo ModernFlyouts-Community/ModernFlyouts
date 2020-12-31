@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Text;
 using System.Windows;
 
@@ -557,6 +559,59 @@ namespace ModernFlyouts.Core.Interop
             internal char[] szDevice = new char[32];
         }
 
+        public enum TOKEN_INFORMATION_CLASS
+        {
+            TokenUser = 1,
+            TokenGroups,
+            TokenPrivileges,
+            TokenOwner,
+            TokenPrimaryGroup,
+            TokenDefaultDacl,
+            TokenSource,
+            TokenType,
+            TokenImpersonationLevel,
+            TokenStatistics,
+            TokenRestrictedSids,
+            TokenSessionId,
+            TokenGroupsAndPrivileges,
+            TokenSessionReference,
+            TokenSandBoxInert,
+            TokenAuditPolicy,
+            TokenOrigin,
+            TokenElevationType,
+            TokenLinkedToken,
+            TokenElevation,
+            TokenHasRestrictions,
+            TokenAccessInformation,
+            TokenVirtualizationAllowed,
+            TokenVirtualizationEnabled,
+            TokenIntegrityLevel,
+            TokenUIAccess,
+            TokenMandatoryPolicy,
+            TokenLogonSid,
+            TokenIsAppContainer,
+            TokenCapabilities,
+            TokenAppContainerSid,
+            TokenAppContainerNumber,
+            TokenUserClaimAttributes,
+            TokenDeviceClaimAttributes,
+            TokenRestrictedUserClaimAttributes,
+            TokenRestrictedDeviceClaimAttributes,
+            TokenDeviceGroups,
+            TokenRestrictedDeviceGroups,
+            TokenSecurityAttributes,
+            TokenIsRestricted,
+            TokenProcessTrustLevel,
+            TokenPrivateNameSpace,
+            TokenSingletonAttributes,
+            TokenBnoIsolation,
+            TokenChildProcessFlags,
+            TokenIsLessPrivilegedAppContainer,
+            TokenIsSandboxed,
+            TokenOriginatingProcessTrustLevel,
+            MaxTokenInfoClass
+        }
+
         #endregion
 
         #region Windowing related
@@ -754,6 +809,49 @@ namespace ModernFlyouts.Core.Interop
 
         [DllImport("user32.dll")]
         internal static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern bool IsImmersiveProcess(IntPtr hProcess);
+
+        [DllImport("advapi32.dll")]
+        internal static extern bool GetTokenInformation(
+            IntPtr TokenHandle,
+            TOKEN_INFORMATION_CLASS TokenInformationClass,
+            IntPtr TokenInformation,
+            uint TokenInformationLength,
+            out uint ReturnLength);
+
+        public const uint TOKEN_QUERY = 0x0008;
+        [DllImport("advapi32.dll")]
+        static extern bool OpenProcessToken(IntPtr hProcess,
+            uint DesiredAccess, out IntPtr hToken);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [SuppressUnmanagedCodeSecurity]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool CloseHandle(IntPtr hObject);
+
+        public static bool HasUiAccessProcess(IntPtr hProcess)
+        {
+            if (OpenProcessToken(hProcess, TOKEN_QUERY, out var token))
+            {
+                bool uiAccess = false;
+                IntPtr tokenInfo = Marshal.AllocHGlobal(sizeof(uint));
+
+                if (GetTokenInformation(token, TOKEN_INFORMATION_CLASS.TokenUIAccess, tokenInfo, sizeof(uint), out var retLength))
+                    uiAccess = Marshal.ReadInt32(tokenInfo) != 0;
+
+                Marshal.FreeHGlobal(tokenInfo);
+
+                CloseHandle(token);
+                return uiAccess;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
         #endregion
 
