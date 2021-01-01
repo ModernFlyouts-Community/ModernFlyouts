@@ -26,7 +26,7 @@ std::wstring GetExecutableDir(HINSTANCE hInstance)
 	return buf;
 }
 
-int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
+int CALLBACK wWinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
 {
 	std::wstring path = GetExecutableDir(hInstance);
 
@@ -50,6 +50,38 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In
 		std::wstring dll = path += L"\\ModernFlyoutsBridge.dll";
 		InjectDll(procInfo.hProcess, procInfo.hThread, dll);
 		ResumeThread(procInfo.hThread);
+
+		//10 seconds should be more than enough
+		for (size_t i = 0; i < 1000; i++)
+		{
+			auto hwnd = FindWindow(L"ModernFlyoutsBridge", NULL);
+
+			if (hwnd)
+			{
+				auto lcmdLine = lstrlenW(lpCmdLine);
+				if (lcmdLine > 0)
+				{
+					auto cmdLineFull = GetCommandLine();
+
+					COPYDATASTRUCT cDS{};
+					cDS.dwData = NULL;
+					cDS.cbData = lstrlenW(cmdLineFull) * sizeof(WCHAR) + 1;
+					cDS.lpData = cmdLineFull;
+
+					SendMessage(hwnd, WM_COPYDATA, NULL, (LPARAM)(LPVOID)&cDS);
+				}
+				else
+				{
+					SendMessage(hwnd, WM_QUIT, 0, 0);
+				}
+				break;
+			}
+			else
+			{
+				Sleep(10);
+			}
+		}
+
 	}
 	else
 	{

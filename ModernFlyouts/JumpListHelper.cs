@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 using System.Windows.Shell;
 
 namespace ModernFlyouts
@@ -15,7 +16,7 @@ namespace ModernFlyouts
 
         public static void CreateJumpList()
         {
-            AppPath = Process.GetCurrentProcess().MainModule.FileName;
+            AppPath = Path.Combine(Directory.GetCurrentDirectory(), "ModernFlyoutsLauncher.exe");
 
             JumpList jumpList = new();
             JumpTask settingsTask = new()
