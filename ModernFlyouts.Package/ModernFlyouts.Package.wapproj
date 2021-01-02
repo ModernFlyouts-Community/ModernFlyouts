@@ -156,6 +156,7 @@
     <Content Include="Bro_A64.exe" Condition="'$(Platform)'=='ARM64'" />
     <Content Include="Bro_x64.exe" Condition="'$(Platform)'=='x64'" />
     <Content Include="Bro_x86.exe" Condition="'$(Platform)'=='x86'" />
+    <Content Include="hostfxr.dll" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
     <Content Include="Package.appinstaller" />
     <Content Include="priconfig.default.xml" />
     <None Include="Package.StoreAssociation.xml" />

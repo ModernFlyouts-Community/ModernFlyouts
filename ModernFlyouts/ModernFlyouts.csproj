@@ -57,7 +57,6 @@
     <None Remove="Assets\Logo.ico" />
     <None Remove="Assets\Logo_Tray_Black.ico" />
     <None Remove="Assets\Logo_Tray_White.ico" />
-    <None Remove="Views\FlyoutView.xaml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,7 +12,6 @@ using ModernFlyouts.Workarounds;
 using ModernWpf;
 using System;
 using System.Diagnostics;
-using System.Security.Principal;
 using System.Windows;
 using System.Windows.Data;
 

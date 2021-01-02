@@ -409,7 +409,7 @@ namespace ModernFlyouts.Core.Interop
                     break;
 
                 case WindowMessage.WM_MOVE:
-                    HandleWindowMove();
+                    RepositionHwndSource();
                     break;
 
                 default:
@@ -421,7 +421,7 @@ namespace ModernFlyouts.Core.Interop
             return DefWindowProc(hWnd, msg, wParam, lParam);
         }
 
-        private void HandleWindowMove()
+        private void RepositionHwndSource()
         {
             if (hwndSource == null)
                 return;
@@ -580,6 +580,8 @@ namespace ModernFlyouts.Core.Interop
             }
 
             if (Activatable) SetForegroundWindow(Handle);
+
+            RepositionHwndSource();
 
             OnShown();
         }

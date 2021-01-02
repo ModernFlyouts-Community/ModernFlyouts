@@ -4,7 +4,7 @@
 #include <iostream>
 
 #define NETHOST_USE_AS_STATIC
-#include "C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.0\hostfxr.h"
+#include "inc\hostfxr.h"
 #include <vector>
 
 #pragma comment(lib, "shlwapi.lib")
@@ -82,10 +82,13 @@ LRESULT CALLBACK BridgeWndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lP
         LPCWSTR lpszString = (LPCWSTR)(pcds->lpData);
         args = new WCHAR[pcds->cbData * sizeof(WCHAR) + 1];
         wcscpy(args, lpszString);
+
+        DestroyWindow(serverBridge);
         PostQuitMessage(0);
     }
     break;
     case WM_QUIT:
+        DestroyWindow(serverBridge);
         PostQuitMessage(0);
         break;
     default:
@@ -94,6 +97,7 @@ LRESULT CALLBACK BridgeWndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lP
     return 0;
 }
 
+// Creates a message window which is used for IPC between this bridge and the launcher.
 HWND CreateMicroWindow(HINSTANCE hInstance)
 {
     const auto className = L"ModernFlyoutsBridge";
@@ -164,13 +168,14 @@ DWORD WINAPI LocalThread(LPVOID lpParam)
     while (GetMessage(&msg, 0, 0, 0) > 0)
         DispatchMessage(&msg);
 
-	if (!load_hostfxr())
-	{
-        MessageBox(0, L"Framework-dependent net core? Then copy hostfxr to the appx output", L"Hey", 0);
-		auto pl = GetCurrentProcess();
-		TerminateProcess(pl, EXIT_SUCCESS);
-		return EXIT_FAILURE;
-	}
+    if (!load_hostfxr())
+    {
+        // Nope, not necessary if you use Debug (x64) configuration.
+        MessageBox(0, L"Framework-dependent net core? Then copy hostfxr.dll to the APPX output directory", L"Hey", 0);
+        auto pl = GetCurrentProcess();
+        TerminateProcess(pl, EXIT_SUCCESS);
+        return EXIT_FAILURE;
+    }
 
     hostfxr_initialize_parameters params{};
     params.dotnet_root = host_path.c_str();
@@ -179,18 +184,20 @@ DWORD WINAPI LocalThread(LPVOID lpParam)
 
     hostfxr_handle handle{};
 
+    // Arguments that were received from the launcher via WM_COPYDATA. If nothing was received from the launcher, the CoreCLR executes with empty arguments.
     if (args)
     {
         int argc = 0;
         LPWSTR* argv = CommandLineToArgvW(args, &argc);
 
-        const char_t** dotnet_args = new const char_t*[argc + 1];
+        const char_t** dotnet_args = new const char_t * [argc + 1];
 
-        dotnet_args[0] = exec_path.c_str();
+        dotnet_args[0] = exec_path.c_str(); // The 1st argument has to be the path of the main ModernFlyouts.dll (.NET) library
         for (size_t i = 0; i < argc; i++)
-            dotnet_args[i + 1] = *(argv + i);
+            dotnet_args[i + 1] = *(argv + i); // Subsequent arguments are passed after that
 
-        //TODO: we should delete the array btw - but anyway the process will exit after .NET CRT shutdown so... shrug
+        // TODO: We should clear up the array BTW.
+        // But the process will exit after .NET CoreCLR shuts down anyways so... *shrug*
 
         auto hmm = init_cmdline(1 + argc, dotnet_args, &params, &handle);
     }
@@ -203,8 +210,8 @@ DWORD WINAPI LocalThread(LPVOID lpParam)
     run_fptr(handle);
     close_fptr(handle);
 
-	auto p = GetCurrentProcess();
-	TerminateProcess(p, EXIT_SUCCESS);
+    auto p = GetCurrentProcess();
+    TerminateProcess(p, EXIT_SUCCESS);
 
     return EXIT_SUCCESS;
 }
@@ -214,17 +221,17 @@ int main()
     return LocalThread(GetModuleHandle(NULL));
 }
 
-BOOL APIENTRY DllMain( HMODULE hModule,
-                       DWORD  ul_reason_for_call,
-                       LPVOID lpReserved )
+BOOL APIENTRY DllMain(HMODULE hModule,
+    DWORD  ul_reason_for_call,
+    LPVOID lpReserved)
 {
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
         HookIAT("api-ms-win-core-com-l1-1-1.dll", "CoResumeClassObjects", (PVOID)hookCoResumeClassObjects, &pOldProc);
         CreateThread(NULL, 0, LocalThread, hModule, NULL, NULL);
-		break;
-	default:
+        break;
+    default:
         break;
     }
     return TRUE;
