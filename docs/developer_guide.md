@@ -48,7 +48,7 @@ Before building the **ModernFlyouts.Package** project, please make sure to do th
 - Under the **Application** tab, please change the **Display Name** from **ModernFlyouts (Preview)** to anything else such as **ModernFlyouts (Dev)**
     - This helps you to distinguish between the actual installation of **ModernFlyouts** and this test build.
 - Now go to the **Packaging** tab.
-- **!!!(Important)!!!** Please change the **Package name** from **32669SamG.ModernFlyouts** to something like **(YourName).ModernFlyouts** and the **Package display name** from **ModernFlyouts (Preview)** to **ModernFlyouts (Dev)**
+- **(!!!Important!!!)** Please change the **Package name** from **32669SamG.ModernFlyouts** to something like **(YourName).ModernFlyouts** and the **Package display name** from **ModernFlyouts (Preview)** to **ModernFlyouts (Dev)**
     - This will prevent the actual installation of **ModernFlyouts** from being overwritten by this test build.
 - Now click on the **Choose Certificate** button next to the **Publisher** textbox
     - On the **Choose a Certificate** dialog, you can either click on **Select from store** and click **Ok** on the next dialog. (or)
@@ -64,4 +64,4 @@ Choose the **ModernFlyouts.Package** project as the **Startup Project** and sele
 
 Never run the **ModernFlyouts** project. It will run a dummy app with no support for app-data.
 Please make sure run the **ModernFlyouts.Package** project! If you have ModernFlyouts pre-installed on your computer, please make sure to close it before running this one.
-Now to run the app, make sure **ModernFlyouts.Package** is the startup project and click on the **▶ Local Machine** button or **Debug > Start Debugging** or press <kbd>F5</kdb> to run the app.
+Now to run the app, make sure **ModernFlyouts.Package** is the startup project and click on the **▶ Local Machine** button or **Debug > Start Debugging** or press <kbd>F5</kbd> to run the app.
