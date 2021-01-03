@@ -35,7 +35,7 @@ namespace ModernFlyouts
                 {
                     if (GetWindowSizeState(hWnd) == WindowSizeState.Minimized)
                     {
-                        ShowWindowAsync(hWnd, (int)ShowWindowCommands.Restore);
+                        ShowWindowAsync(hWnd, ShowWindowCommands.Restore);
                     }
                     else
                     {

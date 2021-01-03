@@ -691,7 +691,7 @@ namespace ModernFlyouts.Core.Interop
         internal static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
 
         [DllImport("user32.dll", SetLastError = true)]
-        internal static extern bool ShowWindowAsync(IntPtr windowHandle, int nCmdShow);
+        internal static extern bool ShowWindowAsync(IntPtr windowHandle, ShowWindowCommands nCmdShow);
 
         [DllImport("user32.dll")]
         internal static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
@@ -800,11 +800,13 @@ namespace ModernFlyouts.Core.Interop
 
         #region Miscellaneous
 
+        internal static IntPtr SC_MOUSEMOVE = new IntPtr(0xF012);
+
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern IntPtr GetModuleHandle(string lpModuleName);
 
         [DllImport("user32.dll")]
-        internal static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        internal static extern int SendMessage(IntPtr hWnd, WindowMessage msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32.dll")]
         internal static extern bool ReleaseCapture();
@@ -939,12 +941,6 @@ namespace ModernFlyouts.Core.Interop
         internal const int SM_CYSCREEN = 1;
         internal const int SPI_GETWORKAREA = 48;
         internal const int SPI_SETWORKAREA = 47;
-
-        #endregion
-
-        #region Window Message Constants
-
-        internal const int SC_MOUSEMOVE = 0xF012;
 
         #endregion
     }

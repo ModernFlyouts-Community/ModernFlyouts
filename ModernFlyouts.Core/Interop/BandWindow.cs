@@ -312,7 +312,7 @@ namespace ModernFlyouts.Core.Interop
                 hInstance = Marshal.GetHINSTANCE(typeof(BandWindow).Module),
                 hIcon = IntPtr.Zero,
                 lpszMenuName = string.Empty,
-                lpszClassName = "WIB_" + Guid.NewGuid(),
+                lpszClassName = "BandWindow_" + Guid.NewGuid(),
                 lpfnWndProc = Marshal.GetFunctionPointerForDelegate(delegWndProc),
                 hIconSm = IntPtr.Zero
             };
@@ -366,24 +366,21 @@ namespace ModernFlyouts.Core.Interop
             UpdateWindow(hWnd);
 
             //Force update because it may not be triggered on ContentRendered event
-            OnDpiChanged(GetDpiForWindow(Handle) / 96.0);
-            UpdateSize(true);
+            UpdateDpiScale(GetDpiForWindow(Handle) / 96.0);
 
             IsSourceCreated = true;
         }
 
         private void HwndSource_ContentRendered(object sender, EventArgs e)
         {
-            OnDpiChanged(GetDpiForWindow(Handle) / 96.0);
-            UpdateSize(true);
+            UpdateDpiScale(GetDpiForWindow(Handle) / 96.0);
         }
 
         protected override void OnDpiChanged(DpiScale oldDpi, DpiScale newDpi)
         {
             base.OnDpiChanged(oldDpi, newDpi);
 
-            OnDpiChanged(newDpi.DpiScaleX);
-            UpdateSize(true);
+            UpdateDpiScale(newDpi.DpiScaleX);
         }
 
         private IntPtr myWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
@@ -404,8 +401,7 @@ namespace ModernFlyouts.Core.Interop
                     break;
 
                 case WindowMessage.WM_DPICHANGED:
-                    OnDpiChanged((wParam.ToInt32() & 0xFFFF) / 96.0);
-                    UpdateSize(true);
+                    HandleDpiChange(wParam, lParam);
                     break;
 
                 case WindowMessage.WM_MOVE:
@@ -429,6 +425,17 @@ namespace ModernFlyouts.Core.Interop
             SetWindowPos(hwndSource.Handle, IntPtr.Zero, 0, 0, 0, 0, SWP.NOSIZE | SWP.NOZORDER | SWP.NOACTIVATE);
         }
 
+        private void HandleDpiChange(IntPtr wParam, IntPtr lParam)
+        {
+            if (!IsSourceCreated)
+                return;
+
+            // Send WM_DPICHANGED message manually to the HwndSource.
+            // Because, it doesn't seem to work when the ZBandID is not ZBID_DESKTOP or ZBID_DEFAULT.
+            SendMessage(hwndSource.Handle, WindowMessage.WM_DPICHANGED, wParam, lParam);
+            ShowWindowAsync(hwndSource.Handle, ShowWindowCommands.Show);
+        }
+
         private void HandleWindowActivation(IntPtr wParam)
         {
             bool isActive = wParam.ToInt32() != 0;
@@ -442,6 +449,12 @@ namespace ModernFlyouts.Core.Interop
             {
                 OnDeactivated();
             }
+        }
+
+        private void UpdateDpiScale(double newDpiScale)
+        {
+            OnDpiChanged(newDpiScale);
+            UpdateSize(true);
         }
 
         private void UpdateSize(bool sizeToContent = false)
@@ -541,8 +554,8 @@ namespace ModernFlyouts.Core.Interop
             if (!IsSourceCreated)
                 return;
 
-            SendMessage(Handle, (int)WindowMessage.WM_SYSCOMMAND, SC_MOUSEMOVE, 0);
-            SendMessage(Handle, (int)WindowMessage.WM_LBUTTONUP, 0, 0);
+            SendMessage(Handle, WindowMessage.WM_SYSCOMMAND, SC_MOUSEMOVE, IntPtr.Zero);
+            SendMessage(Handle, WindowMessage.WM_LBUTTONUP, IntPtr.Zero, IntPtr.Zero);
 
             IsDragMoving = true;
         }
@@ -576,7 +589,7 @@ namespace ModernFlyouts.Core.Interop
             else
             {
                 ShowWindowAsync(Handle, Activatable ?
-                (int)ShowWindowCommands.Show : (int)ShowWindowCommands.ShowNoActivate);
+                    ShowWindowCommands.Show : ShowWindowCommands.ShowNoActivate);
             }
 
             if (Activatable) SetForegroundWindow(Handle);
@@ -591,7 +604,7 @@ namespace ModernFlyouts.Core.Interop
             if (!IsSourceCreated || _isVisibilityChanging)
                 return;
 
-            ShowWindowAsync(Handle, (int)ShowWindowCommands.Hide);
+            ShowWindowAsync(Handle, ShowWindowCommands.Hide);
 
             _isVisibilityChanging = true;
             Visibility = Visibility.Hidden;
