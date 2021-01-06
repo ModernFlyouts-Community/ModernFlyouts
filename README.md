@@ -1,6 +1,6 @@
 # ModernFlyouts
 
-### A modern **Fluent Design** replacement for the old **Metro themed** flyouts present in Windows since Windows 8.
+### An open source, modern, and **Fluent Design-based** replacement for the old **Metro-themed** flyouts present in **Windows 10**.
 
 [![Microsoft Store](https://img.shields.io/badge/Microsoft-Store-blue?style=flat&logo=microsoft)](https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge)
 [![Github All Releases](https://img.shields.io/github/downloads/ModernFlyouts-Community/ModernFlyouts/total.svg?style=flat&logo=github)](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases)
