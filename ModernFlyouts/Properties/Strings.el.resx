@@ -59,18 +59,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Καρφίτσωμα επάνω γραμμής</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Πληκτρολογήστε το σημείο με τη μορφή 'X,Y' (π.χ. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Πληκτρολογήστε τιμές X,Y στην περιοχή {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Δεν είναι δυνατή η κρυφά της τιμής σε συμβολοσειρά.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Επαναφορά προεπιλογών</value>
   </data>
@@ -139,9 +127,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Προεπιλεγμένη θέση αναδυόμενου στοιχείου (για το κουμπί "Στοίχιση")</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Πληκτρολογήστε τη θέση σε μορφή 'X,Y' (π.χ. 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Επάνω γραμμή αναδυόμενων στοιχείων</value>
