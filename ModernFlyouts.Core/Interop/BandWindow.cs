@@ -395,7 +395,7 @@ namespace ModernFlyouts.Core.Interop
                     break;
 
                 case WindowMessage.WM_EXITSIZEMOVE:
-                    OnDragMoved();
+                    HandleDragMoved();
                     break;
 
                 case WindowMessage.WM_DESTROY:
@@ -458,9 +458,21 @@ namespace ModernFlyouts.Core.Interop
             }
         }
 
+        private void HandleDragMoved()
+        {
+            IsDragMoving = false;
+
+            GetWindowRect(Handle, out var rect);
+            ActualLeft = rect.Left;
+            ActualTop = rect.Top;
+
+            OnDragMoved();
+        }
+
         private void UpdateDpiScale(double newDpiScale)
         {
-            OnDpiChanged(newDpiScale);
+            dpiScale = newDpiScale;
+            OnDpiChanged();
             UpdateSize(true);
         }
 
@@ -530,20 +542,13 @@ namespace ModernFlyouts.Core.Interop
             Deactivated?.Invoke(this, EventArgs.Empty);
         }
 
-        protected virtual void OnDpiChanged(double newDpiScale)
+        protected virtual void OnDpiChanged()
         {
-            dpiScale = newDpiScale;
             DpiChanged?.Invoke(this, EventArgs.Empty);
         }
 
         protected virtual void OnDragMoved()
         {
-            IsDragMoving = false;
-
-            GetWindowRect(Handle, out var rect);
-            ActualLeft = rect.Left;
-            ActualTop = rect.Top;
-
             DragMoved?.Invoke(this, EventArgs.Empty);
         }
 
@@ -554,7 +559,7 @@ namespace ModernFlyouts.Core.Interop
 
         protected virtual void OnSourceCreated()
         {
-            SourceCreated?.Invoke(this, EventArgs.Empty); ;
+            SourceCreated?.Invoke(this, EventArgs.Empty);
         }
 
         #endregion
@@ -566,10 +571,10 @@ namespace ModernFlyouts.Core.Interop
             if (!HasSourceCreated)
                 return;
 
+            IsDragMoving = true;
+
             SendMessage(Handle, WindowMessage.WM_SYSCOMMAND, SC_MOUSEMOVE, IntPtr.Zero);
             SendMessage(Handle, WindowMessage.WM_LBUTTONUP, IntPtr.Zero, IntPtr.Zero);
-
-            IsDragMoving = true;
         }
 
         public void Activate()

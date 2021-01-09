@@ -121,52 +121,36 @@ namespace ModernFlyouts
 
         public void OnExternalUpdated(bool isMediaKey)
         {
-            var mediaSessionsAvailable = AnyMediaSessionsAvailable();
+            isVolumeFlyout = !isMediaKey;
+            ValidatePrimaryContentVisible();
+            ValidateSecondaryContentVisible();
 
-            if ((!isMediaKey && device != null) || (isMediaKey && mediaSessionsAvailable))
+            if ((isVolumeFlyout && PrimaryContentVisible) || (isMediaKey && SecondaryContentVisible))
             {
-                isVolumeFlyout = !isMediaKey;
-
-                if (isVolumeFlyout)
-                {
-                    PrimaryContentVisible = true;
-                    SecondaryContentVisible = mediaSessionsAvailable && ShowGSMTCInVolumeFlyout;
-                }
-                else
-                {
-                    PrimaryContentVisible = ShowVolumeControlInGSMTCFlyout;
-                    SecondaryContentVisible = mediaSessionsAvailable;
-                }
-
                 ShowFlyoutRequested?.Invoke(this);
             }
         }
 
         private void OnShowGSMTCInVolumeFlyoutChanged()
         {
-            var mediaSessionsAvailable = AnyMediaSessionsAvailable();
-            if (isVolumeFlyout)
-            {
-                SecondaryContentVisible = mediaSessionsAvailable && showGSMTCInVolumeFlyout;
-            }
-            else
-            {
-                SecondaryContentVisible = mediaSessionsAvailable;
-            }
+            ValidateSecondaryContentVisible();
 
             AppDataHelper.ShowGSMTCInVolumeFlyout = showGSMTCInVolumeFlyout;
         }
 
+        private void ValidatePrimaryContentVisible()
+        {
+            PrimaryContentVisible = device != null && (isVolumeFlyout || showVolumeControlInGSMTCFlyout);
+        }
+
+        private void ValidateSecondaryContentVisible()
+        {
+            SecondaryContentVisible = AnyMediaSessionsAvailable() && (!isVolumeFlyout || showGSMTCInVolumeFlyout);
+        }
+
         private void OnShowVolumeControlInGSMTCFlyoutChanged()
         {
-            if (isVolumeFlyout)
-            {
-                PrimaryContentVisible = true;
-            }
-            else
-            {
-                PrimaryContentVisible = showVolumeControlInGSMTCFlyout;
-            }
+            ValidatePrimaryContentVisible();
 
             AppDataHelper.ShowVolumeControlInGSMTCFlyout = showVolumeControlInGSMTCFlyout;
         }
@@ -293,6 +277,13 @@ namespace ModernFlyouts
             mediaSessionManagers.Add(npMediaSessionManager);
 
             AllMediaSessions.Add(new CollectionContainer { Collection = npMediaSessionManager.MediaSessions });
+
+            npMediaSessionManager.MediaSessionsChanged += MediaSessionManager_MediaSessionsChanged;
+        }
+
+        private void MediaSessionManager_MediaSessionsChanged(object sender, EventArgs e)
+        {
+            ValidateSecondaryContentVisible();
         }
 
         private bool AnyMediaSessionsAvailable() => mediaSessionManagers.Any(x => x.ContainsAnySession());
@@ -329,7 +320,7 @@ namespace ModernFlyouts
             }
             else { PrimaryContent = noDeviceMessageBlock; }
 
-            PrimaryContentVisible = isVolumeFlyout || ShowVolumeControlInGSMTCFlyout;
+            ValidatePrimaryContentVisible();
 
             foreach (var mediaSessionManager in mediaSessionManagers)
             {
@@ -347,12 +338,13 @@ namespace ModernFlyouts
             {
                 device.AudioEndpointVolume.OnVolumeNotification -= AudioEndpointVolume_OnVolumeNotification;
             }
+
             PrimaryContent = null;
             PrimaryContentVisible = false;
 
             foreach (var mediaSessionManager in mediaSessionManagers)
             {
-                mediaSessionManager.OnEnabled();
+                mediaSessionManager.OnDisabled();
             }
 
             AppDataHelper.AudioModuleEnabled = IsEnabled;

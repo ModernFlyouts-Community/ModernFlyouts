@@ -28,7 +28,7 @@ namespace ModernFlyouts.AppLifecycle
         /// Starts the application as single instance and redirects the command line arguments from subsequent instances to the first instance.
         /// </summary>
         /// <param name="args">Commandline arguments to process or pass to the first instance.</param>
-        /// <param name="action">The action to perform after the first instance has been intialized.</param>
+        /// <param name="action">The action to perform after the first instance has been initialized.</param>
         public static void StartApplication(string[] args, Action action)
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))

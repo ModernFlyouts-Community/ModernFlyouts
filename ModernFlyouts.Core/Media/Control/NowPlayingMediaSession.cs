@@ -80,7 +80,11 @@ namespace ModernFlyouts.Core.Media.Control
         {
             if (mediaPlaybackDataSource != null)
             {
-                mediaPlaybackDataSource.MediaPlaybackDataChanged -= MediaPlaybackDataSource_MediaPlaybackDataChanged;
+                try
+                {
+                    mediaPlaybackDataSource.MediaPlaybackDataChanged -= MediaPlaybackDataSource_MediaPlaybackDataChanged;
+                }
+                catch { }
             }
             mediaPlaybackDataSource = null;
             NPSession = null;

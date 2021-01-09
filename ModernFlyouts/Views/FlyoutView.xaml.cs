@@ -27,16 +27,7 @@ namespace ModernFlyouts.Views
         {
             if (d is FlyoutView flyoutView)
             {
-                if (e.NewValue is FlyoutHelperBase flyoutHelper)
-                {
-                    flyoutView.PrimaryHost.Content = flyoutHelper.PrimaryContent;
-                    flyoutView.SecondaryHost.Content = flyoutHelper.SecondaryContent;
-                }
-                else
-                {
-                    flyoutView.PrimaryHost.Content = null;
-                    flyoutView.SecondaryHost.Content = null;
-                }
+                flyoutView.DataContext = e.NewValue;
             }
         }
 

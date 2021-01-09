@@ -1,6 +1,5 @@
 ﻿using ModernFlyouts.Core.Interop;
 using System;
-using System.Diagnostics;
 using System.Windows;
 
 namespace ModernFlyouts.Core.UI
@@ -40,10 +39,10 @@ namespace ModernFlyouts.Core.UI
             PositionFlyout();
         }
 
-        protected override void OnDpiChanged(double newDpiScale)
+        protected override void OnDpiChanged()
         {
-            base.OnDpiChanged(newDpiScale);
-            Debug.WriteLine($"DPI changed: {newDpiScale}");
+            base.OnDpiChanged();
+
             RePositionFlyout();
         }
 

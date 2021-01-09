@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
-      xmlns:toolkitControls="clr-namespace:ModernWpf.Toolkit.UI.Controls"
+      xmlns:toolkitControls="http://schemas.modernwpf.com/toolkit/controls"
       xmlns:media="clr-namespace:ModernFlyouts.UI.Media"
       xmlns:utils="clr-namespace:ModernFlyouts.Utilities" xmlns:helpers="clr-namespace:ModernFlyouts.Helpers"
       xmlns:resx="clr-namespace:ModernFlyouts.Properties"

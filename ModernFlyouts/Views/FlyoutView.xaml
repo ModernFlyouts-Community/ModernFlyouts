@@ -1,14 +1,12 @@
 ﻿<UserControl x:Class="ModernFlyouts.Views.FlyoutView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ModernFlyouts.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              xmlns:resx="clr-namespace:ModernFlyouts.Properties"
              xmlns:controls="clr-namespace:ModernFlyouts.Controls"
-             xmlns:coreui="clr-namespace:ModernFlyouts.Core.UI;assembly=ModernFlyouts.Core"
              xmlns:media="clr-namespace:ModernFlyouts.UI.Fluent.Media"
              mc:Ignorable="d" media:RevealBrushHelper.TrackThisElement="True"
              Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}">
@@ -28,25 +26,25 @@
             </LinearGradientBrush>
         </Border.BorderBrush>
     </Border>-->
-    <DockPanel Margin="20,2,20,30">
-        <ui:ThemeShadowChrome DockPanel.Dock="Top" Depth="32"
-            CornerRadius="{DynamicResource FlyoutCornerRadius}"
-            Width="{DynamicResource FlyoutWidth}">
+    <controls:DirectableStackPanel Spacing="8" Direction="Descending" Margin="20,2,20,30">
+        <ui:ThemeShadowChrome Depth="32" CornerRadius="{DynamicResource FlyoutCornerRadius}"
+            Width="{DynamicResource FlyoutWidth}"
+            Visibility="{Binding PrimaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border Background="{DynamicResource FlyoutBackground}"
                     CornerRadius="{DynamicResource FlyoutCornerRadius}">
                 <StackPanel>
                     <ContentControl x:Name="TopBarHost" x:FieldModifier="private" />
-                    <controls:CrossFadeContentControl x:Name="PrimaryHost" x:FieldModifier="private" />
+                    <controls:CrossFadeContentControl Content="{Binding PrimaryContent}" />
                 </StackPanel>
             </Border>
         </ui:ThemeShadowChrome>
-        <ui:ThemeShadowChrome Depth="32" Margin="0,8,0,0"
-            CornerRadius="{DynamicResource FlyoutCornerRadius}"
-            Width="{DynamicResource FlyoutWidth}">
+        <ui:ThemeShadowChrome Depth="32" CornerRadius="{DynamicResource FlyoutCornerRadius}"
+            Width="{DynamicResource FlyoutWidth}"
+            Visibility="{Binding SecondaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border Background="{DynamicResource FlyoutBackground}"
                     CornerRadius="{DynamicResource FlyoutCornerRadius}">
-                <controls:CrossFadeContentControl x:Name="SecondaryHost" x:FieldModifier="private" />
+                <controls:CrossFadeContentControl Content="{Binding SecondaryContent}" />
             </Border>
         </ui:ThemeShadowChrome>
-    </DockPanel>
+    </controls:DirectableStackPanel>
 </UserControl>

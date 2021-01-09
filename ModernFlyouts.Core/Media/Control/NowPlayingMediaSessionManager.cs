@@ -18,54 +18,54 @@ namespace ModernFlyouts.Core.Media.Control
 
         private void NPSessionsChanged(object sender, NowPlayingSessionManagerEventArgs e)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() => OnSessionsChanged(e.NowPlayingSessionInfo, e.NotificationType));
+        }
+
+        private void OnSessionsChanged(NowPlayingSessionInfo nowPlayingSessionInfo, NowPlayingSessionManagerNotificationType notificationType)
+        {
+            nowPlayingSessionInfo.GetInfo(out _, out uint pid, out _);
+
+            if (notificationType == NowPlayingSessionManagerNotificationType.SessionCreated)
             {
-                e.NowPlayingSessionInfo.GetInfo(out _, out uint pid, out _);
+                var session = NPSessionManager.FindSession(nowPlayingSessionInfo);
 
-                if (e.NotificationType == NowPlayingSessionManagerNotificationType.SessionCreated)
+                if (session != null)
                 {
-                    var sessionInfo = e.NowPlayingSessionInfo;
-                    var session = NPSessionManager.FindSession(sessionInfo);
-
-                    if (session != null)
-                    {
-                        MediaSessions.Add(new NowPlayingMediaSession(session));
-                        RaiseMediaSessionsChanged();
-                    }
+                    MediaSessions.Add(new NowPlayingMediaSession(session));
+                    RaiseMediaSessionsChanged();
                 }
-                else if (e.NotificationType == NowPlayingSessionManagerNotificationType.CurrentSessionChanged)
+            }
+            else if (notificationType == NowPlayingSessionManagerNotificationType.CurrentSessionChanged)
+            {
+                var mediaSession = MediaSessions
+                .Cast<NowPlayingMediaSession>()
+                .FirstOrDefault(x => x.NowPlayingSession.GetSessionInfo().Equals(nowPlayingSessionInfo));
+
+                if (mediaSession != null)
                 {
-                    var sessionInfo = e.NowPlayingSessionInfo;
-                    var mediaSession = MediaSessions
-                    .Cast<NowPlayingMediaSession>()
-                    .FirstOrDefault(x => x.NowPlayingSession.PID == pid);
-
-                    if (mediaSession != null)
+                    CurrentMediaSession = mediaSession;
+                    foreach (var s in MediaSessions)
                     {
-                        CurrentMediaSession = mediaSession;
-                        foreach (var s in MediaSessions)
-                        {
-                            s.IsCurrent = false;
-                        }
-
-                        mediaSession.IsCurrent = true;
-                        RaiseCurrentMediaSessionChanged();
+                        s.IsCurrent = false;
                     }
+
+                    mediaSession.IsCurrent = true;
+                    RaiseCurrentMediaSessionChanged();
                 }
-                else if (e.NotificationType == NowPlayingSessionManagerNotificationType.SessionDisconnected)
+            }
+            else if (notificationType == NowPlayingSessionManagerNotificationType.SessionDisconnected)
+            {
+                var mediaSession = MediaSessions
+                .Cast<NowPlayingMediaSession>()
+                .FirstOrDefault(x => x.NowPlayingSession.GetSessionInfo().Equals(nowPlayingSessionInfo));
+
+                if (mediaSession != null)
                 {
-                    var mediaSession = MediaSessions
-                    .Cast<NowPlayingMediaSession>()
-                    .FirstOrDefault(x => x.NowPlayingSession.PID == pid);
-
-                    if (mediaSession != null)
-                    {
-                        mediaSession.Disconnect();
-                        MediaSessions.Remove(mediaSession);
-                        RaiseMediaSessionsChanged();
-                    }
+                    mediaSession.Disconnect();
+                    MediaSessions.Remove(mediaSession);
+                    RaiseMediaSessionsChanged();
                 }
-            });
+            }
         }
 
         private void ClearSessions()
