@@ -11,6 +11,14 @@ namespace ModernFlyouts.Core.Media.Control
     {
         #region Properties
 
+        private bool isCurrent;
+
+        public bool IsCurrent
+        {
+            get => isCurrent;
+            internal set => SetProperty(ref isCurrent, value);
+        }
+
         #region Playback Features
 
         private bool isPlayEnabled;
@@ -391,7 +399,7 @@ namespace ModernFlyouts.Core.Media.Control
         #endregion
 
         /// <summary>
-        /// Sets the <see cref="PlaybackPosition"/> propety's value internally and updates it without causing a callback loop
+        /// Sets the <see cref="PlaybackPosition"/> property's value internally and updates it without causing a callback loop
         /// </summary>
         protected void SetPlaybackPosition(TimeSpan value)
         {
@@ -406,6 +414,10 @@ namespace ModernFlyouts.Core.Media.Control
         protected void RaiseMediaPropertiesChanged()
         {
             MediaPropertiesChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        public virtual void Disconnect()
+        {
         }
 
         public event EventHandler MediaPropertiesChanging;

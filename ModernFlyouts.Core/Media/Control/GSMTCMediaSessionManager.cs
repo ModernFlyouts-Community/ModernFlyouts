@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Windows.Threading;
+using System.Windows;
 using Windows.Media.Control;
 
 namespace ModernFlyouts.Core.Media.Control
 {
-    public class GSMTCMediaSessionManager : MediaSessionManager<GSMTCMediaSession>
+    public class GSMTCMediaSessionManager : MediaSessionManager
     {
         private GlobalSystemMediaTransportControlsSessionManager GSMTCSessionManager;
 
@@ -20,16 +20,16 @@ namespace ModernFlyouts.Core.Media.Control
             catch { }
         }
 
-        private async void GSMTCSessionsChanged(GlobalSystemMediaTransportControlsSessionManager sender, SessionsChangedEventArgs args)
+        private void GSMTCSessionsChanged(GlobalSystemMediaTransportControlsSessionManager sender, SessionsChangedEventArgs args)
         {
-            await Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, new Action(LoadSessions));
+            Application.Current.Dispatcher.Invoke(LoadSessions);
         }
 
         private void ClearSessions()
         {
             foreach (var session in MediaSessions)
             {
-                session.Dispose();
+                session.Disconnect();
             }
 
             MediaSessions.Clear();

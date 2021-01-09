@@ -72,12 +72,17 @@ namespace ModernFlyouts.Core.Interop
             }
         }
 
-        internal void TryHandleWindowMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
+        internal IntPtr TryHandleWindowMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam, out bool handled)
         {
+            handled = false;
+
             if (hooks.TryGetValue(msg, out var hook))
             {
-                hook(hWnd, msg, wParam, lParam);
+                handled = true;
+                return hook(hWnd, msg, wParam, lParam);
             }
+
+            return IntPtr.Zero;
         }
     }
 

@@ -22,7 +22,7 @@ namespace ModernFlyouts.Internal.Playground
                 Activatable = true,
                 ZBandID = ZBandID.Desktop,
                 Content = myView,
-                Alignment = FlyoutWindowAlignment.Bottom | FlyoutWindowAlignment.Right,
+                Alignment = FlyoutWindowAlignments.Bottom | FlyoutWindowAlignments.Right,
                 FlyoutWindowType = FlyoutWindowType.OnScreen,
                 Margin = new(10),
                 Offset = new(20, 1, 20, 30)

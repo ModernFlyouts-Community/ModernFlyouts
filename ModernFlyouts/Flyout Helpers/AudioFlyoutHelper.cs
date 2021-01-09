@@ -23,7 +23,7 @@ namespace ModernFlyouts
         private VolumeControl volumeControl;
         private SessionsPanel sessionsPanel;
         private TextBlock noDeviceMessageBlock;
-        private List<MediaSessionManagerBase> mediaSessionManagers = new();
+        private List<MediaSessionManager> mediaSessionManagers = new();
         private bool isVolumeFlyout = true;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
@@ -95,8 +95,11 @@ namespace ModernFlyouts
 
             #region Media Session sub-module initialization
 
-            sessionsPanel = new SessionsPanel(AllMediaSessions);
-            SecondaryContent = sessionsPanel;
+            FlyoutHandler.Initialized += (_, _) =>
+            {
+                sessionsPanel = new();
+                SecondaryContent = sessionsPanel;
+            };
 
             SetupMediaSessionManagers();
 
@@ -286,13 +289,10 @@ namespace ModernFlyouts
 
         private void SetupMediaSessionManagers()
         {
-            var gsmtcMediaSessionManager = new GSMTCMediaSessionManager();
+            var npMediaSessionManager = new NowPlayingMediaSessionManager();
+            mediaSessionManagers.Add(npMediaSessionManager);
 
-            AllMediaSessions.Add(new CollectionContainer()
-            {
-                Collection = gsmtcMediaSessionManager.MediaSessions
-            });
-            mediaSessionManagers.Add(gsmtcMediaSessionManager);
+            AllMediaSessions.Add(new CollectionContainer { Collection = npMediaSessionManager.MediaSessions });
         }
 
         private bool AnyMediaSessionsAvailable() => mediaSessionManagers.Any(x => x.ContainsAnySession());
@@ -335,8 +335,6 @@ namespace ModernFlyouts
             {
                 mediaSessionManager.OnEnabled();
             }
-
-            System.Diagnostics.Debug.WriteLine("Media Sessions: " + AllMediaSessions.Count);
         }
 
         protected override void OnDisabled()

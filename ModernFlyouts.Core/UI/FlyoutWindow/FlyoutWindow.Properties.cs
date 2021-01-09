@@ -31,13 +31,13 @@ namespace ModernFlyouts.Core.UI
         public static readonly DependencyProperty AlignmentProperty =
             DependencyProperty.Register(
                 nameof(Alignment),
-                typeof(FlyoutWindowAlignment),
+                typeof(FlyoutWindowAlignments),
                 typeof(FlyoutWindow),
-                new PropertyMetadata(FlyoutWindowAlignment.Top | FlyoutWindowAlignment.Left, OnAlignmentPropertyChanged));
+                new PropertyMetadata(FlyoutWindowAlignments.Top | FlyoutWindowAlignments.Left, OnAlignmentPropertyChanged));
 
-        public FlyoutWindowAlignment Alignment
+        public FlyoutWindowAlignments Alignment
         {
-            get => (FlyoutWindowAlignment)GetValue(AlignmentProperty);
+            get => (FlyoutWindowAlignments)GetValue(AlignmentProperty);
             set => SetValue(AlignmentProperty, value);
         }
 

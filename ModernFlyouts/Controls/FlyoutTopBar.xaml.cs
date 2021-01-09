@@ -5,16 +5,27 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Input;
 using System.Windows.Media.Animation;
 
 namespace ModernFlyouts.Controls
 {
     public partial class FlyoutTopBar : UserControl
     {
+
+        private static TimeSpan duration = TimeSpan.FromMilliseconds(167);
+        private static IEasingFunction easingFunction = new CircleEase() { EasingMode = EasingMode.EaseOut };
+        private static PropertyPath heightPath = new(HeightProperty);
+        private static PropertyPath marginPath = new(MarginProperty);
+        private static PropertyPath opacityPath = new("Background.Opacity");
+
+        private Storyboard expandStoryboard;
+        private Storyboard collapseStoryboard;
+
         private bool _topBarOverlay;
         private bool _topBarVisible = true;
         private TopBarVisibility _topBarVisibility = TopBarVisibility.Visible;
+
+        private bool isAnimating;
 
         #region Properties
 
@@ -47,27 +58,37 @@ namespace ModernFlyouts.Controls
 
             PrepareAnimations();
 
-            MouseEnter += (_, e) =>
-            {
-                if (_topBarVisibility == TopBarVisibility.AutoHide && !_topBarOverlay)
-                {
-                    _topBarOverlay = true;
-                    UpdateTopBar(true);
-                }
-            };
-            MouseLeave += (_, e) =>
-            {
-                if (_topBarVisibility == TopBarVisibility.AutoHide && _topBarOverlay)
-                {
-                    _topBarOverlay = false;
-                    UpdateTopBar(false);
-                }
-            };
+            MouseEnter += (_, e) => OnMouseEnter();
+            MouseLeave += (_, e) => OnMouseLeave();
 
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this)) { return; }
 
             BindingOperations.SetBinding(this, TopBarVisibilityProperty,
                 new Binding(nameof(UIManager.TopBarVisibility)) { Source = FlyoutHandler.Instance.UIManager, Mode = BindingMode.OneWay });
+        }
+
+        private void OnMouseEnter()
+        {
+            if (isAnimating)
+                return;
+
+            if (_topBarVisibility == TopBarVisibility.AutoHide && !_topBarOverlay)
+            {
+                _topBarOverlay = true;
+                UpdateTopBar(true);
+            }
+        }
+
+        private void OnMouseLeave()
+        {
+            if (isAnimating)
+                return;
+
+            if (_topBarVisibility == TopBarVisibility.AutoHide && _topBarOverlay)
+            {
+                _topBarOverlay = false;
+                UpdateTopBar(false);
+            }
         }
 
         private void OnTopBarVisibilityChanged(TopBarVisibility value)
@@ -78,8 +99,7 @@ namespace ModernFlyouts.Controls
             TopBarPinButtonIcon.Glyph = _topBarVisible ? CommonGlyphs.UnPin : CommonGlyphs.Pin;
             TopBarPinButton.ToolTip = _topBarVisible ? Properties.Strings.UnpinTopBar : Properties.Strings.PinTopBar;
             _topBarOverlay = false;
-            var pos = Mouse.GetPosition(TopBarGrid);
-            if (pos.Y > 0 && pos.Y < 32)
+            if (value != TopBarVisibility.Collapsed && IsMouseOver)
             {
                 _topBarOverlay = true;
                 _topBarVisible = true;
@@ -87,15 +107,6 @@ namespace ModernFlyouts.Controls
 
             UpdateTopBar(_topBarVisible);
         }
-
-        private static TimeSpan s_duration = TimeSpan.FromMilliseconds(167);
-        private static IEasingFunction s_easingFunction = new CircleEase() { EasingMode = EasingMode.EaseOut };
-        private static PropertyPath s_heightPath = new(HeightProperty);
-        private static PropertyPath s_marginPath = new(MarginProperty);
-        private static PropertyPath s_opacityPath = new("Background.Opacity");
-
-        private Storyboard m_expandStoryboard;
-        private Storyboard m_collapseStoryboard;
 
         private void UpdateTopBar(bool showTopBar)
         {
@@ -105,118 +116,136 @@ namespace ModernFlyouts.Controls
 
             if (showTopBar)
             {
-                m_expandStoryboard?.Begin();
+                expandStoryboard?.Begin();
+                isAnimating = true;
             }
             else
             {
-                m_collapseStoryboard?.Begin();
+                collapseStoryboard?.Begin();
+                isAnimating = true;
             }
         }
 
         private void PrepareAnimations()
         {
-            if (m_expandStoryboard == null)
+            if (expandStoryboard == null)
             {
                 DoubleAnimation heightAnim = new()
                 {
                     To = 32.0,
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(heightAnim, TopBarGrid);
-                Storyboard.SetTargetProperty(heightAnim, s_heightPath);
+                Storyboard.SetTargetProperty(heightAnim, heightPath);
 
                 ThicknessAnimation tbMarginAnim = new()
                 {
                     To = new(0),
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(tbMarginAnim, TopBarGrid);
-                Storyboard.SetTargetProperty(tbMarginAnim, s_marginPath);
+                Storyboard.SetTargetProperty(tbMarginAnim, marginPath);
 
                 ThicknessAnimation g1MarginAnim = new()
                 {
                     To = new(0),
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(g1MarginAnim, G1);
-                Storyboard.SetTargetProperty(g1MarginAnim, s_marginPath);
+                Storyboard.SetTargetProperty(g1MarginAnim, marginPath);
 
                 ThicknessAnimation g2MarginAnim = new()
                 {
                     To = new(0),
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(g2MarginAnim, G2);
-                Storyboard.SetTargetProperty(g2MarginAnim, s_marginPath);
+                Storyboard.SetTargetProperty(g2MarginAnim, marginPath);
 
                 DoubleAnimation opacityAnim = new()
                 {
                     To = 1.0,
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(opacityAnim, DragBorder);
-                Storyboard.SetTargetProperty(opacityAnim, s_opacityPath);
+                Storyboard.SetTargetProperty(opacityAnim, opacityPath);
 
-                m_expandStoryboard = new()
+                expandStoryboard = new()
                 {
                     Children = { heightAnim, tbMarginAnim, g1MarginAnim, g2MarginAnim, opacityAnim }
                 };
+                expandStoryboard.Completed += (_, __) =>
+                {
+                    isAnimating = false;
+                    if (!IsMouseOver)
+                    {
+                        OnMouseLeave();
+                    }
+                };
             }
-            if (m_collapseStoryboard == null)
+            if (collapseStoryboard == null)
             {
                 DoubleAnimation heightAnim = new()
                 {
                     To = 10.0,
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(heightAnim, TopBarGrid);
-                Storyboard.SetTargetProperty(heightAnim, s_heightPath);
+                Storyboard.SetTargetProperty(heightAnim, heightPath);
 
                 ThicknessAnimation tbMarginAnim = new()
                 {
                     To = new(0, 0, 0, -10),
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(tbMarginAnim, TopBarGrid);
-                Storyboard.SetTargetProperty(tbMarginAnim, s_marginPath);
+                Storyboard.SetTargetProperty(tbMarginAnim, marginPath);
 
                 ThicknessAnimation g1MarginAnim = new()
                 {
                     To = new(-68, 0, 0, 0),
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(g1MarginAnim, G1);
-                Storyboard.SetTargetProperty(g1MarginAnim, s_marginPath);
+                Storyboard.SetTargetProperty(g1MarginAnim, marginPath);
 
                 ThicknessAnimation g2MarginAnim = new()
                 {
                     To = new(0, 0, -68, 0),
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(g2MarginAnim, G2);
-                Storyboard.SetTargetProperty(g2MarginAnim, s_marginPath);
+                Storyboard.SetTargetProperty(g2MarginAnim, marginPath);
 
                 DoubleAnimation opacityAnim = new()
                 {
                     To = 0.0,
-                    Duration = s_duration,
-                    EasingFunction = s_easingFunction
+                    Duration = duration,
+                    EasingFunction = easingFunction
                 };
                 Storyboard.SetTarget(opacityAnim, DragBorder);
-                Storyboard.SetTargetProperty(opacityAnim, s_opacityPath);
+                Storyboard.SetTargetProperty(opacityAnim, opacityPath);
 
-                m_collapseStoryboard = new()
+                collapseStoryboard = new()
                 {
                     Children = { heightAnim, tbMarginAnim, g1MarginAnim, g2MarginAnim, opacityAnim }
+                };
+                collapseStoryboard.Completed += (_, __) =>
+                {
+                    isAnimating = false;
+                    if (IsMouseOver)
+                    {
+                        OnMouseEnter();
+                    }
                 };
             }
         }

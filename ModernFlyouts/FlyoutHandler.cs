@@ -164,9 +164,9 @@ namespace ModernFlyouts
                 Activatable = false,
                 Content = OnScreenFlyoutView,
                 ZBandID = zbid,
-                Alignment = FlyoutWindowAlignment.Top | FlyoutWindowAlignment.Left,
+                Alignment = FlyoutWindowAlignments.Bottom | FlyoutWindowAlignments.Right,
                 FlyoutWindowType = FlyoutWindowType.OnScreen,
-                PlacementMode = FlyoutWindowPlacementMode.Manual,
+                PlacementMode = FlyoutWindowPlacementMode.Auto,
                 Margin = new(10),
                 Offset = new(20, 2, 20, 30),
                 IsTimeoutEnabled = true
@@ -287,6 +287,9 @@ namespace ModernFlyouts
 
         public void AlignFlyout(bool toDefault = true)
         {
+            if (OnScreenFlyoutWindow.PlacementMode != FlyoutWindowPlacementMode.Manual)
+                return;
+
             var defaultPosition = toDefault ? Instance.DefaultFlyoutPosition : flyoutPosition;
 
             OnScreenFlyoutWindow.Left = defaultPosition.X;

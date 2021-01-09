@@ -92,7 +92,7 @@ namespace ModernFlyouts.Core.UI
 
         private void PositionFlyout()
         {
-            if (!IsSourceCreated)
+            if (!HasSourceCreated)
                 return;
 
             if (PlacementMode == FlyoutWindowPlacementMode.Auto)

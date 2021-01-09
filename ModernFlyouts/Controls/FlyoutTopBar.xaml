@@ -8,8 +8,8 @@
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              xmlns:resx="clr-namespace:ModernFlyouts.Properties"
              xmlns:behaviors="clr-namespace:ModernFlyouts.Behaviors"
-             mc:Ignorable="d"
-             d:DesignWidth="400">
+             mc:Ignorable="d" Background="#01FFFFFF"
+             d:DesignWidth="400" Padding="0,0,0,10" Margin="0,0,0,-10">
     <UserControl.Resources>
         <Style x:Key="TopBarButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
             <Setter Property="VerticalAlignment" Value="Bottom" />
@@ -22,7 +22,7 @@
         <Style x:Key="{x:Type Button}" TargetType="Button" BasedOn="{StaticResource TopBarButtonStyle}" />
     </UserControl.Resources>
     <Grid x:Name="TopBarGrid" x:FieldModifier="private"
-          Height="32" ClipToBounds="True" Background="#01FFFFFF">
+          Height="32" ClipToBounds="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />

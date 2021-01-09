@@ -203,12 +203,12 @@
 
     <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}"
                   Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
-        <ItemsControl x:Name="sessionsList">
+        <ItemsControl ItemsSource="{Binding AudioFlyoutHelper.AllMediaSessions}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ui:SimpleStackPanel
                         Orientation="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.SessionsPanelOrientation}"
-                        Spacing="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.CalculatedSessionsPanelSpacing}" />
+                        Spacing="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.CalculatedSessionsPanelSpacing}"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.Resources>

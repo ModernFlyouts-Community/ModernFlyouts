@@ -18,13 +18,13 @@ namespace ModernFlyouts.Core.Interop
         ImmersiveNotification = 0x4,
         ImmersiveAppChrome = 0x5,
         ImmersiveMogo = 0x6,
-        ImmersiveEDGY = 0x7,
+        ImmersiveEdgy = 0x7,
         ImmersiveInActiveMOBODY = 0x8,
         ImmersiveInActiveDock = 0x9,
         ImmersiveActiveMOBODY = 0xA,
         ImmersiveActiveDock = 0xB,
         ImmersiveBackground = 0xC,
-        ImmersiveSEARCH = 0xD,
+        ImmersiveSearch = 0xD,
         GenuineWindows = 0xE,
         ImmersiveRestricted = 0xF,
         SystemTools = 0x10,
@@ -69,7 +69,7 @@ namespace ModernFlyouts.Core.Interop
         {
             if (d is BandWindow bandWindow)
             {
-                if (bandWindow.IsSourceCreated)
+                if (bandWindow.HasSourceCreated)
                 {
                     if ((bool)e.NewValue)
                     {
@@ -180,21 +180,21 @@ namespace ModernFlyouts.Core.Interop
 
         #endregion
 
-        #region IsSourceCreated
+        #region HasSourceCreated
 
-        private static readonly DependencyPropertyKey IsSourceCreatedPropertyKey =
+        private static readonly DependencyPropertyKey HasSourceCreatedPropertyKey =
             DependencyProperty.RegisterReadOnly(
-                nameof(IsSourceCreated),
+                nameof(HasSourceCreated),
                 typeof(bool),
                 typeof(BandWindow),
                 new PropertyMetadata(false));
 
-        public static readonly DependencyProperty IsSourceCreatedProperty = IsSourceCreatedPropertyKey.DependencyProperty;
+        public static readonly DependencyProperty HasSourceCreatedProperty = HasSourceCreatedPropertyKey.DependencyProperty;
 
-        public bool IsSourceCreated
+        public bool HasSourceCreated
         {
-            get => (bool)GetValue(IsSourceCreatedProperty);
-            private set => SetValue(IsSourceCreatedPropertyKey, value);
+            get => (bool)GetValue(HasSourceCreatedProperty);
+            private set => SetValue(HasSourceCreatedPropertyKey, value);
         }
 
         #endregion
@@ -218,7 +218,7 @@ namespace ModernFlyouts.Core.Interop
         {
             if (d is BandWindow bandWindow)
             {
-                if (bandWindow.IsSourceCreated)
+                if (bandWindow.HasSourceCreated)
                 {
                     if ((bool)e.NewValue)
                     {
@@ -252,7 +252,7 @@ namespace ModernFlyouts.Core.Interop
 
         private static void OnZBandIDPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is BandWindow bandWindow && bandWindow.IsSourceCreated)
+            if (d is BandWindow bandWindow && bandWindow.HasSourceCreated)
                 throw new AccessViolationException("ZBandID should not be changed after the window creation");
         }
 
@@ -300,7 +300,7 @@ namespace ModernFlyouts.Core.Interop
 
         public void CreateWindow()
         {
-            if (IsSourceCreated)
+            if (HasSourceCreated)
                 return;
 
             WNDCLASSEX wind_class = new()
@@ -343,6 +343,8 @@ namespace ModernFlyouts.Core.Interop
 
             Handle = hWnd;
 
+            OnSourceCreated();
+
             hookManager.OnHwndCreated(hWnd);
 
             WindowCompositionHelper.MakeWindowTransparent(hWnd);
@@ -368,7 +370,7 @@ namespace ModernFlyouts.Core.Interop
             //Force update because it may not be triggered on ContentRendered event
             UpdateDpiScale(GetDpiForWindow(Handle) / 96.0);
 
-            IsSourceCreated = true;
+            HasSourceCreated = true;
         }
 
         private void HwndSource_ContentRendered(object sender, EventArgs e)
@@ -412,7 +414,12 @@ namespace ModernFlyouts.Core.Interop
                     break;
             }
 
-            hookManager.TryHandleWindowMessage(hWnd, msg, wParam, lParam);
+            var result = hookManager.TryHandleWindowMessage(hWnd, msg, wParam, lParam, out bool handled);
+
+            if (handled)
+            {
+                return result;
+            }
 
             return DefWindowProc(hWnd, msg, wParam, lParam);
         }
@@ -427,7 +434,7 @@ namespace ModernFlyouts.Core.Interop
 
         private void HandleDpiChange(IntPtr wParam, IntPtr lParam)
         {
-            if (!IsSourceCreated)
+            if (!HasSourceCreated)
                 return;
 
             // Send WM_DPICHANGED message manually to the HwndSource.
@@ -499,7 +506,7 @@ namespace ModernFlyouts.Core.Interop
 
         protected void SetPosition(double x, double y)
         {
-            if (!IsSourceCreated)
+            if (!HasSourceCreated)
                 return;
 
             SetWindowPos(Handle, IntPtr.Zero,
@@ -545,13 +552,18 @@ namespace ModernFlyouts.Core.Interop
             Shown?.Invoke(this, EventArgs.Empty);
         }
 
+        protected virtual void OnSourceCreated()
+        {
+            SourceCreated?.Invoke(this, EventArgs.Empty); ;
+        }
+
         #endregion
 
         #region Public Methods
 
         public void DragMove()
         {
-            if (!IsSourceCreated)
+            if (!HasSourceCreated)
                 return;
 
             SendMessage(Handle, WindowMessage.WM_SYSCOMMAND, SC_MOUSEMOVE, IntPtr.Zero);
@@ -562,7 +574,7 @@ namespace ModernFlyouts.Core.Interop
 
         public void Activate()
         {
-            if (!IsSourceCreated)
+            if (!HasSourceCreated)
                 return;
 
             SetForegroundWindow(Handle);
@@ -570,7 +582,7 @@ namespace ModernFlyouts.Core.Interop
 
         public void Show()
         {
-            if (!IsSourceCreated)
+            if (!HasSourceCreated)
                 CreateWindow();
 
             if (_isVisibilityChanging)
@@ -601,7 +613,7 @@ namespace ModernFlyouts.Core.Interop
 
         public void Hide()
         {
-            if (!IsSourceCreated || _isVisibilityChanging)
+            if (!HasSourceCreated || _isVisibilityChanging)
                 return;
 
             ShowWindowAsync(Handle, ShowWindowCommands.Hide);
@@ -622,5 +634,7 @@ namespace ModernFlyouts.Core.Interop
         public event EventHandler DragMoved;
 
         public event EventHandler Shown;
+
+        public event EventHandler SourceCreated;
     }
 }

@@ -1,29 +1,48 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 
 namespace ModernFlyouts.Core.Media.Control
 {
-    public abstract class MediaSessionManager<TMediaSession> : MediaSessionManagerBase
-        where TMediaSession : MediaSession
+    public abstract class MediaSessionManager : ObservableObject
     {
-        public new ObservableCollection<TMediaSession> MediaSessions { get; } = new();
+        public ObservableCollection<MediaSession> MediaSessions { get; } = new();
 
-        public MediaSessionManager()
+        private MediaSession currentMediaSession;
+
+        public MediaSession CurrentMediaSession
         {
-            MediaSessions.CollectionChanged += OnMediaSessionsCollectionChanged;
+            get => currentMediaSession;
+            protected set
+            {
+                if (SetProperty(ref currentMediaSession, value))
+                {
+                    RaiseCurrentMediaSessionChanged();
+                }
+            }
         }
 
-        private void OnMediaSessionsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            SessionsChanged?.Invoke(this, EventArgs.Empty);
-        }
+        public abstract void OnEnabled();
 
-        public override bool ContainsAnySession()
+        public abstract void OnDisabled();
+
+        public virtual bool ContainsAnySession()
         {
             return MediaSessions.Count > 0;
         }
 
-        public event EventHandler SessionsChanged;
+        protected void RaiseCurrentMediaSessionChanged()
+        {
+            CurrentMediaSessionChanged?.Invoke(this, EventArgs.Empty);
+        }
+        
+        protected void RaiseMediaSessionsChanged()
+        {
+            MediaSessionsChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        public event EventHandler CurrentMediaSessionChanged;
+
+        public event EventHandler MediaSessionsChanged;
     }
 }

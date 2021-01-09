@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 using Windows.Media.Control;
 using Windows.Storage.Streams;
 
@@ -30,8 +29,8 @@ namespace ModernFlyouts.Core.Media.Control
             if (sourceAppInfo != null)
             {
                 sourceAppInfo.InfoFetched += SourceAppInfo_InfoFetched;
+                ActivateMediaSourceCommand = new RelayCommand(sourceAppInfo.Activate, () => sourceAppInfo != null);
             }
-            ActivateMediaSourceCommand = new RelayCommand(sourceAppInfo.Activate, () => sourceAppInfo != null);
 
             GSMTCSession.MediaPropertiesChanged += GSMTCSession_MediaPropertiesChanged;
             GSMTCSession.PlaybackInfoChanged += GSMTCSession_PlaybackInfoChanged;
@@ -40,7 +39,7 @@ namespace ModernFlyouts.Core.Media.Control
             UpdateSessionInfo(GSMTCSession);
         }
 
-        public void Dispose()
+        public override void Disconnect()
         {
             if (GSMTCSession != null)
             {
@@ -53,28 +52,28 @@ namespace ModernFlyouts.Core.Media.Control
 
         #region Hooking-up Events
 
-        private async void GSMTCSession_MediaPropertiesChanged(GlobalSystemMediaTransportControlsSession session, MediaPropertiesChangedEventArgs args)
+        private void GSMTCSession_MediaPropertiesChanged(GlobalSystemMediaTransportControlsSession session, MediaPropertiesChangedEventArgs args)
         {
-            await Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, new Action(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdateSessionInfo(session);
-            }));
+            });
         }
 
-        private async void GSMTCSession_PlaybackInfoChanged(GlobalSystemMediaTransportControlsSession session, PlaybackInfoChangedEventArgs args)
+        private void GSMTCSession_PlaybackInfoChanged(GlobalSystemMediaTransportControlsSession session, PlaybackInfoChangedEventArgs args)
         {
-            await Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Render, new Action(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdatePlaybackInfo(session);
-            }));
+            });
         }
 
-        private async void GSMTCSession_TimelinePropertiesChanged(GlobalSystemMediaTransportControlsSession session, TimelinePropertiesChangedEventArgs args)
+        private void GSMTCSession_TimelinePropertiesChanged(GlobalSystemMediaTransportControlsSession session, TimelinePropertiesChangedEventArgs args)
         {
-            await Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Render, new Action(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdateTimelineInfo(session);
-            }));
+            });
         }
 
         #endregion

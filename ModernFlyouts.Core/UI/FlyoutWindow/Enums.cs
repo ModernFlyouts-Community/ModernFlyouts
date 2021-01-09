@@ -3,7 +3,7 @@
 namespace ModernFlyouts.Core.UI
 {
     [Flags]
-    public enum FlyoutWindowAlignment
+    public enum FlyoutWindowAlignments
     {
         Center = 0,
         Top = 1,
@@ -14,22 +14,22 @@ namespace ModernFlyouts.Core.UI
 
     public enum FlyoutWindowExpandDirection
     {
-        Auto = 0,
-        Up = 1,
-        Down = 2,
-        Left = 3,
-        Right = 4
+        Auto,
+        Up,
+        Down,
+        Left,
+        Right
     }
 
     public enum FlyoutWindowPlacementMode
     {
-        Auto = 0,
-        Manual = 1
+        Auto,
+        Manual
     }
 
     public enum FlyoutWindowType
     {
-        OnScreen = 0,
-        Tray = 1
+        OnScreen,
+        Tray
     }
 }

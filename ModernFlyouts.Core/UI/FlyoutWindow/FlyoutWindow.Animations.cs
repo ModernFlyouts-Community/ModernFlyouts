@@ -98,22 +98,22 @@ namespace ModernFlyouts.Core.UI
         #region Animations
 
         private bool hasAnimationsCreated;
-        private Storyboard m_openingStoryboard;
-        private Storyboard m_closingStoryboard;
-        private DoubleKeyFrame m_fromHorizontalOffsetKeyFrameOpening;
-        private DoubleKeyFrame m_fromVerticalOffsetKeyFrameOpening;
-        private DoubleKeyFrame m_fromHorizontalOffsetKeyFrameClosing;
-        private DoubleKeyFrame m_fromVerticalOffsetKeyFrameClosing;
+        private Storyboard openingStoryboard;
+        private Storyboard closingStoryboard;
+        private DoubleKeyFrame fromHorizontalOffsetKeyFrameOpening;
+        private DoubleKeyFrame fromVerticalOffsetKeyFrameOpening;
+        private DoubleKeyFrame fromHorizontalOffsetKeyFrameClosing;
+        private DoubleKeyFrame fromVerticalOffsetKeyFrameClosing;
 
         private const double c_translation = 40;
-        private static readonly TimeSpan s_translateDuration = TimeSpan.FromMilliseconds(367);
+        private static readonly TimeSpan translateDuration = TimeSpan.FromMilliseconds(367);
 
-        private static readonly PropertyPath s_opacityPath = new(OpacityProperty);
-        private static readonly PropertyPath s_visibilityPath = new(VisibilityProperty);
-        private static readonly PropertyPath s_translateXPath = new("(UIElement.RenderTransform).(TranslateTransform.X)");
-        private static readonly PropertyPath s_translateYPath = new("(UIElement.RenderTransform).(TranslateTransform.Y)");
-        private static readonly KeySpline s_decelerateKeySplineOpening = new(0.1, 0.9, 0.2, 1);
-        private static readonly KeySpline s_decelerateKeySplineClosing = new(1, 0.2, 0.9, 0.1);
+        private static readonly PropertyPath opacityPath = new(OpacityProperty);
+        private static readonly PropertyPath visibilityPath = new(VisibilityProperty);
+        private static readonly PropertyPath translateXPath = new("(UIElement.RenderTransform).(TranslateTransform.X)");
+        private static readonly PropertyPath translateYPath = new("(UIElement.RenderTransform).(TranslateTransform.Y)");
+        private static readonly KeySpline decelerateKeySplineOpening = new(0.1, 0.9, 0.2, 1);
+        private static readonly KeySpline decelerateKeySplineClosing = new(1, 0.2, 0.9, 0.1);
 
         private void PrepareAnimations()
         {
@@ -133,7 +133,7 @@ namespace ModernFlyouts.Core.UI
 
         private void EnsureOpeningStoryboard()
         {
-            if (m_openingStoryboard == null)
+            if (openingStoryboard == null)
             {
                 ObjectAnimationUsingKeyFrames visibilityAnim = new()
                 {
@@ -143,7 +143,7 @@ namespace ModernFlyouts.Core.UI
                     }
                 };
                 Storyboard.SetTarget(visibilityAnim, this);
-                Storyboard.SetTargetProperty(visibilityAnim, s_visibilityPath);
+                Storyboard.SetTargetProperty(visibilityAnim, visibilityPath);
 
                 DoubleAnimationUsingKeyFrames opacityAnim = new()
                 {
@@ -155,31 +155,31 @@ namespace ModernFlyouts.Core.UI
                     }
                 };
                 Storyboard.SetTarget(opacityAnim, this);
-                Storyboard.SetTargetProperty(opacityAnim, s_opacityPath);
+                Storyboard.SetTargetProperty(opacityAnim, opacityPath);
 
                 DoubleAnimationUsingKeyFrames xAnim = new()
                 {
                     KeyFrames =
                     {
-                        (m_fromHorizontalOffsetKeyFrameOpening = new DiscreteDoubleKeyFrame(0, TimeSpan.Zero)),
-                        new SplineDoubleKeyFrame(0, s_translateDuration, s_decelerateKeySplineOpening)
+                        (fromHorizontalOffsetKeyFrameOpening = new DiscreteDoubleKeyFrame(0, TimeSpan.Zero)),
+                        new SplineDoubleKeyFrame(0, translateDuration, decelerateKeySplineOpening)
                     }
                 };
                 Storyboard.SetTarget(xAnim, this);
-                Storyboard.SetTargetProperty(xAnim, s_translateXPath);
+                Storyboard.SetTargetProperty(xAnim, translateXPath);
 
                 DoubleAnimationUsingKeyFrames yAnim = new()
                 {
                     KeyFrames =
                     {
-                        (m_fromVerticalOffsetKeyFrameOpening = new DiscreteDoubleKeyFrame(0, TimeSpan.Zero)),
-                        new SplineDoubleKeyFrame(0, s_translateDuration, s_decelerateKeySplineOpening)
+                        (fromVerticalOffsetKeyFrameOpening = new DiscreteDoubleKeyFrame(0, TimeSpan.Zero)),
+                        new SplineDoubleKeyFrame(0, translateDuration, decelerateKeySplineOpening)
                     }
                 };
                 Storyboard.SetTarget(yAnim, this);
-                Storyboard.SetTargetProperty(yAnim, s_translateYPath);
+                Storyboard.SetTargetProperty(yAnim, translateYPath);
 
-                m_openingStoryboard = new()
+                openingStoryboard = new()
                 {
                     Children = { visibilityAnim, opacityAnim, xAnim, yAnim },
                 };
@@ -188,7 +188,7 @@ namespace ModernFlyouts.Core.UI
 
         private void EnsureClosingStoryboard()
         {
-            if (m_closingStoryboard == null)
+            if (closingStoryboard == null)
             {
                 DoubleAnimationUsingKeyFrames opacityAnim = new()
                 {
@@ -200,31 +200,31 @@ namespace ModernFlyouts.Core.UI
                     }
                 };
                 Storyboard.SetTarget(opacityAnim, this);
-                Storyboard.SetTargetProperty(opacityAnim, s_opacityPath);
+                Storyboard.SetTargetProperty(opacityAnim, opacityPath);
 
                 DoubleAnimationUsingKeyFrames xAnim = new()
                 {
                     KeyFrames =
                     {
                         new DiscreteDoubleKeyFrame(0, TimeSpan.Zero),
-                        (m_fromHorizontalOffsetKeyFrameClosing = new SplineDoubleKeyFrame(
-                            0, s_translateDuration, s_decelerateKeySplineClosing))
+                        (fromHorizontalOffsetKeyFrameClosing = new SplineDoubleKeyFrame(
+                            0, translateDuration, decelerateKeySplineClosing))
                     }
                 };
                 Storyboard.SetTarget(xAnim, this);
-                Storyboard.SetTargetProperty(xAnim, s_translateXPath);
+                Storyboard.SetTargetProperty(xAnim, translateXPath);
 
                 DoubleAnimationUsingKeyFrames yAnim = new()
                 {
                     KeyFrames =
                     {
                         new DiscreteDoubleKeyFrame(0, TimeSpan.Zero),
-                        (m_fromVerticalOffsetKeyFrameClosing = new SplineDoubleKeyFrame(
-                            0, s_translateDuration, s_decelerateKeySplineClosing))
+                        (fromVerticalOffsetKeyFrameClosing = new SplineDoubleKeyFrame(
+                            0, translateDuration, decelerateKeySplineClosing))
                     }
                 };
                 Storyboard.SetTarget(yAnim, this);
-                Storyboard.SetTargetProperty(yAnim, s_translateYPath);
+                Storyboard.SetTargetProperty(yAnim, translateYPath);
 
                 ObjectAnimationUsingKeyFrames visibilityAnim = new()
                 {
@@ -234,9 +234,9 @@ namespace ModernFlyouts.Core.UI
                     }
                 };
                 Storyboard.SetTarget(visibilityAnim, this);
-                Storyboard.SetTargetProperty(visibilityAnim, s_visibilityPath);
+                Storyboard.SetTargetProperty(visibilityAnim, visibilityPath);
 
-                m_closingStoryboard = new()
+                closingStoryboard = new()
                 {
                     Children = { opacityAnim, xAnim, yAnim, visibilityAnim },
                 };
@@ -245,12 +245,12 @@ namespace ModernFlyouts.Core.UI
 
         private void PlayOpenAnimation()
         {
-            m_openingStoryboard.Begin(this, true);
+            openingStoryboard.Begin(this, true);
         }
 
         private void PlayCloseAnimation()
         {
-            m_closingStoryboard.Begin(this, true);
+            closingStoryboard.Begin(this, true);
         }
 
         private void UpdateAnimations(FlyoutWindowExpandDirection expandDirection)
@@ -261,38 +261,38 @@ namespace ModernFlyouts.Core.UI
             switch (expandDirection)
             {
                 case FlyoutWindowExpandDirection.Auto:
-                    m_fromHorizontalOffsetKeyFrameOpening.Value = 0;
-                    m_fromHorizontalOffsetKeyFrameClosing.Value = 0;
-                    m_fromVerticalOffsetKeyFrameOpening.Value = 0;
-                    m_fromVerticalOffsetKeyFrameClosing.Value = 0;
+                    fromHorizontalOffsetKeyFrameOpening.Value = 0;
+                    fromHorizontalOffsetKeyFrameClosing.Value = 0;
+                    fromVerticalOffsetKeyFrameOpening.Value = 0;
+                    fromVerticalOffsetKeyFrameClosing.Value = 0;
                     break;
 
                 case FlyoutWindowExpandDirection.Up:
-                    m_fromHorizontalOffsetKeyFrameOpening.Value = 0;
-                    m_fromHorizontalOffsetKeyFrameClosing.Value = 0;
-                    m_fromVerticalOffsetKeyFrameOpening.Value = c_translation;
-                    m_fromVerticalOffsetKeyFrameClosing.Value = c_translation;
+                    fromHorizontalOffsetKeyFrameOpening.Value = 0;
+                    fromHorizontalOffsetKeyFrameClosing.Value = 0;
+                    fromVerticalOffsetKeyFrameOpening.Value = c_translation;
+                    fromVerticalOffsetKeyFrameClosing.Value = c_translation;
                     break;
 
                 case FlyoutWindowExpandDirection.Down:
-                    m_fromHorizontalOffsetKeyFrameOpening.Value = 0;
-                    m_fromHorizontalOffsetKeyFrameClosing.Value = 0;
-                    m_fromVerticalOffsetKeyFrameOpening.Value = -c_translation;
-                    m_fromVerticalOffsetKeyFrameClosing.Value = -c_translation;
+                    fromHorizontalOffsetKeyFrameOpening.Value = 0;
+                    fromHorizontalOffsetKeyFrameClosing.Value = 0;
+                    fromVerticalOffsetKeyFrameOpening.Value = -c_translation;
+                    fromVerticalOffsetKeyFrameClosing.Value = -c_translation;
                     break;
 
                 case FlyoutWindowExpandDirection.Left:
-                    m_fromHorizontalOffsetKeyFrameOpening.Value = c_translation;
-                    m_fromHorizontalOffsetKeyFrameClosing.Value = c_translation;
-                    m_fromVerticalOffsetKeyFrameOpening.Value = 0;
-                    m_fromVerticalOffsetKeyFrameClosing.Value = 0;
+                    fromHorizontalOffsetKeyFrameOpening.Value = c_translation;
+                    fromHorizontalOffsetKeyFrameClosing.Value = c_translation;
+                    fromVerticalOffsetKeyFrameOpening.Value = 0;
+                    fromVerticalOffsetKeyFrameClosing.Value = 0;
                     break;
 
                 case FlyoutWindowExpandDirection.Right:
-                    m_fromHorizontalOffsetKeyFrameOpening.Value = -c_translation;
-                    m_fromHorizontalOffsetKeyFrameClosing.Value = -c_translation;
-                    m_fromVerticalOffsetKeyFrameOpening.Value = 0;
-                    m_fromVerticalOffsetKeyFrameClosing.Value = 0;
+                    fromHorizontalOffsetKeyFrameOpening.Value = -c_translation;
+                    fromHorizontalOffsetKeyFrameClosing.Value = -c_translation;
+                    fromVerticalOffsetKeyFrameOpening.Value = 0;
+                    fromVerticalOffsetKeyFrameClosing.Value = 0;
                     break;
             }
         }

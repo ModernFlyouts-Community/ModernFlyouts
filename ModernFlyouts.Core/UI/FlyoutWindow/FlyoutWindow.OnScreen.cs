@@ -19,23 +19,23 @@ namespace ModernFlyouts.Core.UI
 
             var alignment = Alignment;
 
-            if (alignment.HasFlag(FlyoutWindowAlignment.Left))
+            if (alignment.HasFlag(FlyoutWindowAlignments.Left))
             {
                 x = screenX + effectiveMarginLeft;
                 xHandled = true;
             }
-            else if (alignment.HasFlag(FlyoutWindowAlignment.Right))
+            else if (alignment.HasFlag(FlyoutWindowAlignments.Right))
             {
                 x = screenX + screenWidth - width - effectiveMarginRight;
                 xHandled = true;
             }
 
-            if (alignment.HasFlag(FlyoutWindowAlignment.Top))
+            if (alignment.HasFlag(FlyoutWindowAlignments.Top))
             {
                 y = screenY + effectiveMarginTop;
                 yHandled = true;
             }
-            else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+            else if (alignment.HasFlag(FlyoutWindowAlignments.Bottom))
             {
                 y = screenY + screenHeight - height - effectiveMarginBottom;
                 yHandled = true;
@@ -64,14 +64,14 @@ namespace ModernFlyouts.Core.UI
             {
                 var alignment = Alignment;
 
-                if (alignment.HasFlag(FlyoutWindowAlignment.Left))
+                if (alignment.HasFlag(FlyoutWindowAlignments.Left))
                 {
-                    if (alignment.HasFlag(FlyoutWindowAlignment.Top))
+                    if (alignment.HasFlag(FlyoutWindowAlignments.Top))
                     {
                         expandDirection = (margin.Left < margin.Top) ?
                             FlyoutWindowExpandDirection.Right : FlyoutWindowExpandDirection.Down;
                     }
-                    else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+                    else if (alignment.HasFlag(FlyoutWindowAlignments.Bottom))
                     {
                         expandDirection = (margin.Left < margin.Bottom) ?
                             FlyoutWindowExpandDirection.Right : FlyoutWindowExpandDirection.Up;
@@ -81,14 +81,14 @@ namespace ModernFlyouts.Core.UI
                         expandDirection = FlyoutWindowExpandDirection.Right;
                     }
                 }
-                else if (alignment.HasFlag(FlyoutWindowAlignment.Right))
+                else if (alignment.HasFlag(FlyoutWindowAlignments.Right))
                 {
-                    if (alignment.HasFlag(FlyoutWindowAlignment.Top))
+                    if (alignment.HasFlag(FlyoutWindowAlignments.Top))
                     {
                         expandDirection = (margin.Right < margin.Top) ?
                             FlyoutWindowExpandDirection.Left : FlyoutWindowExpandDirection.Down;
                     }
-                    else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+                    else if (alignment.HasFlag(FlyoutWindowAlignments.Bottom))
                     {
                         expandDirection = (margin.Right < margin.Bottom) ?
                             FlyoutWindowExpandDirection.Left : FlyoutWindowExpandDirection.Up;
@@ -100,11 +100,11 @@ namespace ModernFlyouts.Core.UI
                 }
                 else
                 {
-                    if (alignment.HasFlag(FlyoutWindowAlignment.Top))
+                    if (alignment.HasFlag(FlyoutWindowAlignments.Top))
                     {
                         expandDirection = FlyoutWindowExpandDirection.Down;
                     }
-                    else if (alignment.HasFlag(FlyoutWindowAlignment.Bottom))
+                    else if (alignment.HasFlag(FlyoutWindowAlignments.Bottom))
                     {
                         expandDirection = FlyoutWindowExpandDirection.Up;
                     }
