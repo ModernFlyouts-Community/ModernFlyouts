@@ -12,7 +12,7 @@ namespace ModernFlyouts.UI
     {
         public const double FlyoutWidth = 354;
 
-        public const double DefaultSessionControlHeight = 138;
+        public const double DefaultSessionControlHeight = 206;
 
         public const double DefaultSessionsPanelVerticalSpacing = 8;
 

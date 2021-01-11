@@ -117,5 +117,18 @@ namespace ModernFlyouts.AppLifecycle
         }
 
         #endregion
+
+        /// <summary>
+        /// 😠 You did your best application. Now, <strong>prepare to die!</strong> <i>*pew*</i> <i>*pew*</i> <i>*pew*</i>.
+        /// </summary>
+        /// <remarks>
+        /// There was an issue where the <see cref="mutex"/> still being held by this instance which prevented the app from restarting after an update.
+        /// So, after registering for restart, we also have to release the <see cref="mutex"/>.
+        /// </remarks>
+        public static void PrepareToDie()
+        {
+            mutex.ReleaseMutex();
+            mutex.Dispose();
+        }
     }
 }

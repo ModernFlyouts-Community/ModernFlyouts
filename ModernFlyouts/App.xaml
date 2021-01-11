@@ -48,7 +48,8 @@
 
             <converters:RepeatButtonIsCheckedConverter x:Key="RepeatButtonIsCheckedConverter" />
 
-            <converters:TimeSpanConverter x:Key="TimeSpanConverter" />
+            <converters:TimeSpanToNumberConverter x:Key="TimeSpanToNumberConverter" />
+            <converters:TimeSpanToStringConverter x:Key="TimeSpanToStringConverter" />
             
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
             <x:Static x:Key="FlyoutWidth" Member="localui:UIManager.FlyoutWidth" />

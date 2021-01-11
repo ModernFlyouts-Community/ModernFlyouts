@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ModernFlyouts.SessionControl"
+﻿<UserControl x:Class="ModernFlyouts.Controls.SessionControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -21,9 +21,10 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Border Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
+            <Border Grid.ColumnSpan="3" Grid.RowSpan="3" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
                     Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.UseGSMTCThumbnailAsBackground,
                         Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.OpacityMask>
@@ -106,7 +107,24 @@
                 </Button>-->
             </Grid>
 
-            <ui:SplitView x:Name="ControlsSplitView" Grid.ColumnSpan="3" Grid.Row="1"
+            <Grid Margin="15,10" Grid.Row="1" Grid.ColumnSpan="3"
+                  IsEnabled="{Binding IsTimelinePropertiesEnabled}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="16" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                           Text="{Binding PlaybackPosition, Converter={StaticResource TimeSpanToStringConverter}}" />
+                <Slider IsMoveToPointEnabled="True"
+                        IsEnabled="{Binding IsPlaybackPositionEnabled}"
+                        Minimum="{Binding TimelineStartTime, Mode=OneWay, Converter={StaticResource TimeSpanToNumberConverter}}"
+                        Maximum="{Binding TimelineEndTime, Mode=OneWay, Converter={StaticResource TimeSpanToNumberConverter}}"
+                        Value="{Binding PlaybackPosition, Converter={StaticResource TimeSpanToNumberConverter}}" />
+                <TextBlock Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                           Text="{Binding TimelineEndTime, Converter={StaticResource TimeSpanToStringConverter}}" />
+            </Grid>
+
+            <ui:SplitView x:Name="ControlsSplitView" Grid.ColumnSpan="3" Grid.Row="2"
                           Margin="0,0,0,12" VerticalAlignment="Center" OpenPaneLength="{DynamicResource FlyoutWidth}"
                           PaneBackground="Transparent" DisplayMode="Inline" IsPaneOpen="False">
                 <ui:SplitView.Pane>
@@ -147,7 +165,7 @@
                 </StackPanel>
             </ui:SplitView>
 
-            <ToggleButton x:Name="MoreControlsButton" Grid.Row="1" Grid.ColumnSpan="3"
+            <ToggleButton x:Name="MoreControlsButton" Grid.Row="2" Grid.ColumnSpan="3"
                           HorizontalAlignment="Left" VerticalAlignment="Center"
                           ToolTip="{x:Static resx:Strings.SessionControl_MoreControls}" Margin="16,0,0,12"
                           Style="{DynamicResource ToggleButtonRevealStyle}"
@@ -155,31 +173,6 @@
                           IsChecked="{Binding ElementName=ControlsSplitView, Path=IsPaneOpen}">
                 <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.More}" FontSize="16" />
             </ToggleButton>
-
-            <Button x:Name="TimelineInfoButton" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center"
-                    Style="{DynamicResource ButtonRevealStyle}" IsEnabled="{Binding IsTimelinePropertiesEnabled}"
-                    Visibility="{Binding IsTimelinePropertiesEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
-                    ToolTip="{x:Static resx:Strings.SessionControl_TimelineInfo}" Margin="0,0,16,12">
-                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.TimelineInfo}" FontSize="16" />
-                <ui:FlyoutService.Flyout>
-                    <ui:Flyout x:Name="TimelineInfoFlyout">
-                        <Grid Margin="-5" Width="{DynamicResource FlyoutWidth}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Margin="5,0" Text="{Binding PlaybackPosition, StringFormat='hh\\:mm\\:ss'}" VerticalAlignment="Center" />
-                            <Slider Grid.Column="1" Margin="10,0" IsMoveToPointEnabled="True"
-                                    IsEnabled="{Binding IsPlaybackPositionEnabled}"
-                                    Minimum="{Binding TimelineStartTime, Mode=OneWay, Converter={StaticResource TimeSpanConverter}}"
-                                    Maximum="{Binding TimelineEndTime, Mode=OneWay, Converter={StaticResource TimeSpanConverter}}"
-                                    Value="{Binding PlaybackPosition, Converter={StaticResource TimeSpanConverter}}" />
-                            <TextBlock Margin="5,0" Grid.Column="2" Text="{Binding TimelineEndTime, StringFormat='hh\\:mm\\:ss'}" VerticalAlignment="Center" />
-                        </Grid>
-                    </ui:Flyout>
-                </ui:FlyoutService.Flyout>
-            </Button>
         </Grid>
     </Border>
 </UserControl>

@@ -7,7 +7,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     public partial class SessionControl : UserControl
     {
@@ -59,9 +59,6 @@ namespace ModernFlyouts
 
         private void SessionControl_Loaded(object sender, RoutedEventArgs e)
         {
-            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closing += FlyoutWindow_FlyoutTimedHiding;
-            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closed += FlyoutWindow_FlyoutHidden;
-
             if (_mediaSession != null)
             {
                 _mediaSession.MediaPropertiesChanging += MediaSession_MediaPropertiesChanging;
@@ -69,26 +66,8 @@ namespace ModernFlyouts
             }
         }
 
-        private void FlyoutWindow_FlyoutTimedHiding(object sender, RoutedEventArgs e)
-        {
-            if (TimelineInfoFlyout.IsOpen)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void FlyoutWindow_FlyoutHidden(object sender, RoutedEventArgs e)
-        {
-            TimelineInfoFlyout.Hide();
-        }
-
         private void SessionControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            TimelineInfoFlyout.Hide();
-
-            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closing -= FlyoutWindow_FlyoutTimedHiding;
-            FlyoutHandler.Instance.OnScreenFlyoutWindow.Closed -= FlyoutWindow_FlyoutHidden;
-
             if (_mediaSession != null)
             {
                 _mediaSession.MediaPropertiesChanging -= MediaSession_MediaPropertiesChanging;

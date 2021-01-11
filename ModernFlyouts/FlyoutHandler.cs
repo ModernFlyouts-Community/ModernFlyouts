@@ -279,6 +279,7 @@ namespace ModernFlyouts
                         RelaunchHelper.RestartFlags.RESTART_NO_HANG |
                         RelaunchHelper.RestartFlags.RESTART_NO_REBOOT);
 
+                    AppLifecycleManager.PrepareToDie();
                     return IntPtr.Zero;
                 });
         }
@@ -319,7 +320,7 @@ namespace ModernFlyouts
 
         public static void ShowSettingsWindow()
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 Instance.SettingsWindow ??= new SettingsWindow();
                 Instance.SettingsWindow.Show();
