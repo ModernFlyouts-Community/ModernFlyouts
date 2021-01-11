@@ -1,6 +1,7 @@
 ﻿using ModernFlyouts.Core.Utilities;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
+using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -45,7 +46,7 @@ namespace ModernFlyouts
 
         private void AirplaneModeWatcher_Changed(object sender, AirplaneModeChangedEventArgs e)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 Prepare(e);
                 ShowFlyoutRequested?.Invoke(this);

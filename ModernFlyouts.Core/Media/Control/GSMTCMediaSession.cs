@@ -1,4 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
+using ModernFlyouts.Core.AppInformation;
+using ModernFlyouts.Core.Helpers;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -25,10 +27,11 @@ namespace ModernFlyouts.Core.Media.Control
 
         private void Initialize()
         {
-            sourceAppInfo = SourceAppInfo.FromAppId(GSMTCSession.SourceAppUserModelId);
+            sourceAppInfo = SourceAppInfo.FromAppUserModelId(GSMTCSession.SourceAppUserModelId);
             if (sourceAppInfo != null)
             {
                 sourceAppInfo.InfoFetched += SourceAppInfo_InfoFetched;
+                sourceAppInfo.FetchInfosAsync();
                 ActivateMediaSourceCommand = new RelayCommand(sourceAppInfo.Activate, () => sourceAppInfo != null);
             }
 
@@ -48,6 +51,9 @@ namespace ModernFlyouts.Core.Media.Control
                 GSMTCSession.TimelinePropertiesChanged -= GSMTCSession_TimelinePropertiesChanged;
             }
             GSMTCSession = null;
+
+            sourceAppInfo.Dispose();
+            sourceAppInfo = null;
         }
 
         #region Hooking-up Events
@@ -81,8 +87,12 @@ namespace ModernFlyouts.Core.Media.Control
         private void SourceAppInfo_InfoFetched(object sender, EventArgs e)
         {
             sourceAppInfo.InfoFetched -= SourceAppInfo_InfoFetched;
-            MediaSourceName = sourceAppInfo.AppName;
-            MediaSourceIcon = sourceAppInfo.AppImage;
+            MediaSourceName = sourceAppInfo.DisplayName;
+
+            if (BitmapHelper.TryCreateBitmapImageFromStream(sourceAppInfo.LogoStream, out var bitmap))
+            {
+                MediaSourceIcon = bitmap;
+            }
         }
 
         #region Updating Properties

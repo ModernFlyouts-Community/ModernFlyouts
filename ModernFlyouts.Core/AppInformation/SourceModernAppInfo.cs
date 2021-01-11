@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media.Imaging;
 using Windows.ApplicationModel.Core;
 using Windows.Management.Deployment;
+using static ModernFlyouts.Core.Interop.NativeMethods;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Core.AppInformation
 {
     internal class SourceModernAppInfo : SourceAppInfo
     {
-        public SourceModernAppInfo(string appId)
+        public SourceModernAppInfo(SourceAppInfoData data)
         {
-            AppId = appId;
-            FetchInfos();
+            Data = data;
         }
 
         public override event EventHandler InfoFetched;
@@ -29,18 +29,39 @@ namespace ModernFlyouts
         {
             try
             {
-                _ = sourceApp?.LaunchAsync();
+                if (Data.DataType == SourceAppInfoDataType.FromAppUserModelId)
+                {
+                    _ = sourceApp?.LaunchAsync();
+                }
+                else if (Data.DataType == SourceAppInfoDataType.FromProcessId)
+                {
+                    using var sourceProcess = Process.GetProcessById((int)Data.ProcessId);
+                    IntPtr hWnd = IsWindow(Data.MainWindowHandle)
+                        ? Data.MainWindowHandle : sourceProcess?.MainWindowHandle ?? IntPtr.Zero;
+                    SourceDesktopAppInfo.ActivateWindow(hWnd);
+                }
             }
             catch { }
         }
 
-        private async void FetchInfos()
+        public override async void FetchInfosAsync()
         {
+            string appUserModelId = Data.AppUserModelId;
+            string path = string.Empty;
+
+            if (string.IsNullOrEmpty(Data.AppUserModelId)
+                || string.IsNullOrWhiteSpace(Data.AppUserModelId))
+            {
+                await Task.Run(() =>
+                {
+                    appUserModelId = GetAppUserModelIdForProcess();
+                });
+            }
+
             try
             {
                 var pm = new PackageManager();
-                var packages = pm.FindPackagesForUser("");
-                string path = string.Empty;
+                var packages = pm.FindPackagesForUser(string.Empty);
 
                 async Task<AppListEntry> GetAppListEntry()
                 {
@@ -51,7 +72,7 @@ namespace ModernFlyouts
                         {
                             var app = result[i];
 
-                            if (app.AppUserModelId == AppId)
+                            if (app.AppUserModelId == appUserModelId)
                             {
                                 path = package.InstalledLocation.Path;
                                 currentAppIndex = i;
@@ -64,33 +85,39 @@ namespace ModernFlyouts
                 }
 
                 sourceApp = await GetAppListEntry();
-                if (sourceApp == null)
-                    return;
+            }
+            catch { }
 
-                AppName = sourceApp.DisplayInfo.DisplayName;
+            if (sourceApp == null)
+                return;
 
-                var logoPath = GetRefinedLogoPath(path);
+            try
+            {
+                DisplayName = sourceApp.DisplayInfo.DisplayName;
+            }
+            catch { }
+
+            await Task.Run(() =>
+            {
+                string logoPath = string.Empty;
+                try
+                {
+                    logoPath = GetRefinedLogoPath(path);
+                }
+                catch { }
 
                 if (File.Exists(logoPath))
                 {
                     MemoryStream memoryStream = new();
                     byte[] fileBytes = File.ReadAllBytes(logoPath);
                     memoryStream.Write(fileBytes, 0, fileBytes.Length);
-                    memoryStream.Position = 0;
+                    memoryStream.Seek(0, SeekOrigin.Begin);
 
-                    Application.Current.Dispatcher.Invoke(() =>
-                    {
-                        var image = new BitmapImage();
-                        image.BeginInit();
-                        image.StreamSource = memoryStream;
-                        image.EndInit();
-                        AppImage = image;
-                    }, System.Windows.Threading.DispatcherPriority.Send);
+                    LogoStream = memoryStream;
                 }
+            });
 
-                InfoFetched?.Invoke(this, null);
-            }
-            catch { }
+            InfoFetched?.Invoke(this, null);
         }
 
         private string GetLogoPathFromAppPath(string appPath)
@@ -134,7 +161,7 @@ namespace ModernFlyouts
             var resourceName = GetLogoPathFromAppPath(appPath);
             const string targetSizeToken = ".targetsize-";
             const string scaleToken = ".scale-";
-            var sizes = new List<int>();
+            SortedDictionary<int, string> files = new();
             string name = Path.GetFileNameWithoutExtension(resourceName);
             string ext = Path.GetExtension(resourceName);
 
@@ -152,17 +179,48 @@ namespace ModernFlyouts
             {
                 string fileName = Path.GetFileNameWithoutExtension(file);
                 int pos = fileName.IndexOf(finalSizeToken) + finalSizeToken.Length;
-                string sizeText = fileName[pos..];
+                string sizeText = string.Empty;
+                if (fileName.Contains('_'))
+                {
+                    int endpos = fileName.IndexOf('_', pos);
+                    sizeText = fileName[pos..endpos];
+                }
+                else
+                {
+                    sizeText = fileName[pos..];
+                }
+
                 if (int.TryParse(sizeText, out int size))
                 {
-                    sizes.Add(size);
+                    if (!files.ContainsKey(size))
+                    {
+                        files.Add(size, file);
+                    }
                 }
             }
-            if (sizes.Count == 0)
+            if (files.Count == 0)
                 return null;
 
-            sizes.Sort();
-            return Path.Combine(appPath, Path.GetDirectoryName(resourceName), name + finalSizeToken + sizes.First() + ext);
+            return files.First().Value;
+        }
+
+        private string GetAppUserModelIdForProcess()
+        {
+            using var process = Process.GetProcessById((int)Data.ProcessId);
+            if (process == null)
+                return string.Empty;
+
+            int amuidBufferLength = 512;
+            StringBuilder amuidBuffer = new(amuidBufferLength);
+
+            GetApplicationUserModelId(process.Handle, ref amuidBufferLength, amuidBuffer);
+            return amuidBuffer.ToString();
+        }
+
+        protected override void Disconnect()
+        {
+            base.Disconnect();
+            sourceApp = null;
         }
 
         #region Appx Things

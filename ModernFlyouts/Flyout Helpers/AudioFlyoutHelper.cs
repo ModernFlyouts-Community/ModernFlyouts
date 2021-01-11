@@ -90,7 +90,7 @@ namespace ModernFlyouts
                 Margin = new Thickness(20),
                 Text = Properties.Strings.AudioFlyoutHelper_NoDevices
             };
-            noDeviceMessageBlock.SetResourceReference(TextBlock.StyleProperty, "BaseTextBlockStyle");
+            noDeviceMessageBlock.SetResourceReference(FrameworkElement.StyleProperty, "BaseTextBlockStyle");
 
             #endregion
 
@@ -176,9 +176,9 @@ namespace ModernFlyouts
             {
                 UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
                 device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
-                App.Current.Dispatcher.Invoke(() => PrimaryContent = volumeControl);
+                Application.Current.Dispatcher.Invoke(() => PrimaryContent = volumeControl);
             }
-            else { App.Current.Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
+            else { Application.Current.Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
         }
 
         private void AudioEndpointVolume_OnVolumeNotification(AudioVolumeNotificationData data)
@@ -190,7 +190,7 @@ namespace ModernFlyouts
 
         private void UpdateVolume(double volume)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdateVolumeGlyph(volume);
                 volumeControl.textVal.Text = Math.Round(volume).ToString("00");

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ModernFlyouts.Workarounds
 {
@@ -35,7 +36,7 @@ namespace ModernFlyouts.Workarounds
                 Task.Run(() =>
                 {
                     Thread.Sleep(1000);
-                    App.Current.Dispatcher.Invoke(() =>
+                    Application.Current.Dispatcher.Invoke(() =>
                     {
                         if (flyoutWindow != null && !flyoutWindow.IsOpen)
                         {

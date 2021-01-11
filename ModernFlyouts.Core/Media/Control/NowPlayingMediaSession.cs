@@ -1,7 +1,8 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
+using ModernFlyouts.Core.AppInformation;
+using ModernFlyouts.Core.Helpers;
 using NPSMLib;
 using System;
-using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -35,10 +36,18 @@ namespace ModernFlyouts.Core.Media.Control
             }
             catch { }
 
-            sourceAppInfo = SourceAppInfo.FromAppId(sourceAppId);
+            sourceAppInfo = SourceAppInfo.FromData(new SourceAppInfoData()
+            {
+                AppUserModelId = sourceAppId,
+                ProcessId = NPSession.PID,
+                MainWindowHandle = NPSession.Hwnd,
+                DataType = SourceAppInfoDataType.FromProcessId
+            });
+
             if (sourceAppInfo != null)
             {
                 sourceAppInfo.InfoFetched += SourceAppInfo_InfoFetched;
+                sourceAppInfo.FetchInfosAsync();
                 ActivateMediaSourceCommand = new RelayCommand(sourceAppInfo.Activate, () => sourceAppInfo != null);
             }
 
@@ -88,13 +97,20 @@ namespace ModernFlyouts.Core.Media.Control
             }
             mediaPlaybackDataSource = null;
             NPSession = null;
+
+            sourceAppInfo.Dispose();
+            sourceAppInfo = null;
         }
 
         private void SourceAppInfo_InfoFetched(object sender, EventArgs e)
         {
             sourceAppInfo.InfoFetched -= SourceAppInfo_InfoFetched;
-            MediaSourceName = sourceAppInfo.AppName;
-            MediaSourceIcon = sourceAppInfo.AppImage;
+            MediaSourceName = sourceAppInfo.DisplayName;
+
+            if (BitmapHelper.TryCreateBitmapImageFromStream(sourceAppInfo.LogoStream, out var bitmap))
+            {
+                MediaSourceIcon = bitmap;
+            }
         }
 
         #region Updating Properties
@@ -214,10 +230,9 @@ namespace ModernFlyouts.Core.Media.Control
                 if (mediaPlaybackDataSource != null)
                 {
                     var thumbnail = mediaPlaybackDataSource.GetThumbnailStream();
-                    if (thumbnail != null && thumbnail.Length > 0)
+                    if (BitmapHelper.TryCreateBitmapImageFromStream(thumbnail, out var bitmap))
                     {
-                        thumbnail.Seek(0, SeekOrigin.Current);
-                        return GetModifiedThumbnail(BitmapFrame.Create(thumbnail, BitmapCreateOptions.None, BitmapCacheOption.OnLoad));
+                        return GetModifiedThumbnail(bitmap);
                     }
                 }
             }

@@ -14,6 +14,7 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Data;
+using static ModernFlyouts.Core.Interop.NativeMethods;
 
 namespace ModernFlyouts
 {
@@ -153,8 +154,8 @@ namespace ModernFlyouts
 
             using (var proc = Process.GetCurrentProcess())
             {
-                var isImmersive = NativeMethods.IsImmersiveProcess(proc.Handle);
-                var hasUiAccess = NativeMethods.HasUiAccessProcess(proc.Handle);
+                var isImmersive = IsImmersiveProcess(proc.Handle);
+                var hasUiAccess = HasUiAccessProcess(proc.Handle);
 
                 zbid = isImmersive ? ZBandID.AboveLockUX : (hasUiAccess ? ZBandID.UIAccess : ZBandID.Desktop);
             }

@@ -373,8 +373,10 @@ namespace ModernFlyouts.Core.Interop
         WM_PENWINLAST = 0x038F,
 
         #region Windows 7
+
         WM_DWMSENDICONICTHUMBNAIL = 0x0323,
         WM_DWMSENDICONICLIVEPREVIEWBITMAP = 0x0326,
+
         #endregion
 
         WM_USER = 0x0400,
@@ -393,8 +395,10 @@ namespace ModernFlyouts.Core.Interop
         {
             [MarshalAs(UnmanagedType.U4)]
             public int cbSize;
+
             [MarshalAs(UnmanagedType.U4)]
             public int style;
+
             public IntPtr lpfnWndProc;
             public int cbClsExtra;
             public int cbWndExtra;
@@ -651,6 +655,10 @@ namespace ModernFlyouts.Core.Interop
         internal static extern IntPtr DefWindowProc(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool IsWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
         internal static extern bool UpdateWindow(IntPtr hWnd);
 
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
@@ -823,14 +831,21 @@ namespace ModernFlyouts.Core.Interop
             out uint ReturnLength);
 
         public const uint TOKEN_QUERY = 0x0008;
+
         [DllImport("advapi32.dll")]
-        static extern bool OpenProcessToken(IntPtr hProcess,
+        private static extern bool OpenProcessToken(IntPtr hProcess,
             uint DesiredAccess, out IntPtr hToken);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [SuppressUnmanagedCodeSecurity]
         [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool CloseHandle(IntPtr hObject);
+        private static extern bool CloseHandle(IntPtr hObject);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, PreserveSig = true)]
+        internal static extern int GetApplicationUserModelId(
+            IntPtr hProcess,
+            ref int applicationUserModelIdLength,
+            [MarshalAs(UnmanagedType.LPWStr)] StringBuilder applicationUserModelId);
 
         public static bool HasUiAccessProcess(IntPtr hProcess)
         {
@@ -851,7 +866,6 @@ namespace ModernFlyouts.Core.Interop
             {
                 return false;
             }
-
         }
 
         #endregion
