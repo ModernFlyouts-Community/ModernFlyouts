@@ -8,13 +8,13 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="ShankarBUS.ModernFlyouts"
-    Publisher="CN=Shankar"
-    Version="0.9.0.1" />
+    Name="32669SamG.ModernFlyouts"
+    Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
+    Version="0.8.10.1" />
 
   <Properties>
-    <DisplayName>ModernFlyouts (Dev)</DisplayName>
-    <PublisherDisplayName>Shankar</PublisherDisplayName>
+	<DisplayName>ModernFlyouts (Preview)</DisplayName>
+	<PublisherDisplayName>Sam G</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -32,12 +32,12 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ModernFlyouts (Dev)"
-        Description="ModernFlyouts Dev Build"
+        DisplayName="ModernFlyouts (Preview)"
+        Description="ModernFlyouts"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png" ShortName="ModernFlyouts (Dev)">
+		<uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png" ShortName="ModernFlyouts">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo"/>
             <uap:ShowOn Tile="wide310x150Logo"/>
