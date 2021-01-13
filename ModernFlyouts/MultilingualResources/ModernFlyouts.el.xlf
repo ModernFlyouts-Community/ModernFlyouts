@@ -8,7 +8,7 @@
       <group id="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" datatype="resx">
         <trans-unit id="About" translate="yes" xml:space="preserve">
           <source>About</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Πληροφορίες</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Σχετικά με την εφαρμογή</target>
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
@@ -52,12 +52,12 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} είναι απενεργοποιημένη</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} είναι απενεργοποιημένο</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is off</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} είναι σε</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} είναι ενεργοποιημένο</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is on</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
@@ -66,7 +66,7 @@
         </trans-unit>
         <trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
           <source>Pin TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Καρφίτσωμα επάνω γραμμής</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Καρφίτσωμα άνω γραμμής</target>
         </trans-unit>
         <trans-unit id="PointValidationRule.PointFormatInvalidMessage" translate="yes" xml:space="preserve">
           <source>Please enter the point in the format 'X,Y' (for e.g. 50,60).</source>
@@ -80,12 +80,12 @@
         </trans-unit>
         <trans-unit id="PointValidationRule.StringConvertionErrorMessage" translate="yes" xml:space="preserve">
           <source>Value cannot be coverted to string.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Δεν είναι δυνατή η κρυφά της τιμής σε συμβολοσειρά.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Δεν είναι δυνατή η μετατροπη της τιμής σε συμβολοσειρά.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Επαναφορά προεπιλογών</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Επαναφορά αναδυόμενου στοιχείου συστήματος</target>
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
@@ -109,7 +109,7 @@
         </trans-unit>
         <trans-unit id="SessionControl.Previous" translate="yes" xml:space="preserve">
           <source>Previous</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Προηγούμενη</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Προηγούμενο</target>
         </trans-unit>
         <trans-unit id="SessionControl.RepeatAll" translate="yes" xml:space="preserve">
           <source>Repeat: all</source>
@@ -117,7 +117,7 @@
         </trans-unit>
         <trans-unit id="SessionControl.RepeatOff" translate="yes" xml:space="preserve">
           <source>Repeat: off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Επανάληψη: απενεργοποίηση</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Επανάληψη: απενεργοποιημένη</target>
         </trans-unit>
         <trans-unit id="SessionControl.RepeatOne" translate="yes" xml:space="preserve">
           <source>Repeat: one</source>
@@ -129,7 +129,7 @@
         </trans-unit>
         <trans-unit id="SessionControl.ShuffleOn" translate="yes" xml:space="preserve">
           <source>Shuffle: on</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Τυχαία σειρά: σε</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Τυχαία σειρά: ενεργοποιημένη</target>
         </trans-unit>
         <trans-unit id="SessionControl.Stop" translate="yes" xml:space="preserve">
           <source>Stop</source>
@@ -161,7 +161,7 @@
         </trans-unit>
         <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
           <source>Disabled</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">ΑΠΕΝΕΡΓΟΠΟΙΗΜΕΝΟΣ</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Απενεργοποιημένο</target>
         </trans-unit>
         <trans-unit id="Settings.Enabled" translate="yes" xml:space="preserve">
           <source>Enabled</source>
@@ -182,27 +182,27 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Επάνω γραμμή αναδυόμενων στοιχείων</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Άνω γραμμή αναδυόμενων στοιχείων</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout Modules</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Λειτουργικές μονάδες</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Μονάδες αναδυόμενων στοιχείων</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Μονάδα αναδυόμενου ελέγχου airplaneMode</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Λειτουργίας πτήσης</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
           <source>Audio</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Λειτουργική μονάδα αναδυόμενου στοιχείου ήχου</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ήχος</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
           <source>Brightness</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Μονάδα φωτεινότητας-αναδυόμενο στοιχείο</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Φωτεινότητα</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Λειτουργική μονάδα κλειδώματος-αναδυόμενο στοιχείο</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Κλείδωμα πλήκτρων</target>
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
@@ -218,11 +218,11 @@
         </trans-unit>
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ξεκαρφίτσωμα επάνω γραμμής</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ξεκαρφίτσωμα άνω γραμμής</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Σύγχρονες εκτυπώσεις</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ModernFlyouts</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
           <source>None</source>
@@ -242,7 +242,7 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Αυτή η εφαρμογή έχει σχεδιαστεί για να είναι μια σύγχρονη αντικατάσταση Fluent Design για το παλιό μετρό θέμα flyouts παρόντες στα Windows από τα Windows 8.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Αυτή η εφαρμογή έχει σχεδιαστεί για να είναι μια σύγχρονη αντικατάσταση Fluent Design για το παλιό θέμα flyouts που υπάρχει στα Windows από τα Windows 8.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
@@ -254,11 +254,11 @@
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Άνοιγμα νέου ζητήματος</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Άνοιγμα νέας αναφοράς προβλήματος</target>
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Αξιολόγηση και αναθεώρηση στο Microsoft Store</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Αξιολόγηση στο Microsoft Store</target>
         </trans-unit>
         <trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
@@ -278,11 +278,11 @@
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Εξαρτήσεις</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Απαιτούμενες Εφαρμογές</target>
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εάν βρείτε σφάλματα, ανοίξτε ένα νέο τεύχος στο αποθετήριο github.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εάν βρείτε σφάλματα, ανοίξτε μία νέα αναφορά προβλήματος στο αποθετήριο GitHub.</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Number of sessions to show</source>
@@ -294,11 +294,11 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εμφάνιση στοιχείων ελέγχου μεταφοράς πολυμέσων καθολικού συστήματος (GSMTC) γνωστός και ως έλεγχοι πολυμέσων στο αναδυόμενο στοιχείο έντασης ήχου</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εμφάνιση του Global System Media Transport Controls (GSMTC) γνωστό και ως έλεγχος πολυμέσων στο αναδυόμενο στοιχείο έντασης ήχου</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εμφάνιση ελέγχου έντασης ήχου σε ελέγχους μεταφοράς πολυμέσων παγκόσμιου συστήματος (GSMTC) γνωστός και ως αναδυόμενο στοιχείο πολυμέσων</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εμφάνιση ελέγχου έντασης ήχου στο Global System Media Transport Controls (GSMTC) γνωστό και ως αναδυόμενο στοιχείο πολυμέσων</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
@@ -306,11 +306,11 @@
         </trans-unit>
         <trans-unit id="Enums.ElementTheme.Dark" translate="yes" xml:space="preserve">
           <source>Dark</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Σκούρο</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Σκουρόχρωμο</target>
         </trans-unit>
         <trans-unit id="Enums.ElementTheme.Light" translate="yes" xml:space="preserve">
           <source>Light</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ανοιχτό</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ανοιχτόχρωμο</target>
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.AutoHide" translate="yes" xml:space="preserve">
           <source>Auto-hide</source>
@@ -318,7 +318,7 @@
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.Collapsed" translate="yes" xml:space="preserve">
           <source>Collapsed</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Συμπτυγμένη</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Συμπτυγμένο</target>
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.Visible" translate="yes" xml:space="preserve">
           <source>Visible</source>
@@ -326,19 +326,19 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
           <source>Caps lock</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Κλείδωμα κεφαλαίων</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Caps Lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
           <source>Insert</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Προσθήκη</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Insert</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
           <source>Num lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Κλείδωμα num</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Num Lock (Κλέιδωμα πλήκτρου Num)</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Κλείδωμα κύλισης</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Scroll Lock (Κλείδωμα κύλισης)</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
@@ -382,7 +382,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio.Volume" translate="yes" xml:space="preserve">
           <source>Volume</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Τόμος</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ένταση</target>
         </trans-unit>
         <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
@@ -390,11 +390,11 @@
         </trans-unit>
         <trans-unit id="Settings.TopBarVisibility" translate="yes" xml:space="preserve">
           <source>TopBar visibility</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ορατότητα επάνω γραμμής</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εμφάνιση άνω γραμμής</target>
         </trans-unit>
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εμφάνιση εικονιδίου στην περιοχή της κασέτας συστήματος</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Εμφάνιση εικονιδίου στην περιοχή των εικονιδίων συστήματος</target>
         </trans-unit>
         <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
           <source>Off</source>
@@ -410,7 +410,7 @@
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Χρήση έγχρωμου εικονιδίου κασέτας</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Χρήση έγχρωμου εικονιδίου συστήματος</target>
         </trans-unit>
         <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
