@@ -1,6 +1,7 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using ModernFlyouts.Core.AppInformation;
 using ModernFlyouts.Core.Helpers;
+using ModernFlyouts.Core.Threading;
 using NPSMLib;
 using System;
 using System.Windows;
@@ -312,9 +313,14 @@ namespace ModernFlyouts.Core.Media.Control
             mediaPlaybackDataSource?.SendMediaPlaybackCommand(MediaPlaybackCommands.Play);
         }
 
+        private DebounceDispatcher debouncer = new();
+
         protected override void PlaybackPositionChanged(TimeSpan playbackPosition)
         {
-            mediaPlaybackDataSource?.SendPlaybackPositionChangeRequest(playbackPosition);
+            debouncer.Debounce(TimeSpan.FromMilliseconds(20), () =>
+            {
+                mediaPlaybackDataSource?.SendPlaybackPositionChangeRequest(playbackPosition);
+            });
         }
 
         protected override void PreviousTrack()
