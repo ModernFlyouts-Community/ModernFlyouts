@@ -1,4 +1,5 @@
-﻿using NPSMLib;
+﻿using ModernFlyouts.Core.Utilities;
+using NPSMLib;
 using System.Linq;
 using System.Windows;
 
@@ -12,8 +13,25 @@ namespace ModernFlyouts.Core.Media.Control
         {
             NPSessionManager = new();
             NPSessionManager.SessionListChanged += NPSessionsChanged;
+            NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
 
             LoadSessions();
+        }
+
+        private void NpsmServiceStart_NpsmServiceStarted(object sender, System.EventArgs e)
+        {
+            //For some reasons it doesn't clear the sessions (you'll have duplicates)...
+            //But at least it shouldn't die anymore
+            //Oh, and of course this fixes 19041 issue where GSMTC/NPSMLib stops working randomly...
+            //Well, the NPSM service crashes and restarts but old handles still remains. 
+            //That's why we create a new instance when NPSM is (re)started so we have a new one.
+
+            Application.Current.Dispatcher.Invoke(() => {
+                NPSessionManager = new();
+                NPSessionManager.SessionListChanged += NPSessionsChanged;
+
+                LoadSessions();
+            });
         }
 
         private void NPSessionsChanged(object sender, NowPlayingSessionManagerEventArgs e)
