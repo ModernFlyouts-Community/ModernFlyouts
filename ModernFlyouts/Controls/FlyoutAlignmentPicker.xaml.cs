@@ -200,8 +200,6 @@ namespace ModernFlyouts.Controls
             CmbVertical.SelectedItem = GetVerticalAlignment(alignment);
 
             _isUpdating = false;
-
-            TbAlignment.Text = alignment.ToString();
         }
 
         private FlyoutWindowAlignments GetHorizontalAlignment(FlyoutWindowAlignments alignment)

@@ -7,8 +7,6 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:display="clr-namespace:ModernFlyouts.Core.Display;assembly=ModernFlyouts.Core"
              xmlns:converters="clr-namespace:ModernFlyouts.Converters"
-             xmlns:utils="clr-namespace:ModernFlyouts.Utilities" xmlns:helpers="clr-namespace:ModernFlyouts.Helpers"
-             xmlns:resx="clr-namespace:ModernFlyouts.Properties"
              mc:Ignorable="d"
              d:DesignWidth="800" x:Name="_this" x:FieldModifier="private"
              MinHeight="200">

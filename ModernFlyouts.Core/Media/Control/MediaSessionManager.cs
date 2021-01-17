@@ -35,7 +35,7 @@ namespace ModernFlyouts.Core.Media.Control
         {
             CurrentMediaSessionChanged?.Invoke(this, EventArgs.Empty);
         }
-        
+
         protected void RaiseMediaSessionsChanged()
         {
             MediaSessionsChanged?.Invoke(this, EventArgs.Empty);

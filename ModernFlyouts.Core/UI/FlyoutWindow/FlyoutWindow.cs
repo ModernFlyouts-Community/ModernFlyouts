@@ -117,6 +117,11 @@ namespace ModernFlyouts.Core.UI
             else if (PlacementMode == FlyoutWindowPlacementMode.Manual)
             {
                 AlignToPosition();
+
+                if (ExpandDirection == FlyoutWindowExpandDirection.Auto)
+                {
+                    ActualExpandDirection = FlyoutWindowExpandDirection.Down;
+                }
             }
         }
 
@@ -152,11 +157,11 @@ namespace ModernFlyouts.Core.UI
             {
                 if (FlyoutWindowType == FlyoutWindowType.OnScreen)
                 {
-                    expandDirection = CalculatedActualExpandDirectionOnScreen();
+                    expandDirection = CalculateActualExpandDirectionOnScreen();
                 }
                 else if (FlyoutWindowType == FlyoutWindowType.Tray)
                 {
-                    expandDirection = CalculatedActualExpandDirectionTray();
+                    expandDirection = CalculateActualExpandDirectionTray();
                 }
             }
 

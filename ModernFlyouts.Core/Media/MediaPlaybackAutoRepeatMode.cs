@@ -9,10 +9,12 @@
         /// No repeating.
         /// </summary>
         None = 0,
+
         /// <summary>
         /// Repeat the current track.
         /// </summary>
         Track = 1,
+
         /// <summary>
         /// Repeat the current list of tracks.
         /// </summary>

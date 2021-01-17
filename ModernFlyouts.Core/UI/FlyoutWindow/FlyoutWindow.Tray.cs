@@ -41,7 +41,7 @@ namespace ModernFlyouts.Core.UI
             }
         }
 
-        private FlyoutWindowExpandDirection CalculatedActualExpandDirectionTray()
+        private FlyoutWindowExpandDirection CalculateActualExpandDirectionTray()
         {
             var taskbar = WindowsTaskbar.Current;
 

@@ -27,6 +27,7 @@ namespace ModernFlyouts.Controls
             get => (bool)GetValue(AlignThumbnailToRightProperty);
             set => SetValue(AlignThumbnailToRightProperty, value);
         }
+
         #endregion
 
         public SessionControl()
@@ -110,7 +111,7 @@ namespace ModernFlyouts.Controls
         {
             var direction = _mediaSession.TrackChangeDirection;
 
-            var fadeAnim = new FadeInThemeAnimation() { Duration = TimeSpan.FromMilliseconds(367)};
+            var fadeAnim = new FadeInThemeAnimation() { Duration = TimeSpan.FromMilliseconds(367) };
 
             ThumbnailBackgroundBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);
             ThumbnailImageBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);

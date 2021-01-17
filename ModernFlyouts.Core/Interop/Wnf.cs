@@ -71,7 +71,10 @@ namespace ModernFlyouts.Core.Interop
             public uint Changestamp { get; }
             public byte[] Data { get; }
 
-            public WnfStateData() { }
+            public WnfStateData()
+            {
+            }
+
             public WnfStateData(uint changestamp, byte[] data)
             {
                 Changestamp = changestamp;
@@ -128,7 +131,6 @@ namespace ModernFlyouts.Core.Interop
             IntPtr CallbackContext,
             IntPtr Buffer,
             uint BufferSize);
-
 
         // Original dev: James Forshaw @tyranid: Project Zero
         // Ref: https://github.com/googleprojectzero/sandbox-attacksurface-analysis-tools/blob/46b95cba8f76fae9a5c8258d13057d5edfacdf90/NtApiDotNet/SafeHandles.cs
@@ -190,7 +192,7 @@ namespace ModernFlyouts.Core.Interop
         }
     }
 
-    static class BufferUtils
+    internal static class BufferUtils
     {
         public static Wnf.SafeHGlobalBuffer ToBuffer(this byte[] value)
         {

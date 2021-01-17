@@ -11,7 +11,6 @@ namespace ModernFlyouts.Controls
 {
     public partial class FlyoutTopBar : UserControl
     {
-
         private static TimeSpan duration = TimeSpan.FromMilliseconds(167);
         private static IEasingFunction easingFunction = new CircleEase() { EasingMode = EasingMode.EaseOut };
         private static PropertyPath heightPath = new(HeightProperty);

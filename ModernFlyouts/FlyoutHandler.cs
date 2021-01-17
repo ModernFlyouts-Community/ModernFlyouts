@@ -213,11 +213,8 @@ namespace ModernFlyouts
                 Activatable = false,
                 Content = OnScreenFlyoutView,
                 ZBandID = zbid,
-                Alignment = FlyoutWindowAlignments.Bottom | FlyoutWindowAlignments.Right,
                 FlyoutWindowType = FlyoutWindowType.OnScreen,
-                PlacementMode = FlyoutWindowPlacementMode.Manual,
-                Margin = new(10),
-                Offset = new(20, 2, 20, 30),
+                Offset = UIManager.FlyoutShadowMargin,
                 IsTimeoutEnabled = true
             };
 
@@ -251,6 +248,34 @@ namespace ModernFlyouts
             {
                 Source = UIManager,
                 Path = new PropertyPath(nameof(UIManager.FlyoutTimeout)),
+                Mode = BindingMode.OneWay
+            });
+
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.PlacementModeProperty, new Binding()
+            {
+                Source = UIManager,
+                Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowPlacementMode)),
+                Mode = BindingMode.OneWay
+            });
+
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.AlignmentProperty, new Binding()
+            {
+                Source = UIManager,
+                Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowAlignment)),
+                Mode = BindingMode.OneWay
+            });
+
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.MarginProperty, new Binding()
+            {
+                Source = UIManager,
+                Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowMargin)),
+                Mode = BindingMode.OneWay
+            });
+
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.ExpandDirectionProperty, new Binding()
+            {
+                Source = UIManager,
+                Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowExpandDirection)),
                 Mode = BindingMode.OneWay
             });
         }

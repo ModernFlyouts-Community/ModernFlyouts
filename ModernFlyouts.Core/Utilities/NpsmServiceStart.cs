@@ -7,6 +7,7 @@ namespace ModernFlyouts.Core.Utilities
     {
         private static readonly object _subscriptionLock = new object();
         private static IntPtr _subId;
+
         private static event EventHandler _npsmServiceStarted;
 
         //This prevents from being GC'd
@@ -54,5 +55,5 @@ namespace ModernFlyouts.Core.Utilities
     }
 
     public class NpsmServiceStartedEventArgs : EventArgs
-    {    }
+    { }
 }

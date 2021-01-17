@@ -18,6 +18,7 @@ namespace ModernFlyouts.AppLifecycle
             true;
 #else
             false;
+
 #endif
 
         #region App activation & Single instancing

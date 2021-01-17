@@ -30,7 +30,6 @@ namespace ModernFlyouts.DesignTime
             AutoRepeatMode = MediaPlaybackAutoRepeatMode.None;
             PlaybackType = MediaPlaybackType.Image;
 
-
             MediaSourceName = "TestApp";
             MediaSourceIcon = new BitmapImage(PackUriHelper.GetAbsoluteUri("/Assets/Images/ModernFlyouts_16.png"));
             Thumbnail = AudioFlyoutHelper.GetDefaultImageThumbnail();

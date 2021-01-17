@@ -32,7 +32,6 @@
                 <ResourceDictionary Source="Styles/ToggleButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <converters:EnumValuesConverter x:Key="EnumValuesConverter" />
             <converters:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter" />
             <converters:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
             <converters:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />

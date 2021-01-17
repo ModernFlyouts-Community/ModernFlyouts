@@ -1,4 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ModernFlyouts.Controls;
+using ModernFlyouts.Core.UI;
 using ModernFlyouts.Helpers;
 using ModernWpf;
 using System.Linq;
@@ -15,6 +17,10 @@ namespace ModernFlyouts.UI
         public const double DefaultSessionControlHeight = 206;
 
         public const double DefaultSessionsPanelVerticalSpacing = 8;
+
+        public const double FlyoutShadowDepth = 32;
+
+        public static Thickness FlyoutShadowMargin = GetFlyoutShadowMargin(FlyoutShadowDepth);
 
         private ElementTheme currentSystemTheme = ElementTheme.Dark;
         private ThemeResources themeResources;
@@ -145,6 +151,80 @@ namespace ModernFlyouts.UI
 
         #endregion
 
+        #region Layout
+
+        private FlyoutWindowPlacementMode onScreenFlyoutWindowPlacementMode;
+
+        public FlyoutWindowPlacementMode OnScreenFlyoutWindowPlacementMode
+        {
+            get => onScreenFlyoutWindowPlacementMode;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowPlacementMode, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowPlacementMode = value;
+                }
+            }
+        }
+
+        private FlyoutWindowAlignments onScreenFlyoutWindowAlignment;
+
+        public FlyoutWindowAlignments OnScreenFlyoutWindowAlignment
+        {
+            get => onScreenFlyoutWindowAlignment;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowAlignment, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowAlignment = value;
+                }
+            }
+        }
+
+        private Thickness onScreenFlyoutWindowMargin;
+
+        public Thickness OnScreenFlyoutWindowMargin
+        {
+            get => onScreenFlyoutWindowMargin;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowMargin, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowMargin = value;
+                }
+            }
+        }
+
+        private FlyoutWindowExpandDirection onScreenFlyoutWindowExpandDirection;
+
+        public FlyoutWindowExpandDirection OnScreenFlyoutWindowExpandDirection
+        {
+            get => onScreenFlyoutWindowExpandDirection;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowExpandDirection, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowExpandDirection = value;
+                }
+            }
+        }
+
+        private StackingDirection onScreenFlyoutContentStackingDirection;
+
+        public StackingDirection OnScreenFlyoutContentStackingDirection
+        {
+            get => onScreenFlyoutContentStackingDirection;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutContentStackingDirection, value))
+                {
+                    AppDataHelper.OnScreenFlyoutContentStackingDirection = value;
+                }
+            }
+        }
+
+        #endregion
+
         #region Media Controls
 
         private bool alignGSMTCThumbnailToRight = DefaultValuesStore.AlignGSMTCThumbnailToRight;
@@ -225,6 +305,12 @@ namespace ModernFlyouts.UI
 
         public void Initialize()
         {
+            OnScreenFlyoutWindowPlacementMode = AppDataHelper.OnScreenFlyoutWindowPlacementMode;
+            OnScreenFlyoutWindowAlignment = AppDataHelper.OnScreenFlyoutWindowAlignment;
+            OnScreenFlyoutWindowMargin = AppDataHelper.OnScreenFlyoutWindowMargin;
+            OnScreenFlyoutWindowExpandDirection = AppDataHelper.OnScreenFlyoutWindowExpandDirection;
+            OnScreenFlyoutContentStackingDirection = AppDataHelper.OnScreenFlyoutContentStackingDirection;
+
             TopBarVisibility = AppDataHelper.TopBarVisibility;
             FlyoutTimeout = AppDataHelper.FlyoutTimeout;
             AlignGSMTCThumbnailToRight = AppDataHelper.AlignGSMTCThumbnailToRight;
@@ -342,6 +428,18 @@ namespace ModernFlyouts.UI
                 CalculatedSessionsPanelMaxHeight = DefaultSessionControlHeight;
                 CalculatedSessionsPanelSpacing = 0;
             }
+        }
+
+        internal static Thickness GetFlyoutShadowMargin(double depth)
+        {
+            double radius = 0.9 * depth;
+            double offset = 0.4 * depth;
+
+            return new Thickness(
+                radius,
+                radius,
+                radius,
+                radius + offset);
         }
     }
 

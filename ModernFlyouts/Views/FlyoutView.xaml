@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.modernwpf.com/2019"
-             xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
-             xmlns:resx="clr-namespace:ModernFlyouts.Properties"
+             xmlns:local="clr-namespace:ModernFlyouts"
+             xmlns:localui="clr-namespace:ModernFlyouts.UI"
              xmlns:controls="clr-namespace:ModernFlyouts.Controls"
              xmlns:media="clr-namespace:ModernFlyouts.UI.Fluent.Media"
              mc:Ignorable="d" media:RevealBrushHelper.TrackThisElement="True"
@@ -26,8 +26,11 @@
             </LinearGradientBrush>
         </Border.BorderBrush>
     </Border>-->
-    <controls:DirectableStackPanel Spacing="8" Direction="Descending" Margin="20,2,20,30">
-        <ui:ThemeShadowChrome Depth="32" CornerRadius="{DynamicResource FlyoutCornerRadius}"
+    <controls:DirectableStackPanel
+        Spacing="8" Margin="{x:Static localui:UIManager.FlyoutShadowMargin}"
+        Direction="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.OnScreenFlyoutContentStackingDirection}">
+        <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
+            CornerRadius="{DynamicResource FlyoutCornerRadius}"
             Width="{DynamicResource FlyoutWidth}"
             Visibility="{Binding PrimaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border Background="{DynamicResource FlyoutBackground}"
@@ -38,7 +41,8 @@
                 </StackPanel>
             </Border>
         </ui:ThemeShadowChrome>
-        <ui:ThemeShadowChrome Depth="32" CornerRadius="{DynamicResource FlyoutCornerRadius}"
+        <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
+            CornerRadius="{DynamicResource FlyoutCornerRadius}"
             Width="{DynamicResource FlyoutWidth}"
             Visibility="{Binding SecondaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border Background="{DynamicResource FlyoutBackground}"

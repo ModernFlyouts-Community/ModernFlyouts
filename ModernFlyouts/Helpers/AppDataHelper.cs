@@ -1,9 +1,12 @@
-﻿using ModernFlyouts.UI;
+﻿using ModernFlyouts.Controls;
+using ModernFlyouts.Core.UI;
+using ModernFlyouts.UI;
 using ModernFlyouts.UI.Media;
 using ModernWpf;
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using Windows.Storage;
 
@@ -160,6 +163,40 @@ namespace ModernFlyouts.Helpers
 
         #endregion
 
+        #region Layout
+
+        public static FlyoutWindowPlacementMode OnScreenFlyoutWindowPlacementMode
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowPlacementMode);
+            set => SetValue(value);
+        }
+
+        public static FlyoutWindowAlignments OnScreenFlyoutWindowAlignment
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowAlignment);
+            set => SetValue(value);
+        }
+
+        public static Thickness OnScreenFlyoutWindowMargin
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowMargin);
+            set => SetValue(value);
+        }
+
+        public static FlyoutWindowExpandDirection OnScreenFlyoutWindowExpandDirection
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowExpandDirection);
+            set => SetValue(value);
+        }
+
+        public static StackingDirection OnScreenFlyoutContentStackingDirection
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutContentStackingDirection);
+            set => SetValue(value);
+        }
+
+        #endregion
+
         #region Module Specific
 
         #region Audio module related
@@ -257,7 +294,7 @@ namespace ModernFlyouts.Helpers
             get => GetValue(DefaultValuesStore.AlignGSMTCThumbnailToRight);
             set => SetValue(value);
         }
-        
+
         public static bool UseGSMTCThumbnailAsBackground
         {
             get => GetValue(DefaultValuesStore.UseGSMTCThumbnailAsBackground);

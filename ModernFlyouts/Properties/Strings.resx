@@ -357,7 +357,7 @@
     <value>Left</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Flyout Modules</value>
+    <value>Flyout modules</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
     <value>Airplane mode</value>
@@ -413,9 +413,6 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Unpin TopBar</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs.Settings_Reset}</value>
-  </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personalization</value>
   </data>
@@ -424,5 +421,77 @@
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Restart required to apply some changes</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Select the preferred display monitor to show the flyout on</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Flyout alignment</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Flyout content stacking direction</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout expand direction</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Flyout placement</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Placement mode</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>Horizontal alignment</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>Vertical alignment</value>
   </data>
 </root>

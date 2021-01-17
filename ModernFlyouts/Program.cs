@@ -1,9 +1,9 @@
 ﻿using ModernFlyouts.AppLifecycle;
-using ModernFlyouts.Helpers;
 using ModernFlyouts.Core.Interop;
+using ModernFlyouts.Helpers;
 using System;
-using System.Reflection;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace ModernFlyouts
 {

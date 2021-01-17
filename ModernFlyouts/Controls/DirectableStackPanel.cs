@@ -44,7 +44,6 @@ namespace ModernFlyouts.Controls
             double previousChildSize = 0.0;
             double spacing = Spacing;
 
-
             for (int i = 0, count = children.Count; i < count; i++)
             {
                 var index = ascending ? i : (count - 1) - i;

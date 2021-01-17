@@ -24,7 +24,6 @@ namespace ModernFlyouts.Core.Interop
             public uint AnimationId;
         }
 
-
         [StructLayout(LayoutKind.Sequential)]
         private struct WindowCompositionAttributeData
         {
