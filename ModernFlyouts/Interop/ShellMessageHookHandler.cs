@@ -4,7 +4,7 @@ using static ModernFlyouts.Core.Interop.NativeMethods;
 
 namespace ModernFlyouts.Interop
 {
-    public class ShellMessageHookHandler : WndProcHookHandler
+    public class ShellMessageHookHandler : IWndProcHookHandler
     {
         private enum HookMessageEnum : uint
         {
@@ -23,7 +23,7 @@ namespace ModernFlyouts.Interop
         {
         }
 
-        public override uint OnHwndCreated(IntPtr hWnd, out bool register)
+        public uint OnHwndCreated(IntPtr hWnd, out bool register)
         {
             RegisterShellHookWindow(hWnd);
             messageShellHookId = RegisterWindowMessage("SHELLHOOK");
@@ -33,7 +33,7 @@ namespace ModernFlyouts.Interop
             return messageShellHookId;
         }
 
-        public override IntPtr OnWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
+        public IntPtr OnWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
         {
             if (msg == messageShellHookId)
             {

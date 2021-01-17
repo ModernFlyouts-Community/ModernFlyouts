@@ -53,8 +53,6 @@ namespace ModernFlyouts.Core.UI
 
         protected override void OnDragMoved()
         {
-            base.OnDragMoved();
-
             StartCloseTimer();
 
             var offset = Offset;
@@ -66,6 +64,8 @@ namespace ModernFlyouts.Core.UI
             {
                 PlacementMode = FlyoutWindowPlacementMode.Manual;
             }
+
+            base.OnDragMoved();
         }
 
         private double effectiveMarginLeft = 0;

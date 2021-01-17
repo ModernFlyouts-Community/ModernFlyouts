@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using ModernFlyouts.Core.Display;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ModernFlyouts.Core.UI
@@ -198,6 +199,35 @@ namespace ModernFlyouts.Core.UI
             if (d is FlyoutWindow flyoutWindow)
             {
                 flyoutWindow.PositionFlyout();
+            }
+        }
+
+        #endregion
+
+        #region PreferredDisplayMonitor
+
+        public static readonly DependencyProperty PreferredDisplayMonitorProperty =
+            DependencyProperty.Register(
+                nameof(PreferredDisplayMonitor),
+                typeof(DisplayMonitor),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(OnPreferredDisplayMonitorPropertyChanged));
+
+        public DisplayMonitor PreferredDisplayMonitor
+        {
+            get => (DisplayMonitor)GetValue(PreferredDisplayMonitorProperty);
+            set => SetValue(PreferredDisplayMonitorProperty, value);
+        }
+
+        private static void OnPreferredDisplayMonitorPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is FlyoutWindow flyoutWindow)
+            {
+                if (flyoutWindow.PlacementMode == FlyoutWindowPlacementMode.Auto
+                    && flyoutWindow.FlyoutWindowType == FlyoutWindowType.OnScreen)
+                {
+                    flyoutWindow.PositionFlyout();
+                }
             }
         }
 

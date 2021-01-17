@@ -1,4 +1,5 @@
 ﻿using ModernFlyouts.Core.Display;
+using System;
 
 namespace ModernFlyouts.Core.UI
 {
@@ -8,11 +9,16 @@ namespace ModernFlyouts.Core.UI
         {
             var margin = Margin;
             var offset = Offset;
-            var screen = Screen.PrimaryScreen;
-            double screenX = screen.WorkingArea.X;
-            double screenY = screen.WorkingArea.Y;
-            double screenWidth = screen.WorkingArea.Width;
-            double screenHeight = screen.WorkingArea.Height;
+            var monitor = PreferredDisplayMonitor
+                ?? DisplayManager.Instance.PrimaryDisplayMonitor;
+
+            if (monitor == null)
+                throw new NullReferenceException("Dats imbajible");
+
+            double monitorX = monitor.WorkingArea.X;
+            double monitorY = monitor.WorkingArea.Y;
+            double monitorWidth = monitor.WorkingArea.Width;
+            double monitorHeight = monitor.WorkingArea.Height;
 
             bool xHandled = false;
             bool yHandled = false;
@@ -21,23 +27,23 @@ namespace ModernFlyouts.Core.UI
 
             if (alignment.HasFlag(FlyoutWindowAlignments.Left))
             {
-                x = screenX + effectiveMarginLeft;
+                x = monitorX + effectiveMarginLeft;
                 xHandled = true;
             }
             else if (alignment.HasFlag(FlyoutWindowAlignments.Right))
             {
-                x = screenX + screenWidth - width - effectiveMarginRight;
+                x = monitorX + monitorWidth - width - effectiveMarginRight;
                 xHandled = true;
             }
 
             if (alignment.HasFlag(FlyoutWindowAlignments.Top))
             {
-                y = screenY + effectiveMarginTop;
+                y = monitorY + effectiveMarginTop;
                 yHandled = true;
             }
             else if (alignment.HasFlag(FlyoutWindowAlignments.Bottom))
             {
-                y = screenY + screenHeight - height - effectiveMarginBottom;
+                y = monitorY + monitorHeight - height - effectiveMarginBottom;
                 yHandled = true;
             }
 
@@ -45,13 +51,13 @@ namespace ModernFlyouts.Core.UI
             if (!xHandled)
             {
                 double offsetX = ((offset.Left + offset.Right) / 2 - offset.Left) * DpiScale;
-                x = screenX + (screenWidth / 2) - (width / 2) + margin.Left - margin.Right + offsetX;
+                x = monitorX + (monitorWidth / 2) - (width / 2) + margin.Left - margin.Right + offsetX;
             }
             // Which means y should be center aligned
             if (!yHandled)
             {
                 double offsetY = ((offset.Top + offset.Bottom) / 2 - offset.Top) * DpiScale;
-                y = screenX + (screenHeight / 2) - (height / 2) + margin.Top - margin.Bottom + offsetY;
+                y = monitorY + (monitorHeight / 2) - (height / 2) + margin.Top - margin.Bottom + offsetY;
             }
         }
 

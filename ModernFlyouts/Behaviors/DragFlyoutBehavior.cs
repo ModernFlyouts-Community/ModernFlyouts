@@ -9,12 +9,13 @@ namespace ModernFlyouts.Behaviors
         protected override void OnAttached()
         {
             base.OnAttached();
-            AssociatedObject.Loaded += AssociatedObject_Loaded;
+            AssociatedObject.MouseLeftButtonDown += AssociatedObject_MouseLeftButtonDown;
         }
 
-        private void AssociatedObject_Loaded(object sender, RoutedEventArgs e)
+        protected override void OnDetaching()
         {
-            AssociatedObject.MouseLeftButtonDown += AssociatedObject_MouseLeftButtonDown;
+            base.OnDetaching();
+            AssociatedObject.MouseLeftButtonDown -= AssociatedObject_MouseLeftButtonDown;
         }
 
         private void AssociatedObject_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)

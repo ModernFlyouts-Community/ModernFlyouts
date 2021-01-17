@@ -146,6 +146,12 @@ namespace ModernFlyouts.Helpers
             get => GetValue(DefaultValuesStore.DefaultFlyoutPosition);
         }
 
+        public static string PreferredDisplayMonitorId
+        {
+            get => GetValue(string.Empty);
+            set => SetValue(value);
+        }
+
         public static string SettingsWindowPlacement
         {
             get => GetValue(string.Empty);

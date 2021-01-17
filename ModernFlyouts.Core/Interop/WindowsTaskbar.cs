@@ -53,45 +53,13 @@ namespace ModernFlyouts.Core.Interop
             public int lParam;
         }
 
-        public struct State : IEquatable<State>
+        public struct State
         {
             public Position Location;
             public Rect Bounds;
-            public Screen ContainingScreen;
+            public DisplayMonitor ContainingMonitor;
             public bool IsAutoHideEnabled;
             public bool IsRightToLeftLayout;
-
-            public bool Equals(State other)
-            {
-                return Location == other.Location
-                    && Bounds == other.Bounds
-                    && ContainingScreen == other.ContainingScreen
-                    && IsAutoHideEnabled == other.IsAutoHideEnabled
-                    && IsRightToLeftLayout == other.IsRightToLeftLayout;
-            }
-
-            public override bool Equals(object obj)
-            {
-                return (obj is State other) && Equals(other);
-            }
-
-            public override int GetHashCode()
-            {
-                return Location.GetHashCode() ^ Bounds.GetHashCode()
-                    ^ ContainingScreen.GetHashCode()
-                    ^ IsAutoHideEnabled.GetHashCode()
-                    ^ IsRightToLeftLayout.GetHashCode();
-            }
-
-            public static bool operator ==(State left, State right)
-            {
-                return left.Equals(right);
-            }
-
-            public static bool operator !=(State left, State right)
-            {
-                return !(left == right);
-            }
         }
 
         #endregion
@@ -106,7 +74,7 @@ namespace ModernFlyouts.Core.Interop
                 var hWnd = GetHwnd();
                 var state = new State
                 {
-                    ContainingScreen = Screen.FromHWnd(hWnd),
+                    ContainingMonitor = DisplayManager.Instance.GetDisplayMonitorFromHWnd(hWnd),
                 };
                 var appBarData = new APPBARDATA
                 {
@@ -124,9 +92,9 @@ namespace ModernFlyouts.Core.Interop
                     GetWindowRect(hWnd, out var bounds);
                     state.Bounds = bounds.ToRect();
 
-                    if (state.ContainingScreen != null)
+                    if (state.ContainingMonitor != null)
                     {
-                        var screen = state.ContainingScreen;
+                        var screen = state.ContainingMonitor;
                         if (state.Bounds.Bottom == screen.Bounds.Bottom && state.Bounds.Top == screen.Bounds.Top)
                         {
                             state.Location = (state.Bounds.Left == screen.Bounds.Left) ? Position.Left : Position.Right;

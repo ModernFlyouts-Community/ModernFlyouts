@@ -5,17 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
+      xmlns:display="clr-namespace:ModernFlyouts.Core.Display;assembly=ModernFlyouts.Core"
       xmlns:utils="clr-namespace:ModernFlyouts.Utilities" xmlns:helpers="clr-namespace:ModernFlyouts.Helpers"
       xmlns:resx="clr-namespace:ModernFlyouts.Properties"
       mc:Ignorable="d"
       d:DesignWidth="800" DataContext="{x:Static local:FlyoutHandler.Instance}">
-    <controls:ScrollViewerEx VerticalScrollBarVisibility="Auto">
+    <controls:ScrollViewerEx VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly" PanningRatio="1">
         <StackPanel Margin="20,10">
             <GroupBox Header="Display">
-                <ui:SimpleStackPanel Spacing="10">
-                    <TextBox ui:ControlHelper.Header="Placement mode" />
-                    <TextBox ui:ControlHelper.Header="Alignment" />
-                </ui:SimpleStackPanel>
+                <controls:DisplayMonitorPicker PreferredDisplayMonitor="{Binding OnScreenFlyoutPreferredMonitor, Mode=TwoWay}" />
             </GroupBox>
 
             <GroupBox Header="Flyout Placement">

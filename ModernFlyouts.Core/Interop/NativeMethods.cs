@@ -384,6 +384,92 @@ namespace ModernFlyouts.Core.Interop
         WM_APP = 0x8000,
     }
 
+    [Flags]
+    public enum DisplayDeviceStateFlags : int
+    {
+        /// <summary>The device is part of the desktop.</summary>
+        AttachedToDesktop = 0x1,
+
+        MultiDriver = 0x2,
+
+        /// <summary>The device is part of the desktop.</summary>
+        PrimaryDevice = 0x4,
+
+        /// <summary>
+        /// Represents a pseudo device used to mirror application drawing for remoting or other purposes.
+        /// </summary>
+        MirroringDriver = 0x8,
+
+        /// <summary>The device is VGA compatible.</summary>
+        VGACompatible = 0x10,
+
+        /// <summary>
+        /// The device is removable; it cannot be the primary display.
+        /// </summary>
+        Removable = 0x20,
+
+        /// <summary>
+        /// The device has more display modes than its output devices support.
+        /// </summary>
+        ModesPruned = 0x8000000,
+
+        Remote = 0x4000000,
+        Disconnect = 0x2000000
+    }
+
+    internal enum TOKEN_INFORMATION_CLASS
+    {
+        TokenUser = 1,
+        TokenGroups,
+        TokenPrivileges,
+        TokenOwner,
+        TokenPrimaryGroup,
+        TokenDefaultDacl,
+        TokenSource,
+        TokenType,
+        TokenImpersonationLevel,
+        TokenStatistics,
+        TokenRestrictedSids,
+        TokenSessionId,
+        TokenGroupsAndPrivileges,
+        TokenSessionReference,
+        TokenSandBoxInert,
+        TokenAuditPolicy,
+        TokenOrigin,
+        TokenElevationType,
+        TokenLinkedToken,
+        TokenElevation,
+        TokenHasRestrictions,
+        TokenAccessInformation,
+        TokenVirtualizationAllowed,
+        TokenVirtualizationEnabled,
+        TokenIntegrityLevel,
+        TokenUIAccess,
+        TokenMandatoryPolicy,
+        TokenLogonSid,
+        TokenIsAppContainer,
+        TokenCapabilities,
+        TokenAppContainerSid,
+        TokenAppContainerNumber,
+        TokenUserClaimAttributes,
+        TokenDeviceClaimAttributes,
+        TokenRestrictedUserClaimAttributes,
+        TokenRestrictedDeviceClaimAttributes,
+        TokenDeviceGroups,
+        TokenRestrictedDeviceGroups,
+        TokenSecurityAttributes,
+        TokenIsRestricted,
+        TokenProcessTrustLevel,
+        TokenPrivateNameSpace,
+        TokenSingletonAttributes,
+        TokenBnoIsolation,
+        TokenChildProcessFlags,
+        TokenIsLessPrivilegedAppContainer,
+        TokenIsSandboxed,
+        TokenOriginatingProcessTrustLevel,
+        MaxTokenInfoClass
+    }
+
     #endregion
 
     public static class NativeMethods
@@ -562,57 +648,26 @@ namespace ModernFlyouts.Core.Interop
             internal char[] szDevice = new char[32];
         }
 
-        public enum TOKEN_INFORMATION_CLASS
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        internal struct DISPLAY_DEVICE
         {
-            TokenUser = 1,
-            TokenGroups,
-            TokenPrivileges,
-            TokenOwner,
-            TokenPrimaryGroup,
-            TokenDefaultDacl,
-            TokenSource,
-            TokenType,
-            TokenImpersonationLevel,
-            TokenStatistics,
-            TokenRestrictedSids,
-            TokenSessionId,
-            TokenGroupsAndPrivileges,
-            TokenSessionReference,
-            TokenSandBoxInert,
-            TokenAuditPolicy,
-            TokenOrigin,
-            TokenElevationType,
-            TokenLinkedToken,
-            TokenElevation,
-            TokenHasRestrictions,
-            TokenAccessInformation,
-            TokenVirtualizationAllowed,
-            TokenVirtualizationEnabled,
-            TokenIntegrityLevel,
-            TokenUIAccess,
-            TokenMandatoryPolicy,
-            TokenLogonSid,
-            TokenIsAppContainer,
-            TokenCapabilities,
-            TokenAppContainerSid,
-            TokenAppContainerNumber,
-            TokenUserClaimAttributes,
-            TokenDeviceClaimAttributes,
-            TokenRestrictedUserClaimAttributes,
-            TokenRestrictedDeviceClaimAttributes,
-            TokenDeviceGroups,
-            TokenRestrictedDeviceGroups,
-            TokenSecurityAttributes,
-            TokenIsRestricted,
-            TokenProcessTrustLevel,
-            TokenPrivateNameSpace,
-            TokenSingletonAttributes,
-            TokenBnoIsolation,
-            TokenChildProcessFlags,
-            TokenIsLessPrivilegedAppContainer,
-            TokenIsSandboxed,
-            TokenOriginatingProcessTrustLevel,
-            MaxTokenInfoClass
+            [MarshalAs(UnmanagedType.U4)]
+            public int cb;
+
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+            public string DeviceName;
+
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+            public string DeviceString;
+
+            [MarshalAs(UnmanagedType.U4)]
+            public DisplayDeviceStateFlags StateFlags;
+
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+            public string DeviceID;
+
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+            public string DeviceKey;
         }
 
         #endregion
@@ -808,7 +863,7 @@ namespace ModernFlyouts.Core.Interop
 
         #region Miscellaneous
 
-        internal static IntPtr SC_MOUSEMOVE = new IntPtr(0xF012);
+        internal static IntPtr SC_MOUSEMOVE = new(0xF012);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern IntPtr GetModuleHandle(string lpModuleName);
@@ -830,7 +885,7 @@ namespace ModernFlyouts.Core.Interop
             uint TokenInformationLength,
             out uint ReturnLength);
 
-        public const uint TOKEN_QUERY = 0x0008;
+        private const uint TOKEN_QUERY = 0x0008;
 
         [DllImport("advapi32.dll")]
         private static extern bool OpenProcessToken(IntPtr hProcess,
@@ -915,7 +970,7 @@ namespace ModernFlyouts.Core.Interop
                         }
                     }
 
-                    Rect screenBounds = Display.Screen.FromHWnd(hWnd).Bounds;
+                    Rect screenBounds = Display.DisplayManager.Instance.GetDisplayMonitorFromHWnd(hWnd).Bounds;
                     if ((appBounds.Bottom - appBounds.Top) == screenBounds.Height && (appBounds.Right - appBounds.Left) == screenBounds.Width)
                     {
                         return true;
@@ -928,13 +983,16 @@ namespace ModernFlyouts.Core.Interop
 
         #endregion
 
-        #region Screen APIs
+        #region Display APIs
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern bool GetMonitorInfo(HandleRef hmonitor, [In, Out] MONITORINFOEX info);
 
         [DllImport("user32.dll", ExactSpelling = true)]
         internal static extern bool EnumDisplayMonitors(HandleRef hdc, COMRECT rcClip, MonitorEnumProc lpfnEnum, IntPtr dwData);
+
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        internal static extern bool EnumDisplayDevices(string lpDevice, uint iDevNum, ref DISPLAY_DEVICE lpDisplayDevice, uint dwFlags);
 
         [DllImport("user32.dll", ExactSpelling = true)]
         internal static extern IntPtr MonitorFromWindow(HandleRef handle, int flags);
@@ -953,8 +1011,15 @@ namespace ModernFlyouts.Core.Interop
         internal const int SM_CMONITORS = 80;
         internal const int SM_CXSCREEN = 0;
         internal const int SM_CYSCREEN = 1;
+        internal const int SM_XVIRTUALSCREEN = 76;
+        internal const int SM_YVIRTUALSCREEN = 77;
+        internal const int SM_CXVIRTUALSCREEN = 78;
+        internal const int SM_CYVIRTUALSCREEN = 79;
+        internal const int SM_REMOTESESSION = 0x1000;
         internal const int SPI_GETWORKAREA = 48;
         internal const int SPI_SETWORKAREA = 47;
+
+        internal const int EDD_GET_DEVICE_INTERFACE_NAME = 0x00000001;
 
         #endregion
     }

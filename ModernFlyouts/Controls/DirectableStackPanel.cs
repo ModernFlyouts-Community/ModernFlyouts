@@ -40,7 +40,7 @@ namespace ModernFlyouts.Controls
             UIElementCollection children = InternalChildren;
             bool fHorizontal = Orientation == Orientation.Horizontal;
             bool ascending = Direction == StackingDirection.Ascending;
-            Rect rcChild = new Rect(arrangeSize);
+            Rect rcChild = new(arrangeSize);
             double previousChildSize = 0.0;
             double spacing = Spacing;
 
