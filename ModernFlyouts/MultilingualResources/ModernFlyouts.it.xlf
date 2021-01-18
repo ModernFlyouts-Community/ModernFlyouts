@@ -1,438 +1,438 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="it" original="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
-    <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
-    </header>
-    <body>
-      <group id="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" datatype="resx">
-        <trans-unit id="About" translate="yes" xml:space="preserve">
+	<file datatype="xml" source-language="en-US" target-language="it" original="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+		<header>
+			<tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
+		</header>
+		<body>
+			<group id="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" datatype="resx">
+				<trans-unit id="About" translate="yes" xml:space="preserve">
           <source>About</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Informazioni</target>
         </trans-unit>
-        <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
+				<trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">La modalità Aereo non è disponibile :(</target>
         </trans-unit>
-        <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
+				<trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Modalità aereo disattivata</target>
         </trans-unit>
-        <trans-unit id="AirplaneModeOn" translate="yes" xml:space="preserve">
+				<trans-unit id="AirplaneModeOn" translate="yes" xml:space="preserve">
           <source>Airplane mode on</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Modalità aereo attivata</target>
         </trans-unit>
-        <trans-unit id="Align" translate="yes" xml:space="preserve">
+				<trans-unit id="Align" translate="yes" xml:space="preserve">
           <source>Align to default position</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Allinea alla posizione predefinita</target>
         </trans-unit>
-        <trans-unit id="AudioFlyoutHelper.NoDevices" translate="yes" xml:space="preserve">
+				<trans-unit id="AudioFlyoutHelper.NoDevices" translate="yes" xml:space="preserve">
           <source>No Connected Audio Devices</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Nessun dispositivo audio connesso</target>
         </trans-unit>
-        <trans-unit id="Close" translate="yes" xml:space="preserve">
+				<trans-unit id="Close" translate="yes" xml:space="preserve">
           <source>Close</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Chiudi</target>
         </trans-unit>
-        <trans-unit id="ExitItem" translate="yes" xml:space="preserve">
+				<trans-unit id="ExitItem" translate="yes" xml:space="preserve">
           <source>Exit</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Esci</target>
         </trans-unit>
-        <trans-unit id="ExitItemDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="ExitItemDescription" translate="yes" xml:space="preserve">
           <source>Exit the app safely</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Uscire dall'app in modo sicuro</target>
         </trans-unit>
-        <trans-unit id="GeneralSettings" translate="yes" xml:space="preserve">
+				<trans-unit id="GeneralSettings" translate="yes" xml:space="preserve">
           <source>General</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Generale</target>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.InsertMode" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.InsertMode" translate="yes" xml:space="preserve">
           <source>Insert Mode</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Modalità inserimento</target>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} è spento</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} è disattivato</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is off</note>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} è su</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} è attivato</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is on</note>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
           <source>Overtype Mode</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Modalità sovrascrittura</target>
         </trans-unit>
-        <trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
+				<trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
           <source>Pin TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Pin TopBar</target>
         </trans-unit>
-        <trans-unit id="PointValidationRule.PointFormatInvalidMessage" translate="yes" xml:space="preserve">
+				<trans-unit id="PointValidationRule.PointFormatInvalidMessage" translate="yes" xml:space="preserve">
           <source>Please enter the point in the format 'X,Y' (for e.g. 50,60).</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Inserisci il punto nel formato 'X,Y' (ad es. 50,60).</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there are problem parsing a string value into a Point</note>
         </trans-unit>
-        <trans-unit id="PointValidationRule.PointOutOfRangeMessage" translate="yes" xml:space="preserve">
+				<trans-unit id="PointValidationRule.PointOutOfRangeMessage" translate="yes" xml:space="preserve">
           <source>Please enter X,Y values in the range {0} - {1}.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Immettere i valori X,Y nell'intervallo {0} - {1}.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a point's X or Y values goes out of int32 range</note>
         </trans-unit>
-        <trans-unit id="PointValidationRule.StringConvertionErrorMessage" translate="yes" xml:space="preserve">
+				<trans-unit id="PointValidationRule.StringConvertionErrorMessage" translate="yes" xml:space="preserve">
           <source>Value cannot be coverted to string.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il valore non può essere coperto in stringa.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il valore non può essere accettato. Riprovare.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
         </trans-unit>
-        <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
+				<trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Ripristina</target>
         </trans-unit>
-        <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro questa app</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro quest'app</target>
         </trans-unit>
-        <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Altri controlli</target>
         </trans-unit>
-        <trans-unit id="SessionControl.Next" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.Next" translate="yes" xml:space="preserve">
           <source>Next</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Successiva</target>
         </trans-unit>
-        <trans-unit id="SessionControl.Pause" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.Pause" translate="yes" xml:space="preserve">
           <source>Pause</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Pausa</target>
         </trans-unit>
-        <trans-unit id="SessionControl.Play" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.Play" translate="yes" xml:space="preserve">
           <source>Play</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Riproduci</target>
         </trans-unit>
-        <trans-unit id="SessionControl.Previous" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.Previous" translate="yes" xml:space="preserve">
           <source>Previous</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Indietro</target>
         </trans-unit>
-        <trans-unit id="SessionControl.RepeatAll" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.RepeatAll" translate="yes" xml:space="preserve">
           <source>Repeat: all</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ripeti: tutti</target>
         </trans-unit>
-        <trans-unit id="SessionControl.RepeatOff" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.RepeatOff" translate="yes" xml:space="preserve">
           <source>Repeat: off</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ripeti: disattivato</target>
         </trans-unit>
-        <trans-unit id="SessionControl.RepeatOne" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.RepeatOne" translate="yes" xml:space="preserve">
           <source>Repeat: one</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ripeti: uno</target>
         </trans-unit>
-        <trans-unit id="SessionControl.ShuffleOff" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.ShuffleOff" translate="yes" xml:space="preserve">
           <source>Shuffle: off</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Riproduzione casuale: disattivata</target>
         </trans-unit>
-        <trans-unit id="SessionControl.ShuffleOn" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.ShuffleOn" translate="yes" xml:space="preserve">
           <source>Shuffle: on</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Shuffle: su</target>
         </trans-unit>
-        <trans-unit id="SessionControl.Stop" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.Stop" translate="yes" xml:space="preserve">
           <source>Stop</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Interrompi</target>
         </trans-unit>
-        <trans-unit id="SessionControl.TimelineInfo" translate="yes" xml:space="preserve">
+				<trans-unit id="SessionControl.TimelineInfo" translate="yes" xml:space="preserve">
           <source>Timeline Info</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Informazioni sequenza temporale</target>
         </trans-unit>
-        <trans-unit id="Settings.Additional" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Additional" translate="yes" xml:space="preserve">
           <source>Additional</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Aggiuntivo</target>
         </trans-unit>
-        <trans-unit id="Settings.Behavior" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Behavior" translate="yes" xml:space="preserve">
           <source>Behavior</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Comportamento</target>
         </trans-unit>
-        <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
           <source>Default Flyout</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Riquadro a comparsa predefinito</target>
         </trans-unit>
-        <trans-unit id="Settings.DefaultFlyoutDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.DefaultFlyoutDescription" translate="yes" xml:space="preserve">
           <source>Select the default flyout</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Selezionare il riquadro a comparsa predefinito</target>
         </trans-unit>
-        <trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
           <source>Choosing the Windows Default Flyout as default won't close this app. This app will still keep running in the background. Please exit this app safely to improve performance.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">La scelta del riquadro a comparsa predefinito di Windows come predefinito non chiuderà questa app. Questa applicazione continuerà a funzionare in background. Si prega di uscire da questa applicazione in modo sicuro per migliorare le prestazioni.</target>
         </trans-unit>
-        <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
           <source>Disabled</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Disabilitato</target>
         </trans-unit>
-        <trans-unit id="Settings.Enabled" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Enabled" translate="yes" xml:space="preserve">
           <source>Enabled</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Abilitato</target>
         </trans-unit>
-        <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
           <source>Flyout background opacity</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Opacità sfondo riquadro a comparsa</target>
         </trans-unit>
-        <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Posizione predefinita riquadro a comparsa (per il pulsante Allinea)</target>
         </trans-unit>
-        <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
           <source>Type the position in 'X,Y' format (Default: 50,60)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Digitare la posizione nel formato 'X,Y' (ad esempio 50,60)</target>
           
         </trans-unit>
-        <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Barra superiore riquadro a comparsa</target>
         </trans-unit>
-        <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout Modules</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Moduli</target>
         </trans-unit>
-        <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo AirplaneMode-flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo a comparsa - Mod.Aereo</target>
         </trans-unit>
-        <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
           <source>Audio</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo audio-riquadro a comparsa</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo a comparsa - Audio</target>
         </trans-unit>
-        <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
           <source>Brightness</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo a comparsa Luminosità</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo a comparsa - Luminosità</target>
         </trans-unit>
-        <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo LockKeys-flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modulo a comparsa - Tasti Block</target>
         </trans-unit>
-        <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Esegui all'avvio</target>
         </trans-unit>
-        <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
+				<trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
           <source>Settings</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">impostazioni</target>
         </trans-unit>
-        <trans-unit id="SettingsItemDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="SettingsItemDescription" translate="yes" xml:space="preserve">
           <source>Open settings window</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Aprire la finestra delle impostazioni</target>
         </trans-unit>
-        <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
+				<trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Rimuovi TopBar</target>
         </trans-unit>
-        <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">ModernFlyouts</target>
         </trans-unit>
-        <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
           <source>None</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Nessuno</target>
         </trans-unit>
-        <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
           <source>Windows default</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Impostazioni predefinite di Windows</target>
         </trans-unit>
-        <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
           <source>Horizontal</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Orizzontale</target>
         </trans-unit>
-        <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
           <source>Vertical</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Verticale</target>
         </trans-unit>
-        <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Questa applicazione è progettata per essere un moderno Fluent Design sostituzione per i vecchi flyout a tema metro presenti in Windows da Windows 8.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Questa applicazione è progettata per sostituire i vecchi flyout a tema Metro presenti in Windows con un moderno flyout in Fluent Design.</target>
         </trans-unit>
-        <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
+				<trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Collaboratori</target>
         </trans-unit>
-        <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
+				<trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">il repository GitHub</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Repository GitHub</target>
         </trans-unit>
-        <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
+				<trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Aprire un nuovo problema</target>
         </trans-unit>
-        <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
+				<trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Valuta e rivedi su Microsoft Store</target>
         </trans-unit>
-        <trans-unit id="About.Version" translate="yes" xml:space="preserve">
+				<trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Versione: </target>
         </trans-unit>
-        <trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
           <source>Language</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">lingua</target>
         </trans-unit>
-        <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Restart required to apply language change properly</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Si prega di riavviare l'applicazione per cambiare la lingua correttamente</target>
         </trans-unit>
-        <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System default</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Predefinito del sistema</target>
         </trans-unit>
-        <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
+				<trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Dipendenze</target>
         </trans-unit>
-        <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
+				<trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Se si trovano bug, si prega di aprire un nuovo problema nel repository github.</target>
         </trans-unit>
-        <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
+				<trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Number of sessions to show</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Numero di sessioni da visualizzare</target>
         </trans-unit>
-        <trans-unit id="AudioFlyoutHelper.SessionsPanelOrientation" translate="yes" xml:space="preserve">
+				<trans-unit id="AudioFlyoutHelper.SessionsPanelOrientation" translate="yes" xml:space="preserve">
           <source>Media sessions panel orientation</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Orientamento del pannello Sessioni multimediali</target>
         </trans-unit>
-        <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
+				<trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostra controlli globali di trasporto multimediale di sistema (GSMTC) aka Controlli multimediali nel riquadro a comparsa Volume</target>
         </trans-unit>
-        <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
+				<trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostra controllo volume nel riquadro a comparsa GSMTC (Global System Media Transport Controls)</target>
         </trans-unit>
-        <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
+				<trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Allineamento delle miniature</target>
         </trans-unit>
-        <trans-unit id="Enums.ElementTheme.Dark" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.ElementTheme.Dark" translate="yes" xml:space="preserve">
           <source>Dark</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Scuro</target>
         </trans-unit>
-        <trans-unit id="Enums.ElementTheme.Light" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.ElementTheme.Light" translate="yes" xml:space="preserve">
           <source>Light</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Chiaro</target>
         </trans-unit>
-        <trans-unit id="Enums.TopBarVisibility.AutoHide" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.TopBarVisibility.AutoHide" translate="yes" xml:space="preserve">
           <source>Auto-hide</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Nascondi automaticamente</target>
         </trans-unit>
-        <trans-unit id="Enums.TopBarVisibility.Collapsed" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.TopBarVisibility.Collapsed" translate="yes" xml:space="preserve">
           <source>Collapsed</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">compresso</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Compresso</target>
         </trans-unit>
-        <trans-unit id="Enums.TopBarVisibility.Visible" translate="yes" xml:space="preserve">
+				<trans-unit id="Enums.TopBarVisibility.Visible" translate="yes" xml:space="preserve">
           <source>Visible</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Visibile</target>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
           <source>Caps lock</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">BLOC MAIUSC</target>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
           <source>Insert</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Inserisci</target>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
           <source>Num lock</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Blocco NUM</target>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Blocco scorrimento</target>
         </trans-unit>
-        <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
+				<trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Selezionare i tasti per i quale si desidera visualizzare il riquadro a comparsa</target>
         </trans-unit>
-        <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Aspetto</target>
         </trans-unit>
-        <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
           <source>Enable Airplane mode Flyout</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Abilita riquadro a comparsa modalità aereo</target>
         </trans-unit>
-        <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
           <source>Enable Audio Flyout</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Abilita riquadro a comparsa audio</target>
         </trans-unit>
-        <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
           <source>Enable Brightness Flyout</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Abilita riquadro a comparsa Luminosità</target>
         </trans-unit>
-        <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Abilita tasti di blocco Riquadro a comparsa</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Abilita tasti di blocco riquadro a comparsa</target>
         </trans-unit>
-        <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tema Riquadro a comparsa</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tema riquadro a comparsa</target>
         </trans-unit>
-        <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Timeout riquadro a comparsa (ms)</target>
         </trans-unit>
-        <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">sinistra</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">A sinistra</target>
         </trans-unit>
-        <trans-unit id="Settings.Modules.Audio.Media" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Modules.Audio.Media" translate="yes" xml:space="preserve">
           <source>Media</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">File multimediali</target>
         </trans-unit>
-        <trans-unit id="Settings.Modules.Audio.Volume" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Modules.Audio.Volume" translate="yes" xml:space="preserve">
           <source>Volume</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Anno</target>
         </trans-unit>
-        <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">A destra</target>
         </trans-unit>
-        <trans-unit id="Settings.TopBarVisibility" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.TopBarVisibility" translate="yes" xml:space="preserve">
           <source>TopBar visibility</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Visibilità TopBar</target>
         </trans-unit>
-        <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostra icona nell'area della barra delle applicazioni</target>
         </trans-unit>
-        <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
           <source>Off</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Disattivato</target>
         </trans-unit>
-        <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.On" translate="yes" xml:space="preserve">
           <source>On</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Attivato</target>
         </trans-unit>
-        <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
           <source>App Theme</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Tema dell'app</target>
         </trans-unit>
-        <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Utilizzare l'icona del vassoio colorato</target>
         </trans-unit>
-        <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
+				<trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
           <source>ngs.Settings_Reset}</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngs. Settings_Reset.</target>
         </trans-unit>
-        <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ripristinare le impostazioni predefinite di tutte le impostazioni</target>
         </trans-unit>
-        <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
           <source>Personalization</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Personalizzazione</target>
         </trans-unit>
-        <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Allinea riquadro a comparsa in questa posizione</target>
         </trans-unit>
-        <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
+				<trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Riavvio necessario per applicare alcune modifiche</target>
         </trans-unit>
-      </group>
-    </body>
-  </file>
+			</group>
+		</body>
+	</file>
 </xliff>
