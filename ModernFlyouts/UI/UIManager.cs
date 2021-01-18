@@ -1,4 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ModernFlyouts.Controls;
+using ModernFlyouts.Core.UI;
 using ModernFlyouts.Helpers;
 using ModernWpf;
 using System.Linq;
@@ -12,13 +14,15 @@ namespace ModernFlyouts.UI
     {
         public const double FlyoutWidth = 354;
 
-        public const double DefaultSessionControlHeight = 138;
+        public const double DefaultSessionControlHeight = 206;
 
         public const double DefaultSessionsPanelVerticalSpacing = 8;
 
-        private FlyoutWindow _flyoutWindow;
+        public const double FlyoutShadowDepth = 32;
+
+        public static Thickness FlyoutShadowMargin = GetFlyoutShadowMargin(FlyoutShadowDepth);
+
         private ElementTheme currentSystemTheme = ElementTheme.Dark;
-        private ElementTheme currentTheme = ElementTheme.Dark;
         private ThemeResources themeResources;
         private ResourceDictionary lightResources;
         private ResourceDictionary darkResources;
@@ -46,7 +50,6 @@ namespace ModernFlyouts.UI
             {
                 if (SetProperty(ref topBarVisibility, value))
                 {
-                    _flyoutWindow.OnTopBarVisibilityChanged(value);
                     AppDataHelper.TopBarVisibility = value;
                 }
             }
@@ -82,6 +85,14 @@ namespace ModernFlyouts.UI
             }
         }
 
+        private ElementTheme actualFlyoutTheme = ElementTheme.Dark;
+
+        public ElementTheme ActualFlyoutTheme
+        {
+            get => actualFlyoutTheme;
+            private set => SetProperty(ref actualFlyoutTheme, value);
+        }
+
         private int flyoutTimeout = DefaultValuesStore.FlyoutTimeout;
 
         public int FlyoutTimeout
@@ -91,7 +102,7 @@ namespace ModernFlyouts.UI
             {
                 if (SetProperty(ref flyoutTimeout, value))
                 {
-                    OnFlyoutTimeoutChanged();
+                    AppDataHelper.FlyoutTimeout = flyoutTimeout;
                 }
             }
         }
@@ -134,6 +145,80 @@ namespace ModernFlyouts.UI
                 if (SetProperty(ref useColoredTrayIcon, value))
                 {
                     OnUseColoredTrayIconChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region Layout
+
+        private FlyoutWindowPlacementMode onScreenFlyoutWindowPlacementMode;
+
+        public FlyoutWindowPlacementMode OnScreenFlyoutWindowPlacementMode
+        {
+            get => onScreenFlyoutWindowPlacementMode;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowPlacementMode, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowPlacementMode = value;
+                }
+            }
+        }
+
+        private FlyoutWindowAlignments onScreenFlyoutWindowAlignment;
+
+        public FlyoutWindowAlignments OnScreenFlyoutWindowAlignment
+        {
+            get => onScreenFlyoutWindowAlignment;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowAlignment, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowAlignment = value;
+                }
+            }
+        }
+
+        private Thickness onScreenFlyoutWindowMargin;
+
+        public Thickness OnScreenFlyoutWindowMargin
+        {
+            get => onScreenFlyoutWindowMargin;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowMargin, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowMargin = value;
+                }
+            }
+        }
+
+        private FlyoutWindowExpandDirection onScreenFlyoutWindowExpandDirection;
+
+        public FlyoutWindowExpandDirection OnScreenFlyoutWindowExpandDirection
+        {
+            get => onScreenFlyoutWindowExpandDirection;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutWindowExpandDirection, value))
+                {
+                    AppDataHelper.OnScreenFlyoutWindowExpandDirection = value;
+                }
+            }
+        }
+
+        private StackingDirection onScreenFlyoutContentStackingDirection;
+
+        public StackingDirection OnScreenFlyoutContentStackingDirection
+        {
+            get => onScreenFlyoutContentStackingDirection;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutContentStackingDirection, value))
+                {
+                    AppDataHelper.OnScreenFlyoutContentStackingDirection = value;
                 }
             }
         }
@@ -218,9 +303,13 @@ namespace ModernFlyouts.UI
 
         #endregion
 
-        public void Initialize(FlyoutWindow flyoutWindow)
+        public void Initialize()
         {
-            _flyoutWindow = flyoutWindow;
+            OnScreenFlyoutWindowPlacementMode = AppDataHelper.OnScreenFlyoutWindowPlacementMode;
+            OnScreenFlyoutWindowAlignment = AppDataHelper.OnScreenFlyoutWindowAlignment;
+            OnScreenFlyoutWindowMargin = AppDataHelper.OnScreenFlyoutWindowMargin;
+            OnScreenFlyoutWindowExpandDirection = AppDataHelper.OnScreenFlyoutWindowExpandDirection;
+            OnScreenFlyoutContentStackingDirection = AppDataHelper.OnScreenFlyoutContentStackingDirection;
 
             TopBarVisibility = AppDataHelper.TopBarVisibility;
             FlyoutTimeout = AppDataHelper.FlyoutTimeout;
@@ -229,7 +318,8 @@ namespace ModernFlyouts.UI
             MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
             SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 
-            themeResources = (ThemeResources)App.Current.Resources.MergedDictionaries.FirstOrDefault(x => x is ThemeResources);
+            themeResources = (ThemeResources)Application.Current.Resources
+                .MergedDictionaries.FirstOrDefault(x => x is ThemeResources);
             lightResources = themeResources.ThemeDictionaries["Light"];
             darkResources = themeResources.ThemeDictionaries["Dark"];
 
@@ -245,12 +335,6 @@ namespace ModernFlyouts.UI
 
             SystemTheme.SystemThemeChanged += OnSystemThemeChanged;
             SystemTheme.Initialize();
-        }
-
-        private void OnFlyoutTimeoutChanged()
-        {
-            _flyoutWindow.UpdateHideTimerInterval(flyoutTimeout);
-            AppDataHelper.FlyoutTimeout = flyoutTimeout;
         }
 
         private void OnFlyoutBackgroundOpacityChanged()
@@ -273,11 +357,8 @@ namespace ModernFlyouts.UI
 
         private void OnSystemThemeChanged(object sender, SystemThemeChangedEventArgs args)
         {
-            _flyoutWindow.Dispatcher.Invoke(() =>
-            {
-                currentSystemTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
-                UpdateTheme();
-            });
+            currentSystemTheme = args.IsSystemLightTheme ? ElementTheme.Light : ElementTheme.Dark;
+            UpdateTheme();
         }
 
         private void UpdateAppTheme()
@@ -293,8 +374,7 @@ namespace ModernFlyouts.UI
 
         private void UpdateTheme()
         {
-            currentTheme = flyoutTheme == ElementTheme.Default ? currentSystemTheme : flyoutTheme;
-            ThemeManager.SetRequestedTheme(_flyoutWindow, currentTheme);
+            ActualFlyoutTheme = flyoutTheme == ElementTheme.Default ? currentSystemTheme : flyoutTheme;
 
             if (!_isThemeUpdated)
             {
@@ -309,7 +389,7 @@ namespace ModernFlyouts.UI
         {
             if (!_isThemeUpdated) return;
 
-            var themeResource = currentTheme == ElementTheme.Light ? lightResources : darkResources;
+            var themeResource = actualFlyoutTheme == ElementTheme.Light ? lightResources : darkResources;
             var brush = themeResource["FlyoutBackground"] as Brush;
             brush = brush.Clone();
             brush.Opacity = flyoutBackgroundOpacity * 0.01;
@@ -348,6 +428,18 @@ namespace ModernFlyouts.UI
                 CalculatedSessionsPanelMaxHeight = DefaultSessionControlHeight;
                 CalculatedSessionsPanelSpacing = 0;
             }
+        }
+
+        internal static Thickness GetFlyoutShadowMargin(double depth)
+        {
+            double radius = 0.9 * depth;
+            double offset = 0.4 * depth;
+
+            return new Thickness(
+                radius,
+                radius,
+                radius,
+                radius + offset);
         }
     }
 

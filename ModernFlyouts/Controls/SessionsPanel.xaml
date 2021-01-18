@@ -1,14 +1,16 @@
-﻿<UserControl x:Class="ModernFlyouts.SessionsPanel"
+﻿<UserControl x:Class="ModernFlyouts.Controls.SessionsPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:local="clr-namespace:ModernFlyouts"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:root="clr-namespace:ModernFlyouts"
+             xmlns:local="clr-namespace:ModernFlyouts.Controls"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              xmlns:mediaControl="clr-namespace:ModernFlyouts.Core.Media.Control;assembly=ModernFlyouts.Core"
              mc:Ignorable="d"
-             d:DesignHeight="138" d:DesignWidth="354"
-             MaxWidth="{DynamicResource FlyoutWidth}" DataContext="{x:Static local:FlyoutHandler.Instance}">
+             d:DesignHeight="206" d:DesignWidth="354"
+             MaxWidth="{DynamicResource FlyoutWidth}" DataContext="{x:Static root:FlyoutHandler.Instance}">
     <UserControl.Resources>
 
         <!--region: ScrollViewer-->
@@ -203,12 +205,12 @@
 
     <ScrollViewer x:Name="ContentScrollViewer" MaxHeight="{Binding UIManager.CalculatedSessionsPanelMaxHeight, Mode=OneWay}"
                   Style="{StaticResource SecondaryContentScrollViewerStyle}" CanContentScroll="False">
-        <ItemsControl x:Name="sessionsList">
+        <ItemsControl ItemsSource="{Binding AudioFlyoutHelper.AllMediaSessions}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ui:SimpleStackPanel
-                        Orientation="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.SessionsPanelOrientation}"
-                        Spacing="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.CalculatedSessionsPanelSpacing}" />
+                        Orientation="{Binding Source={x:Static root:FlyoutHandler.Instance}, Path=UIManager.SessionsPanelOrientation}"
+                        Spacing="{Binding Source={x:Static root:FlyoutHandler.Instance}, Path=UIManager.CalculatedSessionsPanelSpacing}"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.Resources>

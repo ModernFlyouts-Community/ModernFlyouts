@@ -347,8 +347,8 @@ namespace ModernFlyouts.Core.Interop
             _hasNativeFlyoutCreated = GetAllInfos();
             if (_hasNativeFlyoutCreated)
             {
-                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Minimize);
-                ShowWindowAsync(HWndHost, (int)ShowWindowCommands.Hide);
+                ShowWindowAsync(HWndDUI, ShowWindowCommands.Minimize);
+                ShowWindowAsync(HWndHost, ShowWindowCommands.Hide);
             }
         }
 
@@ -356,9 +356,9 @@ namespace ModernFlyouts.Core.Interop
         {
             if (_hasNativeFlyoutCreated)
             {
-                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Minimize);
-                ShowWindowAsync(HWndHost, (int)ShowWindowCommands.Minimize);
-                ShowWindowAsync(HWndHost, (int)ShowWindowCommands.ForceMinimize);
+                ShowWindowAsync(HWndDUI, ShowWindowCommands.Minimize);
+                ShowWindowAsync(HWndHost, ShowWindowCommands.Minimize);
+                ShowWindowAsync(HWndHost, ShowWindowCommands.ForceMinimize);
             }
         }
 
@@ -366,7 +366,7 @@ namespace ModernFlyouts.Core.Interop
         {
             if (_hasNativeFlyoutCreated)
             {
-                ShowWindowAsync(HWndDUI, (int)ShowWindowCommands.Restore);
+                ShowWindowAsync(HWndDUI, ShowWindowCommands.Restore);
             }
         }
 

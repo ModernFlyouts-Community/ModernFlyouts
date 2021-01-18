@@ -1,25 +1,17 @@
 ﻿using ModernFlyouts.Helpers;
 using ModernFlyouts.UI;
 using System;
-using System.Collections;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     public partial class SessionsPanel : UserControl
     {
-        public SessionsPanel() : this(null)
-        {
-
-        }
-
-        public SessionsPanel(IEnumerable mediaSessions)
+        public SessionsPanel()
         {
             InitializeComponent();
-
-            sessionsList.ItemsSource = mediaSessions ?? FlyoutHandler.Instance.AudioFlyoutHelper.AllMediaSessions;
 
             ContentScrollViewer.CommandBindings.Add(new CommandBinding(ScrollBar.LineLeftCommand, OnScrollCommand, OnQueryScrollCommand));
             ContentScrollViewer.CommandBindings.Add(new CommandBinding(ScrollBar.LineRightCommand, OnScrollCommand, OnQueryScrollCommand));

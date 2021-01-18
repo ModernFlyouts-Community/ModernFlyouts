@@ -1,4 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
+using ModernFlyouts.Core.AppInformation;
+using ModernFlyouts.Core.Helpers;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -6,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 using Windows.Media.Control;
 using Windows.Storage.Streams;
 
@@ -26,12 +27,13 @@ namespace ModernFlyouts.Core.Media.Control
 
         private void Initialize()
         {
-            sourceAppInfo = SourceAppInfo.FromAppId(GSMTCSession.SourceAppUserModelId);
+            sourceAppInfo = SourceAppInfo.FromAppUserModelId(GSMTCSession.SourceAppUserModelId);
             if (sourceAppInfo != null)
             {
                 sourceAppInfo.InfoFetched += SourceAppInfo_InfoFetched;
+                sourceAppInfo.FetchInfosAsync();
+                ActivateMediaSourceCommand = new RelayCommand(sourceAppInfo.Activate, () => sourceAppInfo != null);
             }
-            ActivateMediaSourceCommand = new RelayCommand(sourceAppInfo.Activate, () => sourceAppInfo != null);
 
             GSMTCSession.MediaPropertiesChanged += GSMTCSession_MediaPropertiesChanged;
             GSMTCSession.PlaybackInfoChanged += GSMTCSession_PlaybackInfoChanged;
@@ -40,7 +42,7 @@ namespace ModernFlyouts.Core.Media.Control
             UpdateSessionInfo(GSMTCSession);
         }
 
-        public void Dispose()
+        public override void Disconnect()
         {
             if (GSMTCSession != null)
             {
@@ -49,32 +51,35 @@ namespace ModernFlyouts.Core.Media.Control
                 GSMTCSession.TimelinePropertiesChanged -= GSMTCSession_TimelinePropertiesChanged;
             }
             GSMTCSession = null;
+
+            sourceAppInfo.Dispose();
+            sourceAppInfo = null;
         }
 
         #region Hooking-up Events
 
-        private async void GSMTCSession_MediaPropertiesChanged(GlobalSystemMediaTransportControlsSession session, MediaPropertiesChangedEventArgs args)
+        private void GSMTCSession_MediaPropertiesChanged(GlobalSystemMediaTransportControlsSession session, MediaPropertiesChangedEventArgs args)
         {
-            await Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, new Action(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdateSessionInfo(session);
-            }));
+            });
         }
 
-        private async void GSMTCSession_PlaybackInfoChanged(GlobalSystemMediaTransportControlsSession session, PlaybackInfoChangedEventArgs args)
+        private void GSMTCSession_PlaybackInfoChanged(GlobalSystemMediaTransportControlsSession session, PlaybackInfoChangedEventArgs args)
         {
-            await Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Render, new Action(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdatePlaybackInfo(session);
-            }));
+            });
         }
 
-        private async void GSMTCSession_TimelinePropertiesChanged(GlobalSystemMediaTransportControlsSession session, TimelinePropertiesChangedEventArgs args)
+        private void GSMTCSession_TimelinePropertiesChanged(GlobalSystemMediaTransportControlsSession session, TimelinePropertiesChangedEventArgs args)
         {
-            await Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Render, new Action(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdateTimelineInfo(session);
-            }));
+            });
         }
 
         #endregion
@@ -82,8 +87,12 @@ namespace ModernFlyouts.Core.Media.Control
         private void SourceAppInfo_InfoFetched(object sender, EventArgs e)
         {
             sourceAppInfo.InfoFetched -= SourceAppInfo_InfoFetched;
-            MediaSourceName = sourceAppInfo.AppName;
-            MediaSourceIcon = sourceAppInfo.AppImage;
+            MediaSourceName = sourceAppInfo.DisplayName;
+
+            if (BitmapHelper.TryCreateBitmapImageFromStream(sourceAppInfo.LogoStream, out var bitmap))
+            {
+                MediaSourceIcon = bitmap;
+            }
         }
 
         #region Updating Properties

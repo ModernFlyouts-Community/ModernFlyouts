@@ -10,11 +10,11 @@
   <Identity
     Name="32669SamG.ModernFlyouts"
     Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
-    Version="0.8.4.1" />
+    Version="0.8.10.1" />
 
   <Properties>
-    <DisplayName>ModernFlyouts (Preview)</DisplayName>
-    <PublisherDisplayName>Sam G</PublisherDisplayName>
+	<DisplayName>ModernFlyouts (Preview)</DisplayName>
+	<PublisherDisplayName>Sam G</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -37,7 +37,7 @@
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png" ShortName="ModernFlyouts">
+		<uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png" ShortName="ModernFlyouts">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo"/>
             <uap:ShowOn Tile="wide310x150Logo"/>
@@ -49,7 +49,7 @@
       <Extensions>
         <uap5:Extension
             Category="windows.startupTask"
-            Executable="ModernFlyouts\ModernFlyouts.exe"
+            Executable="ModernFlyoutsLauncher.exe"
             EntryPoint="Windows.FullTrustApplication">
           <uap5:StartupTask
             TaskId="ModernFlyoutsStartupId"

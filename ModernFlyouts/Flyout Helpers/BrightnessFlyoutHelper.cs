@@ -4,6 +4,7 @@ using ModernFlyouts.Utilities;
 using System;
 using System.Diagnostics;
 using System.Management;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ModernFlyouts
@@ -45,7 +46,7 @@ namespace ModernFlyouts
 
         private void UpdateBrightness(int brightness)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 brightnessControl.BrightnessGlyph.Glyph = brightness > 50 ? CommonGlyphs.Brightness : CommonGlyphs.LowerBrightness;
                 brightnessControl.textVal.Text = brightness.ToString("00");
@@ -55,7 +56,7 @@ namespace ModernFlyouts
             });
         }
 
-        private void BrightnessSlider_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
+        private void BrightnessSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (!_isInCodeValueChange)
             {

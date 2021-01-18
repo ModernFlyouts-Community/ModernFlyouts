@@ -71,5 +71,11 @@
         public const string Unlock = "\uE785";
 
         public const string Personalization = "\uE771";
+
+        public const string Link = "\uE167";
+
+        public const string Blocked = "\uE25B";
+
+        public const string Layout = "\uECA5";
     }
 }

@@ -19,8 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ModernWpfUI" Version="0.9.3-preview.201204.0" />
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.14" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+    <PackageReference Include="ModernWpf.Toolkit.UI.Controls" Version="0.1.0" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.3" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.17" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Release'">

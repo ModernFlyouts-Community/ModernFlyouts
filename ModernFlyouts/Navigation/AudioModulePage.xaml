@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:toolkit="http://schemas.modernwpf.com/toolkit"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
       xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
       xmlns:resx="clr-namespace:ModernFlyouts.Properties"
@@ -17,6 +18,7 @@
                                  OnContent="{x:Static resx:Strings.Settings_On}"
                                  OffContent="{x:Static resx:Strings.Settings_Off}" />
             </GroupBox>
+
             <TabControl IsEnabled="{Binding AudioFlyoutHelper.IsEnabled, Mode=OneWay}"
                         Margin="-10,0" Style="{DynamicResource TabControlPivotStyle}">
                 <TabItem Header="{x:Static resx:Strings.GeneralSettings}">
@@ -42,7 +44,7 @@
                         <ui:RadioButtons x:Name="orientationCmbBox" x:FieldModifier="private"
                                          Header="{x:Static resx:Strings.AudioFlyoutHelper_SessionsPanelOrientation}"
                                          ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
-                                         ItemsSource="{Binding Source={x:Type Orientation}, Converter={StaticResource EnumValuesConverter}}"
+                                         ItemsSource="{toolkit:EnumValues Type=Orientation}"
                                          SelectedItem="{Binding UIManager.SessionsPanelOrientation}" />
                         <ui:NumberBox Header="{x:Static resx:Strings.AudioFlyoutHelper_MaxVerticalSessionControlsCount}" MinWidth="240"
                                       HorizontalAlignment="Left" Minimum="1" Maximum="10" SmallChange="1" LargeChange="2"
@@ -52,7 +54,7 @@
                     </ui:SimpleStackPanel>
                 </TabItem>
                 <TabItem Header="{x:Static resx:Strings.Settings_Modules_Audio_Volume}" Visibility="Collapsed">
-                    
+
                 </TabItem>
             </TabControl>
         </StackPanel>

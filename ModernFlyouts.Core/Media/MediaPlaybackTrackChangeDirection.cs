@@ -9,10 +9,12 @@
         /// The change direction is unknown.
         /// </summary>
         Unknown = 0,
+
         /// <summary>
         /// The change direction is forward.
         /// </summary>
         Forward = 1,
+
         /// <summary>
         /// The change direction is backward.
         /// </summary>

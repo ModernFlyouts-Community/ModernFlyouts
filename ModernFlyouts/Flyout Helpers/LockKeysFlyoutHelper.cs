@@ -92,6 +92,7 @@ namespace ModernFlyouts
         }
 
         private bool IsKeyPressed;
+
         private void KeyPressed(Key key, int virtualKey)
         {
             if (IsKeyPressed)

@@ -32,7 +32,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                 "State",
                 typeof(RevealBrushState),
                 typeof(RevealBrushHelper),
-                new FrameworkPropertyMetadata(RevealBrushState.Normal, FrameworkPropertyMetadataOptions.Inherits, OnRevealBrushStateChanged));
+                new FrameworkPropertyMetadata(RevealBrushState.Normal, FrameworkPropertyMetadataOptions.Inherits, OnStatePropertyChanged));
 
         public static RevealBrushState GetState(DependencyObject obj)
         {
@@ -44,7 +44,7 @@ namespace ModernFlyouts.UI.Fluent.Media
             obj.SetValue(StateProperty, value);
         }
 
-        private static void OnRevealBrushStateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnStatePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is UIElement uiElement)
             {
@@ -141,7 +141,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                 "IsMouseOverRootVisual",
                 typeof(bool),
                 typeof(RevealBrushHelper),
-                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits, OnIsMouseOverRootVisualChanged));
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits, OnIsMouseOverRootVisualPropertyChanged));
 
         internal static bool GetIsMouseOverRootVisual(DependencyObject obj)
         {
@@ -153,7 +153,7 @@ namespace ModernFlyouts.UI.Fluent.Media
             obj.SetValue(IsMouseOverRootVisualProperty, value);
         }
 
-        private static void OnIsMouseOverRootVisualChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnIsMouseOverRootVisualPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is UIElement uiElement)
             {
@@ -194,7 +194,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                 "TrackThisElement",
                 typeof(bool),
                 typeof(RevealBrushHelper),
-                new PropertyMetadata(false, OnTrackThisElementChanged));
+                new PropertyMetadata(false, OnTrackThisElementPropertyChanged));
 
         public static bool GetTrackThisElement(DependencyObject obj)
         {
@@ -206,7 +206,7 @@ namespace ModernFlyouts.UI.Fluent.Media
             obj.SetValue(TrackThisElementProperty, value);
         }
 
-        private static void OnTrackThisElementChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnTrackThisElementPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is not UIElement ctrl) return;
 
@@ -237,7 +237,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                 "RevealBrushMode",
                 typeof(RevealBrushMode),
                 typeof(RevealBrushHelper),
-                new PropertyMetadata(RevealBrushMode.None, OnRevealBrushModeChanged));
+                new PropertyMetadata(RevealBrushMode.None, OnRevealBrushModePropertyChanged));
 
         public static RevealBrushMode GetRevealBrushMode(DependencyObject obj)
         {
@@ -249,7 +249,7 @@ namespace ModernFlyouts.UI.Fluent.Media
             obj.SetValue(RevealBrushModeProperty, value);
         }
 
-        private static void OnRevealBrushModeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnRevealBrushModePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is UIElement uiElement && e.NewValue is RevealBrushMode revealBrushMode)
             {
@@ -258,7 +258,7 @@ namespace ModernFlyouts.UI.Fluent.Media
                     RevealBrushMode.Border => RevealBorderBrushHelper.GetRevealBrush(uiElement),
                     RevealBrushMode.Background => RevealBackgroundBrushHelper.GetHoverRevealBrush(uiElement),
                     RevealBrushMode.BackgroundPressed => RevealBackgroundBrushHelper.GetPressedRevealBrush(uiElement),
-                    // Could be set to any colour given that its alpha is 100%. I just use YellowGreen because it's my favourite colour.
+                    // Could be set to any color given that its alpha is 100%. I just use YellowGreen because it's my favorite color.
                     _ => Brushes.YellowGreen,
                 };
             }

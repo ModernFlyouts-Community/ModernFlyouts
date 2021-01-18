@@ -17,6 +17,7 @@
                                  OnContent="{x:Static resx:Strings.Settings_On}"
                                  OffContent="{x:Static resx:Strings.Settings_Off}" />
             </GroupBox>
+
             <GroupBox IsEnabled="{Binding LockKeysFlyoutHelper.IsEnabled, Mode=OneWay}"
                       Header="{x:Static resx:Strings.LockKeysFlyoutHelper_SelectKeyDescription}">
                 <ui:SimpleStackPanel Spacing="10">

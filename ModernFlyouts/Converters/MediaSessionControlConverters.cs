@@ -3,6 +3,7 @@ using ModernFlyouts.Properties;
 using ModernFlyouts.Utilities;
 using System;
 using System.Globalization;
+using System.Text;
 using System.Windows.Data;
 
 namespace ModernFlyouts.Converters
@@ -150,7 +151,7 @@ namespace ModernFlyouts.Converters
 
     #endregion
 
-    internal class TimeSpanConverter : IValueConverter
+    internal class TimeSpanToNumberConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -170,6 +171,33 @@ namespace ModernFlyouts.Converters
             }
 
             return TimeSpan.Zero;
+        }
+    }
+
+    internal class TimeSpanToStringConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is TimeSpan timeSpan)
+            {
+                StringBuilder stringBuilder = new();
+
+                if (timeSpan.TotalHours >= 1)
+                {
+                    stringBuilder.Append("h\\:");
+                }
+
+                stringBuilder.Append("m\\:ss");
+
+                return timeSpan.ToString(stringBuilder.ToString());
+            }
+
+            return string.Empty;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

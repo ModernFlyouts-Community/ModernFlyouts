@@ -12,7 +12,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources d:RequestedTheme="Dark">
+                <ui:ThemeResources>
                     <ui:ThemeResources.ThemeDictionaries>
                         <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light" local:ToolkitThemeDictionary.Key="Light">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />
@@ -32,7 +32,6 @@
                 <ResourceDictionary Source="Styles/ToggleButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <converters:EnumValuesConverter x:Key="EnumValuesConverter" />
             <converters:IndexToVisibilityConverter x:Key="IndexToVisibilityConverter" />
             <converters:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
             <converters:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
@@ -48,7 +47,8 @@
 
             <converters:RepeatButtonIsCheckedConverter x:Key="RepeatButtonIsCheckedConverter" />
 
-            <converters:TimeSpanConverter x:Key="TimeSpanConverter" />
+            <converters:TimeSpanToNumberConverter x:Key="TimeSpanToNumberConverter" />
+            <converters:TimeSpanToStringConverter x:Key="TimeSpanToStringConverter" />
             
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
             <x:Static x:Key="FlyoutWidth" Member="localui:UIManager.FlyoutWidth" />

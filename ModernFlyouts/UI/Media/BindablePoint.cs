@@ -96,6 +96,11 @@ namespace ModernFlyouts.UI.Media
             return false;
         }
 
+        public Point ToPoint()
+        {
+            return new(X, Y);
+        }
+
         public override string ToString()
         {
             return $"{X}, {Y}";

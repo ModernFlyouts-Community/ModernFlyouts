@@ -1,16 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Interop;
 
 namespace ModernFlyouts.Core.Interop
 {
     public class WndProcHookManager
     {
-        private static Dictionary<int, HwndSourceHook> hooks = new();
+        private Dictionary<uint, WndProc> hooks = new();
 
-        private static List<WndProcHookHandler> hookHandlers = new();
+        private List<IWndProcHookHandler> hookHandlers = new();
 
-        public static void RegisterHookHandler(WndProcHookHandler hookHandler)
+        private static Dictionary<BandWindow, WndProcHookManager> hookManagers = new();
+
+        internal static WndProcHookManager RegisterForBandWindow(BandWindow bandWindow)
+        {
+            if (bandWindow == null)
+                throw new ArgumentNullException(nameof(bandWindow));
+
+            WndProcHookManager hookManager = new();
+
+            hookManagers.Add(bandWindow, hookManager);
+
+            return hookManager;
+        }
+
+        public static WndProcHookManager GetForBandWindow(BandWindow bandWindow)
+        {
+            if (bandWindow == null)
+                throw new ArgumentNullException(nameof(bandWindow));
+
+            if (hookManagers.TryGetValue(bandWindow, out var hookManager))
+            {
+                return hookManager;
+            }
+
+            return null;
+        }
+
+        public void RegisterHookHandler(IWndProcHookHandler hookHandler)
         {
             if (hookHandler == null)
                 throw new ArgumentNullException(nameof(hookHandler));
@@ -18,15 +44,15 @@ namespace ModernFlyouts.Core.Interop
             hookHandlers.Add(hookHandler);
         }
 
-        public static void RegisterHookHandlerForMessage(int msg, WndProcHookHandler hookHandler)
+        public void RegisterHookHandlerForMessage(uint msg, IWndProcHookHandler hookHandler)
         {
             if (hookHandler == null)
                 throw new ArgumentNullException(nameof(hookHandler));
 
-            hooks.Add(msg, hookHandler.WndProc);
+            hooks.Add(msg, hookHandler.OnWndProc);
         }
 
-        public static void RegisterCallbackForMessage(int msg, HwndSourceHook callback)
+        public void RegisterCallbackForMessage(uint msg, WndProc callback)
         {
             if (callback == null)
                 throw new ArgumentNullException(nameof(callback));
@@ -34,31 +60,36 @@ namespace ModernFlyouts.Core.Interop
             hooks.Add(msg, callback);
         }
 
-        public static void OnHwndCreated(IntPtr hWnd)
+        internal void OnHwndCreated(IntPtr hWnd)
         {
             foreach (var hookHandler in hookHandlers)
             {
-                hookHandler.OnHwndCreated(hWnd);
+                uint msg = hookHandler.OnHwndCreated(hWnd, out bool register);
+                if (register)
+                {
+                    RegisterHookHandlerForMessage(msg, hookHandler);
+                }
             }
         }
 
-        public static IntPtr TryHandleWindowMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        internal IntPtr TryHandleWindowMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam, out bool handled)
         {
+            handled = false;
+
             if (hooks.TryGetValue(msg, out var hook))
             {
-                return hook(hWnd, msg, wParam, lParam, ref handled);
+                handled = true;
+                return hook(hWnd, msg, wParam, lParam);
             }
 
             return IntPtr.Zero;
         }
     }
 
-    public abstract class WndProcHookHandler
+    public interface IWndProcHookHandler
     {
-        public virtual void OnHwndCreated(IntPtr hWnd)
-        {
-        }
+        public uint OnHwndCreated(IntPtr hWnd, out bool register);
 
-        public abstract IntPtr WndProc(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled);
+        public IntPtr OnWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
     }
 }

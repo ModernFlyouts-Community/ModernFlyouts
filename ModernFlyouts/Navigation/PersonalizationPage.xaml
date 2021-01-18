@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:toolkit="http://schemas.modernwpf.com/toolkit"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
       xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
       xmlns:helpers="clr-namespace:ModernFlyouts.Helpers"
@@ -17,18 +18,15 @@
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:RadioButtons Header="{x:Static resx:Strings.Settings_FlyoutTheme}"
                                      ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
-                                     ItemsSource="{Binding Source={x:Type ui:ElementTheme},
-                                            Converter={StaticResource EnumValuesConverter}}"
+                                     ItemsSource="{toolkit:EnumValues Type=ui:ElementTheme}"
                                      SelectedItem="{Binding UIManager.FlyoutTheme}" />
                     <ui:RadioButtons Header="{x:Static resx:Strings.Settings_AppTheme}"
                                      ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
-                                     ItemsSource="{Binding Source={x:Type ui:ElementTheme},
-                                            Converter={StaticResource EnumValuesConverter}}"
+                                     ItemsSource="{toolkit:EnumValues Type=ui:ElementTheme}"
                                      SelectedItem="{Binding UIManager.AppTheme}" />
                     <ui:RadioButtons Header="{x:Static resx:Strings.Settings_TopBarVisibility}"
                                      ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
-                                     ItemsSource="{Binding Source={x:Type localui:TopBarVisibility},
-                                            Converter={StaticResource EnumValuesConverter}}"
+                                     ItemsSource="{toolkit:EnumValues Type=localui:TopBarVisibility}"
                                      SelectedItem="{Binding UIManager.TopBarVisibility}" />
                     <ui:SimpleStackPanel Spacing="10" HorizontalAlignment="Left" Orientation="Horizontal">
                         <Slider ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutBackgroundOpacity}"
@@ -52,6 +50,7 @@
                                         Converter={StaticResource BooleanToVisibilityConverter}}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
+
             <GroupBox Header="{x:Static resx:Strings.Settings_Behavior}">
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:NumberBox Header="{x:Static resx:Strings.Settings_FlyoutTimeout}"

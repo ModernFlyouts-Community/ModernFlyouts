@@ -69,6 +69,7 @@ namespace ModernFlyouts
             ("general", typeof(GeneralSettingsPage)),
             ("about", typeof(AboutPage)),
             ("personalization", typeof(PersonalizationPage)),
+            ("layout", typeof(LayoutPage)),
             ("audio_module", typeof(AudioModulePage)),
             ("brightness_module", typeof(BrightnessModulePage)),
             ("airplane_mode_module", typeof(AirplaneModeModulePage)),

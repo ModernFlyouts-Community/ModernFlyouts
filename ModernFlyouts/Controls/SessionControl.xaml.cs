@@ -7,7 +7,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     public partial class SessionControl : UserControl
     {
@@ -27,6 +27,7 @@ namespace ModernFlyouts
             get => (bool)GetValue(AlignThumbnailToRightProperty);
             set => SetValue(AlignThumbnailToRightProperty, value);
         }
+
         #endregion
 
         public SessionControl()
@@ -59,9 +60,6 @@ namespace ModernFlyouts
 
         private void SessionControl_Loaded(object sender, RoutedEventArgs e)
         {
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding += FlyoutWindow_FlyoutTimedHiding;
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden += FlyoutWindow_FlyoutHidden;
-
             if (_mediaSession != null)
             {
                 _mediaSession.MediaPropertiesChanging += MediaSession_MediaPropertiesChanging;
@@ -69,26 +67,8 @@ namespace ModernFlyouts
             }
         }
 
-        private void FlyoutWindow_FlyoutTimedHiding(object sender, RoutedEventArgs e)
-        {
-            if (TimelineInfoFlyout.IsOpen)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void FlyoutWindow_FlyoutHidden(object sender, RoutedEventArgs e)
-        {
-            TimelineInfoFlyout.Hide();
-        }
-
         private void SessionControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            TimelineInfoFlyout.Hide();
-
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutTimedHiding -= FlyoutWindow_FlyoutTimedHiding;
-            FlyoutHandler.Instance.FlyoutWindow.FlyoutHidden -= FlyoutWindow_FlyoutHidden;
-
             if (_mediaSession != null)
             {
                 _mediaSession.MediaPropertiesChanging -= MediaSession_MediaPropertiesChanging;
@@ -131,7 +111,7 @@ namespace ModernFlyouts
         {
             var direction = _mediaSession.TrackChangeDirection;
 
-            var fadeAnim = new FadeInThemeAnimation() { Duration = TimeSpan.FromMilliseconds(367)};
+            var fadeAnim = new FadeInThemeAnimation() { Duration = TimeSpan.FromMilliseconds(367) };
 
             ThumbnailBackgroundBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);
             ThumbnailImageBrush.BeginAnimation(Brush.OpacityProperty, fadeAnim);
