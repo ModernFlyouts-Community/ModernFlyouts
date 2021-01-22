@@ -322,7 +322,7 @@ namespace ModernFlyouts.Core.Interop
                 throw new Win32Exception(Marshal.GetLastWin32Error());
 
             IntPtr hWnd = CreateWindowInBand(
-                    (int)(ExtendedWindowStyles.WS_EX_TOOLWINDOW
+                    (int)(ExtendedWindowStyles.WS_EX_TRANSPARENT | ExtendedWindowStyles.WS_EX_NOREDIRECTIONBITMAP
                     | (Activatable ? 0 : ExtendedWindowStyles.WS_EX_NOACTIVATE)
                     | (TopMost ? ExtendedWindowStyles.WS_EX_TOPMOST : 0)),
                     regResult,
@@ -347,7 +347,7 @@ namespace ModernFlyouts.Core.Interop
 
             hookManager.OnHwndCreated(hWnd);
 
-            WindowCompositionHelper.MakeWindowTransparent(hWnd);
+            //WindowCompositionHelper.MakeWindowTransparent(hWnd);
 
             HwndSourceParameters param = new()
             {

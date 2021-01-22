@@ -11,11 +11,19 @@ namespace ModernFlyouts.Core.Media.Control
 
         public override void OnEnabled()
         {
-            NPSessionManager = new();
-            NPSessionManager.SessionListChanged += NPSessionsChanged;
-            NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
+            try
+            {
+                NPSessionManager = new();
+                NPSessionManager.SessionListChanged += NPSessionsChanged;
+                LoadSessions();
 
-            LoadSessions();
+                NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
+            }
+            catch (System.Exception)
+            {
+                //The NPSM service may NOT be available.
+                NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
+            }
         }
 
         private void NpsmServiceStart_NpsmServiceStarted(object sender, System.EventArgs e)
@@ -28,10 +36,17 @@ namespace ModernFlyouts.Core.Media.Control
 
             Application.Current.Dispatcher.Invoke(() =>
             {
-                NPSessionManager = new();
-                NPSessionManager.SessionListChanged += NPSessionsChanged;
+                try
+                {
+                    NPSessionManager = new();
+                    NPSessionManager.SessionListChanged += NPSessionsChanged;
 
-                LoadSessions();
+                    LoadSessions();
+                }
+                catch (System.Exception)
+                {
+                    //This is in case NPSM dies immediately after sending a wnf notification
+                }
             });
         }
 
