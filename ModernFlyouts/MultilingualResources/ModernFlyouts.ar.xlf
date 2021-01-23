@@ -509,10 +509,6 @@
           <source>Vertical alignment</source>
           <target state="translated">انحياز عمودي</target>
         </trans-unit>
-        <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
-          <source>Use media's thumbnail as media control's background</source>
-          <target state="new">Use media's thumbnail as media control's background</target>
-        </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
           <target state="new">Bottom</target>
