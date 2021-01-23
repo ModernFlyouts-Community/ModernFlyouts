@@ -303,9 +303,6 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Использовать цветной значок в трее</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Сброс настроек</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Сброс всех настроек по умолчанию</value>
   </data>

@@ -302,9 +302,6 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>使用彩色托盤圖示</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs。Settings_Reset]</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>將所有設置重置為預設值</value>
   </data>

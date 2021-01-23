@@ -46,11 +46,11 @@
     <value>Modalità inserimento</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} è spento</value>
+    <value>{0} è disattivato</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} è su</value>
+    <value>{0} è attivato</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
@@ -63,7 +63,7 @@
     <value>Ripristina</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro questa app</value>
+    <value>Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro quest'app</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Altri controlli</value>
@@ -135,16 +135,16 @@
     <value>Moduli</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Modulo AirplaneMode-flyout</value>
+    <value>Modulo a comparsa - Mod.Aereo</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Modulo audio-riquadro a comparsa</value>
+    <value>Modulo a comparsa - Audio</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Modulo a comparsa Luminosità</value>
+    <value>Modulo a comparsa - Luminosità</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Modulo LockKeys-flyout</value>
+    <value>Modulo a comparsa - Tasti Block</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Esegui all'avvio</value>
@@ -174,13 +174,13 @@
     <value>Verticale</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Questa applicazione è progettata per essere un moderno Fluent Design sostituzione per i vecchi flyout a tema metro presenti in Windows da Windows 8.</value>
+    <value>Questa applicazione è progettata per sostituire i vecchi flyout a tema Metro presenti in Windows con un moderno flyout in Fluent Design.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Collaboratori</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>il repository GitHub</value>
+    <value>Repository GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
     <value>Aprire un nuovo problema</value>
@@ -231,7 +231,7 @@
     <value>Nascondi automaticamente</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>compresso</value>
+    <value>Compresso</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
     <value>Visibile</value>
@@ -264,16 +264,16 @@
     <value>Abilita riquadro a comparsa Luminosità</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Abilita tasti di blocco Riquadro a comparsa</value>
+    <value>Abilita tasti di blocco riquadro a comparsa</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Tema Riquadro a comparsa</value>
+    <value>Tema riquadro a comparsa</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
     <value>Timeout riquadro a comparsa (ms)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
-    <value>sinistra</value>
+    <value>A sinistra</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
     <value>File multimediali</value>
@@ -301,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Utilizzare l'icona del vassoio colorato</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset.</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Ripristinare le impostazioni predefinite di tutte le impostazioni</value>

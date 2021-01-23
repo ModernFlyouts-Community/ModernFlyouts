@@ -302,9 +302,6 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>रंगीन ट्रे आइकन का उपयोग करें</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>एनजी। Settings_Reset}</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>सभी सेटिंग को चूक में रीसेट करें</value>
   </data>

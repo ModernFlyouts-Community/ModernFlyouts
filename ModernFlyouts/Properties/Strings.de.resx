@@ -302,9 +302,6 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Verwenden des farbigen Tray-Symbols</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Alle Einstellungen auf die Standardeinstellungen zurücksetzen</value>
   </data>

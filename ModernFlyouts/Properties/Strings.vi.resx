@@ -302,9 +302,6 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Biểu tượng Sử dụng khay màu</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs. Settings_Reset)</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Đặt lại tất cả các thiết đặt về mặc định</value>
   </data>

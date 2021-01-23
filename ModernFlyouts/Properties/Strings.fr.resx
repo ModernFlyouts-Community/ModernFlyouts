@@ -140,9 +140,6 @@
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>Selectionnez les touches dont vous voulez un menu volant</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset}</value>
-  </data>
   <data name="PinTopBar" xml:space="preserve">
     <value>Épingler la barre supérieure</value>
   </data>

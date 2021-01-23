@@ -302,9 +302,6 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>컬러 트레이 아이콘 사용</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs. Settings_Reset}</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>모든 설정을 기본값으로 재설정합니다.</value>
   </data>

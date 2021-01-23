@@ -57,7 +57,7 @@
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\ModernFlyoutsLauncher\ModernFlyoutsLauncher.vcxproj</EntryPointProjectUniqueName>
     <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
-	<PackageCertificateThumbprint>BC4C8DAC3E018D7B1C0AEE7B40C2DEA2F3DD2BE0</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>BC4C8DAC3E018D7B1C0AEE7B40C2DEA2F3DD2BE0</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>False</GenerateTestArtifacts>

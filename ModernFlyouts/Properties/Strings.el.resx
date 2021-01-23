@@ -13,7 +13,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Πληροφορίες</value>
+    <value>Σχετικά με την εφαρμογή</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
     <value>Η λειτουργία πτήσης δεν είναι διαθέσιμη :(</value>
@@ -46,21 +46,21 @@
     <value>Λειτουργία εισαγωγής</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} είναι απενεργοποιημένη</value>
+    <value>{0} είναι απενεργοποιημένο</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} είναι σε</value>
+    <value>{0} είναι ενεργοποιημένο</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Λειτουργία αντικατάστασης κειμένου</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Καρφίτσωμα επάνω γραμμής</value>
+    <value>Καρφίτσωμα άνω γραμμής</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Επαναφορά προεπιλογών</value>
+    <value>Επαναφορά αναδυόμενου στοιχείου συστήματος</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
     <value>Επαναφέρει το προεπιλεγμένο αναδυόμενο στοιχείο των Windows και κλείνει με ασφάλεια αυτήν την εφαρμογή</value>
@@ -78,13 +78,13 @@
     <value>Αναπαραγωγή</value>
   </data>
   <data name="SessionControl.Previous" xml:space="preserve">
-    <value>Προηγούμενη</value>
+    <value>Προηγούμενο</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
     <value>Επανάληψη: όλα</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Επανάληψη: απενεργοποίηση</value>
+    <value>Επανάληψη: απενεργοποιημένη</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
     <value>Επανάληψη: ένα</value>
@@ -93,7 +93,7 @@
     <value>Τυχαία σειρά: απενεργοποιημένη</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Τυχαία σειρά: σε</value>
+    <value>Τυχαία σειρά: ενεργοποιημένη</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Διακοπή</value>
@@ -117,7 +117,7 @@
     <value>Η επιλογή του προεπιλεγμένου αναδυόμενου στοιχείου των Windows ως προεπιλεγμένου δεν θα κλείσει αυτήν την εφαρμογή. Αυτή η εφαρμογή θα συνεχίσει να λειτουργεί στο παρασκήνιο. Κλείστε αυτήν την εφαρμογή με ασφάλεια για να βελτιώσετε τις επιδόσεις.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
-    <value>ΑΠΕΝΕΡΓΟΠΟΙΗΜΕΝΟΣ</value>
+    <value>Απενεργοποιημένο</value>
   </data>
   <data name="Settings.Enabled" xml:space="preserve">
     <value>Ενεργοποιημένο</value>
@@ -129,22 +129,22 @@
     <value>Προεπιλεγμένη θέση αναδυόμενου στοιχείου (για το κουμπί "Στοίχιση")</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Επάνω γραμμή αναδυόμενων στοιχείων</value>
+    <value>Άνω γραμμή αναδυόμενων στοιχείων</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Λειτουργικές μονάδες</value>
+    <value>Μονάδες αναδυόμενων στοιχείων</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Μονάδα αναδυόμενου ελέγχου airplaneMode</value>
+    <value>Λειτουργίας πτήσης</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Λειτουργική μονάδα αναδυόμενου στοιχείου ήχου</value>
+    <value>Ήχος</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Μονάδα φωτεινότητας-αναδυόμενο στοιχείο</value>
+    <value>Φωτεινότητα</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Λειτουργική μονάδα κλειδώματος-αναδυόμενο στοιχείο</value>
+    <value>Κλείδωμα πλήκτρων</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Εκτέλεση κατά την εκκίνηση</value>
@@ -156,10 +156,10 @@
     <value>Άνοιγμα παραθύρου ρυθμίσεων</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Ξεκαρφίτσωμα επάνω γραμμής</value>
+    <value>Ξεκαρφίτσωμα άνω γραμμής</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>Σύγχρονες εκτυπώσεις</value>
+    <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>Κανένα</value>
@@ -174,7 +174,7 @@
     <value>Κατακόρυφα</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Αυτή η εφαρμογή έχει σχεδιαστεί για να είναι μια σύγχρονη αντικατάσταση Fluent Design για το παλιό μετρό θέμα flyouts παρόντες στα Windows από τα Windows 8.</value>
+    <value>Αυτή η εφαρμογή έχει σχεδιαστεί για να είναι μια σύγχρονη αντικατάσταση Fluent Design για το παλιό θέμα flyouts που υπάρχει στα Windows από τα Windows 8.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Συντελεστές</value>
@@ -183,10 +183,10 @@
     <value>Αποθετήριο GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Άνοιγμα νέου ζητήματος</value>
+    <value>Άνοιγμα νέας αναφοράς προβλήματος</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Αξιολόγηση και αναθεώρηση στο Microsoft Store</value>
+    <value>Αξιολόγηση στο Microsoft Store</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Έκδοση: </value>
@@ -201,10 +201,10 @@
     <value>Προεπιλογή συστήματος</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
-    <value>Εξαρτήσεις</value>
+    <value>Απαιτούμενες Εφαρμογές</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Εάν βρείτε σφάλματα, ανοίξτε ένα νέο τεύχος στο αποθετήριο github.</value>
+    <value>Εάν βρείτε σφάλματα, ανοίξτε μία νέα αναφορά προβλήματος στο αποθετήριο GitHub.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>Αριθμός περιόδων λειτουργίας που θα εμφανίζονται</value>
@@ -213,40 +213,40 @@
     <value>Προσανατολισμός πίνακα περιόδων λειτουργίας πολυμέσων</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Εμφάνιση στοιχείων ελέγχου μεταφοράς πολυμέσων καθολικού συστήματος (GSMTC) γνωστός και ως έλεγχοι πολυμέσων στο αναδυόμενο στοιχείο έντασης ήχου</value>
+    <value>Εμφάνιση του Global System Media Transport Controls (GSMTC) γνωστό και ως έλεγχος πολυμέσων στο αναδυόμενο στοιχείο έντασης ήχου</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Εμφάνιση ελέγχου έντασης ήχου σε ελέγχους μεταφοράς πολυμέσων παγκόσμιου συστήματος (GSMTC) γνωστός και ως αναδυόμενο στοιχείο πολυμέσων</value>
+    <value>Εμφάνιση ελέγχου έντασης ήχου στο Global System Media Transport Controls (GSMTC) γνωστό και ως αναδυόμενο στοιχείο πολυμέσων</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Στοίχιση μικρογραφιών</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
-    <value>Σκούρο</value>
+    <value>Σκουρόχρωμο</value>
   </data>
   <data name="Enums.ElementTheme.Light" xml:space="preserve">
-    <value>Ανοιχτό</value>
+    <value>Ανοιχτόχρωμο</value>
   </data>
   <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
     <value>Αυτόματη απόκρυψη</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>Συμπτυγμένη</value>
+    <value>Συμπτυγμένο</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
     <value>Ορατό</value>
   </data>
   <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>Κλείδωμα κεφαλαίων</value>
+    <value>Caps Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>Προσθήκη</value>
+    <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Κλείδωμα num</value>
+    <value>Num Lock (Κλέιδωμα πλήκτρου Num)</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Κλείδωμα κύλισης</value>
+    <value>Scroll Lock (Κλείδωμα κύλισης)</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>Επιλέξτε τα πλήκτρα για τα οποία θέλετε να εμφανίζεται το αναδυόμενο στοιχείο</value>
@@ -279,16 +279,16 @@
     <value>Πολυμέσα</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Τόμος</value>
+    <value>Ένταση</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Δεξιά</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Ορατότητα επάνω γραμμής</value>
+    <value>Εμφάνιση άνω γραμμής</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Εμφάνιση εικονιδίου στην περιοχή της κασέτας συστήματος</value>
+    <value>Εμφάνιση εικονιδίου στην περιοχή των εικονιδίων συστήματος</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>Ανενεργό</value>
@@ -300,10 +300,7 @@
     <value>Θέμα εφαρμογής</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Χρήση έγχρωμου εικονιδίου κασέτας</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset.</value>
+    <value>Χρήση έγχρωμου εικονιδίου συστήματος</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Επαναφορά όλων των ρυθμίσεων στις προεπιλογές</value>
