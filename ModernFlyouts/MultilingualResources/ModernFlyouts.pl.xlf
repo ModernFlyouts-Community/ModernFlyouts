@@ -223,7 +223,7 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="final">Ta aplikacja została zaprojektowana jako nowoczesny zamiennik nakładek w stylu Fluent Design dla starych nakładek w stylu ModernUI, obecnych od Windows 8.</target>
+          <target state="final">Ta aplikacja została zaprojektowana jako zamiennik nakładek systemowych w stylu ModernUI (obecnych od czasów Windows 8). Czerpie swój wygląd z nowoczesnego  wzornictwa - Fluent Design.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
