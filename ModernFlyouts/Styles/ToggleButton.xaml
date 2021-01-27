@@ -26,11 +26,21 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
-                    <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                    <Grid x:Name="RootGrid" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Border
                             x:Name="Background"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" />
+                        <Border
+                            x:Name="BackgroundRevealHoverBorder"
+                            Background="White"
+                            CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                            media:RevealBrushHelper.RevealBrushMode="Background" />
+                        <Border
+                            x:Name="BackgroundRevealPressBorder"
+                            Background="White"
+                            CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                            media:RevealBrushHelper.RevealBrushMode="BackgroundPressed" />
                         <Border
                             x:Name="ExtraHighlight"
                             BorderBrush="{TemplateBinding BorderBrush}"
@@ -44,6 +54,7 @@
                             CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
                             media:RevealBrushHelper.RevealBrushMode="Border" />
                         <Border
+                            x:Name="ContentBorder"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
                             Padding="{TemplateBinding Padding}">
@@ -65,11 +76,10 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="media:RevealBrushHelper.State" Value="PointerOver" />
+                            <Setter TargetName="RootGrid" Property="media:RevealBrushHelper.State" Value="PointerOver" />
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundPointerOver}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushPointerOver}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushPointerOver}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundPointerOver}" />
-                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- Pressed -->
                         <MultiTrigger>
@@ -77,11 +87,10 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsPressed" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="media:RevealBrushHelper.State" Value="Pressed" />
+                            <Setter TargetName="RootGrid" Property="media:RevealBrushHelper.State" Value="Pressed" />
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundPressed}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushPressed}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushPressed}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundPressed}" />
-                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- Disabled -->
                         <MultiTrigger>
@@ -90,9 +99,11 @@
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundDisabled}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushDisabled}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundDisabled}" />
+
                             <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Border" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- Checked -->
                         <MultiTrigger>
@@ -103,7 +114,7 @@
                                 <Condition Property="IsEnabled" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundChecked}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushChecked}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushChecked}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundChecked}" />
                         </MultiTrigger>
                         <!-- CheckedPointerOver -->
@@ -112,11 +123,10 @@
                                 <Condition Property="IsChecked" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="media:RevealBrushHelper.State" Value="PointerOver" />
+                            <Setter TargetName="RootGrid" Property="media:RevealBrushHelper.State" Value="PointerOver" />
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundCheckedPointerOver}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushCheckedPointerOver}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushCheckedPointerOver}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundCheckedPointerOver}" />
-                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- CheckedPressed -->
                         <MultiTrigger>
@@ -124,11 +134,10 @@
                                 <Condition Property="IsChecked" Value="True" />
                                 <Condition Property="IsPressed" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="media:RevealBrushHelper.State" Value="Pressed" />
+                            <Setter TargetName="RootGrid" Property="media:RevealBrushHelper.State" Value="Pressed" />
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundCheckedPressed}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushCheckedPressed}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushCheckedPressed}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundCheckedPressed}" />
-                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- CheckedDisabled -->
                         <MultiTrigger>
@@ -137,9 +146,11 @@
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundCheckedDisabled}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushCheckedDisabled}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushCheckedDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundCheckedDisabled}" />
+
                             <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Border" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- Indeterminate -->
                         <MultiTrigger>
@@ -150,7 +161,7 @@
                                 <Condition Property="IsEnabled" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundIndeterminate}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminate}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminate}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundIndeterminate}" />
                         </MultiTrigger>
                         <!-- IndeterminatePointerOver -->
@@ -159,11 +170,10 @@
                                 <Condition Property="IsChecked" Value="{x:Null}" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="media:RevealBrushHelper.State" Value="PointerOver" />
+                            <Setter TargetName="RootGrid" Property="media:RevealBrushHelper.State" Value="PointerOver" />
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundIndeterminatePointerOver}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminatePointerOver}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminatePointerOver}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundIndeterminatePointerOver}" />
-                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- IndeterminatePressed -->
                         <MultiTrigger>
@@ -171,11 +181,10 @@
                                 <Condition Property="IsChecked" Value="{x:Null}" />
                                 <Condition Property="IsPressed" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="media:RevealBrushHelper.State" Value="Pressed" />
+                            <Setter TargetName="RootGrid" Property="media:RevealBrushHelper.State" Value="Pressed" />
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundIndeterminatePressed}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminatePressed}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminatePressed}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundIndeterminatePressed}" />
-                            <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         <!-- IndeterminateDisabled -->
                         <MultiTrigger>
@@ -184,9 +193,11 @@
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundIndeterminateDisabled}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminateDisabled}" />
+                            <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminateDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundIndeterminateDisabled}" />
+
                             <Setter TargetName="ExtraHighlight" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Border" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

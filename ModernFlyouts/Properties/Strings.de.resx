@@ -59,18 +59,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Kopfleiste anheften</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Bitte geben Sie den Punkt im Format 'X,Y' (z.B. 50,60) ein.</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Bitte geben Sie X,Y-Werte im Bereich {0} - {1} ein.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Der Wert kann nicht in eine Zeichenfolge umgewandelt werden.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Standard-Flyout wiederherstellen</value>
   </data>
@@ -139,9 +127,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Flyout Standardposition</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Geben Sie die Position im 'X,Y'-Format ein (z.B. 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Flyout Kopfleiste</value>
@@ -316,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Verwenden des farbigen Tray-Symbols</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Alle Einstellungen auf die Standardeinstellungen zurücksetzen</value>

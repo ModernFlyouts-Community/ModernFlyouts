@@ -59,18 +59,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>引腳頂欄。</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>請輸入格式為"X,Y"(例如 50,60)的點。</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>請在"{0} - {1}"{1}。</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>值不能隱藏到字串中。</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>還原預設值</value>
   </data>
@@ -139,9 +127,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>飛出預設位置 (用於對齊按鈕 )</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>鍵入「X,Y」格式的位置(例如 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>飛出頂欄。</value>
@@ -316,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>使用彩色托盤圖示</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs。Settings_Reset]</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>將所有設置重置為預設值</value>

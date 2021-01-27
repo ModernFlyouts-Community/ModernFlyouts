@@ -59,18 +59,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Speld TopBar vas</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Tik asseblief die punt in die formaat 'X, Y' (bv. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Voer asseblief X,Y-waardes in die reeks {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Waarde kan nie gedek word om te string nie.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Laai verstek terug</value>
   </data>
@@ -139,9 +127,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Vlieg uit verstek posisie (vir Align knoppie)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Tik die posisie in 'X,Y'-formaat (bv. 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Vlieg uit TopBar</value>
@@ -316,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Gebruik gekleurde skinkbordikoon</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs. Settings_Reset.</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Stel alle instellings terug na verstek</value>

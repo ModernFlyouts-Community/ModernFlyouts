@@ -59,18 +59,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Sematkan TopBar</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Silakan masukkan titik dalam format 'X,Y' (misalnya 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Silakan masukkan nilai X,Y dalam rentang {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Nilai tidak dapat di-cover ke string.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Pulihkan Default</value>
   </data>
@@ -139,9 +127,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Posisi Default Flyout (untuk tombol Ratakan)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Ketik posisi dalam format 'X,Y' (misalnya 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Flyout TopBar</value>
@@ -316,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Gunakan ikon baki berwarna</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs( ngs). Settings_Reset}</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Reset semua setelan ke asali</value>

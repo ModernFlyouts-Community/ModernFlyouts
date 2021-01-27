@@ -174,6 +174,9 @@
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Thumbnail alignment</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Use media's thumbnail as media control's background</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -247,18 +250,6 @@
   </data>
   <data name="PinTopBar" xml:space="preserve">
     <value>Pin TopBar</value>
-  </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Please enter the point in the format 'X,Y' (for e.g. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Please enter X,Y values in the range {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Value cannot be coverted to string.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Restore legacy flyout</value>
@@ -347,9 +338,6 @@
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Flyout default position</value>
   </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Type the position in 'X,Y' format (Default: 50,60)</value>
-  </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
     <value>Flyout theme</value>
   </data>
@@ -369,7 +357,7 @@
     <value>Left</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Flyout Modules</value>
+    <value>Flyout modules</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
     <value>Airplane mode</value>
@@ -425,9 +413,6 @@
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Unpin TopBar</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs.Settings_Reset}</value>
-  </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personalization</value>
   </data>
@@ -436,5 +421,77 @@
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Restart required to apply some changes</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Select the preferred display monitor to show the flyout on</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Flyout alignment</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Flyout content stacking direction</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout expand direction</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Flyout placement</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Placement mode</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>Horizontal alignment</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>Vertical alignment</value>
   </data>
 </root>

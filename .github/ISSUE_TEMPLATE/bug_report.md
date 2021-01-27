@@ -6,6 +6,12 @@ labels: bug
 assignees: ShankarBUS
 
 ---
+<!-- A few rules to keep in mind-
+1. Please check if there is already an issue for the bug you are facing.
+2. It would be best to create the issue in English language.
+3. Properly follow the issue template and do not delete the template.
+All good? Continue with your issue :)
+--!>
 
 **Describe the bug:**
 <!-- A clear and concise description of what the bug is. -->
@@ -20,7 +26,7 @@ Steps to reproduce the behavior:
 -->
 
 **Screenshots:**
-<!-- If applicable, add screenshots to help explain your problem. -->
+<!-- If applicable, add screenshots below this line to help explain your problem. -->
 
 **OS Version:**
  - Windows 10 Version: <!-- [e.g.  Windows 10 2004] -->
@@ -29,4 +35,4 @@ Steps to reproduce the behavior:
  - Version: <!-- [e.g. v0.7.0] -->
 
 **Additional context:**
-<!-- Add any other context about the problem here. -->
+<!-- Add any other context about the problem below this line. -->

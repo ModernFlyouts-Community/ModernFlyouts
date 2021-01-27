@@ -1,31 +1,34 @@
 ﻿using ModernFlyouts.AppLifecycle;
+using ModernFlyouts.Core.Interop;
 using ModernFlyouts.Helpers;
-using ModernFlyouts.Interop;
 using System;
+using System.Diagnostics;
 using System.Reflection;
-using System.Windows;
 
 namespace ModernFlyouts
 {
     public class Program
     {
         public const string AppName = "ModernFlyouts";
+        public const string AppLauncherName = "ModernFlyoutsLauncher";
 
         [STAThread]
         private static void Main(string[] args)
         {
             AppLifecycleManager.StartApplication(args, () =>
             {
-                InitializePrivateUseClasses();
-
-#if RELEASE
+#if DEBUG
+                Debugger.Launch();
+#elif RELEASE
                 Microsoft.AppCenter.AppCenter.Start("26393d67-ab03-4e26-a6db-aa76bf989c21",
                     typeof(Microsoft.AppCenter.Analytics.Analytics), typeof(Microsoft.AppCenter.Crashes.Crashes));
 #endif
+                InitializePrivateUseClasses();
 
                 AppDataMigration.Perform();
 
-                DUIHandler.ForceFindDUIAndHide(false);
+                NativeFlyoutHandler.Instance = new NativeFlyoutHandler();
+                NativeFlyoutHandler.Instance.Initialize();
 
                 LocalizationHelper.Initialize();
 
@@ -52,10 +55,7 @@ namespace ModernFlyouts
                     }
                 case RunCommandType.RestoreDefault:
                     {
-                        if (!DUIHandler.IsDUIAvailable())
-                        {
-                            DUIHandler.GetAllInfos();
-                        }
+                        NativeFlyoutHandler.Instance.VerifyNativeFlyoutCreated();
                         FlyoutHandler.SafelyExitApplication();
                         break;
                     }
@@ -66,10 +66,10 @@ namespace ModernFlyouts
                     }
                 case RunCommandType.AppUpdated:
                     {
-                        if (AppLifecycleManager.IsBuildBetaChannel)
-                        {
-                            MessageBox.Show("App update successfully!", AppName);
-                        }
+                        //if (AppLifecycleManager.IsBuildBetaChannel)
+                        //{
+                        //    MessageBox.Show("App update successfully!", AppName);
+                        //}
 
                         break;
                     }

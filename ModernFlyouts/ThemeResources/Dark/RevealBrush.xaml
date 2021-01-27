@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ui="http://schemas.modernwpf.com/2019">
+                    xmlns:ui="http://schemas.modernwpf.com/2019"
+                    xmlns:media="clr-namespace:ModernFlyouts.UI.Fluent.Media">
 
     <Thickness x:Key="AppBarEllipsisButtonRevealBorderThemeThickness">1</Thickness>
     <Thickness x:Key="AppBarButtonRevealBorderThemeThickness">1</Thickness>
@@ -49,45 +50,82 @@
     <Color x:Key="SystemRevealListMediumColor">#30FFFFFF</Color>
 
     <!-- Background Brushes -->
-    <SolidColorBrush x:Key="SystemControlBackgroundBaseLowRevealBackgroundBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
-    <SolidColorBrush x:Key="SystemControlTransparentRevealBackgroundBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SystemControlBackgroundAltHighRevealBackgroundBrush" Color="{ui:StaticColor SystemAltHighColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightAccentRevealBackgroundBrush" Color="{ui:DynamicColor SystemAccentColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightAccent3RevealBackgroundBrush" Color="{ui:DynamicColor SystemAccentColorDark3}" />
-    <SolidColorBrush x:Key="SystemControlHighlightAccent2RevealBackgroundBrush" Color="{ui:DynamicColor SystemAccentColorDark2}"/>
-    <SolidColorBrush x:Key="SystemControlHighlightListMediumRevealBackgroundBrush" Color="{ui:StaticColor SystemRevealListMediumColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightListLowRevealBackgroundBrush" Color="{ui:StaticColor SystemRevealListLowColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumLowRevealBaseLowBackgroundBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightBaseMediumLowRevealAccentBackgroundBrush" Color="{ui:DynamicColor SystemAccentColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightListMediumRevealListLowBackgroundBrush" Color="{ui:StaticColor SystemRevealListLowColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightAccent3RevealAccent2BackgroundBrush" Color="{ui:DynamicColor SystemAccentColorDark2}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlBackgroundBaseLowRevealBackgroundBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlTransparentRevealBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlBackgroundAltHighRevealBackgroundBrush" Color="{ui:StaticColor SystemAltHighColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightAccentRevealBackgroundBrush" Color="{ui:DynamicColor SystemAccentColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightAccent3RevealBackgroundBrush" Color="{ui:DynamicColor SystemAccentColorDark3}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightAccent2RevealBackgroundBrush" Color="{ui:DynamicColor SystemAccentColorDark2}"/>
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightListMediumRevealBackgroundBrush" Color="{ui:StaticColor SystemRevealListMediumColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightListLowRevealBackgroundBrush" Color="{ui:StaticColor SystemRevealListLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlBackgroundBaseMediumLowRevealBaseLowBackgroundBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightBaseMediumLowRevealAccentBackgroundBrush" Color="{ui:DynamicColor SystemAccentColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightListMediumRevealListLowBackgroundBrush" Color="{ui:StaticColor SystemRevealListLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBackgroundRevealBrush="True"
+                     x:Key="SystemControlHighlightAccent3RevealAccent2BackgroundBrush" Color="{ui:DynamicColor SystemAccentColorDark2}" />
 
     <!-- Border Brushes -->
-    <SolidColorBrush x:Key="SystemControlBackgroundAccentRevealBorderBrush" Color="{ui:DynamicColor SystemAccentColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundBaseHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseHighColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundBaseLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumHighColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumLowColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundChromeBlackHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeBlackHighColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundChromeBlackMediumRevealChromeBorderBrush" Color="{ui:StaticColor SystemRevealChromeBlackMediumColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundChromeMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeMediumColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundChromeMediumLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeMediumLowColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundChromeWhiteRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeWhiteColor}" />
-    <SolidColorBrush x:Key="SystemControlTransparentRevealListLowBorderBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SystemControlBackgroundListLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealListLowColor}" />
-    <SolidColorBrush x:Key="SystemControlBackgroundListMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealListMediumColor}" />
-    <SolidColorBrush x:Key="SystemControlTransparentRevealBorderBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SystemControlForegroundRevealTransparentBorderBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SystemControlBackgroundTransparentRevealBorderBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SystemControlHighlightTransparentRevealBorderBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SystemControlHighlightAltTransparentRevealBorderBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SystemControlHighlightAccentRevealBorderBrush" Color="{ui:DynamicColor SystemAccentColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightBaseHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseHighColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightBaseLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightBaseMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightBaseMediumHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumHighColor}" />
-    <SolidColorBrush x:Key="SystemControlHighlightBaseMediumLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundAccentRevealBorderBrush" Color="{ui:DynamicColor SystemAccentColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundBaseHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseHighColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundBaseLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundBaseMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundBaseMediumHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumHighColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundBaseMediumLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundChromeBlackHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeBlackHighColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundChromeBlackMediumRevealChromeBorderBrush" Color="{ui:StaticColor SystemRevealChromeBlackMediumColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundChromeMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeMediumColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundChromeMediumLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeMediumLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundChromeWhiteRevealBorderBrush" Color="{ui:StaticColor SystemRevealChromeWhiteColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlTransparentRevealListLowBorderBrush" Color="Transparent" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundListLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealListLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundListMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealListMediumColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlTransparentRevealBorderBrush" Color="Transparent" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlForegroundRevealTransparentBorderBrush" Color="Transparent" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlBackgroundTransparentRevealBorderBrush" Color="Transparent" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightTransparentRevealBorderBrush" Color="Transparent" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightAltTransparentRevealBorderBrush" Color="Transparent" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightAccentRevealBorderBrush" Color="{ui:DynamicColor SystemAccentColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightBaseHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseHighColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightBaseLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseLowColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightBaseMediumRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightBaseMediumHighRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumHighColor}" />
+    <SolidColorBrush media:RevealBrushHelper.IsBorderRevealBrush="True"
+                     x:Key="SystemControlHighlightBaseMediumLowRevealBorderBrush" Color="{ui:StaticColor SystemRevealBaseMediumLowColor}" />
 
     <!-- Resources for Button -->
     <ui:StaticResource x:Key="ButtonRevealBackground" ResourceKey="SystemControlBackgroundBaseLowRevealBackgroundBrush" />

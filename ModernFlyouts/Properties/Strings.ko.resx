@@ -59,18 +59,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>핀 탑바</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>형식 'X,Y'(예: 50,60)로 포인트를 입력하십시오.</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>{1} - {0} 범위에서 X, Y 값을 입력하십시오.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>값을 문자열로 덮을 수 없습니다.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>기본값 복원</value>
   </data>
@@ -139,9 +127,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>플라이아웃 기본 위치(정렬 버튼용)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>'X, Y' 형식으로 위치를 입력합니다(예: 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>플라이아웃 탑바</value>
@@ -316,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>컬러 트레이 아이콘 사용</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs. Settings_Reset}</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>모든 설정을 기본값으로 재설정합니다.</value>

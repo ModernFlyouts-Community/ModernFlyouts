@@ -46,30 +46,18 @@
     <value>Modo de inserción</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} está apagada</value>
+    <value>{0} está desactivado</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} está en</value>
+    <value>{0} está activado</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Modo de reemplazo</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Pin TopBar</value>
-  </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Introduzca el punto en el formato 'X,Y' (por ejemplo, 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Introduzca los valores X,Y en el rango {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>El valor no se puede cubrir en cadena.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
+    <value>Fijar la barra superior</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Restaurar valores predeterminados</value>
@@ -81,7 +69,7 @@
     <value>Más controles</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
-    <value>Sig&gt;</value>
+    <value>Siguiente</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
     <value>Pausar</value>
@@ -93,19 +81,19 @@
     <value>Anterior</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>Repito: todos los</value>
+    <value>Repetir: todo</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Repito: off</value>
+    <value>Repetir: desactivado</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Repetir: uno</value>
+    <value>Repetir: una</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Shuffle: off</value>
+    <value>Aleatorio: desactivado</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Shuffle: on</value>
+    <value>Aleatorio: activado</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Detener</value>
@@ -120,7 +108,7 @@
     <value>Comportamiento</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Flyout predeterminado</value>
+    <value>Control flotante predeterminado</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
     <value>Seleccione el control flotante predeterminado</value>
@@ -135,31 +123,28 @@
     <value>Habilitado</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Opacidad de fondo flyout</value>
+    <value>Opacidad del fondo del control flotante</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Posición predeterminada de control flotante (para el botón Alinear)</value>
   </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Escriba la posición en formato 'X,Y' (por ejemplo, 50,60)</value>
-  </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Flyout TopBar</value>
+    <value>Barra superior del control flotante</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Módulos</value>
+    <value>Módulos del control flotante</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Módulo AirplaneMode-flyout</value>
+    <value>Modo Avión</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Módulo de audio-flyout</value>
+    <value>Audio</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Módulo de brillo-flyout</value>
+    <value>Brillo</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Módulo LockKeys-flyout</value>
+    <value>Teclas de bloqueo</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Ejecutar al inicio</value>
@@ -171,7 +156,7 @@
     <value>Abrir la ventana de configuración</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Unpin TopBar</value>
+    <value>Desfijar la barra superior</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
@@ -198,7 +183,7 @@
     <value>Repositorio de GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Abrir un nuevo número</value>
+    <value>Abrir un nuevo problema en GitHub</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
     <value>Valoración y revisión en Microsoft Store</value>
@@ -258,10 +243,10 @@
     <value>Insertar</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Bloqueo numérico</value>
+    <value>Bloq Num</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Bloqueo de desplazamiento</value>
+    <value>Bloq Despl</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>Seleccione las teclas para las que desea mostrar el control flotante</value>
@@ -270,19 +255,19 @@
     <value>Apariencia</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Activar el modo avión Flyout</value>
+    <value>Activar el control flotante del modo avión</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Activar Audio Flyout</value>
+    <value>Activar el control flotante del audio</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Activar brillo flyout</value>
+    <value>Activar el control flotante del brillo</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Activar bloqueo de teclas Flyout</value>
+    <value>Activar el control flotante del bloqueo de teclas</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Tema Flyout</value>
+    <value>Tema del control flotante</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
     <value>Tiempo de espera de control flotante (ms)</value>
@@ -300,7 +285,7 @@
     <value>Derecha</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Visibilidad de TopBar</value>
+    <value>Visibilidad de la barra superior</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Mostrar icono en el área de la bandeja del sistema</value>
@@ -317,9 +302,6 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Usar icono de bandeja de color</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset</value>
-  </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Restablecer todos los ajustes a los valores predeterminados</value>
   </data>
@@ -331,5 +313,8 @@
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Reinicio necesario para aplicar algunos cambios</value>
+  </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Usar la miniatura multimedia como fondo del control multimedia</value>
   </data>
 </root>

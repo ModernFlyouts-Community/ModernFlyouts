@@ -232,6 +232,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use media&apos;s thumbnail as media control&apos;s background.
+        /// </summary>
+        public static string AudioFlyoutHelper_UseThumbnailAsBackground {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.UseThumbnailAsBackground", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {
@@ -286,6 +295,114 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        public static string Enums_FlyoutWindowAlignments_Bottom {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Bottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center.
+        /// </summary>
+        public static string Enums_FlyoutWindowAlignments_Center {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        public static string Enums_FlyoutWindowAlignments_Left {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Left", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        public static string Enums_FlyoutWindowAlignments_Right {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Right", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        public static string Enums_FlyoutWindowAlignments_Top {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Top", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto.
+        /// </summary>
+        public static string Enums_FlyoutWindowExpandDirection_Auto {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Auto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Down.
+        /// </summary>
+        public static string Enums_FlyoutWindowExpandDirection_Down {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        public static string Enums_FlyoutWindowExpandDirection_Left {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Left", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        public static string Enums_FlyoutWindowExpandDirection_Right {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Right", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Up.
+        /// </summary>
+        public static string Enums_FlyoutWindowExpandDirection_Up {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Up", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto.
+        /// </summary>
+        public static string Enums_FlyoutWindowPlacementMode_Auto {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowPlacementMode.Auto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual.
+        /// </summary>
+        public static string Enums_FlyoutWindowPlacementMode_Manual {
+            get {
+                return ResourceManager.GetString("Enums.FlyoutWindowPlacementMode.Manual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Horizontal.
         /// </summary>
         public static string Enums_Orientation_Horizontal {
@@ -300,6 +417,24 @@ namespace ModernFlyouts.Properties {
         public static string Enums_Orientation_Vertical {
             get {
                 return ResourceManager.GetString("Enums.Orientation.Vertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ascending.
+        /// </summary>
+        public static string Enums_StackingDirection_Ascending {
+            get {
+                return ResourceManager.GetString("Enums.StackingDirection.Ascending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descending.
+        /// </summary>
+        public static string Enums_StackingDirection_Descending {
+            get {
+                return ResourceManager.GetString("Enums.StackingDirection.Descending", resourceCulture);
             }
         }
         
@@ -439,47 +574,11 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ngs.Settings_Reset}.
-        /// </summary>
-        public static string NgsSettings_Reset {
-            get {
-                return ResourceManager.GetString("NgsSettings_Reset", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Pin TopBar.
         /// </summary>
         public static string PinTopBar {
             get {
                 return ResourceManager.GetString("PinTopBar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please enter the point in the format &apos;X,Y&apos; (for e.g. 50,60)..
-        /// </summary>
-        public static string PointValidationRule_PointFormatInvalidMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.PointFormatInvalidMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please enter X,Y values in the range {0} - {1}..
-        /// </summary>
-        public static string PointValidationRule_PointOutOfRangeMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.PointOutOfRangeMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Value cannot be coverted to string..
-        /// </summary>
-        public static string PointValidationRule_StringConvertionErrorMessage {
-            get {
-                return ResourceManager.GetString("PointValidationRule.StringConvertionErrorMessage", resourceCulture);
             }
         }
         
@@ -691,6 +790,24 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display.
+        /// </summary>
+        public static string Settings_Display {
+            get {
+                return ResourceManager.GetString("Settings.Display", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the preferred display monitor to show the flyout on.
+        /// </summary>
+        public static string Settings_DisplayDescription {
+            get {
+                return ResourceManager.GetString("Settings.DisplayDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enabled.
         /// </summary>
         public static string Settings_Enabled {
@@ -736,11 +853,29 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flyout alignment.
+        /// </summary>
+        public static string Settings_FlyoutAlignment {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flyout background opacity.
         /// </summary>
         public static string Settings_FlyoutBackgroundOpacity {
             get {
                 return ResourceManager.GetString("Settings.FlyoutBackgroundOpacity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flyout content stacking direction.
+        /// </summary>
+        public static string Settings_FlyoutContentStackingDirection {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutContentStackingDirection", resourceCulture);
             }
         }
         
@@ -754,11 +889,29 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type the position in &apos;X,Y&apos; format (Default: 50,60).
+        ///   Looks up a localized string similar to Flyout expand direction.
         /// </summary>
-        public static string Settings_FlyoutDefaultPositionDescription {
+        public static string Settings_FlyoutExpandDirection {
             get {
-                return ResourceManager.GetString("Settings.FlyoutDefaultPositionDescription", resourceCulture);
+                return ResourceManager.GetString("Settings.FlyoutExpandDirection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flyout placement.
+        /// </summary>
+        public static string Settings_FlyoutPlacement {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutPlacement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Placement mode.
+        /// </summary>
+        public static string Settings_FlyoutPlacementMode {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutPlacementMode", resourceCulture);
             }
         }
         
@@ -790,6 +943,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Horizontal alignment.
+        /// </summary>
+        public static string Settings_HorizontalAlignment {
+            get {
+                return ResourceManager.GetString("Settings.HorizontalAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string Settings_Language {
@@ -808,6 +970,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Layout.
+        /// </summary>
+        public static string Settings_Layout {
+            get {
+                return ResourceManager.GetString("Settings.Layout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
         public static string Settings_Left {
@@ -817,7 +988,7 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flyout Modules.
+        ///   Looks up a localized string similar to Flyout modules.
         /// </summary>
         public static string Settings_Modules {
             get {
@@ -975,6 +1146,15 @@ namespace ModernFlyouts.Properties {
         public static string Settings_UseColoredTrayIcon {
             get {
                 return ResourceManager.GetString("Settings.UseColoredTrayIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vertical alignment.
+        /// </summary>
+        public static string Settings_VerticalAlignment {
+            get {
+                return ResourceManager.GetString("Settings.VerticalAlignment", resourceCulture);
             }
         }
         

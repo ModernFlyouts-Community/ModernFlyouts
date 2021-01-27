@@ -13,16 +13,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>informacje</value>
+    <value>O aplikacji</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Tryb samolotowy jest niedostępny :(</value>
+    <value>Tryb samolotowy jest niedostępny</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>Tryb samolotowy jest wyłączony</value>
+    <value>Tryb samolotowy - wyłączono</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>Tryb samolotowy jest włączony</value>
+    <value>Tryb samolotowy - włączono</value>
   </data>
   <data name="Align" xml:space="preserve">
     <value>Wyrównaj do pozycji domyślnej</value>
@@ -34,51 +34,39 @@
     <value>Zamknij</value>
   </data>
   <data name="ExitItem" xml:space="preserve">
-    <value>Zakończ</value>
+    <value>Zamknij</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Bezpieczne wyjście z aplikacji</value>
+    <value>Zamknij aplikację</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
     <value>Ogólne</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
-    <value>Tryb wstawiania</value>
+    <value>Tryb wprowadzania</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} jest wyłączony</value>
+    <value>{0} - wyłączono</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} jest włączony</value>
+    <value>{0} - włączono</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
-    <value>Tryb zastępowania</value>
+    <value>Tryb nadpisywania</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Pineka górna</value>
-  </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Wprowadź punkt w formacie "X,Y" (np. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Wprowadź wartości X,Y w zakresie {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Wartość nie może być zakryta na ciąg.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
+    <value>Przypnij</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Przywróć domyślny</value>
+    <value>Przywróć domyślną nakładkę</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Przywraca domyślne okno wysuwowe systemu Windows i bezpiecznie zamyka tę aplikację</value>
+    <value>Przywróć domyślne nakładki i zamknij aplikację</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
-    <value>Więcej formantów</value>
+    <value>Więcej kontrolek</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
     <value>Dalej</value>
@@ -93,19 +81,19 @@
     <value>Wstecz</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>Powtórz: wszystkie</value>
+    <value>Powtarzaj: wszystkie</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Powtórz: wył.,</value>
+    <value>Powtarzaj: wył.</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Powtórz: jeden</value>
+    <value>Powtarzaj: jeden</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Shuffle: wyłączony</value>
+    <value>Losowo: wył.</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Shuffle: włączony</value>
+    <value>Losowo: wł.</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Zatrzymaj</value>
@@ -120,13 +108,13 @@
     <value>Zachowanie</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Domyślne wysuwu wys</value>
+    <value>Domyślny typ nakładki</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Wybieranie domyślnego wysuwu wysuwu</value>
+    <value>Wybierz domyślny typ nakładki</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Wybranie domyślnego okna wysuwu domyślnego systemu Windows nie spowoduje zamknięcia tej aplikacji. Ta aplikacja będzie nadal działać w tle. Proszę wyjść z tej aplikacji bezpiecznie, aby poprawić wydajność.</value>
+    <value>Wybranie domyślnych nakładek nie spowoduje zamknięcia aplikacji; będzie ona działać w tle. Zamknij ją, aby zaoszczędzić zasoby.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Wyłączone</value>
@@ -135,43 +123,40 @@
     <value>Włączone</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Krycie w tle wysu podczas wysuń</value>
+    <value>Przezroczystość nakładki</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Domyślna pozycja wysuwania (dla przycisku Wyrównaj)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Wpisz pozycję w formacie "X,Y" (np. 50,60)</value>
+    <value>Domyślna pozycja nakładki</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Pasek górny wysu kasowego</value>
+    <value>Pasek górny nakładki</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Moduły</value>
+    <value>Nakładki</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Moduł wysuwany AirplaneMode</value>
+    <value>Tryb samolotowy</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Moduł wysuwany audio</value>
+    <value>Dźwięk</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Moduł wysuwany jasność</value>
+    <value>Jasność ekranu</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Moduł wysuwany klawiszy LockKeys</value>
+    <value>Klawisze blokady</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Uruchom przy starcie</value>
+    <value>Uruchom wraz ze startem systemu Windows</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Ustawienia</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Otwórz okno ustawień</value>
+    <value>Otwórz ustawienia</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Odpinać paska wierzchniej</value>
+    <value>Odepnij</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
@@ -183,25 +168,25 @@
     <value>Domyślne dla systemu Windows</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
-    <value>W poziomie</value>
+    <value>Pozioma</value>
   </data>
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
-    <value>Pionowo</value>
+    <value>Pionowa</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Ta aplikacja jest przeznaczona do nowoczesnego zamiennika Fluent Design dla starych wysuń wysuwowych tematów metra obecnych w systemie Windows od Windows 8.</value>
+    <value>Ta aplikacja została zaprojektowana jako nowoczesny zamiennik nakładek w stylu Fluent Design dla starych nakładek w stylu ModernUI, obecnych od Windows 8.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
-    <value>Współautorzy</value>
+    <value>Twórcy</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>Repozytorium GitHub</value>
+    <value>Kod źródłowy aplikacji w serwisie GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Otwieranie nowego problemu</value>
+    <value>Otwórz nowe issue</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Oceniaj i recenzuj w sklepie Microsoft Store</value>
+    <value>Oceń i zrecenzuj aplikację w sklepie Microsoft Store</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Wersja: </value>
@@ -210,31 +195,31 @@
     <value>Język</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>Uruchom ponownie aplikację, aby poprawnie zmienić język</value>
+    <value>Wymagane uruchomienie ponowne aplikacji w celu zastosowania nowego języka</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Ustawienia domyślne systemu</value>
+    <value>Ustawienia domyślne systemu Windows</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
-    <value>Zależności</value>
+    <value>Licencje</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Jeśli znajdziesz jakieś błędy, otwórz nowy problem w repozytorium github.</value>
+    <value>Jeśli znajdziesz jakieś błędy, otwórz nowe issue w repozytorium GitHub.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Liczba sesji do wyświetlenia</value>
+    <value>Liczba pozycji do wyświetlenia</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>Orientacja panelu sesji multimedialnych</value>
+    <value>Orientacja panelu listy multimediów</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Pokaż globalne sterowanie transportem mediów systemowych (GSMTC) aka Sterowanie multimediami w wysu wysuwu woluminu</value>
+    <value>Pokaż kontrolki dźwięku (GSMTC) w nakładce głośności</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Pokaż regulację głośności w globalnej kontroli transportu mediów systemowych (GSMTC) aka Media wysuń</value>
+    <value>Pokaż kontrolki dźwięku w nakładce multimediów (GSMTC)</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>Wyrównanie miniatur</value>
+    <value>Wyrównanie miniaturek</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
     <value>Ciemny</value>
@@ -246,7 +231,7 @@
     <value>Autoukrywanie</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>Zwinięte</value>
+    <value>Ukryty</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
     <value>Widoczny</value>
@@ -255,55 +240,55 @@
     <value>Caps Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>Wstawianie</value>
+    <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Num lock (Blokada liczba)</value>
+    <value>Num Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Blokada przewijania</value>
+    <value>Scroll Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Wybierz klawisze, dla których chcesz wyświetlić wysuw</value>
+    <value>Wybierz klawisze, dla których chcesz wyświetlać nakładkę</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Wygląd</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Włącz wysuw w trybie samolotowym</value>
+    <value>Nakładka trybu samolotowego</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Włącz wysuw audio</value>
+    <value>Nakładka poziomu głośności</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Włącz wysuw jasności</value>
+    <value>Nakładka poziomu jasności ekranu</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Włącz wysuń klawiszy blokady</value>
+    <value>Nakładka klawiszy blokady</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Kompozycja Wysuń</value>
+    <value>Motyw nakładki</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Limit czasu wysu podczas wysuń (ms)</value>
+    <value>Czas wyświetlania nakładki (w ms)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
-    <value>Do lewej</value>
+    <value>Lewo</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
     <value>Multimedia</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Wolumin</value>
+    <value>Głośność</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
-    <value>Do prawej</value>
+    <value>Prawo</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Widoczność na pasku górnym</value>
+    <value>Widoczność paska górnego</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Pokaż ikonę na obszarze zasobnika systemowego</value>
+    <value>Pokaż ikonę w zasobniku systemowym</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>Wyłączone</value>
@@ -312,24 +297,21 @@
     <value>Włączone</value>
   </data>
   <data name="Settings.AppTheme" xml:space="preserve">
-    <value>Kompozycja aplikacji</value>
+    <value>Motyw aplikacji</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Użyj ikony kolorowego zasobnika</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset}</value>
+    <value>Użyj kolorowej ikony w zasobniku systemowym</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Resetowanie wszystkich ustawień do ustawień domyślnych</value>
+    <value>Przywróć wartości domyślne wszystkich ustawień</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personalizacja</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Wyrównaj wysuwanie do tej pozycji</value>
+    <value>Wyrównaj nakładkę do tej pozycji</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Ponowne uruchomienie wymagane do zastosowania niektórych zmian</value>
+    <value>Wymagane ponowne uruchomienie aplikacji w celu zastosowania zmian</value>
   </data>
 </root>

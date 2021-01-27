@@ -1,6 +1,4 @@
-﻿// TODO: Move this to ModernWpf community toolkit and reference it
-
-using ModernFlyouts.Helpers;
+﻿using ModernFlyouts.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Windows;

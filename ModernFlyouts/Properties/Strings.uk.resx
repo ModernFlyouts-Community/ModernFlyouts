@@ -25,7 +25,7 @@
     <value>Режим "у літаку" ввімкнуто</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>Перемістити в стандартне положення</value>
+    <value>Вирівняти за типовою позицією</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
     <value>Немає підключених аудіопристроїв</value>
@@ -43,90 +43,78 @@
     <value>Загальні</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
-    <value>Режим додавання</value>
+    <value>Швидке вставлення</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
     <value>{0} вимкнено</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} увімкнено</value>
+    <value>{0} на</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
-    <value>Режим перезапису</value>
+    <value>Режим заміни</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Закріпити хедер панелі</value>
-  </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Будь ласка, введіть позицію у форматі "X,Y" (наприклад, 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Введіть значення X та Y у діапазоні {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Значення неможливо перетворити в рядок</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
+    <value>Закріпити верхню панель</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Відновити стандартні панелі Windows</value>
+    <value>Відновити значення за замовчуванням</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Відновлює стандартні панелі Windows та безпечно вимикає дану програму</value>
+    <value>Відновлює виліт вікон за замовчуванням і безпечно виходить з цієї програми</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Інші елементи керування</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
-    <value>Наступний трек</value>
+    <value>Далі</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
     <value>Пауза</value>
   </data>
   <data name="SessionControl.Play" xml:space="preserve">
-    <value>Продовжити</value>
+    <value>Відтворити</value>
   </data>
   <data name="SessionControl.Previous" xml:space="preserve">
-    <value>Попередній трек</value>
+    <value>Назад</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>Увімкнути повторення</value>
+    <value>Повторити: всі</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Вимкнути повторення</value>
+    <value>Повторити: вимкнено</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Повторювати один</value>
+    <value>Повторити: один</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Вимкнути перемішування</value>
+    <value>Перемішування: вимкнено</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Увімкнути перемішування</value>
+    <value>Перемішування: на</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
-    <value>Зупинити відтворення</value>
+    <value>Зупинити</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Відомості про трек</value>
+    <value>Відомості про часової шкали</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
-    <value>Додаткові</value>
+    <value>Додатковий</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
     <value>Поведінка</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Панель за замовчуванням</value>
+    <value>Виліт за замовчуванням</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Виберіть панель за замовчуванням</value>
+    <value>Виберіть виліт за замовчуванням</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Вибір панелі Windows за замовчуванням не закриє цю програму. Ця програма буде як і раніше працювати у фоновому режимі. Будь ласка, закрийте цю програму безпечно, щоб підвищити продуктивність.</value>
+    <value>Вибір обльоту Windows за промовчанням не закриє цю програму. Ця програма буде як і раніше працювати у фоновому режимі. Будь ласка, закрийте цю програму безпечно, щоб підвищити продуктивність.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Вимкнено</value>
@@ -135,73 +123,70 @@
     <value>Увімкнуто</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Непрозорість панелі</value>
+    <value>Непрозорість тла польоту</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Розміщення панелі за замовчуванням (для кнопки Вирівняти)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Введіть позицію у форматі "X, Y" (наприклад, 50,60)</value>
+    <value>Положення за замовчуванням вилітає (для кнопки Вирівняти)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Хедер панелі</value>
+    <value>Топ-панель польоту</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Панелі</value>
+    <value>Модулі</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>У літаку</value>
+    <value>Модуль польоту літакаМод-польоту</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Аудіо</value>
+    <value>Модуль аудіо-польоту</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Яскравість</value>
+    <value>Модуль яскравості польоту</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Перемикачі</value>
+    <value>Модуль виліту lockKeys</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Запускати разом з Windows</value>
+    <value>Запуск під час запуску</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
-    <value>Налаштування</value>
+    <value>Настройки</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
     <value>Відкрити вікно налаштувань</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Відкріпити хедер</value>
+    <value>Відкріпити верхню панель</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>ModernFlyouts</value>
+    <value>Сучасні флуаути</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
-    <value>Вимкнути</value>
+    <value>Немає</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Стандартні панелі Windows</value>
+    <value>Windows за замовчуванням</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>Горизонтально</value>
   </data>
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
-    <value>Вертикально</value>
+    <value>По вертикалі</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Ця програма розроблена для заміни старих метро-панелей, присунтіх у Windows починаючи з Windows 8, на нові в стилі Fluent Design.</value>
+    <value>Ця програма призначена для сучасної заміни fluent Design для старих тематичних вилітів метро, присутніх у Windows, починаючи з Windows 8.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
-    <value>Внесли свій вклад в розробку</value>
+    <value>Помічники</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
     <value>Репозиторій GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Повідомити про проблему</value>
+    <value>Відкриття нової проблеми</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Оцінити у Microsoft Store</value>
+    <value>Оцінити та переглянути в Магазині Microsoft</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Версія: </value>
@@ -210,7 +195,7 @@
     <value>Мови</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>Перезапустіть програму, щоб застосувати зміну мови</value>
+    <value>Перезапустіть програму, щоб правильно змінити мову</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
     <value>Стандартні параметри системи</value>
@@ -219,73 +204,73 @@
     <value>Залежності</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Якщо ви знайшли якісь помилки, будь ласка, повідомте про них в репозиторії на GitHub.</value>
+    <value>Якщо ви знайшли помилки, будь ласка, відкрийте нову проблему в репозиторії github.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Максимальна кількість сеансів для відображення</value>
+    <value>Кількість сеансів для відображення</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
     <value>Орієнтація панелі сеансів мультимедіа</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Відображати елементи керування медіа на панелі гучності</value>
+    <value>Показати глобальні елементи керування медіатранспортом (GSMTC) aka Media у виліті гучності</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Показати регулятор гучності у глобальному системному елементі керування медіатранспортом (GSMTC) aka Media-панель</value>
+    <value>Показати регулятор гучності у глобальному системному елементі керування медіатранспортом (GSMTC) aka Media flyout</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Вирівнювання мініатюр</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
-    <value>Темна</value>
+    <value>Темний</value>
   </data>
   <data name="Enums.ElementTheme.Light" xml:space="preserve">
-    <value>Світла</value>
+    <value>Світло</value>
   </data>
   <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
     <value>Автоматично приховувати</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>Завжди прихований</value>
+    <value>Згорнуто</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
-    <value>Завжди видимий</value>
+    <value>Видимий</value>
   </data>
   <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>Caps Lock</value>
+    <value>Caps lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>Режим вводу</value>
+    <value>Вставити</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>NumLock</value>
+    <value>Num блокування</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
     <value>Блокування прокрутки</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Виберіть перемикачі, для яких потрібно відобразити панель</value>
+    <value>Виберіть клавіші, для яких потрібно відобразити</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Оформлення</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Увімкнути панель для режиму польоту</value>
+    <value>Увімкнути виліт режиму польоту в режимі польоту</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Увімкнути панель для налаштувань звуку</value>
+    <value>Увімкнути виліт звуку</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Увімкнути панель для налаштувань яскравості</value>
+    <value>Увімкнути виліт яскравості</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Увімкнути панель для NumLock</value>
+    <value>Увімкнути виліт клавіш блокування</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Тема панелі</value>
+    <value>Тема "Виліт"</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Час очікування панелі (мс)</value>
+    <value>Час очікування виліту (мс)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Зліва</value>
@@ -300,10 +285,10 @@
     <value>Справа</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Видимість хедера панелі</value>
+    <value>Видимість верхньої панелі</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Показувати піктограму в треї</value>
+    <value>Показувати піктограму в області системного лотка</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>Вимкнуто</value>
@@ -315,21 +300,18 @@
     <value>Тема програми</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Використовувати кольорову піктограму в треї</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>ngs. Settings_Reset}</value>
+    <value>Використовувати кольорову піктограму лотка</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Скидання всіх налаштувань на значення за замовчуванням</value>
+    <value>Скидання всіх настройок за замовчуванням</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Персоналізація</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Помістити панель на задані координати</value>
+    <value>Вирівняти виліт до цієї позиції</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Перезапуск програми необхідний для застосування деяких змін</value>
+    <value>Перезавантаження, необхідне для застосування деяких змін</value>
   </data>
 </root>

@@ -28,7 +28,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     [TemplatePart(Name = FirstTemplatePartName, Type = typeof(ContentPresenter))]
     [TemplatePart(Name = SecondTemplatePartName, Type = typeof(ContentPresenter))]

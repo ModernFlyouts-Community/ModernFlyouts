@@ -27,6 +27,11 @@
                     <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Personalization}" />
                 </ui:NavigationViewItem.Icon>
             </ui:NavigationViewItem>
+            <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Layout}" Tag="layout">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Layout}" />
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
             <ui:NavigationViewItemSeparator />
             <ui:NavigationViewItemHeader Content="{x:Static resx:Strings.Settings_Modules}" />
             <ui:NavigationViewItem Content="{x:Static resx:Strings.Settings_Modules_Audio}" Tag="audio_module">

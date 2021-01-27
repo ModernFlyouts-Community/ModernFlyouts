@@ -18,6 +18,7 @@ namespace ModernFlyouts.AppLifecycle
             true;
 #else
             false;
+
 #endif
 
         #region App activation & Single instancing
@@ -28,7 +29,7 @@ namespace ModernFlyouts.AppLifecycle
         /// Starts the application as single instance and redirects the command line arguments from subsequent instances to the first instance.
         /// </summary>
         /// <param name="args">Commandline arguments to process or pass to the first instance.</param>
-        /// <param name="action">The action to perform after the first instance has been intialized.</param>
+        /// <param name="action">The action to perform after the first instance has been initialized.</param>
         public static void StartApplication(string[] args, Action action)
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
@@ -117,5 +118,18 @@ namespace ModernFlyouts.AppLifecycle
         }
 
         #endregion
+
+        /// <summary>
+        /// 😠 You did your best application. Now, <strong>prepare to die!</strong> <i>*pew*</i> <i>*pew*</i> <i>*pew*</i>.
+        /// </summary>
+        /// <remarks>
+        /// There was an issue where the <see cref="mutex"/> still being held by this instance which prevented the app from restarting after an update.
+        /// So, after registering for restart, we also have to release the <see cref="mutex"/>.
+        /// </remarks>
+        public static void PrepareToDie()
+        {
+            mutex.ReleaseMutex();
+            mutex.Dispose();
+        }
     }
 }

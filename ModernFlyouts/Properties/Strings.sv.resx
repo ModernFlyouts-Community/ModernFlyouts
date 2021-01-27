@@ -59,18 +59,6 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Pin TopBar</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Ange punkten i formatet 'X,Y' (för t.ex. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Ange X,Y-värden i intervallet {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Värdet kan inte döljas till sträng.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Återställ standard</value>
   </data>
@@ -139,9 +127,6 @@
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Utfällningsplats Standardposition (för knappen Justera)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Skriv positionen i 'X,Y' format (för t.ex. 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Utfällbar Topbar</value>
@@ -316,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Använda ikonen för färgat fack</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset}</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Återställ alla inställningar till standardvärden</value>

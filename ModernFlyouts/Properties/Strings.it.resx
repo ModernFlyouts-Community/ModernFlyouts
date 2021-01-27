@@ -59,23 +59,11 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Pin TopBar</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Inserisci il punto nel formato 'X,Y' (ad es. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Immettere i valori X,Y nell'intervallo {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Il valore non può essere coperto in stringa.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Ripristina</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro questa app</value>
+    <value>Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro quest'app</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Altri controlli</value>
@@ -140,9 +128,6 @@
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Posizione predefinita riquadro a comparsa (per il pulsante Allinea)</value>
   </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Digitare la posizione nel formato 'X,Y' (ad esempio 50,60)</value>
-  </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Barra superiore riquadro a comparsa</value>
   </data>
@@ -150,16 +135,16 @@
     <value>Moduli</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Modulo AirplaneMode-flyout</value>
+    <value>Modulo a comparsa - Mod.Aereo</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Modulo audio-riquadro a comparsa</value>
+    <value>Modulo a comparsa - Audio</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Modulo a comparsa Luminosità</value>
+    <value>Modulo a comparsa - Luminosità</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Modulo LockKeys-flyout</value>
+    <value>Modulo a comparsa - Tasti Block</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Esegui all'avvio</value>
@@ -189,13 +174,13 @@
     <value>Verticale</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Questa applicazione è progettata per essere un moderno Fluent Design sostituzione per i vecchi flyout a tema metro presenti in Windows da Windows 8.</value>
+    <value>Questa applicazione è progettata per sostituire i vecchi flyout a tema Metro presenti in Windows con un moderno flyout in Fluent Design.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Collaboratori</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>il repository GitHub</value>
+    <value>Repository GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
     <value>Aprire un nuovo problema</value>
@@ -246,7 +231,7 @@
     <value>Nascondi automaticamente</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>compresso</value>
+    <value>Compresso</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
     <value>Visibile</value>
@@ -279,16 +264,16 @@
     <value>Abilita riquadro a comparsa Luminosità</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Abilita tasti di blocco Riquadro a comparsa</value>
+    <value>Abilita tasti di blocco riquadro a comparsa</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Tema Riquadro a comparsa</value>
+    <value>Tema riquadro a comparsa</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
     <value>Timeout riquadro a comparsa (ms)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
-    <value>sinistra</value>
+    <value>A sinistra</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
     <value>File multimediali</value>
@@ -316,9 +301,6 @@
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Utilizzare l'icona del vassoio colorato</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset.</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Ripristinare le impostazioni predefinite di tutte le impostazioni</value>
