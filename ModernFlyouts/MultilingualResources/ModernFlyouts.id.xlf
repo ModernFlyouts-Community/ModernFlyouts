@@ -66,7 +66,7 @@
         </trans-unit>
         <trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
           <source>Pin TopBar</source>
-          <target state="translated">Sematkan TopBar</target>
+          <target state="translated">Sematkan Bilah</target>
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
@@ -130,7 +130,7 @@
         </trans-unit>
         <trans-unit id="Settings.Behavior" translate="yes" xml:space="preserve">
           <source>Behavior</source>
-          <target state="translated">Perilaku</target>
+          <target state="translated">Tindakan</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
           <source>Default Flyout</source>
@@ -162,7 +162,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
-          <target state="translated">Sembulan TopBar</target>
+          <target state="translated">Sembulan Bilah</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
@@ -187,7 +187,7 @@
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
-          <target state="translated">Jalankan bersama Windows</target>
+          <target state="translated">Jalankan saat memulai</target>
         </trans-unit>
         <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
           <source>Settings</source>
@@ -199,7 +199,7 @@
         </trans-unit>
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
-          <target state="translated">Lepaskan Topbar</target>
+          <target state="translated">Lepaskan Bilah</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
@@ -371,7 +371,7 @@
         </trans-unit>
         <trans-unit id="Settings.TopBarVisibility" translate="yes" xml:space="preserve">
           <source>TopBar visibility</source>
-          <target state="translated">Visibilitas TopBar</target>
+          <target state="translated">Keterlihatan Bilah</target>
         </trans-unit>
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
@@ -387,7 +387,7 @@
         </trans-unit>
         <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
           <source>App Theme</source>
-          <target state="translated">Tema Aplikasi</target>
+          <target state="translated">Tema aplikasi</target>
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
