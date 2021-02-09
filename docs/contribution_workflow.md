@@ -1,6 +1,6 @@
 # Contribution Workflow
 
-You can contribute to WinUI with issues and PRs. Simply filing issues for problems you encounter is a great way to contribute. Contributing implementations is greatly appreciated.
+You can contribute to ModernFlyouts with issues and PRs. Simply filing issues for problems you encounter is a great way to contribute. Contributing implementations is greatly appreciated.
 
 Please make sure you have some basic knowledge in git and GitHub workflow.
 
