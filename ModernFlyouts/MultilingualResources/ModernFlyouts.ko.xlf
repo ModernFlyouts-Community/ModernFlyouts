@@ -70,11 +70,11 @@
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
-          <target state="translated">기존 Flyout 복구</target>
+          <target state="translated">기존 플라이아웃 복구</target>
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="translated">Windows 기본 Flyout을 복구하고 프로그램을 안전하게 종료합니다</target>
+          <target state="translated">Windows 기본 플라이아웃을 복구하고 프로그램을 안전하게 종료합니다</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
@@ -134,15 +134,15 @@
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
           <source>Default Flyout</source>
-          <target state="translated">Flyout</target>
+          <target state="translated">플라이아웃</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutDescription" translate="yes" xml:space="preserve">
           <source>Select the default flyout</source>
-          <target state="translated">사용할 Flyout을 선택하세요</target>
+          <target state="translated">사용할 플라이아웃을 선택하세요</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
           <source>Choosing the Windows Default Flyout as default won't close this app. This app will still keep running in the background. Please exit this app safely to improve performance.</source>
-          <target state="translated">Windows 기본 Flyout을 선택해도 이 프로그램은 닫히지 않고 백그라운드에서 계속 실행됩니다. 프로그램을 안전하게 종료하여 성능을 향상시키세요.</target>
+          <target state="translated">Windows 기본 플라이아웃을 선택해도 이 프로그램은 닫히지 않고 백그라운드에서 계속 실행됩니다. 프로그램을 안전하게 종료하여 성능을 향상시키세요.</target>
         </trans-unit>
         <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
           <source>Disabled</source>
@@ -154,19 +154,19 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
           <source>Flyout background opacity</source>
-          <target state="translated">Flyout 배경 불투명도</target>
+          <target state="translated">플라이아웃 배경 불투명도</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
-          <target state="translated">Flyout 기본 위치</target>
+          <target state="translated">플라이아웃 기본 위치</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
-          <target state="translated">Flyout 상단 표시줄</target>
+          <target state="translated">플라이아웃 상단 표시줄</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
-          <target state="translated">Flyout 모듈</target>
+          <target state="translated">플라이아웃 모듈</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
@@ -222,7 +222,7 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="translated">ModernFlyouts는 Windows 8부터 내려온 오래된 Metro 디자인 Flyout UI를 현대적인 Fluent 디자인으로 대체하는 프로그램입니다.</target>
+          <target state="translated">ModernFlyouts는 Windows 8부터 내려온 오래된 Metro 디자인 플라이아웃 UI를 현대적인 Fluent 디자인으로 대체하는 프로그램입니다.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
@@ -274,11 +274,11 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="translated">볼륨 Flyout에 미디어 제어(GSMTC, Global System Media Transport Controls) 표시</target>
+          <target state="translated">볼륨 플라이아웃에 미디어 제어(GSMTC, Global System Media Transport Controls) 표시</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
-          <target state="translated">미디어 Flyout(GSMTC, Global System Media Transport Controls)에 볼륨 제어 표시</target>
+          <target state="translated">미디어 플라이아웃(GSMTC, Global System Media Transport Controls)에 볼륨 제어 표시</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
@@ -322,7 +322,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="translated">Flyout을 표시할 키 선택</target>
+          <target state="translated">플라이아웃을 표시할 키 선택</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
@@ -330,27 +330,27 @@
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
           <source>Enable Airplane mode Flyout</source>
-          <target state="translated">비행기 모드 Flyout 활성화</target>
+          <target state="translated">비행기 모드 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
           <source>Enable Audio Flyout</source>
-          <target state="translated">오디오 Flyout 활성화</target>
+          <target state="translated">오디오 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
           <source>Enable Brightness Flyout</source>
-          <target state="translated">밝기 Flyout 활성화</target>
+          <target state="translated">밝기 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="translated">Lock 키 Flyout 활성화</target>
+          <target state="translated">Lock 키 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
-          <target state="translated">Flyout 테마</target>
+          <target state="translated">플라이아웃 테마</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
-          <target state="translated">Flyout 타임아웃(ms)</target>
+          <target state="translated">플라이아웃 타임아웃(ms)</target>
         </trans-unit>
         <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
@@ -402,7 +402,7 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="translated">Flyout을 이 위치에 정렬</target>
+          <target state="translated">플라이아웃을 이 위치에 정렬</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
@@ -474,23 +474,23 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="translated">Flyout을 표시할 디스플레이를 선택하세요</target>
+          <target state="translated">플라이아웃을 표시할 디스플레이를 선택하세요</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="translated">Flyout 정렬</target>
+          <target state="translated">플라이아웃 정렬</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="translated">Flyout 내용 쌓기</target>
+          <target state="translated">플라이아웃 내용 쌓기</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="translated">Flyout 등장 방향</target>
+          <target state="translated">플라이아웃 등장 방향</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="translated">Flyout 배치</target>
+          <target state="translated">플라이아웃 배치</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
