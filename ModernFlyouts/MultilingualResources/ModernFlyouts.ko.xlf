@@ -8,506 +8,505 @@
       <group id="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" datatype="resx">
         <trans-unit id="About" translate="yes" xml:space="preserve">
           <source>About</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">정보</target>
+          <target state="translated">정보</target>
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">비행기 모드는 :( 사용할 수 없습니다.</target>
+          <target state="translated">비행기 모드를 사용할 수 없습니다 :(</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">비행기 모드 끄기</target>
+          <target state="translated">비행기 모드 꺼짐</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOn" translate="yes" xml:space="preserve">
           <source>Airplane mode on</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">비행기 모드 켜기</target>
+          <target state="translated">비행기 모드 켜짐</target>
         </trans-unit>
         <trans-unit id="Align" translate="yes" xml:space="preserve">
           <source>Align to default position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">기본 위치에 정렬</target>
+          <target state="translated">기본 위치에 정렬</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.NoDevices" translate="yes" xml:space="preserve">
           <source>No Connected Audio Devices</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">연결된 오디오 장치 없음</target>
+          <target state="translated">연결된 오디오 장치 없음</target>
         </trans-unit>
         <trans-unit id="Close" translate="yes" xml:space="preserve">
           <source>Close</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">닫다</target>
+          <target state="translated">닫기</target>
         </trans-unit>
         <trans-unit id="ExitItem" translate="yes" xml:space="preserve">
           <source>Exit</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">끝내기</target>
+          <target state="translated">종료</target>
         </trans-unit>
         <trans-unit id="ExitItemDescription" translate="yes" xml:space="preserve">
           <source>Exit the app safely</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">앱을 안전하게 종료</target>
+          <target state="translated">프로그램을 안전하게 종료합니다</target>
         </trans-unit>
         <trans-unit id="GeneralSettings" translate="yes" xml:space="preserve">
           <source>General</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">일반</target>
+          <target state="translated">일반</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.InsertMode" translate="yes" xml:space="preserve">
           <source>Insert Mode</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">삽입 모드</target>
+          <target state="translated">삽입 모드</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} 꺼져 있습니다.</target>
+          <target state="translated">{0} 꺼짐</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is off</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0}</target>
+          <target state="translated">{0} 켜짐</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is on</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
           <source>Overtype Mode</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">겹쳐쓰기 모드</target>
+          <target state="translated">수정 모드</target>
         </trans-unit>
         <trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
           <source>Pin TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">핀 탑바</target>
+          <target state="translated">상단 표시줄 고정</target>
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">기본값 복원</target>
+          <target state="translated">기존 플라이아웃 복구</target>
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">창 기본 플라이 아웃을 복원하고 안전하게이 응용 프로그램을 종료</target>
+          <target state="translated">Windows 기본 플라이아웃을 복구하고 프로그램을 안전하게 종료합니다</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">추가 컨트롤</target>
+          <target state="translated">추가 컨트롤</target>
         </trans-unit>
         <trans-unit id="SessionControl.Next" translate="yes" xml:space="preserve">
           <source>Next</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">다음</target>
+          <target state="translated">다음</target>
         </trans-unit>
         <trans-unit id="SessionControl.Pause" translate="yes" xml:space="preserve">
           <source>Pause</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">일시 중지</target>
+          <target state="translated">일시 정지</target>
         </trans-unit>
         <trans-unit id="SessionControl.Play" translate="yes" xml:space="preserve">
           <source>Play</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">재생</target>
+          <target state="translated">재생</target>
         </trans-unit>
         <trans-unit id="SessionControl.Previous" translate="yes" xml:space="preserve">
           <source>Previous</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">이전</target>
+          <target state="translated">이전</target>
         </trans-unit>
         <trans-unit id="SessionControl.RepeatAll" translate="yes" xml:space="preserve">
           <source>Repeat: all</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">반복: 모두</target>
+          <target state="translated">반복: 모두</target>
         </trans-unit>
         <trans-unit id="SessionControl.RepeatOff" translate="yes" xml:space="preserve">
           <source>Repeat: off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">반복: 끄기</target>
+          <target state="translated">반복: 꺼짐</target>
         </trans-unit>
         <trans-unit id="SessionControl.RepeatOne" translate="yes" xml:space="preserve">
           <source>Repeat: one</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">반복: 1회</target>
+          <target state="translated">반복: 1개</target>
         </trans-unit>
         <trans-unit id="SessionControl.ShuffleOff" translate="yes" xml:space="preserve">
           <source>Shuffle: off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">셔플: 끄기</target>
+          <target state="translated">셔플: 꺼짐</target>
         </trans-unit>
         <trans-unit id="SessionControl.ShuffleOn" translate="yes" xml:space="preserve">
           <source>Shuffle: on</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">셔플: 켜기</target>
+          <target state="translated">셔플: 켜짐</target>
         </trans-unit>
         <trans-unit id="SessionControl.Stop" translate="yes" xml:space="preserve">
           <source>Stop</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">중지</target>
+          <target state="translated">중지</target>
         </trans-unit>
         <trans-unit id="SessionControl.TimelineInfo" translate="yes" xml:space="preserve">
           <source>Timeline Info</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">타임라인 정보</target>
+          <target state="translated">타임라인 정보</target>
         </trans-unit>
         <trans-unit id="Settings.Additional" translate="yes" xml:space="preserve">
           <source>Additional</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">추가</target>
+          <target state="translated">그 외</target>
         </trans-unit>
         <trans-unit id="Settings.Behavior" translate="yes" xml:space="preserve">
           <source>Behavior</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">동작</target>
+          <target state="translated">동작</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
           <source>Default Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">기본 플라이아웃</target>
+          <target state="translated">플라이아웃</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutDescription" translate="yes" xml:space="preserve">
           <source>Select the default flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">기본 플라이아웃 선택</target>
+          <target state="translated">사용할 플라이아웃을 선택하세요</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
           <source>Choosing the Windows Default Flyout as default won't close this app. This app will still keep running in the background. Please exit this app safely to improve performance.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">기본으로 Windows 기본 플라이아웃을 선택하면 이 앱이 닫히지 않습니다. 이 응용 프로그램은 여전히 백그라운드에서 실행 계속됩니다. 성능을 향상시키기 위해 안전하게이 응용 프로그램을 종료하십시오.</target>
+          <target state="translated">Windows 기본 플라이아웃을 선택해도 이 프로그램은 닫히지 않고 백그라운드에서 계속 실행됩니다. 프로그램을 안전하게 종료하여 성능을 향상시키세요.</target>
         </trans-unit>
         <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
           <source>Disabled</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">사용 안 함</target>
+          <target state="translated">비활성화됨</target>
         </trans-unit>
         <trans-unit id="Settings.Enabled" translate="yes" xml:space="preserve">
           <source>Enabled</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">사용</target>
+          <target state="translated">활성화됨</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
           <source>Flyout background opacity</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃 배경 불투명도</target>
+          <target state="translated">플라이아웃 배경 불투명도</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃 기본 위치(정렬 버튼용)</target>
+          <target state="translated">플라이아웃 기본 위치</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃 탑바</target>
+          <target state="translated">플라이아웃 상단 표시줄</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">모듈</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">플라이아웃 모듈</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">비행기 모드 플라이 아웃 모듈</target>
+          <target state="translated">비행기 모드</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
           <source>Audio</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">오디오 플라이아웃 모듈</target>
+          <target state="translated">오디오</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
           <source>Brightness</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">밝기 플라이아웃 모듈</target>
+          <target state="translated">밝기</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">록키 플라이아웃 모듈</target>
+          <target state="translated">Lock 키</target>
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">시작할 때 실행</target>
+          <target state="translated">시작 시 실행</target>
         </trans-unit>
         <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
           <source>Settings</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">설정</target>
+          <target state="translated">설정</target>
         </trans-unit>
         <trans-unit id="SettingsItemDescription" translate="yes" xml:space="preserve">
           <source>Open settings window</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">설정 창 열기</target>
+          <target state="translated">설정 창 열기</target>
         </trans-unit>
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">핀 을 해제 탑바</target>
+          <target state="translated">상단 표시줄 고정 해제</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">모던플라이아웃</target>
+          <target state="translated">ModernFlyouts</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
           <source>None</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">없음</target>
+          <target state="translated">없음</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.WindowsDefault" translate="yes" xml:space="preserve">
           <source>Windows default</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Windows 기본값</target>
+          <target state="translated">Windows 기본</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
           <source>Horizontal</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">가로</target>
+          <target state="translated">가로</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
           <source>Vertical</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">세로</target>
+          <target state="translated">세로</target>
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">이 응용 프로그램은 윈도우 8 이후 윈도우에 존재하는 오래된 지하철 테마 비행에 대한 현대 유창한 디자인 교체하도록 설계되었습니다.</target>
+          <target state="translated">ModernFlyouts는 Windows 8부터 내려온 오래된 Metro 디자인 플라이아웃 UI를 현대적인 Fluent 디자인으로 대체하는 프로그램입니다.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">참가자</target>
+          <target state="translated">기여자</target>
         </trans-unit>
         <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">GitHub 리포지토리</target>
+          <target state="translated">GitHub 저장소</target>
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">새 문제 열기</target>
+          <target state="translated">새로운 issue 열기</target>
         </trans-unit>
         <trans-unit id="About.RateAndReview" translate="yes" xml:space="preserve">
           <source>Rate and Review on Microsoft Store</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Microsoft 스토어의 요금 및 검토</target>
+          <target state="translated">Microsoft Store에서 평점 및 리뷰 작성하기</target>
         </trans-unit>
         <trans-unit id="About.Version" translate="yes" xml:space="preserve">
           <source>Version : </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">버전: </target>
+          <target state="translated">버전 : </target>
         </trans-unit>
         <trans-unit id="Settings.Language" translate="yes" xml:space="preserve">
           <source>Language</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">언어</target>
+          <target state="translated">언어</target>
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Restart required to apply language change properly</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">제대로 언어를 변경하려면 응용 프로그램을 다시 시작하십시오</target>
+          <target state="translated">언어 변경을 올바르게 적용하려면 다시 시작해야 합니다</target>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System default</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">시스템 기본값</target>
+          <target state="translated">시스템 기본값</target>
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">종속성</target>
+          <target state="translated">종속성</target>
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">버그가 발견되면 github 리포지토리에서 새 문제를 열어 주세요.</target>
+          <target state="translated">버그를 발견하셨다면 github 저장소에서 새로운 issue를 열어주세요.</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Number of sessions to show</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">표시할 세션 수</target>
+          <target state="translated">표시할 세션 개수</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.SessionsPanelOrientation" translate="yes" xml:space="preserve">
           <source>Media sessions panel orientation</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">미디어 세션 패널 방향</target>
+          <target state="translated">미디어 세션 패널 배치 방향</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">볼륨 플라이아웃에서 글로벌 시스템 미디어 전송 제어(GSMTC) 일명 미디어 컨트롤 표시</target>
+          <target state="translated">볼륨 플라이아웃에 미디어 제어(GSMTC, Global System Media Transport Controls) 표시</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">글로벌 시스템 미디어 전송 제어(GSMTC)일명 미디어 플라이아웃에서 볼륨 제어 표시</target>
+          <target state="translated">미디어 플라이아웃(GSMTC, Global System Media Transport Controls)에 볼륨 제어 표시</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">축소판 네일 정렬</target>
+          <target state="translated">썸네일 정렬 기준</target>
         </trans-unit>
         <trans-unit id="Enums.ElementTheme.Dark" translate="yes" xml:space="preserve">
           <source>Dark</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">어둡게</target>
+          <target state="translated">어둡게</target>
         </trans-unit>
         <trans-unit id="Enums.ElementTheme.Light" translate="yes" xml:space="preserve">
           <source>Light</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">일부</target>
+          <target state="translated">밝게</target>
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.AutoHide" translate="yes" xml:space="preserve">
           <source>Auto-hide</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">자동 숨기기</target>
+          <target state="translated">자동으로 숨기기</target>
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.Collapsed" translate="yes" xml:space="preserve">
           <source>Collapsed</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">축소됨</target>
+          <target state="translated">축소</target>
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.Visible" translate="yes" xml:space="preserve">
           <source>Visible</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">표시</target>
+          <target state="translated">표시</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
           <source>Caps lock</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Caps Lock</target>
+          <target state="translated">Caps Lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
           <source>Insert</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">삽입</target>
+          <target state="translated">Insert</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
           <source>Num lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Num 잠금</target>
+          <target state="translated">Num Lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">스크롤 잠금</target>
+          <target state="translated">Scroll Lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃을 표시할 키선택</target>
+          <target state="translated">플라이아웃을 표시할 키 선택</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">모양</target>
+          <target state="translated">모양</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
           <source>Enable Airplane mode Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">비행기 모드 플라이아웃 사용</target>
+          <target state="translated">비행기 모드 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
           <source>Enable Audio Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">오디오 플라이아웃 사용</target>
+          <target state="translated">오디오 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
           <source>Enable Brightness Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">밝기 플라이아웃 사용</target>
+          <target state="translated">밝기 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">잠금 키 플라이아웃 사용</target>
+          <target state="translated">Lock 키 플라이아웃 활성화</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃 테마</target>
+          <target state="translated">플라이아웃 테마</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃 타임아웃(ms)</target>
+          <target state="translated">플라이아웃 타임아웃(ms)</target>
         </trans-unit>
         <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">왼쪽</target>
+          <target state="translated">왼쪽</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio.Media" translate="yes" xml:space="preserve">
           <source>Media</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">미디어</target>
+          <target state="translated">미디어</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio.Volume" translate="yes" xml:space="preserve">
           <source>Volume</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">볼륨</target>
+          <target state="translated">볼륨</target>
         </trans-unit>
         <trans-unit id="Settings.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">오른쪽</target>
+          <target state="translated">오른쪽</target>
         </trans-unit>
         <trans-unit id="Settings.TopBarVisibility" translate="yes" xml:space="preserve">
           <source>TopBar visibility</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">TopBar 가시성</target>
+          <target state="translated">상단 표시줄 표현</target>
         </trans-unit>
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">시스템 트레이 영역에 아이콘 표시</target>
+          <target state="translated">시스템 트레이 아이콘 표시</target>
         </trans-unit>
         <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
           <source>Off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">꺼짐</target>
+          <target state="translated">꺼짐</target>
         </trans-unit>
         <trans-unit id="Settings.On" translate="yes" xml:space="preserve">
           <source>On</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">켜짐</target>
+          <target state="translated">켜짐</target>
         </trans-unit>
         <trans-unit id="Settings.AppTheme" translate="yes" xml:space="preserve">
           <source>App Theme</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">앱 테마</target>
+          <target state="translated">앱 테마</target>
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">컬러 트레이 아이콘 사용</target>
+          <target state="translated">컬러 트레이 아이콘 사용</target>
         </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">모든 설정을 기본값으로 재설정합니다.</target>
+          <target state="translated">모든 설정 기본값으로 초기화</target>
         </trans-unit>
         <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
           <source>Personalization</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">개인 설정</target>
+          <target state="translated">개인 설정</target>
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">플라이아웃을 이 위치에 정렬</target>
+          <target state="translated">플라이아웃을 이 위치에 정렬</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">일부 변경 사항을 적용하는 데 필요한 다시 시작</target>
+          <target state="translated">일부 변경 사항을 적용하려면 다시 시작해야 합니다</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">Use media's thumbnail as media control's background</target>
+          <target state="translated">미디어 썸네일을 제어 창 배경으로 사용</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
-          <target state="new">Bottom</target>
+          <target state="translated">하단</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Center" translate="yes" xml:space="preserve">
           <source>Center</source>
-          <target state="new">Center</target>
+          <target state="translated">중앙</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Left</target>
+          <target state="translated">좌측</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Right</target>
+          <target state="translated">우측</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Top" translate="yes" xml:space="preserve">
           <source>Top</source>
-          <target state="new">Top</target>
+          <target state="translated">상단</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">Auto</target>
+          <target state="translated">자동</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Down" translate="yes" xml:space="preserve">
           <source>Down</source>
-          <target state="new">Down</target>
+          <target state="translated">아래로</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Left</target>
+          <target state="translated">왼쪽으로</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Right</target>
+          <target state="translated">오른쪽으로</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Up" translate="yes" xml:space="preserve">
           <source>Up</source>
-          <target state="new">Up</target>
+          <target state="translated">위로</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">Auto</target>
+          <target state="translated">자동</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Manual" translate="yes" xml:space="preserve">
           <source>Manual</source>
-          <target state="new">Manual</target>
+          <target state="translated">수동</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Ascending" translate="yes" xml:space="preserve">
           <source>Ascending</source>
-          <target state="new">Ascending</target>
+          <target state="translated">위에서부터</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Descending" translate="yes" xml:space="preserve">
           <source>Descending</source>
-          <target state="new">Descending</target>
+          <target state="translated">아래에서부터</target>
         </trans-unit>
         <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
           <source>Display</source>
-          <target state="new">Display</target>
+          <target state="translated">디스플레이</target>
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">Select the preferred display monitor to show the flyout on</target>
+          <target state="translated">플라이아웃을 표시할 디스플레이를 선택하세요</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">Flyout alignment</target>
+          <target state="translated">플라이아웃 정렬</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Flyout content stacking direction</target>
+          <target state="translated">플라이아웃 내용 쌓기</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">Flyout expand direction</target>
+          <target state="translated">플라이아웃 등장 방향</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">Flyout placement</target>
+          <target state="translated">플라이아웃 배치</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">Placement mode</target>
+          <target state="translated">배치 방식</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
-          <target state="new">Horizontal alignment</target>
+          <target state="translated">수평 정렬</target>
         </trans-unit>
         <trans-unit id="Settings.Layout" translate="yes" xml:space="preserve">
           <source>Layout</source>
-          <target state="new">Layout</target>
+          <target state="translated">레이아웃</target>
         </trans-unit>
         <trans-unit id="Settings.VerticalAlignment" translate="yes" xml:space="preserve">
           <source>Vertical alignment</source>
-          <target state="new">Vertical alignment</target>
+          <target state="translated">수직 정렬</target>
         </trans-unit>
       </group>
     </body>
