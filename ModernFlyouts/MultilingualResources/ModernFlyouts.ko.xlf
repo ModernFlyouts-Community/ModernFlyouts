@@ -275,11 +275,11 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="translated">음량 플라이아웃에서 미디어 제어창 (Global System Media Transport Controls) 표시 </target>
+          <target state="translated">음량 플라이아웃에서 미디어 제어창(Global System Media Transport Controls) 표시 </target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
-          <target state="translated">미디어 플라이아웃 (Global System Media Transport Controls)에서 음량 제어 표시</target>
+          <target state="translated">미디어 플라이아웃(Global System Media Transport Controls)에서 음량 제어 표시</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
