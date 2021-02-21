@@ -1,7 +1,8 @@
-﻿using ModernFlyouts.Core.Utilities;
+﻿using ModernFlyouts.Core.Helpers;
+using ModernFlyouts.Core.Utilities;
 using NPSMLib;
+using System;
 using System.Linq;
-using System.Windows;
 
 namespace ModernFlyouts.Core.Media.Control
 {
@@ -9,55 +10,54 @@ namespace ModernFlyouts.Core.Media.Control
     {
         private NowPlayingSessionManager NPSessionManager;
 
-        public override void OnEnabled()
+        public override async void OnEnabled()
         {
+            NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
+            NpsmServiceStart_NpsmServiceStarted(null, null);
+        }
+
+        private async void NpsmServiceStart_NpsmServiceStarted(object sender, EventArgs e)
+        {
+            //Example: explorer.exe crashes, the NPSMLib still holds the "link"
+            //THEN explorer.exe restarts and NPSM restarts too, reloading all NPSM sessions
+
+            //Now recreate NPSessionManager.
             try
             {
                 NPSessionManager = new();
                 NPSessionManager.SessionListChanged += NPSessionsChanged;
-                LoadSessions();
 
-                NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
+                await LoadSessions();
             }
-            catch (System.Exception)
+            catch (Exception)
             {
-                //The NPSM service may NOT be available.
-                NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
+                //This is in case NPSM dies immediately after sending a wnf notification
+                await ClearSessions();
+                if (NPSessionManager != null)
+                    NPSessionManager.SessionListChanged -= NPSessionsChanged;
+                NPSessionManager = null;
             }
         }
 
-        private void NpsmServiceStart_NpsmServiceStarted(object sender, System.EventArgs e)
+        private async void NPSessionsChanged(object sender, NowPlayingSessionManagerEventArgs e)
         {
-            //For some reasons it doesn't clear the sessions (you'll have duplicates)...
-            //But at least it shouldn't die anymore
-            //Oh, and of course this fixes 19041 issue where GSMTC/NPSMLib stops working randomly...
-            //Well, the NPSM service crashes and restarts but old handles still remains.
-            //That's why we create a new instance when NPSM is (re)started so we have a new one.
-
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                try
-                {
-                    NPSessionManager = new();
-                    NPSessionManager.SessionListChanged += NPSessionsChanged;
-
-                    LoadSessions();
-                }
-                catch (System.Exception)
-                {
-                    //This is in case NPSM dies immediately after sending a wnf notification
-                }
-            });
+            await NPSessionsChangedUI(e);
         }
 
-        private void NPSessionsChanged(object sender, NowPlayingSessionManagerEventArgs e)
+        private async UiTask NPSessionsChangedUI(NowPlayingSessionManagerEventArgs e)
         {
-            Application.Current.Dispatcher.Invoke(() => OnSessionsChanged(e.NowPlayingSessionInfo, e.NotificationType));
+            OnSessionsChanged(e.NowPlayingSessionInfo, e.NotificationType);
         }
 
         private void OnSessionsChanged(NowPlayingSessionInfo nowPlayingSessionInfo, NowPlayingSessionManagerNotificationType notificationType)
         {
             nowPlayingSessionInfo.GetInfo(out _, out uint pid, out _);
+
+            if (NPSessionManager == null)
+            {
+                //T H I S    S H O U L D    N E V E R    H A P P E N.
+                return;
+            }
 
             if (notificationType == NowPlayingSessionManagerNotificationType.SessionCreated)
             {
@@ -102,7 +102,7 @@ namespace ModernFlyouts.Core.Media.Control
             }
         }
 
-        private void ClearSessions()
+        private async UiTask ClearSessions()
         {
             foreach (var session in MediaSessions)
             {
@@ -114,9 +114,9 @@ namespace ModernFlyouts.Core.Media.Control
             RaiseMediaSessionsChanged();
         }
 
-        private void LoadSessions()
+        private async UiTask LoadSessions()
         {
-            ClearSessions();
+            await ClearSessions();
 
             if (NPSessionManager != null)
             {
@@ -131,7 +131,7 @@ namespace ModernFlyouts.Core.Media.Control
             RaiseMediaSessionsChanged();
         }
 
-        public override void OnDisabled()
+        public override async void OnDisabled()
         {
             if (NPSessionManager != null)
             {
@@ -139,7 +139,7 @@ namespace ModernFlyouts.Core.Media.Control
                 NPSessionManager = null;
             }
 
-            ClearSessions();
+            await ClearSessions();
         }
     }
 }

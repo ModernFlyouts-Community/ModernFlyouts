@@ -5,13 +5,16 @@ namespace ModernFlyouts.Core.Utilities
 {
     public static class NpsmServiceStart
     {
+        private static readonly ulong WNF_NPSM_SERVICE_STARTED = 0xC951E23A3BC0875;
+        private static readonly ulong WNF_SHEL_SESSION_LOGON_COMPLETE = 0xD83063EA3BE3835;
+
         private static readonly object _subscriptionLock = new object();
         private static IntPtr _subId;
 
         private static event EventHandler _npsmServiceStarted;
 
         //This prevents from being GC'd
-        private static Wnf.WnfUserCallback wnfSubHandler = new Wnf.WnfUserCallback(WnfSubHandler);
+        private static readonly Wnf.WnfUserCallback wnfSubHandler = new Wnf.WnfUserCallback(WnfSubHandler);
 
         private static IntPtr WnfSubHandler(ulong stateName, uint changeStamp, IntPtr typeId, IntPtr callbackContext, IntPtr bufferPtr, uint bufferSize)
         {
@@ -31,8 +34,8 @@ namespace ModernFlyouts.Core.Utilities
                 {
                     if (_npsmServiceStarted == null)
                     {
-                        var wnfData = Wnf.QueryWnf(Wnf.WNF_NPSM_SERVICE_STARTED);
-                        Wnf.SubscribeWnf(Wnf.WNF_NPSM_SERVICE_STARTED, wnfData.Changestamp, wnfSubHandler, out _subId);
+                        var wnfData = Wnf.QueryWnf(WNF_SHEL_SESSION_LOGON_COMPLETE);
+                        Wnf.SubscribeWnf(WNF_SHEL_SESSION_LOGON_COMPLETE, wnfData.Changestamp, wnfSubHandler, out _subId);
                     }
 
                     _npsmServiceStarted += value;

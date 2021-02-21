@@ -103,7 +103,7 @@ namespace ModernFlyouts.Core.AppInformation
             if (!disposedValue)
             {
                 Disconnect();
-                LogoStream.Dispose();
+                LogoStream?.Dispose();
                 LogoStream = null;
                 disposedValue = true;
             }
