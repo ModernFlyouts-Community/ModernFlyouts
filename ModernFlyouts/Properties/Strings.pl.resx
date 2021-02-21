@@ -34,10 +34,10 @@
     <value>Zamknij</value>
   </data>
   <data name="ExitItem" xml:space="preserve">
-    <value>Zamknij</value>
+    <value>Zakończ</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Zamknij aplikację</value>
+    <value>Zakończ działanie aplikacji</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
     <value>Ogólne</value>
@@ -63,10 +63,10 @@
     <value>Przywróć domyślną nakładkę</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Przywróć domyślne nakładki i zamknij aplikację</value>
+    <value>Przywróć domyślne nakładki systemu Windows i zakończ działanie aplikacji</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
-    <value>Więcej kontrolek</value>
+    <value>Opcje odtwarzania</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
     <value>Dalej</value>
@@ -108,10 +108,10 @@
     <value>Zachowanie</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Domyślny typ nakładki</value>
+    <value>Domyślny typ nakładek</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Wybierz domyślny typ nakładki</value>
+    <value>Wybierz domyślny typ nakładek</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
     <value>Wybranie domyślnych nakładek nie spowoduje zamknięcia aplikacji; będzie ona działać w tle. Zamknij ją, aby zaoszczędzić zasoby.</value>
@@ -123,13 +123,13 @@
     <value>Włączone</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Przezroczystość nakładki</value>
+    <value>Przezroczystość nakładek</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Domyślna pozycja nakładki</value>
+    <value>Domyślna pozycja nakładek</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Pasek górny nakładki</value>
+    <value>Górny pasek nakładki</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Nakładki</value>
@@ -174,7 +174,7 @@
     <value>Pionowa</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Ta aplikacja została zaprojektowana jako nowoczesny zamiennik nakładek w stylu Fluent Design dla starych nakładek w stylu ModernUI, obecnych od Windows 8.</value>
+    <value>Ta aplikacja została zaprojektowana jako zamiennik nakładek systemowych w stylu ModernUI (obecnych od czasów Windows 8). Czerpie swój wygląd z nowoczesnego  wzornictwa - Fluent Design.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Twórcy</value>
@@ -198,7 +198,7 @@
     <value>Wymagane uruchomienie ponowne aplikacji w celu zastosowania nowego języka</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Ustawienia domyślne systemu Windows</value>
+    <value>Domyślne ustawienia systemu Windows</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
     <value>Licencje</value>
@@ -267,10 +267,10 @@
     <value>Nakładka klawiszy blokady</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Motyw nakładki</value>
+    <value>Motyw nakładek</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Czas wyświetlania nakładki (w ms)</value>
+    <value>Czas wyświetlania nakładek (w ms)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Lewo</value>
@@ -285,7 +285,7 @@
     <value>Prawo</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Widoczność paska górnego</value>
+    <value>Widoczność górnego paska nakładki</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Pokaż ikonę w zasobniku systemowym</value>
