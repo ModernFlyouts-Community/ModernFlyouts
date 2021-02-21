@@ -74,7 +74,7 @@
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="translated">플라이아웃을 윈도우 기본 설정으로 복원 후 응용 프로그램을 안전하게 종료</target>
+          <target state="translated">플라이아웃을 윈도우 기본 설정으로 복원 후 프로그램을 안전하게 종료</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
@@ -175,7 +175,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
           <source>Audio</source>
-          <target state="translated">미디어</target>
+          <target state="translated">오디오</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
           <source>Brightness</source>
@@ -323,7 +323,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="translated">잠금 키 변경시 플라이아웃에 표시할 키 선택</target>
+          <target state="translated">잠금 키 변경 시 플라이아웃에 표시할 키 선택</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
@@ -331,19 +331,19 @@
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
           <source>Enable Airplane mode Flyout</source>
-          <target state="translated">비행기 모드 설정시 플라이아웃 사용</target>
+          <target state="translated">비행기 모드 설정 시 플라이아웃 사용</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
           <source>Enable Audio Flyout</source>
-          <target state="translated">음량 조정시 플라이아웃 사용</target>
+          <target state="translated">음량 조절 시 플라이아웃 사용</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
           <source>Enable Brightness Flyout</source>
-          <target state="translated">밝기 조정시 플라이아웃 사용</target>
+          <target state="translated">밝기 조절 시 플라이아웃 사용</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="translated">잠금 키 조정시 플라이아웃 사용</target>
+          <target state="translated">잠금 키 조절 시 플라이아웃 사용</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
@@ -411,7 +411,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="translated">미디어 제어시 배경으로 미디어 썸네일 표시</target>
+          <target state="translated">미디어 제어 시 배경으로 미디어 썸네일 표시</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
