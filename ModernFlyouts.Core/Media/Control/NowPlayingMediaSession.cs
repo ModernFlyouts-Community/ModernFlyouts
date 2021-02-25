@@ -105,12 +105,15 @@ namespace ModernFlyouts.Core.Media.Control
 
         private void SourceAppInfo_InfoFetched(object sender, EventArgs e)
         {
-            sourceAppInfo.InfoFetched -= SourceAppInfo_InfoFetched;
-            MediaSourceName = sourceAppInfo.DisplayName;
-
-            if (BitmapHelper.TryCreateBitmapImageFromStream(sourceAppInfo.LogoStream, out var bitmap))
+            if (sourceAppInfo != null)
             {
-                MediaSourceIcon = bitmap;
+                sourceAppInfo.InfoFetched -= SourceAppInfo_InfoFetched;
+                MediaSourceName = sourceAppInfo.DisplayName;
+
+                if (BitmapHelper.TryCreateBitmapImageFromStream(sourceAppInfo.LogoStream, out var bitmap))
+                {
+                    MediaSourceIcon = bitmap;
+                }
             }
         }
 
