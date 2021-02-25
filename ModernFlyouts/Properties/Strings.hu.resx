@@ -19,13 +19,13 @@
     <value>A Repülési üzemmód nem érhető el :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>Repülési üzemmód kikapcsolva</value>
+    <value>Repülési üzemmód ki</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>Repülési üzemmód bekapcsolva</value>
+    <value>Repülési üzemmód be</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>Igazítás az alapértelmezett pozícióhoz</value>
+    <value>Alapértelmezett pozíció</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
     <value>Nincs csatlakoztatott hangeszköz</value>
@@ -37,20 +37,20 @@
     <value>Kilépés</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Kilépés az alkalmazásból biztonságosan</value>
+    <value>Az alkalmazás leállítása</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
     <value>Általános</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
-    <value>Beszúrási mód</value>
+    <value>Beszúrás mód</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} ki van kapcsolva.</value>
+    <value>{0} ki</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} van bekapcsolva</value>
+    <value>{0} be</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
@@ -60,16 +60,16 @@
     <value>Felső sáv rögzítése</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Alapértelmezés visszaállítása</value>
+    <value>Windows panelek visszaállítása</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Visszaállítja az ablakok alapértelmezett úszó panel, és biztonságosan kilép az alkalmazás</value>
+    <value>Az eredeti Windows panel megjelenítési mód visszaállítása, és az alkalmazás leállítása</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>További vezérlők</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
-    <value>Tovább</value>
+    <value>Következő</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
     <value>Szünet</value>
@@ -81,40 +81,40 @@
     <value>Előző</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>Ismétlés: minden</value>
+    <value>Az összes ismétlése</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Ismétlés: ki</value>
+    <value>Ismétlés ki</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Ismétlem: egy</value>
+    <value>Egy ismétlése</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Véletlen sorrendű lejátszás: ki</value>
+    <value>Véletlen sorrendű lejátszás ki</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Véletlen sorrendű lejátszás: bekapcsolva</value>
+    <value>Véletlen sorrendű lejátszás be</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Leállítás</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Idővonal-információ</value>
+    <value>Idővonal információ</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
-    <value>További</value>
+    <value>Továbbiak</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
     <value>Viselkedés</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Alapértelmezett úszó panel</value>
+    <value>Panel megjelenítő</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Az alapértelmezett úszó panel kijelölése</value>
+    <value>Panel megjelenítési mód kiválasztása</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Ha alapértelmezés szerint a Windows alapértelmezett úszó panelt választja, az nem zárja be az alkalmazást. Ez az alkalmazás továbbra is fut a háttérben. Kérjük, lépjen ki az alkalmazásból biztonságosan a teljesítmény javítása érdekében.</value>
+    <value>Ha a Windows alapértelmezett panel megjelenítési módot választja, az nem zárja be az alkalmazást, hanem az továbbra is futni fog a háttérben. Kérjük, állítsa le ezt az alkalmazást a teljesítmény javítása érdekében.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Letiltva</value>
@@ -123,28 +123,28 @@
     <value>Engedélyezve</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Úszó háttér opacitása</value>
+    <value>Panel háttér átlátszatlansága</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Úszó panel alapértelmezett pozíciója (az Igazítás gombhoz)</value>
+    <value>Alapértelmezett pozíció</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Úszó panel felső sávja</value>
+    <value>Felső sáv</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Modulok</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>AirplaneMode-úszó modul</value>
+    <value>Repülési üzemmód</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Audio úszó modul</value>
+    <value>Hang</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Fényerő-úszó modul</value>
+    <value>Fényerő</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>LockKeys-úszó modul</value>
+    <value>Billentyűzet vezérlők</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Futtatás indításkor</value>
@@ -153,19 +153,19 @@
     <value>Beállítások</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Beállítások ablakmegnyitása</value>
+    <value>Beállítások ablak megnyitása</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>TopBar rögzítésének feloldása</value>
+    <value>Felső sáv rögzítésének feloldása</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>Modern Flyouts</value>
+    <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
-    <value>Nincs</value>
+    <value>Egyik sem</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Windows-alapérték</value>
+    <value>Windows alapértelmezett</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>Vízszintes</value>
@@ -174,28 +174,28 @@
     <value>Függőleges</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Ez az alkalmazás célja, hogy egy modern Fluent Design helyett a régi metró témájú úszó paneljelenik meg a Windows, mivel a Windows 8.</value>
+    <value>Az alkalmazás egy modernebb, Fluent Design helyettesítője a régi, Windows 8 óta jelen lévő Metro témájú paneleknek.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Közreműködők</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>GitHub-tárház</value>
+    <value>GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Új probléma megnyitása</value>
+    <value>Probléma bejelentése</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Értékelés és értékelés a Microsoft Store-ban</value>
+    <value>Értékelés a Microsoft Store-ban</value>
   </data>
   <data name="About.Version" xml:space="preserve">
-    <value>Változat: </value>
+    <value>Verzió: </value>
   </data>
   <data name="Settings.Language" xml:space="preserve">
     <value>Nyelv</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>A nyelv megfelelő módosításához indítsa újra az alkalmazást</value>
+    <value>A nyelv módosításához az alkalmazás újraindítása szükséges</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
     <value>Alapértelmezett</value>
@@ -204,22 +204,22 @@
     <value>Függőségek</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Ha hibát talál, nyisson meg egy új problémát a github-tárházban.</value>
+    <value>Ha hibát talál, kérjük jelezze GitHub-on.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>A megjelenítandó munkamenetek száma</value>
+    <value>A megjelenítendő munkamenetek száma</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>Médiamunkamenetek paneltájolása</value>
+    <value>Média munkamenetek panel tájolása</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Globális rendszermédia-átviteli vezérlők (GSMTC) más néven médiavezérlők megjelenítése a Kötet úszó panelen</value>
+    <value>Médiavezérlők (GSMTC) megjelenítése a Hang panelen</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Hangerőszabályzó megjelenítése a Globális rendszermédia-átviteli vezérlők (GSMTC) más néven Media úszó panelen</value>
+    <value>Hangerőszabályzó megjelenítése médiavezérlő panelen</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>Miniatűrigazítás</value>
+    <value>Miniatűr igazítás</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
     <value>Sötét</value>
@@ -231,7 +231,7 @@
     <value>Automatikus elrejtés</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>Összecsukva</value>
+    <value>Elrejtett</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
     <value>Látható</value>
@@ -240,37 +240,37 @@
     <value>Caps Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>Beszúrás</value>
+    <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Num zár</value>
+    <value>Num Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Görgetés reteszelése</value>
+    <value>Scroll Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Jelölje ki azokat a billentyűket, amelyeknél az úszó panelt meg szeretné jelenjenek</value>
+    <value>Melyik billentyűk változását jelezze az alkalmazás?</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Megjelenés</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Repülési üzemmód engedélyezése úszó panel</value>
+    <value>Repülési üzemmód panel engedélyezése</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Audio úszó panel engedélyezése</value>
+    <value>Hang panel engedélyezése</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Fényerő úszó panel engedélyezése</value>
+    <value>Fényerő panel engedélyezése</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Zárolási kulcsok engedélyezése úszó panel</value>
+    <value>Billentyűzet vezérlők panel engedélyezése</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Úszó panel téma</value>
+    <value>Panel téma</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Úszó kimenő időmeghosszabbítása (ms)</value>
+    <value>Panel eltűnési késleltetés (ms)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Balra</value>
@@ -279,19 +279,19 @@
     <value>Média</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Kötet</value>
+    <value>Hangerő</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Jobbra</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>TopBar láthatóság</value>
+    <value>Felső sáv láthatóság</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Ikon megjelenítése a tálcán</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
-    <value>Kikapcsolva</value>
+    <value>Ki</value>
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>Be</value>
@@ -300,18 +300,93 @@
     <value>Alkalmazás téma</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Színes tálca használata ikon</value>
+    <value>Színes tálca ikon</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Az összes beállítás visszaállítása az alapértelmezett értékre</value>
+    <value>Alapértelmezett beállítások visszaállítása</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Személyre szabás</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Úszó panel igazítása ehhez a pozícióhoz</value>
+    <value>Panel igazítása ehhez a pozícióhoz</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Néhány módosítás alkalmazásához újraindítás szükséges</value>
+    <value>Néhány módosítás életbelépéséhez az alkalmazás újraindítása szükséges</value>
+  </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Miniatűr megjelenítése a panel háttereként</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>Alulra</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>Középre</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>Balra</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>Jobbra</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>Le</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>Balra</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>Jobbra</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>Kézi</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>Alapértelmezett</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>Fordított</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>Megjelenítés</value>
+  </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Válassza ki a monitort, amin meg szeretné jeleníteni a paneleket</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Panel igazítás</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Panel sorrend</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Panel animáció iránya</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Panel elhelyezése</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Elhelyezési mód</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>Vízszintes igazítás</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>Elrendezés</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>Függőleges igazítás</value>
   </data>
 </root>

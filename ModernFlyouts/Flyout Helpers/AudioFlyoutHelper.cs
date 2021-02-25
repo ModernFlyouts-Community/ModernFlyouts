@@ -174,8 +174,15 @@ namespace ModernFlyouts
             device = mmdevice;
             if (device != null)
             {
-                UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
-                device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
+                try
+                {
+                    UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
+                    device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
                 Application.Current.Dispatcher.Invoke(() => PrimaryContent = volumeControl);
             }
             else { Application.Current.Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
@@ -240,7 +247,15 @@ namespace ModernFlyouts
 
                 if (oldValue != value && device != null)
                 {
-                    device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
+                    try
+                    {
+                        device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
+                    }
+                    catch (Exception)
+                    {
+                        //99.9% is "A device attached to the system is not functioning" (0x8007001F), ignore this
+                    }
+
                     e.Handled = true;
                 }
             }
@@ -263,7 +278,15 @@ namespace ModernFlyouts
 
             if (device != null)
             {
-                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100.0);
+                try
+                {
+                    device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100.0);
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+
                 e.Handled = true;
             }
         }

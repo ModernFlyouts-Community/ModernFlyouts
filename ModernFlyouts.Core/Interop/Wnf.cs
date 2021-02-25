@@ -5,7 +5,6 @@ namespace ModernFlyouts.Core.Interop
 {
     public class Wnf
     {
-        public static ulong WNF_NPSM_SERVICE_STARTED = 0xC951E23A3BC0875;
 
         /// <summary>
         /// Updates wnf id

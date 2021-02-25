@@ -60,10 +60,10 @@
     <value>固定顶栏</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>还原默认弹窗</value>
+    <value>还原默认浮出控件</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>还原 Windows 的默认弹窗并安全退出此应用程序</value>
+    <value>还原 Windows 的默认浮出控件并安全退出此应用程序</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>更多控件</value>
@@ -102,19 +102,19 @@
     <value>时间线信息</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
-    <value>额外</value>
+    <value>附加项</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
     <value>行为</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>默认弹窗</value>
+    <value>默认浮出控件</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>选择默认的弹窗</value>
+    <value>选择默认的浮出控件</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>选择 Windows 默认弹窗不会关闭此应用。此应用程序仍将在后台继续运行。请安全地退出此应用程序以提高性能。</value>
+    <value>选择 Windows 默认浮出控件不会关闭此应用。此应用程序仍将在后台继续运行。请安全地退出此应用程序以提高性能。</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>已禁用</value>
@@ -123,28 +123,28 @@
     <value>已启用</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>弹窗背景不透明度</value>
+    <value>浮出控件背景不透明度</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>弹窗默认位置（用于恢复默认位置按钮）</value>
+    <value>浮出控件默认位置（用于恢复默认位置按钮）</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>弹窗顶栏</value>
+    <value>浮出控件顶栏</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>弹窗模块</value>
+    <value>浮出控件模块</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>飞行模式弹窗模块</value>
+    <value>飞行模式浮出控件模块</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>音频弹窗模块</value>
+    <value>音频浮出控件模块</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>亮度弹窗模块</value>
+    <value>亮度浮出控件模块</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>锁定键弹窗模块</value>
+    <value>锁定键浮出控件模块</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>开机时运行</value>
@@ -174,7 +174,7 @@
     <value>垂直</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>该程序用于将旧的 Windows 8 Metro 风格弹窗覆盖为 Fluent Design 风格弹窗。</value>
+    <value>该程序用于将旧的 Windows 8 Metro 风格浮出控件覆盖为 Fluent Design 风格浮出控件。</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>贡献者</value>
@@ -213,10 +213,10 @@
     <value>媒体面板方向</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>在音量弹窗中显示系统全局媒体传输 / 媒体控制</value>
+    <value>在音量浮出控件中显示系统全局媒体传输 / 媒体控制</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>在媒体弹窗中显示音量控制</value>
+    <value>在媒体浮出控件中显示音量控制</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>缩略图对齐方向</value>
@@ -249,28 +249,28 @@
     <value>滚动锁定</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>选择要显示的弹窗</value>
+    <value>选择要显示的浮出控件</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>外观</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>启用飞行模式弹窗</value>
+    <value>启用飞行模式浮出控件</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>启用音频弹窗</value>
+    <value>启用音频浮出控件</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>启用亮度弹窗</value>
+    <value>启用亮度浮出控件</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>启用锁定键弹窗</value>
+    <value>启用锁定键浮出控件</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>弹窗主题</value>
+    <value>浮出控件主题</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>弹窗超时（毫秒 / ms）</value>
+    <value>浮出控件超时（毫秒 / ms）</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>左侧</value>
@@ -309,7 +309,7 @@
     <value>个性化</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>将飞出对齐到此位置</value>
+    <value>将浮出控件对齐到此位置</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>重新启动以应用某些更改</value>

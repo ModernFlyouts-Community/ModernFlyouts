@@ -13,10 +13,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>حول</value>
+    <value>حول التطبيق</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>وضع الطائرة غير متوفر :(</value>
+    <value>وضع الطيران غير متوفر</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
     <value>‏‏إيقاف تشغيل وضع الطيران</value>
@@ -28,7 +28,7 @@
     <value>محاذاة إلى الموضع الافتراضي</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
-    <value>لا توجد أجهزة صوت متصلة</value>
+    <value>لا يوجد أجهزة صوت متصلة</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>إغلاق</value>
@@ -40,36 +40,36 @@
     <value>الخروج من التطبيق بأمان</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
-    <value>عام</value>
+    <value>الاعدادات العامة</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
     <value>وضع الإدراج</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} مطفأ</value>
+    <value>{0} مطفئ</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} على</value>
+    <value>{0} فعال</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>وضع الكتابة الفوقية</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>دبوس "الشريط الأعلى"</value>
+    <value>تثبيت الشريط الأعلى</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>استعادة الافتراضي</value>
+    <value>استعادة الصنف الافتراضي</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>يستعيد النوافذ الافتراضية المنبثقة ويستقيل بأمان هذا التطبيق</value>
+    <value>اعادة التطبيق الى الحالة الافتراضية و الخروج بأمان</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
-    <value>مزيد من عناصر التحكم</value>
+    <value>عرض المزيد من عناصر التحكم</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
-    <value>التالية</value>
+    <value>التالي</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
     <value>إيقاف مؤقت</value>
@@ -81,19 +81,19 @@
     <value>السابق</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>أكرر: الكل</value>
+    <value>تكرار: الكل</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>تكرار: إيقاف تشغيل</value>
+    <value>تكرار: غير فعال</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>أكرر: واحد</value>
+    <value>تكرار: واحد</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>خلط ورق اللعب: إيقاف</value>
+    <value>خلط عشوائي: إيقاف</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>المراوغة: في</value>
+    <value>خلط عشوائي: تشغيل</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>إيقاف</value>
@@ -108,49 +108,49 @@
     <value>السلوك</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>افتراضية منبثقة</value>
+    <value>زر القائمة الافتراضي</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>تحديد القائمة المنبثقة الافتراضية</value>
+    <value>اختيار زر القائمة الافتراضي</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>اختيار ويندوز الافتراضي المنبثقة كما الافتراضي لن تغلق هذا التطبيق. هذا التطبيق لا يزال قيد التشغيل في الخلفية. يرجى الخروج من هذا التطبيق بأمان لتحسين الأداء.</value>
+    <value>ان قمت بالعودة للوضع الافتراضي فان البرنامج لن يغلق. عليك اعادة تشغيل البرنامج لتحسين الاداء.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>معطّل</value>
   </data>
   <data name="Settings.Enabled" xml:space="preserve">
-    <value>ممكّن</value>
+    <value>تفعيل</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>عتامة الخلفية المنبثقة</value>
+    <value>عتمة خلفية المشغل</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>وضع افتراضي منبثق (لزر المحاذاة)</value>
+    <value>وضعية المشغل الافتراضية</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>TopOut المنبثقة</value>
+    <value>وضعية الشريط العلوي</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>الوحدات النمطية</value>
+    <value>وحدات المشغل</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>وحدة نمطية منبثقة من جهاز "مود"</value>
+    <value>وضع الطيران</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>وحدة منبثقة صوتية</value>
+    <value>اعدادات الصوت</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>وحدة السطوع المنبثقة</value>
+    <value>اعدادات السطوع</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>وحدة نمطية منبثقة لمفاتيح القفل</value>
+    <value>اعدادات مفتاح القفل</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>تشغيل عند بدء التشغيل</value>
+    <value>تشغيل البرنامج عند بدء الاقلاع</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
-    <value>إعدادات</value>
+    <value>الاعدادات</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
     <value>فتح نافذة الإعدادات</value>
@@ -159,13 +159,13 @@
     <value>إلغاء تثبيت الشريط العلوي</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>ModernFlyouts</value>
+    <value>ModernFlyouts مشغل</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
-    <value>بلا</value>
+    <value>بلا مشغل</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>افتراضي Windows</value>
+    <value>مشغل ويندوز الافتراضي</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>أفقي</value>
@@ -174,19 +174,19 @@
     <value>عمودي</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>تم تصميم هذا التطبيق ليكون بديلا تصميم بطلاقة الحديثة للمترو القديمة التي تستهدف المنبثقة موجودة في ويندوز منذ ويندوز 8.</value>
+    <value>تم تصميم هذا التطبيق ليكون بديلا لمشغل ويندوز القديم الذي تم طرحه في ويندوز 8</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>‏‏المساهمون</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>مستودع GitHub</value>
+    <value>GitHub مشروعنا على</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>فتح إصدار جديد</value>
+    <value>فتح مشكلة جديدة</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>معدل المراجعة والمراجعة على متجر Microsoft</value>
+    <value>قيم البرنامج على متجر مايكروسوفت</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>الإصدار: </value>
@@ -198,28 +198,28 @@
     <value>الرجاء إعادة تشغيل التطبيق لتغيير اللغة بشكل صحيح</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>خيار النظام الافتراضي</value>
+    <value>الوضع الافتراضي</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
     <value>التبعيات</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>إذا وجدت أي أخطاء، يرجى فتح مشكلة جديدة في مستودع github.</value>
+    <value>.Github إذا وجدت أي أخطاء، يرجى فتح مشكلة جديدة في</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>عدد الجلسات التي يجب إظهارها</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>توجيه لوحة جلسات الوسائط</value>
+    <value>تغير موضع اختيار الوسائط الاخرى</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>إظهار عناصر التحكم في نقل الوسائط العامة للنظام (GSMTC) الملقب بعناصر التحكم في الوسائط في قائمة التخزين المنبثقة</value>
+    <value>.إظهار عناصر التحكم في نقل الوسائط العامة للنظام الملقب بعناصر التحكم في الوسائط في قائمة التخزين</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>إظهار التحكم في مستوى الصوت في عناصر التحكم في النقل في وسائط النظام العالمي (GSMTC) التي تُظهر الوسائط الموجودة منبثقة</value>
+    <value>إظهار التحكم في مستوى الصوت في عناصر تحكم نقل وسائط النظام العالمي التي تُظهر الوسائط الموجودة منبثقة</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>محاذاة الصورة المصغرة</value>
+    <value>تغير موضع الصورة المصغرة</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
     <value>داكن</value>
@@ -237,40 +237,40 @@
     <value>‏‏مرئي</value>
   </data>
   <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>Caps lock</value>
+    <value>مفتاح الاحرف الكبيرة</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
     <value>إدراج</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>تأمين الأرقام</value>
+    <value>قفل الأرقام</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>قفل التمرير</value>
+    <value>وضع قفل التمرير</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>حدد المفاتيح التي تريد إظهارها منبثقة عن</value>
+    <value>حدد الاشياء التي تريد إظهارها في المشغل.</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>المظهر</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>تمكين وضع الطائرة مناوب</value>
+    <value>تمكين وضع الطيران</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>تمكين الصوت المنبثق</value>
+    <value>تمكين خيار الصوت </value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>تمكين السطوع المنبثق</value>
+    <value>تمكين خيار السطوع</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>تمكين مفتاح القفل منبثق</value>
+    <value>تمكين خيار قفل الأرقام</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>نسق منبثق</value>
+    <value>مظهر المشغل</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>مهلة منبثقة (مللي ثانية)</value>
+    <value>المدة الزمنية لاخفتاء البرنامج</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>يسار</value>
@@ -285,10 +285,10 @@
     <value>يمين</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>رؤية TopBar</value>
+    <value>رؤية الشريط العلوي</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>إظهار الرمز على منطقة درج النظام</value>
+    <value>إظهار ايقونة البرنامج في منطقة درج النظام</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>‏‏إيقاف التشغيل</value>
@@ -297,10 +297,10 @@
     <value>تشغيل</value>
   </data>
   <data name="Settings.AppTheme" xml:space="preserve">
-    <value>موضوع التطبيق</value>
+    <value>مظهر التطبيق</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>استخدام أيقونة الدرج الملون</value>
+    <value>استخدام أيقونة المشغل الملونة</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>إعادة تعيين كافة الإعدادات إلى الإعدادات الافتراضية</value>
@@ -309,9 +309,84 @@
     <value>إضفاء طابع شخصي</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>محاذاة منبثقة إلى هذا الموضع</value>
+    <value>محاذاة البرنامج إلى هذا الموضع</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>إعادة التشغيل المطلوبة لتطبيق بعض التغييرات</value>
+    <value>إعادة التشغيل مطلوبة لتطبيق بعض التغييرات</value>
+  </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>استخدم صورة الوسائط كخلفية المشغل </value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>الأسفل</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>مركز</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>اليسار</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>اليمين</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>الاعلى</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>أسفل</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>اليسار</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>اليمين</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>فوق</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>يدويا</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>تصاعدي</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>تنازلي</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>اختر الشاشة التي تريد ان تعرض عليها المشغل</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>محازاة المشغل</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>اختيار جهة ظهور المشغل</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>اختيار موضع متحكم الصوت</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>تحديد مستوى المشغل</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>وضع تحديد المستوى</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>محاذاة أفقية</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>تخطيط</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>انحياز عمودي</value>
   </data>
 </root>

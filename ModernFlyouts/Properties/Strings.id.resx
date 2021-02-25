@@ -16,19 +16,19 @@
     <value>Tentang</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Mode Pesawat tidak tersedia :(</value>
+    <value>Mode pesawat tidak tersedia :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>Mode pesawat terbang tidak aktif</value>
+    <value>Mode pesawat tidak aktif</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>Mode pesawat terbang aktif</value>
+    <value>Mode pesawat aktif</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>Ratakan ke posisi default</value>
+    <value>Ratakan ke posisi asali</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
-    <value>Tak Ada Perangkat Audio Tersambung</value>
+    <value>Tidak Ada Perangkat Suara Tersambung</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Tutup</value>
@@ -46,7 +46,7 @@
     <value>Mode Sisipkan</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} tidak apa-apa</value>
+    <value>{0} tidak aktif</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
@@ -57,13 +57,13 @@
     <value>Mode Timpa</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Sematkan TopBar</value>
+    <value>Sematkan Bilah</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Pulihkan Default</value>
+    <value>Pulihkan sembulan asali</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Memulihkan flyout default windows dan dengan aman keluar dari aplikasi ini</value>
+    <value>Memulihkan sembulan Windows asali dan dengan aman keluar dari aplikasi ini</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Kontrol Lainnya</value>
@@ -84,37 +84,37 @@
     <value>Ulangi: semua</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Ulangi: mati</value>
+    <value>Ulangi: tidak aktif</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
     <value>Ulangi: satu</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Acak: mati</value>
+    <value>Acak: tidak aktif</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Acak: pada</value>
+    <value>Acak: aktif</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Berhenti</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Info Garis Waktu</value>
+    <value>Informasi Linimasa</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
     <value>Tambahan</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
-    <value>Perilaku</value>
+    <value>Tindakan</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Default Flyout</value>
+    <value>Sembulan Asali</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Pilih flyout default</value>
+    <value>Pilih sembulan asali</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Memilih Windows Default Flyout sebagai default tidak akan menutup aplikasi ini. Aplikasi ini masih akan terus berjalan di latar belakang. Silakan keluar dari aplikasi ini dengan aman untuk meningkatkan kinerja.</value>
+    <value>Memilih Sembulan Windows Asali sebagai asali tidak akan menutup aplikasi ini. Aplikasi ini masih akan terus berjalan di latar belakang. Silakan keluar dari aplikasi ini dengan aman untuk meningkatkan kinerja.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Dinonaktifkan</value>
@@ -123,31 +123,31 @@
     <value>Diaktifkan</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Opasitas Latar Belakang Flyout</value>
+    <value>Opasitas latar belakang sembulan</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Posisi Default Flyout (untuk tombol Ratakan)</value>
+    <value>Posisi sembulan asali</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Flyout TopBar</value>
+    <value>Sembulan Bilah</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Modul</value>
+    <value>Modul sembulan</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Modul PesawatMode-flyout</value>
+    <value>Mode pesawat</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Modul Audio-flyout</value>
+    <value>Suara</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Modul flyout kecerahan</value>
+    <value>Kecerahan</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Modul LockKeys-flyout</value>
+    <value>Tombol lock</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Jalankan saat startup</value>
+    <value>Jalankan saat memulai</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Pengaturan</value>
@@ -156,7 +156,7 @@
     <value>Buka jendela pengaturan</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Lepaskan Topbar</value>
+    <value>Lepaskan Bilah</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
@@ -165,16 +165,16 @@
     <value>Tidak ada</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Default Windows</value>
+    <value>Windows asali</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
-    <value>Horizontal</value>
+    <value>Horisontal</value>
   </data>
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>Vertikal</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Aplikasi ini dirancang untuk menjadi pengganti Desain Fasih modern untuk flyout bertema metro lama yang ada di Windows sejak Windows 8.</value>
+    <value>Aplikasi ini dirancang untuk menjadi pengganti Fluent Design modern untuk sembulan bertema metro lama yang ada di Windows sejak Windows 8.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Kontributor</value>
@@ -183,10 +183,10 @@
     <value>Repositori GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Membuka masalah baru</value>
+    <value>Buka masalah baru</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Menilai dan Meninjau di Microsoft Store</value>
+    <value>Beri peringkat dan tinjau di Microsoft Store</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Versi: </value>
@@ -195,16 +195,16 @@
     <value>Bahasa</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>Silakan mulai ulang aplikasi untuk mengubah bahasa dengan benar</value>
+    <value>Silakan mulai ulang aplikasi untuk menerapkan bahasa dengan benar</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Default Sistem</value>
+    <value>Sistem asali</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
     <value>Dependensi</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Jika Anda menemukan bug, silakan buka masalah baru di repositori github.</value>
+    <value>Jika Anda menemukan kekutu, silakan buka masalah baru di repositori GitHub.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>Jumlah sesi yang akan ditampilkan</value>
@@ -213,13 +213,13 @@
     <value>Orientasi panel sesi media</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Tampilkan Kontrol Transportasi Media Sistem Global (GSMTC) alias Kontrol media dalam flyout Volume</value>
+    <value>Tampilkan Global System Media Transport Controls (GSMTC) alias Kontrol media dalam sembulan Volume</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Tampilkan kontrol Volume dalam Kontrol Transportasi Media Sistem Global (GSMTC) alias media flyout</value>
+    <value>Tampilkan kontrol Volume dalam Global System Media Transport Controls (GSMTC) alias sembulan Media</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>Perataan gambar mini</value>
+    <value>Perataan keluku</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
     <value>Gelap</value>
@@ -237,40 +237,40 @@
     <value>Terlihat</value>
   </data>
   <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>Kunci huruf besar</value>
+    <value>Caps lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>sisipkan</value>
+    <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Kunci num</value>
+    <value>Num lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Kunci gulir</value>
+    <value>Scroll lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Pilih tombol yang ingin Anda perlihatkan flyout-nya</value>
+    <value>Pilih tombol yang ingin Anda perlihatkan sembulannya</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Tampilan</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Aktifkan Flyout mode Pesawat</value>
+    <value>Aktifkan Sembulan Mode pesawat</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Aktifkan Audio Flyout</value>
+    <value>Aktifkan Sembulan Audio</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Aktifkan Kecerahan Flyout</value>
+    <value>Aktifkan Sembulan Kecerahan</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Aktifkan tombol Kunci Flyout</value>
+    <value>Aktifkan Sembulan Tombol Lock</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Tema flyout</value>
+    <value>Tema sembulan</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Waktu terbang habis (ms)</value>
+    <value>Waktu habis sembulan (md)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Kiri</value>
@@ -279,39 +279,114 @@
     <value>Media</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Isi</value>
+    <value>Volume</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Kanan</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Visibilitas TopBar</value>
+    <value>Keterlihatan Bilah</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Tampilkan ikon pada area baki sistem</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
-    <value>Nonaktif</value>
+    <value>Tidak aktif</value>
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>Aktif</value>
   </data>
   <data name="Settings.AppTheme" xml:space="preserve">
-    <value>Tema Aplikasi</value>
+    <value>Tema aplikasi</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Gunakan ikon baki berwarna</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Reset semua setelan ke asali</value>
+    <value>Atur ulang semua setelan ke asali</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personalisasi</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Ratakan flyout ke posisi ini</value>
+    <value>Ratakan sembulan ke posisi ini</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Mulai ulang diperlukan untuk menerapkan beberapa perubahan</value>
+  </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Gunakan keluku media sebagai latar belakang kontrol media</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>Bawah</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>Tengah</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>Kiri</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>Kanan</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>Atas</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>Bawah</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>Kiri</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>Kanan</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>Atas</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>Naik</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>Turun</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>Layar</value>
+  </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Pilih layar monitor yang diinginkan untuk menampilkan sembulan</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Perataan sembulan</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Arah susunan konten sembulan</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Arah bentangan sembulan</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Penempatan sembulan</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Mode penempatan</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>Perataan horisontal</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>Tata letak</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>Perataan vertikal</value>
   </data>
 </root>
