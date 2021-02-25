@@ -411,71 +411,71 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">メディアのサムネイルをメディアコントロールの背景にする</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">メディアのサムネイルをメディアコントロールの背景にする</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
-          <target state="new">下</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">下</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Center" translate="yes" xml:space="preserve">
           <source>Center</source>
-          <target state="new">中心</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">中央</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">左</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">左</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">右</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">右</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Top" translate="yes" xml:space="preserve">
           <source>Top</source>
-          <target state="new">上</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">上</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">自動</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">自動</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Down" translate="yes" xml:space="preserve">
           <source>Down</source>
-          <target state="new">下</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">下</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">左</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">左</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">右</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">右</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Up" translate="yes" xml:space="preserve">
           <source>Up</source>
-          <target state="new">上</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">上</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">自動</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">自動</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Manual" translate="yes" xml:space="preserve">
           <source>Manual</source>
-          <target state="new">手動</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">手動</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Ascending" translate="yes" xml:space="preserve">
           <source>Ascending</source>
-          <target state="new">昇順</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">上側</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Descending" translate="yes" xml:space="preserve">
           <source>Descending</source>
-          <target state="new">降順</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">下側</target>
         </trans-unit>
         <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
           <source>Display</source>
-          <target state="new">ディスプレイ</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ディスプレイ</target>
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">フライアウトを表示するモニターの選択</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">フライアウトを表示するディスプレイを選択</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
