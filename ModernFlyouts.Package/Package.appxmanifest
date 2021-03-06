@@ -10,8 +10,8 @@
 
   <Identity
     Name="32669SamG.ModernFlyouts"
-    Publisher="CN=Developer"
-    Version="0.9.9.0" />
+    Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
+    Version="0.9.11.0" />
 
   <Properties>
 	<DisplayName>ModernFlyouts (Preview)</DisplayName>
@@ -21,7 +21,7 @@
 
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
   </Dependencies>
 
   <Resources>

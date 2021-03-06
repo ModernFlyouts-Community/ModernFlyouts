@@ -63,7 +63,7 @@
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
-    <PackageCertificateKeyFile>ModernFlyouts.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>BC4C8DAC3E018D7B1C0AEE7B40C2DEA2F3DD2BE0</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <AppxBundle>Always</AppxBundle>
