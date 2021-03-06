@@ -2,12 +2,16 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+	<Platforms>AnyCPU;x64;x86;arm64</Platforms>
+	<RuntimeIdentifiers>win10-x64;win10-x86;win-x86;win10-arm64</RuntimeIdentifiers>
     <UseWPF>true</UseWPF>
     <NeutralLanguage>en-US</NeutralLanguage>
     <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
+	<SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+	<LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Version.Contains('-beta'))">
@@ -124,11 +128,6 @@
     <TargetFrameworkSDKToolsDirectory Condition=" '$(Platform)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(Platform)\</TargetFrameworkSDKToolsDirectory>
    </PropertyGroup>-->
 
-  <PropertyGroup>
-    <Platforms>AnyCPU;x64;x86</Platforms>
-    <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
@@ -137,10 +136,14 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
+	    <PlatformTarget>arm64</PlatformTarget>
+	</PropertyGroup>
+
   <PropertyGroup Label="MultilingualAppToolkit">
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
     <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
-    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">false</TranslationReport>
     <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
   </PropertyGroup>
 
