@@ -58,9 +58,9 @@
     <EntryPointProjectUniqueName>..\ModernFlyoutsLauncher\ModernFlyoutsLauncher.vcxproj</EntryPointProjectUniqueName>
     <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>False</GenerateTestArtifacts>
-    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
     <PackageCertificateKeyFile>ModernFlyouts.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
