@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
-	<Platforms>AnyCPU;x64;x86;arm64</Platforms>
-	<RuntimeIdentifiers>win10-x64;win10-x86;win-x86;win10-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win10-x64;win10-x86;win10-arm64</RuntimeIdentifiers>
     <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64;x86;arm64</Platforms>
+    <OutputType>WinExe</OutputType>
     <NeutralLanguage>en-US</NeutralLanguage>
     <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
-	<SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
-	<LangVersion>preview</LangVersion>
+    <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Version.Contains('-beta'))">
@@ -144,9 +144,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
 		<PlatformTarget>arm64</PlatformTarget>
-	</PropertyGroup>
+	</PropertyGroup>-->
 
   <PropertyGroup Label="MultilingualAppToolkit">
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
