@@ -59,7 +59,7 @@
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>False</GenerateTestArtifacts>
-    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
     <PackageCertificateThumbprint>E714182BE3AE834C1C5FF57E1AD4086C69559BAF</PackageCertificateThumbprint>
@@ -185,14 +185,13 @@
     </ProjectReference>
     <ProjectReference Include="..\ModernFlyoutsBridge\ModernFlyoutsBridge.vcxproj" />
   </ItemGroup>
-  <!--<Target Name="FixEntryPoint" BeforeTargets="_ConvertItems">
+  <Target Name="FixEntryPoint" BeforeTargets="_ConvertItems">
     <PropertyGroup>
       <EntryPointExe Condition="'$(Platform)'=='x64'">ModernFlyoutHost_x64.exe</EntryPointExe>
       <EntryPointExe Condition="'$(Platform)'=='ARM64'">ModernFlyoutHost_A64.exe</EntryPointExe>
       <EntryPointExe Condition="'$(Platform)'=='x86'">ModernFlyoutHost_x86.exe</EntryPointExe>
-      <EntryPointExe Condition="'$(Platform)'=='ARM'">ModernFlyoutHost_A32.exe</EntryPointExe>
     </PropertyGroup>
-  </Target>-->
+  </Target>
   <Target Name="FlattenPackage" BeforeTargets="_ConvertItems">
     <ItemGroup>
       <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
