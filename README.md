@@ -72,6 +72,10 @@ _please note that due to how winget processes package updates, updates may take 
 
 `winget install --id=ModernFlyouts.ModernFlyouts -e`
 
+**Chocolatey**
+
+ModernFlyouts is **Unofficially** available to install via Chocolatey [Here](https://chocolatey.org/packages/modernflyouts), however as this is not maintained by us we can not verify it's security or being up to date.
+
 ## Connect with us
 You can join our [Discord Server](https://discord.gg/TcYskeyaYE) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback (people who don't have a GitHub account may be benefitted).
 
@@ -97,7 +101,7 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
 - **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
 - **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
-- **[ADeltaX](https://github.com/ADeltaX/)** - Our savior! Helps us at critical times.
+- **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer - Our savior! Helps us at critical times.
 
 
 ### Our Contributors 💗💕
@@ -137,6 +141,11 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - [NAudio](https://github.com/naudio/NAudio)
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (Inspired the name **Modern**Flyouts)
 - [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
+
+
+## Beta Builds
+
+The ability to signup for beta builds has been temporarily removed while we work on a better way to release and manage them. Beta builds will still occasionally be available to download fron the releases tab on github. Thankyou to everyone who helps us test new releases before they go public.
 
 ## Screenshots
 
