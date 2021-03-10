@@ -11,7 +11,7 @@
   <Identity
     Name="32669SamG.ModernFlyouts"
     Publisher="CN=ADX"
-    Version="0.9.15.0" />
+    Version="0.9.18.0" />
 
   <Properties>
 	<DisplayName>ModernFlyouts (Preview)</DisplayName>
@@ -58,7 +58,7 @@
 
   <Applications>
     <Application Id="App"
-      Executable="ModernFlyoutHost_A64.exe"
+      Executable="$targetnametoken$.exe"
       EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
         DisplayName="ModernFlyouts (Preview)"
@@ -72,13 +72,13 @@
             <uap:ShowOn Tile="wide310x150Logo"/>
             <uap:ShowOn Tile="square310x310Logo"/>
           </uap:ShowNameOnTiles>
-        </uap:DefaultTile >
+        </uap:DefaultTile>
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
         <uap5:Extension
             Category="windows.startupTask"
-            Executable="ModernFlyoutHost_A64.exe"
+            Executable="ModernFlyoutsHost.exe"
             EntryPoint="Windows.FullTrustApplication">
           <uap5:StartupTask
             TaskId="ModernFlyoutsStartupId"

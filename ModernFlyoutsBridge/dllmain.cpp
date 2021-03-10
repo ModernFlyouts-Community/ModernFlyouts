@@ -36,7 +36,7 @@ bool load_hostfxr()
     return (init_cmdline && run_fptr && close_fptr);
 }
 
-extern "C" __declspec(dllexport) HRESULT DXGIDeclareAdapterRemovalSupport()
+HRESULT LoadCLR()
 {
     auto host_path = GetExecutableDir() + L"\\";
     auto exec_path = host_path + L"ModernFlyouts.dll";
@@ -88,6 +88,31 @@ extern "C" __declspec(dllexport) HRESULT DXGIDeclareAdapterRemovalSupport()
 
     //It will never happen :)
     return S_OK;
+}
+
+extern "C"
+{
+    __declspec(dllexport) HRESULT CreateDXGIFactory(REFIID riid, void** ppFactory)
+    {
+        return LoadCLR();
+    }
+
+    __declspec(dllexport) HRESULT CreateDXGIFactory1(REFIID riid, void** ppFactory)
+    {
+        return LoadCLR();
+    }
+
+    //This is in case you get an error about entry point being meme for D3D11 (lol? d3d11 does not export CreateDXGIFactory*)
+    __declspec(dllexport) HRESULT CreateDXGIFactory2(UINT Flags, REFIID riid, void** ppFactory)
+    {
+        return LoadCLR();
+    }
+
+    //Our main target.
+    __declspec(dllexport) HRESULT DXGIDeclareAdapterRemovalSupport()
+    {
+        return LoadCLR();
+    }
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule,
