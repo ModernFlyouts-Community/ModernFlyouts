@@ -149,6 +149,20 @@ namespace ModernFlyouts.UI
             }
         }
 
+        private bool fadeAnimationDisabled = DefaultValuesStore.FadeAnimationDisabled;
+
+        public bool FadeAnimationDisabled
+        {
+            get => fadeAnimationDisabled;
+            set
+            {
+                if (SetProperty(ref fadeAnimationDisabled, value))
+                {
+                    OnFadeAnimationEnabledChanged();
+                }
+            }
+        }
+
         #endregion
 
         #region Layout
@@ -329,6 +343,7 @@ namespace ModernFlyouts.UI
 
             TrayIconEnabled = AppDataHelper.TrayIconEnabled;
             UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
+            FadeAnimationDisabled = AppDataHelper.FadeAnimationDisabled;
 
             FlyoutTheme = AppDataHelper.FlyoutTheme;
             AppTheme = AppDataHelper.AppTheme;
@@ -353,6 +368,11 @@ namespace ModernFlyouts.UI
         {
             UpdateTrayIcon();
             AppDataHelper.UseColoredTrayIcon = useColoredTrayIcon;
+        }
+
+        private void OnFadeAnimationEnabledChanged()
+        {
+            AppDataHelper.FadeAnimationDisabled = fadeAnimationDisabled;
         }
 
         private void OnSystemThemeChanged(object sender, SystemThemeChangedEventArgs args)

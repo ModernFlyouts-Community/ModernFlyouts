@@ -289,6 +289,12 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
+        public static bool FadeAnimationDisabled
+        {
+            get => GetValue(DefaultValuesStore.FadeAnimationDisabled);
+            set => SetValue(value);
+        }
+
         public static bool AlignGSMTCThumbnailToRight
         {
             get => GetValue(DefaultValuesStore.AlignGSMTCThumbnailToRight);

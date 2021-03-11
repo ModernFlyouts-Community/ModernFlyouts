@@ -215,7 +215,7 @@ namespace ModernFlyouts
                 ZBandID = zbid,
                 FlyoutWindowType = FlyoutWindowType.OnScreen,
                 Offset = UIManager.FlyoutShadowMargin,
-                IsTimeoutEnabled = true
+                IsTimeoutEnabled = true,
             };
 
             flyoutWindow.DragMoved += (s, e) =>
@@ -276,6 +276,13 @@ namespace ModernFlyouts
             {
                 Source = UIManager,
                 Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowExpandDirection)),
+                Mode = BindingMode.OneWay
+            });
+
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.FadeAnimationDisabledProperty, new Binding()
+            {
+                Source = UIManager,
+                Path = new PropertyPath(nameof(UIManager.FadeAnimationDisabled)),
                 Mode = BindingMode.OneWay
             });
         }

@@ -48,6 +48,10 @@
                                      OffContent="{x:Static resx:Strings.Settings_Off}"
                                      Visibility="{Binding UIManager.TrayIconEnabled,
                                         Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_FadeAnimationDisabled}"
+                                     IsOn="{Binding UIManager.FadeAnimationDisabled}"
+                                     OnContent="{x:Static resx:Strings.Settings_On}"
+                                     OffContent="{x:Static resx:Strings.Settings_Off}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
 

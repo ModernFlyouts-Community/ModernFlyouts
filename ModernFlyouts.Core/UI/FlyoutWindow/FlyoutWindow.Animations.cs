@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ModernFlyouts.Core.UI
 {
@@ -18,7 +19,17 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(OpenedEvent);
             RaiseEvent(args);
 
-            PlayOpenAnimation();
+            if (FadeAnimationDisabled)
+            {
+                BeginAnimation(VisibilityProperty, null);
+                BeginAnimation(OpacityProperty, null);
+                Visibility = Visibility.Visible;
+                Opacity = 1.0;
+            }
+            else
+            {
+                PlayOpenAnimation();
+            }
 
             timer?.Start();
         }
@@ -28,7 +39,15 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(ClosingEvent);
             RaiseEvent(args);
 
-            PlayCloseAnimation();
+            if (FadeAnimationDisabled)
+            {
+                Opacity = 0.0;
+                Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                PlayCloseAnimation();
+            }
         }
 
         #region Close Timer
@@ -115,6 +134,7 @@ namespace ModernFlyouts.Core.UI
         private static readonly KeySpline decelerateKeySplineOpening = new(0.1, 0.9, 0.2, 1);
         private static readonly KeySpline decelerateKeySplineClosing = new(1, 0.2, 0.9, 0.1);
 
+
         private void PrepareAnimations()
         {
             EnsureClosingStoryboard();
@@ -141,9 +161,11 @@ namespace ModernFlyouts.Core.UI
                     {
                         new DiscreteObjectKeyFrame(Visibility.Visible, TimeSpan.Zero)
                     }
+                    
                 };
                 Storyboard.SetTarget(visibilityAnim, this);
                 Storyboard.SetTargetProperty(visibilityAnim, visibilityPath);
+                
 
                 DoubleAnimationUsingKeyFrames opacityAnim = new()
                 {

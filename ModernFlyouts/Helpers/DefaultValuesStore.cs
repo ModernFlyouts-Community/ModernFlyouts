@@ -82,6 +82,8 @@ namespace ModernFlyouts.Helpers
 
         public const bool UseColoredTrayIcon = true;
 
+        public const bool FadeAnimationDisabled = false;
+
         public const bool AlignGSMTCThumbnailToRight = true;
 
         public const bool UseGSMTCThumbnailAsBackground = true;
