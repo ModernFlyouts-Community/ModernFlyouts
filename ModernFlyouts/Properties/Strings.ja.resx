@@ -132,7 +132,7 @@
     <value>上部バー</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>モジュール</value>
+    <value>フライアウト モジュール</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
     <value>機内モード</value>
@@ -174,10 +174,10 @@
     <value>垂直</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>このアプリは、Windows 8以降のWindowsに存在する古いメトロをテーマにしたフライアウトを、現代的なFluent Designに置き換えるようにデザインされています。</value>
+    <value>このアプリは、Windows 8から使われてきた古いメトロがテーマのフライアウトを、現代的なFluent Designに置き換えます。</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
-    <value>共同作成者</value>
+    <value>開発者</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
     <value>GitHub リポジトリ</value>
@@ -195,7 +195,7 @@
     <value>言語</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>言語を正しく変更するため、アプリを再起動してください</value>
+    <value>正しく言語を変更するため、アプリを再起動してください</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
     <value>システムの既定値</value>
@@ -237,13 +237,13 @@
     <value>表示</value>
   </data>
   <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>CapsLock</value>
+    <value>Caps lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
     <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>NumLock</value>
+    <value>Num lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
     <value>ScrollLock</value>
@@ -255,16 +255,16 @@
     <value>外観</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>機内モードのフライアウト</value>
+    <value>機内モードのフライアウトを有効化</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>オーディオのフライアウト</value>
+    <value>オーディオのフライアウトを有効化</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>明るさのフライアウト</value>
+    <value>明るさのフライアウトを有効化</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>ロックキーのフライアウト</value>
+    <value>ロックキーのフライアウトを有効化</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
     <value>フライアウトのテーマ</value>
@@ -313,5 +313,80 @@
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>変更を適用するために再起動が必要です</value>
+  </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>メディアのサムネイルをメディアコントロールの背景にする</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>手動</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>上側</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>下側</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>ディスプレイ</value>
+  </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>フライアウトを表示するディスプレイを選択</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>フライアウトの配置</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>コンテンツスタッキングの順番</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>フライアウトの出現方向</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>フライアウトの配置</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>配置モード</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>水平方向の配置</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>レイアウト</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>垂直方向の配置</value>
   </data>
 </root>
