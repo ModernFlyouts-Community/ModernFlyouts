@@ -2,6 +2,6 @@
   <PropertyGroup>
     <Authors>ModernFlyouts Community</Authors>
     <LangVersion>latest</LangVersion>
-    <Version>0.9</Version>
+    <Version>0.9.1-beta.2</Version>
   </PropertyGroup>
 </Project>
