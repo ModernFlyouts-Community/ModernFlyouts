@@ -10,8 +10,8 @@
 
   <Identity
     Name="32669SamG.ModernFlyouts"
-    Publisher="CN=ADX"
-    Version="0.9.18.0" />
+    Publisher="CN=Developer"
+    Version="0.9.19.0" />
 
   <Properties>
 	<DisplayName>ModernFlyouts (Preview)</DisplayName>
