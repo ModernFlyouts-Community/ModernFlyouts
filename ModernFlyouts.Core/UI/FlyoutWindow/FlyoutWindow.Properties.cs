@@ -346,19 +346,19 @@ namespace ModernFlyouts.Core.UI
 
         #endregion
 
-        #region FadeAnimationDisabled
+        #region WidgetAnimationEnabled
 
-        public static readonly DependencyProperty FadeAnimationDisabledProperty =
+        public static readonly DependencyProperty WidgetAnimationEnabledProperty =
             DependencyProperty.Register(
-                nameof(FadeAnimationDisabled),
+                nameof(WidgetAnimationEnabled),
                 typeof(bool),
                 typeof(FlyoutWindow),
                 new PropertyMetadata(false));
 
-        public bool FadeAnimationDisabled
+        public bool WidgetAnimationEnabled
         {
-            get => (bool)GetValue(FadeAnimationDisabledProperty);
-            set => SetValue(FadeAnimationDisabledProperty, value);
+            get => (bool)GetValue(WidgetAnimationEnabledProperty);
+            set => SetValue(WidgetAnimationEnabledProperty, value);
         }
 
         #endregion

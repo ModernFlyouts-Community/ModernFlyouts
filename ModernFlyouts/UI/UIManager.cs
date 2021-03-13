@@ -149,14 +149,14 @@ namespace ModernFlyouts.UI
             }
         }
 
-        private bool fadeAnimationDisabled = DefaultValuesStore.FadeAnimationDisabled;
+        private bool widgetAnimationEnabled = DefaultValuesStore.WidgetAnimationEnabled;
 
-        public bool FadeAnimationDisabled
+        public bool WidgetAnimationEnabled
         {
-            get => fadeAnimationDisabled;
+            get => widgetAnimationEnabled;
             set
             {
-                if (SetProperty(ref fadeAnimationDisabled, value))
+                if (SetProperty(ref widgetAnimationEnabled, value))
                 {
                     OnFadeAnimationEnabledChanged();
                 }
@@ -343,7 +343,7 @@ namespace ModernFlyouts.UI
 
             TrayIconEnabled = AppDataHelper.TrayIconEnabled;
             UseColoredTrayIcon = AppDataHelper.UseColoredTrayIcon;
-            FadeAnimationDisabled = AppDataHelper.FadeAnimationDisabled;
+            WidgetAnimationEnabled = AppDataHelper.WidgetAnimationEnabled;
 
             FlyoutTheme = AppDataHelper.FlyoutTheme;
             AppTheme = AppDataHelper.AppTheme;
@@ -372,7 +372,7 @@ namespace ModernFlyouts.UI
 
         private void OnFadeAnimationEnabledChanged()
         {
-            AppDataHelper.FadeAnimationDisabled = fadeAnimationDisabled;
+            AppDataHelper.WidgetAnimationEnabled = widgetAnimationEnabled;
         }
 
         private void OnSystemThemeChanged(object sender, SystemThemeChangedEventArgs args)

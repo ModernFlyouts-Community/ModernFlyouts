@@ -19,7 +19,7 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(OpenedEvent);
             RaiseEvent(args);
 
-            if (FadeAnimationDisabled)
+            if (WidgetAnimationEnabled)
             {
                 BeginAnimation(VisibilityProperty, null);
                 BeginAnimation(OpacityProperty, null);
@@ -39,7 +39,7 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(ClosingEvent);
             RaiseEvent(args);
 
-            if (FadeAnimationDisabled)
+            if (WidgetAnimationEnabled)
             {
                 Opacity = 0.0;
                 Visibility = Visibility.Hidden;

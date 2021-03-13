@@ -853,15 +853,6 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable fade animation.
-        /// </summary>
-        public static string Settings_FadeAnimationDisabled {
-            get {
-                return ResourceManager.GetString("Settings.FadeAnimationDisabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Flyout alignment.
         /// </summary>
         public static string Settings_FlyoutAlignment {
@@ -1164,6 +1155,15 @@ namespace ModernFlyouts.Properties {
         public static string Settings_VerticalAlignment {
             get {
                 return ResourceManager.GetString("Settings.VerticalAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fade animation.
+        /// </summary>
+        public static string Settings_WidgetAnimationEnabled {
+            get {
+                return ResourceManager.GetString("Settings.WidgetAnimationEnabled", resourceCulture);
             }
         }
         

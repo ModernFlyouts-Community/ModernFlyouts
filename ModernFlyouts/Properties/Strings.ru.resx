@@ -420,7 +420,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Перезагрузка необходима чтоб применить некоторые изменения.</value>
   </data>
-  <data name="Settings.FadeAnimationDisabled" xml:space="preserve">
-    <value>Отключить анимацию исчезновения</value>
+  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+    <value>Анимация появления</value>
   </data>
 </root>

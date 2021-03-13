@@ -289,9 +289,9 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
-        public static bool FadeAnimationDisabled
+        public static bool WidgetAnimationEnabled
         {
-            get => GetValue(DefaultValuesStore.FadeAnimationDisabled);
+            get => GetValue(DefaultValuesStore.WidgetAnimationEnabled);
             set => SetValue(value);
         }
 
