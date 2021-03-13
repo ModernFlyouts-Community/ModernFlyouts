@@ -34,7 +34,7 @@ namespace ModernFlyouts.UI
                 var query = new WqlEventQuery(string.Format("SELECT * FROM RegistryValueChangeEvent WHERE Hive='HKEY_USERS' AND KeyPath='{0}\\\\{1}' AND ValueName='{2}'",
                 currentUser.User.Value, PersonalizeKey.Replace("\\", "\\\\"), SysThemeValueName));
 
-                ManagementEventWatcher watcher = new ManagementEventWatcher(query);
+                ManagementEventWatcher watcher = new(query);
 
                 watcher.EventArrived += new EventArrivedEventHandler(HandleEvent);
 

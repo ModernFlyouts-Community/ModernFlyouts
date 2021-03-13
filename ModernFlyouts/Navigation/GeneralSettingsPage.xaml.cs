@@ -8,10 +8,5 @@ namespace ModernFlyouts.Navigation
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            FlyoutHandler.SafelyExitApplication();
-        }
     }
 }

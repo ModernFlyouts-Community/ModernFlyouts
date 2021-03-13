@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace ModernWpf.Input
+namespace ModernFlyouts.Input
 {
     internal static class InputHelper
     {
@@ -104,6 +104,27 @@ namespace ModernWpf.Input
 
         #endregion
 
+        #region TappedCommand
+
+        public static readonly DependencyProperty TappedCommandProperty =
+            DependencyProperty.RegisterAttached(
+                "TappedCommand",
+                typeof(ICommand),
+                typeof(InputHelper),
+                new PropertyMetadata(null));
+
+        public static ICommand GetTappedCommand(UIElement element)
+        {
+            return (ICommand)element.GetValue(TappedCommandProperty);
+        }
+
+        public static void SetTappedCommand(UIElement element, ICommand value)
+        {
+            element.SetValue(TappedCommandProperty, value);
+        }
+
+        #endregion
+
         private static void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var element = (UIElement)sender;
@@ -130,7 +151,17 @@ namespace ModernWpf.Input
                 }
                 else
                 {
-                    RaiseTapped(element, e.Timestamp);
+                    var elementBounds = new Rect(new Point(), element.RenderSize);
+                    if (elementBounds.Contains(e.GetPosition(element)))
+                    {
+                        var tappedCommand = GetTappedCommand(element);
+                        if (tappedCommand.CanExecute(null))
+                        {
+                            tappedCommand.Execute(null);
+                        }
+
+                        RaiseTapped(element, e.Timestamp);
+                    }
                 }
             }
         }

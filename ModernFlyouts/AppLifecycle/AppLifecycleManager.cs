@@ -18,17 +18,18 @@ namespace ModernFlyouts.AppLifecycle
             true;
 #else
             false;
+
 #endif
 
         #region App activation & Single instancing
 
-        private static Mutex mutex = new Mutex(true, Program.AppName);
+        private static readonly Mutex mutex = new(true, Program.AppName);
 
         /// <summary>
         /// Starts the application as single instance and redirects the command line arguments from subsequent instances to the first instance.
         /// </summary>
         /// <param name="args">Commandline arguments to process or pass to the first instance.</param>
-        /// <param name="action">The action to perform after the first instance has been intialized.</param>
+        /// <param name="action">The action to perform after the first instance has been initialized.</param>
         public static void StartApplication(string[] args, Action action)
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
@@ -47,11 +48,11 @@ namespace ModernFlyouts.AppLifecycle
 
         private static async void CreateRemoteService(string channelName)
         {
-            using NamedPipeServerStream pipeServer = new NamedPipeServerStream(channelName, PipeDirection.In);
+            using NamedPipeServerStream pipeServer = new(channelName, PipeDirection.In);
             while (true)
             {
                 await pipeServer.WaitForConnectionAsync().ConfigureAwait(false);
-                StreamReader reader = new StreamReader(pipeServer);
+                StreamReader reader = new(pipeServer);
                 var rawArgs = await reader.ReadToEndAsync();
 
                 IList<string> args = rawArgs.Split(JumpListHelper.arg_delimiter);
@@ -90,6 +91,10 @@ namespace ModernFlyouts.AppLifecycle
             {
                 Program.RunCommand(RunCommandType.SafeExit);
             }
+            else if (arg.ToLowerInvariant() == JumpListHelper.arg_appupdated)
+            {
+                Program.RunCommand(RunCommandType.AppUpdated);
+            }
         }
 
         private static void SignalFirstInstance(string channelName, string[] args)
@@ -100,10 +105,10 @@ namespace ModernFlyouts.AppLifecycle
                 rawArgs += arg + JumpListHelper.arg_delimiter;
             }
 
-            using NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", channelName, PipeDirection.Out);
+            using NamedPipeClientStream pipeClient = new(".", channelName, PipeDirection.Out);
             pipeClient.Connect(0);
 
-            StreamWriter writer = new StreamWriter(pipeClient) { AutoFlush = true };
+            StreamWriter writer = new(pipeClient) { AutoFlush = true };
             writer.Write(rawArgs);
             writer.Flush();
             writer.Close();
@@ -112,6 +117,19 @@ namespace ModernFlyouts.AppLifecycle
             Environment.Exit(0);
         }
 
-#endregion
+        #endregion
+
+        /// <summary>
+        /// 😠 You did your best application. Now, <strong>prepare to die!</strong> <i>*pew*</i> <i>*pew*</i> <i>*pew*</i>.
+        /// </summary>
+        /// <remarks>
+        /// There was an issue where the <see cref="mutex"/> still being held by this instance which prevented the app from restarting after an update.
+        /// So, after registering for restart, we also have to release the <see cref="mutex"/>.
+        /// </remarks>
+        public static void PrepareToDie()
+        {
+            mutex.ReleaseMutex();
+            mutex.Dispose();
+        }
     }
 }

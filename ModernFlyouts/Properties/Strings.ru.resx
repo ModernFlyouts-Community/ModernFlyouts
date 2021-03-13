@@ -13,16 +13,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>О Программе</value>
+    <value>О программе</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Режим "В Самолете" недоступен :(</value>
+    <value>Режим полёта недоступен :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>Режим "В Самолете" отключен</value>
+    <value>Режим полёта отключен</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>Режим "В Самолете" включен</value>
+    <value>Режим полёта включен</value>
   </data>
   <data name="Align" xml:space="preserve">
     <value>Выравнять к позиции по умолчанию</value>
@@ -59,23 +59,11 @@
   <data name="PinTopBar" xml:space="preserve">
     <value>Закрепить верхнюю панель</value>
   </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Пожалуйста, введите точку в формате 'X,Y' (например, 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Пожалуйста, введите значения X,Y в диапазоне {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Значение не может быть преобразовано в строку.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
-  </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Восстановить значения по умолчанию</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Восстанавливает Windows Default Flyout и безопасно завершает приложение</value>
+    <value>Восстанавливает всплывающие окна по умолчанию и безопасно завершает приложение</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Другие элементы</value>
@@ -99,7 +87,7 @@
     <value>Повтор: выключен</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Повтор: один</value>
+    <value>Повтор: один раз</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
     <value>Перемешать: выключено</value>
@@ -108,10 +96,10 @@
     <value>Перемешать: включено</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
-    <value>Остановить</value>
+    <value>Стоп</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Информация о таймлайне</value>
+    <value>Таймлайн</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
     <value>Дополнительно</value>
@@ -120,13 +108,14 @@
     <value>Поведение</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Flyout по умолчанию</value>
+    <value>Всплывающее окно по умолчанию</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Выберите Flyout по умолчанию</value>
+    <value>Выберите всплывающие окна по умолчанию</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Выбор Windows Default Flyout по умолчанию не будет закрывать это приложение. Это приложение будет по-прежнему работать в фоновом режиме. Пожалуйста, выйдете из этого приложения безопасно, чтобы улучшить производительность.</value>
+    <value>При выборе всплывающих окон из Windows по умолчанию, данное приложение будет работать в фоновом режиме.
+          Пожалуйста, выйдите безопасно из данного приложения, чтобы улучшить производительность.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Выключено</value>
@@ -135,13 +124,10 @@
     <value>Включено</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Непрозрачность фона Flyout</value>
+    <value>Непрозрачность всплывающего окна</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Позиция Flyout по умолчанию (для кнопки сброса выравнивания)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Введите позицию в формате 'X,Y' (например, 50,60)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Верхняя панель Flyout</value>
@@ -150,31 +136,31 @@
     <value>Модули</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Модуль "В самолете"</value>
+    <value>В самолёте</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Модуль "Аудио"</value>
+    <value>Аудио</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Модуль "Яркость"</value>
+    <value>Яркость</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Модуль "Клавиши блокировки (NumLock, CapsLock, ...)"</value>
+    <value>Клавиши блокировки (Num Lock и т.д.)</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Запускать при включении компьютера</value>
+    <value>Автозагрузка</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Настройки</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Открыть окно настроек</value>
+    <value>Открыть настройки</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Открепить верхнюю панель</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>Современныефлайуты</value>
+    <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>Нет</value>
@@ -183,31 +169,31 @@
     <value>Windows по умолчанию</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
-    <value>Горизонтальный</value>
+    <value>По горизонтали</value>
   </data>
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
     <value>По вертикали</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Это приложение предназначено для современной замены Fluent Design для старого метро тематические вылеты присутствует в Windows с Windows 8.</value>
+    <value>Данное приложение разработано для замены старых всплывающих окон, присутствующих в Windows со времен Windows 8, на современные.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Соавторы</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>Репозиторий GitHub</value>
+    <value>Репозиторий на GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Открыть новый выпуск</value>
+    <value>Сообщить о проблеме</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Оценить и просмотреть в Microsoft Store</value>
+    <value>Оценить в Microsoft Store</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Версия: </value>
   </data>
   <data name="Settings.Language" xml:space="preserve">
-    <value>язык</value>
+    <value>Язык</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
     <value>Пожалуйста, перезапустите приложение, чтобы изменить язык должным образом</value>
@@ -219,28 +205,28 @@
     <value>Зависимости</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Если вы обнаружите какие-либо ошибки, пожалуйста, откройте новую проблему в репозитории github.</value>
+    <value>Если вы обнаружите какие-либо ошибки, пожалуйста, сообщите о них в репозитории на GitHub.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Количество сеансов для показов</value>
+    <value>Количество отображаемых сеансов</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>Ориентация панели медиа-сессий</value>
+    <value>Ориентация панели медиа</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Показать Глобальная система управления медиа-транспорта (GSMTC) ака Медиа-контроля в объеме вылет</value>
+    <value>Отображать элементы управления медиа на панели громкости</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Показать контроль громкости в глобальной системе управления транспортом средств массовой информации (GSMTC) ака СМИ вылет</value>
+    <value>Показывать контроль громкости в GSMTC (всплывающие окна медиа)</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>Выравнивание thumbnail</value>
+    <value>Положение обложки</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
     <value>Темная</value>
   </data>
   <data name="Enums.ElementTheme.Light" xml:space="preserve">
-    <value>Светлый</value>
+    <value>Светлая</value>
   </data>
   <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
     <value>Автоматически скрывать</value>
@@ -255,55 +241,55 @@
     <value>Caps Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>Вставить</value>
+    <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Нум замок</value>
+    <value>Num Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Блокировка прокрутки</value>
+    <value>Scroll Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Выберите ключи, для которые вы хотите показать вылет</value>
+    <value>Выберите клавиши для которых желаете отображать всплывающее окно</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Внешний вид</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Включить режим Flyout самолета</value>
+    <value>Включить модуль</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Включить аудио Flyout</value>
+    <value>Включить модуль</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Включить полет яркости</value>
+    <value>Включить модуль</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Включить блокировку ключей Flyout</value>
+    <value>Включить модуль</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Тема вылета</value>
+    <value>Тема всплывающего окна</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Тайм-аут на вылет (мс)</value>
+    <value>Время отображения (мс)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
-    <value>Влево</value>
+    <value>Слева</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
-    <value>мультимедиа</value>
+    <value>Мультимедиа</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Том</value>
+    <value>Громкость</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
-    <value>Вправо</value>
+    <value>Справа</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Видимость TopBar</value>
+    <value>Видимость верхней панели</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Показать значок на области лотка системы</value>
+    <value>Отображать в трее</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>Выкл.</value>
@@ -315,18 +301,18 @@
     <value>Тема приложения</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Используйте цветной значок лотка</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset»</value>
-  </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Сбросить</value>
+    <value>Использовать цветной значок в трее</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Сброс всех настроек по умолчанию</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Персонализация</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Выровнять позицию всплывающего окна</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Перезагрузка необходима чтоб применить некоторые изменения.</value>
   </data>
 </root>

@@ -1,8 +1,10 @@
-﻿using ModernFlyouts.Helpers;
+﻿using ModernFlyouts.Core.Utilities;
+using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
 using System;
 using System.Diagnostics;
 using System.Management;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ModernFlyouts
@@ -38,16 +40,15 @@ namespace ModernFlyouts
             OnEnabled();
         }
 
-
         #region Brightness
 
         private bool _isInCodeValueChange; //Prevents a LOOP between changing brightness
 
         private void UpdateBrightness(int brightness)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                brightnessControl.BrightnessGlyph.Glyph = brightness > 50 ? CommonGlyphs.Brightness : CommonGlyphs.LowerBrightness; 
+                brightnessControl.BrightnessGlyph.Glyph = brightness > 50 ? CommonGlyphs.Brightness : CommonGlyphs.LowerBrightness;
                 brightnessControl.textVal.Text = brightness.ToString("00");
                 _isInCodeValueChange = true;
                 brightnessControl.BrightnessSlider.Value = brightness;
@@ -55,7 +56,7 @@ namespace ModernFlyouts
             });
         }
 
-        private void BrightnessSlider_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
+        private void BrightnessSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (!_isInCodeValueChange)
             {
@@ -85,7 +86,6 @@ namespace ModernFlyouts
             {
                 return;
             }
-
 
             SetBrightnessLevel((int)brightness);
 
@@ -188,69 +188,6 @@ namespace ModernFlyouts
             brightnessWatcher.Changed -= BrightnessWatcher_Changed;
 
             AppDataHelper.BrightnessModuleEnabled = IsEnabled;
-        }
-    }
-
-    public class BrightnessChangedEventArgs : EventArgs
-    {
-
-        public BrightnessChangedEventArgs(int newValue)
-        {
-            NewValue = newValue;
-        }
-
-        public int NewValue { get; set; }
-
-    }
-
-    public class BrightnessWatcher
-    {
-        private readonly ManagementEventWatcher watcher;
-
-        public event EventHandler<BrightnessChangedEventArgs> Changed;
-        public BrightnessWatcher()
-        {
-            try
-            {
-                var scope = new ManagementScope("root\\WMI");
-                var query = new WqlEventQuery("SELECT * FROM WmiMonitorBrightnessEvent");
-                watcher = new ManagementEventWatcher(scope, query);
-                watcher.EventArrived += new EventArrivedEventHandler(HandleEvent);
-            }
-            catch (ManagementException managementException)
-            {
-                Debug.WriteLine($"{nameof(BrightnessWatcher)}: " + managementException.Message);
-            }
-        }
-
-        public void Start()
-        {
-            try
-            {
-                watcher.Start();
-            }
-            catch (ManagementException managementException)
-            {
-                Debug.WriteLine($"{nameof(BrightnessWatcher)}: " + managementException.Message);
-            }
-        }
-
-        public void Stop()
-        {
-            try
-            {
-                watcher.Stop();
-            }
-            catch (ManagementException managementException)
-            {
-                Debug.WriteLine($"{nameof(BrightnessWatcher)}: " + managementException.Message);
-            }
-        }
-
-        private void HandleEvent(object sender, EventArrivedEventArgs e)
-        {
-            int value = int.Parse(e.NewEvent.Properties["Brightness"].Value.ToString());
-            Changed?.Invoke(this, new BrightnessChangedEventArgs(value));
         }
     }
 }

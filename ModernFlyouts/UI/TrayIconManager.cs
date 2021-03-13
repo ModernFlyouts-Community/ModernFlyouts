@@ -28,17 +28,17 @@ namespace ModernFlyouts.UI
             {
                 Header = Properties.Strings.SettingsItem,
                 ToolTip = Properties.Strings.SettingsItemDescription,
-                Icon = new SymbolIcon() { Symbol = Symbol.Setting }
+                Icon = new FontIcon() { Glyph = CommonGlyphs.Settings },
+                Command = CommonCommands.OpenSettingsWindowCommand
             };
-            settingsItem.Click += (_, __) => FlyoutHandler.ShowSettingsWindow();
 
             var exitItem = new MenuItem()
             {
                 Header = Properties.Strings.ExitItem,
                 ToolTip = Properties.Strings.ExitItemDescription,
-                Icon = new FontIcon() { Glyph = CommonGlyphs.PowerButton }
+                Icon = new FontIcon() { Glyph = CommonGlyphs.PowerButton },
+                Command = CommonCommands.ExitAppCommand
             };
-            exitItem.Click += (_, __) => FlyoutHandler.SafelyExitApplication();
 
             TaskbarIconContextMenu = new ContextMenu()
             {
@@ -50,9 +50,9 @@ namespace ModernFlyouts.UI
             TaskbarIcon = new TaskbarIcon()
             {
                 TrayToolTip = TaskbarIconToolTip,
-                ContextMenu = TaskbarIconContextMenu
+                ContextMenu = TaskbarIconContextMenu,
+                DoubleClickCommand = CommonCommands.OpenSettingsWindowCommand
             };
-            TaskbarIcon.TrayMouseDoubleClick += (_, __) => FlyoutHandler.ShowSettingsWindow();
         }
 
         public static void UpdateTrayIconVisibility(bool isVisible)

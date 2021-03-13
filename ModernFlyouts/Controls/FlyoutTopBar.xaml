@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="ModernFlyouts.Controls.FlyoutTopBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:e="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
+             xmlns:resx="clr-namespace:ModernFlyouts.Properties"
+             xmlns:behaviors="clr-namespace:ModernFlyouts.Behaviors"
+             mc:Ignorable="d" Background="#01FFFFFF"
+             d:DesignWidth="400" Padding="0,0,0,10" Margin="0,0,0,-10">
+    <UserControl.Resources>
+        <Style x:Key="TopBarButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style x:Key="{x:Type Button}" TargetType="Button" BasedOn="{StaticResource TopBarButtonStyle}" />
+    </UserControl.Resources>
+    <Grid x:Name="TopBarGrid" x:FieldModifier="private"
+          Height="32" ClipToBounds="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="G1" x:FieldModifier="private"
+              Grid.Column="0" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="34" />
+                <ColumnDefinition Width="34" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" HorizontalAlignment="Left"
+                    ui:ControlHelper.CornerRadius="8,2,2,2"
+                    Command="{x:Static utils:CommonCommands.OpenSettingsWindowCommand}"
+                    ToolTip="{x:Static resx:Strings.SettingsItem}">
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Settings}" FontSize="16" />
+            </Button>
+
+            <Button Grid.Column="1" HorizontalAlignment="Left"
+                    ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
+                    Command="{x:Static utils:CommonCommands.AlignOnScreenFlyoutToDefaultPosition}"
+                    ToolTip="{x:Static resx:Strings.Align}">
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Align}" FontSize="14" />
+            </Button>
+        </Grid>
+
+        <Border x:Name="DragBorder" x:FieldModifier="private"
+                Grid.Column="1" CornerRadius="0,0,10,10"
+                Background="#22BBBBBB">
+            <e:Interaction.Behaviors>
+                <behaviors:DragFlyoutBehavior />
+            </e:Interaction.Behaviors>
+            <Border Background="{DynamicResource SystemControlBackgroundBaseMediumBrush}"
+                    SnapsToDevicePixels="True" CornerRadius="1.5" Width="30" Height="3" />
+        </Border>
+
+        <Grid x:Name="G2" x:FieldModifier="private"
+              Grid.Column="2" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="34" />
+                <ColumnDefinition Width="34" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="TopBarPinButton" x:FieldModifier="private"
+                    Grid.Column="0" HorizontalAlignment="Right"
+                    ui:ControlHelper.CornerRadius="{DynamicResource ControlCornerRadius}"
+                    Command="{x:Static utils:CommonCommands.PinUnpinFlyoutTopBarCommand}"
+                    ToolTip="{x:Static resx:Strings.UnpinTopBar}">
+                <ui:FontIcon x:Name="TopBarPinButtonIcon" x:FieldModifier="private"
+                         Glyph="{x:Static utils:CommonGlyphs.UnPin}" FontSize="16" />
+            </Button>
+
+            <Button Grid.Column="1" HorizontalAlignment="Right"
+                    ui:ControlHelper.CornerRadius="2,8,2,2"
+                    Command="{x:Static utils:CommonCommands.CloseFlyoutCommand}"
+                    CommandParameter="{x:Reference Name=TopBarGrid}"
+                    ToolTip="{x:Static resx:Strings.Close}">
+                <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Close}" FontSize="14" />
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

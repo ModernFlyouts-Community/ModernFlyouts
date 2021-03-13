@@ -16,7 +16,7 @@
     <value>À propos</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Cette application est conçue pour être un remplacement moderne en Fluent Design pour les anciens menus volants de type Metro présents dans Windows depuis Windows 8.</value>
+    <value>Cette application est conçue pour être un remplaçant Fluent Design des anciens menus volants de type Metro présents dans Windows depuis Windows 8.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Contributeurs</value>
@@ -34,7 +34,7 @@
     <value>Ouvrir un nouveau ticket</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Notez et passez en revue sur le Microsoft Store</value>
+    <value>Notez et commentez sur le Microsoft Store</value>
   </data>
   <data name="About.Version" xml:space="preserve">
     <value>Version : </value>
@@ -61,10 +61,10 @@
     <value>Orientation du panneau des sessions médias</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Afficher les contrôles de transport global des médias systèmes (GSMTC) alias les contrôles médias, dans le menu volant Volume</value>
+    <value>Afficher les contrôles GSMTC également appelés "Contrôles médias", dans le menu volant Volume</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Afficher le contrôle Volume dans le menu volant des contrôles de transport global des médias systèmes (GSMTC) alias le menu volant des médias</value>
+    <value>Afficher le contrôle Volume dans le menu volant GSMTC également appelé "Menu volant des médias"</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Alignement de la miniature</value>
@@ -135,28 +135,13 @@
     <value>Mode Refrappe</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Verr Défil</value>
+    <value>Arrêt Défil</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>Selectionnez les touches dont vous voulez un menu volant</value>
   </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset}</value>
-  </data>
   <data name="PinTopBar" xml:space="preserve">
     <value>Épingler la barre supérieure</value>
-  </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Veuillez entrer le point dans le format 'X,Y' (par exemple 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Veuillez entrer des valeurs X,Y dans la plage {0} - {1}.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>La valeur ne peut pas être convertie en une chaîne de caractères.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Restaurer l'ancien menu volant</value>
@@ -171,7 +156,7 @@
     <value>Suivant</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
-    <value>Suspendre</value>
+    <value>Pause</value>
   </data>
   <data name="SessionControl.Play" xml:space="preserve">
     <value>Lire</value>
@@ -186,19 +171,19 @@
     <value>Répéter : non</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Répéter : un</value>
+    <value>Répéter : piste</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Mélanger : non</value>
+    <value>Aléatoire : non</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Mélanger : oui</value>
+    <value>Aléatoire : oui</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Arrêter</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Informations de la chronologie</value>
+    <value>Informations sur la position</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
     <value>Additionnel</value>
@@ -245,9 +230,6 @@
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
     <value>Position par défaut du menu volant (pour le bouton Aligner)</value>
   </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Entrez la position au format 'X,Y' (par exemple 50,60)</value>
-  </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
     <value>Thème du menu volant</value>
   </data>
@@ -282,7 +264,7 @@
     <value>Audio</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
-    <value>Media</value>
+    <value>Média</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
     <value>Volume</value>
@@ -301,9 +283,6 @@
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personnalisation</value>
-  </data>
-  <data name="Settings.Reset" xml:space="preserve">
-    <value>Réinitialiser</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>Réinitialiser tous les paramètres aux valeurs par défaut</value>
@@ -328,5 +307,11 @@
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
     <value>Désépingler la barre supérieure</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Aligner le menu à cette position</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Redémarrage requis pour appliquer certaines modifications</value>
   </data>
 </root>

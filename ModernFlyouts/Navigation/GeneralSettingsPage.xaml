@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ModernFlyouts" xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
+      xmlns:toolkit="http://schemas.modernwpf.com/toolkit"
       xmlns:utils="clr-namespace:ModernFlyouts.Utilities" xmlns:helpers="clr-namespace:ModernFlyouts.Helpers"
       xmlns:resx="clr-namespace:ModernFlyouts.Properties"
       mc:Ignorable="d"
@@ -29,58 +30,30 @@
                     </ComboBox>
                 </ui:SimpleStackPanel>
             </GroupBox>
+
             <GroupBox Header="{x:Static resx:Strings.Settings_DefaultFlyout}">
                 <ui:SimpleStackPanel Spacing="10">
                     <ui:RadioButtons x:Name="DefaultFlyoutSelector"
                         Header="{x:Static resx:Strings.Settings_DefaultFlyoutDescription}"
                         ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
-                        ItemsSource="{Binding Source={x:Type local:DefaultFlyout},
-                            Converter={StaticResource EnumValuesConverter}}"
+                        ItemsSource="{toolkit:EnumValues Type=local:DefaultFlyout}"
                         SelectedItem="{Binding DefaultFlyout}" />
                     <ui:SimpleStackPanel x:Name="WarningPanel" Spacing="10"
                                          Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
                                             Converter={StaticResource IndexToVisibilityConverter}}">
                         <TextBlock Margin="0,5" Foreground="{DynamicResource SystemControlErrorTextForegroundBrush}"
                                    TextWrapping="Wrap" Text="{x:Static resx:Strings.Settings_DefaultFlyoutWarningMessage}" />
-                        <Button Content="{x:Static resx:Strings.ExitItemDescription}" Click="Button_Click" />
+                        <Button Content="{x:Static resx:Strings.ExitItemDescription}"
+                                Command="{x:Static utils:CommonCommands.ExitAppCommand}" />
                     </ui:SimpleStackPanel>
                 </ui:SimpleStackPanel>
             </GroupBox>
-            <GroupBox Header="{x:Static resx:Strings.Settings_Additional}"
-                      Visibility="{Binding ElementName=DefaultFlyoutSelector, Path=SelectedIndex,
-                          Converter={StaticResource IndexToVisibilityConverter}, ConverterParameter=1}">
-                <ui:SimpleStackPanel Spacing="10">
-                    <TextBox HorizontalAlignment="Left"
-                             Style="{DynamicResource ValidatableTextBoxStyle}" MinWidth="240">
-                        <ui:ControlHelper.Header>
-                            <ui:SimpleStackPanel Orientation="Horizontal" Spacing="4"
-                                             ToolTip="{x:Static resx:Strings.Settings_FlyoutDefaultPositionDescription}">
-                                <TextBlock Text="{x:Static resx:Strings.Settings_FlyoutDefaultPosition}" />
-                                <ui:FontIcon FontSize="14" Glyph="{x:Static utils:CommonGlyphs.Info}" />
-                            </ui:SimpleStackPanel>
-                        </ui:ControlHelper.Header>
-                        <TextBox.Text>
-                            <Binding Path="DefaultFlyoutPosition" UpdateSourceTrigger="PropertyChanged"
-                                     Converter="{StaticResource PointToStringConverter}"
-                                     ValidatesOnNotifyDataErrors="True" ValidatesOnDataErrors="True" NotifyOnValidationError="True">
-                                <Binding.ValidationRules>
-                                    <utils:PointValidationRule ValidatesOnTargetUpdated="True" />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
-                    <Button Content="Align flyout to this position" />
-                </ui:SimpleStackPanel>
-            </GroupBox>
 
-            <ui:SimpleStackPanel Spacing="10">
-                <GroupBox Header="{x:Static resx:Strings.Settings_ResetToDefaults}">
-                    <ui:SimpleStackPanel Spacing="10">
-                        <Button Content="{x:Static resx:Strings.Settings_Reset}"/>
-                </ui:SimpleStackPanel>
+            <GroupBox Header="{x:Static resx:Strings.Settings_Additional}">
+                <Button Style="{DynamicResource ButtonRevealStyle}"
+                        Content="{x:Static resx:Strings.Settings_ResetToDefaults}"
+                        Command="{x:Static utils:CommonCommands.ResetAppDataCommand}" />
             </GroupBox>
-            </ui:SimpleStackPanel>
-
         </StackPanel>
     </controls:ScrollViewerEx>
 </Page>

@@ -1,8 +1,7 @@
-﻿using ModernFlyouts.Helpers;
+﻿using ModernFlyouts.Core.Utilities;
+using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
-using System;
-using System.Diagnostics;
-using System.Management;
+using System.Windows;
 
 namespace ModernFlyouts
 {
@@ -33,11 +32,6 @@ namespace ModernFlyouts
 
         private void Prepare(AirplaneModeChangedEventArgs e)
         {
-            if (e.NotAvailable) 
-            {
-                airplaneModeControl.txt.Text = Properties.Strings.AirplaneMode_NotAvailable;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Info;
-            }
             if (e.IsEnabled)
             {
                 airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOn;
@@ -46,13 +40,13 @@ namespace ModernFlyouts
             else
             {
                 airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOff;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.MobSignal5;
+                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.SignalBars;
             }
         }
 
         private void AirplaneModeWatcher_Changed(object sender, AirplaneModeChangedEventArgs e)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 Prepare(e);
                 ShowFlyoutRequested?.Invoke(this);
@@ -80,70 +74,6 @@ namespace ModernFlyouts
             airplaneModeWatcher.Changed -= AirplaneModeWatcher_Changed;
 
             AppDataHelper.AirplaneModeModuleEnabled = IsEnabled;
-        }
-    }
-
-    public class AirplaneModeChangedEventArgs : EventArgs
-    {
-
-        public AirplaneModeChangedEventArgs(bool enabled, bool notAvail)
-        {
-            IsEnabled = enabled;
-            NotAvailable = notAvail;
-        }
-
-        public bool IsEnabled { get; set; }
-
-        public bool NotAvailable { get; set; }
-
-    }
-
-    public class AirplaneModeWatcher
-    {
-        private readonly ManagementEventWatcher watcher;
-
-        public event EventHandler<AirplaneModeChangedEventArgs> Changed;
-        public AirplaneModeWatcher()
-        {
-            try
-            {
-                if (GetAirplaneMode() == -1) { Debug.WriteLine("Nope!"); return; }
-                WqlEventQuery query = new WqlEventQuery(
-                     "SELECT * FROM RegistryValueChangeEvent WHERE " +
-                     "Hive = 'HKEY_LOCAL_MACHINE'" +
-                     @"AND KeyPath = 'SYSTEM\\CurrentControlSet\\Control\\RadioManagement\\SystemRadioState' AND ValueName=''");
-
-                watcher = new ManagementEventWatcher(query);
-                watcher.EventArrived += new EventArrivedEventHandler(HandleEvent);
-            }
-            catch (ManagementException managementException)
-            {
-                Debug.WriteLine($"{nameof(AirplaneModeWatcher)}: " + managementException.Message);
-            }
-        }
-
-        public void Start()
-        {
-            watcher.Start();
-        }
-
-        public void Stop()
-        {
-            watcher.Stop();
-        }
-
-        public static int GetAirplaneMode()
-        {
-            var regkey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\RadioManagement\SystemRadioState", false);
-            if (regkey == null) return -1;
-            var intValue = (int)regkey.GetValue("", 1);
-            return intValue;
-        }
-
-        private void HandleEvent(object sender, EventArrivedEventArgs e)
-        {
-            int value = GetAirplaneMode();
-            Changed?.Invoke(this, new AirplaneModeChangedEventArgs(value == 1, value == -1));
         }
     }
 }

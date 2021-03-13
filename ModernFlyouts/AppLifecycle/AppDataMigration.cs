@@ -15,7 +15,7 @@ namespace ModernFlyouts.AppLifecycle
                 string topBarEnabled = "TopBarEnabled";
                 if (ApplicationData.Current.LocalSettings.Values.ContainsKey(topBarEnabled))
                 {
-                    AppDataHelper.TopBarVisibility = AppDataHelper.GetBool(true, topBarEnabled) ? UI.TopBarVisibility.Visible : UI.TopBarVisibility.AutoHide;
+                    AppDataHelper.TopBarVisibility = AppDataHelper.GetValue(true, topBarEnabled) ? UI.TopBarVisibility.Visible : UI.TopBarVisibility.AutoHide;
                     ApplicationData.Current.LocalSettings.Values.Remove(topBarEnabled);
                 }
             }

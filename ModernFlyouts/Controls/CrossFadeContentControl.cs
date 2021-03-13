@@ -28,13 +28,14 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     [TemplatePart(Name = FirstTemplatePartName, Type = typeof(ContentPresenter))]
     [TemplatePart(Name = SecondTemplatePartName, Type = typeof(ContentPresenter))]
     public class CrossFadeContentControl : ContentControl
     {
         #region Constants and Statics
+
         /// <summary>
         /// The new
         /// <see cref="T:System.Windows.Controls.ContentPresenter"/>
@@ -48,9 +49,11 @@ namespace ModernFlyouts
         /// template part name.
         /// </summary>
         private const string SecondTemplatePartName = "SecondContentPresenter";
+
         #endregion
 
         #region Template Parts
+
         /// <summary>
         /// The first <see cref="T:System.Windows.Controls.ContentPresenter"/>.
         /// </summary>
@@ -70,6 +73,7 @@ namespace ModernFlyouts
         /// The old <see cref="T:System.Windows.Controls.ContentPresenter"/>.
         /// </summary>
         private ContentPresenter _oldContentPresenter;
+
         #endregion
 
         /// <summary>
@@ -129,10 +133,10 @@ namespace ModernFlyouts
         }
 
         /// <summary>
-        /// When overridden in a derived class, is invoked whenever application 
+        /// When overridden in a derived class, is invoked whenever application
         /// code or internal processes (such as a rebuilding layout pass) call
         /// <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
-        /// In simplest terms, this means the method is called just before a UI 
+        /// In simplest terms, this means the method is called just before a UI
         /// element displays in an application.
         /// </summary>
         public override void OnApplyTemplate()
