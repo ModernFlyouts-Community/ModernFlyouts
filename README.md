@@ -121,12 +121,12 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - [imgradeone](https://github.com/imgradeone) - Chinese (Simplified) translator.
 - [sewerynkalemba](https://github.com/sewerynkalemba) - Polish translators.
 - [ArmasF31](https://github.com/ArmasF31) - German translator.
-- [ANT0x1](https://github.com/ANT0x1) - Russian translator.
+- [ANT0x1](https://github.com/ANT0x1) - Russian & Ukrainian translator.
 - [Hymian7](https://github.com/Hymian7) - German translator.
 - [TheAgamer554](https://github.com/TheAgamer554) - Spanish translator.
 - [ShintakuNobuhiro](https://github.com/ShintakuNobuhiro) - Japanese translator.
-- [ANT0x1](https://github.com/ANT0x1), [blinchk](https://github.com/blinchk) - Russian translators.
-- [Tarik02](https://github.com/Tarik02), [ANT0x1](https://github.com/ANT0x1) - Ukrainian translators.
+- [blinchk](https://github.com/blinchk) - Russian translator.
+- [Tarik02](https://github.com/Tarik02) - Ukrainian translator.
 - [MichelangeloDePascale02](https://github.com/MichelangeloDePascale02) - Italian translator.
 - [Per-Terra](https://github.com/Per-Terra) - Japanese translator.
 - [Renzo904](https://github.com/Renzo904) - Spanish translator.
