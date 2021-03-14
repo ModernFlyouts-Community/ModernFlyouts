@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ModernFlyouts.Core.Interop;
+using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using static ModernFlyouts.Interop.NativeMethods;
+using static ModernFlyouts.Core.Interop.NativeMethods;
 
 namespace ModernFlyouts.Helpers
 {

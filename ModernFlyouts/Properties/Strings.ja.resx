@@ -16,7 +16,7 @@
     <value>バージョン情報</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>機内モードは:(利用できません</value>
+    <value>機内モードは利用できません</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
     <value>機内モード オフ</value>
@@ -25,10 +25,10 @@
     <value>機内モード オン</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>既定の位置に揃える</value>
+    <value>既定の位置に合わせる</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
-    <value>接続されたオーディオ デバイスなし</value>
+    <value>オーディオデバイスが接続されていません</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>閉じる</value>
@@ -40,42 +40,30 @@
     <value>アプリを安全に終了する</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
-    <value>概要</value>
+    <value>一般</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
     <value>挿入モード</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0}はオフです</value>
+    <value>{0} オフ</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0}オン</value>
+    <value>{0} オン</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>上書きモード</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>ピントップバー</value>
-  </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>「X,Y」の形式でポイントを入力してください(例えば50,60)。</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>x,Y の値を{0} - {1}の範囲に入力してください。</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>値を文字列に隠すことはできません。</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
+    <value>上部バーを固定</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>既定値に戻す</value>
+    <value>従来のフライアウトに戻す</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>ウィンドウのデフォルトのポップアップを復元し、安全にこのアプリを終了します</value>
+    <value>Windows既定のフライアウトを復元し、アプリを安全に終了します</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>その他のコントロール</value>
@@ -93,19 +81,19 @@
     <value>前へ</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>繰り返し: すべて</value>
+    <value>リピート: すべて</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>繰り返し: オフ</value>
+    <value>リピート: オフ</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>繰り返し: 1</value>
+    <value>リピート: 1回</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>シャッフル:オフ</value>
+    <value>シャッフル: オフ</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>シャッフル:オン</value>
+    <value>シャッフル: オン</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>停止</value>
@@ -114,10 +102,10 @@
     <value>タイムライン情報</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
-    <value>追加</value>
+    <value>追加設定</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
-    <value>動作</value>
+    <value>動作設定</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
     <value>デフォルトのフライアウト</value>
@@ -126,7 +114,7 @@
     <value>デフォルトのフライアウトを選択する</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Windows のデフォルトのポップアップをデフォルトとして選択しても、このアプリは閉じることはありません。このアプリはまだバックグラウンドで実行され続けます。パフォーマンスを向上させるために安全にこのアプリを終了してください。</value>
+    <value>Windows既定のフライアウトを選択しても、このアプリは終了せずバックグラウンドで実行され続けます。パフォーマンスを向上させるために安全にこのアプリを終了してください。</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>無効</value>
@@ -135,31 +123,28 @@
     <value>有効</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>ポップアップ背景の不透明度</value>
+    <value>フライアウト背景の不透明度</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>フライアウトの既定の位置 ([配置] ボタンの場合)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>「X,Y」形式でポジションを入力します(例えば50,60の場合)</value>
+    <value>フライアウトの既定の位置</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>フライアウトトップバー</value>
+    <value>上部バー</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>モジュール</value>
+    <value>フライアウト モジュール</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>機内モードフライアウトモジュール</value>
+    <value>機内モード</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>オーディオフライアウトモジュール</value>
+    <value>オーディオ</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>輝度フライアウトモジュール</value>
+    <value>明るさ</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>ロックキーフライアウトモジュール</value>
+    <value>ロックキー</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>起動時に実行</value>
@@ -168,19 +153,19 @@
     <value>設定</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>[設定] ウィンドウを開く</value>
+    <value>設定を開く</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>トップバーの固定を解除する</value>
+    <value>上部バーをピン留めしない</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>モダンフライアウト</value>
+    <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>なし</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Windows 既定</value>
+    <value>Windows既定</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>水平</value>
@@ -189,49 +174,49 @@
     <value>垂直</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>このアプリは、Windows 8以来、Windowsに存在する古いメトロをテーマにしたポップアップのための近代的なFluentデザインの置き換えとして設計されています。</value>
+    <value>このアプリは、Windows 8から使われてきた古いメトロがテーマのフライアウトを、現代的なFluent Designに置き換えます。</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
-    <value>共同作成者</value>
+    <value>開発者</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
     <value>GitHub リポジトリ</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>新しい懸案事項を開く</value>
+    <value>新しいIssueを開く</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>マイクロソフト ストアでのレートとレビュー</value>
+    <value>Microsoft Store の評価とレビュー</value>
   </data>
   <data name="About.Version" xml:space="preserve">
-    <value>バージョン：</value>
+    <value>バージョン : </value>
   </data>
   <data name="Settings.Language" xml:space="preserve">
     <value>言語</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>言語を正しく変更するには、アプリを再起動してください</value>
+    <value>正しく言語を変更するため、アプリを再起動してください</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
     <value>システムの既定値</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
-    <value>相互関係</value>
+    <value>依存関係</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>バグが見つかる場合は、github リポジトリで新しい問題を開いてください。</value>
+    <value>バグを見つけた場合は、Github リポジトリで新しいIssueを開いてください。</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>表示するセッション数</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>メディア セッションパネルの向き</value>
+    <value>メディアセッションパネルの方向</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>ボリューム フライアウトでグローバル システム メディア トランスポート コントロール (GSMTC) 別名メディア コントロールを表示</value>
+    <value>ボリュームのフライアウトにメディアコントロール(Global System Media Transport Controls)を表示</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>グローバル システム メディア トランスポート コントロール(GSMTC)、別名メディア フライアウトでボリューム コントロールを表示します。</value>
+    <value>メディアコントロール(Global System Media Transport Controls)のフライアウトにボリュームを表示</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>サムネイルの配置</value>
@@ -246,22 +231,22 @@
     <value>自動的に隠す</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>折りたたみ</value>
+    <value>折りたたむ</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
     <value>表示</value>
   </data>
   <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>CapsLock</value>
+    <value>Caps lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>挿入</value>
+    <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>数字ロック</value>
+    <value>Num lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>スクロールロック</value>
+    <value>ScrollLock</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
     <value>フライアウトを表示するキーを選択します。</value>
@@ -270,22 +255,22 @@
     <value>外観</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>機内モードのフライアウトを有効にする</value>
+    <value>機内モードのフライアウトを有効化</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>オーディオ ポップアップを有効にする</value>
+    <value>オーディオのフライアウトを有効化</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>明るさのポップアップを有効にする</value>
+    <value>明るさのフライアウトを有効化</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>ロックキーのポップアップを有効にする</value>
+    <value>ロックキーのフライアウトを有効化</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>フライアウトテーマ</value>
+    <value>フライアウトのテーマ</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>ポップアップ タイムアウト (ミリ秒)</value>
+    <value>フライアウトの表示時間 (ミリ秒)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>左</value>
@@ -300,10 +285,10 @@
     <value>右</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>トップバーの可視性</value>
+    <value>上部バーの表示</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>システム トレイ領域にアイコンを表示する</value>
+    <value>システムトレイにアイコンを表示する</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>オフ</value>
@@ -315,10 +300,7 @@
     <value>アプリのテーマ</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>色付きトレイ アイコンを使用する</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs。Settings_Reset}</value>
+    <value>色付きのトレイアイコンを使用する</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
     <value>すべての設定をデフォルトにリセット</value>
@@ -327,9 +309,84 @@
     <value>個人用設定</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>フライアウトをこの位置に揃える</value>
+    <value>フライアウトをこの位置に合わせる</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>いくつかの変更を適用するために再起動が必要</value>
+    <value>変更を適用するために再起動が必要です</value>
+  </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>メディアのサムネイルをメディアコントロールの背景にする</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>手動</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>上側</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>下側</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>ディスプレイ</value>
+  </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>フライアウトを表示するディスプレイを選択</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>フライアウトの配置</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>コンテンツスタッキングの順番</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>フライアウトの出現方向</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>フライアウトの配置</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>配置モード</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>水平方向の配置</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>レイアウト</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>垂直方向の配置</value>
   </data>
 </root>

@@ -1,15 +1,18 @@
-﻿using ModernFlyouts.Helpers;
+﻿using ModernFlyouts.Controls;
+using ModernFlyouts.Core.Media.Control;
+using ModernFlyouts.Core.Utilities;
+using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
 using NAudio.CoreAudioApi;
-using NAudio.CoreAudioApi.Interfaces;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
-using Windows.Media.Control;
 
 namespace ModernFlyouts
 {
@@ -21,13 +24,14 @@ namespace ModernFlyouts
         private VolumeControl volumeControl;
         private SessionsPanel sessionsPanel;
         private TextBlock noDeviceMessageBlock;
-        private bool _isinit;
-        private bool _SMTCAvail;
+        private List<MediaSessionManager> mediaSessionManagers = new();
         private bool isVolumeFlyout = true;
 
         public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
         #region Properties
+
+        public CompositeCollection AllMediaSessions { get; } = new();
 
         private bool showGSMTCInVolumeFlyout = true;
 
@@ -71,7 +75,7 @@ namespace ModernFlyouts
             ShowGSMTCInVolumeFlyout = AppDataHelper.ShowGSMTCInVolumeFlyout;
             ShowVolumeControlInGSMTCFlyout = AppDataHelper.ShowVolumeControlInGSMTCFlyout;
 
-            #region Creating Volume Control
+            #region Volume control sub-module initialization
 
             volumeControl = new VolumeControl();
             volumeControl.VolumeButton.Click += VolumeButton_Click;
@@ -86,16 +90,19 @@ namespace ModernFlyouts
                 Margin = new Thickness(20),
                 Text = Properties.Strings.AudioFlyoutHelper_NoDevices
             };
-            noDeviceMessageBlock.SetResourceReference(TextBlock.StyleProperty, "BaseTextBlockStyle");
+            noDeviceMessageBlock.SetResourceReference(FrameworkElement.StyleProperty, "BaseTextBlockStyle");
 
             #endregion
 
-            #region Creating Session Controls
+            #region Media Session sub-module initialization
 
-            sessionsPanel = new SessionsPanel();
-            SecondaryContent = sessionsPanel;
+            FlyoutHandler.Initialized += (_, _) =>
+            {
+                sessionsPanel = new();
+                SecondaryContent = sessionsPanel;
+            };
 
-            try { SetupSMTCAsync(); } catch { }
+            SetupMediaSessionManagers();
 
             #endregion
 
@@ -111,54 +118,40 @@ namespace ModernFlyouts
             }
 
             OnEnabled();
-            _isinit = true;
         }
 
         public void OnExternalUpdated(bool isMediaKey)
         {
-            if ((!isMediaKey && device != null) || (isMediaKey && _SMTCAvail))
+            isVolumeFlyout = !isMediaKey;
+            ValidatePrimaryContentVisible();
+            ValidateSecondaryContentVisible();
+
+            if ((isVolumeFlyout && PrimaryContentVisible) || (isMediaKey && SecondaryContentVisible))
             {
-                isVolumeFlyout = !isMediaKey;
-
-                if (isVolumeFlyout)
-                {
-                    PrimaryContentVisible = true;
-                    SecondaryContentVisible = _SMTCAvail && ShowGSMTCInVolumeFlyout;
-                }
-                else
-                {
-                    PrimaryContentVisible = ShowVolumeControlInGSMTCFlyout;
-                    SecondaryContentVisible = _SMTCAvail;
-                }
-
                 ShowFlyoutRequested?.Invoke(this);
             }
         }
 
         private void OnShowGSMTCInVolumeFlyoutChanged()
         {
-            if (isVolumeFlyout)
-            {
-                SecondaryContentVisible = _SMTCAvail && showGSMTCInVolumeFlyout;
-            }
-            else
-            {
-                SecondaryContentVisible = _SMTCAvail;
-            }
+            ValidateSecondaryContentVisible();
 
             AppDataHelper.ShowGSMTCInVolumeFlyout = showGSMTCInVolumeFlyout;
         }
 
+        private void ValidatePrimaryContentVisible()
+        {
+            PrimaryContentVisible = device != null && (isVolumeFlyout || showVolumeControlInGSMTCFlyout);
+        }
+
+        private void ValidateSecondaryContentVisible()
+        {
+            SecondaryContentVisible = AnyMediaSessionsAvailable() && (!isVolumeFlyout || showGSMTCInVolumeFlyout);
+        }
+
         private void OnShowVolumeControlInGSMTCFlyoutChanged()
         {
-            if (isVolumeFlyout)
-            {
-                PrimaryContentVisible = true;
-            }
-            else
-            {
-                PrimaryContentVisible = showVolumeControlInGSMTCFlyout;
-            }
+            ValidatePrimaryContentVisible();
 
             AppDataHelper.ShowVolumeControlInGSMTCFlyout = showVolumeControlInGSMTCFlyout;
         }
@@ -181,11 +174,18 @@ namespace ModernFlyouts
             device = mmdevice;
             if (device != null)
             {
-                UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
-                device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
-                App.Current.Dispatcher.Invoke(() => PrimaryContent = volumeControl);
+                try
+                {
+                    UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
+                    device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+                Application.Current.Dispatcher.Invoke(() => PrimaryContent = volumeControl);
             }
-            else { App.Current.Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
+            else { Application.Current.Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
         }
 
         private void AudioEndpointVolume_OnVolumeNotification(AudioVolumeNotificationData data)
@@ -197,7 +197,7 @@ namespace ModernFlyouts
 
         private void UpdateVolume(double volume)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 UpdateVolumeGlyph(volume);
                 volumeControl.textVal.Text = Math.Round(volume).ToString("00");
@@ -237,21 +237,27 @@ namespace ModernFlyouts
         {
             if (!_isInCodeValueChange)
             {
-                var value = Math.Truncate(e.NewValue);
-                var oldValue = Math.Truncate(e.OldValue);
+                var value = e.NewValue;
+                var oldValue = e.OldValue;
 
                 if (value == oldValue)
                 {
                     return;
                 }
 
-                if (device != null)
+                if (oldValue != value && device != null)
                 {
-                    device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
-                    device.AudioEndpointVolume.Mute = false;
-                }
+                    try
+                    {
+                        device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
+                    }
+                    catch (Exception)
+                    {
+                        //99.9% is "A device attached to the system is not functioning" (0x8007001F), ignore this
+                    }
 
-                e.Handled = true;
+                    e.Handled = true;
+                }
             }
         }
 
@@ -266,102 +272,49 @@ namespace ModernFlyouts
         private void VolumeSlider_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             var slider = sender as Slider;
-            var value = Math.Truncate(slider.Value);
-            var change = e.Delta / 120;
+            var change = e.Delta / 120.0;
 
-            var volume = value + change;
-
-            if (volume > 100 || volume < 0)
-            {
-                return;
-            }
+            var volume = Math.Min(Math.Max(slider.Value + change, 0.0), 100.0);
 
             if (device != null)
             {
-                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100);
-                device.AudioEndpointVolume.Mute = false;
-            }
-
-            e.Handled = true;
-        }
-
-        #endregion
-
-        #region GSMTC
-
-        private GlobalSystemMediaTransportControlsSessionManager GSMTCSessionManager;
-
-        private async void SetupSMTCAsync()
-        {
-            if (!IsEnabled)
-            {
-                return;
-            }
-
-            GSMTCSessionManager = await GlobalSystemMediaTransportControlsSessionManager.RequestAsync();
-            GSMTCSessionManager.SessionsChanged += GSMTC_SessionsChanged;
-
-            LoadSessionControls();
-        }
-
-        private void DetachSMTC()
-        {
-            if (GSMTCSessionManager != null)
-            {
-                GSMTCSessionManager.SessionsChanged -= GSMTC_SessionsChanged;
-                GSMTCSessionManager = null;
-            }
-
-            ClearSessionControls();
-            SecondaryContentVisible = false;
-        }
-
-        private void ClearSessionControls()
-        {
-            foreach (var child in sessionsPanel.SessionsStackPanel.Children)
-            {
-                var s = child as SessionControl;
-                s?.DisposeSession();
-            }
-
-            sessionsPanel.SessionsStackPanel.Children.Clear();
-            _SMTCAvail = false;
-        }
-
-        private void GSMTC_SessionsChanged(GlobalSystemMediaTransportControlsSessionManager sender, SessionsChangedEventArgs args)
-        {
-            App.Current.Dispatcher.BeginInvoke(DispatcherPriority.Send, new Action(LoadSessionControls));
-        }
-
-        private void LoadSessionControls()
-        {
-            ClearSessionControls();
-
-            if (!IsEnabled)
-            {
-                return;
-            }
-
-            if (GSMTCSessionManager != null)
-            {
-                var sessions = GSMTCSessionManager.GetSessions();
-
-                foreach (var session in sessions)
+                try
                 {
-                    sessionsPanel.SessionsStackPanel.Children.Add(new SessionControl(session));
+                    device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100.0);
+                }
+                catch (Exception)
+                {
+                    //ignore
                 }
 
-                if (sessionsPanel.SessionsStackPanel.Children.Count > 0)
-                {
-                    SecondaryContentVisible = !isVolumeFlyout || ShowGSMTCInVolumeFlyout;
-                    _SMTCAvail = true;
-                }
+                e.Handled = true;
             }
         }
 
         #endregion
 
-        #region SMTC Thumbnails
+        #region Media Control
+
+        private void SetupMediaSessionManagers()
+        {
+            var npMediaSessionManager = new NowPlayingMediaSessionManager();
+            mediaSessionManagers.Add(npMediaSessionManager);
+
+            AllMediaSessions.Add(new CollectionContainer { Collection = npMediaSessionManager.MediaSessions });
+
+            npMediaSessionManager.MediaSessionsChanged += MediaSessionManager_MediaSessionsChanged;
+        }
+
+        private void MediaSessionManager_MediaSessionsChanged(object sender, EventArgs e)
+        {
+            ValidateSecondaryContentVisible();
+        }
+
+        private bool AnyMediaSessionsAvailable() => mediaSessionManagers.Any(x => x.ContainsAnySession());
+
+        #endregion
+
+        #region Media Session Fallback Thumbnails
 
         public static ImageSource GetDefaultAudioThumbnail() => new BitmapImage(PackUriHelper.GetAbsoluteUri("Assets/Images/DefaultAudioThumbnail.png"));
 
@@ -391,11 +344,11 @@ namespace ModernFlyouts
             }
             else { PrimaryContent = noDeviceMessageBlock; }
 
-            PrimaryContentVisible = isVolumeFlyout || ShowVolumeControlInGSMTCFlyout;
+            ValidatePrimaryContentVisible();
 
-            if (_isinit)
+            foreach (var mediaSessionManager in mediaSessionManagers)
             {
-                try { SetupSMTCAsync(); } catch { }
+                mediaSessionManager.OnEnabled();
             }
         }
 
@@ -409,37 +362,16 @@ namespace ModernFlyouts
             {
                 device.AudioEndpointVolume.OnVolumeNotification -= AudioEndpointVolume_OnVolumeNotification;
             }
+
             PrimaryContent = null;
             PrimaryContentVisible = false;
 
-            try { DetachSMTC(); } catch { }
+            foreach (var mediaSessionManager in mediaSessionManagers)
+            {
+                mediaSessionManager.OnDisabled();
+            }
 
             AppDataHelper.AudioModuleEnabled = IsEnabled;
         }
-    }
-
-    public class AudioDeviceNotificationClient : IMMNotificationClient
-    {
-        public event EventHandler<string> DefaultDeviceChanged;
-
-        public void OnDefaultDeviceChanged(DataFlow dataFlow, Role deviceRole, string defaultDeviceId)
-        {
-            if (dataFlow == DataFlow.Render && deviceRole == Role.Multimedia)
-            {
-                DefaultDeviceChanged?.Invoke(this, defaultDeviceId);
-            }
-        }
-
-        public void OnDeviceAdded(string deviceId)
-        { }
-
-        public void OnDeviceRemoved(string deviceId)
-        { }
-
-        public void OnDeviceStateChanged(string deviceId, DeviceState newState)
-        { }
-
-        public void OnPropertyValueChanged(string deviceId, PropertyKey propertyKey)
-        { }
     }
 }

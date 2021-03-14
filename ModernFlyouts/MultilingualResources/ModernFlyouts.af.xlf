@@ -68,21 +68,6 @@
           <source>Pin TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Speld TopBar vas</target>
         </trans-unit>
-        <trans-unit id="PointValidationRule.PointFormatInvalidMessage" translate="yes" xml:space="preserve">
-          <source>Please enter the point in the format 'X,Y' (for e.g. 50,60).</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tik asseblief die punt in die formaat 'X, Y' (bv. 50,60).</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there are problem parsing a string value into a Point</note>
-        </trans-unit>
-        <trans-unit id="PointValidationRule.PointOutOfRangeMessage" translate="yes" xml:space="preserve">
-          <source>Please enter X,Y values in the range {0} - {1}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Voer asseblief X,Y-waardes in die reeks {0} - {1}.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a point's X or Y values goes out of int32 range</note>
-        </trans-unit>
-        <trans-unit id="PointValidationRule.StringConvertionErrorMessage" translate="yes" xml:space="preserve">
-          <source>Value cannot be coverted to string.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Waarde kan nie gedek word om te string nie.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when there is problem in converting an object into a string</note>
-        </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Laai verstek terug</target>
@@ -175,18 +160,14 @@
           <source>Flyout default position</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Vlieg uit verstek posisie (vir Align knoppie)</target>
         </trans-unit>
-        <trans-unit id="Settings.FlyoutDefaultPositionDescription" translate="yes" xml:space="preserve">
-          <source>Type the position in 'X,Y' format (Default: 50,60)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tik die posisie in 'X,Y'-formaat (bv. 50,60)</target>
-          
-        </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Vlieg uit TopBar</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
-          <source>Flyout Modules</source>
+          <source>Flyout modules</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Modules</target>
+          
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
@@ -412,10 +393,6 @@
           <source>Use colored tray icon</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Gebruik gekleurde skinkbordikoon</target>
         </trans-unit>
-        <trans-unit id="NgsSettings_Reset" translate="yes" xml:space="preserve">
-          <source>ngs.Settings_Reset}</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ngs. Settings_Reset.</target>
-        </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Stel alle instellings terug na verstek</target>
@@ -431,6 +408,106 @@
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Herbegin vereis om sekere veranderinge toe te pas</target>
+        </trans-unit>
+        <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
+          <source>Use media's thumbnail as media control's background</source>
+          <target state="new">Use media's thumbnail as media control's background</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
+          <source>Bottom</source>
+          <target state="new">Bottom</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowAlignments.Center" translate="yes" xml:space="preserve">
+          <source>Center</source>
+          <target state="new">Center</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowAlignments.Left" translate="yes" xml:space="preserve">
+          <source>Left</source>
+          <target state="new">Left</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowAlignments.Right" translate="yes" xml:space="preserve">
+          <source>Right</source>
+          <target state="new">Right</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowAlignments.Top" translate="yes" xml:space="preserve">
+          <source>Top</source>
+          <target state="new">Top</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowExpandDirection.Auto" translate="yes" xml:space="preserve">
+          <source>Auto</source>
+          <target state="new">Auto</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowExpandDirection.Down" translate="yes" xml:space="preserve">
+          <source>Down</source>
+          <target state="new">Down</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowExpandDirection.Left" translate="yes" xml:space="preserve">
+          <source>Left</source>
+          <target state="new">Left</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowExpandDirection.Right" translate="yes" xml:space="preserve">
+          <source>Right</source>
+          <target state="new">Right</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowExpandDirection.Up" translate="yes" xml:space="preserve">
+          <source>Up</source>
+          <target state="new">Up</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowPlacementMode.Auto" translate="yes" xml:space="preserve">
+          <source>Auto</source>
+          <target state="new">Auto</target>
+        </trans-unit>
+        <trans-unit id="Enums.FlyoutWindowPlacementMode.Manual" translate="yes" xml:space="preserve">
+          <source>Manual</source>
+          <target state="new">Manual</target>
+        </trans-unit>
+        <trans-unit id="Enums.StackingDirection.Ascending" translate="yes" xml:space="preserve">
+          <source>Ascending</source>
+          <target state="new">Ascending</target>
+        </trans-unit>
+        <trans-unit id="Enums.StackingDirection.Descending" translate="yes" xml:space="preserve">
+          <source>Descending</source>
+          <target state="new">Descending</target>
+        </trans-unit>
+        <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
+          <source>Display</source>
+          <target state="new">Display</target>
+        </trans-unit>
+        <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
+          <source>Select the preferred display monitor to show the flyout on</source>
+          <target state="new">Select the preferred display monitor to show the flyout on</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
+          <source>Flyout alignment</source>
+          <target state="new">Flyout alignment</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
+          <source>Flyout content stacking direction</source>
+          <target state="new">Flyout content stacking direction</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
+          <source>Flyout expand direction</source>
+          <target state="new">Flyout expand direction</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
+          <source>Flyout placement</source>
+          <target state="new">Flyout placement</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
+          <source>Placement mode</source>
+          <target state="new">Placement mode</target>
+        </trans-unit>
+        <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
+          <source>Horizontal alignment</source>
+          <target state="new">Horizontal alignment</target>
+        </trans-unit>
+        <trans-unit id="Settings.Layout" translate="yes" xml:space="preserve">
+          <source>Layout</source>
+          <target state="new">Layout</target>
+        </trans-unit>
+        <trans-unit id="Settings.VerticalAlignment" translate="yes" xml:space="preserve">
+          <source>Vertical alignment</source>
+          <target state="new">Vertical alignment</target>
         </trans-unit>
       </group>
     </body>

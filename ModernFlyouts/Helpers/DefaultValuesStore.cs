@@ -1,4 +1,7 @@
-﻿using ModernFlyouts.UI;
+﻿using ModernFlyouts.Controls;
+using ModernFlyouts.Core.UI;
+using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media;
 using ModernWpf;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,7 +22,21 @@ namespace ModernFlyouts.Helpers
 
         public const DefaultFlyout PreferredDefaultFlyout = DefaultFlyout.ModernFlyouts;
 
-        public static readonly Point DefaultFlyoutPosition = new(50, 60);
+        public static BindablePoint DefaultFlyoutPosition => new(50, 60);
+
+        #endregion
+
+        #region Layout
+
+        public const FlyoutWindowPlacementMode OnScreenFlyoutWindowPlacementMode = FlyoutWindowPlacementMode.Auto;
+
+        public const FlyoutWindowAlignments OnScreenFlyoutWindowAlignment = FlyoutWindowAlignments.Top | FlyoutWindowAlignments.Left;
+
+        public static Thickness OnScreenFlyoutWindowMargin = new(10);
+
+        public const FlyoutWindowExpandDirection OnScreenFlyoutWindowExpandDirection = FlyoutWindowExpandDirection.Auto;
+
+        public const StackingDirection OnScreenFlyoutContentStackingDirection = StackingDirection.Ascending;
 
         #endregion
 
@@ -66,6 +83,8 @@ namespace ModernFlyouts.Helpers
         public const bool UseColoredTrayIcon = true;
 
         public const bool AlignGSMTCThumbnailToRight = true;
+
+        public const bool UseGSMTCThumbnailAsBackground = true;
 
         public const int MaxVerticalSessionControlsCount = 1;
 

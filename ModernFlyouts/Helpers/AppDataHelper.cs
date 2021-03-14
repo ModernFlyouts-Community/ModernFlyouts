@@ -1,4 +1,7 @@
-﻿using ModernFlyouts.UI;
+﻿using ModernFlyouts.Controls;
+using ModernFlyouts.Core.UI;
+using ModernFlyouts.UI;
+using ModernFlyouts.UI.Media;
 using ModernWpf;
 using System;
 using System.Runtime.CompilerServices;
@@ -52,9 +55,12 @@ namespace ModernFlyouts.Helpers
                         {
                             return (T)Enum.Parse(typeof(T), value);
                         }
-                        else if (typeof(T) == typeof(Point))
+                        else if (typeof(T) == typeof(BindablePoint))
                         {
-                            return (T)(object)Point.Parse(value);
+                            if (BindablePoint.TryParse(value, out BindablePoint result))
+                            {
+                                return (T)(object)result;
+                            }
                         }
                     }
                 }
@@ -78,6 +84,15 @@ namespace ModernFlyouts.Helpers
             try
             {
                 await ApplicationData.Current.ClearAsync();
+            }
+            catch { }
+        }
+
+        internal static void SavePropertyValue(string value, string propertyName = "")
+        {
+            try
+            {
+                ApplicationData.Current.LocalSettings.Values[propertyName] = value;
             }
             catch { }
         }
@@ -124,21 +139,59 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
-        public static Point DefaultFlyoutPosition
+        public static BindablePoint DefaultFlyoutPosition
         {
             get => GetValue(DefaultValuesStore.DefaultFlyoutPosition);
-            set => SetValue(value);
         }
 
-        public static Point FlyoutPosition
+        public static BindablePoint FlyoutPosition
         {
             get => GetValue(DefaultValuesStore.DefaultFlyoutPosition);
+        }
+
+        public static string PreferredDisplayMonitorId
+        {
+            get => GetValue(string.Empty);
             set => SetValue(value);
         }
 
         public static string SettingsWindowPlacement
         {
             get => GetValue(string.Empty);
+            set => SetValue(value);
+        }
+
+        #endregion
+
+        #region Layout
+
+        public static FlyoutWindowPlacementMode OnScreenFlyoutWindowPlacementMode
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowPlacementMode);
+            set => SetValue(value);
+        }
+
+        public static FlyoutWindowAlignments OnScreenFlyoutWindowAlignment
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowAlignment);
+            set => SetValue(value);
+        }
+
+        public static Thickness OnScreenFlyoutWindowMargin
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowMargin);
+            set => SetValue(value);
+        }
+
+        public static FlyoutWindowExpandDirection OnScreenFlyoutWindowExpandDirection
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutWindowExpandDirection);
+            set => SetValue(value);
+        }
+
+        public static StackingDirection OnScreenFlyoutContentStackingDirection
+        {
+            get => GetValue(DefaultValuesStore.OnScreenFlyoutContentStackingDirection);
             set => SetValue(value);
         }
 
@@ -239,6 +292,12 @@ namespace ModernFlyouts.Helpers
         public static bool AlignGSMTCThumbnailToRight
         {
             get => GetValue(DefaultValuesStore.AlignGSMTCThumbnailToRight);
+            set => SetValue(value);
+        }
+
+        public static bool UseGSMTCThumbnailAsBackground
+        {
+            get => GetValue(DefaultValuesStore.UseGSMTCThumbnailAsBackground);
             set => SetValue(value);
         }
 

@@ -5,8 +5,6 @@ namespace ModernFlyouts
 {
     public abstract class FlyoutHelperBase : ObservableObject
     {
-        public FlyoutHelperBase Instance { get; set; }
-
         public abstract event ShowFlyoutEventHandler ShowFlyoutRequested;
 
         public delegate void ShowFlyoutEventHandler(FlyoutHelperBase sender);
@@ -81,9 +79,9 @@ namespace ModernFlyouts
 
         protected virtual void OnDisabled()
         {
-            if (FlyoutHandler.Instance.FlyoutWindow.FlyoutHelper == this)
+            if (FlyoutHandler.Instance.OnScreenFlyoutView.FlyoutHelper == this)
             {
-                FlyoutHandler.Instance.FlyoutWindow.Visible = false;
+                FlyoutHandler.Instance.OnScreenFlyoutWindow.IsOpen = false;
             }
         }
     }

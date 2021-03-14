@@ -16,7 +16,7 @@
     <value>Hakkında</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Uçak Modu :( kullanılamıyor</value>
+    <value>Uçak Modu kullanılamıyor :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
     <value>Uçak modu kapalı</value>
@@ -28,7 +28,7 @@
     <value>Varsayılan konuma hizala</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
-    <value>Bağlı Ses Aygıtı Yok</value>
+    <value>Bağlı Ses Cihazı Yok</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Kapat</value>
@@ -37,7 +37,7 @@
     <value>Çıkış</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Uygulamadan güvenli bir şekilde çıkın</value>
+    <value>Uygulamadan güvenli bir şekilde çık</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
     <value>Genel</value>
@@ -50,32 +50,20 @@
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} üzerinde</value>
+    <value>{0} açık</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
     <value>Üzerine Yazma Modu</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>TopBar'ı Sabitleme</value>
-  </data>
-  <data name="PointValidationRule.PointFormatInvalidMessage" xml:space="preserve">
-    <value>Lütfen 'X,Y' biçimindeki noktayı girin (örn. 50,60).</value>
-    <comment>Error message shown when there are problem parsing a string value into a Point</comment>
-  </data>
-  <data name="PointValidationRule.PointOutOfRangeMessage" xml:space="preserve">
-    <value>Lütfen {0} - {1} aralığına X,Y değerlerini girin.</value>
-    <comment>Error message shown when a point's X or Y values goes out of int32 range</comment>
-  </data>
-  <data name="PointValidationRule.StringConvertionErrorMessage" xml:space="preserve">
-    <value>Değer dize için kapsayılamaz.</value>
-    <comment>Error message shown when there is problem in converting an object into a string</comment>
+    <value>ÜstÇubuğu Sabitle</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Varsayılanı Geri Yükle</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Windows varsayılan uçuşuna geri yüklenir ve bu uygulamadan güvenli bir şekilde çıkar</value>
+    <value>Windows varsayılan açılır penceresini geri yükler ve bu uygulamadan güvenli bir şekilde çıkar</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Diğer Denetimler</value>
@@ -93,25 +81,25 @@
     <value>Önceki</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>Tekraret: tüm</value>
+    <value>Tekrarla: tümü</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Tekraret: kapalı</value>
+    <value>Tekrarla: kapalı</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Tekrarlıyorum: bir</value>
+    <value>Tekrarla: tek</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Shuffle: kapalı</value>
+    <value>Rastgele çal: kapalı</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Shuffle: üzerinde</value>
+    <value>Rastgele çal: açık</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
     <value>Durdur</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Zaman Çizelgesi Bilgileri</value>
+    <value>Zaman Tüneli Bilgileri</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
     <value>Ek</value>
@@ -120,13 +108,13 @@
     <value>Davranış</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Varsayılan Flyout</value>
+    <value>Varsayılan Açılır Pencere</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Varsayılan uçuş seçeneğini seçin</value>
+    <value>Varsayılan açılır pencere seçeneğini seçin</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Varsayılan olarak Windows Varsayılan Flyout'u seçmek bu uygulamayı kapatmaz. Bu uygulama arka planda çalışmaya devam edecektir. Performansı artırmak için lütfen bu uygulamadan güvenli bir şekilde çıkın.</value>
+    <value>Varsayılan olarak Windows Varsayılan Açılır Penceresini seçmek bu uygulamayı kapatmaz. Bu uygulama arka planda çalışmaya devam edecektir. Performansı artırmak için lütfen bu uygulamadan güvenli bir şekilde çıkın.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Devre dışı</value>
@@ -135,31 +123,28 @@
     <value>Etkin</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Flyout Arka Plan Opaklık</value>
+    <value>Açılır Pencere Arka Plan Saydamlığı</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Flyout Varsayılan Konumu (Hizala düğmesi için)</value>
-  </data>
-  <data name="Settings.FlyoutDefaultPositionDescription" xml:space="preserve">
-    <value>Konumu 'X,Y' biçiminde yazın (örn. 50,60)</value>
+    <value>Açılır Pencere Varsayılan Konumu (Hizala düğmesi için)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Flyout TopBar</value>
+    <value>Açılır Pencere ÜstÇubuğu</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Modüller</value>
+    <value>Açılır Pencere Modülleri</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>AirplaneMode-flyout Modülü</value>
+    <value>Uçak modu</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Ses-flyout Modülü</value>
+    <value>Ses</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Parlaklık-flyout Modülü</value>
+    <value>Parlaklık</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>LockKeys-flyout Modülü</value>
+    <value>Kilit tuşları</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Başlangıçta çalıştırın</value>
@@ -168,19 +153,19 @@
     <value>Ayarlar</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Ayarlar pencereni aç</value>
+    <value>Ayarlar penceresini aç</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>TopBar'ı Unpin</value>
+    <value>ÜstÇubuk sabitlemesini kaldır</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
-    <value>ModernFlyouts</value>
+    <value>ModernAçılırPencereler</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
     <value>Yok</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Windows varsayılan</value>
+    <value>Windows varsayılanı</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>Yatay</value>
@@ -189,34 +174,34 @@
     <value>Dikey</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Bu uygulama, Windows 8'den bu yana Windows'da bulunan eski metro temalı flyout'ların modern bir Akıcı Tasarım yerine geçecek şekilde tasarlanmıştır.</value>
+    <value>Bu uygulama, Windows 8'den bu yana Windows'da bulunan eski metro temalı açılır pencerelerin modern bir Akıcı Tasarım ile yerine geçecek şekilde tasarlanmıştır.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Katkıda Bulunanlar</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>GitHub deposunu</value>
+    <value>GitHub deposu</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Yeni bir sorun açma</value>
+    <value>Yeni bir sorun aç</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Microsoft Mağazası'nda Fiyat ve İnceleme</value>
+    <value>Microsoft Mağazasında Değerlendir ve İncele</value>
   </data>
   <data name="About.Version" xml:space="preserve">
-    <value>Sürüm: </value>
+    <value>Sürüm : </value>
   </data>
   <data name="Settings.Language" xml:space="preserve">
     <value>Dil</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>Dili düzgün değiştirmek için lütfen uygulamayı yeniden başlatın</value>
+    <value>Dili düzgün değiştirmek için yeniden başlatma gerekiyor</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
     <value>Sistem Varsayılanı</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
-    <value>Bağımlılıklar</value>
+    <value>Bağlılıklar</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
     <value>Herhangi bir hata bulursanız, lütfen github deposunda yeni bir sorun açın.</value>
@@ -228,10 +213,10 @@
     <value>Medya oturumları panel oryantasyonu</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Küresel Sistem Medya Taşıma Denetimlerini Göster (GSMTC) nam-ı diğer Medya kontrollerini Ses uçuşunda göster</value>
+    <value>Küresel Sistem Medya Taşıma Denetimlerini Göster (GSMTC) nam-ı diğer Medya kontrollerini Ses penceresinde göster</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Küresel Sistem Medya Taşıma Kontrolleri (GSMTC) aka Medya flyout ses kontrolü göster</value>
+    <value>Ses kontrolünü, Küresel Sistem Medya Taşıma Kontrollerinde (GSMTC) nam-ı diğer Medya penceresinde göster</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Küçük resim hizalama</value>
@@ -264,28 +249,28 @@
     <value>Kaydırma kilidi</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Uçuş için uçuş göstermek istediğiniz tuşları seçin</value>
+    <value>Açılır pencerenin gözükmesini istediğiniz tuşları seçin</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Görünüm</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Uçak modu Flyout etkinleştirin</value>
+    <value>Uçak modu penceresini etkinleştirin</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Ses Flyout etkinleştirme</value>
+    <value>Ses Penceresini etkinleştirin</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Parlaklık Flyout etkinleştirin</value>
+    <value>Parlaklık Penceresini etkinleştirin</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Kilit tuşlarını Flyout etkinleştirin</value>
+    <value>Kilit tuşları Penceresini etkinleştirin</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Flyout teması</value>
+    <value>Açılır Pencere teması</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Flyout zaman (ms)</value>
+    <value>Açılır Pencere zaman aşımı (ms)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>Sol</value>
@@ -294,13 +279,13 @@
     <value>Medya</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Birim</value>
+    <value>Ses seviyesi</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>Sağ</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>TopBar görünürlüğü</value>
+    <value>ÜstÇubuk görünürlüğü</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Sistem tepsisi alanında simgeyi göster</value>
@@ -315,21 +300,18 @@
     <value>Uygulama Teması</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Renkli tepsi simgesini kullanma</value>
-  </data>
-  <data name="NgsSettings_Reset" xml:space="preserve">
-    <value>Ngs. Settings_Reset}</value>
+    <value>Renkli tepsi simgesini kullan</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Tüm ayarları varsayılanlara sıfırlama</value>
+    <value>Tüm ayarları varsayılanlara sıfırla</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Kişiselleştirme</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Flyout'u bu konuma hizala</value>
+    <value>Açılır pencereyi bu konuma hizala</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Bazı değişiklikleri uygulamak için yeniden başlatma</value>
+    <value>Bazı değişiklikleri uygulamak için yeniden başlatmak gerekiyor</value>
   </data>
 </root>

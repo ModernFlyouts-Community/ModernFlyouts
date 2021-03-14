@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     public partial class SessionsPanel : UserControl
     {
