@@ -481,7 +481,7 @@
     <value>Порядок отображения содержимого Flyout</value>
   </data>
   <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
-    <value>Напрвление вывода Flyout</value>
+    <value>Направление вывода Flyout</value>
   </data>
   <data name="Settings.FlyoutPlacement" xml:space="preserve">
     <value>Расположение Flyout</value>
