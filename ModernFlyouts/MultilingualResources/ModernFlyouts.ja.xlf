@@ -166,8 +166,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">モジュール</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">フライアウト モジュール</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
@@ -223,11 +222,11 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">このアプリは、Windows 8以降のWindowsに存在する古いメトロをテーマにしたフライアウトを、現代的なFluent Designに置き換えるようにデザインされています。</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">このアプリは、Windows 8から使われてきた古いメトロがテーマのフライアウトを、現代的なFluent Designに置き換えます。</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">共同作成者</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">開発者</target>
         </trans-unit>
         <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
@@ -251,7 +250,7 @@
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Restart required to apply language change properly</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">言語を正しく変更するため、アプリを再起動してください</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">正しく言語を変更するため、アプリを再起動してください</target>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System default</source>
@@ -307,7 +306,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
           <source>Caps lock</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">CapsLock</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Caps lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
           <source>Insert</source>
@@ -315,7 +314,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
           <source>Num lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">NumLock</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Num lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
@@ -331,19 +330,19 @@
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
           <source>Enable Airplane mode Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">機内モードのフライアウト</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">機内モードのフライアウトを有効化</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
           <source>Enable Audio Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">オーディオのフライアウト</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">オーディオのフライアウトを有効化</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
           <source>Enable Brightness Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">明るさのフライアウト</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">明るさのフライアウトを有効化</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ロックキーのフライアウト</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ロックキーのフライアウトを有効化</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
@@ -479,35 +478,35 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">フライアウトの配置</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">フライアウトの配置</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">コンテンツスタッキングの順番</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">コンテンツスタッキングの順番</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">フライアウトの出現方向</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">フライアウトの出現方向</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">フライアウトの配置</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">フライアウトの配置</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">配置モード</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">配置モード</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
-          <target state="new">水平方向の配置</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">水平方向の配置</target>
         </trans-unit>
         <trans-unit id="Settings.Layout" translate="yes" xml:space="preserve">
           <source>Layout</source>
-          <target state="new">レイアウト</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">レイアウト</target>
         </trans-unit>
         <trans-unit id="Settings.VerticalAlignment" translate="yes" xml:space="preserve">
           <source>Vertical alignment</source>
-          <target state="new">垂直方向の配置</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">垂直方向の配置</target>
         </trans-unit>
       </group>
     </body>
