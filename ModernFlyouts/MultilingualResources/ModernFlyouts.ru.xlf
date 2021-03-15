@@ -163,7 +163,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Заголовок всплывающих окон</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Заголовок всплывающего окна</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
