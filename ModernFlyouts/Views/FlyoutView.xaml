@@ -26,7 +26,7 @@
             </LinearGradientBrush>
         </Border.BorderBrush>
     </Border>-->
-    <controls:DirectableStackPanel CacheMode="BitmapCache"
+    <controls:DirectableStackPanel
         Spacing="8" Margin="{x:Static localui:UIManager.FlyoutShadowMargin}"
         Direction="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.OnScreenFlyoutContentStackingDirection}">
         <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
