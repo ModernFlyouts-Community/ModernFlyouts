@@ -419,7 +419,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>راه اندازی مجدد مورد نیاز برای اعمال برخی از تغییرات</value>
   </data>
-  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
     <value>انیمیشن محو</value>
   </data>
 </root>

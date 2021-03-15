@@ -1161,9 +1161,9 @@ namespace ModernFlyouts.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Fade animation.
         /// </summary>
-        public static string Settings_WidgetAnimationEnabled {
+        public static string Settings_FlyoutAnimationEnabled {
             get {
-                return ResourceManager.GetString("Settings.WidgetAnimationEnabled", resourceCulture);
+                return ResourceManager.GetString("Settings.FlyoutAnimationEnabled", resourceCulture);
             }
         }
         

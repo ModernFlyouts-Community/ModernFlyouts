@@ -404,7 +404,7 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Use colored tray icon</value>
   </data>
-  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
     <value>Fade animation</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">

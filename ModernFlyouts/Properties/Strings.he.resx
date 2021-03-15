@@ -419,7 +419,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>דרושה הפעלה מחדש כדי להחיל מספר שינויים</value>
   </data>
-  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
     <value>אנימציה דוהה</value>
   </data>
 </root>

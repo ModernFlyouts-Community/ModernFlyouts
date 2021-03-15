@@ -279,10 +279,10 @@ namespace ModernFlyouts
                 Mode = BindingMode.OneWay
             });
 
-            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.WidgetAnimationEnabledProperty, new Binding()
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.FlyoutAnimationEnabledProperty, new Binding()
             {
                 Source = UIManager,
-                Path = new PropertyPath(nameof(UIManager.WidgetAnimationEnabled)),
+                Path = new PropertyPath(nameof(UIManager.FlyoutAnimationEnabled)),
                 Mode = BindingMode.OneWay
             });
         }

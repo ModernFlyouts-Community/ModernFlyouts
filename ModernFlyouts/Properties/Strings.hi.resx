@@ -419,7 +419,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>कुछ बदलावों को लागू करने के लिए पुनः आरंभ करना आवश्यक है</value>
   </data>
-  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
     <value>फीका एनीमेशन</value>
   </data>
 </root>

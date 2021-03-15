@@ -19,16 +19,20 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(OpenedEvent);
             RaiseEvent(args);
 
-            if (WidgetAnimationEnabled)
+
+            if (FlyoutAnimationEnabled)
             {
+                c_translation = 40;
+                PlayOpenAnimation();
+            }
+            else
+            {
+                c_translation = 0;
+                RenderTransform = new TranslateTransform();
                 BeginAnimation(VisibilityProperty, null);
                 BeginAnimation(OpacityProperty, null);
                 Visibility = Visibility.Visible;
                 Opacity = 1.0;
-            }
-            else
-            {
-                PlayOpenAnimation();
             }
 
             timer?.Start();
@@ -39,14 +43,14 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(ClosingEvent);
             RaiseEvent(args);
 
-            if (WidgetAnimationEnabled)
+            if (FlyoutAnimationEnabled)
             {
-                Opacity = 0.0;
-                Visibility = Visibility.Hidden;
+                PlayCloseAnimation();
             }
             else
             {
-                PlayCloseAnimation();
+                Opacity = 0.0;
+                Visibility = Visibility.Hidden;
             }
         }
 
@@ -124,7 +128,7 @@ namespace ModernFlyouts.Core.UI
         private DoubleKeyFrame fromHorizontalOffsetKeyFrameClosing;
         private DoubleKeyFrame fromVerticalOffsetKeyFrameClosing;
 
-        private const double c_translation = 40;
+        private double c_translation = 40;
         private static readonly TimeSpan translateDuration = TimeSpan.FromMilliseconds(367);
 
         private static readonly PropertyPath opacityPath = new(OpacityProperty);

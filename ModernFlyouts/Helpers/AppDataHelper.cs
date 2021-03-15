@@ -289,9 +289,9 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
-        public static bool WidgetAnimationEnabled
+        public static bool FlyoutAnimationEnabled
         {
-            get => GetValue(DefaultValuesStore.WidgetAnimationEnabled);
+            get => GetValue(DefaultValuesStore.FlyoutAnimationEnabled);
             set => SetValue(value);
         }
 

@@ -494,7 +494,7 @@
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Perataan vertikal</value>
   </data>
-  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
     <value>Animasi pudar</value>
   </data>
 </root>

@@ -419,7 +419,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>需要重新啟動以套用某些變更</value>
   </data>
-  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
     <value>淡入淡出动画</value>
   </data>
 </root>

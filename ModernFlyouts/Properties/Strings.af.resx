@@ -419,7 +419,7 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Herbegin vereis om sekere veranderinge toe te pas</value>
   </data>
-  <data name="Settings.WidgetAnimationEnabled" xml:space="preserve">
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
     <value>Vervaag animasie</value>
   </data>
 </root>
