@@ -19,10 +19,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.13.0-beta0001" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
     <PackageReference Include="ModernWpf.Toolkit.UI.Controls" Version="0.1.0" />
     <PackageReference Include="ModernWpfUI" Version="0.9.3" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.18" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1-beta2" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Release'">
@@ -58,6 +61,8 @@
     <None Remove="Assets\Logo.ico" />
     <None Remove="Assets\Logo_Tray_Black.ico" />
     <None Remove="Assets\Logo_Tray_White.ico" />
+    <None Remove="Controls\BatteryControl.xaml" />
+    <None Remove="Navigation\BatteryModulePage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -101,6 +106,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="BatteryInfo">
+      <HintPath>Libraries\BatteryInfo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -113,6 +124,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Navigation\BatteryModulePage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">

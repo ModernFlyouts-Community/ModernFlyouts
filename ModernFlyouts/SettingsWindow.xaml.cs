@@ -73,7 +73,8 @@ namespace ModernFlyouts
             ("audio_module", typeof(AudioModulePage)),
             ("brightness_module", typeof(BrightnessModulePage)),
             ("airplane_mode_module", typeof(AirplaneModeModulePage)),
-            ("lock_keys_module", typeof(LockKeysModulePage))
+            ("lock_keys_module", typeof(LockKeysModulePage)),
+            ("battery_module", typeof(BatteryModulePage))
         };
 
         private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

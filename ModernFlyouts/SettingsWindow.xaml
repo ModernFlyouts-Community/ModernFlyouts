@@ -54,6 +54,11 @@
                     <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Lock}" />
                 </ui:NavigationViewItem.Icon>
             </ui:NavigationViewItem>
+            <ui:NavigationViewItem Content="Battery" Tag="battery_module">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Glyph="{x:Static utils:CommonGlyphs.Battery}" />
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem Content="{x:Static resx:Strings.About}" Tag="about">
