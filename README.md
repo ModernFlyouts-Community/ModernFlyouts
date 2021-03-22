@@ -72,6 +72,10 @@ _please note that due to how winget processes package updates, updates may take 
 
 `winget install --id=ModernFlyouts.ModernFlyouts -e`
 
+**Chocolatey**
+
+ModernFlyouts is **Unofficially** available to install via Chocolatey [Here](https://chocolatey.org/packages/modernflyouts), however as this is not maintained by us we can not verify it's security or being up to date.
+
 ## Connect with us
 You can join our [Discord Server](https://discord.gg/TcYskeyaYE) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback (people who don't have a GitHub account may be benefitted).
 
@@ -97,7 +101,7 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
 - **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
 - **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
-- **[ADeltaX](https://github.com/ADeltaX/)** - Our savior! Helps us at critical times.
+- **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer - Our savior! Helps us at critical times.
 
 
 ### Our Contributors 💗💕
@@ -115,18 +119,31 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - [lucasskluser](https://github.com/lucasskluser) - Portuguese translator.
 - [Stealnoob](https://github.com/Stealnoob) - French translator.
 - [imgradeone](https://github.com/imgradeone) - Chinese (Simplified) translator.
-- [sewerynkalemba](https://github.com/sewerynkalemba) - Polish translators.
+- [sewerynkalemba](https://github.com/sewerynkalemba) - Polish translator.
 - [ArmasF31](https://github.com/ArmasF31) - German translator.
 - [ANT0x1](https://github.com/ANT0x1) - Russian translator.
 - [Hymian7](https://github.com/Hymian7) - German translator.
 - [TheAgamer554](https://github.com/TheAgamer554) - Spanish translator.
 - [ShintakuNobuhiro](https://github.com/ShintakuNobuhiro) - Japanese translator.
 - [blinchk](https://github.com/blinchk) - Russian translator.
+- [TragicLifeHu](https://github.com/TragicLifeHu) - Chinese (Traditional) translator.
 - [Tarik02](https://github.com/Tarik02) - Ukrainian translator.
 - [MichelangeloDePascale02](https://github.com/MichelangeloDePascale02) - Italian translator.
 - [Per-Terra](https://github.com/Per-Terra) - Japanese translator.
 - [Renzo904](https://github.com/Renzo904) - Spanish translator.
 - [Arno500](https://github.com/Arno500) - French translator.
+- [Daxxxis](https://github.com/Daxxxis) - Polish translator.
+- [OOBSoftInc](https://github.com/OOBSoftInc) - Italian translator.
+- [VasilisPat](https://github.com/VasilisPat)
+- [honorsea](https://github.com/honorsea) - Turkish translator.
+- [MohammadShughri](https://github.com/MohammadShughri) - Arabic translator.
+- [Slasar41](https://github.com/Slasar41) - Indoesian translator.
+- [ShangJixin](https://github.com/ShangJixin) - Chinese (Simplified) translator.
+- [mate131909](https://github.com/mate131909) - Korean translator.
+- [nvi9](https://github.com/nvi9) - Hungarian translator.
+- [Reset12138](https://github.com/Reset12138) - Chinese (Simplified) translator.
+- [howon-kim](https://github.com/howon-kim) - Korean translator.
+- [pklion](https://github.com/pklion) - Japanese translator.
 
 **Others:**
 
@@ -137,6 +154,11 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - [NAudio](https://github.com/naudio/NAudio)
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (Inspired the name **Modern**Flyouts)
 - [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
+
+
+## Beta Builds
+
+The ability to signup for beta builds has been temporarily removed while we work on a better way to release and manage them. Beta builds will still occasionally be available to download fron the releases tab on github. Thankyou to everyone who helps us test new releases before they go public.
 
 ## Screenshots
 
