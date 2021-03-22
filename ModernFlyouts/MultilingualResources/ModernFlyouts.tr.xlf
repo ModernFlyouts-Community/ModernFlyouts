@@ -509,6 +509,14 @@
           <source>Vertical alignment</source>
           <target state="new">Vertical alignment</target>
         </trans-unit>
+        <trans-unit id="Settings.EnableModule.Battery" translate="yes" xml:space="preserve">
+          <source>Enable Battery Flyout</source>
+          <target state="new">Enable Battery Flyout</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Battery" translate="yes" xml:space="preserve">
+          <source>Battery</source>
+          <target state="new">Battery</target>
+        </trans-unit>
       </group>
     </body>
   </file>
