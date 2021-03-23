@@ -345,5 +345,22 @@ namespace ModernFlyouts.Core.UI
         }
 
         #endregion
+
+        #region FlyoutAnimationEnabled
+
+        public static readonly DependencyProperty FlyoutAnimationEnabledProperty =
+            DependencyProperty.Register(
+                nameof(FlyoutAnimationEnabled),
+                typeof(bool),
+                typeof(FlyoutWindow),
+                new PropertyMetadata(false));
+
+        public bool FlyoutAnimationEnabled
+        {
+            get => (bool)GetValue(FlyoutAnimationEnabledProperty);
+            set => SetValue(FlyoutAnimationEnabledProperty, value);
+        }
+
+        #endregion
     }
 }
