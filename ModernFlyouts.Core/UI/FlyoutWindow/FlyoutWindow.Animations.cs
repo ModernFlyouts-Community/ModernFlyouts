@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ModernFlyouts.Core.UI
 {
@@ -18,7 +19,21 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(OpenedEvent);
             RaiseEvent(args);
 
-            PlayOpenAnimation();
+
+            if (FlyoutAnimationEnabled)
+            {
+                c_translation = 40;
+                PlayOpenAnimation();
+            }
+            else
+            {
+                c_translation = 0;
+                RenderTransform = new TranslateTransform();
+                BeginAnimation(VisibilityProperty, null);
+                BeginAnimation(OpacityProperty, null);
+                Visibility = Visibility.Visible;
+                Opacity = 1.0;
+            }
 
             timer?.Start();
         }
@@ -28,7 +43,15 @@ namespace ModernFlyouts.Core.UI
             RoutedEventArgs args = new(ClosingEvent);
             RaiseEvent(args);
 
-            PlayCloseAnimation();
+            if (FlyoutAnimationEnabled)
+            {
+                PlayCloseAnimation();
+            }
+            else
+            {
+                Opacity = 0.0;
+                Visibility = Visibility.Hidden;
+            }
         }
 
         #region Close Timer
@@ -105,7 +128,7 @@ namespace ModernFlyouts.Core.UI
         private DoubleKeyFrame fromHorizontalOffsetKeyFrameClosing;
         private DoubleKeyFrame fromVerticalOffsetKeyFrameClosing;
 
-        private const double c_translation = 40;
+        private double c_translation = 40;
         private static readonly TimeSpan translateDuration = TimeSpan.FromMilliseconds(367);
 
         private static readonly PropertyPath opacityPath = new(OpacityProperty);
@@ -114,6 +137,7 @@ namespace ModernFlyouts.Core.UI
         private static readonly PropertyPath translateYPath = new("(UIElement.RenderTransform).(TranslateTransform.Y)");
         private static readonly KeySpline decelerateKeySplineOpening = new(0.1, 0.9, 0.2, 1);
         private static readonly KeySpline decelerateKeySplineClosing = new(1, 0.2, 0.9, 0.1);
+
 
         private void PrepareAnimations()
         {
@@ -141,9 +165,11 @@ namespace ModernFlyouts.Core.UI
                     {
                         new DiscreteObjectKeyFrame(Visibility.Visible, TimeSpan.Zero)
                     }
+                    
                 };
                 Storyboard.SetTarget(visibilityAnim, this);
                 Storyboard.SetTargetProperty(visibilityAnim, visibilityPath);
+                
 
                 DoubleAnimationUsingKeyFrames opacityAnim = new()
                 {

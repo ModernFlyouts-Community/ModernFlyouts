@@ -121,7 +121,7 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - [imgradeone](https://github.com/imgradeone) - Chinese (Simplified) translator.
 - [sewerynkalemba](https://github.com/sewerynkalemba) - Polish translators.
 - [ArmasF31](https://github.com/ArmasF31) - German translator.
-- [ANT0x1](https://github.com/ANT0x1) - Russian translator.
+- [ANT0x1](https://github.com/ANT0x1) - Russian & Ukrainian translator.
 - [Hymian7](https://github.com/Hymian7) - German translator.
 - [TheAgamer554](https://github.com/TheAgamer554) - Spanish translator.
 - [ShintakuNobuhiro](https://github.com/ShintakuNobuhiro) - Japanese translator.
