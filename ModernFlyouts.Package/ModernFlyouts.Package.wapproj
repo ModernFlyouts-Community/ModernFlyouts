@@ -41,9 +41,9 @@
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>False</GenerateTestArtifacts>
-    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
     <EntryPointProjectUniqueName>..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj</EntryPointProjectUniqueName>
@@ -111,6 +111,7 @@
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
+    <PRIResource Include="Strings\en-us\Resources.resw" />
     <None Include="ModernFlyouts.Package_TemporaryKey.pfx" />
     <Content Include="Package.appinstaller" />
     <Content Include="priconfig.default.xml" />
@@ -120,6 +121,7 @@
     <ProjectReference Include="..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj" />
     <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+      <PublishProfile Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">Properties\PublishProfiles\FolderProfile-arm64.pubxml</PublishProfile>
       <PublishProfile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Properties\PublishProfiles\FolderProfile-x64.pubxml</PublishProfile>
       <PublishProfile Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Properties\PublishProfiles\FolderProfile-x86.pubxml</PublishProfile>
     </ProjectReference>

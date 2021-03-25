@@ -1,110 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -112,10 +7,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>О программе</value>
@@ -232,10 +127,10 @@
     <value>Непрозрачность всплывающего окна</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Позиция Flyout по умолчанию (для кнопки сброса выравнивания)</value>
+    <value>Позиция по умолчанию</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Верхняя панель Flyout</value>
+    <value>Заголовок всплывающего окна</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Модули</value>
@@ -250,7 +145,7 @@
     <value>Яркость</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Клавиши блокировки (Num Lock и т.д.)</value>
+    <value>Клавиши блокировки</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Автозагрузка</value>
@@ -262,7 +157,7 @@
     <value>Открыть настройки</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Открепить верхнюю панель</value>
+    <value>Открепить заголовок</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
@@ -271,7 +166,7 @@
     <value>Нет</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Windows по умолчанию</value>
+    <value>Стандартные Windows</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>По горизонтали</value>
@@ -304,7 +199,7 @@
     <value>Пожалуйста, перезапустите приложение, чтобы изменить язык должным образом</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Системный по умолчанию</value>
+    <value>Как в системе</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
     <value>Зависимости</value>
@@ -409,93 +304,15 @@
     <value>Использовать цветной значок в трее</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Сброс всех настроек по умолчанию</value>
+    <value>Сбросить настройки</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Персонализация</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Выровнять позицию всплывающего окна</value>
+    <value>Выровнять положение к этой точке</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Перезагрузка необходима чтоб применить некоторые изменения.</value>
-  </data>
-  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
-    <value>Анимация появления Flyout</value>
-  </data>
-  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
-    <value>Использовать обложку как фон аудио модуля</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
-    <value>Низ</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
-    <value>Центр</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
-    <value>Лево</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
-    <value>Право</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
-    <value>Верх</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
-    <value>Автоматически</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
-    <value>Снизу</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
-    <value>Слева</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
-    <value>Справа</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
-    <value>Сверху</value>
-  </data>
-  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
-    <value>Автоматически</value>
-  </data>
-  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
-    <value>Вручную</value>
-  </data>
-  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
-    <value>Прямой</value>
-  </data>
-  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
-    <value>Обратный</value>
-  </data>
-  <data name="Settings.Display" xml:space="preserve">
-    <value>Монитор</value>
-  </data>
-  <data name="Settings.DisplayDescription" xml:space="preserve">
-    <value>Выберите предпочитаемый монитор для отображения</value>
-  </data>
-  <data name="Settings.FlyoutAlignment" xml:space="preserve">
-    <value>Выравнивание Flyout</value>
-  </data>
-  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
-    <value>Порядок отображения содержимого Flyout</value>
-  </data>
-  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
-    <value>Направление вывода Flyout</value>
-  </data>
-  <data name="Settings.FlyoutPlacement" xml:space="preserve">
-    <value>Расположение Flyout</value>
-  </data>
-  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
-    <value>Режим расположения</value>
-  </data>
-  <data name="Settings.HorizontalAlignment" xml:space="preserve">
-    <value>Выравнивание по горизонтали</value>
-  </data>
-  <data name="Settings.Layout" xml:space="preserve">
-    <value>Расположение</value>
-  </data>
-  <data name="Settings.VerticalAlignment" xml:space="preserve">
-    <value>Выравнивание по вертикали</value>
+    <value>Перезагрузка необходима для применения некоторых изменений.</value>
   </data>
 </root>
