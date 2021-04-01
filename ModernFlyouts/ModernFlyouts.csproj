@@ -24,8 +24,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
-	<PackageReference Include="ModernWpfUI" Version="0.9.3" />
     <PackageReference Include="ModernWpf.Toolkit.UI.Controls" Version="0.1.0" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.4" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.18" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1-beta2" />
 	<PackageReference Include="DocumentFormat.OpenXml" Version="2.13.0-beta0001" />
@@ -33,9 +33,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Release'">
-    <PackageReference Include="Microsoft.AppCenter" Version="4.1.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.1.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.2.0" />
     <PackageReference Include="Microsoft.Services.Store.SDK" Version="10.1705.16001" />
   </ItemGroup>
 
@@ -145,9 +145,8 @@
     <TargetFrameworkSDKToolsDirectory Condition=" '$(Platform)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(Platform)\</TargetFrameworkSDKToolsDirectory>
    </PropertyGroup>-->
 
-	<Target Name="FixAL1703Warning" BeforeTargets="GenerateSatelliteAssemblies"
-			Condition="'$(PlatformTarget)' == 'x64'">
-		<Message Text="Adjusting SDK tools directory to use x64 version of AL.EXE"/>
+	<Target Name="FixAL1703Warning" BeforeTargets="GenerateSatelliteAssemblies" Condition="'$(PlatformTarget)' == 'x64'">
+		<Message Text="Adjusting SDK tools directory to use x64 version of AL.EXE" />
 			<PropertyGroup>
 				<TargetFrameworkSDKToolsDirectory>$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
 			</PropertyGroup>
