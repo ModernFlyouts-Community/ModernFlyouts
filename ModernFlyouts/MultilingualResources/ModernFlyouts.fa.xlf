@@ -167,7 +167,6 @@
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">ماژول‌ها</target>
-          
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
@@ -516,6 +515,10 @@
         <trans-unit id="Settings.Modules.Battery" translate="yes" xml:space="preserve">
           <source>Battery</source>
           <target state="new">Battery</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
+          <source>Fade animation</source>
+          <target state="new">Fade animation</target>
         </trans-unit>
       </group>
     </body>

@@ -243,7 +243,7 @@
     <value>Insert</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Num Lock</value>
+    <value>Num Lock (Κλέιδωμα πλήκτρου Num)</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
     <value>Scroll Lock (Κλείδωμα κύλισης)</value>

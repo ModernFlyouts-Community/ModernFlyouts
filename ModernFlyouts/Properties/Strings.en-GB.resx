@@ -291,7 +291,7 @@
     <value>Unpin TopBar</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
-    <value>Off</value>
+    <value>Syntax error</value>
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>On</value>

@@ -127,10 +127,10 @@
     <value>Непрозрачность всплывающего окна</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Позиция по умолчанию</value>
+    <value>Позиция Flyout по умолчанию (для кнопки сброса выравнивания)</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Заголовок всплывающего окна</value>
+    <value>Верхняя панель Flyout</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
     <value>Модули</value>
@@ -145,7 +145,7 @@
     <value>Яркость</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Клавиши блокировки</value>
+    <value>Клавиши блокировки (Num Lock и т.д.)</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Автозагрузка</value>
@@ -157,7 +157,7 @@
     <value>Открыть настройки</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Открепить заголовок</value>
+    <value>Открепить верхнюю панель</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
@@ -166,7 +166,7 @@
     <value>Нет</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Стандартные Windows</value>
+    <value>Windows по умолчанию</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>По горизонтали</value>
@@ -199,7 +199,7 @@
     <value>Пожалуйста, перезапустите приложение, чтобы изменить язык должным образом</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Как в системе</value>
+    <value>Системный по умолчанию</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
     <value>Зависимости</value>
@@ -304,15 +304,15 @@
     <value>Использовать цветной значок в трее</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Сбросить настройки</value>
+    <value>Сброс всех настроек по умолчанию</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Персонализация</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Выровнять положение к этой точке</value>
+    <value>Выровнять позицию всплывающего окна</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Перезагрузка необходима для применения некоторых изменений.</value>
+    <value>Перезагрузка необходима чтоб применить некоторые изменения.</value>
   </data>
 </root>

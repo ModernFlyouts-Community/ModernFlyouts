@@ -160,9 +160,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
-    <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
 		<PlatformTarget>arm64</PlatformTarget>
-	</PropertyGroup>-->
+	</PropertyGroup>
 
   <PropertyGroup Label="MultilingualAppToolkit">
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>

@@ -516,6 +516,10 @@
           <source>Battery</source>
           <target state="new">Battery</target>
         </trans-unit>
+        <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
+          <source>Fade animation</source>
+          <target state="new">Fade animation</target>
+        </trans-unit>
       </group>
     </body>
   </file>
