@@ -106,12 +106,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="BatteryInfo">
-      <HintPath>Libraries\BatteryInfo.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
