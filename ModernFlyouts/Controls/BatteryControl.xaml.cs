@@ -1,8 +1,9 @@
-﻿using BatteryInfo;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Core.Utilities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -30,12 +31,27 @@ namespace ModernFlyouts.Controls
     /// </summary>
     public partial class BatteryControl : System.Windows.Controls.UserControl
     {
+        public float NominalCapacity;  //Measured in Watt hours
+        public float RealCapacity;
+        public float CurrentCapacity;
+
+        public float ChargePercent;
+
+        public float CurrentVoltage;
+
+        public TimeSpan TimeToDischarge;
+
+        public Core.Utilities.BatteryStatus Status;
+
+        public float PowerChargeRate;
         public BatteryControl()
         {
             InitializeComponent();
             try
             {
-                battery = new Battery();
+
+                ///Commented out battery dll code since it doesnt work.
+                
                 // string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
                 //   RegistryKey key = Registry.CurrentUser.OpenSubKey(path, true);
                 //key.SetValue("Fluent Flyouts", System.Windows.Forms.Application.ExecutablePath.ToString());
@@ -43,8 +59,8 @@ namespace ModernFlyouts.Controls
                 //  lis.matrix.Clear();
                 //string output = Fluent_Flyouts.Properties.Settings.Default.test;
                 //List<List<int>> Product = JsonConvert.DeserializeObject<List<List<int>>>(output);
-                battery.Update();
-                if (battery.Status == BatteryInfo.BatteryStatus.Unavailable)
+                
+                if (Status == Core.Utilities.BatteryStatus.Unavailable)
                 {
                     //  ChargeText.Content = "?";
                     ChgRate.Content = "?";
@@ -57,19 +73,19 @@ namespace ModernFlyouts.Controls
                 else
                 {
                     //  ChargeText.Content = Math.Round(battery.ChargePercent) + "%";
-                    if (battery.Status == BatteryInfo.BatteryStatus.Charging)
+                    if (Status == Core.Utilities.BatteryStatus.Charging)
                     {
                         ChargeRateLabel.Content = "Charge Rate:";
-                        ChgRate.Content = (Math.Round(battery.ChargeRate * 10) / 10f) + " W";
+                        ChgRate.Content = (Math.Round(-PowerChargeRate * 10) / 10f) + " W";
                     }
                     else
                     {
                         ChargeRateLabel.Content = "Discharge Rate:";
-                        ChgRate.Content = (Math.Round(-battery.ChargeRate * 10) / 10f) + " W";
+                        ChgRate.Content = (Math.Round(-PowerChargeRate * 10) / 10f) + " W";
                     }
-                    RealCap.Content = (Math.Round(battery.RealCapacity * 10) / 10f) + $" Wh ({Math.Round((battery.RealCapacity / battery.NominalCapacity) * 100)}%)";
-                    NomCap.Content = (Math.Round(battery.NominalCapacity * 10) / 10f) + " Wh";
-                    Voltage.Content = (Math.Round(battery.CurrentVoltage * 100) / 100f) + " V";
+                    RealCap.Content = (Math.Round(RealCapacity * 10) / 10f) + $" Wh ({Math.Round((RealCapacity / NominalCapacity) * 100)}%)";
+                    NomCap.Content = (Math.Round(NominalCapacity * 10) / 10f) + " Wh";
+                    Voltage.Content = (Math.Round(CurrentVoltage * 100) / 100f) + " V";
                 }
                 addtolist();
 
@@ -89,7 +105,65 @@ namespace ModernFlyouts.Controls
             }
         }
 
+        public void Update()
+        {
+            try
+            {
+                if (!(bool)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "Active"))
+                {
+                    Status = Core.Utilities.BatteryStatus.Unavailable;
+                    return;
+                }
+                Status = Core.Utilities.BatteryStatus.Discharging;
+                if ((bool)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "Charging"))
+                    Status = Core.Utilities.BatteryStatus.Charging;
+            }
+            catch (Exception)
+            {
+                Status = Core.Utilities.BatteryStatus.Unavailable;
+                return;
+            }
+            try
+            {
+                NominalCapacity = ((uint)WMIToolHelper.QuerySingle("root/WMI", "BatteryStaticData", "DesignedCapacity")) / 1000f;
+            }
+            catch { }
 
+            try
+            {
+                RealCapacity = ((uint)WMIToolHelper.QuerySingle("root/WMI", "BatteryFullChargedCapacity", "FullChargedCapacity")) / 1000f;
+            }
+            catch { }
+            try
+            {
+                CurrentCapacity = ((uint)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "RemainingCapacity")) / 1000f;
+            }
+            catch { }
+            try
+            {
+                ChargePercent = CurrentCapacity / RealCapacity * 100f;
+            }
+            catch { }
+            try
+            {
+                CurrentVoltage = ((uint)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "Voltage")) / 1000f;
+            }
+            catch { }
+            try
+            {
+                TimeToDischarge = TimeSpan.FromSeconds((uint)WMIToolHelper.QuerySingle("root/WMI", "BatteryRuntime", "EstimatedRuntime"));
+            }
+            catch { }
+            if (Status == Core.Utilities.BatteryStatus.Discharging)
+            {
+                PowerChargeRate = -((int)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "DischargeRate")) / 1000f;
+            }
+            else
+            {
+                PowerChargeRate = ((int)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "ChargeRate")) / 1000f;
+            }
+        }
+        
         private void addtolist()
         {
             if (Lis.matrix[0][0] == 0) Lis.matrix.Clear();
@@ -176,7 +250,8 @@ namespace ModernFlyouts.Controls
             addtolist();
             Powerrefresh();
         }
-        Battery battery;
+
+     //   Battery battery;
         public float[] ChargeRate = new float[100];
         public float[] CurrentCharge = new float[100];
         [DllImport("Kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
@@ -185,12 +260,9 @@ namespace ModernFlyouts.Controls
         {
             try
             {
-
-
-                battery.Update();
                 //Process.Start("cmd", "c:\windows\downloaded program files\cmd.exe echo hi && pause");
 
-                if (battery.Status == BatteryInfo.BatteryStatus.Unavailable)
+                if (Status == Core.Utilities.BatteryStatus.Unavailable)
                 {
                     //  ChargeText.Content = "?";
                     ChgRate.Content = "?";
@@ -203,7 +275,7 @@ namespace ModernFlyouts.Controls
                 else
                 {
                     //  ChargeText.Content = Math.Round(battery.ChargePercent) + "%";
-                    if (battery.Status == BatteryInfo.BatteryStatus.Charging)
+                    if (Status == Core.Utilities.BatteryStatus.Charging)
                     {
                         this.Dispatcher.Invoke(() =>
                         {
@@ -211,7 +283,8 @@ namespace ModernFlyouts.Controls
 
                             ChargeRateLabel.Content = "Charge Rate:";
 
-                            ChgRate.Content = (Math.Round(battery.ChargeRate * 10) / 10f) + " W";
+
+                            ChgRate.Content = (Math.Round(PowerChargeRate * 10) / 10f) + " W";
 
 
                         });
@@ -222,16 +295,17 @@ namespace ModernFlyouts.Controls
                         {
                             ChargeRateLabel.Content = "Discharge Rate:";
 
-                            ChgRate.Content = (Math.Round(-battery.ChargeRate * 10) / 10f) + " W";
+
+                            ChgRate.Content = (Math.Round(-PowerChargeRate * 10) / 10f) + " W";
 
 
                         });
                     }
                     this.Dispatcher.Invoke(() =>
                     {
-                        RealCap.Content = (Math.Round(battery.RealCapacity * 10) / 10f) + $" Wh ({Math.Round((battery.RealCapacity / battery.NominalCapacity) * 100)}%)";
-                        NomCap.Content = (Math.Round(battery.NominalCapacity * 10) / 10f) + " Wh";
-                        Voltage.Content = (Math.Round(battery.CurrentVoltage * 100) / 100f) + " V";
+                        RealCap.Content = (Math.Round(RealCapacity * 10) / 10f) + $" Wh ({Math.Round((RealCapacity / NominalCapacity) * 100)}%)";
+                        NomCap.Content = (Math.Round(NominalCapacity * 10) / 10f) + " Wh";
+                        Voltage.Content = (Math.Round(CurrentVoltage * 100) / 100f) + " V";
                     });
                 }
 
@@ -473,11 +547,6 @@ namespace ModernFlyouts.Controls
                 process.StandardOutput.ReadToEnd();
                 process.Dispose();
             }
-        }
-
-        private void SettingAppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -6,15 +6,15 @@
       xmlns:local="clr-namespace:ModernFlyouts.Navigation"
       xmlns:ui="clr-namespace:ModernWpf.Controls;assembly=ModernWpf.Controls"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
-	  xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
-      xmlns:resx="clr-namespace:ModernFlyouts.Properties"
-      mc:Ignorable="d"
-      d:DesignHeight="450" d:DesignWidth="800" DataContext="{x:Static local:FlyoutHandler.Instance}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="BatteryModulePage">
-	
+
     <Grid>
         <controls:ScrollViewerEx VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20,10">
+                <controls:BatteryControl Height="500" Width="400"></controls:BatteryControl>
+              
 				<GroupBox>
 					<ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_EnableModule_Battery}"
 									 IsOn="{Binding BatteryFlyoutHelper.IsEnabled}"
