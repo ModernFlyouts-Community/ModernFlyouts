@@ -14,6 +14,13 @@
         <controls:ScrollViewerEx VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20,10">
                 <controls:BatteryControl Height="500" Width="400"></controls:BatteryControl>
+              
+				<GroupBox>
+					<ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_EnableModule_Battery}"
+									 IsOn="{Binding BatteryFlyoutHelper.IsEnabled}"
+									 OnContent="{x:Static resx:Strings.Settings_On}"
+									 OffContent="{x:Static resx:Strings.Settings_Off}" />
+				</GroupBox>
             </StackPanel>
         </controls:ScrollViewerEx>
     </Grid>

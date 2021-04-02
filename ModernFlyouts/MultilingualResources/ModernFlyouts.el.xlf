@@ -167,7 +167,6 @@
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Μονάδες αναδυόμενων στοιχείων</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
@@ -508,6 +507,18 @@
         <trans-unit id="Settings.VerticalAlignment" translate="yes" xml:space="preserve">
           <source>Vertical alignment</source>
           <target state="new">Vertical alignment</target>
+        </trans-unit>
+        <trans-unit id="Settings.EnableModule.Battery" translate="yes" xml:space="preserve">
+          <source>Enable Battery Flyout</source>
+          <target state="new">Enable Battery Flyout</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Battery" translate="yes" xml:space="preserve">
+          <source>Battery</source>
+          <target state="new">Battery</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
+          <source>Fade animation</source>
+          <target state="new">Fade animation</target>
         </trans-unit>
       </group>
     </body>

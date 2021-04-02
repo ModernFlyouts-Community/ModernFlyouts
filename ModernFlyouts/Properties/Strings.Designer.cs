@@ -835,6 +835,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable Battery Flyout.
+        /// </summary>
+        public static string Settings_EnableModule_Battery {
+            get {
+                return ResourceManager.GetString("Settings.EnableModule.Battery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enable Brightness Flyout.
         /// </summary>
         public static string Settings_EnableModule_Brightness {
@@ -1033,6 +1042,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battery.
+        /// </summary>
+        public static string Settings_Modules_Battery {
+            get {
+                return ResourceManager.GetString("Settings.Modules.Battery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Brightness.
         /// </summary>
         public static string Settings_Modules_Brightness {
@@ -1155,6 +1173,15 @@ namespace ModernFlyouts.Properties {
         public static string Settings_VerticalAlignment {
             get {
                 return ResourceManager.GetString("Settings.VerticalAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fade animation.
+        /// </summary>
+        public static string Settings_FlyoutAnimationEnabled {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutAnimationEnabled", resourceCulture);
             }
         }
         

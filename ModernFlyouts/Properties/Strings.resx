@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>About</value>
@@ -404,6 +404,9 @@
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
     <value>Use colored tray icon</value>
   </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Fade animation</value>
+  </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Settings</value>
   </data>
@@ -493,5 +496,11 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Vertical alignment</value>
+  </data>
+  <data name="Settings.EnableModule.Battery" xml:space="preserve">
+    <value>Enable Battery Flyout</value>
+  </data>
+  <data name="Settings.Modules.Battery" xml:space="preserve">
+    <value>Battery</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
@@ -59,7 +59,7 @@ namespace ModernFlyouts.Controls
                 //  lis.matrix.Clear();
                 //string output = Fluent_Flyouts.Properties.Settings.Default.test;
                 //List<List<int>> Product = JsonConvert.DeserializeObject<List<List<int>>>(output);
-
+                
                 if (Status == Core.Utilities.BatteryStatus.Unavailable)
                 {
                     //  ChargeText.Content = "?";
@@ -104,6 +104,7 @@ namespace ModernFlyouts.Controls
 
             }
         }
+
         public void Update()
         {
             try
@@ -162,7 +163,7 @@ namespace ModernFlyouts.Controls
                 PowerChargeRate = ((int)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "ChargeRate")) / 1000f;
             }
         }
-
+        
         private void addtolist()
         {
             if (Lis.matrix[0][0] == 0) Lis.matrix.Clear();
@@ -249,6 +250,7 @@ namespace ModernFlyouts.Controls
             addtolist();
             Powerrefresh();
         }
+
      //   Battery battery;
         public float[] ChargeRate = new float[100];
         public float[] CurrentCharge = new float[100];
@@ -281,6 +283,7 @@ namespace ModernFlyouts.Controls
 
                             ChargeRateLabel.Content = "Charge Rate:";
 
+
                             ChgRate.Content = (Math.Round(PowerChargeRate * 10) / 10f) + " W";
 
 
@@ -291,6 +294,7 @@ namespace ModernFlyouts.Controls
                         this.Dispatcher.Invoke(() =>
                         {
                             ChargeRateLabel.Content = "Discharge Rate:";
+
 
                             ChgRate.Content = (Math.Round(-PowerChargeRate * 10) / 10f) + " W";
 
