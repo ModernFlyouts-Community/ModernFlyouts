@@ -27,7 +27,7 @@
     <PackageReference Include="ModernWpf.Toolkit.UI.Controls" Version="0.1.0" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.18" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1-beta2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	<PackageReference Include="DocumentFormat.OpenXml" Version="2.13.0-beta0001" />
 	<PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
   </ItemGroup>
