@@ -41,7 +41,9 @@
                 </Border.Background>
             </Border>
 
-            <Border Opacity="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="#fff" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True">
+            <Border Opacity="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="#fff" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
+                    Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.CloseMediaFlyoutOnBgClick,
+                        Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.InputBindings>
                     <MouseBinding MouseAction="LeftClick"
                                   Command="{x:Static utils:CommonCommands.CloseFlyoutCommand}"

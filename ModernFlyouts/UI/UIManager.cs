@@ -255,6 +255,20 @@ namespace ModernFlyouts.UI
             }
         }
 
+        private bool closeMediaFlyoutOnBgClick = DefaultValuesStore.CloseMediaFlyoutOnBgClick;
+
+        public bool CloseMediaFlyoutOnBgClick
+        {
+            get => closeMediaFlyoutOnBgClick;
+            set
+            {
+                if (SetProperty(ref closeMediaFlyoutOnBgClick, value))
+                {
+                    AppDataHelper.CloseMediaFlyoutOnBgClick = value;
+                }
+            }
+        }
+
         private Orientation sessionsPanelOrientation = DefaultValuesStore.SessionsPanelOrientation;
 
         public Orientation SessionsPanelOrientation
@@ -315,6 +329,7 @@ namespace ModernFlyouts.UI
             FlyoutTimeout = AppDataHelper.FlyoutTimeout;
             AlignGSMTCThumbnailToRight = AppDataHelper.AlignGSMTCThumbnailToRight;
             UseGSMTCThumbnailAsBackground = AppDataHelper.UseGSMTCThumbnailAsBackground;
+            CloseMediaFlyoutOnBgClick = AppDataHelper.CloseMediaFlyoutOnBgClick;
             MaxVerticalSessionControlsCount = AppDataHelper.MaxVerticalSessionControlsCount;
             SessionsPanelOrientation = AppDataHelper.SessionsPanelOrientation;
 

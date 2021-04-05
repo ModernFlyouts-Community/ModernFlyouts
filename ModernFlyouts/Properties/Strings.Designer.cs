@@ -239,6 +239,15 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.UseThumbnailAsBackground", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Close media flyout when the background is clicked.
+        /// </summary>
+        public static string AudioFlyoutHelper_CloseMediaFlyoutOnBgClick {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.CloseMediaFlyoutOnBgClick", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Close.
