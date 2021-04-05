@@ -347,8 +347,6 @@ namespace ModernFlyouts.Core.Interop
 
             hookManager.OnHwndCreated(hWnd);
 
-            //WindowCompositionHelper.MakeWindowTransparent(hWnd);
-
             HwndSourceParameters param = new()
             {
                 WindowStyle = (int)(WindowStyles.WS_VISIBLE | WindowStyles.WS_CHILD),
