@@ -27,11 +27,6 @@
             <Border Grid.ColumnSpan="3" Grid.RowSpan="3" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
                     Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.UseGSMTCThumbnailAsBackground,
                         Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Border.InputBindings>
-                    <MouseBinding MouseAction="LeftClick"
-                                  Command="{x:Static utils:CommonCommands.CloseFlyoutCommand}"
-                                  CommandParameter="{x:Reference Name=ContentGrid}" />
-                </Border.InputBindings>
                 <Border.OpacityMask>
                     <RadialGradientBrush x:Name="thumbnailBGOpacityBrush" x:FieldModifier="private"
                                          GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
@@ -44,6 +39,14 @@
                                 RenderOptions.BitmapScalingMode="HighQuality">
                     </ImageBrush>
                 </Border.Background>
+            </Border>
+
+            <Border Opacity="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="#fff" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{x:Static utils:CommonCommands.CloseFlyoutCommand}"
+                                  CommandParameter="{x:Reference Name=ContentGrid}" />
+                </Border.InputBindings>
             </Border>
 
             <Grid x:Name="TextBlockGrid" Grid.Column="1" VerticalAlignment="Center" Margin="0,25,0,0" Cursor="Hand"
