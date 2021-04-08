@@ -15,7 +15,7 @@ namespace ModernFlyouts
 
         public static void CreateJumpList()
         {
-            AppPath = Path.Combine(Directory.GetCurrentDirectory(), $"{Program.AppLauncherName}.exe");
+            AppPath = Path.Combine(Directory.GetCurrentDirectory(), $"{Program.AppHostName}.exe");
 
             JumpList jumpList = new();
             JumpTask settingsTask = new()

@@ -2,7 +2,6 @@
 using ModernFlyouts.Core.Interop;
 using ModernFlyouts.Helpers;
 using System;
-using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
 
@@ -11,17 +10,15 @@ namespace ModernFlyouts
     public class Program
     {
         public const string AppName = "ModernFlyouts";
-        public const string AppLauncherName = "ModernFlyoutsLauncher";
+        public const string AppHostName = "ModernFlyoutsHost";
 
         [STAThread]
         private static void Main(string[] args)
         {
-            Thread thread = new Thread(() => {
+            Thread thread = new(() => {
                 AppLifecycleManager.StartApplication(args, () =>
                 {
-#if DEBUG
-                    Debugger.Launch();
-#elif RELEASE
+#if RELEASE
                     Microsoft.AppCenter.AppCenter.Start("26393d67-ab03-4e26-a6db-aa76bf989c21",
                         typeof(Microsoft.AppCenter.Analytics.Analytics), typeof(Microsoft.AppCenter.Crashes.Crashes));
 #endif

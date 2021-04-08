@@ -327,22 +327,24 @@ namespace ModernFlyouts
                     NativeFlyoutHandler.Instance.HideNativeFlyout();
 
                 if (prevTriggerData != null
-                    && prevTriggerData.IsExpired)
+                    && !prevTriggerData.IsExpired)
                 {
-                    // When the native flyout is triggered by some factors
-                    // that are neither ShellHook messages or airplane mode changes
-                    // (that implies the native flyout is triggered by
-                    // either touchpad gestures or audio device buttons),
-                    // we show the volume flyout as a fallback.
-                    // Only volume flyout is shown as a fallback
-                    // because other triggers are always detected perfectly.
-                    ProcessFlyoutTrigger(new()
-                    {
-                        TriggerType = FlyoutTriggerType.Volume,
-                    });
+                    prevTriggerData.IsExpired = true;
+                    return;
                 }
 
-                prevTriggerData.IsExpired = true;
+                // When the native flyout is triggered by some factors
+                // that are neither ShellHook messages or airplane mode changes
+                // (that implies the native flyout is triggered by
+                // either touchpad gestures or audio device buttons),
+                // we show the volume flyout as a fallback.
+                // Only volume flyout is shown as a fallback
+                // because other triggers are always detected perfectly.
+                ProcessFlyoutTrigger(new()
+                {
+                    TriggerType = FlyoutTriggerType.Volume,
+                    IsExpired = true
+                });
             }
             else if (DefaultFlyout == DefaultFlyout.None)
             {
