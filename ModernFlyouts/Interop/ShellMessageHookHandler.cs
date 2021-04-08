@@ -35,12 +35,20 @@ namespace ModernFlyouts.Interop
 
         public IntPtr OnWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
         {
+            FlyoutTriggerData triggerData = new();
+
+            void TriggerFlyout()
+            {
+                FlyoutHandler.Instance.ProcessFlyoutTrigger(triggerData);
+            }
+
             if (msg == messageShellHookId)
             {
                 if (wParam == (IntPtr)55)
                 {
                     //Brightness
-                    FlyoutHandler.Instance.BrightnessFlyoutHelper?.OnExternalUpdated();
+                    triggerData.TriggerType = FlyoutTriggerType.Brightness;
+                    TriggerFlyout();
                 }
                 else if (wParam == (IntPtr)12)
                 {
@@ -51,14 +59,16 @@ namespace ModernFlyouts.Interop
                         case (long)HookMessageEnum.HOOK_MEDIA_PLAYPAUSE:
                         case (long)HookMessageEnum.HOOK_MEDIA_STOP:
                             //Media
-                            FlyoutHandler.Instance.AudioFlyoutHelper?.OnExternalUpdated(true);
+                            triggerData.TriggerType = FlyoutTriggerType.Media;
+                            TriggerFlyout();
                             break;
 
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLMINUS:
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLMUTE:
                         case (long)HookMessageEnum.HOOK_MEDIA_VOLPLUS:
                             //Volume
-                            FlyoutHandler.Instance.AudioFlyoutHelper?.OnExternalUpdated(false);
+                            triggerData.TriggerType = FlyoutTriggerType.Volume;
+                            TriggerFlyout();
                             break;
 
                         default:

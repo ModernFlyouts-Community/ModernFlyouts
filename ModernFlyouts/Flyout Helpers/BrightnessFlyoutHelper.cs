@@ -14,8 +14,6 @@ namespace ModernFlyouts
         private BrightnessControl brightnessControl;
         private BrightnessWatcher brightnessWatcher;
 
-        public override event ShowFlyoutEventHandler ShowFlyoutRequested;
-
         public BrightnessFlyoutHelper()
         {
             Initialize();
@@ -162,8 +160,13 @@ namespace ModernFlyouts
 
         #endregion
 
-        //This is if it was "updated" using other methods (e.g. Shellhook)
-        public void OnExternalUpdated() => ShowFlyoutRequested?.Invoke(this);
+        public override bool CanHandleNativeOnScreenFlyout(FlyoutTriggerData triggerData)
+        {
+            if (triggerData.TriggerType == FlyoutTriggerType.Brightness)
+                return true;
+
+            return base.CanHandleNativeOnScreenFlyout(triggerData);
+        }
 
         protected override void OnEnabled()
         {

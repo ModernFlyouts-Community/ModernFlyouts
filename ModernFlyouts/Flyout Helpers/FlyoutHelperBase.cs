@@ -5,7 +5,7 @@ namespace ModernFlyouts
 {
     public abstract class FlyoutHelperBase : ObservableObject
     {
-        public abstract event ShowFlyoutEventHandler ShowFlyoutRequested;
+        public event ShowFlyoutEventHandler ShowFlyoutRequested;
 
         public delegate void ShowFlyoutEventHandler(FlyoutHelperBase sender);
 
@@ -83,6 +83,16 @@ namespace ModernFlyouts
             {
                 FlyoutHandler.Instance.OnScreenFlyoutWindow.IsOpen = false;
             }
+        }
+
+        public virtual bool CanHandleNativeOnScreenFlyout(FlyoutTriggerData triggerData)
+        {
+            return false;
+        }
+
+        protected void RequestShowFlyout()
+        {
+            ShowFlyoutRequested?.Invoke(this);
         }
     }
 }
