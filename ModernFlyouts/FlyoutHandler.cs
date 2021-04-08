@@ -342,10 +342,7 @@ namespace ModernFlyouts
                     });
                 }
 
-                if (prevTriggerData != null)
-                {
-                    prevTriggerData.IsExpired = true;
-                }
+                prevTriggerData.IsExpired = true;
             }
             else if (DefaultFlyout == DefaultFlyout.None)
             {
