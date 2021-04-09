@@ -6,6 +6,8 @@
       xmlns:local="clr-namespace:ModernFlyouts.Navigation"
       xmlns:ui="clr-namespace:ModernWpf.Controls;assembly=ModernWpf.Controls"
       xmlns:controls="clr-namespace:ModernFlyouts.Controls"
+      xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
+      xmlns:resx="clr-namespace:ModernFlyouts.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BatteryModulePage">
