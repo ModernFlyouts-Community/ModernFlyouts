@@ -166,7 +166,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Açılır Pencere modülleri</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Açılır Pencere Modülleri</target>
           
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
