@@ -74,7 +74,7 @@
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Відновлює Flyout за замовчуванням і безпечно завершує додаток</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Відновлює спливаюче меню за замовчуванням і безпечно завершує додаток</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
@@ -134,15 +134,15 @@
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
           <source>Default Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout за замовчуванням</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Спливаюче меню за замовчуванням</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutDescription" translate="yes" xml:space="preserve">
           <source>Select the default flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Виберіть Flyout за замовчуванням</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Виберіть спливаюче меню за замовчуванням</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
           <source>Choosing the Windows Default Flyout as default won't close this app. This app will still keep running in the background. Please exit this app safely to improve performance.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">При виборі стокового Flyout з Windows цей додаток буде працювати у фоновому режимі. Будь ласка, вийдіть безпечно з цього додатка, щоб поліпшити продуктивність.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">При виборі стокового спливаючого меню з Windows цей додаток буде працювати у фоновому режимі. Будь ласка, вийдіть безпечно з цього додатка, щоб поліпшити продуктивність.</target>
         </trans-unit>
         <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
           <source>Disabled</source>
@@ -154,15 +154,15 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
           <source>Flyout background opacity</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Непрозорість Flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Непрозорість спливаючого меню</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Позиція Flyout за замовчуванням (для кнопки скидання вирівнювання)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Позиція спливаючого меню за замовчуванням (для кнопки скидання вирівнювання)</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Верхня панель Flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Верхня панель спливаючого меню</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
@@ -223,7 +223,7 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Цей додаток розроблено для заміни старих спливаючих вікон, присутніх в Windows з часів Windows 8, на сучасні.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Цей додаток розроблено для заміни старих спливаючих меню, присутніх в Windows з часів Windows 8, на сучасні.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
@@ -275,11 +275,11 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Показати глобальні елементи керування медіатранспортом (GSMTC) aka Media у виліті гучності</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Показати засоби для керування медіа в спливаючому меню гучності</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Показати регулятор гучності у глобальному системному елементі керування медіатранспортом (GSMTC) aka Media flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Показати регулятор гучності у засобах для керування медіа</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
@@ -323,7 +323,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Виберіть клавіші, для яких потрібно відобразити Flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Виберіть клавіші, для яких потрібно відобразити спливаюче меню</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
@@ -347,11 +347,11 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Тема Flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Тема спливаючого меню</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Час очікування Flyout (мс)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Час очікування спливаючого меню (мс)</target>
         </trans-unit>
         <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
@@ -403,7 +403,7 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Вирівняти позицію Flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Вирівняти позицію спливаючого меню</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
@@ -475,19 +475,19 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">Виберіть бажаний монітор, на якому відображатиметься Flyout</target>
+          <target state="new">Виберіть бажаний монітор, на якому відображатиметься спливаюче меню</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">Вирівнювання Flyout</target>
+          <target state="new">Вирівнювання спливаючого меню</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Порядок укладки контенту в Flyout</target>
+          <target state="new">Порядок укладки контенту в спливаючому меню</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">Напрямок появленны Flyout</target>
+          <target state="new">Напрямок появлення спливаючого меню</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
