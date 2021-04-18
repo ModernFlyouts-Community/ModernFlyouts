@@ -223,7 +223,7 @@
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Цей додаток розроблено для заміни старих спливаючих меню, присутніх в Windows з часів Windows 8, на сучасні.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Цей додаток розроблено для заміни старих спливаючих меню, присутніх у Windows з часів Windows 8, на сучасні.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
@@ -323,7 +323,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Виберіть клавіші, для яких потрібно відобразити спливаюче меню</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Виберіть клавіші, для яких потрібно відображувати спливаюче меню</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
