@@ -48,7 +48,7 @@ This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 
 ## System Requirements
 
-- **Windows 10 1809 and above** (older versions such as v0.3 and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't).
+- **Windows 10 1809 and above** (older versions such as [v0.3](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/tag/v0.3.0) and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't).
 
 ## Installation
 
