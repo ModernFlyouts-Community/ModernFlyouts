@@ -3,6 +3,7 @@ using ModernFlyouts.AppLifecycle;
 using ModernFlyouts.Core.Display;
 using ModernFlyouts.Core.Interop;
 using ModernFlyouts.Core.UI;
+using ModernFlyouts.Core.Utilities;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Interop;
 using ModernFlyouts.UI;
@@ -11,6 +12,7 @@ using ModernFlyouts.Views;
 using ModernFlyouts.Workarounds;
 using ModernWpf;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
@@ -24,6 +26,11 @@ namespace ModernFlyouts
         public static event EventHandler Initialized;
 
         private bool _isPreferredMonitorChanging;
+        private bool _savePreferredMonitor = true;
+
+        private List<FlyoutHelperBase> flyoutHelpers = new();
+        private AirplaneModeWatcher airplaneModeWatcher = new();
+        private FlyoutTriggerData prevTriggerData;
 
         #region Properties
 
@@ -87,12 +94,14 @@ namespace ModernFlyouts
             {
                 if (SetProperty(ref onScreenFlyoutPreferredMonitor, value))
                 {
-                    if (!_isPreferredMonitorChanging && HasInitialized)
+                    if (HasInitialized)
                     {
-                        MoveFlyoutToAnotherMonitor();
-                    }
+                        if (!_isPreferredMonitorChanging)
+                            MoveFlyoutToAnotherMonitor();
 
-                    AppDataHelper.PreferredDisplayMonitorId = value.DeviceId;
+                        if (_savePreferredMonitor)
+                            AppDataHelper.PreferredDisplayMonitorId = value.DeviceId;
+                    }
                 }
             }
         }
@@ -169,10 +178,15 @@ namespace ModernFlyouts
             LockKeysFlyoutHelper = new LockKeysFlyoutHelper() { IsEnabled = lkkyEnabled };
             BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled };
 
-            AudioFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
-            AirplaneModeFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
-            LockKeysFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
-            BrightnessFlyoutHelper.ShowFlyoutRequested += ShowFlyout;
+            flyoutHelpers.Add(AudioFlyoutHelper);
+            flyoutHelpers.Add(AirplaneModeFlyoutHelper);
+            flyoutHelpers.Add(LockKeysFlyoutHelper);
+            flyoutHelpers.Add(BrightnessFlyoutHelper);
+
+            foreach (var flyoutHelper in flyoutHelpers)
+            {
+                flyoutHelper.ShowFlyoutRequested += ShowFlyout;
+            }
 
             #endregion
 
@@ -180,14 +194,32 @@ namespace ModernFlyouts
             Initialized?.Invoke(this, EventArgs.Empty);
 
             DisplayManager.Instance.DisplayUpdated += Instance_DisplayUpdated;
+            airplaneModeWatcher.Changed += AirplaneModeWatcher_Changed;
+            airplaneModeWatcher.Start();
+        }
+
+        private void AirplaneModeWatcher_Changed(object sender, AirplaneModeChangedEventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                FlyoutTriggerData triggerData = new()
+                {
+                    TriggerType = FlyoutTriggerType.AirplaneMode,
+                    Data = e.IsEnabled
+                };
+
+                ProcessFlyoutTrigger(triggerData);
+            });
         }
 
         private void Instance_DisplayUpdated(object sender, EventArgs e)
         {
             if (!DisplayManager.Instance.DisplayMonitors.Any(x => x == onScreenFlyoutPreferredMonitor))
             {
+                _savePreferredMonitor = false;
                 OnScreenFlyoutPreferredMonitor = DisplayManager.Instance.PrimaryDisplayMonitor;
                 AlignFlyout();
+                _savePreferredMonitor = true;
             }
         }
 
@@ -215,7 +247,7 @@ namespace ModernFlyouts
                 ZBandID = zbid,
                 FlyoutWindowType = FlyoutWindowType.OnScreen,
                 Offset = UIManager.FlyoutShadowMargin,
-                IsTimeoutEnabled = true
+                IsTimeoutEnabled = true,
             };
 
             flyoutWindow.DragMoved += (s, e) =>
@@ -278,11 +310,43 @@ namespace ModernFlyouts
                 Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowExpandDirection)),
                 Mode = BindingMode.OneWay
             });
+
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.FlyoutAnimationEnabledProperty, new Binding()
+            {
+                Source = UIManager,
+                Path = new PropertyPath(nameof(UIManager.FlyoutAnimationEnabled)),
+                Mode = BindingMode.OneWay
+            });
         }
 
         private void OnNativeFlyoutShown()
         {
-            if ((DefaultFlyout == DefaultFlyout.ModernFlyouts && Handled()) || DefaultFlyout == DefaultFlyout.None)
+            if (DefaultFlyout == DefaultFlyout.ModernFlyouts)
+            {
+                if (Handled())
+                    NativeFlyoutHandler.Instance.HideNativeFlyout();
+
+                if (prevTriggerData != null
+                    && !prevTriggerData.IsExpired)
+                {
+                    prevTriggerData.IsExpired = true;
+                    return;
+                }
+
+                // When the native flyout is triggered by some factors
+                // that are neither ShellHook messages or airplane mode changes
+                // (that implies the native flyout is triggered by
+                // either touchpad gestures or audio device buttons),
+                // we show the volume flyout as a fallback.
+                // Only volume flyout is shown as a fallback
+                // because other triggers are always detected perfectly.
+                ProcessFlyoutTrigger(new()
+                {
+                    TriggerType = FlyoutTriggerType.Volume,
+                    IsExpired = true
+                });
+            }
+            else if (DefaultFlyout == DefaultFlyout.None)
             {
                 NativeFlyoutHandler.Instance.HideNativeFlyout();
             }
@@ -290,6 +354,32 @@ namespace ModernFlyouts
             {
                 NativeFlyoutHandler.Instance.ShowNativeFlyout();
             }
+        }
+
+        internal void ProcessFlyoutTrigger(FlyoutTriggerData triggerData = null)
+        {
+            Debug.WriteLine("Rattled!");
+            triggerData ??= prevTriggerData ?? new();
+
+            bool canHandle = false;
+            FlyoutHelperBase flyoutHelper = null;
+
+            foreach (var helper in flyoutHelpers)
+            {
+                canHandle = helper.CanHandleNativeOnScreenFlyout(triggerData);
+                if (canHandle)
+                {
+                    flyoutHelper = helper;
+                    break;
+                }
+            }
+
+            if (canHandle && flyoutHelper != null)
+            {
+                ShowFlyout(flyoutHelper);
+            }
+
+            prevTriggerData = triggerData;
         }
 
         private void ShowFlyout(FlyoutHelperBase helper)

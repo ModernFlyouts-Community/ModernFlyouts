@@ -508,6 +508,10 @@
           <source>Vertical alignment</source>
           <target state="translated">Függőleges igazítás</target>
         </trans-unit>
+        <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
+          <source>Fade animation</source>
+          <target state="new">Fade animation</target>
+        </trans-unit>
       </group>
     </body>
   </file>

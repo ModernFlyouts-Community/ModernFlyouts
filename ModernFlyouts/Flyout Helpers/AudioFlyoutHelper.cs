@@ -27,8 +27,6 @@ namespace ModernFlyouts
         private List<MediaSessionManager> mediaSessionManagers = new();
         private bool isVolumeFlyout = true;
 
-        public override event ShowFlyoutEventHandler ShowFlyoutRequested;
-
         #region Properties
 
         public CompositeCollection AllMediaSessions { get; } = new();
@@ -120,16 +118,22 @@ namespace ModernFlyouts
             OnEnabled();
         }
 
-        public void OnExternalUpdated(bool isMediaKey)
+        public override bool CanHandleNativeOnScreenFlyout(FlyoutTriggerData triggerData)
         {
-            isVolumeFlyout = !isMediaKey;
+            bool isMediaKey = triggerData.TriggerType == FlyoutTriggerType.Media;
+            isVolumeFlyout = triggerData.TriggerType == FlyoutTriggerType.Volume;
+            if (!isMediaKey && !isVolumeFlyout)
+                return false;
+
             ValidatePrimaryContentVisible();
             ValidateSecondaryContentVisible();
 
             if ((isVolumeFlyout && PrimaryContentVisible) || (isMediaKey && SecondaryContentVisible))
             {
-                ShowFlyoutRequested?.Invoke(this);
+                return true;
             }
+
+            return base.CanHandleNativeOnScreenFlyout(triggerData);
         }
 
         private void OnShowGSMTCInVolumeFlyoutChanged()
@@ -179,10 +183,8 @@ namespace ModernFlyouts
                     UpdateVolume(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
                     device.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
                 }
-                catch (Exception)
-                {
-                    //ignore
-                }
+                catch { }
+
                 Application.Current.Dispatcher.Invoke(() => PrimaryContent = volumeControl);
             }
             else { Application.Current.Dispatcher.Invoke(() => PrimaryContent = noDeviceMessageBlock); }
@@ -251,11 +253,8 @@ namespace ModernFlyouts
                     {
                         device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
                     }
-                    catch (Exception)
-                    {
-                        //99.9% is "A device attached to the system is not functioning" (0x8007001F), ignore this
-                    }
-
+                    catch { } //99.9% is "A device attached to the system is not functioning" (0x8007001F), ignore this
+                    
                     e.Handled = true;
                 }
             }
@@ -282,10 +281,7 @@ namespace ModernFlyouts
                 {
                     device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100.0);
                 }
-                catch (Exception)
-                {
-                    //ignore
-                }
+                catch { }
 
                 e.Handled = true;
             }

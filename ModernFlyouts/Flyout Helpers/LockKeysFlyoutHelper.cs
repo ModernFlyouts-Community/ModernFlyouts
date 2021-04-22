@@ -8,8 +8,6 @@ namespace ModernFlyouts
     {
         private LockKeysControl lockKeysControl;
 
-        public override event ShowFlyoutEventHandler ShowFlyoutRequested;
-
         #region Properties
 
         private bool capsLockEnabled = DefaultValuesStore.LockKeysModule_CapsLockEnabled;
@@ -124,12 +122,7 @@ namespace ModernFlyouts
                 }
 
                 Prepare(lk, !Keyboard.IsKeyToggled(key));
-                ShowFlyout();
-            }
-
-            void ShowFlyout()
-            {
-                ShowFlyoutRequested?.Invoke(this);
+                RequestShowFlyout();
             }
         }
 

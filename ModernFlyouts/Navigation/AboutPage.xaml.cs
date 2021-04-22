@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Windows.Controls;
-using Windows.ApplicationModel;
 
 namespace ModernFlyouts.Navigation
 {
@@ -16,12 +15,9 @@ namespace ModernFlyouts.Navigation
             var psi = new ProcessStartInfo()
             {
                 FileName = "ms-windows-store://review/?ProductId=9mt60qv066rp",
-                //+ Package.Current.Id.FamilyName,
                 UseShellExecute = true
             };
             Process.Start(psi);
         }
     }
 }
-
-//bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9mt60qv066rp"));

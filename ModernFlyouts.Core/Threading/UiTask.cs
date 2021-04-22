@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace ModernFlyouts.Core.Helpers
+namespace ModernFlyouts.Core.Threading
 {
     //Taken from here! 
     //https://medium.com/criteo-engineering/switching-back-to-the-ui-thread-in-wpf-uwp-in-modern-c-5dc1cc8efa5e
