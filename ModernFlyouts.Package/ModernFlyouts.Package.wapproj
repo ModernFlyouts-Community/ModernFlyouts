@@ -42,7 +42,7 @@
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <GenerateTestArtifacts>False</GenerateTestArtifacts>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
@@ -51,7 +51,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <AppxBundle>Always</AppxBundle>
-    <PackageCertificateKeyFile>ModernFlyouts.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>1763E89B1A6D02D8D3CCF794ADFF6130472AC7B5</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -111,6 +111,7 @@
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
+    <PRIResource Include="Strings\en-us\Resources.resw" />
     <None Include="ModernFlyouts.Package_TemporaryKey.pfx" />
     <Content Include="Package.appinstaller" />
     <Content Include="priconfig.default.xml" />
@@ -120,8 +121,7 @@
     <ProjectReference Include="..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj" />
     <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
-      <PublishProfile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Properties\PublishProfiles\FolderProfile-x64.pubxml</PublishProfile>
-      <PublishProfile Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Properties\PublishProfiles\FolderProfile-x86.pubxml</PublishProfile>
+      <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     </ProjectReference>
     <ProjectReference Include="..\ModernFlyoutsBridge\ModernFlyoutsBridge.vcxproj" />
   </ItemGroup>

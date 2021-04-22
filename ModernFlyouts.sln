@@ -9,8 +9,6 @@ Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ModernFlyouts.Package", "Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernFlyouts.Core", "ModernFlyouts.Core\ModernFlyouts.Core.csproj", "{81626E00-9226-4125-B8EA-7EE7C2772169}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernFlyouts.Internal.Playground", "ModernFlyouts.Internal.Playground\ModernFlyouts.Internal.Playground.csproj", "{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ModernFlyoutsBridge", "ModernFlyoutsBridge\ModernFlyoutsBridge.vcxproj", "{FD9E8B0D-F07E-4BB4-9937-83430E5F70C9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ModernFlyoutsHost", "ModernFlyoutsHost\ModernFlyoutsHost.vcxproj", "{2D0112A7-6A15-4AC6-90D4-26FF30F5AF00}"
@@ -67,18 +65,6 @@ Global
 		{81626E00-9226-4125-B8EA-7EE7C2772169}.Release|x64.Build.0 = Release|x64
 		{81626E00-9226-4125-B8EA-7EE7C2772169}.Release|x86.ActiveCfg = Release|x86
 		{81626E00-9226-4125-B8EA-7EE7C2772169}.Release|x86.Build.0 = Release|x86
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Debug|ARM64.Build.0 = Debug|ARM64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Debug|x64.ActiveCfg = Debug|x64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Debug|x64.Build.0 = Debug|x64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Debug|x86.Build.0 = Debug|Any CPU
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Release|ARM64.ActiveCfg = Release|ARM64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Release|ARM64.Build.0 = Release|ARM64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Release|x64.ActiveCfg = Release|x64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Release|x64.Build.0 = Release|x64
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Release|x86.ActiveCfg = Release|x86
-		{5CC30D22-BEBF-4D53-9178-E9B7DCE1B912}.Release|x86.Build.0 = Release|x86
 		{FD9E8B0D-F07E-4BB4-9937-83430E5F70C9}.Debug|ARM64.ActiveCfg = Debug|ARM64
 		{FD9E8B0D-F07E-4BB4-9937-83430E5F70C9}.Debug|ARM64.Build.0 = Debug|ARM64
 		{FD9E8B0D-F07E-4BB4-9937-83430E5F70C9}.Debug|x64.ActiveCfg = Debug|x64

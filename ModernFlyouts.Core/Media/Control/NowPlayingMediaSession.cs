@@ -180,7 +180,7 @@ namespace ModernFlyouts.Core.Media.Control
                 {
                     > 0 => MediaPlaybackTrackChangeDirection.Forward,
                     < 0 => MediaPlaybackTrackChangeDirection.Backward,
-                    _ => throw new NotImplementedException()
+                    _ => MediaPlaybackTrackChangeDirection.Unknown
                 };
             }
 

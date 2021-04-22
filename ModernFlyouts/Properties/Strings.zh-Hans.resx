@@ -13,380 +13,305 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Hakkında</value>
+    <value>关于</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Uçak modu kullanılamıyor :(</value>
+    <value>设备不支持飞行模式 :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>Uçak modu kapalı</value>
+    <value>飞行模式已关闭</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>Uçak modu açık</value>
+    <value>飞行模式已启用</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>Varsayılan konuma hizala</value>
+    <value>移动到默认位置</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
-    <value>Bağlı Ses Aygıtı Yok</value>
+    <value>没有已连接的音频设备</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Kapat</value>
+    <value>关闭</value>
   </data>
   <data name="ExitItem" xml:space="preserve">
-    <value>Çıkış</value>
+    <value>退出</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Uygulamadan güvenli olarak çık</value>
+    <value>安全退出应用</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
-    <value>Genel</value>
+    <value>常规</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
-    <value>Insert Modu</value>
+    <value>插入模式</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} kapalı</value>
+    <value>{0} 已关闭</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} açık</value>
+    <value>{0} 已打开</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
-    <value>Üzerine Yazma Modu</value>
+    <value>覆写模式</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Üst Çubuğu sabitle</value>
+    <value>固定顶栏</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
-    <value>Varsayılan Açılır Pencereleri geri yükle</value>
+    <value>还原默认浮出控件</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Windows varsayılan açılır penceresini geri yükler ve bu uygulamadan güvenli olarak çıkar</value>
+    <value>还原 Windows 的默认浮出控件并安全退出此应用程序</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
-    <value>Daha Fazla Denetim</value>
+    <value>更多控件</value>
   </data>
   <data name="SessionControl.Next" xml:space="preserve">
-    <value>Sonraki</value>
+    <value>下一曲</value>
   </data>
   <data name="SessionControl.Pause" xml:space="preserve">
-    <value>Duraklat</value>
+    <value>暂停</value>
   </data>
   <data name="SessionControl.Play" xml:space="preserve">
-    <value>Yürüt</value>
+    <value>播放</value>
   </data>
   <data name="SessionControl.Previous" xml:space="preserve">
-    <value>Önceki</value>
+    <value>上一曲</value>
   </data>
   <data name="SessionControl.RepeatAll" xml:space="preserve">
-    <value>Yinele: tümü</value>
+    <value>循环：全部循环</value>
   </data>
   <data name="SessionControl.RepeatOff" xml:space="preserve">
-    <value>Yinele: kapalı</value>
+    <value>循环：关闭</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Yinele: biri</value>
+    <value>循环：单曲循环</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
-    <value>Karıştır: kapalı</value>
+    <value>随机播放：关闭</value>
   </data>
   <data name="SessionControl.ShuffleOn" xml:space="preserve">
-    <value>Karıştır: açık</value>
+    <value>随机播放：打开</value>
   </data>
   <data name="SessionControl.Stop" xml:space="preserve">
-    <value>Durdur</value>
+    <value>停止</value>
   </data>
   <data name="SessionControl.TimelineInfo" xml:space="preserve">
-    <value>Zaman Çubuğu Bilgileri</value>
+    <value>时间线信息</value>
   </data>
   <data name="Settings.Additional" xml:space="preserve">
-    <value>Diğer</value>
+    <value>附加项</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
-    <value>Davranış</value>
+    <value>行为</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Varsayılan Açılır Pencere</value>
+    <value>默认浮出控件</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Varsayılan açılır pencereyi seçin</value>
+    <value>选择默认的浮出控件</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>Varsayılan olarak Windows Açılır Penceresini seçmek bu uygulamayı kapatmaz. Bu uygulama arka planda çalışmaya devam edecektir. Performansı artırmak için lütfen bu uygulamadan güvenli olarak çıkın.</value>
+    <value>选择 Windows 默认浮出控件不会关闭此应用。此应用程序仍将在后台继续运行。请安全地退出此应用程序以提高性能。</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
-    <value>Devre dışı</value>
+    <value>已禁用</value>
   </data>
   <data name="Settings.Enabled" xml:space="preserve">
-    <value>Etkin</value>
+    <value>已启用</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Açılır Pencere arka plan opaklığı</value>
+    <value>浮出控件背景不透明度</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Açılır Pencere varsayılan konumu</value>
+    <value>浮出控件默认位置（用于恢复默认位置按钮）</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Açılır Pencere Üst Çubuğu</value>
+    <value>浮出控件顶栏</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Açılır Pencere Modülleri</value>
+    <value>浮出控件模块</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Uçak modu</value>
+    <value>飞行模式浮出控件模块</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Ses</value>
+    <value>音频浮出控件模块</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Parlaklık</value>
+    <value>亮度浮出控件模块</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Kilit tuşları</value>
+    <value>锁定键浮出控件模块</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Başlangıçta çalıştır</value>
+    <value>开机时运行</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
-    <value>Ayarlar</value>
+    <value>设置</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Ayarlar penceresini aç</value>
+    <value>打开设置窗口</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Üst Çubuk sabitlemesini kaldır</value>
+    <value>取消固定顶栏</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
   </data>
   <data name="Enums.DefaultFlyout.None" xml:space="preserve">
-    <value>Hiçbiri</value>
+    <value>无</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Windows varsayılanı</value>
+    <value>Windows 默认</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
-    <value>Yatay</value>
+    <value>水平</value>
   </data>
   <data name="Enums.Orientation.Vertical" xml:space="preserve">
-    <value>Dikey</value>
+    <value>垂直</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Bu uygulama, Windows 8'den bu yana Windows'da bulunan eski metro temalı açılır pencerelerin modern bir Akıcı Tasarım ile yerine geçmesi için tasarlanmıştır.</value>
+    <value>该程序用于将旧的 Windows 8 Metro 风格浮出控件覆盖为 Fluent Design 风格浮出控件。</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
-    <value>Katkıda bulunanlar</value>
+    <value>贡献者</value>
   </data>
   <data name="About.GitHub" xml:space="preserve">
-    <value>GitHub deposu</value>
+    <value>GitHub 仓库</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Yeni bir sorun aç</value>
+    <value>创建新 Issue</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Microsoft Store'da Değerlendir ve İncele</value>
+    <value>去 Microsoft Store 评分并发送评价</value>
   </data>
   <data name="About.Version" xml:space="preserve">
-    <value>Sürüm: </value>
+    <value>版本：</value>
   </data>
   <data name="Settings.Language" xml:space="preserve">
-    <value>Dil</value>
+    <value>语言</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
-    <value>Dili değiştirebilmek için uygulamayı yeniden başlatmanız gerekiyor</value>
+    <value>请重新启动应用程序，以便完整更改语言</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Sistem varsayılanı</value>
+    <value>系统默认</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
-    <value>Bağlılıklar</value>
+    <value>依赖项</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Herhangi bir hata bulursanız lütfen github deposunda yeni bir sorun açın.</value>
+    <value>如果发现任何 bug，请在 GitHub 仓库中创建一个新 Issue。</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
-    <value>Gösterilecek oturum sayısı</value>
+    <value>显示的会话数</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>Medya oturum panellerinin yönü</value>
+    <value>媒体面板方向</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Küresel Sistem Medya İletim Denetimlerini (GSMTC), diğer adıyla medya kontrollerini, ses penceresinde göster</value>
+    <value>在音量浮出控件中显示系统全局媒体传输 / 媒体控制</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Ses kontrolünü; Küresel Sistem Medya İletim Kontrollerinde (GSMTC), diğer adıyla medya açılır penceresinde, göster</value>
+    <value>在媒体浮出控件中显示音量控制</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>Küçük resim hizalama yönü</value>
+    <value>缩略图对齐方向</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
-    <value>Koyu</value>
+    <value>深色</value>
   </data>
   <data name="Enums.ElementTheme.Light" xml:space="preserve">
-    <value>Açık</value>
+    <value>浅色</value>
   </data>
   <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
-    <value>Otomatik olarak gizle</value>
+    <value>自动隐藏</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>Gizle</value>
+    <value>折叠</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
-    <value>Göster</value>
+    <value>可见</value>
   </data>
   <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
-    <value>Caps Lock</value>
+    <value>大写锁定</value>
   </data>
   <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
-    <value>Insert</value>
+    <value>插入</value>
   </data>
   <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
-    <value>Num Lock</value>
+    <value>数字锁定</value>
   </data>
   <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
-    <value>Scroll Lock</value>
+    <value>滚动锁定</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Açılır pencerede gözükmesini istediğiniz tuşları seçin</value>
+    <value>选择要显示的浮出控件</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
-    <value>Görünüm</value>
+    <value>外观</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Uçak modu Açılır Penceresini etkinleştirin</value>
+    <value>启用飞行模式浮出控件</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Ses Açılır Penceresini etkinleştirin</value>
+    <value>启用音频浮出控件</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Parlaklık Açılır Penceresini etkinleştirin</value>
+    <value>启用亮度浮出控件</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Kilit tuşları Açılır Penceresini etkinleştirin</value>
+    <value>启用锁定键浮出控件</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Açılır Pencere teması</value>
+    <value>浮出控件主题</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Açılır Pencere zaman aşımı (ms)</value>
+    <value>浮出控件超时（毫秒 / ms）</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
-    <value>Sol</value>
+    <value>左侧</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
-    <value>Medya</value>
+    <value>媒体</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Ses seviyesi</value>
+    <value>音量</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
-    <value>Sağ</value>
+    <value>右侧</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Üst Çubuk görünürlüğü</value>
+    <value>顶栏可见性</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Sistem tepsisinde simge göster</value>
+    <value>在系统托盘显示图标</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
-    <value>Kapalı</value>
+    <value>关闭</value>
   </data>
   <data name="Settings.On" xml:space="preserve">
-    <value>Açık</value>
+    <value>打开</value>
   </data>
   <data name="Settings.AppTheme" xml:space="preserve">
-    <value>Uygulama Teması</value>
+    <value>应用主题</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Renkli simge kullan</value>
+    <value>使用彩色托盘图标</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Tüm ayarları sıfırla</value>
+    <value>将所有设置重置为默认值</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
-    <value>Kişiselleştirme</value>
+    <value>个性化</value>
   </data>
   <data name="Settings.AlignFlyout" xml:space="preserve">
-    <value>Açılır Pencereyi bu konuma hizala</value>
+    <value>将浮出控件对齐到此位置</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Bazı değişiklikleri uygulamak için uygulamayı yeniden başlatmanız gerekiyor</value>
-  </data>
-  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
-    <value>Medya küçük resmini medya denetiminin arka planı olarak kullan</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
-    <value>Alt</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
-    <value>Orta</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
-    <value>Sol</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
-    <value>Sağ</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
-    <value>Üst</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
-    <value>Otomatik</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
-    <value>Aşağı</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
-    <value>Sol</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
-    <value>Sağ</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
-    <value>Yukarı</value>
-  </data>
-  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
-    <value>Otomatik</value>
-  </data>
-  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
-    <value>Manuel</value>
-  </data>
-  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
-    <value>Yukarıya doğru</value>
-  </data>
-  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
-    <value>Aşağıya doğru</value>
-  </data>
-  <data name="Settings.Display" xml:space="preserve">
-    <value>Ekran</value>
-  </data>
-  <data name="Settings.DisplayDescription" xml:space="preserve">
-    <value>Açılır Pencereyi görüntülemek için tercih edilen ekran monitörünü seçin</value>
-  </data>
-  <data name="Settings.FlyoutAlignment" xml:space="preserve">
-    <value>Açılır Pencere hizalaması</value>
-  </data>
-  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
-    <value>Açılır Pencere içerik sıralama yönü</value>
-  </data>
-  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
-    <value>Açılır Pencere genişleme yönü</value>
-  </data>
-  <data name="Settings.FlyoutPlacement" xml:space="preserve">
-    <value>Açılır Pencere yerleşimi</value>
-  </data>
-  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
-    <value>Yerleşim modu</value>
-  </data>
-  <data name="Settings.HorizontalAlignment" xml:space="preserve">
-    <value>Yatay hizalama</value>
-  </data>
-  <data name="Settings.Layout" xml:space="preserve">
-    <value>Düzen</value>
-  </data>
-  <data name="Settings.VerticalAlignment" xml:space="preserve">
-    <value>Dikey hizalama</value>
+    <value>重新启动以应用某些更改</value>
   </data>
 </root>

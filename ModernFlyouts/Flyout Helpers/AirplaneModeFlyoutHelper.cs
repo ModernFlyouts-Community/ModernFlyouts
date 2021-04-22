@@ -1,16 +1,11 @@
-﻿using ModernFlyouts.Core.Utilities;
-using ModernFlyouts.Helpers;
+﻿using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
-using System.Windows;
 
 namespace ModernFlyouts
 {
     public class AirplaneModeFlyoutHelper : FlyoutHelperBase
     {
         private AirplaneModeControl airplaneModeControl;
-        private AirplaneModeWatcher airplaneModeWatcher;
-
-        public override event ShowFlyoutEventHandler ShowFlyoutRequested;
 
         public AirplaneModeFlyoutHelper()
         {
@@ -25,14 +20,12 @@ namespace ModernFlyouts
 
             PrimaryContent = airplaneModeControl;
 
-            airplaneModeWatcher = new AirplaneModeWatcher();
-
             OnEnabled();
         }
 
-        private void Prepare(AirplaneModeChangedEventArgs e)
+        private void Prepare(object data)
         {
-            if (e.IsEnabled)
+            if (data is bool isEnabled && isEnabled)
             {
                 airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOn;
                 airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Airplane;
@@ -44,13 +37,15 @@ namespace ModernFlyouts
             }
         }
 
-        private void AirplaneModeWatcher_Changed(object sender, AirplaneModeChangedEventArgs e)
+        public override bool CanHandleNativeOnScreenFlyout(FlyoutTriggerData triggerData)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+            if (triggerData.TriggerType == FlyoutTriggerType.AirplaneMode)
             {
-                Prepare(e);
-                ShowFlyoutRequested?.Invoke(this);
-            });
+                Prepare(triggerData.Data);
+                return true;
+            }
+
+            return base.CanHandleNativeOnScreenFlyout(triggerData);
         }
 
         protected override void OnEnabled()
@@ -58,20 +53,11 @@ namespace ModernFlyouts
             base.OnEnabled();
 
             AppDataHelper.AirplaneModeModuleEnabled = IsEnabled;
-
-            if (IsEnabled)
-            {
-                airplaneModeWatcher.Changed += AirplaneModeWatcher_Changed;
-                airplaneModeWatcher.Start();
-            }
         }
 
         protected override void OnDisabled()
         {
             base.OnDisabled();
-
-            airplaneModeWatcher.Stop();
-            airplaneModeWatcher.Changed -= AirplaneModeWatcher_Changed;
 
             AppDataHelper.AirplaneModeModuleEnabled = IsEnabled;
         }

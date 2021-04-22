@@ -1,8 +1,9 @@
-﻿using ModernFlyouts.Core.Helpers;
+﻿using ModernFlyouts.Core.Threading;
 using ModernFlyouts.Core.Utilities;
 using NPSMLib;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ModernFlyouts.Core.Media.Control
 {
@@ -12,30 +13,36 @@ namespace ModernFlyouts.Core.Media.Control
 
         public override async void OnEnabled()
         {
-            NpsmServiceStart.NpsmServiceStarted += NpsmServiceStart_NpsmServiceStarted;
-            NpsmServiceStart_NpsmServiceStarted(null, null);
+            NpsmService.Started += NpsmService_Started;
+            await OnNpsmServiceStarted();
         }
 
-        private async void NpsmServiceStart_NpsmServiceStarted(object sender, EventArgs e)
+        private async void NpsmService_Started(object sender, EventArgs e)
+        {
+            await OnNpsmServiceStarted();
+        }
+
+        private async Task OnNpsmServiceStarted()
         {
             //Example: explorer.exe crashes, the NPSMLib still holds the "link"
             //THEN explorer.exe restarts and NPSM restarts too, reloading all NPSM sessions
 
             //Now recreate NPSessionManager.
+
             try
             {
+                await CleanupNPSM();
+
                 NPSessionManager = new();
                 NPSessionManager.SessionListChanged += NPSessionsChanged;
 
                 await LoadSessions();
             }
-            catch (Exception)
+            catch
             {
                 //This is in case NPSM dies immediately after sending a wnf notification
-                await ClearSessions();
-                if (NPSessionManager != null)
-                    NPSessionManager.SessionListChanged -= NPSessionsChanged;
-                NPSessionManager = null;
+
+                await CleanupNPSM();
             }
         }
 
@@ -132,6 +139,12 @@ namespace ModernFlyouts.Core.Media.Control
         }
 
         public override async void OnDisabled()
+        {
+            NpsmService.Started -= NpsmService_Started;
+            await CleanupNPSM();
+        }
+
+        private async Task CleanupNPSM()
         {
             if (NPSessionManager != null)
             {
