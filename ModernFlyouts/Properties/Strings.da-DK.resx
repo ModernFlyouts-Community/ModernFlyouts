@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="AirplaneMode.NotAvailable" xml:space="preserve">
+    <value>Flytilstand er ikke tilgængelig :(</value>
+  </data>
+  <data name="AirplaneModeOff" xml:space="preserve">
+    <value>Flytilstand fra</value>
+  </data>
+  <data name="AirplaneModeOn" xml:space="preserve">
+    <value>Flytilstand til</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Justér til standardposition</value>
+  </data>
+  <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
+    <value>Ingen forbundne lydenheder</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="ExitItem" xml:space="preserve">
+    <value>Afslut</value>
+  </data>
+  <data name="ExitItemDescription" xml:space="preserve">
+    <value>Afslut appen sikkert</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Generelt</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
+    <value>Indsæt-tilstand</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
+    <value>{0} er fra</value>
+    <comment>E.g. Caps lock is off</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
+    <value>{0} er til</value>
+    <comment>E.g. Caps lock is on</comment>
+  </data>
+  <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
+    <value>Overskriv-tilstand</value>
+  </data>
+  <data name="PinTopBar" xml:space="preserve">
+    <value>Fastgør topbjælken</value>
+  </data>
+  <data name="RestoreDefaultItem" xml:space="preserve">
+    <value>Genopret standard-flyout</value>
+  </data>
+  <data name="RestoreDefaultItemDescription" xml:space="preserve">
+    <value>Genopretter Windows standard-flyouten og afslutter appen sikkert</value>
+  </data>
+  <data name="SessionControl.MoreControls" xml:space="preserve">
+    <value>Flere kontrolelementer</value>
+  </data>
+  <data name="SessionControl.Next" xml:space="preserve">
+    <value>Næste</value>
+  </data>
+  <data name="SessionControl.Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="SessionControl.Play" xml:space="preserve">
+    <value>Afspil</value>
+  </data>
+  <data name="SessionControl.Previous" xml:space="preserve">
+    <value>Forrige</value>
+  </data>
+  <data name="SessionControl.RepeatAll" xml:space="preserve">
+    <value>Gentag: alle</value>
+  </data>
+  <data name="SessionControl.RepeatOff" xml:space="preserve">
+    <value>Gentag: fra</value>
+  </data>
+  <data name="SessionControl.RepeatOne" xml:space="preserve">
+    <value>Gentag: enkelt</value>
+  </data>
+  <data name="SessionControl.ShuffleOff" xml:space="preserve">
+    <value>Bland: fra</value>
+  </data>
+  <data name="SessionControl.ShuffleOn" xml:space="preserve">
+    <value>Bland: til</value>
+  </data>
+  <data name="SessionControl.Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="SessionControl.TimelineInfo" xml:space="preserve">
+    <value>Tidslinje-info</value>
+  </data>
+  <data name="Settings.Additional" xml:space="preserve">
+    <value>Yderligere</value>
+  </data>
+  <data name="Settings.Behavior" xml:space="preserve">
+    <value>Adfærd</value>
+  </data>
+  <data name="Settings.DefaultFlyout" xml:space="preserve">
+    <value>Standard Flyout</value>
+  </data>
+  <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
+    <value>Vælg standard-flyout</value>
+  </data>
+  <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
+    <value>At vælge default-flyoutet lukker ikke denne app. Den vil fortsætte med at køre i baggrunden. Afslut venligst appen sikkert for at forbedre ydeevnen.</value>
+  </data>
+  <data name="Settings.Disabled" xml:space="preserve">
+    <value>Deaktiveret</value>
+  </data>
+  <data name="Settings.Enabled" xml:space="preserve">
+    <value>Aktiveret</value>
+  </data>
+  <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
+    <value>Flyout baggrunds-gennemsigtighed</value>
+  </data>
+  <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
+    <value>Flyout standardposition</value>
+  </data>
+  <data name="Settings.FlyoutTopBar" xml:space="preserve">
+    <value>Flyout topbjælke</value>
+  </data>
+  <data name="Settings.Modules" xml:space="preserve">
+    <value>Flyout moduler</value>
+  </data>
+  <data name="Settings.Modules.Airplane" xml:space="preserve">
+    <value>Flytilstand</value>
+  </data>
+  <data name="Settings.Modules.Audio" xml:space="preserve">
+    <value>Lyd</value>
+  </data>
+  <data name="Settings.Modules.Brightness" xml:space="preserve">
+    <value>Lysstyrke</value>
+  </data>
+  <data name="Settings.Modules.LockKeys" xml:space="preserve">
+    <value>Låsetaster</value>
+  </data>
+  <data name="Settings.RunAtStartup" xml:space="preserve">
+    <value>Kør ved opstart</value>
+  </data>
+  <data name="SettingsItem" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="SettingsItemDescription" xml:space="preserve">
+    <value>Åbn indstillinger</value>
+  </data>
+  <data name="UnpinTopBar" xml:space="preserve">
+    <value>Frigør topbjælke</value>
+  </data>
+  <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
+    <value>ModernFlyouts</value>
+  </data>
+  <data name="Enums.DefaultFlyout.None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
+    <value>Windows-standard</value>
+  </data>
+  <data name="Enums.Orientation.Horizontal" xml:space="preserve">
+    <value>Vandret</value>
+  </data>
+  <data name="Enums.Orientation.Vertical" xml:space="preserve">
+    <value>Lodret</value>
+  </data>
+  <data name="About.AppDescription" xml:space="preserve">
+    <value>Denne app er designet til at være en moderne Fluent Design-erstatning af de gamle Metro-flyouts som har eksisteret siden Windows 8.</value>
+  </data>
+  <data name="About.Contributors" xml:space="preserve">
+    <value>Bidragsydere</value>
+  </data>
+  <data name="About.GitHub" xml:space="preserve">
+    <value>GitHub repository</value>
+  </data>
+  <data name="About.OpenNewIssue" xml:space="preserve">
+    <value>Åbn et nyt emne</value>
+  </data>
+  <data name="About.RateAndReview" xml:space="preserve">
+    <value>Bedøm og anmeld på Microsoft Store</value>
+  </data>
+  <data name="About.Version" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="Settings.Language" xml:space="preserve">
+    <value>Sprog</value>
+  </data>
+  <data name="Settings.LanguageDescription" xml:space="preserve">
+    <value>En genstart er påkrævet for at ændre sproget</value>
+  </data>
+  <data name="Settings.SystemDefault" xml:space="preserve">
+    <value>Systemstandard</value>
+  </data>
+  <data name="About.Dependencies" xml:space="preserve">
+    <value>Afhængigheder</value>
+  </data>
+  <data name="About.FileABug" xml:space="preserve">
+    <value>Hvis du finder en fejl, så åbn venligst et nyt issue på GitHub repositoriet.</value>
+  </data>
+  <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
+    <value>Antal sessioner at vise</value>
+  </data>
+  <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
+    <value>Orientering af sessions-panelet</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
+    <value>Vis Global System Media Transport Controls (GSMTC) eller medie-kontrolelementer i lydstyrke-flyoutet</value>
+  </data>
+  <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
+    <value>Vis lydstyrke-kontrol i Global System Media Transport Controls (GSMTC) eller medie-flyoutet</value>
+  </data>
+  <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
+    <value>Miniature justering</value>
+  </data>
+  <data name="Enums.ElementTheme.Dark" xml:space="preserve">
+    <value>Mørk</value>
+  </data>
+  <data name="Enums.ElementTheme.Light" xml:space="preserve">
+    <value>Lys</value>
+  </data>
+  <data name="Enums.TopBarVisibility.AutoHide" xml:space="preserve">
+    <value>Skjul automatisk</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
+    <value>Kollapset</value>
+  </data>
+  <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
+    <value>Synlig</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.CapsLock" xml:space="preserve">
+    <value>Caps lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.Insert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.NumLock" xml:space="preserve">
+    <value>Mum lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.ScrollLock" xml:space="preserve">
+    <value>Scroll lock</value>
+  </data>
+  <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
+    <value>Vælg hvilke taster du vil vise flyoutet for</value>
+  </data>
+  <data name="Settings.Appearance" xml:space="preserve">
+    <value>Udseende</value>
+  </data>
+  <data name="Settings.EnableModule.Airplane" xml:space="preserve">
+    <value>Aktiver flytilstand-flyout</value>
+  </data>
+  <data name="Settings.EnableModule.Audio" xml:space="preserve">
+    <value>Aktiver lyd-flyout</value>
+  </data>
+  <data name="Settings.EnableModule.Brightness" xml:space="preserve">
+    <value>Aktiver lysstyrke-flyout</value>
+  </data>
+  <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
+    <value>Aktiver låsetaster-flyout</value>
+  </data>
+  <data name="Settings.FlyoutTheme" xml:space="preserve">
+    <value>Flyout-tema</value>
+  </data>
+  <data name="Settings.FlyoutTimeout" xml:space="preserve">
+    <value>Flyout forsinkelse (ms)</value>
+  </data>
+  <data name="Settings.Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="Settings.Modules.Audio.Media" xml:space="preserve">
+    <value>Medie</value>
+  </data>
+  <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
+    <value>Lydstyrke</value>
+  </data>
+  <data name="Settings.Right" xml:space="preserve">
+    <value>Højre</value>
+  </data>
+  <data name="Settings.TopBarVisibility" xml:space="preserve">
+    <value>Topbjælke synlighed</value>
+  </data>
+  <data name="Settings.TrayIconEnabled" xml:space="preserve">
+    <value>Vis ikon på proceslinjen</value>
+  </data>
+  <data name="Settings.Off" xml:space="preserve">
+    <value>Fra</value>
+  </data>
+  <data name="Settings.On" xml:space="preserve">
+    <value>Til</value>
+  </data>
+  <data name="Settings.AppTheme" xml:space="preserve">
+    <value>App-tema</value>
+  </data>
+  <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
+    <value>Brug farvet proces-ikon</value>
+  </data>
+  <data name="Settings.ResetToDefaults" xml:space="preserve">
+    <value>Gendan standard-indstillinger</value>
+  </data>
+  <data name="Settings.Personalization" xml:space="preserve">
+    <value>Personalisering</value>
+  </data>
+  <data name="Settings.AlignFlyout" xml:space="preserve">
+    <value>Juster flyout til denne position</value>
+  </data>
+  <data name="Settings.RestartRequired" xml:space="preserve">
+    <value>Genstart påkrævet for at anvende nogle indstillinger</value>
+  </data>
+</root>

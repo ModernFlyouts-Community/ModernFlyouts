@@ -41,9 +41,9 @@
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>False</GenerateTestArtifacts>
-    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
     <EntryPointProjectUniqueName>..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj</EntryPointProjectUniqueName>
@@ -51,7 +51,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <AppxBundle>Always</AppxBundle>
-    <PackageCertificateKeyFile>ModernFlyouts.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>1763E89B1A6D02D8D3CCF794ADFF6130472AC7B5</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -120,8 +120,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj" />
     <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">
-		<SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
-		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+      <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+      <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     </ProjectReference>
     <ProjectReference Include="..\ModernFlyoutsBridge\ModernFlyoutsBridge.vcxproj" />
   </ItemGroup>
@@ -130,7 +130,8 @@
       <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
       <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
       <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-        <SourceProject></SourceProject>
+        <SourceProject>
+        </SourceProject>
       </_FilteredNonWapProjProjectOutput>
     </ItemGroup>
   </Target>
