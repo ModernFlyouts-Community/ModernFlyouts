@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-	Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/download/0.9.0/ModernFlyouts.Package.appinstaller"
-	Version="0.9.0.0"
+	Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/ModernFlyouts.Package/Package.appinstaller"
+	Version="0.9.3.0"
 	xmlns="http://schemas.microsoft.com/appx/appinstaller/2018">
 
 	<MainBundle
 		Name="ModernFlyouts"
 		Publisher="CN=E3B4A0F6-E459-414C-8DFB-ABEAB07C9242"
-		Version="0.9.0.0"
-		Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/download/0.9.0/ModernFlyouts_0.9.0.0_neutral.Msixbundle" />
+		Version="0.9.3.0"
+		Uri="https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/download/0.9.3/ModernFlyouts_0.9.3.0_neutral.Msixbundle" />
 
 	<UpdateSettings>
 		<OnLaunch HoursBetweenUpdateChecks="1" ShowPrompt="false"/>
