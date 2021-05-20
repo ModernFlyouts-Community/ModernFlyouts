@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
-	<Platforms>x86;x64;arm64</Platforms>
-	<RuntimeIdentifier>win-$(Platform)</RuntimeIdentifier>
+	   <Platforms>x86;x64;arm64</Platforms>
+				<RuntimeIdentifiers>win10-x64;win10-x86;win10-arm64</RuntimeIdentifiers>
+	   <!--<RuntimeIdentifier>win10-$(Platform)</RuntimeIdentifier>-->
     <UseWPF>true</UseWPF>
     <OutputType>WinExe</OutputType>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -11,6 +12,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
     <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+				<GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
@@ -112,10 +114,17 @@
     </Compile>
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <EmbeddedResource Update="Properties\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>-->
+				
+				  <ItemGroup>
+    <EmbeddedResource Update="Properties\Strings.resx">
+      <StronglyTypedFileName>$(IntermediateOutputPath)\Strings.Designer.cs</StronglyTypedFileName>
+      <StronglyTypedLanguage>CSharp</StronglyTypedLanguage>
     </EmbeddedResource>
   </ItemGroup>
 
