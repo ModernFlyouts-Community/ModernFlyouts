@@ -16,14 +16,17 @@
                     <ui:ThemeResources.ThemeDictionaries>
                         <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light" local:ToolkitThemeDictionary.Key="Light">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />
+                            <SolidColorBrush x:Key="FlyoutForeground" Color="#202020" />
                         </ResourceDictionary>
 
                         <ResourceDictionary x:Key="Dark" ui:ThemeDictionary.Key="Dark" local:ToolkitThemeDictionary.Key="Dark">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#222222" />
+                            <SolidColorBrush x:Key="FlyoutForeground" Color="#FFFFFF" />
                         </ResourceDictionary>
 
                         <ResourceDictionary x:Key="HighContrast" ui:ThemeDictionary.Key="HighContrast" local:ToolkitThemeDictionary.Key="HighContrast">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="{ui:ThemeResource SystemColorWindowColor}" />
+                            <SolidColorBrush x:Key="FlyoutForeground" Color="White" />
                         </ResourceDictionary>
                     </ui:ThemeResources.ThemeDictionaries>
                 </ui:ThemeResources>

@@ -13,7 +13,7 @@
     <Grid>
         <controls:ScrollViewerEx VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20,10">
-                <controls:BatteryControl Height="500" Width="400"></controls:BatteryControl>
+                <Button Margin="5" Click="Button_Click">Open flyout</Button>
             </StackPanel>
         </controls:ScrollViewerEx>
     </Grid>

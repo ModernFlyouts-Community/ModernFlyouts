@@ -61,7 +61,7 @@
     <None Remove="Assets\Logo.ico" />
     <None Remove="Assets\Logo_Tray_Black.ico" />
     <None Remove="Assets\Logo_Tray_White.ico" />
-    <None Remove="Controls\BatteryControl.xaml" />
+    <None Remove="BatteryWindow.xaml" />
     <None Remove="Navigation\BatteryModulePage.xaml" />
   </ItemGroup>
 
