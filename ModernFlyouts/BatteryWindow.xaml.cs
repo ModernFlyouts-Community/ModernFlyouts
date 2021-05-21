@@ -1,9 +1,7 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using ModernFlyouts.Helpers;
-using ModernFlyouts.Core.Utilities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -20,16 +18,15 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Windows.System.Power;
 
-namespace ModernFlyouts.Controls
+namespace ModernFlyouts
 {
     /// <summary>
-    /// Interaction logic for BatteryControl.xaml
+    /// Interaction logic for BatteryWindow.xaml
     /// </summary>
-    public partial class BatteryControl : System.Windows.Controls.UserControl
+    public partial class BatteryWindow : Window
     {
         public float NominalCapacity;  //Measured in Watt hours
         public float RealCapacity;
@@ -44,14 +41,15 @@ namespace ModernFlyouts.Controls
         public Core.Utilities.BatteryStatus Status;
 
         public float PowerChargeRate;
-        public BatteryControl()
+
+        public BatteryWindow()
         {
             InitializeComponent();
             try
             {
 
                 ///Commented out battery dll code since it doesnt work.
-                
+
                 // string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
                 //   RegistryKey key = Registry.CurrentUser.OpenSubKey(path, true);
                 //key.SetValue("Fluent Flyouts", System.Windows.Forms.Application.ExecutablePath.ToString());
@@ -59,7 +57,7 @@ namespace ModernFlyouts.Controls
                 //  lis.matrix.Clear();
                 //string output = Fluent_Flyouts.Properties.Settings.Default.test;
                 //List<List<int>> Product = JsonConvert.DeserializeObject<List<List<int>>>(output);
-                
+
                 if (Status == Core.Utilities.BatteryStatus.Unavailable)
                 {
                     //  ChargeText.Content = "?";
@@ -103,6 +101,20 @@ namespace ModernFlyouts.Controls
             {
 
             }
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            Powerrefresh();
+            Vis.counter = 0;
+            var desktopWorkingArea = SystemParameters.WorkArea;
+            Left = desktopWorkingArea.Right - Width;
+            Top = desktopWorkingArea.Bottom - Height;
+        }
+
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            Dispatcher.Invoke(() => { Close(); });
         }
 
         public void Update()
@@ -163,7 +175,7 @@ namespace ModernFlyouts.Controls
                 PowerChargeRate = ((int)WMIToolHelper.QuerySingle("root/WMI", "BatteryStatus", "ChargeRate")) / 1000f;
             }
         }
-        
+
         private void addtolist()
         {
             if (Lis.matrix[0][0] == 0) Lis.matrix.Clear();
@@ -250,8 +262,7 @@ namespace ModernFlyouts.Controls
             addtolist();
             Powerrefresh();
         }
-
-     //   Battery battery;
+        //   Battery battery;
         public float[] ChargeRate = new float[100];
         public float[] CurrentCharge = new float[100];
         [DllImport("Kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
@@ -283,7 +294,6 @@ namespace ModernFlyouts.Controls
 
                             ChargeRateLabel.Content = "Charge Rate:";
 
-
                             ChgRate.Content = (Math.Round(PowerChargeRate * 10) / 10f) + " W";
 
 
@@ -294,7 +304,6 @@ namespace ModernFlyouts.Controls
                         this.Dispatcher.Invoke(() =>
                         {
                             ChargeRateLabel.Content = "Discharge Rate:";
-
 
                             ChgRate.Content = (Math.Round(-PowerChargeRate * 10) / 10f) + " W";
 
@@ -520,7 +529,8 @@ namespace ModernFlyouts.Controls
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (e.NewValue == 3)
+            //doesnt work anyway so no point fixing the code quality
+           /* if (e.NewValue == 3)
             {
                 var process = new Process { StartInfo = _startInfo };
                 process.Start();
@@ -546,7 +556,7 @@ namespace ModernFlyouts.Controls
                 process.StandardInput.WriteLine("exit");
                 process.StandardOutput.ReadToEnd();
                 process.Dispose();
-            }
+            }*/
         }
-    }
+}
 }
