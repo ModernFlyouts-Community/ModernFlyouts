@@ -36,7 +36,7 @@
   <PropertyGroup>
     <ProjectGuid>e918a18d-953d-4b4a-ac18-b74303995aee</ProjectGuid>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
@@ -120,8 +120,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj" />
     <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">
-		<SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
-		<PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+      <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+      <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     </ProjectReference>
     <ProjectReference Include="..\ModernFlyoutsBridge\ModernFlyoutsBridge.vcxproj" />
   </ItemGroup>
@@ -130,7 +130,8 @@
       <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
       <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
       <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-        <SourceProject></SourceProject>
+        <SourceProject>
+        </SourceProject>
       </_FilteredNonWapProjProjectOutput>
     </ItemGroup>
   </Target>
