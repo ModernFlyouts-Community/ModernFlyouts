@@ -20,25 +20,27 @@
 
 This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts present in **Windows** *(which haven't been updated since Windows 8 LOL)* which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
 
-This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyout) by [@ADeltaX](https://github.com/ADeltaX/) with additional implementations for **"Airplane mode"**, **"Brightness"** and **"LockKeys"** *(includes Insert key, Caps, Num & Scroll lock keys)* flyouts. This project stands as a complete replacement for the built-in one.
+This project has its roots in the app [AudioFlyout](https://github.com/ADeltaX/AudioFlyout) by [ADeltaX](https://github.com/ADeltaX/) with additional implementations for **"Airplane mode"**, **"Brightness"** and **"LockKeys"** *(includes Insert key, Caps, Num & Scroll lock keys)* flyouts. This project stands as a complete replacement for the built-in flyouts.
 
 > Note : The built-in flyout will not be permanently affected. It will be hidden temporarily while this application is running. So, no reason to fear breaking your system.
-> For more information on how to recover the original flyouts, [check out this How To page](https://github.com/ModernFlyouts-Community/ModernFlyouts/wiki/How-To).
+> For more information on how to recover the original flyouts, check out [this How To page](https://github.com/ModernFlyouts-Community/ModernFlyouts/wiki/How-To).
 
 > Users are provided the freedom to choose between the Windows built-in flyouts or modern flyouts from ModernFlyouts or neither of them.
 
-> It is impossible to have a flyout for the keyboard backlight brightness or for the function (Fn) key because they are not passed as keys but as hardware signals (which the OEMs decide).  Any OS can receive those signals if they have the required driver.
+> It is impossible to have a flyout for the keyboard backlight brightness or the function (Fn) key because they are not passed as keys but as hardware signals (which the OEMs decide).  Any OS can receive those signals if they have the required driver.
 
-### Please check out the [Wiki](https://github.com/ModernFlyouts-Community/ModernFlyouts/wiki) for additional information, guides and how-tos.
+### Please check out [the Wiki](https://github.com/ModernFlyouts-Community/ModernFlyouts/wiki) for additional information, guides and how-tos.
 
 ### Please check out [this document](docs/GSMTC-Support-And-Popular-Apps.md) for support regarding your media player/browser.
+
+------------------------
 
 ## Features
 
 - Fluent UI (similar to Windows 10X).
-- Supports **Light**, **Dark** & **High contrast** themes.
-- Media session controls have additional options such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**.
-- Redesigned audio and brightness flyouts along with additional flyouts for **Airplane mode**, **Lock keys** and **Insert/Overtype**.
+- Supports **Light** and **Dark** mode.
+- Additional media session controls such as **Shuffle**, **Repeat**, **Stop** and **Timeline Info**.
+- Additional flyouts for **Airplane mode**, **Lock keys** and **Insert/Overtype**.
 - Each module can be **disabled individually**.
 - Flyout's TopBar can be pinned, unpinned or hidden.
 - Flyout is **Draggable** and autosaves the position. It also has feature for default position. (Check out the settings)
@@ -46,27 +48,32 @@ This project has its roots in [AudioFlyout](https://github.com/ADeltaX/AudioFlyo
 - **Opacity** of the background of flyouts can be changed.
 - **Timeout** of flyouts can be changed.
 
+------------------------
+
 ## System Requirements
 
-- **Windows 10 1809 and above** (older versions such as [v0.3](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/tag/v0.3.0) and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't).
+- **Windows 10 1809 and above** 
+> older versions such as [v0.3](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/tag/v0.3.0) and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't.
+
+------------------------
 
 ## Installation
 
-Modern Flyouts is available for you to install via [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), **winget** and the [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP).
+Modern Flyouts is available for you to install via  [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP), [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), winget and Chocolatey.
 
 All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **recommended** as it is easier to install and will automatically remain up to date.
 
-**Microsoft Store:**
+__**Microsoft Store:**__
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
 
-**GitHub:**
+__**GitHub:**__
 
 1. Go to the [latest release on the Releases page](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest).
 2. Download the latest ***.msixbundle** file from the assets.
 3. Install the downloaded ***.msixbundle** file and launch the app from the **Start Menu**.
 
-**winget:**
+__**winget:**__
 
 _please note that due to how winget processes package updates, updates may take **longer** to be released to winget_.
 
@@ -74,18 +81,24 @@ _please note that due to how winget processes package updates, updates may take 
 
 **Chocolatey**
 
-ModernFlyouts is **Unofficially** available to install via Chocolatey [Here](https://chocolatey.org/packages/modernflyouts), however as this is not maintained by us we can not verify it's security or being up to date.
+ModernFlyouts is **unofficially** available to install via Chocolatey [here](https://chocolatey.org/packages/modernflyouts), however as this is not maintained by us we can not verify its security or its update status.
+
+------------------------
 
 ## Connect with us
-You can join our [Discord Server](https://discord.gg/TcYskeyaYE) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback (people who don't have a GitHub account may be benefitted).
+You can join our [Discord Server](https://discord.gg/TcYskeyaYE) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback.
+
+------------------------
 
 ## Contributing
 
-This project welcomes all types of contributions such help planning, design, documentation, finding bugs are ways everyone can help on top of coding features / bug fixes. We are excited to work with the community to make this project reach its goals and beyond.
+This project welcomes all types of contributions such help planning, design, documentation, finding bugs are ways everyone can help on top of coding features/bug fixes. We are excited to work with the community to make this project reach its goals and beyond.
 
-We ask that **before you start work on a feature that you would like to contribute**, please read our [Contributor's Guide](CONTRIBUTING.md). We will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
+We ask that **before you start to work on a feature/bug fix that you would like to see happen**, please read [the Contributor's Guide](CONTRIBUTING.md). We will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout the feature development, and help avoid any wasted or duplicate effort.
 
-For guidance on developing for ModernFlyouts, please read the [developer guide](docs/developer_guide.md) for a detailed breakdown. This includes how to setup your computer to build and run the app.
+For guidance on developing for ModernFlyouts, please read [the developer guide](docs/developer_guide.md) for a detailed breakdown. This includes how to setup your computer to build and run the app.
+
+------------------------
 
 ## NOTES
 
@@ -155,10 +168,13 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - [ModernWpf](https://github.com/Kinnara/ModernWpf) (Inspired the name **Modern**Flyouts)
 - [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
 
+------------------------
 
 ## Beta Builds
 
-The ability to signup for beta builds has been temporarily removed while we work on a better way to release and manage them. Beta builds will still occasionally be available to download fron the releases tab on github. Thankyou to everyone who helps us test new releases before they go public.
+The ability to signup for beta builds has been temporarily disabled while we work on a better way to release and manage them. Beta builds will still occasionally be available to download fron the releases tab on github. Thank to everyone who help us test new releases and find bugs before they go public.
+
+------------------------
 
 ## Screenshots
 
