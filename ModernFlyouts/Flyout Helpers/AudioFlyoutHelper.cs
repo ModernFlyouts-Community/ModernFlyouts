@@ -197,6 +197,23 @@ namespace ModernFlyouts
 
         private bool _isInCodeValueChange; //Prevents a LOOP between changing volume.
 
+        private void _SliderSetVolume(double value, RoutedEventArgs e)
+        {
+            if (device == null) return;
+            try
+            {
+                device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
+            }
+            catch { } //99.9% is "A device attached to the system is not functioning" (0x8007001F), ignore this
+
+            if (value == 0 && !device.AudioEndpointVolume.Mute)
+                device.AudioEndpointVolume.Mute = true;
+            else if (value > 0 && device.AudioEndpointVolume.Mute)
+                device.AudioEndpointVolume.Mute = false;
+
+            e.Handled = true;
+        }
+
         private void UpdateVolume(double volume)
         {
             Application.Current.Dispatcher.Invoke(() =>
@@ -224,12 +241,10 @@ namespace ModernFlyouts
                     volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Volume2;
 
                 volumeControl.textVal.ClearValue(TextBlock.ForegroundProperty);
-                volumeControl.VolumeSlider.IsEnabled = true;
             }
             else
             {
                 volumeControl.textVal.SetResourceReference(TextBlock.ForegroundProperty, "SystemControlForegroundBaseMediumBrush");
-                volumeControl.VolumeSlider.IsEnabled = false;
                 volumeControl.VolumeShadowGlyph.Visibility = Visibility.Collapsed;
                 volumeControl.VolumeGlyph.Glyph = CommonGlyphs.Mute;
             }
@@ -242,20 +257,17 @@ namespace ModernFlyouts
                 var value = e.NewValue;
                 var oldValue = e.OldValue;
 
+                System.Diagnostics.Debug.WriteLine("chng vol");
+
                 if (value == oldValue)
                 {
                     return;
                 }
+                System.Diagnostics.Debug.WriteLine("nonskip");
 
-                if (oldValue != value && device != null)
+                if (oldValue != value)
                 {
-                    try
-                    {
-                        device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(value / 100);
-                    }
-                    catch { } //99.9% is "A device attached to the system is not functioning" (0x8007001F), ignore this
-                    
-                    e.Handled = true;
+                    _SliderSetVolume(value, e);
                 }
             }
         }
@@ -275,16 +287,7 @@ namespace ModernFlyouts
 
             var volume = Math.Min(Math.Max(slider.Value + change, 0.0), 100.0);
 
-            if (device != null)
-            {
-                try
-                {
-                    device.AudioEndpointVolume.MasterVolumeLevelScalar = (float)(volume / 100.0);
-                }
-                catch { }
-
-                e.Handled = true;
-            }
+            _SliderSetVolume(volume, e);
         }
 
         #endregion
