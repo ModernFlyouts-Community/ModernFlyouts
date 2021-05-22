@@ -31,6 +31,10 @@
                                          IsOn="{Binding AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout}"
                                          OnContent="{x:Static resx:Strings.Settings_On}"
                                          OffContent="{x:Static resx:Strings.Settings_Off}" />
+                        <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_ShowPlaybackControl}"
+                                         IsOn="{Binding AudioFlyoutHelper.ShowPlaybackControl}"
+                                         OnContent="{x:Static resx:Strings.Settings_On}"
+                                         OffContent="{x:Static resx:Strings.Settings_Off}" />
                     </ui:SimpleStackPanel>
                 </TabItem>
                 <TabItem Header="{x:Static resx:Strings.Settings_Modules_Audio_Media}">

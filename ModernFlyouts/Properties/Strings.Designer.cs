@@ -214,6 +214,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show playback control when available.
+        /// </summary>
+        public static string AudioFlyoutHelper_ShowPlaybackControl {
+            get {
+                return ResourceManager.GetString("AudioFlyoutHelper.ShowPlaybackControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout.
         /// </summary>
         public static string AudioFlyoutHelper_ShowVolumeControlInGSMTCFlyout {
@@ -862,6 +871,15 @@ namespace ModernFlyouts.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fade animation.
+        /// </summary>
+        public static string Settings_FlyoutAnimationEnabled {
+            get {
+                return ResourceManager.GetString("Settings.FlyoutAnimationEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flyout background opacity.
         /// </summary>
         public static string Settings_FlyoutBackgroundOpacity {
@@ -1155,15 +1173,6 @@ namespace ModernFlyouts.Properties {
         public static string Settings_VerticalAlignment {
             get {
                 return ResourceManager.GetString("Settings.VerticalAlignment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fade animation.
-        /// </summary>
-        public static string Settings_FlyoutAnimationEnabled {
-            get {
-                return ResourceManager.GetString("Settings.FlyoutAnimationEnabled", resourceCulture);
             }
         }
         

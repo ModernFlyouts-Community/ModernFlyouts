@@ -88,6 +88,8 @@ namespace ModernFlyouts.Helpers
 
         public const bool UseGSMTCThumbnailAsBackground = true;
 
+        public const bool ShowPlaybackControl = true;
+
         public const int MaxVerticalSessionControlsCount = 1;
 
         public const Orientation SessionsPanelOrientation = Orientation.Horizontal;

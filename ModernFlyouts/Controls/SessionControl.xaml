@@ -107,7 +107,8 @@
                 </Button>-->
             </Grid>
 
-            <Grid Margin="15,10" Grid.Row="1" Grid.ColumnSpan="3"
+            <Grid Margin="15,10" Grid.Row="1" Grid.ColumnSpan="3" Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=AudioFlyoutHelper.ShowPlaybackControl,
+                        Converter={StaticResource BooleanToVisibilityConverter}}"
                   IsEnabled="{Binding IsTimelinePropertiesEnabled}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

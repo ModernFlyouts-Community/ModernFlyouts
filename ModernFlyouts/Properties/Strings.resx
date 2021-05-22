@@ -497,4 +497,7 @@
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Vertical alignment</value>
   </data>
+  <data name="AudioFlyoutHelper.ShowPlaybackControl" xml:space="preserve">
+    <value>Show playback control when available</value>
+  </data>
 </root>

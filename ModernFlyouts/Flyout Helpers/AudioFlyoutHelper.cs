@@ -59,6 +59,20 @@ namespace ModernFlyouts
             }
         }
 
+        private bool showPlaybackControl = DefaultValuesStore.ShowPlaybackControl;
+
+        public bool ShowPlaybackControl
+        {
+            get => showPlaybackControl;
+            set
+            {
+                if (SetProperty(ref showPlaybackControl, value))
+                {
+                    OnShowPlaybackControlChanged();
+                }
+            }
+        }
+
         #endregion
 
         public AudioFlyoutHelper()
@@ -72,6 +86,7 @@ namespace ModernFlyouts
 
             ShowGSMTCInVolumeFlyout = AppDataHelper.ShowGSMTCInVolumeFlyout;
             ShowVolumeControlInGSMTCFlyout = AppDataHelper.ShowVolumeControlInGSMTCFlyout;
+            ShowPlaybackControl = AppDataHelper.ShowPlaybackControl;
 
             #region Volume control sub-module initialization
 
@@ -158,6 +173,13 @@ namespace ModernFlyouts
             ValidatePrimaryContentVisible();
 
             AppDataHelper.ShowVolumeControlInGSMTCFlyout = showVolumeControlInGSMTCFlyout;
+        }
+
+        private void OnShowPlaybackControlChanged()
+        {
+            ValidatePrimaryContentVisible();
+
+            AppDataHelper.ShowPlaybackControl = showPlaybackControl;
         }
 
         #region Volume
