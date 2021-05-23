@@ -1,4 +1,4 @@
-![ModernFlyouts](ModernFlyouts/Assets/Images/Readme_Banner.png)
+![ModernFlyouts](ModernFlyouts/Assets/Images/
 
 #### An open source, modern, and **Fluent Design-based** replacement for the old **Metro-themed** flyouts present in **Windows 10**.
 
