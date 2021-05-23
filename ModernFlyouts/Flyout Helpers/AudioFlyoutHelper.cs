@@ -257,13 +257,7 @@ namespace ModernFlyouts
                 var value = e.NewValue;
                 var oldValue = e.OldValue;
 
-                System.Diagnostics.Debug.WriteLine("chng vol");
-
-                if (value == oldValue)
-                {
-                    return;
-                }
-                System.Diagnostics.Debug.WriteLine("nonskip");
+                if (value == oldValue) return;
 
                 if (oldValue != value)
                 {
