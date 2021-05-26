@@ -11,7 +11,7 @@
 
 [Overview](#overview) • [Features](#features) • [System Requirements](#system-requirements) • [Installation](#installation) • [Connect with us](#connect-with-us) • [Contributing](#contributing) • [Screenshots](#screenshots)
 
-## Overview
+## Overview  👀
 
 **Default Flyout** | **ModernFlyouts**
 
@@ -34,7 +34,7 @@ This project has its roots in the app [AudioFlyout](https://github.com/ADeltaX/A
 
 ------------------------
 
-## Features
+## Features  ✨
 
 - Fluent UI (similar to Windows 10X).
 - Supports **Light** and **Dark** mode.
@@ -49,47 +49,49 @@ This project has its roots in the app [AudioFlyout](https://github.com/ADeltaX/A
 
 ------------------------
 
-## System Requirements
+## System Requirements  🖥️
 
 - **Windows 10 1809 and above** 
 > older versions such as [v0.3](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/tag/v0.3.0) and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't.
 
 ------------------------
 
-## Installation
+## Installation  ⬇️
 
-Modern Flyouts is available for you to install via  [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP), [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), winget and Chocolatey.
+Modern Flyouts is available for you to install via  [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP), [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), [Chocolatey](https://chocolatey.org/packages/modernflyouts) and winget.
 
 All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **recommended** as it is easier to install and will automatically remain up to date.
 
-__**Microsoft Store:**__
+**Microsoft Store**
 
 <a href='https://www.microsoft.com/store/apps/9MT60QV066RP?ocid=badge'><img src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Microsoft Store' width='160'/></a>
 
-__**GitHub:**__
+**GitHub**
 
 1. Go to the [latest release on the Releases page](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest).
 2. Download the latest ***.msixbundle** file from the assets.
 3. Install the downloaded ***.msixbundle** file and launch the app from the **Start Menu**.
 
-__**winget:**__
-
-_please note that due to how winget processes package updates, updates may take **longer** to be released to winget_.
-
-`winget install --id=ModernFlyouts.ModernFlyouts -e`
 
 **Chocolatey**
 
 ModernFlyouts is **unofficially** available to install via Chocolatey [here](https://chocolatey.org/packages/modernflyouts), however as this is not maintained by us we can not verify its security or its update status.
 
+**winget**
+
+_please note that due to how winget processes package updates, updates may take **longer** to be released to winget_.
+
+`winget install --id=ModernFlyouts.ModernFlyouts -e`
+
 ------------------------
 
-## Connect with us
+## Connect with us  🌐
+
 You can join our [Discord Server](https://discord.gg/TcYskeyaYE) or [Telegram Group](https://t.me/ModernFlyouts) to connect with us. By doing so, we can have off-topic conversations, news about this app, development previews and providing & collecting feedback.
 
 ------------------------
 
-## Contributing
+## Contributing  🤝
 
 This project welcomes all types of contributions such help planning, design, documentation, finding bugs are ways everyone can help on top of coding features/bug fixes. We are excited to work with the community to make this project reach its goals and beyond.
 
@@ -99,16 +101,16 @@ For guidance on developing for ModernFlyouts, please read [the developer guide](
 
 ------------------------
 
-## NOTES
+## NOTES 🗒️
 
 ### Credits
 
-First of all, we must thank our good friend **[@ADeltaX](https://github.com/ADeltaX/)** for one of his marvelous works **"[AudioFlyout](https://github.com/ADeltaX/AudioFlyout)"**. Since the project was stale for a while and it lacked support for brightness and airplane mode flyouts, this project was born. He not only let us use his source code but also helped us improve this app. And he still supports us 😄.
-I must admit that this project wouldn't be here *how it is* without **[@ADeltaX](https://github.com/ADeltaX/)**. Our heartful thanks to him ❤.
+First of all, we must thank our good friend **[ADeltaX](https://github.com/ADeltaX/)** for one of his marvelous works **[AudioFlyout](https://github.com/ADeltaX/AudioFlyout)**. Since the project was stale for a while and it lacked support for brightness and airplane mode flyouts, this project was born. He not only let us use his source code but also helped us improve this app. And he still supports us 😄.
+I must admit that this project wouldn't be here *how it is* without **[ADeltaX](https://github.com/ADeltaX/)**. Our heartful thanks to him ❤.
 
 Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our invite and allowing us to integrate parts of [EarTrumpet](https://github.com/File-New-Project/EarTrumpet) into ModernFlyouts.
 
-### Our Team
+### Our Team 
 
 - **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
 - **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
@@ -116,15 +118,15 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 - **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer - Our savior! Helps us at critical times.
 
 
-### Our Contributors 💗💕
+### Our Contributors  💗💕
 
 **Code:**
 
-- [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we couldn't even identify 😅 [#113](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/113).
+- [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we couldn't even identify! [#113](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/113).
 - [Renzo904](https://github.com/Renzo904) - Fixed some important and annoying bugs [#306](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/306) and [#313](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/313).
 - [fheck](https://github.com/fheck) - Added the ability to toggle the usage of media session controls' thumbnail as background [#315](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/315).
 
-**Translators :**
+**Translators:**
 
 - [yukiokun057](https://github.com/yukiokun057) - Russian translator.
 - [knurzl](https://github.com/knurzl) - German translator.
@@ -169,12 +171,12 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 
 ------------------------
 
-## Beta Builds
+## Beta Builds  🚧
 
 The ability to signup for beta builds has been temporarily disabled while we work on a better way to release and manage them. Beta builds will still occasionally be available to download fron the releases tab on github. Thank to everyone who help us test new releases and find bugs before they go public.
 
 ------------------------
 
-## Screenshots
+## Screenshots  📷
 
 Screenshots are temporarily removed 😅. They will be restored during v1.0 release cycle.
