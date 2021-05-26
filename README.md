@@ -69,8 +69,9 @@ All the distribution methods mentioned above are supported, however installing t
 **GitHub**
 
 1. Go to the [latest release on the Releases page](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest).
-2. Download the latest ***.msixbundle** file from the assets.
-3. Install the downloaded ***.msixbundle** file and launch the app from the **Start Menu**.
+2. Download the latest ***.msixbundle** file and the [latest available] **.cer** file from the assets.
+3. Install the certificate into the Trusted People directory.
+4. Install the downloaded ***.msixbundle** file and launch the app from the **Start Menu**.
 
 
 **Chocolatey**
@@ -112,10 +113,11 @@ Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our
 
 ### Our Team 
 
-- **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
 - **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
+- **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer (Our savior! Helps us at critical times.)
+- **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
 - **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
-- **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer - Our savior! Helps us at critical times.
+
 
 
 ### Our Contributors  💗💕
