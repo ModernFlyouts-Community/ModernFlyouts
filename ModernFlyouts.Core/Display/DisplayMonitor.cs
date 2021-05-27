@@ -4,8 +4,9 @@ using System.Windows;
 
 namespace ModernFlyouts.Core.Display
 {
-    public class DisplayMonitor : ObservableObject
+    public class DisplayMonitor : ObservableObject, IDisposable
     {
+        internal bool isDefault;
         internal bool isStale;
 
         #region Properties
@@ -41,7 +42,13 @@ namespace ModernFlyouts.Core.Display
         public IntPtr HMonitor
         {
             get => hMonitor;
-            internal set => SetProperty(ref hMonitor, value);
+            internal set
+            {
+                if (SetProperty(ref hMonitor, value))
+                {
+                    OnHMonitorUpdated();
+                }
+            }
         }
 
         private int index;
@@ -73,6 +80,29 @@ namespace ModernFlyouts.Core.Display
         internal DisplayMonitor(string deviceName)
         {
             DeviceName = deviceName;
+        }
+
+        internal void OnHMonitorUpdated()
+        {
+            BrightnessManager.MakeBrightnessControllersForDisplayMonitor(this);
+        }
+
+        private bool disposedValue;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                BrightnessManager.DisposeBrightnessControllerForDisplayMonitor(this);
+
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

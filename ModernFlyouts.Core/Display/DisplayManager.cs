@@ -109,6 +109,7 @@ namespace ModernFlyouts.Core.Display
                 .Where(x => x.isStale).ToList();
             foreach (var displayMonitor in staleDisplayMonitors)
             {
+                displayMonitor.Dispose();
                 DisplayMonitors.Remove(displayMonitor);
             }
 
@@ -142,6 +143,7 @@ namespace ModernFlyouts.Core.Display
                 displayMonitor.WorkingArea = GetWorkingArea();
 
                 displayMonitor.isStale = false;
+                displayMonitor.isDefault = true;
             }
             else
             {

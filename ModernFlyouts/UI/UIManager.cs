@@ -16,7 +16,7 @@ namespace ModernFlyouts.UI
 
         public const double DefaultSessionControlHeight = 206;
 
-        public const double DefaultSessionsPanelVerticalSpacing = 8;
+        public const double DefaultVerticalSpacing = 8;
 
         public const double FlyoutShadowDepth = 32;
 
@@ -440,8 +440,8 @@ namespace ModernFlyouts.UI
             if (sessionsPanelOrientation == Orientation.Vertical)
             {
                 var n = maxVerticalSessionControlsCount;
-                CalculatedSessionsPanelMaxHeight = (DefaultSessionControlHeight * n) + (DefaultSessionsPanelVerticalSpacing * (n - 1));
-                CalculatedSessionsPanelSpacing = DefaultSessionsPanelVerticalSpacing;
+                CalculatedSessionsPanelMaxHeight = (DefaultSessionControlHeight * n) + (DefaultVerticalSpacing * (n - 1));
+                CalculatedSessionsPanelSpacing = DefaultVerticalSpacing;
             }
             else
             {
