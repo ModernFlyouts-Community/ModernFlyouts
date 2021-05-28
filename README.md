@@ -111,59 +111,14 @@ I must admit that this project wouldn't be here *how it is* without **[ADeltaX](
 
 Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our invite and allowing us to integrate parts of [EarTrumpet](https://github.com/File-New-Project/EarTrumpet) into ModernFlyouts.
 
+We must also say a big thanks to [our contributors](https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributors) for helping us with some important bug fixes, adding features, and most importantly, localization.
+
 ### Our Team 
 
 - **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
 - **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer (Our savior! Helps us at critical times.)
 - **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
 - **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
-
-
-
-### Our Contributors  💗💕
-
-**Code:**
-
-- [yume-chan](https://github.com/yume-chan) - Found and fixed an important bug which we couldn't even identify! [#113](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/113).
-- [Renzo904](https://github.com/Renzo904) - Fixed some important and annoying bugs [#306](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/306) and [#313](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/313).
-- [fheck](https://github.com/fheck) - Added the ability to toggle the usage of media session controls' thumbnail as background [#315](https://github.com/ModernFlyouts-Community/ModernFlyouts/pull/315).
-
-**Translators:**
-
-- [yukiokun057](https://github.com/yukiokun057) - Russian translator.
-- [knurzl](https://github.com/knurzl) - German translator.
-- [lucasskluser](https://github.com/lucasskluser) - Portuguese translator.
-- [Stealnoob](https://github.com/Stealnoob) - French translator.
-- [imgradeone](https://github.com/imgradeone) - Chinese (Simplified) translator.
-- [sewerynkalemba](https://github.com/sewerynkalemba) - Polish translator.
-- [ArmasF31](https://github.com/ArmasF31) - German translator.
-- [ANT0x1](https://github.com/ANT0x1) - Russian & Ukrainian translator.
-- [Hymian7](https://github.com/Hymian7) - German translator.
-- [TheAgamer554](https://github.com/TheAgamer554) - Spanish translator.
-- [ShintakuNobuhiro](https://github.com/ShintakuNobuhiro) - Japanese translator.
-- [blinchk](https://github.com/blinchk) - Russian translator.
-- [TragicLifeHu](https://github.com/TragicLifeHu) - Chinese (Traditional) translator.
-- [Tarik02](https://github.com/Tarik02) - Ukrainian translator.
-- [MichelangeloDePascale02](https://github.com/MichelangeloDePascale02) - Italian translator.
-- [Per-Terra](https://github.com/Per-Terra) - Japanese translator.
-- [Renzo904](https://github.com/Renzo904) - Spanish translator.
-- [Arno500](https://github.com/Arno500) - French translator.
-- [Daxxxis](https://github.com/Daxxxis) - Polish translator.
-- [OOBSoftInc](https://github.com/OOBSoftInc) - Italian translator.
-- [VasilisPat](https://github.com/VasilisPat)
-- [honorsea](https://github.com/honorsea) - Turkish translator.
-- [MohammadShughri](https://github.com/MohammadShughri) - Arabic translator.
-- [Slasar41](https://github.com/Slasar41) - Indoesian translator.
-- [ShangJixin](https://github.com/ShangJixin) - Chinese (Simplified) translator.
-- [mate131909](https://github.com/mate131909) - Korean translator.
-- [nvi9](https://github.com/nvi9) - Hungarian translator.
-- [Reset12138](https://github.com/Reset12138) - Chinese (Simplified) translator.
-- [howon-kim](https://github.com/howon-kim) - Korean translator.
-- [pklion](https://github.com/pklion) - Japanese translator.
-
-**Others:**
-
-- [Poopooracoocoo](https://github.com/Poopooracoocoo) - README.
 
 ### Dependencies and References
 
