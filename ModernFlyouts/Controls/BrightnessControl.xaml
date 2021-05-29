@@ -6,6 +6,7 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:local="clr-namespace:ModernFlyouts.Controls"
              xmlns:rootui="clr-namespace:ModernFlyouts.UI"
+             xmlns:toolkit="http://schemas.modernwpf.com/toolkit"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              xmlns:display="clr-namespace:ModernFlyouts.Core.Display;assembly=ModernFlyouts.Core"
              mc:Ignorable="d" d:DesignWidth="354"
@@ -33,8 +34,26 @@
                                 <ColumnDefinition Width="48" />
                             </Grid.ColumnDefinitions>
 
-                            <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0"
-                                         Glyph="{x:Static utils:CommonGlyphs.Brightness}" FontSize="16" />
+                            <Grid>
+                                <ui:FontIcon x:Name="BrightnessGlyph" Grid.Column="0" FontSize="16">
+                                    <ui:FontIcon.Glyph>
+                                        <Binding Path="Brightness">
+                                            <Binding.Converter>
+                                                <toolkit:DoubleToObjectConverter GreaterThan="50"
+                                                TrueValue="{x:Static utils:CommonGlyphs.Brightness}"
+                                                FalseValue="{x:Static utils:CommonGlyphs.LowerBrightness}" />
+                                            </Binding.Converter>
+                                        </Binding>
+                                    </ui:FontIcon.Glyph>
+                                </ui:FontIcon>
+                                <Border Background="{DynamicResource SystemControlBackgroundBaseMediumLowBrush}"
+                                        Width="16" Height="16" CornerRadius="8" Margin="16,16,0,0"
+                                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                                        ToolTip="{Binding AssociatedDisplayMonitor.DisplayName}">
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                        Text="{Binding AssociatedDisplayMonitor.Index}" />
+                                </Border>
+                            </Grid>
 
                             <Slider x:Name="BrightnessSlider" Maximum="{Binding Maximum}"
                                     Minimum="{Binding Minimum}" Grid.Column="1" VerticalAlignment="Center" Margin="8,0"
@@ -42,7 +61,7 @@
 
                             <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="6"
                                        Style="{DynamicResource SubtitleTextBlockStyle}"
-                                       Text="100" VerticalAlignment="Center" />
+                                       Text="{Binding Brightness, StringFormat={}{0:#0}}" VerticalAlignment="Center" />
                         </Grid>
                     </Border>
                 </DataTemplate>

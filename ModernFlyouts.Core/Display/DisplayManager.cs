@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Management;
 using System.Runtime.InteropServices;
 using System.Windows;
 using static ModernFlyouts.Core.Interop.NativeMethods;
@@ -176,6 +177,8 @@ namespace ModernFlyouts.Core.Display
             var displayDevice = GetDisplayDevice(deviceName);
             displayMonitor.DeviceId = displayDevice.DeviceID;
             displayMonitor.DisplayName = displayDevice.DeviceString;
+            displayMonitor.wmiId = GetWMIDeviceId(displayDevice.DeviceID);
+            displayMonitor.IsInBuilt = GetIsDisplayInternal(displayMonitor.wmiId);
 
             DisplayMonitors.Add(displayMonitor);
 
@@ -217,6 +220,50 @@ namespace ModernFlyouts.Core.Display
             }
 
             return new[] { (IntPtr)PRIMARY_MONITOR };
+        }
+
+        private static bool GetIsDisplayInternal(string deviceId)
+        {
+            try
+            {
+                var mo = GetManagementObjectForDisplayDevice(deviceId);
+                if (mo != null)
+                    return Convert.ToInt64(mo.Properties["VideoOutputTechnology"].Value) == 0x80000000;
+            }
+            catch { }
+
+            return false;
+        }
+
+        private static ManagementObject GetManagementObjectForDisplayDevice(string deviceId)
+        {
+            ManagementObjectSearcher searcher =
+                    new ManagementObjectSearcher("root\\WMI",
+                    "SELECT * FROM WmiMonitorConnectionParams");
+            var managementObjects = searcher.Get();
+
+            foreach (ManagementObject queryObj in managementObjects)
+            {
+                if (string.Equals(queryObj.Properties["InstanceName"].Value.ToString(), deviceId))
+                {
+                    return queryObj;
+                }
+            }
+
+            return null;
+        }
+
+        private static string GetWMIDeviceId(string deviceId)
+        {
+            try
+            {
+                deviceId = deviceId.Remove(0, 4);
+                string[] a = deviceId.Split('#');
+                string wmiId = @$"{a[0]}\{a[1]}\{a[2]}_0";
+                return wmiId;
+            } catch { }
+
+            return string.Empty;
         }
 
         private static DISPLAY_DEVICE GetDisplayDevice(string deviceName)

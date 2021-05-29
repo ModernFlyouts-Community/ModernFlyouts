@@ -19,13 +19,7 @@ namespace ModernFlyouts
 
             BrightnessManager.Initialize();
 
-            #region Creating Brightness Control
-
             brightnessControl = new BrightnessControl();
-            //brightnessControl.BrightnessSlider.ValueChanged += BrightnessSlider_ValueChanged;
-            //brightnessControl.BrightnessSlider.PreviewMouseWheel += BrightnessSlider_PreviewMouseWheel;
-
-            #endregion
 
             PrimaryContent = brightnessControl;
 
@@ -111,18 +105,14 @@ namespace ModernFlyouts
 
             AppDataHelper.BrightnessModuleEnabled = IsEnabled;
 
-            //if (IsEnabled)
-            //{
-            //    UpdateBrightness(GetBrightnessLevel());
-            //}
+            BrightnessManager.Initialize();
         }
 
         protected override void OnDisabled()
         {
             base.OnDisabled();
 
-            //brightnessWatcher.Stop();
-            //brightnessWatcher.Changed -= BrightnessWatcher_Changed;
+            BrightnessManager.Suspend();
 
             AppDataHelper.BrightnessModuleEnabled = IsEnabled;
         }

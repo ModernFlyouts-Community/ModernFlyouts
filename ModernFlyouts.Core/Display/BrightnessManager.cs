@@ -14,6 +14,8 @@ namespace ModernFlyouts.Core.Display
         private BrightnessWatcher brightnessWatcher;
         private byte[] validWMIBrightnessLevels;
 
+        public bool HasInitialized { get; private set; } = false;
+
         public BrightnessController DefaultBrightnessController { get; private set; }
 
         public static BrightnessManager Instance { get; private set; }
@@ -24,32 +26,74 @@ namespace ModernFlyouts.Core.Display
         {
             validWMIBrightnessLevels = GetValidWMIBrightnessLevels();
 
-            // No physical monitors imply that this display could be
-            // a built-in display such as for laptops/tablets.
-            // So, we are using the WMI Methods to control the brightness of it.
             if (AreWMIMethodsSupported())
             {
-                DefaultBrightnessController = new BuiltInDisplayBrightnessController(validWMIBrightnessLevels);
-                BrightnessControllers.Add(DefaultBrightnessController);
                 brightnessWatcher = new();
                 brightnessWatcher.Changed += BrightnessWatcher_Changed;
                 brightnessWatcher.Start();
             }
 
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
-            BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
+            //BrightnessControllers.Add(new MockBrightnessController());
         }
 
         public static void Initialize()
         {
-            Instance = new();
+            Instance ??= new();
+
+            Instance.InitializeImpl();
+        }
+
+        private void InitializeImpl()
+        {
+            if (!HasInitialized)
+            {
+                HasInitialized = true;
+
+                foreach (var displayMonitor in DisplayManager.Instance.DisplayMonitors)
+                {
+                    MakeBrightnessControllersForDisplayMonitor(displayMonitor);
+                }
+            }
+        }
+
+        public static void Suspend()
+        {
+            if (Instance == null)
+                return;
+
+            foreach (ExternalDisplayBrightnessController brightnessController in Instance.BrightnessControllers)
+            {
+                brightnessController.Dispose();
+            }
+            Instance.BrightnessControllers.Clear();
+
+            if (Instance.brightnessWatcher != null)
+            {
+                Instance.brightnessWatcher.Stop();
+            }
+
+            Instance.HasInitialized = false;
+        }
+
+        private void MakeDefaultBrightnessController(DisplayMonitor displayMonitor)
+        {
+            if (AreWMIMethodsSupported())
+            {
+                DefaultBrightnessController ??= new BuiltInDisplayBrightnessController(Instance.validWMIBrightnessLevels);
+                DefaultBrightnessController.AssociatedDisplayMonitor = displayMonitor;
+                if (!BrightnessControllers.Contains(DefaultBrightnessController))
+                {
+                    BrightnessControllers.Add(DefaultBrightnessController);
+                }
+            }
         }
 
         private static BrightnessController[] CreateBrightnessControllersForDisplayMonitor(DisplayMonitor displayMonitor)
@@ -96,7 +140,7 @@ namespace ModernFlyouts.Core.Display
 
         internal static void DisposeBrightnessControllerForDisplayMonitor(DisplayMonitor displayMonitor)
         {
-            if (Instance == null)
+            if (Instance == null || !Instance.HasInitialized)
                 return;
 
             var brightnessControllers = Instance.BrightnessControllers.Where(
@@ -114,8 +158,14 @@ namespace ModernFlyouts.Core.Display
 
         internal static void MakeBrightnessControllersForDisplayMonitor(DisplayMonitor displayMonitor)
         {
-            if (Instance == null)
+            if (Instance == null || !Instance.HasInitialized)
                 return;
+
+            if (displayMonitor.IsInBuilt)
+            {
+                Instance.MakeDefaultBrightnessController(displayMonitor);
+                return;
+            }
 
             DisposeBrightnessControllerForDisplayMonitor(displayMonitor);
 

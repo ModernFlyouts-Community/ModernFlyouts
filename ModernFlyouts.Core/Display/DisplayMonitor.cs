@@ -8,6 +8,7 @@ namespace ModernFlyouts.Core.Display
     {
         internal bool isDefault;
         internal bool isStale;
+        internal string wmiId;
 
         #region Properties
 
@@ -65,6 +66,14 @@ namespace ModernFlyouts.Core.Display
         {
             get => isPrimary;
             internal set => SetProperty(ref isPrimary, value);
+        }
+
+        private bool isInBuilt;
+
+        public bool IsInBuilt
+        {
+            get => isInBuilt;
+            internal set => SetProperty(ref isInBuilt, value);
         }
 
         private Rect workingArea = Rect.Empty;

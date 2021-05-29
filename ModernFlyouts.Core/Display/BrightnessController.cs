@@ -9,12 +9,20 @@ namespace ModernFlyouts.Core.Display
     {
         #region Properties
 
+        private DisplayMonitor associatedDisplayMonitor;
+
+        public DisplayMonitor AssociatedDisplayMonitor
+        {
+            get => associatedDisplayMonitor;
+            internal set => SetProperty(ref associatedDisplayMonitor, value);
+        }
+
         private double minimum = 0.0;
 
         public double Minimum
         {
             get => minimum;
-            set => SetProperty(ref minimum, value);
+            protected set => SetProperty(ref minimum, value);
         }
 
         private double maximum = 100.0;
@@ -22,7 +30,7 @@ namespace ModernFlyouts.Core.Display
         public double Maximum
         {
             get => maximum;
-            set => SetProperty(ref maximum, value);
+            protected set => SetProperty(ref maximum, value);
         }
 
         private double brightness = 0.0;
@@ -145,18 +153,6 @@ namespace ModernFlyouts.Core.Display
     {
         private IntPtr hPhysicalMonitor;
         private double currentValue;
-
-        #region Properties
-
-        private DisplayMonitor associatedDisplayMonitor;
-
-        public DisplayMonitor AssociatedDisplayMonitor
-        {
-            get => associatedDisplayMonitor;
-            private set => SetProperty(ref associatedDisplayMonitor, value);
-        }
-
-        #endregion
 
         internal ExternalDisplayBrightnessController(MonitorInfo info, DisplayMonitor displayMonitor)
         {
