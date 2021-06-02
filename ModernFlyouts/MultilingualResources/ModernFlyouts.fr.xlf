@@ -402,7 +402,7 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="translated">Aligner le menu à cette position</target>
+          <target state="translated">Aligner le menu volant à cette position</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
@@ -410,7 +410,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="translated">Utiliser la vignette du média comme arrière-plan du contrôle du média</target>
+          <target state="translated">Utiliser la miniature du média comme arrière-plan du contrôle du média</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
@@ -426,7 +426,7 @@
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="translated">Droit</target>
+          <target state="translated">Droite</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Top" translate="yes" xml:space="preserve">
           <source>Top</source>
@@ -470,27 +470,27 @@
         </trans-unit>
         <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
           <source>Display</source>
-          <target state="translated">Display</target>
+          <target state="translated">Affichage</target>
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="translated">Sélectionnez le moniteur d'affichage préféré pour afficher la fenêtre volante.</target>
+          <target state="translated">Sélectionnez le moniteur d'affichage préféré pour afficher le menu volant.</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="translated">Alignement du menu déroulant</target>
+          <target state="translated">Alignement du menu volant</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="translated">Direction d'empilement du contenu du Flyout</target>
+          <target state="translated">Direction d'empilement du contenu du menu volant</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="translated">Flyout expand direction</target>
+          <target state="translated">Direction d'extension du menu volant</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="translated">Placement du Flyout</target>
+          <target state="translated">Positionnement du menu volant</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
