@@ -58,7 +58,7 @@ This project has its roots in the app [AudioFlyout](https://github.com/ADeltaX/A
 
 ## Installation  ⬇️
 
-Modern Flyouts is available for you to install via  [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP), [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), [Chocolatey](https://chocolatey.org/packages/modernflyouts) and winget.
+Modern Flyouts is available for you to install via  [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP), [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), winget and [Chocolatey](https://chocolatey.org/packages/modernflyouts).
 
 All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **recommended** as it is easier to install and will automatically remain up to date.
 
@@ -73,16 +73,15 @@ All the distribution methods mentioned above are supported, however installing t
 3. Install the certificate into the Trusted People directory.
 4. Install the downloaded ***.msixbundle** file and launch the app from the **Start Menu**.
 
-
-**Chocolatey**
-
-ModernFlyouts is **unofficially** available to install via Chocolatey [here](https://chocolatey.org/packages/modernflyouts), however as this is not maintained by us we can not verify its security or its update status.
-
 **winget**
 
 _please note that due to how winget processes package updates, updates may take **longer** to be released to winget_.
 
 `winget install --id=ModernFlyouts.ModernFlyouts -e`
+
+**Chocolatey**
+
+ModernFlyouts is **unofficially** available to install via Chocolatey [here](https://chocolatey.org/packages/modernflyouts), however as this is not maintained by us we can not verify its security or its update status.
 
 ------------------------
 
@@ -111,7 +110,7 @@ I must admit that this project wouldn't be here *how it is* without **[ADeltaX](
 
 Next, we must thank **[@riverar](https://github.com/riverar)** for accepting our invite and allowing us to integrate parts of [EarTrumpet](https://github.com/File-New-Project/EarTrumpet) into ModernFlyouts.
 
-We must also say a big thanks to [our contributors](https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributors) for helping us with some important bug fixes, adding features, and most importantly, localization.
+We must also say a big thanks to [our contributors](https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributors) for helping us with some important bug fixes, adding features and localization.
 
 ### Our Team 
 
