@@ -307,6 +307,12 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
+        public static bool CloseMediaFlyoutOnBgClick
+        {
+            get => GetValue(DefaultValuesStore.CloseMediaFlyoutOnBgClick);
+            set => SetValue(value);
+        }
+
         public static int MaxVerticalSessionControlsCount
         {
             get => GetValue(DefaultValuesStore.MaxVerticalSessionControlsCount);

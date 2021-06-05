@@ -41,6 +41,16 @@
                 </Border.Background>
             </Border>
 
+            <Border Opacity="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="#fff" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
+                    Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.CloseMediaFlyoutOnBgClick,
+                        Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{x:Static utils:CommonCommands.CloseFlyoutCommand}"
+                                  CommandParameter="{x:Reference Name=ContentGrid}" />
+                </Border.InputBindings>
+            </Border>
+
             <Grid x:Name="TextBlockGrid" Grid.Column="1" VerticalAlignment="Center" Margin="0,25,0,0" Cursor="Hand"
                   input:InputHelper.IsTapEnabled="True" input:InputHelper.TappedCommand="{Binding ActivateMediaSourceCommand}">
                 <Grid.RowDefinitions>

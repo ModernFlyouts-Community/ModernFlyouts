@@ -177,6 +177,9 @@
   <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
     <value>Use media's thumbnail as media control's background</value>
   </data>
+  <data name="AudioFlyoutHelper.CloseMediaFlyoutOnBgClick" xml:space="preserve">
+    <value>Close media flyout when the background is clicked</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
