@@ -69,9 +69,10 @@ namespace ModernFlyouts.Core.Display
             if (Instance == null)
                 return;
 
-            foreach (ExternalDisplayBrightnessController brightnessController in Instance.BrightnessControllers)
+            foreach (BrightnessController brightnessController in Instance.BrightnessControllers)
             {
-                brightnessController.Dispose();
+                if (brightnessController is not BuiltInDisplayBrightnessController)
+                    brightnessController.Dispose();
             }
             Instance.BrightnessControllers.Clear();
 
