@@ -226,11 +226,14 @@ namespace ModernFlyouts.Core.Interop
                 if (GetWindowClassName(hWnd) == "NativeHWNDHost")
                 {
                     _hasNativeFlyoutCreated = GetAllInfos();
-                    hookManager.OnHwndCreated(hWnd);
-
-                    if (eventType == EVENT_OBJECT_SHOW)
+                    if (_hasNativeFlyoutCreated && hWnd == HWndHost)
                     {
-                        OnNativeFlyoutShown();
+                        hookManager.OnHwndCreated(hWnd);
+
+                        if (eventType == EVENT_OBJECT_SHOW)
+                        {
+                            OnNativeFlyoutShown();
+                        }
                     }
                 }
             }
