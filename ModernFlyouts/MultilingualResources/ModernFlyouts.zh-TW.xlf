@@ -414,63 +414,63 @@
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
-          <target state="new">底部</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">靠下</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Center" translate="yes" xml:space="preserve">
           <source>Center</source>
-          <target state="new">中心</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">中心</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">左側</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">靠左</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">右側</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">靠右</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Top" translate="yes" xml:space="preserve">
           <source>Top</source>
-          <target state="new">頂部</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">靠上</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">自動</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">自動</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Down" translate="yes" xml:space="preserve">
           <source>Down</source>
-          <target state="new">向下</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">往下</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">向左</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">靠左</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">向右</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">靠右</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Up" translate="yes" xml:space="preserve">
           <source>Up</source>
-          <target state="new">向上</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">啟動</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">自動</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">自動</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Manual" translate="yes" xml:space="preserve">
           <source>Manual</source>
-          <target state="new">手動</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">手動</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Ascending" translate="yes" xml:space="preserve">
           <source>Ascending</source>
-          <target state="new">升序</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">遞增</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Descending" translate="yes" xml:space="preserve">
           <source>Descending</source>
-          <target state="new">降序</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">遞減</target>
         </trans-unit>
         <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
           <source>Display</source>
-          <target state="new">顯示</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">顯示</target>
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
@@ -498,15 +498,15 @@
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
-          <target state="new">水平對齊</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">水平對齊</target>
         </trans-unit>
         <trans-unit id="Settings.Layout" translate="yes" xml:space="preserve">
           <source>Layout</source>
-          <target state="new">版面配置</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">版面配置</target>
         </trans-unit>
         <trans-unit id="Settings.VerticalAlignment" translate="yes" xml:space="preserve">
           <source>Vertical alignment</source>
-          <target state="new">垂直對齊</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">垂直對齊</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>

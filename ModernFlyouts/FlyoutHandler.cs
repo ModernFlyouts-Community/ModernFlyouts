@@ -287,7 +287,7 @@ namespace ModernFlyouts
             {
                 Source = UIManager,
                 Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowPlacementMode)),
-                Mode = BindingMode.OneWay
+                Mode = BindingMode.TwoWay
             });
 
             BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.AlignmentProperty, new Binding()

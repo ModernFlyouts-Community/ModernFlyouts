@@ -6,7 +6,7 @@ using static ModernFlyouts.Core.Interop.NativeMethods;
 
 namespace ModernFlyouts.Core.Interop
 {
-    public class NativeFlyoutHandler
+    public class NativeFlyoutHandler : IWndProcObject
     {
         #region Constants
 
@@ -168,6 +168,7 @@ namespace ModernFlyouts.Core.Interop
 
         private bool _hasNativeFlyoutCreated;
 
+        private WndProcHookManager hookManager;
         private WinEventDelegate _procDelegate;
         private IntPtr HHookID = IntPtr.Zero;
 
@@ -178,6 +179,7 @@ namespace ModernFlyouts.Core.Interop
         public NativeFlyoutHandler()
         {
             _procDelegate = new WinEventDelegate(WinEventProc);
+            hookManager = WndProcHookManager.RegisterForIWndProcObject(this);
         }
 
         public void Initialize()
@@ -224,10 +226,14 @@ namespace ModernFlyouts.Core.Interop
                 if (GetWindowClassName(hWnd) == "NativeHWNDHost")
                 {
                     _hasNativeFlyoutCreated = GetAllInfos();
-
-                    if (eventType == EVENT_OBJECT_SHOW)
+                    if (_hasNativeFlyoutCreated && hWnd == HWndHost)
                     {
-                        OnNativeFlyoutShown();
+                        hookManager.OnHwndCreated(hWnd);
+
+                        if (eventType == EVENT_OBJECT_SHOW)
+                        {
+                            OnNativeFlyoutShown();
+                        }
                     }
                 }
             }
@@ -252,6 +258,18 @@ namespace ModernFlyouts.Core.Interop
                         break;
                 }
             }
+        }
+
+        private IntPtr wndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
+        {
+            var result = hookManager.TryHandleWindowMessage(hWnd, msg, wParam, lParam, out bool handled);
+
+            if (handled)
+            {
+                return result;
+            }
+
+            return DefWindowProc(hWnd, msg, wParam, lParam);
         }
 
         private void OnNativeFlyoutShown()

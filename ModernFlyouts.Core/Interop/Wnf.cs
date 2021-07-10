@@ -62,7 +62,7 @@ namespace ModernFlyouts.Core.Interop
 
         public static void UnsubscribeWnf(IntPtr subscriptionId)
         {
-            RtlUnsubscribeWnfStateChangeNotification(ref subscriptionId);
+            RtlUnsubscribeWnfStateChangeNotification(subscriptionId);
         }
 
         public class WnfStateData
@@ -121,7 +121,7 @@ namespace ModernFlyouts.Core.Interop
 
         [DllImport("ntdll.dll")]
         private static extern int RtlUnsubscribeWnfStateChangeNotification(
-            ref IntPtr Subscription);
+            IntPtr Subscription);
 
         public delegate IntPtr WnfUserCallback(
             ulong StateName,

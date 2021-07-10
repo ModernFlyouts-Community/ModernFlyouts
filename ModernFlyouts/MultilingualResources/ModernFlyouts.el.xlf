@@ -414,63 +414,63 @@
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
-          <target state="new">Κάτω</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Κάτω</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Center" translate="yes" xml:space="preserve">
           <source>Center</source>
-          <target state="new">Κέντρο</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Κέντρο</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Αριστερά</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αριστερά</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Δεξιά</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Δεξιά</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Top" translate="yes" xml:space="preserve">
           <source>Top</source>
-          <target state="new">Πάνω</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αρχή</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">Αυτόματα</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αυτόματα</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Down" translate="yes" xml:space="preserve">
           <source>Down</source>
-          <target state="new">Κάτω</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Κάτω</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Αριστερά</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αριστερά</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Δεξιά</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Δεξιά</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Up" translate="yes" xml:space="preserve">
           <source>Up</source>
-          <target state="new">Επάνω</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">επάνω</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">Αυτόματα</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αυτόματα</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Manual" translate="yes" xml:space="preserve">
           <source>Manual</source>
-          <target state="new">Χειροκίνητα</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Μη αυτόματο</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Ascending" translate="yes" xml:space="preserve">
           <source>Ascending</source>
-          <target state="new">Αύξουσα Σειρά</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αύξουσα</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Descending" translate="yes" xml:space="preserve">
           <source>Descending</source>
-          <target state="new">Φθίνουσα Σειρά</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Φθίνουσα</target>
         </trans-unit>
         <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
           <source>Display</source>
-          <target state="new">Οθόνη</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Εμφάνιση</target>
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
@@ -498,15 +498,15 @@
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
-          <target state="new">Οριζόντια ευθυγράμμιση</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Οριζόντια στοίχιση</target>
         </trans-unit>
         <trans-unit id="Settings.Layout" translate="yes" xml:space="preserve">
           <source>Layout</source>
-          <target state="new">Διάταξη</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Διάταξη</target>
         </trans-unit>
         <trans-unit id="Settings.VerticalAlignment" translate="yes" xml:space="preserve">
           <source>Vertical alignment</source>
-          <target state="new">Κάθετη ευθυγράμμιση</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Κατακόρυφη στοίχιση</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
