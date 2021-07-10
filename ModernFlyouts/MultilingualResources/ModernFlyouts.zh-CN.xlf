@@ -508,9 +508,17 @@
           <source>Vertical alignment</source>
           <target state="new">垂直对齐</target>
         </trans-unit>
+        <trans-unit id="Settings.EnableModule.Battery" translate="yes" xml:space="preserve">
+          <source>Enable Battery Flyout</source>
+          <target state="new">Enable Battery Flyout</target>
+        </trans-unit>
+        <trans-unit id="Settings.Modules.Battery" translate="yes" xml:space="preserve">
+          <source>Battery</source>
+          <target state="new">Battery</target>
+        </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">淡出动画</target>
+          <target state="new">Fade animation</target>
         </trans-unit>
       </group>
     </body>
