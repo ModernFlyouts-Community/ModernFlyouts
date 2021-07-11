@@ -54,7 +54,8 @@
                             CommandParameter="{Binding}"
                             Command="{Binding ElementName=_this, Path=SetPreferredDisplayMonitorCommand}"
                             VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                            Background="#2E2E2E">
                             <Button.ToolTip>
                                 <ui:SimpleStackPanel>
                                     <TextBlock Text="{Binding DisplayName}" />
