@@ -41,6 +41,9 @@
                         <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_UseThumbnailAsBackground}"
                                          OnContent="{x:Static resx:Strings.Settings_On}" OffContent="{x:Static resx:Strings.Settings_Off}"
                                          IsOn="{Binding UIManager.UseGSMTCThumbnailAsBackground}" />
+                        <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_CloseMediaFlyoutOnBgClick}"
+                                         OnContent="{x:Static resx:Strings.Settings_On}" OffContent="{x:Static resx:Strings.Settings_Off}"
+                                         IsOn="{Binding UIManager.CloseMediaFlyoutOnBgClick}" />
                         <ui:RadioButtons x:Name="orientationCmbBox" x:FieldModifier="private"
                                          Header="{x:Static resx:Strings.AudioFlyoutHelper_SessionsPanelOrientation}"
                                          ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
