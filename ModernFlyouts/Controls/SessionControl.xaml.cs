@@ -164,7 +164,7 @@ namespace ModernFlyouts.Controls
 
             if (alignThumbnailToRight)
             {
-                C0.Width = new GridLength(15, GridUnitType.Pixel);
+                C0.Width = new GridLength(24, GridUnitType.Pixel);
                 C2.Width = new GridLength(0, GridUnitType.Auto);
                 sessionControl.ThumbnailGrid.SetValue(Grid.ColumnProperty, 2);
                 sessionControl.thumbnailBGOpacityBrush.GradientOrigin = sessionControl.thumbnailBGOpacityBrush.Center = new Point(1, 0.5);
@@ -172,7 +172,7 @@ namespace ModernFlyouts.Controls
             else
             {
                 C0.Width = new GridLength(0, GridUnitType.Auto);
-                C2.Width = new GridLength(15, GridUnitType.Pixel);
+                C2.Width = new GridLength(24, GridUnitType.Pixel);
                 sessionControl.ThumbnailGrid.SetValue(Grid.ColumnProperty, 0);
                 sessionControl.thumbnailBGOpacityBrush.GradientOrigin = sessionControl.thumbnailBGOpacityBrush.Center = new Point(0, 0.5);
             }

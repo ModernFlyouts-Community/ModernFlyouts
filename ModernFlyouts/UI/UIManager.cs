@@ -12,9 +12,9 @@ namespace ModernFlyouts.UI
 {
     public class UIManager : ObservableObject
     {
-        public const double FlyoutWidth = 354;
+        public const double FlyoutWidth = 360;
 
-        public const double DefaultSessionControlHeight = 206;
+        public const double DefaultSessionControlHeight = 178;
 
         public const double DefaultVerticalSpacing = 8;
 

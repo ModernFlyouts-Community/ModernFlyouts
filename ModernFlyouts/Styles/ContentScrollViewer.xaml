@@ -15,7 +15,7 @@
                     SnapsToDevicePixels="True">
             <ui:FontIcon x:Name="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center"
                              FontFamily="{DynamicResource SymbolThemeFontFamily}"
-                             FontSize="14" Glyph="{TemplateBinding Content}"
+                             FontSize="10" Glyph="{TemplateBinding Content}"
                              Foreground="{DynamicResource ScrollBarButtonArrowForeground}" />
         </Border>
         <ControlTemplate.Triggers>
@@ -49,11 +49,11 @@
                             </Grid.RowDefinitions>
                             <Button x:Name="PART_LineUpButton"
                                         Command="{x:Static ScrollBar.LineUpCommand}"
-                                        Height="20" Width="40"
+                                        Height="20" Width="20"
                                         IsTabStop="False"
-                                        Margin="0"
+                                        Margin="4"
                                         Grid.Row="0"
-                                        ui:ControlHelper.CornerRadius="0,0,4,4"
+                                        ui:ControlHelper.CornerRadius="6"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{x:Static utils:CommonGlyphs.ChevronUp}"
                                         HorizontalAlignment="Center">
@@ -66,11 +66,11 @@
                             </Button>
                             <Button x:Name="PART_LineDownButton"
                                         Command="{x:Static ScrollBar.LineDownCommand}"
-                                        Height="20" Width="40"
+                                        Height="20" Width="20"
                                         IsTabStop="False"
-                                        Margin="0"
+                                        Margin="4"
                                         Grid.Row="2"
-                                        ui:ControlHelper.CornerRadius="4,4,0,0"
+                                        ui:ControlHelper.CornerRadius="6"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{x:Static utils:CommonGlyphs.ChevronDown}"
                                         HorizontalAlignment="Center">
@@ -106,11 +106,11 @@
                             </Grid.ColumnDefinitions>
                             <Button x:Name="PART_LineLeftButton"
                                         Command="{x:Static ScrollBar.LineLeftCommand}"
-                                        Height="40" Width="20"
+                                        Height="20" Width="20"
                                         IsTabStop="False"
-                                        Margin="0"
+                                        Margin="4"
                                         Grid.Column="0"
-                                        ui:ControlHelper.CornerRadius="0,4,4,0"
+                                        ui:ControlHelper.CornerRadius="6"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{x:Static utils:CommonGlyphs.ChevronLeft}"
                                         VerticalAlignment="Center">
@@ -123,11 +123,11 @@
                             </Button>
                             <Button x:Name="PART_LineRightButton"
                                         Command="{x:Static ScrollBar.LineRightCommand}"
-                                        Height="40" Width="20"
+                                        Height="20" Width="20"
                                         IsTabStop="False"
-                                        Margin="0"
+                                        Margin="4"
                                         Grid.Column="2"
-                                        ui:ControlHelper.CornerRadius="4,0,0,4"
+                                        ui:ControlHelper.CornerRadius="6"
                                         Template="{StaticResource SecondaryContentScrollBarButtonTemplate}"
                                         Content="{x:Static utils:CommonGlyphs.ChevronRight}"
                                         VerticalAlignment="Center">
@@ -170,7 +170,8 @@
                                     x:Name="PART_HorizontalScrollBar" Style="{StaticResource SecondaryContentScrollBarStyleHorizontal}"
                                     AutomationProperties.AutomationId="HorizontalScrollBar"
                                     Maximum="{TemplateBinding ScrollableWidth}"
-                                    Minimum="0" VerticalAlignment="Stretch"
+                                    Minimum="0" VerticalAlignment="Top"
+                                    Margin="0,0,0,0"
                                     ViewportSize="{TemplateBinding ViewportWidth}"
                                     Orientation="Horizontal"
                                     Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
@@ -179,7 +180,7 @@
                                     x:Name="PART_VerticalScrollBar" Style="{StaticResource SecondaryContentScrollBarStyleVertical}"
                                     AutomationProperties.AutomationId="VerticalScrollBar"
                                     Maximum="{TemplateBinding ScrollableHeight}"
-                                    Minimum="0" HorizontalAlignment="Stretch"
+                                    Minimum="0" HorizontalAlignment="Right"
                                     ViewportSize="{TemplateBinding ViewportHeight}"
                                     Orientation="Vertical"
                                     Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
