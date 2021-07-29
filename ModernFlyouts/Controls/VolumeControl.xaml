@@ -14,7 +14,6 @@
             <ColumnDefinition Width="48" />
         </Grid.ColumnDefinitions>
         <Button x:Name="VolumeButton" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,0,0"
-                Style="{DynamicResource ButtonRevealStyle}"
                 ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
                 Width="48" Padding="0" Height="48" Background="Transparent">
             <Grid>

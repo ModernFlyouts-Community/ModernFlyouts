@@ -11,8 +11,7 @@
              xmlns:local="clr-namespace:ModernFlyouts"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance designTime:MockMediaSession}"
              Width="{DynamicResource FlyoutWidth}" Height="{DynamicResource DefaultSessionControlHeight}" VerticalAlignment="Top">
-    <Border CornerRadius="{DynamicResource FlyoutCornerRadius}"
-            BorderThickness="1" BorderBrush="#1FFFFFFF">
+    <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
         <Grid x:Name="ContentGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="24" />
@@ -27,7 +26,9 @@
             <Border Grid.ColumnSpan="3" Grid.RowSpan="3" Opacity="0.5" CornerRadius="{DynamicResource FlyoutCornerRadius}" ClipToBounds="True"
                     Visibility="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.UseGSMTCThumbnailAsBackground,
                         Converter={StaticResource BooleanToVisibilityConverter}}"
-                    input:InputHelper.IsTapEnabled="True" input:InputHelper.TappedCommand="{x:Static utils:CommonCommands.CloseFlyoutCommand}">
+                    input:InputHelper.IsTapEnabled="True"
+                    input:InputHelper.TappedCommand="{x:Static utils:CommonCommands.CloseFlyoutCommand}"
+                    input:InputHelper.TappedCommandParameter="{x:Reference Name=ContentGrid}">
                 <Border.OpacityMask>
                     <RadialGradientBrush x:Name="thumbnailBGOpacityBrush" x:FieldModifier="private"
                                          GradientOrigin="1,0.5" RadiusX="1" RadiusY="1" Center="1,0.5">
@@ -71,7 +72,7 @@
             </Grid>
 
             <Grid x:Name="ThumbnailGrid" x:FieldModifier="private" Grid.Column="2">
-                <Grid Height="58" Width="58" Margin="24,34,24,0" Cursor="Hand" VerticalAlignment="Top"
+                <Grid Height="64" Width="64" Margin="24,24,24,2" Cursor="Hand" VerticalAlignment="Top"
                       input:InputHelper.IsTapEnabled="True" input:InputHelper.TappedCommand="{Binding ActivateMediaSourceCommand}">
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}" Background="#333333" />
                     <Border CornerRadius="{DynamicResource FlyoutCornerRadius}">
