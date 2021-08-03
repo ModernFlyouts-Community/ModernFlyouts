@@ -37,7 +37,7 @@
   <PropertyGroup Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -65,7 +65,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>-->
-
   <ItemGroup Condition="'$(Platform)'=='ARM64'">
     <None Include="ModernFlyoutsHost_A64.exe">
       <Link>$(ProjectName).exe</Link>
@@ -73,7 +72,6 @@
       <DeploymentContent>true</DeploymentContent>
     </None>
   </ItemGroup>
-
   <ItemGroup Condition="'$(Platform)'=='x64'">
     <None Include="ModernFlyoutsHost_x64.exe">
       <Link>$(ProjectName).exe</Link>
@@ -81,7 +79,6 @@
       <DeploymentContent>true</DeploymentContent>
     </None>
   </ItemGroup>
-
   <ItemGroup Condition="'$(Platform)'=='Win32'">
     <None Include="ModernFlyoutsHost_x86.exe">
       <Link>$(ProjectName).exe</Link>
@@ -89,7 +86,6 @@
       <DeploymentContent>true</DeploymentContent>
     </None>
   </ItemGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
