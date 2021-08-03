@@ -1,9 +1,8 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a bug report to help us improve.
 title: 'Bug:'
 labels: Bug
-assignees: ShankarBUS
 
 ---
 <!-- 🟥🟥🟥 A few rules to keep in mind- 🟥🟥🟥
@@ -32,7 +31,7 @@ Steps to reproduce the behavior:
  - Windows 10 Version: <!-- [e.g.  Windows 10 20H2] -->
 
 **ModernFlyouts Version:**
- - Version: <!-- [e.g. v0.9.0] -->
+ - Version: <!-- [e.g. v0.9.1] -->
 
 **Additional context:**
 <!-- Add any other info about the problem below this line. -->
