@@ -159,7 +159,11 @@ namespace ModernFlyouts
             else
             {
                 OnScreenFlyoutPreferredMonitor = DisplayManager.Instance.PrimaryDisplayMonitor;
-                AlignFlyout();
+                if (onScreenFlyoutPreferredMonitor.Bounds.Contains(flyoutPosition.ToPoint()))
+                {
+                    AlignFlyout(flyoutPosition);
+                }
+                else { AlignFlyout(); }
             }
 
             async void getStartupStatus()
@@ -258,6 +262,13 @@ namespace ModernFlyouts
 
             OnScreenFlyoutWindow = flyoutWindow;
 
+            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.PlacementModeProperty, new Binding()
+            {
+                Source = UIManager,
+                Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowPlacementMode)),
+                Mode = BindingMode.TwoWay
+            });
+
             flyoutPosition = AppDataHelper.FlyoutPosition;
 
             AlignFlyout(flyoutPosition);
@@ -280,13 +291,6 @@ namespace ModernFlyouts
             {
                 Source = UIManager,
                 Path = new PropertyPath(nameof(UIManager.FlyoutTimeout)),
-                Mode = BindingMode.OneWay
-            });
-
-            BindingOperations.SetBinding(flyoutWindow, FlyoutWindow.PlacementModeProperty, new Binding()
-            {
-                Source = UIManager,
-                Path = new PropertyPath(nameof(UIManager.OnScreenFlyoutWindowPlacementMode)),
                 Mode = BindingMode.OneWay
             });
 

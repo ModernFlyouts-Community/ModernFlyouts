@@ -1,11 +1,23 @@
-﻿using ModernFlyouts.Helpers;
-using ModernFlyouts.Utilities;
+﻿using ModernFlyouts.Controls;
+using ModernFlyouts.Helpers;
 
 namespace ModernFlyouts
 {
     public class AirplaneModeFlyoutHelper : FlyoutHelperBase
     {
         private AirplaneModeControl airplaneModeControl;
+
+        #region Properties
+
+        private bool airplaneMode;
+
+        public bool AirplaneMode
+        {
+            get => airplaneMode;
+            private set => SetProperty(ref airplaneMode, value);
+        }
+
+        #endregion
 
         public AirplaneModeFlyoutHelper()
         {
@@ -23,25 +35,11 @@ namespace ModernFlyouts
             OnEnabled();
         }
 
-        private void Prepare(object data)
-        {
-            if (data is bool isEnabled && isEnabled)
-            {
-                airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOn;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.Airplane;
-            }
-            else
-            {
-                airplaneModeControl.txt.Text = Properties.Strings.AirplaneModeOff;
-                airplaneModeControl.AirplaneGlyph.Glyph = CommonGlyphs.SignalBars;
-            }
-        }
-
         public override bool CanHandleNativeOnScreenFlyout(FlyoutTriggerData triggerData)
         {
             if (triggerData.TriggerType == FlyoutTriggerType.AirplaneMode)
             {
-                Prepare(triggerData.Data);
+                AirplaneMode = triggerData.Data is bool isEnabled && isEnabled;
                 return true;
             }
 
