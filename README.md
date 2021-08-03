@@ -63,7 +63,7 @@ With additional implementations for **"Airplane mode"**, **"Brightness"** and **
 ------------------------
 
 ## System Requirements  🖥️
-
+- **Windows 11**
 - **Windows 10 1809 and above** 
 > older versions such as [v0.3](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/tag/v0.3.0) and below support Windows 10 1803 downlevel till Windows 8, however v0.4 and above won't.
 
