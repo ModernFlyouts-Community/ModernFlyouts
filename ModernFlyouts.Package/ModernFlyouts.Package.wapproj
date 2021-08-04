@@ -59,7 +59,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hostfxr.dll" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
