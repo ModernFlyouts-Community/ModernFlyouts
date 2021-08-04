@@ -10,8 +10,8 @@
 
   <Identity
     Name="32669SamG.ModernFlyouts"
-    Publisher="CN=samue"
-    Version="0.10.0.0" />
+    Publisher="CN=Developer"
+    Version="0.9.6.0" />
 
   <Properties>
     <DisplayName>ms-resource:Resources/PackageDisplayName</DisplayName>

@@ -12,7 +12,7 @@
     <ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
     <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
     <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Version.Contains('-beta'))">
