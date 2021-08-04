@@ -111,7 +111,6 @@
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
     <PRIResource Include="Strings\en-us\Resources.resw" />
-    <None Include="ModernFlyouts.Package_TemporaryKey.pfx" />
     <Content Include="Package.appinstaller" />
     <Content Include="priconfig.default.xml" />
     <None Include="Package.StoreAssociation.xml" />

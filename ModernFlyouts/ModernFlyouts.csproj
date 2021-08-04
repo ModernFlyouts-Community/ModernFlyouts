@@ -31,9 +31,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Release'">
-    <PackageReference Include="Microsoft.AppCenter" Version="4.2.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.2.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.3.0" />
     <PackageReference Include="Microsoft.Services.Store.SDK" Version="10.1705.16001" />
   </ItemGroup>
 
