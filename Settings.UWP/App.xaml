@@ -6,19 +6,14 @@
 
 </Application>-->
 <Application
-    x:Class="AppUIBasics.App"
+    x:Class="Settings.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls" 
-    xmlns:local="using:AppUIBasics"
-    xmlns:common="using:AppUIBasics.Common">
+    xmlns:local="using:Settings.UWP"
+    xmlns:common="using:Settings.UWP.Common">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <local:ItemTemplates />
-                <winui:XamlControlsResources ControlsResourcesVersion="Version2"/>
-            </ResourceDictionary.MergedDictionaries>
-
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light">
                     <SolidColorBrush x:Key="HomePageBackgroundBrush" Color="Transparent"/>
@@ -58,11 +53,11 @@
             </LinearGradientBrush>
 
             <!--  Application-specific resources  -->
-            <common:NullableBooleanToBooleanConverter x:Key="nullableBooleanToBooleanConverter" />
+            <!--<common:NullableBooleanToBooleanConverter x:Key="nullableBooleanToBooleanConverter" />
             <common:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
             <common:NullToVisibilityConverter x:Key="inverseNullToVisibilityConverter" NonNullValue="Collapsed" NullValue="Visible" />
             <common:BooleanToValueConverter x:Key="booleanToValueConverter" />
-            <common:DoubleToThicknessConverter x:Key="doubleToThicknessConverter" />
+            <common:DoubleToThicknessConverter x:Key="doubleToThicknessConverter" />-->
 
             <!--  Breakpoints  -->
             <x:Double x:Key="Breakpoint640Plus">641</x:Double>

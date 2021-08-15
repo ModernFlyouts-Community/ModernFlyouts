@@ -10,11 +10,11 @@
     //*********************************************************
 -->
 <Page
-    x:Class="AppUIBasics.NavigationRootPage"
+    x:Class="Settings.UWP.NavigationRootPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    xmlns:local="using:AppUIBasics"
+    xmlns:local="using:Settings.UWP"
     HighContrastAdjustment="None"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
@@ -55,19 +55,6 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <local:DeviceFamilyTrigger DeviceFamily="Windows.Xbox" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="XboxContentSafeRect.Visibility" Value="Visible" />
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-
-        </VisualStateManager.VisualStateGroups>
 
         <Rectangle
             x:Name="XboxContentSafeRect"

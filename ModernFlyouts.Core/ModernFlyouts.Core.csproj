@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.2" />
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.0-preview1" />
     <PackageReference Include="NAudio" Version="2.0.1" />
     <PackageReference Include="NPSMLib" Version="0.9.14" />
     <PackageReference Include="System.Drawing.Common" Version="6.0.0-rc.1.21403.12" />

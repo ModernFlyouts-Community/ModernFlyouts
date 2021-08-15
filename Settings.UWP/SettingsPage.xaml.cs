@@ -7,14 +7,9 @@
 // PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
 //
 //*********************************************************
-using AppUIBasics.Common;
-using AppUIBasics.Helper;
-using Microsoft.Graphics.Canvas.Effects;
-using System;
+using Settings.UWP.Common;
+using Settings.UWP.Helper;
 using System.Linq;
-using Windows.ApplicationModel.Core;
-using Windows.Storage;
-using Windows.Storage.Pickers;
 using Windows.System;
 using Windows.UI;
 using Windows.UI.ViewManagement;
