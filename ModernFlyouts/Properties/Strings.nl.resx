@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Opnieuw opstarten vereist om een aantal wijzigingen toe te passen</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>De miniatuur van het medium gebruiken als achtergrond van mediabesturingselement</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Onder</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Weergeven</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Selecteer de gewenste beeldschermmonitor om de flyout weer te geven op</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Flyout uitlijning</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Flyout content stapelrichting</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout expand richting</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Flyout plaatsing</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Plaatsingsmodus</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Horizontaal uitlijnen</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Verticaal uitlijnen</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Animatie vervagen</value>
   </data>
 </root>

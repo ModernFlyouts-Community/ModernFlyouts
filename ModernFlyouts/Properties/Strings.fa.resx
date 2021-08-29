@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>راه اندازی مجدد مورد نیاز برای اعمال برخی از تغییرات</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>استفاده از تصویر کوچک رسانه ها به عنوان پس زمینه کنترل رسانه ها</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>پایین</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>صفحه نمایش</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>انتخاب مانیتور صفحه نمایش ترجیح داده شده برای نشان دادن flyout در</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>همترازی فلای آوت</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>فلایوت محتوا جهت انباشته</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>فلای آوت جهت را گسترش می دهد</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>قرار دادن فلای آوت</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>حالت قرار دادن</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>&amp;تراز افقی</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>&amp;تراز عمودی</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>محو انیمیشن</value>
   </data>
 </root>

@@ -389,4 +389,7 @@
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Függőleges igazítás</value>
   </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Elhalványulás animáció</value>
+  </data>
 </root>

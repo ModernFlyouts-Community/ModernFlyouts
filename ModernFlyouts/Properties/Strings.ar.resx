@@ -389,4 +389,7 @@
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>انحياز عمودي</value>
   </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>تلاشي الرسوم المتحركة</value>
+  </data>
 </root>

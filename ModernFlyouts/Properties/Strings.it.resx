@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Riavvio necessario per applicare alcune modifiche</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Usare l'anteprima dei supporti come sfondo del controllo multimediale</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>In basso</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Visualizzazione</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Selezionare il monitor di visualizzazione preferito per visualizzare il riquadro a comparsa</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Allineamento riquadro a comparsa</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Direzione di impilamento del contenuto del riquadro a comparsa</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Riquadro a comparsa, espandere la direzione</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Posizionamento riquadro a comparsa</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Modalità di posizionamento</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Allineamento orizzontale</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>&amp;Allineamento verticale:</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Animazione dissolvenza</value>
   </data>
 </root>

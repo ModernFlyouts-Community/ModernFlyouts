@@ -12,12 +12,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using AppUIBasics.Data;
 using AppUIBasics.Helper;
+using Settings.UWP.Helper;
 using Windows.ApplicationModel.Core;
 using Windows.Devices.Input;
 using Windows.Foundation.Metadata;
-using Windows.Gaming.Input;
 using Windows.System;
 using Windows.System.Profile;
 using Windows.UI.Xaml;
@@ -27,7 +26,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 using muxc = Microsoft.UI.Xaml.Controls;
 
-namespace AppUIBasics
+namespace Settings.UWP
 {
     public sealed partial class NavigationRootPage : Page
     {
@@ -49,15 +48,6 @@ namespace AppUIBasics
 
         public Action NavigationViewLoaded { get; set; }
 
-        public DeviceType DeviceFamily { get; set; }
-
-        public bool IsFocusSupported
-        {
-            get
-            {
-                return DeviceFamily == DeviceType.Xbox || _isGamePadConnected || _isKeyboardConnected;
-            }
-        }
 
         public PageHeader PageHeader
         {
@@ -90,9 +80,6 @@ namespace AppUIBasics
                     Debug.WriteLine("got focus: " + focus.Name + " (" + focus.GetType().ToString() + ")");
                 }
             };
-
-            Gamepad.GamepadAdded += OnGamepadAdded;
-            Gamepad.GamepadRemoved += OnGamepadRemoved;
 
             Window.Current.SetTitleBar(AppTitleBar);
 
@@ -192,12 +179,6 @@ namespace AppUIBasics
                 }
             }
 
-            // Move "What's New" and "All Controls" to the top of the NavigationView
-            NavigationViewControl.MenuItems.Remove(_allControlsMenuItem);
-            NavigationViewControl.MenuItems.Remove(_newControlsMenuItem);
-            NavigationViewControl.MenuItems.Insert(0, _allControlsMenuItem);
-            NavigationViewControl.MenuItems.Insert(0, _newControlsMenuItem);
-
             // Separate the All/New items from the rest of the categories.
             NavigationViewControl.MenuItems.Insert(2, new Microsoft.UI.Xaml.Controls.NavigationViewItemSeparator());
 
@@ -246,16 +227,6 @@ namespace AppUIBasics
             {
                 controlsSearchBox.Focus(FocusState.Keyboard);
             }
-        }
-
-        private void OnGamepadRemoved(object sender, Gamepad e)
-        {
-            _isGamePadConnected = Gamepad.Gamepads.Any();
-        }
-
-        private void OnGamepadAdded(object sender, Gamepad e)
-        {
-            _isGamePadConnected = Gamepad.Gamepads.Any();
         }
 
         private void OnNavigationViewControlLoaded(object sender, RoutedEventArgs e)
@@ -323,13 +294,6 @@ namespace AppUIBasics
             // Close any open teaching tips before navigation
             CloseTeachingTips();
 
-            if (e.SourcePageType == typeof(AllControlsPage) ||
-                e.SourcePageType == typeof(NewControlsPage))
-            {
-                NavigationViewControl.AlwaysShowHeader = false;
-            }
-            else
-            {
                 NavigationViewControl.AlwaysShowHeader = true;
             }
         }
@@ -541,14 +505,5 @@ namespace AppUIBasics
         {
             controlsSearchBox.Focus(FocusState.Programmatic);
         }
-    }
-
-
-    public enum DeviceType
-    {
-        Desktop,
-        Mobile,
-        Other,
-        Xbox
     }
 }

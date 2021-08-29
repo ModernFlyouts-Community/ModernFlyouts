@@ -362,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Mostrar</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Seleccione el monitor de pantalla preferido en el que se mostrará el control flotante</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Alineación de controles flotantes</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Dirección de apilamiento de contenido flotante</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Dirección de expansión del control flotante</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Colocación de controles flotantes</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Modo de colocación</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Alineación horizontal</value>
   </data>
@@ -370,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Alineación vertical</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Animación de fundido</value>
   </data>
 </root>

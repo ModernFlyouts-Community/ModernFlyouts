@@ -1,14 +1,3 @@
-<!--
-    //*********************************************************
-    //
-    // Copyright (c) Microsoft. All rights reserved.
-    // THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
-    // ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
-    // IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
-    // PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
-    //
-    //*********************************************************
--->
 <Page
     x:Class="Settings.UWP.NavigationRootPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -89,22 +78,6 @@
             DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
             ItemInvoked="OnNavigationViewItemInvoked"
             Loaded="OnNavigationViewControlLoaded">
-            <muxc:NavigationView.AutoSuggestBox>
-                <AutoSuggestBox
-                    x:Name="controlsSearchBox"
-                    VerticalAlignment="Center"
-                    x:FieldModifier="public"
-                    PlaceholderText="Search"
-                    QueryIcon="Find"
-                    QuerySubmitted="OnControlsSearchBoxQuerySubmitted"
-                    MinWidth="200"
-                    KeyboardAcceleratorPlacementMode="Hidden"
-                    TextChanged="OnControlsSearchBoxTextChanged">
-                    <AutoSuggestBox.KeyboardAccelerators>
-                        <KeyboardAccelerator Modifiers="Control" Key="F" Invoked="CtrlF_Invoked" />
-                    </AutoSuggestBox.KeyboardAccelerators>
-                </AutoSuggestBox>
-            </muxc:NavigationView.AutoSuggestBox>
 
             <Frame x:Name="rootFrame" Navigated="OnRootFrameNavigated"/>
         </muxc:NavigationView>

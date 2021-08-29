@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Wymagane ponowne uruchomienie aplikacji w celu zastosowania zmian</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Używanie miniatury multimediów jako tła kontrolki multimediów</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Dół</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Wyświetlanie</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Wybierz preferowany monitor wyświetlania, aby wyświetlić wysuwane</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Wyrównanie wysuwane</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Kierunek układania zawartości w wysuwane</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Wysuwane kierunki rozszerzania</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Umiejscowienie wysuwane</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Tryb umiejscowienia</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Wyrównanie w poziomie</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>&amp;Wyrównanie w pionie</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Animacja zanikania</value>
   </data>
 </root>

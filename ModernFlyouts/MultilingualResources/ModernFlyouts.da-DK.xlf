@@ -410,7 +410,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">Brug medie-miniature som baggrund på medie-kontrollen</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bruge mediets miniaturebillede som medieobjektets baggrund</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
@@ -474,27 +474,27 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">Vælg den foretrukne skærm at vise flyoutet på</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vælg den foretrukne skærm, der skal vises pop op-vinduet på</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">Flyout-justering</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Justering af pop op-pop op-billede</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Stablings-retning af flyout indhold</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Retning for stabling af pop op-indhold</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">Flyout udvidelsesretning</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout udvide retning</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">Flyout placering</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Placering af pop op-pop op-pop op-</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">Placeringstilstand</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Placeringstilstand</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Udton animation</target>
         </trans-unit>
       </group>
     </body>

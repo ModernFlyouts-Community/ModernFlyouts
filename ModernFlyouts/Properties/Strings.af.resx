@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Herbegin vereis om sekere veranderinge toe te pas</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Gebruik media se duimnael as mediabeheer se agtergrond</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Onder:</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Skerm</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Kies die voorkeur vertoonmonitor om die uitvlieg op te wys</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Flyout belyning</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Flyout inhoud stapel rigting</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout brei rigting uit</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Vlieg plasing</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Plasingsmodus</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>&amp;Horisontale belyning</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>&amp;Vertikale belyning</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Vervaag animasie</value>
   </data>
 </root>

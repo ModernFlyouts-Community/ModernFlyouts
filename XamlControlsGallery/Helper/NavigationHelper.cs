@@ -14,9 +14,8 @@ using Windows.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using AppUIBasics.Common;
 
-namespace AppUIBasics.Helper
+namespace Settings.UWP.Helper
 {
     /// <summary>
     /// NavigationHelper aids in navigation between pages. It manages
