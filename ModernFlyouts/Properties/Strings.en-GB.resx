@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Restart required to apply some changes</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Use media's thumbnail as media control's background</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Bottom</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Display</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Select the preferred display monitor to show the flyout on</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Flyout alignment</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Flyout content stacking direction</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout expand direction</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Flyout placement</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Placement mode</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Horizontal alignment</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Vertical alignment</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Fade animation</value>
   </data>
 </root>

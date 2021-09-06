@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">フェードアニメーション</target>
         </trans-unit>
       </group>
     </body>

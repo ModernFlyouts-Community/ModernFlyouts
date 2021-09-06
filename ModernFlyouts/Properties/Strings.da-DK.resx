@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Genstart påkrævet for at anvende nogle indstillinger</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Bruge mediets miniaturebillede som medieobjektets baggrund</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Bund</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Vis</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Vælg den foretrukne skærm, der skal vises pop op-vinduet på</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Justering af pop op-pop op-billede</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Retning for stabling af pop op-indhold</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout udvide retning</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Placering af pop op-pop op-pop op-</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Placeringstilstand</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Vandret justering</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Lodret justering</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Udton animation</value>
   </data>
 </root>

@@ -389,4 +389,7 @@
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>수직 정렬</value>
   </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>애니메이션 페이드</value>
+  </data>
 </root>

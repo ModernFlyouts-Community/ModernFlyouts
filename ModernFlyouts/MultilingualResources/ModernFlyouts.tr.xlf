@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="tr" original="MODERNFLYOUTS/PROPERTIES/STRINGS.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
@@ -53,12 +53,12 @@
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} kapalı</target>
-          <note annotates="source" from="MultilingualBuild" priority="2">E.g. Caps lock is off</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is off</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} açık</target>
-          <note annotates="source" from="MultilingualBuild" priority="2">E.g. Caps lock is on</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is on</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
           <source>Overtype Mode</source>
@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Soldurma animasyonu</target>
         </trans-unit>
       </group>
     </body>

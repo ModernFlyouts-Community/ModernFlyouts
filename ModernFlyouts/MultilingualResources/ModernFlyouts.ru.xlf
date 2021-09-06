@@ -411,7 +411,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">Использовать обложку как фон</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Использование эскиза мультимедиа в качестве фона элемента управления мультимедиа</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
@@ -475,27 +475,27 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">Выберите предпочитаемый монитор для отображения</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Выберите предпочитаемый монитор дисплея, чтобы отобразить всплывающий элемент на</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">Выравнивание</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Выравнивание всплывающий элемент</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Flyout content stacking direction</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Направление наложения содержимого всплывающего элементов</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">Направление открытия</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Направление расширения всплывающего всплывающий элемент</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">Положение окна</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Размещение всплывающий элемент</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">Режим расположения</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Режим размещения</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
@@ -511,7 +511,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Анимация затухания</target>
         </trans-unit>
       </group>
     </body>

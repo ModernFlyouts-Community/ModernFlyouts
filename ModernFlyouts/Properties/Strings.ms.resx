@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Mula semula diperlukan untuk menggunakan beberapa perubahan</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Guna imej kecil media sebagai latar belakang kawalan media</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Bawah</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Papar</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Pilih monitor paparan diutamakan untuk menunjukkan flyout pada</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Jajaran flyout</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Flyout kandungan menyusun arah</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout kembangkan arah</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Penempatan flyout</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Mod penempatan</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Penjajaran melintang</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Penjajaran menegak</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Animasi pudar</value>
   </data>
 </root>

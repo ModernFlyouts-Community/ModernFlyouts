@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>कुछ बदलावों को लागू करने के लिए पुनः आरंभ करना आवश्यक है</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>मीडिया नियंत्रण की पृष्ठभूमि के रूप में मीडिया के थंबनेल का उपयोग करें</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>नीचे</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>प्रदर्शित करें</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>पर फ्लाईआउट दिखाने के लिए पसंदीदा डिस्प्ले मॉनिटर का चयन करें</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>फ्लाईआउट अलाइनमेंट</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>फ्लाईआउट सामग्री स्टैकिंग दिशा</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>फ्लाईआउट दिशा का विस्तार</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>फ्लाईआउट प्लेसमेंट</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>प्लेसमेंट मोड</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>क्षैतिज संरेखण</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>अनुलंब संरेखण</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>फीका एनीमेशन</value>
   </data>
 </root>
