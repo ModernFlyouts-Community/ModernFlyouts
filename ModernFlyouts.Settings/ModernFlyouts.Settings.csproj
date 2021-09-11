@@ -142,6 +142,7 @@
       <DependentUpon>SettingsPageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Setting\Setting.cs" />
+    <Compile Include="Converters\ModuleEnabledToOpacityConverter.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
@@ -273,6 +274,8 @@
     <Compile Include="Helpers\ResourceExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Hero.png" />
+    <Content Include="Assets\ModernFlyouts.svg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

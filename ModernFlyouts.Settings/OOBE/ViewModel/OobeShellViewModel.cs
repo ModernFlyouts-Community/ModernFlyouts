@@ -2,14 +2,12 @@
 // The Microsoft Corporation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-
-namespace ModernFlyouts.Settings.Controls
+namespace ModernFlyouts.Settings.OOBE.ViewModel
 {
-    public class PageLink
+    public class OobeShellViewModel
     {
-        public string Text { get; set; }
-
-        public Uri Link { get; set; }
+        public OobeShellViewModel()
+        {
+        }
     }
 }

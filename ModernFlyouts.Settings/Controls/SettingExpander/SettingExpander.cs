@@ -11,7 +11,7 @@ using Microsoft.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Automation;
 
-namespace ModernFlyouts.Settings.UI.Controls
+namespace ModernFlyouts.Settings.Controls
 {
     public partial class SettingExpander : Expander
     {

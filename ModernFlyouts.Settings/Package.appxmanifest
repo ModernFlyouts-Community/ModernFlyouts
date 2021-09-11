@@ -2,17 +2,16 @@
 
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+		xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+		xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio"
-  IgnorableNamespaces="uap mp genTemplate">
+  IgnorableNamespaces="uap rescap desktop genTemplate">
 
   <Identity
     Name="627E35B4-6B22-4D7F-883F-C58556BBA2BD"
     Publisher="CN=samue"
     Version="1.0.0.0" />
-
-  <mp:PhoneIdentity PhoneProductId="627E35B4-6B22-4D7F-883F-C58556BBA2BD" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>ModernFlyouts.Settings</DisplayName>
@@ -21,7 +20,8 @@
   </Properties>
 
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+					<TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+					<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
   </Dependencies>
 
   <Resources>
@@ -42,13 +42,19 @@
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
 
-      <Extensions>
-      </Extensions>
+								<Extensions>
+												<uap:Extension Category="windows.appService">
+																<uap:AppService Name="SystrayExtensionService" />
+												</uap:Extension>
+												<desktop:Extension Category="windows.fullTrustProcess" Executable="Win32\SystrayComponent.exe" />
+								</Extensions>
+								<!--change executable to our executable-->
     </Application>
   </Applications>
 
   <Capabilities>
     <Capability Name="internetClient" />
+						<rescap:Capability Name="runFullTrust" />
   </Capabilities>
 
   <genTemplate:Metadata>

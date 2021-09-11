@@ -5,7 +5,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace ModernFlyouts.Settings.UI.Controls
+namespace ModernFlyouts.Settings.Controls
 {
     public sealed partial class OOBEPageControl : UserControl
     {

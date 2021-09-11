@@ -93,7 +93,9 @@
                         </winui:AnimatedIcon>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
-                <winui:NavigationViewItem x:Uid="Settings_Personalisation" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
+                <winui:NavigationViewItem x:Uid="Settings_Appearance_Behavior"
+                                          Icon="Document"
+                                          helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItem x:Uid="Settings_Layout" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItemSeparator />
                 <winui:NavigationViewItemHeader Content="Settings Modules" />
@@ -101,7 +103,7 @@
 
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Media" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Airplane" Icon="Document" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage" />
+                <winui:NavigationViewItem Content="Settings_Modules_Airplane" x:Uid="Settings_Modules_Airplane" Icon="Document" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_LockKeys" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Camera" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
@@ -114,9 +116,7 @@
                 <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
             </winui:NavigationView.FooterMenuItems>
 
-
-
-                    <i:Interaction.Behaviors>
+            <i:Interaction.Behaviors>
                 <behaviors:NavigationViewHeaderBehavior
                     DefaultHeader="{x:Bind ViewModel.Selected.Content, Mode=OneWay}">
                     <behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>

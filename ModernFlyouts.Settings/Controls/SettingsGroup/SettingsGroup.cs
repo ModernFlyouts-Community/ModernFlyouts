@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace ModernFlyouts.Settings.UI.Controls
+namespace ModernFlyouts.Settings.Controls
 {
     /// <summary>
     /// Represents a control that can contain multiple settings (or other) controls

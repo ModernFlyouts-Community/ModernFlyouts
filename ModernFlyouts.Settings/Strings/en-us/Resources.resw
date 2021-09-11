@@ -165,8 +165,8 @@
     <value>https://YourPrivacyUrlGoesHere/</value>
     <comment>Here is your Privacy Statement url for Settings</comment>
   </data>
-  <data name="Settings_Appearance_Behavior" xml:space="preserve">
-    <value>Appearance &amp; behavior</value>
+  <data name="Settings_Appearance_Behavior.Content" xml:space="preserve">
+    <value>Appearance &amp; Behavior</value>
   </data>
   <data name="FirstRun_Body.Text" xml:space="preserve">
     <value>Replace the content of this dialog with whatever content is appropriate to your app.
@@ -209,34 +209,34 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
     <value>Ok</value>
     <comment>What's new prompt message primary button text</comment>
   </data>
-  <data name="Settings_Layout" xml:space="preserve">
+  <data name="Settings_Layout.Content" xml:space="preserve">
     <value>Layout</value>
   </data>
-  <data name="Settings_Modules" xml:space="preserve">
+  <data name="Settings_Modules.Content" xml:space="preserve">
     <value>Modules</value>
   </data>
-  <data name="Settings_Modules_Airplane" xml:space="preserve">
+  <data name="Settings_Modules_Airplane.Content" xml:space="preserve">
     <value>Airplane</value>
   </data>
-  <data name="Settings_Modules_Audio" xml:space="preserve">
+  <data name="Settings_Modules_Audio.Content" xml:space="preserve">
     <value>Audio</value>
   </data>
-  <data name="Settings_Modules_AudioTray" xml:space="preserve">
+  <data name="Settings_Modules_AudioTray.Content" xml:space="preserve">
     <value>Tray</value>
   </data>
-  <data name="Settings_Modules_Battery" xml:space="preserve">
+  <data name="Settings_Modules_Battery.Content" xml:space="preserve">
     <value>Battery</value>
   </data>
-  <data name="Settings_Modules_Brightness" xml:space="preserve">
+  <data name="Settings_Modules_Brightness.Content" xml:space="preserve">
     <value>Brightness</value>
   </data>
-  <data name="Settings_Modules_Camera" xml:space="preserve">
+  <data name="Settings_Modules_Camera.Content" xml:space="preserve">
     <value>Camera</value>
   </data>
-  <data name="Settings_Modules_LockKeys" xml:space="preserve">
+  <data name="Settings_Modules_LockKeys.Content" xml:space="preserve">
     <value>LockKeys</value>
   </data>
-  <data name="Settings_Modules_Media" xml:space="preserve">
+  <data name="Settings_Modules_Media.Content" xml:space="preserve">
     <value>Media</value>
   </data>
   <data name="Settings_Welcome" xml:space="preserve">
@@ -253,5 +253,11 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Shell_AirplaneModeModule.Content" xml:space="preserve">
     <value>AirplaneModeModule</value>
     <comment>Navigation view item name for AirplaneModeModule</comment>
+  </data>
+  <data name="Settings_Appearance.Text" xml:space="preserve">
+    <value>Appearance &amp; Behavior</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
 </root>
