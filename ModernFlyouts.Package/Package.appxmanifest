@@ -85,6 +85,21 @@
             Enabled="true"
             DisplayName="ModernFlyouts" />
         </uap5:Extension>
+
+		    <!--<uap:Extension Category="windows.appService">
+			    <uap:AppService Name="SystrayExtensionService" />
+		    </uap:Extension>
+		    <desktop:Extension Category="windows.fullTrustProcess" Executable="Win32\SystrayComponent.exe" />
+	    </Extensions>
+	    --><!--change executable to our executable--><!--
+	    <desktop:Extension Category="windows.fullTrustProcess" Executable="Launcher\Launcher.exe">
+		    <desktop:FullTrustProcess>
+			    <desktop:ParameterGroup GroupId="Background" Parameters="/background" />
+			    <desktop:ParameterGroup GroupId="WPF" Parameters="/wpf" />
+			    <desktop:ParameterGroup GroupId="Win32" Parameters="/win32" />
+			    <desktop:ParameterGroup GroupId="Parameters" Parameters="/parameters" />
+		    </desktop:FullTrustProcess>
+	    </desktop:Extension>-->
       </Extensions>
     </Application>
   </Applications>

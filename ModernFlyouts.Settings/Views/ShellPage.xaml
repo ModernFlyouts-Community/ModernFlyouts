@@ -99,18 +99,19 @@
                 <winui:NavigationViewItem x:Uid="Settings_Layout" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItemSeparator />
                 <winui:NavigationViewItemHeader Content="Settings Modules" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Audio" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Audio" Icon="Document" helpers:NavHelper.NavigateTo="views:AudioModulePage" />
 
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Media" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
-                <winui:NavigationViewItem Content="Settings_Modules_Airplane" x:Uid="Settings_Modules_Airplane" Icon="Document" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_LockKeys" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Airplane" Icon="Document" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage" />
+                <winui:NavigationViewItem x:Uid="Settings_Modules_LockKeys" Icon="Document" helpers:NavHelper.NavigateTo="views:LockKeysModulePage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Camera" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
 
                 <winui:NavigationViewItem x:Uid="Shell_About" Icon="Document" helpers:NavHelper.NavigateTo="views:AboutPage" />
                 <winui:NavigationViewItem x:Uid="Shell_Blank" Icon="Document" helpers:NavHelper.NavigateTo="views:BlankPage" />
                 
+                <winui:NavigationViewItem x:Uid="Shell_AudioModule" Icon="Document" helpers:NavHelper.NavigateTo="views:AudioModulePage" />
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.FooterMenuItems>
                 <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />

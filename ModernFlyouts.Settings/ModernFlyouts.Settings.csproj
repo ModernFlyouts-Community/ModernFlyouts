@@ -156,8 +156,10 @@
     <Compile Include="Services\WhatsNewDisplayService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\AirplaneModeModuleViewModel.cs" />
+    <Compile Include="ViewModels\AudioModuleViewModel.cs" />
     <Compile Include="ViewModels\BlankViewModel.cs" />
     <Compile Include="ViewModels\GeneralSettingsViewModel.cs" />
+    <Compile Include="ViewModels\LockKeysModuleViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
@@ -165,6 +167,9 @@
     </Compile>
     <Compile Include="Views\AirplaneModeModulePage.xaml.cs">
       <DependentUpon>AirplaneModeModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AudioModulePage.xaml.cs">
+      <DependentUpon>AudioModulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BlankPage.xaml.cs">
       <DependentUpon>BlankPage.xaml</DependentUpon>
@@ -174,6 +179,9 @@
     </Compile>
     <Compile Include="Views\GeneralSettings.xaml.cs">
       <DependentUpon>GeneralSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LockKeysModulePage.xaml.cs">
+      <DependentUpon>LockKeysModulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -240,6 +248,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\AudioModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\BlankPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -249,6 +261,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\GeneralSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LockKeysModulePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

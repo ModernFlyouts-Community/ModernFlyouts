@@ -117,6 +117,7 @@
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ModernFlyouts.Settings\ModernFlyouts.Settings.csproj" />
     <ProjectReference Include="..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj" />
     <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
@@ -135,4 +136,10 @@
     </ItemGroup>
   </Target>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+
+  <!-- this will ensure to delete the wappublish folder -->
+  <!-- otherwise there will be mismatched assemblies for the packaged appx -->
+  <!--<Target Name="CleanBetweenPlatforms" AfterTargets="_GenerateAppxPackage">
+	  <RemoveDir Directories="..\src\bin\$(Configuration)" />
+  </Target>-->
 </Project>
