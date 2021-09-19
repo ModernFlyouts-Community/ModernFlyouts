@@ -110,7 +110,7 @@
 
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.FooterMenuItems>
-                <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" helpers:NavHelper.NavigateTo="views:FirstRunDialog" />
+                <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" Tapped="OOBEItem_Tapped" />
             </winui:NavigationView.FooterMenuItems>
 
             <i:Interaction.Behaviors>

@@ -26,6 +26,7 @@ namespace ModernFlyouts.Settings.Services
                         await dialog.ShowAsync();
                     }
                 });
+
         }
     }
 }

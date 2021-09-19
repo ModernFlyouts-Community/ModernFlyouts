@@ -131,5 +131,15 @@ namespace ModernFlyouts.Settings.Views
             return Windows.ApplicationModel.Package.Current.DisplayName;
         }
 
+
+        ////////OOBE////
+
+        private async void OOBEItem_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            var dialog = new FirstRunDialog();
+            await dialog.ShowAsync();
+
+        }
+
     }
 }
