@@ -239,8 +239,8 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Settings_Modules_Media.Content" xml:space="preserve">
     <value>Media</value>
   </data>
-  <data name="Settings_Welcome" xml:space="preserve">
-    <value>Welcome to ModernFlyouts</value>
+  <data name="Settings_Welcome.Content" xml:space="preserve">
+    <value>Welcome/Learn(OOBE)</value>
   </data>
   <data name="Shell_About.Content" xml:space="preserve">
     <value>About</value>

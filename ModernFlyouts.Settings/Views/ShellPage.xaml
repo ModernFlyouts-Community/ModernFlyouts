@@ -108,13 +108,9 @@
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Camera" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
 
-                <winui:NavigationViewItem x:Uid="Shell_About" Icon="Document" helpers:NavHelper.NavigateTo="views:AboutPage" />
-                <winui:NavigationViewItem x:Uid="Shell_Blank" Icon="Document" helpers:NavHelper.NavigateTo="views:BlankPage" />
-                
-                <winui:NavigationViewItem x:Uid="Shell_AudioModule" Icon="Document" helpers:NavHelper.NavigateTo="views:AudioModulePage" />
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.FooterMenuItems>
-                <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
+                <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" helpers:NavHelper.NavigateTo="views:FirstRunDialog" />
             </winui:NavigationView.FooterMenuItems>
 
             <i:Interaction.Behaviors>
