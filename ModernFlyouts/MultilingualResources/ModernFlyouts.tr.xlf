@@ -182,7 +182,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kilit tuşları</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kilit Tuşları</target>
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
