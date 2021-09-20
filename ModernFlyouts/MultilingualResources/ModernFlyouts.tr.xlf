@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="new">Soluk animasyon</target>
         </trans-unit>
       </group>
     </body>
