@@ -322,7 +322,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Açılır pencerede gözükmesini istediğiniz tuşları seçin</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Açılır pencerede göstermek istediğiniz tuşları seçin</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
