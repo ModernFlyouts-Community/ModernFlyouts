@@ -84,10 +84,10 @@
                 <winui:NavigationViewItem x:Uid="GeneralSettings" helpers:NavHelper.NavigateTo="views:GeneralSettings">
                     <winui:NavigationViewItem.Icon>
                         <winui:AnimatedIcon x:Name='SettingsIcon'>
-                        <winui:AnimatedIcon.Source>
+                            <winui:AnimatedIcon.Source>
                                 <animatedvisuals:AnimatedSettingsVisualSource/>
-                        </winui:AnimatedIcon.Source>
-                        <winui:AnimatedIcon.FallbackIconSource>
+                            </winui:AnimatedIcon.Source>
+                            <winui:AnimatedIcon.FallbackIconSource>
                                 <winui:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph="&#xE713;"/>
                             </winui:AnimatedIcon.FallbackIconSource>
                         </winui:AnimatedIcon>
@@ -96,21 +96,24 @@
                 <winui:NavigationViewItem x:Uid="Settings_Appearance_Behavior"
                                           Icon="Document"
                                           helpers:NavHelper.NavigateTo="views:MainPage" />
-                <winui:NavigationViewItem x:Uid="Settings_Layout" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
+                <winui:NavigationViewItem x:Uid="Settings_Layout" Icon="Document" helpers:NavHelper.NavigateTo="views:LayoutPage" />
                 <winui:NavigationViewItemSeparator />
                 <winui:NavigationViewItemHeader Content="Settings Modules" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Audio" Icon="Document" helpers:NavHelper.NavigateTo="views:AudioModulePage" />
-
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Media" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Audio" Icon="Document" helpers:NavHelper.NavigateTo="views:AudioModulePage">
+                    <winui:NavigationViewItem.MenuItems>
+                        <winui:NavigationViewItem x:Uid="Settings_Modules_AudioFlyout" Icon="Document" helpers:NavHelper.NavigateTo="views:AudioModulePage" />
+                        <winui:NavigationViewItem x:Uid="Settings_Modules_AudioTray" Icon="Document" helpers:NavHelper.NavigateTo="views:AudioTrayModulePage" />
+                    </winui:NavigationViewItem.MenuItems>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Media" Icon="Document" helpers:NavHelper.NavigateTo="views:MediaModulePage" />
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" Icon="Document" helpers:NavHelper.NavigateTo="views:BrightnessModulePage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Airplane" Icon="Document" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage" />
                 <winui:NavigationViewItem x:Uid="Settings_Modules_LockKeys" Icon="Document" helpers:NavHelper.NavigateTo="views:LockKeysModulePage" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Camera" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
-
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Camera" Icon="Document" helpers:NavHelper.NavigateTo="views:CameraModulePage" />
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" Icon="Document" helpers:NavHelper.NavigateTo="views:BatteryModulePage" />
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.FooterMenuItems>
-                <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" Tapped="OOBEItem_Tapped" />
+                <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" Tapped="OOBEItem_Tapped" ToolTipService.ToolTip="Learn more about ModernFlyouts" />
             </winui:NavigationView.FooterMenuItems>
 
             <i:Interaction.Behaviors>
@@ -138,9 +141,3 @@
         </winui:NavigationView>
     </Grid>
 </Page>
-
-
-<!--<winui:NavigationViewItem.MenuItems>
-    <winui:NavigationViewItem x:Uid="Settings_Modules_AudioMain" Icon="Document" ToolTipService.ToolTip="Upload file" helpers:NavHelper.NavigateTo="views:MainPage" />
-    <winui:NavigationViewItem x:Uid="Settings_Modules_AudioTray" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
-</winui:NavigationViewItem.MenuItems>-->

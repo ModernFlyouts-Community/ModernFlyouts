@@ -14,8 +14,11 @@
 
                 <ResourceDictionary Source="/Styles/TextBlock.xaml" />
                 <ResourceDictionary Source="/Styles/Page.xaml"/>
+                <ResourceDictionary>
+                    <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
+                    <CornerRadius x:Key="ControlCornerRadius">4</CornerRadius>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-
 
 
             <ResourceDictionary.ThemeDictionaries>

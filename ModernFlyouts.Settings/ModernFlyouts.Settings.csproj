@@ -106,7 +106,7 @@
       <Version>7.1.0-rc2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp">
-      <Version>7.1.0-rc2</Version>
+      <Version>7.0.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
       <Version>7.1.0-rc2</Version>
@@ -156,9 +156,15 @@
     <Compile Include="Services\WhatsNewDisplayService.cs" />
     <Compile Include="ViewModels\AirplaneModeModuleViewModel.cs" />
     <Compile Include="ViewModels\AudioModuleViewModel.cs" />
+    <Compile Include="ViewModels\AudioTrayModuleViewModel.cs" />
+    <Compile Include="ViewModels\BatteryModuleViewModel.cs" />
+    <Compile Include="ViewModels\BrightnessModuleViewModel.cs" />
+    <Compile Include="ViewModels\CameraModuleViewModel.cs" />
     <Compile Include="ViewModels\GeneralSettingsViewModel.cs" />
+    <Compile Include="ViewModels\LayoutViewModel.cs" />
     <Compile Include="ViewModels\LockKeysModuleViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MediaModuleViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\AirplaneModeModulePage.xaml.cs">
       <DependentUpon>AirplaneModeModulePage.xaml</DependentUpon>
@@ -166,17 +172,35 @@
     <Compile Include="Views\AudioModulePage.xaml.cs">
       <DependentUpon>AudioModulePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AudioTrayModulePage.xaml.cs">
+      <DependentUpon>AudioTrayModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BatteryModulePage.xaml.cs">
+      <DependentUpon>BatteryModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrightnessModulePage.xaml.cs">
+      <DependentUpon>BrightnessModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CameraModulePage.xaml.cs">
+      <DependentUpon>CameraModulePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FirstRunDialog.xaml.cs">
       <DependentUpon>FirstRunDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GeneralSettings.xaml.cs">
       <DependentUpon>GeneralSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LayoutPage.xaml.cs">
+      <DependentUpon>LayoutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LockKeysModulePage.xaml.cs">
       <DependentUpon>LockKeysModulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MediaModulePage.xaml.cs">
+      <DependentUpon>MediaModulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
@@ -240,6 +264,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\AudioTrayModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BatteryModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BrightnessModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CameraModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\FirstRunDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -248,11 +288,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\LayoutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\LockKeysModulePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MediaModulePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

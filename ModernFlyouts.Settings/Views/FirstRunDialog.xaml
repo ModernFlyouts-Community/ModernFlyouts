@@ -4,27 +4,137 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    x:Uid="FirstRunDialog"
     d:DesignHeight="345"
     d:DesignWidth="550"
+    CornerRadius="8"
+    CloseButtonText="Close"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:controls="using:ModernFlyouts.Settings.Controls"
     mc:Ignorable="d">
-    <ContentDialog.TitleTemplate>
-        <DataTemplate x:DataType="x:String">
-            <StackPanel Orientation="Horizontal">
-                <Image
-                    Width="40"
-                    Height="40"
-                    Source="ms-appx:///Assets/StoreLogo.png" />
-                <TextBlock
-                    Margin="{StaticResource SmallLeftMargin}"
-                    VerticalAlignment="Center"
-                    Text="{x:Bind}" />
+    
+    <controls:OOBEPageControl ModuleTitle="ModernFlyouts"
+                              ModuleImageSource="ms-appx:///Assets/Hero.png">
+
+    <controls:OOBEPageControl.ModuleContent>
+        <StackPanel Orientation="Vertical">
+                <TextBlock Margin="0,4,0,8"
+                           x:Uid="Oobe_Overview_Description"
+                           TextWrapping="Wrap"/>
+
             </StackPanel>
-        </DataTemplate>
-    </ContentDialog.TitleTemplate>
-    <ScrollViewer>
-        <StackPanel>
-            <TextBlock x:Uid="FirstRun_Body" TextWrapping="WrapWholeWords" />
+    </controls:OOBEPageControl.ModuleContent>
+</controls:OOBEPageControl>
+
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="280" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <FlipView MaxWidth="400" Height="180" BorderBrush="Black" BorderThickness="1"
+          ItemsSource="{x:Bind Views, Mode=OneWay}">
+        <FlipView.ItemTemplate>
+            <DataTemplate x:DataType="data:ControlInfoDataItem">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Width="36" Source="{x:Bind ImagePath}" Stretch="Uniform"
+                       VerticalAlignment="Center" />
+                    <Border Background="#A5FFFFFF" Height="60" Grid.Row="1">
+                        <TextBlock x:Name="Control2Text" Text="{x:Bind Title}" Foreground="Black"
+                               Padding="12,12" Style="{StaticResource TitleTextBlockStyle}"
+                               HorizontalAlignment="Center" />
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </FlipView.ItemTemplate>
+    </FlipView>
+    
+    <StackPanel>
+
+        <winui:PipsPager x:Name="FlipViewPipsPager"
+        HorizontalAlignment="Center"
+        Margin="0, 12, 0, 0"
+        NumberOfPages="5"
+        SelectedPageIndex="{x:Bind Path=Gallery.SelectedIndex, Mode=TwoWay}" />
+    </StackPanel>
+
+    </Grid>-->
+
+</ContentDialog>
+
+<!--<StackPanel Orientation="Horizontal" Spacing="12" Margin="0,24,0,0">
+    <Button x:Uid="OOBE_Settings"
+                            Click="OOBE_Closed_Click"/>
+</StackPanel>-->
+
+<!--<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="280" />
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Image x:Name="HeaderImage"
+               Source="ms-appx:///Assets/Hero.png"
+               Stretch="UniformToFill" />
+
+    <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      Padding="32,24,32,24">
+        <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Top">
+
+            <TextBlock x:Name="TitleTxt"
+                           Text="ModernFlyouts"
+                           AutomationProperties.HeadingLevel="Level2"
+                           Style="{StaticResource TitleTextBlockStyle}" />
+
+            <TextBlock x:Name="DescriptionTxt"
+                           Margin="0,8,0,0"
+                           Text="{x:Bind Oobe_Overview_Description}"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           TextWrapping="Wrap" />
+
+            <ContentPresenter x:Name="ModuleContentPresenter"
+                                  x:Uid="Oobe_Overview_Description"
+                                  HorizontalAlignment="Stretch"
+                                  HorizontalContentAlignment="Stretch"
+                                  Margin="0,12,0,0"/>
         </StackPanel>
     </ScrollViewer>
-</ContentDialog>
+</Grid>-->
+
+
+<!--<Grid 
+        x:Name="ContentArea"
+        Margin="{StaticResource SmallLeftRightMargin}">
+    <Pivot
+            x:Name="Items">
+        <Pivot.HeaderTemplate>
+            <DataTemplate>
+                <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="{Binding}" />
+            </DataTemplate>
+        </Pivot.HeaderTemplate>
+        <PivotItem x:Uid="TabbedPivotexample_PivotItem1">
+            <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+                --><!--
+                        The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                        Place your content here.
+                    --><!--
+
+            </Grid>
+        </PivotItem>
+
+        <PivotItem x:Uid="TabbedPivotexample_PivotItem2">
+            <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+                --><!--
+                        The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                        Place your content here.
+                    --><!--
+
+            </Grid>
+        </PivotItem>
+    </Pivot>
+</Grid>-->

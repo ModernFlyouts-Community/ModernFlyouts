@@ -13,5 +13,9 @@ namespace ModernFlyouts.Settings.Views
             RequestedTheme = (Window.Current.Content as FrameworkElement).RequestedTheme;
             InitializeComponent();
         }
+        private void OOBE_Closed_Click(object sender, object e)
+        {
+            this.Hide();
+        }
     }
 }

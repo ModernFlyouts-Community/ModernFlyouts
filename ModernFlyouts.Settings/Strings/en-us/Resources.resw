@@ -125,10 +125,6 @@
     <value>ModernFlyouts.Settings</value>
     <comment>Application description</comment>
   </data>
-  <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Main</value>
-    <comment>Navigation view item name for Main</comment>
-  </data>
   <data name="GeneralSettings.Content" xml:space="preserve">
     <value>General</value>
     <comment>Navigation view item name for Blank</comment>
@@ -168,18 +164,8 @@
   <data name="Settings_Appearance_Behavior.Content" xml:space="preserve">
     <value>Appearance &amp; Behavior</value>
   </data>
-  <data name="FirstRun_Body.Text" xml:space="preserve">
-    <value>Replace the content of this dialog with whatever content is appropriate to your app.
-You might want to explain key features or functionality.
-Don't feel restricted to just text. You can also include images and animations if you wish too.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
-
-Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
-
-Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</value>
+  <data name="Oobe_Overview_Description.Text" xml:space="preserve">
+    <value>Welcome to Modernflyouts. This application aims to provide a Fluent Design based customisable replacement for the flyouts in Windows. This guide will show you how to setup and customise your flyouts.</value>
     <comment>First use prompt message body</comment>
   </data>
   <data name="FirstRunDialog.Title" xml:space="preserve">
@@ -242,31 +228,8 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Settings_Welcome.Content" xml:space="preserve">
     <value>Welcome/Learn(OOBE)</value>
   </data>
-  <data name="Shell_About.Content" xml:space="preserve">
-    <value>About</value>
-    <comment>Navigation view item name for About</comment>
-  </data>
-  <data name="Shell_Blank.Content" xml:space="preserve">
-    <value>Blank</value>
-    <comment>Navigation view item name for Blank</comment>
-  </data>
-  <data name="Shell_AirplaneModeModule.Content" xml:space="preserve">
-    <value>AirplaneModeModule</value>
-    <comment>Navigation view item name for AirplaneModeModule</comment>
-  </data>
   <data name="Settings_Appearance.Text" xml:space="preserve">
     <value>Appearance &amp; Behavior</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Shell_AudioModule.Content" xml:space="preserve">
-    <value>AudioModule</value>
-    <comment>Navigation view item name for AudioModule</comment>
-  </data>
-  <data name="Shell_LockKeysModule.Content" xml:space="preserve">
-    <value>LockKeysModule</value>
-    <comment>Navigation view item name for LockKeysModule</comment>
   </data>
   <data name="SettingsAppearance.Text" xml:space="preserve">
     <value>Appearance</value>
@@ -279,5 +242,22 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="SettingsAppThemeTitle.Text" xml:space="preserve">
     <value>App theme</value>
     <comment>Title of App theme expander</comment>
+  </data>
+  <data name="FirstRun_Body.Text" xml:space="preserve">
+    <value>Replace the content of this dialog with whatever content is appropriate to your app.
+You might want to explain key features or functionality.
+Don't feel restricted to just text. You can also include images and animations if you wish too.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+
+Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</value>
+    <comment>First use prompt message body</comment>
+  </data>
+  <data name="Settings_Modules_AudioFlyout.Content" xml:space="preserve">
+    <value>Audio Flyout</value>
   </data>
 </root>
