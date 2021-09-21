@@ -46,7 +46,7 @@
                 <Image x:Name="AppFontIcon"
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Center"
-                    Source="Assets/Square44x44Logo.png" 
+                    Source="ms-appx:///Assets/Square44x44Logo.targetsize-48.png" 
                     Width="16" 
                     Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}" />
                 <TextBlock x:Name="AppTitle"
@@ -65,7 +65,7 @@
             SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
             IsSettingsVisible="False"
             AlwaysShowHeader="True"
-            PaneTitle="Pane Title"
+            PaneTitle="ModernFlyouts"
             PaneDisplayMode="Auto"
             OpenPaneLength="224" ExpandedModeThresholdWidth="720" CompactModeThresholdWidth="350"
             SelectionFollowsFocus="Disabled"
