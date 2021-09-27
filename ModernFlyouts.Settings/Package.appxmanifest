@@ -3,8 +3,6 @@
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-		xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-		xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio"
   IgnorableNamespaces="uap rescap desktop genTemplate">
 
@@ -43,19 +41,11 @@
         <uap:LockScreen BadgeLogo="Assets\BadgeLogo.png" Notification="badge"/>
       </uap:VisualElements>
 
-								<Extensions>
-												<uap:Extension Category="windows.appService">
-																<uap:AppService Name="SystrayExtensionService" />
-												</uap:Extension>
-												<desktop:Extension Category="windows.fullTrustProcess" Executable="Win32\SystrayComponent.exe" />
-								</Extensions>
-								<!--change executable to our executable-->
     </Application>
   </Applications>
 
   <Capabilities>
     <Capability Name="internetClient" />
-						<rescap:Capability Name="runFullTrust" />
   </Capabilities>
 
   <genTemplate:Metadata>
