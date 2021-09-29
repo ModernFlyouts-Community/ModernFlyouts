@@ -13,5 +13,6 @@ namespace ModernFlyouts.Settings.Views
             RequestedTheme = (Window.Current.Content as FrameworkElement).RequestedTheme;
             InitializeComponent();
         }
+
     }
 }

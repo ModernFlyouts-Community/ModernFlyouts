@@ -113,6 +113,7 @@
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" Icon="Document" helpers:NavHelper.NavigateTo="views:BatteryModulePage" />
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.FooterMenuItems>
+                <winui:NavigationViewItem Content="Whats New" Icon="Document" Tapped="WhatsNew_Tapped" ToolTipService.ToolTip="Temporary Whats new trigger for testing" />
                 <winui:NavigationViewItem x:Uid="Settings_Welcome" Icon="Document" Tapped="OOBEItem_Tapped" ToolTipService.ToolTip="Learn more about ModernFlyouts" />
             </winui:NavigationView.FooterMenuItems>
 

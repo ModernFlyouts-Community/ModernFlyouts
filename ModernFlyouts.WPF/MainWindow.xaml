@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernFlyouts.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" AllowsTransparency="True">
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" Topmost="True" AllowsTransparency="True" Background="Transparent">
     <Grid>
 
     </Grid>

@@ -141,5 +141,13 @@ namespace ModernFlyouts.Settings.Views
 
         }
 
+        ///Temporary Whats New trigger
+        private async void WhatsNew_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            var dialog = new WhatsNewDialog();
+            await dialog.ShowAsync();
+
+        }
+
     }
 }
