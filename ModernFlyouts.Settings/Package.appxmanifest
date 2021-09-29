@@ -4,8 +4,10 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
 		xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+		xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+		xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio"
-  IgnorableNamespaces="uap mp genTemplate">
+  IgnorableNamespaces="uap rescap desktop mp genTemplate">
 
   <Identity
     Name="627E35B4-6B22-4D7F-883F-C58556BBA2BD"
@@ -47,8 +49,16 @@
     </Application>
   </Applications>
 
-  <Capabilities>
+				<!--<Extensions>
+								<uap:Extension Category="windows.appService">
+												<uap:AppService Name="SystrayExtensionService" />
+								</uap:Extension>
+								<desktop:Extension Category="windows.fullTrustProcess" Executable="Win32\SystrayComponent.exe" />
+				</Extensions>-->
+
+		<Capabilities>
     <Capability Name="internetClient" />
+				<!--<rescap:Capability Name="runFullTrust" />-->
   </Capabilities>
 
   <genTemplate:Metadata>
