@@ -86,6 +86,15 @@
             Enabled="true"
             DisplayName="ModernFlyouts" />
         </uap5:Extension>
+								 <uap5:Extension
+		            Category="windows.startupTask"
+		            Executable="ModernFlyoutsTray.exe"
+		            EntryPoint="Windows.FullTrustApplication">
+														<uap5:StartupTask
+																TaskId="ModernFlyoutsTrayStartupId"
+																Enabled="true"
+																DisplayName="ModernFlyoutsTray" />
+										</uap5:Extension>
 
 								<uap:Extension Category="windows.appService">
 												<uap:AppService Name="WPFInteropService" />
@@ -93,6 +102,14 @@
 								<desktop:Extension Category="windows.fullTrustProcess" Executable="ModernFlyoutsHost.exe" EntryPoint="Windows.FullTrustApplication" />
 
 						</Extensions>
+								<!--<uap3:Extension
+    Category="windows.appExecutionAlias"
+    Executable="[ExecutableName]"
+    EntryPoint="Windows.FullTrustApplication">
+												<uap3:AppExecutionAlias>
+																<desktop:ExecutionAlias Alias="[AliasName]" />
+												</uap3:AppExecutionAlias>
+								</uap3:Extension>-->
 										<!--
         <uap5:Extension
             Category="windows.startupTask"

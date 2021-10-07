@@ -396,7 +396,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
-    <Content Include="Assets\CalculatorIcons.ttf" />
     <None Include="ModernFlyouts.Settings_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
