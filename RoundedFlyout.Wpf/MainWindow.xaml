@@ -1,0 +1,46 @@
+﻿<Window
+  x:Class="TaskbarFlyout.Wpf.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:xaml="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
+  Title="Rounded flyout"
+  Width="282"
+  Height="154"
+  Background="#000000"
+  WindowStyle="None"
+  mc:Ignorable="d">
+
+  <WindowChrome.WindowChrome>
+    <WindowChrome NonClientFrameEdges="None" />
+  </WindowChrome.WindowChrome>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="44" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <TextBlock
+      Margin="16,0,0,0"
+      VerticalAlignment="Center"
+      FontSize="15"
+      FontWeight="SemiBold"
+      Foreground="#ffffff"
+      Text="Rounded flyout" />
+    <Rectangle Fill="Transparent" MouseDown="DragWindow" />
+
+    <xaml:WindowsXamlHost
+      Width="44"
+      Height="44"
+      HorizontalAlignment="Right"
+      ChildChanged="OnCloseButtonControlLoaded"
+      InitialTypeName="TaskbarFlyout.Uwp.CloseButtonControl" />
+
+    <xaml:WindowsXamlHost
+      Grid.Row="1"
+      ChildChanged="OnMainControlLoaded"
+      InitialTypeName="TaskbarFlyout.Uwp.MainControl" />
+  </Grid>
+</Window>

@@ -91,10 +91,7 @@
                 <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
                 <Setter Property="ZoomMode" Value="Disabled" />
             </Style>
-            
-            <FontFamily x:Key="CalculatorFontFamily">ms-appx:///Assets/CalculatorIcons.ttf#Calculator Fluent Icons</FontFamily>
-
-
+           
         </ResourceDictionary>
     </Application.Resources>
 </Application>

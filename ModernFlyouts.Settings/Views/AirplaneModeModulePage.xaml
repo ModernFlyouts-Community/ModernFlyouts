@@ -17,11 +17,8 @@
 
                 <controls:Setting x:Uid="Airplane_Module_Enable">
                     <controls:Setting.Icon>
-                        <BitmapIcon UriSource="ms-appx:///Assets/FluentIcons/FluentIconsAwake.png" ShowAsMonochrome="False" />
+                        <BitmapIcon UriSource="ms-appx:///Assets//SmallTile.scale-100.png" ShowAsMonochrome="False" />
                     </controls:Setting.Icon>
-                    <controls:Setting.ActionContent>
-                        <ToggleSwitch IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" FlowDirection="RightToLeft" />
-                    </controls:Setting.ActionContent>
                 </controls:Setting>
              </StackPanel>
         </controls:SettingsPageControl.ModuleContent>
