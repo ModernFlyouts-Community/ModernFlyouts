@@ -410,7 +410,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">Використовувати обкладинку медіа як фон меню керування медіа</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Використання ескізу носія як тла елемента керування мультимедіа</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
@@ -474,27 +474,27 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">Виберіть бажаний монітор, на якому відображатиметься спливаюче меню</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Виберіть основний дисплей монітора, щоб</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">Вирівнювання спливаючого меню</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Вирівнювання згортання</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Порядок укладки контенту в спливаючому меню</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Напрямок стекування вмісту виноски</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">Напрямок появлення спливаючого меню</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Напрямок розгортання згортання</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">Розміщення</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Розташування на виносці</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">Режим розміщення</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Режим розміщення</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Анімація "Зникнення"</target>
         </trans-unit>
       </group>
     </body>

@@ -410,7 +410,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">Użyj okładki multimediów jako tła nakładki multimediów</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Używanie miniatury multimediów jako tła kontrolki multimediów</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
@@ -474,27 +474,27 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">Wybierz monitor, na którym mają wyświetlać się nakładki</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Wybierz preferowany monitor wyświetlania, aby wyświetlić wysuwane</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">Wyrównanie nakładek</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Wyrównanie wysuwane</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Kierunek układania zawartości nakładki</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kierunek układania zawartości w wysuwane</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">Kierunek rozwijania nakładki</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Wysuwane kierunki rozszerzania</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">Umiejscowienie nakładek</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Umiejscowienie wysuwane</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">Tryb umieszczania</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tryb umiejscowienia</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Animacja zanikania</target>
         </trans-unit>
       </group>
     </body>

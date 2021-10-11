@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="ModernFlyouts.Settings.Views.LockKeysModulePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:ModernFlyouts.Settings.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid>
+                <winui:Expander x:Name="Expander2" >
+                <winui:Expander.Header>
+                <ToggleButton Content ="This is a ToggleButton in the header" />
+                </winui:Expander.Header>
+                <winui:Expander.Content>
+                <Grid>
+                <Button Margin="15" Content="This is a Button in the content" />
+                </Grid>
+                </winui:Expander.Content>
+                </winui:Expander>
+
+        </Grid>
+    </Grid>
+</Page>

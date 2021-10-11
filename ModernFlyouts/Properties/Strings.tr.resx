@@ -389,4 +389,7 @@
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Dikey hizalama</value>
   </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Soldurma animasyonu</value>
+  </data>
 </root>

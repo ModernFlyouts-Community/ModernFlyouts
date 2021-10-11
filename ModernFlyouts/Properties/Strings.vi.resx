@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Khởi động lại cần thiết để áp dụng một số thay đổi</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Sử dụng hình thu nhỏ của phương tiện làm nền điều khiển phương tiện</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Dưới cùng</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Hiển thị</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Chọn màn hình hiển thị ưa thích để hiển thị flyout trên</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Căn chỉnh flyout</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Hướng xếp chồng nội dung bay ra</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Flyout mở rộng hướng</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Vị trí flyout</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Chế độ Vị trí</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Căn ngang</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Căn dọc</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Hoạt hình mờ dần</value>
   </data>
 </root>

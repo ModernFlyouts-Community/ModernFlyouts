@@ -3,10 +3,11 @@
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+		xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
   xmlns:uap7="http://schemas.microsoft.com/appx/manifest/uap/windows10/7"
-  IgnorableNamespaces="uap rescap">
+		xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+		xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap uap5 uap7 desktop rescap">
 
   <Identity
     Name="32669SamG.ModernFlyouts"
@@ -76,7 +77,7 @@
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <uap5:Extension
+										<uap5:Extension
             Category="windows.startupTask"
             Executable="ModernFlyoutsHost.exe"
             EntryPoint="Windows.FullTrustApplication">
@@ -85,7 +86,55 @@
             Enabled="true"
             DisplayName="ModernFlyouts" />
         </uap5:Extension>
-      </Extensions>
+								 <uap5:Extension
+		            Category="windows.startupTask"
+		            Executable="ModernFlyoutsTray.exe"
+		            EntryPoint="Windows.FullTrustApplication">
+														<uap5:StartupTask
+																TaskId="ModernFlyoutsTrayStartupId"
+																Enabled="true"
+																DisplayName="ModernFlyoutsTray" />
+										</uap5:Extension>
+
+								<uap:Extension Category="windows.appService">
+												<uap:AppService Name="WPFInteropService" />
+								</uap:Extension>
+								<desktop:Extension Category="windows.fullTrustProcess" Executable="ModernFlyoutsHost.exe" EntryPoint="Windows.FullTrustApplication" />
+
+						</Extensions>
+								<!--<uap3:Extension
+    Category="windows.appExecutionAlias"
+    Executable="[ExecutableName]"
+    EntryPoint="Windows.FullTrustApplication">
+												<uap3:AppExecutionAlias>
+																<desktop:ExecutionAlias Alias="[AliasName]" />
+												</uap3:AppExecutionAlias>
+								</uap3:Extension>-->
+										<!--
+        <uap5:Extension
+            Category="windows.startupTask"
+            Executable="ModernFlyouts.Settings.exe"
+            EntryPoint="ModernFlyouts.Settings.App">
+										<uap5:StartupTask
+		TaskId="ModernFlyoutsStartupId"
+		Enabled="true"
+		DisplayName="ModernFlyouts" />
+										</uap5:Extension>-->
+		    <!--<uap:Extension Category="windows.appService">
+			    <uap:AppService Name="SystrayExtensionService" />
+		    </uap:Extension>
+		    <desktop:Extension Category="windows.fullTrustProcess" Executable="Win32\SystrayComponent.exe" />
+	    </Extensions>
+	    --><!--change executable to our executable--><!--
+	    <desktop:Extension Category="windows.fullTrustProcess" Executable="Launcher\Launcher.exe">
+		    <desktop:FullTrustProcess>
+			    <desktop:ParameterGroup GroupId="Background" Parameters="/background" />
+			    <desktop:ParameterGroup GroupId="WPF" Parameters="/wpf" />
+			    <desktop:ParameterGroup GroupId="Win32" Parameters="/win32" />
+			    <desktop:ParameterGroup GroupId="Parameters" Parameters="/parameters" />
+		    </desktop:FullTrustProcess>
+	    </desktop:Extension>-->
+										
     </Application>
   </Applications>
 
@@ -93,6 +142,19 @@
     <rescap:Capability Name="runFullTrust" />
     <!--<rescap:Capability Name="packageManagement" />-->
     <!--<Capability Name="globalMediaControl" / >-->
+				<!--<rescap:Capability Name="extendedBackgroundTaskTime"/>-->
+						<!--<rescap:Capability Name="allowElevation"/>-->
     <Capability Name="internetClient"/>
   </Capabilities>
 </Package>
+
+
+<!--<Applications>
+				<Application Id="TheApp" Executable="TheApp.exe" EntryPoint="Windows.FullTrustApplication">
+								<Extensions>
+												<desktop:Extension Category="windows.startupTask" Executable="VFS\TheApp.exe" EntryPoint="Windows.FullTrustApplication"> Parameters= "myparameter" 
+																<desktop:StartupTask TaskId="TheApp" Enabled="true" DisplayName="The App"/>
+												</desktop:Extension>
+								</Extensions>
+				</Application>
+</Applications>-->

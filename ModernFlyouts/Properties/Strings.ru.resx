@@ -315,6 +315,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Перезагрузка необходима для применения некоторых изменений.</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Использование эскиза мультимедиа в качестве фона элемента управления мультимедиа</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Снизу</value>
   </data>
@@ -360,6 +363,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Отобразить</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Выберите предпочитаемый монитор дисплея, чтобы отобразить всплывающий элемент на</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Выравнивание всплывающий элемент</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Направление наложения содержимого всплывающего элементов</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Направление расширения всплывающего всплывающий элемент</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Размещение всплывающий элемент</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Режим размещения</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Выравнивание по горизонтали</value>
   </data>
@@ -368,5 +389,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Выравнивание по вертикали</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Анимация затухания</value>
   </data>
 </root>

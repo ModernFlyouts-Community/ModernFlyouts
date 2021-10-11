@@ -410,7 +410,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">使用媒體縮略圖作為媒體控制的背景</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">使用媒體的縮圖作為媒體控制的背景</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
@@ -474,27 +474,27 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">選取優先顯示浮動視窗的顯示器</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">選擇首選的顯示監視器以顯示飛出</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">浮動視窗對齊</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">飛出對齊</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">浮動視窗內容堆疊方向</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">飛出內容堆疊方向</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">浮動視窗拓展方向</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">飛出擴展方向</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">浮動視窗布局</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">飛出位置</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">布局模式</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">放置模式</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">褪色動畫</target>
         </trans-unit>
       </group>
     </body>

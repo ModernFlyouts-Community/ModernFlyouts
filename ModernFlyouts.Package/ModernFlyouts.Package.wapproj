@@ -36,7 +36,7 @@
   <PropertyGroup>
     <ProjectGuid>e918a18d-953d-4b4a-ac18-b74303995aee</ProjectGuid>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
@@ -117,6 +117,7 @@
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ModernFlyouts.Settings\ModernFlyouts.Settings.csproj" />
     <ProjectReference Include="..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj" />
     <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
@@ -135,4 +136,56 @@
     </ItemGroup>
   </Target>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+
+  <!-- this will ensure to delete the wappublish folder -->
+  <!-- otherwise there will be mismatched assemblies for the packaged appx -->
+  <!--<Target Name="CleanBetweenPlatforms" AfterTargets="_GenerateAppxPackage">
+	  <RemoveDir Directories="..\src\bin\$(Configuration)" />
+  </Target>-->
 </Project>
+
+
+<!--<PropertyGroup> TASKBAR FLYOUT
+				<WapProjPath Condition="'$(WapProjPath)'==''">$(MSBuildExtensionsPath)\Microsoft\DesktopBridge\</WapProjPath>
+</PropertyGroup>
+<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
+<PropertyGroup>
+				<ProjectGuid>57054e19-5730-4a08-9b65-30f5feb48407</ProjectGuid>
+				<TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+				<TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
+				<DefaultLanguage>en-US</DefaultLanguage>
+				<AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+				<EntryPointProjectUniqueName>..\TaskbarFlyout.Wpf\TaskbarFlyout.Wpf.csproj</EntryPointProjectUniqueName>
+</PropertyGroup>
+<ItemGroup>
+				<AppxManifest Include="Package.appxmanifest">
+								<SubType>Designer</SubType>
+				</AppxManifest>
+</ItemGroup>
+<ItemGroup>
+				<Content Include="Images\SplashScreen.scale-200.png" />
+				<Content Include="Images\LockScreenLogo.scale-200.png" />
+				<Content Include="Images\Square150x150Logo.scale-200.png" />
+				<Content Include="Images\Square44x44Logo.scale-200.png" />
+				<Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
+				<Content Include="Images\StoreLogo.png" />
+				<Content Include="Images\Wide310x150Logo.scale-200.png" />
+</ItemGroup>
+<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+<ItemGroup>
+				<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.19041.8" PrivateAssets="all" />
+</ItemGroup>
+<ItemGroup>
+				<ProjectReference Include="..\TaskbarFlyout.Uwp\TaskbarFlyout.Uwp.csproj" />
+				<ProjectReference Include="..\TaskbarFlyout.Wpf\TaskbarFlyout.Wpf.csproj">
+								<SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+				</ProjectReference>
+</ItemGroup>
+<Target Name="FixPayload" BeforeTargets="_GenerateAppxUploadPackageFile" Returns="@(AppxUploadPackagePayload)">
+				<ItemGroup>
+								<_FilteredAppxPackagePayload Include="@(AppxUploadPackagePayload)" Condition="'%(AppxUploadPackagePayload.TargetPath)'=='Microsoft.UI.Xaml.winmd'" />
+								<_AppxPackagePayloadToRemove Include="@(_FilteredAppxPackagePayload)" Condition="'%(_FilteredAppxPackagePayload.ProjectName)'==''" />
+								<AppxUploadPackagePayload Remove="@(_AppxPackagePayloadToRemove)" />
+				</ItemGroup>
+</Target>
+</Project>-->

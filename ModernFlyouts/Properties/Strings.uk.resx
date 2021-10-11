@@ -314,6 +314,9 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Перезавантаження, необхідне для застосування деяких зроблених змін</value>
   </data>
+  <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
+    <value>Використання ескізу носія як тла елемента керування мультимедіа</value>
+  </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Знизу</value>
   </data>
@@ -359,6 +362,24 @@
   <data name="Settings.Display" xml:space="preserve">
     <value>Відображення</value>
   </data>
+  <data name="Settings.DisplayDescription" xml:space="preserve">
+    <value>Виберіть основний дисплей монітора, щоб</value>
+  </data>
+  <data name="Settings.FlyoutAlignment" xml:space="preserve">
+    <value>Вирівнювання згортання</value>
+  </data>
+  <data name="Settings.FlyoutContentStackingDirection" xml:space="preserve">
+    <value>Напрямок стекування вмісту виноски</value>
+  </data>
+  <data name="Settings.FlyoutExpandDirection" xml:space="preserve">
+    <value>Напрямок розгортання згортання</value>
+  </data>
+  <data name="Settings.FlyoutPlacement" xml:space="preserve">
+    <value>Розташування на виносці</value>
+  </data>
+  <data name="Settings.FlyoutPlacementMode" xml:space="preserve">
+    <value>Режим розміщення</value>
+  </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Горизонтальне вирівнювання</value>
   </data>
@@ -367,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Вертикальне вирівнювання</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Анімація "Зникнення"</value>
   </data>
 </root>
