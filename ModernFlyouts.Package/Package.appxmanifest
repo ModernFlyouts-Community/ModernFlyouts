@@ -147,3 +147,14 @@
     <Capability Name="internetClient"/>
   </Capabilities>
 </Package>
+
+
+<!--<Applications>
+				<Application Id="TheApp" Executable="TheApp.exe" EntryPoint="Windows.FullTrustApplication">
+								<Extensions>
+												<desktop:Extension Category="windows.startupTask" Executable="VFS\TheApp.exe" EntryPoint="Windows.FullTrustApplication"> Parameters= "myparameter" 
+																<desktop:StartupTask TaskId="TheApp" Enabled="true" DisplayName="The App"/>
+												</desktop:Extension>
+								</Extensions>
+				</Application>
+</Applications>-->

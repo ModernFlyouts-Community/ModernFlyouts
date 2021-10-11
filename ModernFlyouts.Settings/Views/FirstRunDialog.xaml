@@ -226,26 +226,26 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Image Stretch="UniformToFill" Height="200" Source="https://raw.githubusercontent.com/microsoft/PowerToys/master/doc/images/overview/Original/FancyZones.png"/>
-                <TextBlock Text="FancyZones" FontWeight="SemiBold" FontSize="32" Margin="32,32,32,16"/>
+                <Image Stretch="UniformToFill" Height="200" Source="ms-appx:///Assets/mockup4.png"/>
+                <TextBlock Text="Fluent Media Controls" FontWeight="SemiBold" FontSize="32" Margin="32,32,32,16"/>
                 <TextBlock Margin="32,0,32,0" TextWrapping="Wrap" Opacity="0.8" Text="FancyZones is a window manager that makes it easy to create complex window layouts and quickly position windows into those layouts."/>
                 <HyperlinkButton Margin="32,0,32,0" Content="Learn more about FancyZones"/>
                 <TextBox Margin="32,32,32,0" Width="132" Header="Editor shortcut" HorizontalAlignment="Left" Text="Win + F"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Image Stretch="UniformToFill" Height="200" Source="https://raw.githubusercontent.com/wiki/microsoft/PowerToys/images/Launcher/QuickStart.gif"/>
-                <TextBlock Text="PowerToys Run" FontWeight="SemiBold" FontSize="32" Margin="32,32,32,16"/>
-                <TextBlock Margin="32,0,32,0" TextWrapping="Wrap" Opacity="0.8" Text="Run helps you search and launch your app instantly with a simple Alt+Space and start typing."/>
+                <Image Stretch="UniformToFill" Height="200" Source="ms-appx:///Assets/mockup3.png"/>
+                <TextBlock Text="Fluent brightness and lock keys indicators" FontWeight="SemiBold" FontSize="32" Margin="32,32,32,16"/>
+                <TextBlock Margin="32,0,32,0" TextWrapping="Wrap" Opacity="0.8" Text="A Flyout will appear when you press the caps lock and scroll lock keys, enable airplane mode or change the brightness. This can be customised in the settings of course. "/>
                 <HyperlinkButton Margin="32,0,32,0" Content="Learn more about Run"/>
                 <TextBox Margin="32,32,32,0" Width="132" Header="Run shortcut" HorizontalAlignment="Left" Text="Alt + Run"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Image Stretch="UniformToFill" Height="200" Source="https://raw.githubusercontent.com/wiki/microsoft/PowerToys/images/colorpicker/ColorPicker.gif"/>
-                <TextBlock Text="Color Picker" FontWeight="SemiBold" FontSize="32" Margin="32,32,32,16"/>
-                <TextBlock Margin="32,0,32,0" TextWrapping="Wrap" Opacity="0.8" Text="Color Picker is a simple and quick system-wide color picker with Win+Shift+C. Color Picker allows to pick colors from any currently running application and automatically copies the HEX or RGB values to your clipboard."/>
-                <HyperlinkButton Margin="32,0,32,0" Content="Learn more about Color Picker"/>
+                <Image Stretch="UniformToFill" Height="200" Source="ms-appx:///Assets/mockup2.png"/>
+                <TextBlock Text="very single bit is tweeekable - Heres how to access the settings panel" FontWeight="SemiBold" FontSize="32" Margin="32,32,32,16"/>
+                <TextBlock Margin="32,0,32,0" TextWrapping="Wrap" Opacity="0.8" Text="Right click on the ModernFlyouts icon on the taskbar and click the Settings option, alternatively 'use start menu icon'. You can use the Settings menu to change themes, Flyout time durations, disable individual flyouts and much more."/>
+                <HyperlinkButton Margin="32,0,32,0" Content="Learn more about ModernFlyouts"/>
                 <TextBox Margin="32,32,32,0" Width="132" Header="Color Picker shortcut" HorizontalAlignment="Left" Text="Win + C"/>
             </StackPanel>
         </FlipView>
@@ -258,7 +258,7 @@
                     </StackPanel>
                 </Button>
                 <StackPanel Spacing="4" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,32,0" HorizontalAlignment="Right" >
-                    <Button x:Name="PreviousBtn" IsEnabled="False" FontFamily="Segoe MDL2 Assets" Height="36" Width="36" Content="&#xE09E;" Style="{StaticResource ButtonRevealStyle}" Click="PreviousBtn_Click"/>
+                <Button x:Name="PreviousBtn" IsEnabled="False" FontFamily="Segoe MDL2 Assets" Height="36" Width="36" Content="&#xE09E;" Style="{StaticResource ButtonRevealStyle}" Click="PreviousBtn_Click"/>
                     <Button x:Name="NextBtn" FontFamily="Segoe MDL2 Assets" Height="36" Width="36" Content="&#xE09F;" Style="{StaticResource ButtonRevealStyle}" Click="NextBtn_Click"/>
                 </StackPanel>
             </Grid>
