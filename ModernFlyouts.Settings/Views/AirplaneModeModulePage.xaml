@@ -9,7 +9,7 @@
     mc:Ignorable="d">
     <!--Style="{StaticResource PageStyle}"-->
 
-    <controls:SettingsPageControl x:Uid="Airplane_Module" IsTabStop="False"
+    <controls:SettingsPageControl IsTabStop="False"
                             ModuleImageSource="ms-appx:///Assets/Modules/Awake.png"
                             ModuleImageLink="https://aka.ms/PowerToysOverview_Awake">
         <controls:SettingsPageControl.ModuleContent>
@@ -19,13 +19,17 @@
                     <controls:Setting.Icon>
                         <BitmapIcon UriSource="ms-appx:///Assets//SmallTile.scale-100.png" ShowAsMonochrome="False" />
                     </controls:Setting.Icon>
+                    <controls:Setting.ActionContent>
+                        <ToggleSwitch IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" HorizontalAlignment="Right"/>
+                    </controls:Setting.ActionContent>
                 </controls:Setting>
              </StackPanel>
         </controls:SettingsPageControl.ModuleContent>
     </controls:SettingsPageControl>
 </Page>
 
-<!--<muxc:Expander x:Name="Expander2" >
+    
+<!--<muxc:Expander x:Name="Expander2"  x:Uid="Airplane_Module">
     <muxc:Expander.Header>
         <ToggleButton Content ="This is a ToggleButton in the header" />
     </muxc:Expander.Header>

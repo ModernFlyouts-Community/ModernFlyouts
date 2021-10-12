@@ -13,34 +13,17 @@
                 <ResourceDictionary Source="/Styles/Button.xaml"/>
                 <ResourceDictionary Source="/Themes/Colors.xaml"/>
                 <ResourceDictionary Source="/Themes/SettingsExpanderStyles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
 
-            <Thickness x:Key="InfoBarIconMargin">6,16,16,16</Thickness>
-            <Thickness x:Key="InfoBarContentRootPadding">16,0,0,0</Thickness>
-            <x:Double x:Key="SettingActionControlMinWidth">240</x:Double>
-
-            <Style TargetType="ListViewItem" >
-                <Setter Property="Margin" Value="0,0,0,2" />
-                <Setter Property="Padding" Value="0,0,0,0" />
-                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-            </Style>
-        </ResourceDictionary>
-        
-        <!--<ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <XamlControlsResources  xmlns="using:Microsoft.UI.Xaml.Controls" />
                 <ResourceDictionary Source="/Styles/_Colors.xaml" />
                 <ResourceDictionary Source="/Styles/_FontSizes.xaml" />
                 <ResourceDictionary Source="/Styles/_Thickness.xaml" />
 
-                <ResourceDictionary Source="/Styles/TextBlock.xaml" />
                 <ResourceDictionary Source="/Styles/Page.xaml"/>
                 <ResourceDictionary>
                     <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
                     <CornerRadius x:Key="ControlCornerRadius">4</CornerRadius>
                 </ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>-->
-
+            </ResourceDictionary.MergedDictionaries>
 
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light">
@@ -66,7 +49,19 @@
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
 
+
+            <Thickness x:Key="InfoBarIconMargin">6,16,16,16</Thickness>
+            <Thickness x:Key="InfoBarContentRootPadding">16,0,0,0</Thickness>
+            <x:Double x:Key="SettingActionControlMinWidth">240</x:Double>
+
+            <Style TargetType="ListViewItem" >
+                <Setter Property="Margin" Value="0,0,0,2" />
+                <Setter Property="Padding" Value="0,0,0,0" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            </Style>
+
             <CornerRadius x:Key="ControlCornerRadius">4</CornerRadius>
+
 
             <LinearGradientBrush x:Key="HeroImageGradientBrush" StartPoint="0.5,0" EndPoint="0.5,1.5">
                 <GradientStop Offset="0" Color="Transparent"/>
@@ -116,23 +111,3 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
-
-
-
-<!--<Style x:Key="GridViewItemStyle" TargetType="GridViewItem" BasedOn="{StaticResource DefaultGridViewItemStyle}">
-    <Setter Property="Margin" Value="0,0,12,12" />
-</Style>
-
-<Style x:Key="IndentedGridViewItemStyle" TargetType="GridViewItem" BasedOn="{StaticResource DefaultGridViewItemStyle}">
-    <Setter Property="Margin" Value="12,0,0,12" />
-</Style>
-
-<Style x:Key="GridViewItemStyleSmall" TargetType="GridViewItem" BasedOn="{StaticResource DefaultGridViewItemStyle}">
-    <Setter Property="Margin" Value="0,0,0,12" />
-    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-</Style>
-
-<Style x:Key="IndentedGridViewItemStyleSmall" TargetType="GridViewItem" BasedOn="{StaticResource DefaultGridViewItemStyle}">
-    <Setter Property="Margin" Value="12,0,12,12" />
-    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-</Style>-->
