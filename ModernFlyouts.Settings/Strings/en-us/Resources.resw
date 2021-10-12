@@ -260,4 +260,10 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Settings_Modules_AudioFlyout.Content" xml:space="preserve">
     <value>Audio Flyout</value>
   </data>
+  <data name="Audio_Module.Content" xml:space="preserve">
+    <value>Audio Module</value>
+  </data>
+  <data name="Audio_Module_Enable.Content" xml:space="preserve">
+    <value>Enable Audio Module</value>
+  </data>
 </root>

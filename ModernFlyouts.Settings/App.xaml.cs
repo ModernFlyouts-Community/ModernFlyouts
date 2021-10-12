@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;

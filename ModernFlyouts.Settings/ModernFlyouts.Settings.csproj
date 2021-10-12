@@ -137,11 +137,24 @@
     </Compile>
     <Compile Include="Controls\SettingExpander\SettingExpander.cs" />
     <Compile Include="Controls\SettingsGroup\SettingsGroup.cs" />
+    <Compile Include="Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
     <Compile Include="Controls\SettingsPageControl\PageLink.cs" />
     <Compile Include="Controls\SettingsPageControl\SettingsPageControl.xaml.cs">
       <DependentUpon>SettingsPageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Setting\Setting.cs" />
+    <Compile Include="Controls\ShortcutControl\ShortcutControl.xaml.cs">
+      <DependentUpon>ShortcutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShortcutControl\ShortcutDialogContentControl.xaml.cs">
+      <DependentUpon>ShortcutDialogContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml.cs">
+      <DependentUpon>ShortcutWithTextLabelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBlockControl.xaml.cs">
+      <DependentUpon>TextBlockControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ModuleEnabledToOpacityConverter.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
@@ -160,6 +173,7 @@
     <Compile Include="ViewModels\BatteryModuleViewModel.cs" />
     <Compile Include="ViewModels\BrightnessModuleViewModel.cs" />
     <Compile Include="ViewModels\CameraModuleViewModel.cs" />
+    <Compile Include="ViewModels\Commands\ButtonClickCommand.cs" />
     <Compile Include="ViewModels\GeneralSettingsViewModel.cs" />
     <Compile Include="ViewModels\LayoutViewModel.cs" />
     <Compile Include="ViewModels\LockKeysModuleViewModel.cs" />
@@ -205,6 +219,7 @@
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\VisibleIfNotEmpty.cs" />
     <Compile Include="Views\WhatsNewDialog.xaml.cs">
       <DependentUpon>WhatsNewDialog.xaml</DependentUpon>
     </Compile>
@@ -233,6 +248,26 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Setting\Setting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ShortcutControl\ShortcutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ShortcutControl\ShortcutDialogContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TextBlockControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
