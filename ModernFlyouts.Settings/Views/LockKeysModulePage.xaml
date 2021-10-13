@@ -6,21 +6,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
-    Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid>
-                <winui:Expander x:Name="Expander2" >
-                <winui:Expander.Header>
-                <ToggleButton Content ="This is a ToggleButton in the header" />
-                </winui:Expander.Header>
-                <winui:Expander.Content>
-                <Grid>
-                <Button Margin="15" Content="This is a Button in the content" />
-                </Grid>
-                </winui:Expander.Content>
-                </winui:Expander>
 
-        </Grid>
-    </Grid>
+    <controls:SettingsPageControl IsTabStop="False"
+                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png"
+                            ModuleImageLink="https://aka.ms/PowerToysOverview_Awake">
+        <controls:SettingsPageControl.ModuleContent>
+            <StackPanel Orientation="Vertical">
+
+                <controls:Setting x:Uid="LockKeys_Module_Enable">
+                    <controls:Setting.Icon>
+                        <FontIcon Glyph="&#xE72e;"/>
+                    </controls:Setting.Icon>
+                    <controls:Setting.ActionContent>
+                        <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                    </controls:Setting.ActionContent>
+                </controls:Setting>
+
+            </StackPanel>
+        </controls:SettingsPageControl.ModuleContent>
+    </controls:SettingsPageControl>
 </Page>

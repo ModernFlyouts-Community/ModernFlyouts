@@ -17,25 +17,35 @@
 
                 <controls:Setting x:Uid="Airplane_Module_Enable">
                     <controls:Setting.Icon>
-                        <BitmapIcon UriSource="ms-appx:///Assets//SmallTile.scale-100.png" ShowAsMonochrome="False" />
+                        <FontIcon Glyph="&#xE709;"/>
+                        <!--<BitmapIcon UriSource="ms-appx:///Assets//SmallTile.scale-100.png" ShowAsMonochrome="False" />-->
                     </controls:Setting.Icon>
                     <controls:Setting.ActionContent>
                         <ToggleSwitch IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" HorizontalAlignment="Right"/>
                     </controls:Setting.ActionContent>
                 </controls:Setting>
-             </StackPanel>
+
+                <controls:SettingsGroup x:Uid="Shortcut" IsEnabled="True"><!--{x:Bind Mode=OneWay, Path=ViewModel.EnableAirplaneModule}-->
+                    <controls:SettingExpander IsExpanded="True">
+                        <controls:SettingExpander.Header>
+                            <controls:Setting x:Uid="Activation_Shortcut" Icon="&#xEDA7;" Style="{StaticResource ExpanderHeaderSettingStyle}">
+                                <!--<controls:Setting.ActionContent>
+                                    <controls:ShortcutControl HotkeySettings="{x:Bind Path=ViewModel.OpenPowerLauncher, Mode=TwoWay}"
+                                                                    MinWidth="{StaticResource SettingActionControlMinWidth}"/>
+                                </controls:Setting.ActionContent>-->
+                            </controls:Setting>
+                        </controls:SettingExpander.Header>
+                        <controls:SettingExpander.Content>
+                            <StackPanel>
+                                <CheckBox x:Uid="PowerLauncher_UseCentralizedKeyboardHook"  Margin="{StaticResource ExpanderSettingMargin}" /> <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.UseCentralizedKeyboardHook}"-->
+                                <Rectangle Style="{StaticResource ExpanderSeparatorStyle}" />
+                                <CheckBox x:Uid="IgnoreHotkeysInFullScreen"  Margin="{StaticResource ExpanderSettingMargin}" /> <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.IgnoreHotkeysInFullScreen}"-->
+                            </StackPanel>
+                        </controls:SettingExpander.Content>
+                    </controls:SettingExpander>
+                </controls:SettingsGroup>
+
+            </StackPanel>
         </controls:SettingsPageControl.ModuleContent>
     </controls:SettingsPageControl>
 </Page>
-
-    
-<!--<muxc:Expander x:Name="Expander2"  x:Uid="Airplane_Module">
-    <muxc:Expander.Header>
-        <ToggleButton Content ="This is a ToggleButton in the header" />
-    </muxc:Expander.Header>
-    <muxc:Expander.Content>
-        <Grid>
-            <Button Margin="15" Content="This is a Button in the content" />
-        </Grid>
-    </muxc:Expander.Content>
-</muxc:Expander>-->

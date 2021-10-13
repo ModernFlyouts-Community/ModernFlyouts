@@ -90,7 +90,7 @@
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItem x:Uid="Settings_Appearance_Behavior"
-                                          helpers:NavHelper.NavigateTo="views:MainPage">
+                                          helpers:NavHelper.NavigateTo="views:Appearance_BehaviorPage">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xe790;"/>
                     </winui:NavigationViewItem.Icon>

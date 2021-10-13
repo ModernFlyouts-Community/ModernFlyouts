@@ -7,7 +7,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 
-namespace Microsoft.PowerToys.Settings.UI.Controls
+namespace ModernFlyouts.Settings.Controls
 {
     public sealed partial class TextBlockControl : UserControl
     {

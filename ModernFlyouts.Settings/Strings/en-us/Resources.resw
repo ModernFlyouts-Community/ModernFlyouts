@@ -266,10 +266,74 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Audio_Module_Enable.Header" xml:space="preserve">
     <value>Enable Audio Module</value>
   </data>
-  <data name="1" xml:space="preserve">
-    <value />
+  <data name="Airplane_Module_Enable.Header" xml:space="preserve">
+    <value>Enable Audio Module</value>
   </data>
   <data name="Audio_Module.ModuleDescription" xml:space="preserve">
     <value>Audio Module description goes here</value>
+  </data>
+  <data name="IgnoreHotkeysInFullScreen" xml:space="preserve">
+    <value>ignore hotkeys in full screen mode</value>
+  </data>
+  <data name="Shortcut" xml:space="preserve">
+    <value>Shortcut/Hotkey</value>
+  </data>
+  <data name="Shell_Appearance_Behavior.Content" xml:space="preserve">
+    <value>Appearance_Behavior</value>
+    <comment>Navigation view item name for Appearance_Behavior</comment>
+  </data>
+  <data name="Appearance.Header" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="AppThemeHeader.Header" xml:space="preserve">
+    <value>App Theme</value>
+  </data>
+  <data name="Behavior.Header" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="ColoredTrayIcon_Enable.Header" xml:space="preserve">
+    <value>Use colored tray icon</value>
+  </data>
+  <data name="FlyoutFadeAnimation_Enable.Header" xml:space="preserve">
+    <value>Fade Animation</value>
+  </data>
+  <data name="FlyoutThemeHeader.Header" xml:space="preserve">
+    <value>Flyout Theme</value>
+  </data>
+  <data name="Flyout_Opacity.Header" xml:space="preserve">
+    <value>Flyout Opacity/Transparency</value>
+  </data>
+  <data name="Flyout_Timeout.Header" xml:space="preserve">
+    <value>Flyout Timeout (ms)</value>
+  </data>
+  <data name="LockKeys_Module_Enable.Header" xml:space="preserve">
+    <value>Enable Lock Keys Flyouts</value>
+  </data>
+  <data name="PositionHeader.Header" xml:space="preserve">
+    <value>Preferred monitor position</value>
+  </data>
+  <data name="Radio_Position_Cursor.Content" xml:space="preserve">
+    <value>Monitor with mouse cursor</value>
+  </data>
+  <data name="Radio_Position_Focus.Content" xml:space="preserve">
+    <value>Monitor with focused window</value>
+  </data>
+  <data name="Radio_Position_Primary_Monitor.Content" xml:space="preserve">
+    <value>Primary monitor</value>
+  </data>
+  <data name="Radio_Theme_Dark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Radio_Theme_Default.Content" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Radio_Theme_Light.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="SysTrayIcon_Enable.Header" xml:space="preserve">
+    <value>Show icon on system tray area</value>
+  </data>
+  <data name="Windows_Color_Settings" xml:space="preserve">
+    <value>Windows Color Settings</value>
   </data>
 </root>

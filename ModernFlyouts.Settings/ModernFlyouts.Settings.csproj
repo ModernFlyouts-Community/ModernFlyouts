@@ -143,7 +143,6 @@
       <DependentUpon>SettingsPageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Setting\Setting.cs" />
-
     <Compile Include="Controls\TextBlockControl.xaml.cs">
       <DependentUpon>TextBlockControl.xaml</DependentUpon>
     </Compile>
@@ -151,6 +150,7 @@
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
+    <Compile Include="Helpers\StartProcessHelper.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
     <Compile Include="Services\FirstRunDisplayService.cs" />
@@ -160,6 +160,7 @@
     <Compile Include="Services\ToastNotificationsService.Samples.cs" />
     <Compile Include="Services\WhatsNewDisplayService.cs" />
     <Compile Include="ViewModels\AirplaneModeModuleViewModel.cs" />
+    <Compile Include="ViewModels\Appearance_BehaviorViewModel.cs" />
     <Compile Include="ViewModels\AudioModuleViewModel.cs" />
     <Compile Include="ViewModels\AudioTrayModuleViewModel.cs" />
     <Compile Include="ViewModels\BatteryModuleViewModel.cs" />
@@ -174,6 +175,9 @@
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\AirplaneModeModulePage.xaml.cs">
       <DependentUpon>AirplaneModeModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appearance_BehaviorPage.xaml.cs">
+      <DependentUpon>Appearance_BehaviorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AudioModulePage.xaml.cs">
       <DependentUpon>AudioModulePage.xaml</DependentUpon>
@@ -284,6 +288,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AirplaneModeModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Appearance_BehaviorPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
