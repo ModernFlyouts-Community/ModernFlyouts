@@ -14,7 +14,7 @@
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 
-                <controls:Setting x:Uid="Airplane_Module_Enable">
+                <controls:Setting x:Uid="Media_Module_Enable">
                     <controls:Setting.Icon>
                         <FontIcon Glyph="&#xea69;"/>
                     </controls:Setting.Icon>
@@ -23,7 +23,46 @@
                     </controls:Setting.ActionContent>
                 </controls:Setting>
 
-                <controls:SettingsGroup x:Uid="Shortcut" IsEnabled="True">
+                <controls:SettingsGroup x:Uid="General" IsEnabled="True">
+                    <controls:Setting x:Uid="ShowMediaFlyoutWithVolume_Enable">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="ShowVolumeWithMediaFlyout_Enable">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                </controls:SettingsGroup>
+
+                <controls:SettingsGroup x:Uid="Appearance" IsEnabled="True">
+                    <controls:Setting x:Uid="ThumbnailAlignment">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="UseThumbnailAsBackround_Enable">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="MediaSessionPanelOrientation">
+                        <controls:Setting.ActionContent>
+                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
+                                <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
+                                <ComboBoxItem x:Uid="PanelOrientation_Horizontal"/>
+                                <ComboBoxItem x:Uid="PanelOrientation_Vertical"/>
+                            </ComboBox>
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                </controls:SettingsGroup>
+
+                <controls:SettingsGroup x:Uid="Shortcut" IsEnabled="False">
                     <!--{x:Bind Mode=OneWay, Path=ViewModel.EnableAirplaneModule}-->
                     <controls:SettingExpander IsExpanded="True">
                         <controls:SettingExpander.Header>
@@ -36,9 +75,6 @@
                         </controls:SettingExpander.Header>
                         <controls:SettingExpander.Content>
                             <StackPanel>
-                                <CheckBox x:Uid="PowerLauncher_UseCentralizedKeyboardHook"  Margin="{StaticResource ExpanderSettingMargin}" />
-                                <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.UseCentralizedKeyboardHook}"-->
-                                <Rectangle Style="{StaticResource ExpanderSeparatorStyle}" />
                                 <CheckBox x:Uid="IgnoreHotkeysInFullScreen"  Margin="{StaticResource ExpanderSettingMargin}" />
                                 <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.IgnoreHotkeysInFullScreen}"-->
                             </StackPanel>

@@ -180,11 +180,7 @@
     <value>Replace the content of this dialog with whatever content is appropriate to your app.
 You might want to consider lists of bug fixes and new features.
 Don't feel restricted to just text. You can also include images and animations if you wish too.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
-Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
-Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</value>
+</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
@@ -335,5 +331,32 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   </data>
   <data name="Windows_Color_Settings" xml:space="preserve">
     <value>Windows Color Settings</value>
+  </data>
+  <data name="Activation_Shortcut.Header" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="General.Header" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="MediaSessionPanelOrientation.Content" xml:space="preserve">
+    <value>Media Session Panel Orientation</value>
+  </data>
+  <data name="PanelOrientation_Horizontal.Content" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="PanelOrientation_Vertical.Content" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="ShowMediaFlyoutWithVolume_Enable.Content" xml:space="preserve">
+    <value>Show Media Flyout with Volume Flyout</value>
+  </data>
+  <data name="ShowVolumeWithMediaFlyout_Enable.Content" xml:space="preserve">
+    <value>Show Volume Flyout with Media Flyout</value>
+  </data>
+  <data name="ThumbnailAlignment.Content" xml:space="preserve">
+    <value>Thumbnail alignment</value>
+  </data>
+  <data name="UseThumbnailAsBackround_Enable.Content" xml:space="preserve">
+    <value>Use media's thumbnail as Media Flyout's backround</value>
   </data>
 </root>
