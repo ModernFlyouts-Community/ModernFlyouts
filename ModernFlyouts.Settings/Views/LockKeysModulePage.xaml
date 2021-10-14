@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <controls:SettingsPageControl IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png"
+                            ModuleImageSource="ms-appx:///Assets/mockup3cut.png"
                             ModuleImageLink="https://aka.ms/PowerToysOverview_Awake">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">

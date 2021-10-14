@@ -23,7 +23,7 @@
                     </controls:Setting.ActionContent>
                 </controls:Setting>
 
-                <controls:SettingsGroup x:Uid="General" IsEnabled="True">
+                <controls:SettingsGroup x:Uid="GeneralHeader" IsEnabled="True">
                     <controls:Setting x:Uid="ShowMediaFlyoutWithVolume_Enable">
                         <controls:Setting.ActionContent>
                             <ToggleSwitch  HorizontalAlignment="Right"/>

@@ -335,7 +335,7 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Activation_Shortcut.Header" xml:space="preserve">
     <value>Hotkeys</value>
   </data>
-  <data name="General.Header" xml:space="preserve">
+  <data name="GeneralHeader.Header" xml:space="preserve">
     <value>General</value>
   </data>
   <data name="MediaSessionPanelOrientation.Content" xml:space="preserve">

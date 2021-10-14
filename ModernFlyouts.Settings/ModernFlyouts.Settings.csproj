@@ -371,6 +371,7 @@
     <Content Include="Assets\mockup1.png" />
     <Content Include="Assets\mockup2.png" />
     <Content Include="Assets\mockup3.png" />
+    <Content Include="Assets\mockup3cut.png" />
     <Content Include="Assets\mockup4.png" />
     <Content Include="Assets\ModernFlyouts.svg" />
     <Content Include="Assets\SmallTile.scale-100.png" />
