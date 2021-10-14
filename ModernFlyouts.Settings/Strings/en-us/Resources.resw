@@ -359,4 +359,50 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="UseThumbnailAsBackround_Enable.Content" xml:space="preserve">
     <value>Use media's thumbnail as Media Flyout's backround</value>
   </data>
+  <data name="Admin_mode.Header" xml:space="preserve">
+    <value>Administrator mode</value>
+  </data>
+  <data name="Appearance_Behavior.Header" xml:space="preserve">
+    <value>Appearance &amp; behavior</value>
+  </data>
+  <data name="DefaultFlyout.Header" xml:space="preserve">
+    <value>Default Flyout</value>
+  </data>
+  <data name="General.ModuleDescription" xml:space="preserve">
+    <value>ModernFlyouts is a Fluent Design based fully customizable replacement to the system flyouts in Windows. 
+Made by the ModernFlyouts community.</value>
+  </data>
+  <data name="GeneralPage_Documentation.Text" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="GeneralPage_PrivacyStatement_URL.Text" xml:space="preserve">
+    <value>Privacy statement</value>
+  </data>
+  <data name="GeneralPage_ReportAbug.Text" xml:space="preserve">
+    <value>Report an issue with ModernFlyouts</value>
+  </data>
+  <data name="GeneralPage_RunAtStartUp.Description" xml:space="preserve">
+    <value>ModernFlyouts will launch automatically</value>
+  </data>
+  <data name="GeneralPage_RunAtStartUp.Header" xml:space="preserve">
+    <value>Run at startup</value>
+  </data>
+  <data name="GeneralSettings_RunningAsAdminText" xml:space="preserve">
+    <value>Running as administrator</value>
+  </data>
+  <data name="General_Repository.Text" xml:space="preserve">
+    <value>GitHub repository</value>
+  </data>
+  <data name="General_UpToDate.Title" xml:space="preserve">
+    <value>ModernFlyouts is up to date</value>
+  </data>
+  <data name="General_Version.Header" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="OpenSource_Notice.Text" xml:space="preserve">
+    <value>Open-source notice</value>
+  </data>
+  <data name="ReleaseNotes.Content" xml:space="preserve">
+    <value>Release notes</value>
+  </data>
 </root>
