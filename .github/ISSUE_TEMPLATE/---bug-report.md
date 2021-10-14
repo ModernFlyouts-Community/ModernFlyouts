@@ -1,6 +1,6 @@
 ---
-name: Bug report
-about: Create a bug report to help us improve.
+name: "\U0001F41B Bug report"
+about: Report errors or unexpected behavior
 title: 'Bug:'
 labels: Bug
 assignees: ''
@@ -30,7 +30,7 @@ Steps to reproduce the behavior:
 <!-- If applicable, add screenshots below this line to help explain your problem. -->
 
 **OS Version:**
- - Windows 10 Version: <!-- [e.g.  Windows 10 20H2] -->
+ - Windows Version: <!-- [e.g.  Windows 10 20H2] -->
 
 **ModernFlyouts Version:**
  - Version: <!-- [e.g. v0.9.1] -->
