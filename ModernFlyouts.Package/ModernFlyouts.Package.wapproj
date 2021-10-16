@@ -46,7 +46,7 @@
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>https://ModernFlyouts-community.github.io/package.github.io/ModernFlyouts.Package/ModernFlyouts.Package.appinstaller</AppInstallerUri>
-    <EntryPointProjectUniqueName>..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj</EntryPointProjectUniqueName>
+    <EntryPointProjectUniqueName>..\ModernFlyouts\ModernFlyouts.csproj</EntryPointProjectUniqueName>
     <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <PropertyGroup>
