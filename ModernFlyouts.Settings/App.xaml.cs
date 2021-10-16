@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Globalization;
-
+using System.Reflection;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
 using ModernFlyouts.Settings.Services;
-
+using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 
@@ -60,6 +60,18 @@ namespace ModernFlyouts.Settings
         private UIElement CreateShell()
         {
             return new Views.ShellPage();
+        }
+        //public static string AppVersion
+        //{
+        //    get => Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        //}
+        public string AppVersion
+        {
+            get
+            {
+                var AppVersion = Package.Current.Id.Version;
+                return string.Format($"{AppVersion.Major}.{AppVersion.Minor}.{AppVersion.Build}.{AppVersion.Revision}");
+            }
         }
     }
 }

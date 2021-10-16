@@ -379,7 +379,7 @@ Made by the ModernFlyouts community.</value>
     <value>Privacy statement</value>
   </data>
   <data name="GeneralPage_ReportAbug.Text" xml:space="preserve">
-    <value>Report an issue with ModernFlyouts</value>
+    <value>Report a bug</value>
   </data>
   <data name="GeneralPage_RunAtStartUp.Description" xml:space="preserve">
     <value>ModernFlyouts will launch automatically</value>
@@ -404,5 +404,8 @@ Made by the ModernFlyouts community.</value>
   </data>
   <data name="ReleaseNotes.Content" xml:space="preserve">
     <value>Release notes</value>
+  </data>
+  <data name="GeneralPage_RequestAFeature.Text" xml:space="preserve">
+    <value>Request a feature</value>
   </data>
 </root>

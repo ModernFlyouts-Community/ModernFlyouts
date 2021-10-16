@@ -11,8 +11,8 @@
 
   <Identity
     Name="32669SamG.ModernFlyouts"
-    Publisher="CN=Developer"
-    Version="0.9.6.0" />
+    Publisher="CN=samue"
+    Version="0.9.610.0" />
 
   <Properties>
     <DisplayName>ms-resource:Resources/PackageDisplayName</DisplayName>

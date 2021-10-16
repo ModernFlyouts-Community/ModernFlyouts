@@ -18,13 +18,12 @@
     </Page.Resources>
 
     <controls:SettingsPageControl 
-                                  ModuleImageSource="ms-appx:///Assets/Hero.png"
-                                  ModuleImageLink="https://aka.ms/powertoys">
+                                  ModuleImageSource="ms-appx:///Assets/Hero.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 
                 <controls:SettingsGroup x:Uid="General_Version" Margin="0,-32,0,0">
-                    <controls:Setting  Icon="&#xE117;"><!--Header="{Binding PowerToysVersion}"-->
+                    <controls:Setting Header="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" Icon="&#xE117;">
                         <controls:Setting.Description>
                             <StackPanel Orientation="Vertical">
                                 <HyperlinkButton x:Uid="ReleaseNotes"
@@ -110,7 +109,7 @@
         <controls:SettingsPageControl.PrimaryLinks>
             <controls:PageLink x:Uid="General_Repository" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts"/>
             <controls:PageLink x:Uid="GeneralPage_ReportAbug" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose"/>
-            <controls:PageLink x:Uid="GeneralPage_RequestAFeature_URL" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose"/>
+            <controls:PageLink x:Uid="GeneralPage_RequestAFeature" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose"/>
         </controls:SettingsPageControl.PrimaryLinks> <!--Add rate and review in MS store links-->
         <controls:SettingsPageControl.SecondaryLinks>
             <controls:PageLink x:Uid="GeneralPage_PrivacyStatement_URL" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/LICENSE"/>
