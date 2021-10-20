@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace ModernFlyouts
+namespace ModernFlyouts.Controls
 {
     public partial class BrightnessControl : UserControl
     {

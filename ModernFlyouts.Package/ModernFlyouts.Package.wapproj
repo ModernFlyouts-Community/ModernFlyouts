@@ -45,13 +45,13 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <AppInstallerUri>https://github.com/ModernFlyouts-Community/ModernFlyouts/tree/main/ModernFlyouts.Package/Package.appinstaller</AppInstallerUri>
-    <EntryPointProjectUniqueName>..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj</EntryPointProjectUniqueName>
+    <AppInstallerUri>https://ModernFlyouts-community.github.io/package.github.io/ModernFlyouts.Package/ModernFlyouts.Package.appinstaller</AppInstallerUri>
+    <EntryPointProjectUniqueName>..\ModernFlyouts\ModernFlyouts.csproj</EntryPointProjectUniqueName>
     <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <PropertyGroup>
     <AppxBundle>Always</AppxBundle>
-    <PackageCertificateThumbprint>1763E89B1A6D02D8D3CCF794ADFF6130472AC7B5</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>ModernFlyouts.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -59,7 +59,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hostfxr.dll" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />

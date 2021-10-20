@@ -34,7 +34,7 @@ namespace ModernFlyouts.Core.Interop
 
     public delegate IntPtr WndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
 
-    public class BandWindow : ContentControl
+    public class BandWindow : ContentControl, IWndProcObject
     {
         private readonly WndProc delegWndProc;
 
@@ -288,7 +288,7 @@ namespace ModernFlyouts.Core.Interop
             delegWndProc = myWndProc;
             SizeChanged += BandWindow_SizeChanged;
 
-            hookManager = WndProcHookManager.RegisterForBandWindow(this);
+            hookManager = WndProcHookManager.RegisterForIWndProcObject(this);
         }
 
         private void BandWindow_SizeChanged(object sender, SizeChangedEventArgs e)

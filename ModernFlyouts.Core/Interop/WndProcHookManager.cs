@@ -3,37 +3,46 @@ using System.Collections.Generic;
 
 namespace ModernFlyouts.Core.Interop
 {
+    internal interface IWndProcObject
+    {
+    }
+
     public class WndProcHookManager
     {
         private Dictionary<uint, WndProc> hooks = new();
 
         private List<IWndProcHookHandler> hookHandlers = new();
 
-        private static Dictionary<BandWindow, WndProcHookManager> hookManagers = new();
+        private static Dictionary<IWndProcObject, WndProcHookManager> hookManagers = new();
 
-        internal static WndProcHookManager RegisterForBandWindow(BandWindow bandWindow)
+        internal static WndProcHookManager RegisterForIWndProcObject(IWndProcObject wndProcObject)
         {
-            if (bandWindow == null)
-                throw new ArgumentNullException(nameof(bandWindow));
+            if (wndProcObject == null)
+                throw new ArgumentNullException(nameof(wndProcObject));
 
             WndProcHookManager hookManager = new();
 
-            hookManagers.Add(bandWindow, hookManager);
+            hookManagers.Add(wndProcObject, hookManager);
 
             return hookManager;
         }
 
-        public static WndProcHookManager GetForBandWindow(BandWindow bandWindow)
+        internal static WndProcHookManager GetForIWndProcObject(IWndProcObject wndProcObject)
         {
-            if (bandWindow == null)
-                throw new ArgumentNullException(nameof(bandWindow));
+            if (wndProcObject == null)
+                throw new ArgumentNullException(nameof(wndProcObject));
 
-            if (hookManagers.TryGetValue(bandWindow, out var hookManager))
+            if (hookManagers.TryGetValue(wndProcObject, out var hookManager))
             {
                 return hookManager;
             }
 
             return null;
+        }
+
+        public static WndProcHookManager GetForBandWindow(BandWindow bandWindow)
+        {
+            return GetForIWndProcObject(bandWindow);
         }
 
         public void RegisterHookHandler(IWndProcHookHandler hookHandler)

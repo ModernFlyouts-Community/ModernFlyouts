@@ -314,4 +314,58 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>Omstart kreves for å bruke noen endringer</value>
   </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>Bunn</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>Midtstill</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>Høyre</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>Øverst</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>ned</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>Høyre</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>opp</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>Manuell</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>Stigende</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>Synkende</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>Visning</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>Vannrett justering</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>Oppsett</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>Loddrett justering</value>
+  </data>
 </root>

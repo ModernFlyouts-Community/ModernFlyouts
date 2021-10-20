@@ -314,4 +314,58 @@
   <data name="Settings.RestartRequired" xml:space="preserve">
     <value>重新启动以应用某些更改</value>
   </data>
+  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
+    <value>中心</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
+    <value>左侧</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
+    <value>靠右</value>
+  </data>
+  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
+    <value>向下</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
+    <value>左侧</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
+    <value>靠右</value>
+  </data>
+  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
+    <value>向上</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
+    <value>手动</value>
+  </data>
+  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
+    <value>升序</value>
+  </data>
+  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
+    <value>降序</value>
+  </data>
+  <data name="Settings.Display" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="Settings.HorizontalAlignment" xml:space="preserve">
+    <value>水平对齐</value>
+  </data>
+  <data name="Settings.Layout" xml:space="preserve">
+    <value>版式</value>
+  </data>
+  <data name="Settings.VerticalAlignment" xml:space="preserve">
+    <value>垂直对齐</value>
+  </data>
 </root>

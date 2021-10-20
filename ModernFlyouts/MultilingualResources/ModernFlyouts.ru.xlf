@@ -415,51 +415,51 @@
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
-          <target state="new">Снизу</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Снизу</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Center" translate="yes" xml:space="preserve">
           <source>Center</source>
-          <target state="new">Центр</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">По центру</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Слева</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Влево</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Справа</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вправо</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Top" translate="yes" xml:space="preserve">
           <source>Top</source>
-          <target state="new">Сверху</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Сверху</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">Авто</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Авто</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Down" translate="yes" xml:space="preserve">
           <source>Down</source>
-          <target state="new">Вниз</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">вниз</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Влево</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Влево</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Вправо</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вправо</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowExpandDirection.Up" translate="yes" xml:space="preserve">
           <source>Up</source>
-          <target state="new">Вверх</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">вверх</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Auto" translate="yes" xml:space="preserve">
           <source>Auto</source>
-          <target state="new">Авто</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Авто</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowPlacementMode.Manual" translate="yes" xml:space="preserve">
           <source>Manual</source>
-          <target state="new">Вручную</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вручную</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Ascending" translate="yes" xml:space="preserve">
           <source>Ascending</source>
@@ -471,7 +471,7 @@
         </trans-unit>
         <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
           <source>Display</source>
-          <target state="new">Монитор</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Отобразить</target>
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
@@ -499,15 +499,15 @@
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
-          <target state="new">Выравнивание по горизонтали</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Выравнивание по горизонтали</target>
         </trans-unit>
         <trans-unit id="Settings.Layout" translate="yes" xml:space="preserve">
           <source>Layout</source>
-          <target state="new">Макет</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Макет</target>
         </trans-unit>
         <trans-unit id="Settings.VerticalAlignment" translate="yes" xml:space="preserve">
           <source>Vertical alignment</source>
-          <target state="new">Выравнивание по вертикали</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Выравнивание по вертикали</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
