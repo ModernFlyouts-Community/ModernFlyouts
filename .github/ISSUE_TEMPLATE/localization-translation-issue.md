@@ -1,8 +1,8 @@
 ---
-name: 'Language or Translation issue or request '
+name: "\U0001F310 Localization/Translation issue"
 about: Request support for a language or report incorrect translations
 title: ''
-labels: translation
+labels: ''
 assignees: Samuel12321
 
 ---

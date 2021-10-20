@@ -96,16 +96,16 @@
         </Setter>
     </Style>
 
-    <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonRevealStyle}">
+    <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
-        <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
+        <Setter Property="ui:ControlHelper.CornerRadius" Value="6" />
     </Style>
 
-    <Style x:Key="MediaButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonRevealStyle}">
+    <Style x:Key="MediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
-        <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
+        <Setter Property="ui:ControlHelper.CornerRadius" Value="6" />
         <Setter Property="Background" Value="Transparent" />
     </Style>
 

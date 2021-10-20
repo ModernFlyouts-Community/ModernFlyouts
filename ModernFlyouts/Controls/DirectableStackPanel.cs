@@ -46,7 +46,7 @@ namespace ModernFlyouts.Controls
 
             for (int i = 0, count = children.Count; i < count; i++)
             {
-                var index = ascending ? i : (count - 1) - i;
+                var index = ascending ? i : count - 1 - i;
 
                 UIElement child = children[index];
                 SetZIndex(child, i);

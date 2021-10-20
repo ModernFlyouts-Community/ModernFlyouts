@@ -12,15 +12,15 @@
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uçak modu kullanılamıyor :(</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uçak Modu kullanılamıyor :(</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uçak modu kapalı</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uçak Modu kapalı</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOn" translate="yes" xml:space="preserve">
           <source>Airplane mode on</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uçak modu açık</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uçak Modu açık</target>
         </trans-unit>
         <trans-unit id="Align" translate="yes" xml:space="preserve">
           <source>Align to default position</source>
@@ -170,7 +170,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uçak modu</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uçak Modu</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
           <source>Audio</source>
@@ -182,7 +182,7 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kilit tuşları</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kilit Tuşları</target>
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
@@ -322,7 +322,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Açılır pencerede gözükmesini istediğiniz tuşları seçin</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Açılır pencerede göstermek istediğiniz tuşları seçin</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
@@ -330,7 +330,7 @@
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
           <source>Enable Airplane mode Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uçak modu Açılır Penceresini etkinleştirin</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uçak Modu Açılır Penceresini etkinleştirin</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
           <source>Enable Audio Flyout</source>
@@ -510,7 +510,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="new">Soluk animasyon</target>
         </trans-unit>
       </group>
     </body>

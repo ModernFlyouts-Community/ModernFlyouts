@@ -36,6 +36,7 @@
             <converters:TextToTooltipEnabledConverter x:Key="TextToTooltipEnabledConverter" />
             <converters:ScrollButtonVisibilityConverter x:Key="ScrollButtonVisibilityConverter" />
             <converters:EnumToLocalizedStringConverter x:Key="EnumToLocalizedStringConverter" />
+            <converters:InvertBooleanToVisibilityConverter x:Key="InvertBooleanToVisibilityConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
             <converters:PlayPauseButtonTooltipConverter x:Key="PlayPauseButtonTooltipConverter" />
@@ -52,6 +53,7 @@
             
             <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
             <x:Static x:Key="FlyoutWidth" Member="localui:UIManager.FlyoutWidth" />
+            <x:Static x:Key="DefaultSessionControlHeight" Member="localui:UIManager.DefaultSessionControlHeight" />
 
             <DataTemplate x:Key="LocalizedEnumItemTemplate">
                 <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />

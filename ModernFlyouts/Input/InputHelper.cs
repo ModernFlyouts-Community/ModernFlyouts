@@ -125,6 +125,27 @@ namespace ModernFlyouts.Input
 
         #endregion
 
+        #region TappedCommandParameter
+
+        public static readonly DependencyProperty TappedCommandParameterProperty =
+            DependencyProperty.RegisterAttached(
+                "TappedCommandParameter",
+                typeof(object),
+                typeof(InputHelper),
+                new PropertyMetadata(null));
+
+        public static object GetTappedCommandParameter(UIElement element)
+        {
+            return (object)element.GetValue(TappedCommandParameterProperty);
+        }
+
+        public static void SetTappedCommandParameter(UIElement element, object value)
+        {
+            element.SetValue(TappedCommandParameterProperty, value);
+        }
+
+        #endregion
+
         private static void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var element = (UIElement)sender;
@@ -155,9 +176,10 @@ namespace ModernFlyouts.Input
                     if (elementBounds.Contains(e.GetPosition(element)))
                     {
                         var tappedCommand = GetTappedCommand(element);
-                        if (tappedCommand.CanExecute(null))
+                        var tappedCommandParameter = GetTappedCommandParameter(element);
+                        if (tappedCommand != null && tappedCommand.CanExecute(tappedCommandParameter))
                         {
-                            tappedCommand.Execute(null);
+                            tappedCommand.Execute(tappedCommandParameter);
                         }
 
                         RaiseTapped(element, e.Timestamp);

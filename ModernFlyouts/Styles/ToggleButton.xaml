@@ -205,10 +205,10 @@
         </Setter>
     </Style>
 
-    <Style x:Key="MediaToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource ToggleButtonRevealStyle}">
+    <Style x:Key="MediaToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource DefaultToggleButtonStyle}">
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
-        <Setter Property="ui:ControlHelper.CornerRadius" Value="20" />
+        <Setter Property="ui:ControlHelper.CornerRadius" Value="6" />
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
