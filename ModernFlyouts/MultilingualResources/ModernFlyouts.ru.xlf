@@ -24,7 +24,7 @@
         </trans-unit>
         <trans-unit id="Align" translate="yes" xml:space="preserve">
           <source>Align to default position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Выравнять к позиции по умолчанию</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Выровнять к позиции по умолчанию</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.NoDevices" translate="yes" xml:space="preserve">
           <source>No Connected Audio Devices</source>
@@ -74,7 +74,7 @@
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Восстанавливает всплывающие окна по умолчанию и безопасно завершает приложение</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Восстанавливает всплывающие окна по умолчанию и безопасно совершает выход из приложения</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
@@ -142,7 +142,7 @@
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
           <source>Choosing the Windows Default Flyout as default won't close this app. This app will still keep running in the background. Please exit this app safely to improve performance.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">При выборе всплывающих окон из Windows по умолчанию, данное приложение будет работать в фоновом режиме.
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">При выборе всплывающих окон из Windows по умолчанию данное приложение будет работать в фоновом режиме.
           Пожалуйста, выйдите безопасно из данного приложения, чтобы улучшить производительность.</target>
         </trans-unit>
         <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
@@ -187,7 +187,7 @@
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Автозагрузка</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Автозапуск при старте компьютера</target>
         </trans-unit>
         <trans-unit id="SettingsItem" translate="yes" xml:space="preserve">
           <source>Settings</source>
@@ -323,7 +323,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Выберите клавиши для которых желаете отображать всплывающее окно</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Выберите клавиши, для которых желаете отображать всплывающее окно</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
@@ -407,7 +407,7 @@
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Перезагрузка необходима для применения некоторых изменений.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Для применения некоторых изменений необходима перезагрузка.</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
@@ -463,11 +463,11 @@
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Ascending" translate="yes" xml:space="preserve">
           <source>Ascending</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">По возрастанию</target>
+          <target state="new">По возрастанию</target>
         </trans-unit>
         <trans-unit id="Enums.StackingDirection.Descending" translate="yes" xml:space="preserve">
           <source>Descending</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">По убыванию</target>
+          <target state="new">По убыванию</target>
         </trans-unit>
         <trans-unit id="Settings.Display" translate="yes" xml:space="preserve">
           <source>Display</source>
@@ -483,7 +483,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Flyout content stacking direction</target>
+          <target state="new">Направление отображения контента</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
@@ -511,7 +511,7 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutAnimationEnabled" translate="yes" xml:space="preserve">
           <source>Fade animation</source>
-          <target state="new">Fade animation</target>
+          <target state="new">Анимация исчезновения</target>
         </trans-unit>
       </group>
     </body>
