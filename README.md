@@ -126,9 +126,10 @@ We must also say a big thanks to [our contributors](https://github.com/ModernFly
 ### Our Team 
 
 - **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
-- **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer (Our savior! Helps us at critical times.)
+- **[ADeltaX](https://github.com/ADeltaX/)** - Developer of innovative solutions to circumvent microsoft rubbish
+- **[FireCubeStudios](https://github.com/FireCubeStudios/)** - Developer/Maintainer.
 - **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
-- **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
+- **[Cyberdroid1](https://github.com/Cyberdroid1)** - Repository Maintainer.
 
 ### Dependencies and References
 
