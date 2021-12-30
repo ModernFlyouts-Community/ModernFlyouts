@@ -1,0 +1,119 @@
+name: "🐛 Bug report"
+description: Report errors or unexpected behavior
+labels: 
+- Bug
+title: 'Bug:'
+assignees: ''
+
+body:
+- type: markdown
+  attributes:
+    value: |
+      Please make sure to [search for existing issues](https://github.com/ModernFlyouts-Community/ModernFlyouts/issues) before filing a new one!
+      Please create issues in English, (use google translate if required)
+- type: input
+  attributes:
+    label: ModernFlyouts version
+    placeholder: |
+      "0.9.1"
+    description: |
+      look at Settings
+  validations:
+    required: true
+    
+- type: input
+  attributes:
+    label: Windows version
+    placeholder: |
+      "Windows 10 20H2"
+    description: |
+      look at OS Settings
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: OS build (Optional - if you know specific build or are on insider preview)
+    placeholder: |
+      "22523.1000"
+    description: |
+      look at OS Settings
+  validations:
+    required: false
+    
+- type: dropdown
+  attributes:
+    label: Platform (x64, ARM64, x86)
+    description: Please select OS Platform (x64, ARM64, x86)
+    multiple: true
+    options:
+      - x64
+      - ARM64
+      - x86
+  validations:
+    required: false
+
+- type: dropdown
+  attributes:
+    label: Area(s) with issue?
+    description: What things had an issue?  Check all that apply.
+    multiple: true
+    options:
+      - General
+      - Audio Flyout
+      - Media Flyout
+      - Lock keys Flyout
+      - Battery Flyout
+      - Audio Tray Flyout
+      - Camera Flyout
+      - Mic Flyout
+      - Welcome / ModernFlyouts OOBE
+      - System tray
+      - Installer
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Steps to reproduce
+    description: We highly suggest including screenshots.
+    placeholder: Tell us the steps required to trigger your bug.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: ✔️ Expected Behavior
+    placeholder: What were you expecting?
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: ❌ Actual Behavior
+    placeholder: What happened instead?
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Other Software
+    description: If you're reporting a bug about our interaction with other software, what software? What versions?
+    placeholder: |
+      Chromium Browser (Edge, Chrome ...)
+      Firefox
+      Spotify (Please specify which app - Web app, PWA, UWP, Desktop, Store)
+      Groove Music
+      Media Player
+      VLC
+      ETC ...
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Additional Context
+    placeholder: Add any other info about the problem
+  validations:
+    required: false
+    
