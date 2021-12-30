@@ -17,7 +17,7 @@
 
 ![Overview](docs/images/Overview.png)
 
-This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts in **Windows** ~~*(which haven't been updated since Windows 8 LOL)*~~ *(Bruh moment: MS will likely update them in Windows 11 😭)* which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
+This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts in **Windows** ~~*(which haven't been updated since Windows 8)*~~  which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
 
 In case of Windows 11, this application will have the same UI but will provide additional features and customizability compared to the built-in redesigned flyouts.
 
