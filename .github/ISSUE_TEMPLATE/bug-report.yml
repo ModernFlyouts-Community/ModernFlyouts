@@ -3,12 +3,12 @@ description: Report errors or unexpected behavior
 labels: 
 - Bug
 title: 'Bug:'
-assignees: ''
 
 body:
 - type: markdown
   attributes:
     value: |
+      Thanks for taking the time to fill out this bug!
       Please make sure to [search for existing issues](https://github.com/ModernFlyouts-Community/ModernFlyouts/issues) before filing a new one!
       Please create issues in English, (use google translate if required)
 - type: input
