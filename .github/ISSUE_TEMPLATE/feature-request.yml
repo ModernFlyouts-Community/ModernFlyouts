@@ -1,0 +1,31 @@
+name: "⭐ Feature request"
+description: Suggest an idea for this app
+labels: 
+- Enhancement
+
+body:
+- type: textarea
+  attributes: 
+    label: Description of the new feature / enhancement
+    placeholder: |
+      What is the expected behavior of the proposed feature?
+  validations:
+    required: true
+- type: textarea
+  attributes: 
+    label: Scenario when this would be used? 
+    placeholder: |
+      What is the scenario this would be used?
+  validations:
+    required: true
+- type: textarea
+  attributes: 
+    label: Additional context
+    placeholder: |
+      Add any other context, screenshots or mockups for the feature request here.
+  validations:
+    required: false    
+- type: markdown
+  attributes:
+    value: |
+      **Please limit one request per issue.**
