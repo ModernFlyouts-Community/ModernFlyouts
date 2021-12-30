@@ -13,7 +13,7 @@ body:
       Please create issues in English, (use google translate if required)
 - type: input
   attributes:
-    label: ModernFlyouts version
+    label: ModernFlyouts Version
     placeholder: |
       "0.9.1"
     description: |
@@ -33,17 +33,17 @@ body:
 
 - type: input
   attributes:
-    label: OS build (Optional - if you know specific build or are on insider preview)
+    label: OS build
+    description: |
+      Optional - if you know specific build or are on insider preview
     placeholder: |
       "22523.1000"
-    description: |
-      look at OS Settings
   validations:
     required: false
     
 - type: dropdown
   attributes:
-    label: Platform (x64, ARM64, x86)
+    label: Platform:
     description: Please select OS Platform (x64, ARM64, x86)
     multiple: true
     options:
