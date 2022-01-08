@@ -1,0 +1,59 @@
+name: "🌐 Localization/Translation issue"
+description: Report incorrect translations, or request support for a language
+labels: 
+- Translation
+assignees: 
+- Samuel12321
+body:
+- type: markdown
+  attributes:
+    value: |
+      Please make sure to [search for existing issues](https://github.com/ModernFlyouts-Community/ModernFlyouts/issues) before filing a new one!
+- type: input
+  attributes:
+    label: ModernFlyouts version
+    placeholder: "0.9.0"
+    description: |
+      look at Settings
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: Area with translation issue
+    options:
+      - General
+      - Settings
+      - Flyouts
+  validations:
+    required: false
+- type: input
+  attributes:
+    label: 🌐 Language affected or requested
+    description: |
+      for Additional language requests please give ISO language code eg: en-us or zh-HK
+    placeholder: "German"
+  validations:
+    required: true
+    
+- type: textarea
+  attributes: 
+    label: ❌ Actual phrase(s)
+    description: |
+      for incorrect translations
+    placeholder: What is there?  Please include a screenshot as that is extremely helpful. 
+  validations:
+    required: false
+- type: textarea
+  attributes: 
+    label: ✔️ Expected phrase(s)
+    description: |
+      for incorrect translations
+    placeholder: What was expected?
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: ℹ Why is the current translation wrong
+    placeholder: Why do you feel this is incorrect?
+  validations:
+    required: false

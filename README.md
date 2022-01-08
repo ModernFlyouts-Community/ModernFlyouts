@@ -17,7 +17,7 @@
 
 ![Overview](docs/images/Overview.png)
 
-This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts in **Windows** ~~*(which haven't been updated since Windows 8 LOL)*~~ *(Bruh moment: MS will likely update them in Windows 11 😭)* which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
+This application aims to provide a **Fluent Design System** based replacement for the old, built-in, **Metro Design** based **Audio/Airplane mode/Brightness** flyouts in **Windows** ~~*(which haven't been updated since Windows 8)*~~  which are shown while pressing the media or volume keys or even the brightness keys *(may be absent on Desktop PCs)* or when airplane/flight mode is toggled.
 
 In case of Windows 11, this application will have the same UI but will provide additional features and customizability compared to the built-in redesigned flyouts.
 
@@ -126,9 +126,10 @@ We must also say a big thanks to [our contributors](https://github.com/ModernFly
 ### Our Team 
 
 - **[ShankarBUS](https://github.com/ShankarBUS/)** - Ex-Maintainer/co-owner & Developer.
-- **[ADeltaX](https://github.com/ADeltaX/)** - Maintainer & Developer (Our savior! Helps us at critical times.)
+- **[ADeltaX](https://github.com/ADeltaX/)** - Developer of innovative solutions to circumvent microsoft rubbish
+- **[FireCubeStudios](https://github.com/FireCubeStudios/)** - Developer/Maintainer.
 - **[Samuel12321](https://github.com/Samuel12321/)** - Maintainer/co-owner of this repository and application publisher (including **Microsoft Store**).
-- **[Cyberdroid1](https://github.com/Cyberdroid1)** - Maintainer.
+- **[Cyberdroid1](https://github.com/Cyberdroid1)** - Repository Maintainer.
 
 ### Dependencies and References
 
