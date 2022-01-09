@@ -5,7 +5,7 @@
     xmlns:xaml="using:Microsoft.Toolkit.Win32.UI.XamlHost"
     xmlns:controls="using:Microsoft.UI.Xaml.Controls" >
     <Application.Resources>
-        <controls:XamlControlsResources Version="Latest">
+        <controls:XamlControlsResources ControlsResourcesVersion="Version2">
             <controls:XamlControlsResources.MergedDictionaries>
                 <ResourceDictionary>
                     <ResourceDictionary.ThemeDictionaries>

@@ -7,7 +7,8 @@
 		<Platforms>x86;x64</Platforms>
 		<AssetTargetFallback>uap10.0.18362</AssetTargetFallback>
 		<StartupObject>ModernFlyouts.Wpf.Program</StartupObject>
-		<ApplicationIcon>Assets\Battery524.ico</ApplicationIcon>
+		<ApplicationIcon>Assets\ModernFlyouts.ico</ApplicationIcon>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 	</PropertyGroup>
 
 	<ItemGroup>

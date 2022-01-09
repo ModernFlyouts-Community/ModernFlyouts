@@ -40,6 +40,8 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj</EntryPointProjectUniqueName>
+	<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+	<ErrorOnDuplicatePublishOutputFiles>False</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
