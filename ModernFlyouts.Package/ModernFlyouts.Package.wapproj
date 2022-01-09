@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '16.0'">
-    <VisualStudioVersion>16.0</VisualStudioVersion>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
+    <VisualStudioVersion>15.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x86">
@@ -20,6 +20,14 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|ARM64">
       <Configuration>Debug</Configuration>
       <Platform>ARM64</Platform>
@@ -28,30 +36,26 @@
       <Configuration>Release</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup>
     <WapProjPath Condition="'$(WapProjPath)'==''">$(MSBuildExtensionsPath)\Microsoft\DesktopBridge\</WapProjPath>
   </PropertyGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
   <PropertyGroup>
-    <ProjectGuid>e918a18d-953d-4b4a-ac18-b74303995aee</ProjectGuid>
+    <ProjectGuid>74bf3a4e-62fa-4915-ba07-031b0b880ecf</ProjectGuid>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <GenerateTestArtifacts>True</GenerateTestArtifacts>
-    <AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
-    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <AppInstallerUri>https://ModernFlyouts-community.github.io/package.github.io/ModernFlyouts.Package/ModernFlyouts.Package.appinstaller</AppInstallerUri>
-    <EntryPointProjectUniqueName>..\ModernFlyouts\ModernFlyouts.csproj</EntryPointProjectUniqueName>
-    <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AppxBundle>Always</AppxBundle>
-    <PackageCertificateKeyFile>ModernFlyouts.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <EntryPointProjectUniqueName>..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -59,80 +63,19 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\LargeTile.scale-100.png" />
-    <Content Include="Images\LargeTile.scale-125.png" />
-    <Content Include="Images\LargeTile.scale-150.png" />
-    <Content Include="Images\LargeTile.scale-200.png" />
-    <Content Include="Images\LargeTile.scale-400.png" />
-    <Content Include="Images\SmallTile.scale-100.png" />
-    <Content Include="Images\SmallTile.scale-125.png" />
-    <Content Include="Images\SmallTile.scale-150.png" />
-    <Content Include="Images\SmallTile.scale-200.png" />
-    <Content Include="Images\SmallTile.scale-400.png" />
-    <Content Include="Images\SplashScreen.scale-100.png" />
-    <Content Include="Images\SplashScreen.scale-125.png" />
-    <Content Include="Images\SplashScreen.scale-150.png" />
     <Content Include="Images\SplashScreen.scale-200.png" />
     <Content Include="Images\LockScreenLogo.scale-200.png" />
-    <Content Include="Images\SplashScreen.scale-400.png" />
-    <Content Include="Images\Square150x150Logo.scale-100.png" />
-    <Content Include="Images\Square150x150Logo.scale-125.png" />
-    <Content Include="Images\Square150x150Logo.scale-150.png" />
     <Content Include="Images\Square150x150Logo.scale-200.png" />
-    <Content Include="Images\Square150x150Logo.scale-400.png" />
-    <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
-    <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
-    <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
-    <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
-    <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
-    <Content Include="Images\Square44x44Logo.altform-unplated_targetsize-16.png" />
-    <Content Include="Images\Square44x44Logo.altform-unplated_targetsize-256.png" />
-    <Content Include="Images\Square44x44Logo.altform-unplated_targetsize-32.png" />
-    <Content Include="Images\Square44x44Logo.altform-unplated_targetsize-48.png" />
-    <Content Include="Images\Square44x44Logo.scale-100.png" />
-    <Content Include="Images\Square44x44Logo.scale-125.png" />
-    <Content Include="Images\Square44x44Logo.scale-150.png" />
     <Content Include="Images\Square44x44Logo.scale-200.png" />
-    <Content Include="Images\Square44x44Logo.scale-400.png" />
-    <Content Include="Images\Square44x44Logo.targetsize-16.png" />
-    <Content Include="Images\Square44x44Logo.targetsize-24.png" />
     <Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Images\Square44x44Logo.targetsize-256.png" />
-    <Content Include="Images\Square44x44Logo.targetsize-32.png" />
-    <Content Include="Images\Square44x44Logo.targetsize-48.png" />
-    <Content Include="Images\StoreLogo.scale-100.png" />
-    <Content Include="Images\StoreLogo.scale-125.png" />
-    <Content Include="Images\StoreLogo.scale-150.png" />
-    <Content Include="Images\StoreLogo.scale-200.png" />
-    <Content Include="Images\StoreLogo.scale-400.png" />
-    <Content Include="Images\Wide310x150Logo.scale-100.png" />
-    <Content Include="Images\Wide310x150Logo.scale-125.png" />
-    <Content Include="Images\Wide310x150Logo.scale-150.png" />
+    <Content Include="Images\StoreLogo.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
-    <Content Include="Images\Wide310x150Logo.scale-400.png" />
-    <PRIResource Include="Strings\en-us\Resources.resw" />
-    <None Include="ModernFlyouts.Package_TemporaryKey.pfx" />
-    <Content Include="Package.appinstaller" />
-    <Content Include="priconfig.default.xml" />
-    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ModernFlyoutsHost\ModernFlyoutsHost.vcxproj" />
-    <ProjectReference Include="..\ModernFlyouts\ModernFlyouts.csproj">
+    <ProjectReference Include="..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj" />
+    <ProjectReference Include="..\ModernFlyouts.Wpf\ModernFlyouts.Wpf.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
-      <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     </ProjectReference>
-    <ProjectReference Include="..\ModernFlyoutsBridge\ModernFlyoutsBridge.vcxproj" />
   </ItemGroup>
-  <Target Name="FlattenPackage" BeforeTargets="_ConvertItems">
-    <ItemGroup>
-      <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-      <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-      <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-        <SourceProject>
-        </SourceProject>
-      </_FilteredNonWapProjProjectOutput>
-    </ItemGroup>
-  </Target>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>

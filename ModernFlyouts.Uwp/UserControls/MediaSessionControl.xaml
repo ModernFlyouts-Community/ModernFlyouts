@@ -1,0 +1,46 @@
+﻿<UserControl
+    x:Class="ModernFlyouts.Uwp.UserControls.MediaSessionControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:icons="using:Fluent.Icons"
+    xmlns:services="using:ModernFlyouts.Uwp.Services"
+    xmlns:converters="using:ModernFlyouts.Uwp.Converters"
+    mc:Ignorable="d">
+    <StackPanel x:Name="MediaGrid" CornerRadius="8" Padding="8" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="12, 8, 0 ,0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 4, 4, 12">
+                    <Image x:Name="AppImage" Height="16" Width="16" Margin="0, 0, 4, 1"/>
+                    <TextBlock Margin="2, 4, 2, 4" FontSize="12" Text="{x:Bind MediaSession.AppName, Mode=OneWay}" />
+                </StackPanel>
+                <TextBlock Text="{x:Bind MediaInfo.Title, Mode=OneWay}" MaxWidth="220" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left" FontWeight="SemiBold" FontSize="18"/>
+                <TextBlock FontSize="12" Text="{x:Bind MediaInfo.Artist, Mode=OneWay}" HorizontalAlignment="Left" MaxWidth="220" TextTrimming="CharacterEllipsis" Margin="0, 4, 4, 0"/>
+            </StackPanel>
+            <Border CornerRadius="8" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12, 8, 12 ,8">
+                <Image x:Name="MediaImage" MaxHeight="100" MaxWidth="100"/>
+            </Border>
+        </Grid>
+        <StackPanel VerticalAlignment="Bottom" Margin="8, 0, 8, 8" HorizontalAlignment="Center">
+            <!-- re add timeline support -->
+            <Slider Visibility="Collapsed" IsEnabled="False" Width="300" Minimum="0"/>
+            <Grid Visibility="Collapsed" Width="300" Margin="0, -4, 0, 0">
+                <TextBlock FontSize="11" HorizontalAlignment="Left" Opacity="0.7"/>
+                <TextBlock FontSize="11" HorizontalAlignment="Right" Opacity="0.7"/>
+            </Grid>
+            <!-- re add playback controls support-->
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="4, 16, 4, 12">
+                <Button Margin="4, 0, 4, 0" Background="Transparent" BorderBrush="Transparent">
+                    <icons:FluentSymbolIcon Symbol="Previous20Filled" VerticalAlignment="Center"/>
+                </Button>
+                <Button Margin="8, 0, 8, 0" Background="Transparent" BorderBrush="Transparent">
+                    <icons:FluentSymbolIcon x:Name="PlayIcon" Background="Transparent" Symbol="Pause20Filled" Margin="0, 0, 1, 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Button>
+                <Button Margin="3, 0, 4, 0" Background="Transparent" BorderBrush="Transparent">
+                    <icons:FluentSymbolIcon Symbol="Next20Filled" VerticalAlignment="Center"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

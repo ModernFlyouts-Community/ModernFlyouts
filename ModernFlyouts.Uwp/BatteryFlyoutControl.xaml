@@ -1,0 +1,82 @@
+﻿<UserControl
+  x:Class="ModernFlyouts.Uwp.BatteryFlyoutControl"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:icons="using:Fluent.Icons"
+  xmlns:media="using:Microsoft.Toolkit.Uwp.UI.Media" 
+  xmlns:helpers="using:ModernFlyouts.Uwp.Helpers"
+  xmlns:services="using:ModernFlyouts.Uwp.Services"
+  mc:Ignorable="d">
+    <Grid x:Name="FlyoutGrid">
+        <FlyoutBase.AttachedFlyout>
+            <Flyout
+          AreOpenCloseAnimationsEnabled="True"
+          Placement="Bottom"
+          ShouldConstrainToRootBounds="False"
+          ShowMode="Standard">
+                <Flyout.FlyoutPresenterStyle>
+                    <Style TargetType="FlyoutPresenter">
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Opacity" Value="1" />
+                        <Setter Property="MaxHeight" Value="1400" />
+                        <Setter Property="MinHeight" Value="40" />
+                        <Setter Property="IsDefaultShadowEnabled" Value="True" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="FlyoutPresenter">
+                                    <Border CornerRadius="8" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
+                                        <ContentPresenter
+                        MaxWidth="{TemplateBinding MaxWidth}"
+                        MaxHeight="{TemplateBinding MaxHeight}"
+                        Margin="0"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        ContentTransitions="{TemplateBinding ContentTransitions}"
+                        CornerRadius="6" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Flyout.FlyoutPresenterStyle>
+                <Flyout.Content>
+                    <Grid Background="{ThemeResource MicaBrush}">
+                        <Grid x:Name="BatteryGrid" CornerRadius="8" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Grid.Background>
+                                <media:BackdropBlurBrush Amount="240" />
+                            </Grid.Background>
+                            <StackPanel VerticalAlignment="Top">
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Width="370" Height="50">
+                                    <icons:FluentSymbolIcon x:Name="BatteryIcon" Symbol="{x:Bind helpers:BatteryHelper.GetPercentageIcon(BatteryInfo), Mode=OneWay}" Foreground="{ThemeResource HvidSortBrush}" Margin="7, 0, 0, 4" RenderTransformOrigin="0.5, 0.5">
+                                        <icons:FluentSymbolIcon.RenderTransform>
+                                            <ScaleTransform ScaleX="2" ScaleY="2" />
+                                        </icons:FluentSymbolIcon.RenderTransform>
+                                    </icons:FluentSymbolIcon>
+                                    <TextBlock x:Name="BatteryPercentage" Text="{x:Bind helpers:BatteryHelper.GetPercentageText(BatteryInfo), Mode=OneWay}" FontSize="24" FontWeight="SemiBold" Canvas.ZIndex="2" VerticalAlignment="Center" Margin="24,4, 0, 4"/>
+                                    <TextBlock x:Name="BatteryTime" Text="{x:Bind services:TimeService.GetRemaningTimeText(BatteryInfo), Mode=OneWay}" FontSize="14" Opacity="0.7" VerticalAlignment="Center" Margin="8, 8, 8, 0"/>
+                                    <TextBlock x:Name="PowerPlanText" Text="{x:Bind services:PowerService.GetPowerUsageText(BatteryInfo), Mode=OneWay}" FontSize="14" Opacity="0.7" VerticalAlignment="Center" x:FieldModifier="Public" Margin="4, 8, 8, 0"/>
+                                </StackPanel>
+                                <TextBlock FontSize="14" FontWeight="SemiBold" Text="Power mode" Margin="12, 8, 8, 0"/>
+                                <Slider x:Name="PowerSlider" x:FieldModifier="Public" IsThumbToolTipEnabled="False" HorizontalAlignment="Left" Margin="12, 0, 0, 0" TickPlacement="Outside" TickFrequency="1" Width="344" Minimum="0" Maximum="3"/>
+                                <Grid Margin="0, 0, 0, 12">
+                                    <StackPanel Orientation="Horizontal">
+                                        <icons:FluentSymbolIcon Symbol="LeafThree20" Foreground="{ThemeResource HvidSortBrush}" Margin="6, 0, 0, 4" Opacity="0.7"/>
+                                        <TextBlock FontSize="12" Opacity="0.7" VerticalAlignment="Center" Margin="4, 0, 0, 4"  Text="High efficiency"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 14, 0">
+                                        <icons:FluentSymbolIcon Symbol="TopSpeed20" Foreground="{ThemeResource HvidSortBrush}" Margin="6, 2, 0, 4" Opacity="0.7"/>
+                                        <TextBlock FontSize="12" Opacity="0.7" VerticalAlignment="Center" Margin="4, 0, 0, 4"  Text="High performance"/>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Flyout.Content>
+            </Flyout>
+        </FlyoutBase.AttachedFlyout>
+    </Grid>
+</UserControl>
