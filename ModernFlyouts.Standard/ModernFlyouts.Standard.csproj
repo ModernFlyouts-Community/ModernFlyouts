@@ -1,10 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+	<RootNamespace>ModernFlyouts.Standard</RootNamespace>
+	<Platforms>x64;x86;ARM64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NPSMLib" Version="0.9.14" />
   </ItemGroup>
 

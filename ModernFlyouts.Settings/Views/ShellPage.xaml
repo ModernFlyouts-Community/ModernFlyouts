@@ -1,0 +1,192 @@
+﻿<Page
+    x:Class="ModernFlyouts.Settings.Views.ShellPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:behaviors="using:ModernFlyouts.Settings.Behaviors"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:helpers="using:ModernFlyouts.Settings.Helpers"
+    xmlns:views="using:ModernFlyouts.Settings.Views"
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:i="using:Microsoft.Xaml.Interactivity" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+    mc:Ignorable="d"
+    winui:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    AutomationProperties.LandmarkType="Main">
+
+    <i:Interaction.Behaviors>
+        <ic:EventTriggerBehavior EventName="Loaded">
+            <ic:InvokeCommandAction Command="{x:Bind ViewModel.LoadedCommand}" />
+        </ic:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+
+
+    <!--<Grid>
+
+                Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
+                Canvas.ZIndex="1">
+            <TextBlock x:Name="AppTitle"
+                       Text="{x:Bind GetAppTitleFromSystem()}"
+                       VerticalAlignment="Center"-->
+
+    <!--Height="16"-->
+
+    <Page.Resources>
+        <!--This top margin is the height of the custom TitleBar-->
+        <Thickness x:Key="NavigationViewContentMargin">0,48,0,0</Thickness>
+    </Page.Resources>
+    <Grid>
+        <Border x:Name="AppTitleBar"
+                IsHitTestVisible="True"
+                VerticalAlignment="Top" 
+                Background="Transparent"
+                Height="40"
+                Canvas.ZIndex="1" 
+                Margin="48,8,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="AppFontIcon"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center"
+                    Source="ms-appx:///Assets/Square44x44Logo.targetsize-48.png" 
+                    Width="16" 
+                    Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}" />
+                <TextBlock x:Name="AppTitle"
+                    Text="{x:Bind GetAppTitleFromSystem()}"
+                    VerticalAlignment="Center"
+                    Margin="12, 0, 0, 0"
+                    Style="{StaticResource CaptionTextBlockStyle}" />
+            </StackPanel>
+        </Border>
+
+
+        <winui:NavigationView
+            x:Name="navigationView"
+            IsBackButtonVisible="Visible"
+            IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
+            SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
+            IsSettingsVisible="False"
+            AlwaysShowHeader="True"
+            PaneTitle="ModernFlyouts"
+            PaneDisplayMode="Auto"
+            OpenPaneLength="224" ExpandedModeThresholdWidth="720" CompactModeThresholdWidth="350"
+            SelectionFollowsFocus="Disabled"
+            IsTabStop="False"
+            IsTitleBarAutoPaddingEnabled="False"
+            FontFamily="Segoe Fluent Icons"
+            Header="Title"
+            Canvas.ZIndex="0">
+            <!--FontFamily="Segoe MDL2 Assets"-->
+
+            <winui:NavigationView.MenuItems>
+                <winui:NavigationViewItem x:Uid="GeneralSettings" helpers:NavHelper.NavigateTo="views:GeneralSettings">
+                    <winui:NavigationViewItem.Icon>
+                        <winui:AnimatedIcon x:Name='SettingsIcon'>
+                            <winui:AnimatedIcon.Source>
+                                <animatedvisuals:AnimatedSettingsVisualSource/>
+                            </winui:AnimatedIcon.Source>
+                            <winui:AnimatedIcon.FallbackIconSource>
+                                <winui:FontIconSource Glyph="&#xE713;"/>
+                            </winui:AnimatedIcon.FallbackIconSource>
+                        </winui:AnimatedIcon>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Appearance_Behavior"
+                                          helpers:NavHelper.NavigateTo="views:Appearance_BehaviorPage">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xe790;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Layout" helpers:NavHelper.NavigateTo="views:LayoutPage">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xeca5;"/>
+                </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItemSeparator />
+                <winui:NavigationViewItemHeader Content="Settings Modules" />
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Audio" helpers:NavHelper.NavigateTo="views:AudioModulePage">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE767;"/>
+                    </winui:NavigationViewItem.Icon>
+                    <winui:NavigationViewItem.MenuItems>
+                        <winui:NavigationViewItem x:Uid="Settings_Modules_AudioFlyout" helpers:NavHelper.NavigateTo="views:AudioModulePage">
+                            <winui:NavigationViewItem.Icon>
+                                <FontIcon Glyph="&#xf4c3;"/>
+                            </winui:NavigationViewItem.Icon>
+                        </winui:NavigationViewItem>
+                        <winui:NavigationViewItem x:Uid="Settings_Modules_AudioTray" helpers:NavHelper.NavigateTo="views:AudioTrayModulePage">
+                            <winui:NavigationViewItem.Icon>
+                                <FontIcon Glyph="&#xEd1f;"/>
+                            </winui:NavigationViewItem.Icon>
+                        </winui:NavigationViewItem>
+                    </winui:NavigationViewItem.MenuItems>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Media" helpers:NavHelper.NavigateTo="views:MediaModulePage">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xea69;"/>
+                </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" helpers:NavHelper.NavigateTo="views:BrightnessModulePage">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE706;"/>
+                </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Airplane" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE709;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_LockKeys" helpers:NavHelper.NavigateTo="views:LockKeysModulePage" >
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE72e;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Camera" helpers:NavHelper.NavigateTo="views:CameraModulePage" >
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE722;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" helpers:NavHelper.NavigateTo="views:BatteryModulePage" >
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE83e;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+            </winui:NavigationView.MenuItems>
+            
+            <winui:NavigationView.FooterMenuItems>
+                <winui:NavigationViewItem Content="Whats New" Tapped="WhatsNew_Tapped" ToolTipService.ToolTip="Temporary Whats new trigger for testing">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xe78b;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Welcome" Tapped="OOBEItem_Tapped" ToolTipService.ToolTip="Learn more about ModernFlyouts">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xf133;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+            </winui:NavigationView.FooterMenuItems>
+
+            <i:Interaction.Behaviors>
+                <behaviors:NavigationViewHeaderBehavior
+                    DefaultHeader="{x:Bind ViewModel.Selected.Content, Mode=OneWay}">
+                    <behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock
+                                    Text="{Binding}"
+                                    Style="{ThemeResource TitleTextBlockStyle}"
+                                    Margin="{StaticResource SmallLeftRightMargin}" />
+                            </Grid>
+                        </DataTemplate>
+                    </behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>
+                </behaviors:NavigationViewHeaderBehavior>
+
+                <ic:EventTriggerBehavior EventName="ItemInvoked">
+                    <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemInvokedCommand}" />
+                </ic:EventTriggerBehavior>
+            </i:Interaction.Behaviors>
+            <Grid>
+                <Frame x:Name="shellFrame" />
+            </Grid>
+        </winui:NavigationView>
+    </Grid>
+</Page>

@@ -15,7 +15,7 @@
 
   <Properties>
     <DisplayName>ModernFlyouts.Uwp</DisplayName>
-    <PublisherDisplayName>Michał</PublisherDisplayName>
+    <PublisherDisplayName>ModernFlyouts-Community</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

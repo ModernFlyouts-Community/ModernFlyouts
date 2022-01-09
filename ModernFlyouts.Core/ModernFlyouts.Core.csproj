@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	<RootNamespace>ModernFlyouts.Core</RootNamespace>
+	<Platforms>x64;x86;ARM64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
