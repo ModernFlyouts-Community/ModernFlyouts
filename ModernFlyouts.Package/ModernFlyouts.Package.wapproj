@@ -20,13 +20,13 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|ARM64">
+    <ProjectConfiguration Include="Debug|arm64">
       <Configuration>Debug</Configuration>
-      <Platform>ARM64</Platform>
+      <Platform>arm64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|ARM64">
+    <ProjectConfiguration Include="Release|arm64">
       <Configuration>Release</Configuration>
-      <Platform>ARM64</Platform>
+      <Platform>arm64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup>
@@ -36,12 +36,13 @@
   <PropertyGroup>
     <ProjectGuid>74bf3a4e-62fa-4915-ba07-031b0b880ecf</ProjectGuid>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj</EntryPointProjectUniqueName>
-	<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-	<ErrorOnDuplicatePublishOutputFiles>False</ErrorOnDuplicatePublishOutputFiles>
+	    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+	    <ErrorOnDuplicatePublishOutputFiles>False</ErrorOnDuplicatePublishOutputFiles>
+	  <WapAlwaysBuildDependentProjects>true</WapAlwaysBuildDependentProjects> <!--???--> 
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -57,11 +58,14 @@
     <Content Include="Images\StoreLogo.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
+	<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.19041.8" PrivateAssets="all" />
+	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj" />
     <ProjectReference Include="..\ModernFlyouts.Wpf\ModernFlyouts.Wpf.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>

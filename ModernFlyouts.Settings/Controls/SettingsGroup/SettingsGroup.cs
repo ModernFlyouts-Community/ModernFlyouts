@@ -1,14 +1,11 @@
-﻿// Copyright (c) Microsoft Corporation
-// The Microsoft Corporation licenses this file to you under the MIT license.
-// See the LICENSE file in the project root for more information.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Automation.Peers;
 using Windows.UI.Xaml.Controls;
 
 namespace ModernFlyouts.Settings.Controls
@@ -18,11 +15,23 @@ namespace ModernFlyouts.Settings.Controls
     /// </summary>
     [TemplateVisualState(Name = "Normal", GroupName = "CommonStates")]
     [TemplateVisualState(Name = "Disabled", GroupName = "CommonStates")]
+    [TemplatePart(Name = PartDescriptionPresenter, Type = typeof(ContentPresenter))]
     public partial class SettingsGroup : ItemsControl
     {
+        private const string PartDescriptionPresenter = "DescriptionPresenter";
+        private ContentPresenter _descriptionPresenter;
+        private SettingsGroup _settingsGroup;
+
         public SettingsGroup()
         {
             DefaultStyleKey = typeof(SettingsGroup);
+        }
+
+        [Localizable(true)]
+        public string Header
+        {
+            get => (string)GetValue(HeaderProperty);
+            set => SetValue(HeaderProperty, value);
         }
 
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
@@ -32,18 +41,31 @@ namespace ModernFlyouts.Settings.Controls
             new PropertyMetadata(default(string)));
 
         [Localizable(true)]
-        public string Header
+        public object Description
         {
-            get => (string)GetValue(HeaderProperty);
-            set => SetValue(HeaderProperty, value);
+            get => (object)GetValue(DescriptionProperty);
+            set => SetValue(DescriptionProperty, value);
         }
+
+        public static readonly DependencyProperty DescriptionProperty = DependencyProperty.Register(
+            "Description",
+            typeof(object),
+            typeof(SettingsGroup),
+            new PropertyMetadata(null, OnDescriptionChanged));
 
         protected override void OnApplyTemplate()
         {
             IsEnabledChanged -= SettingsGroup_IsEnabledChanged;
+            _settingsGroup = (SettingsGroup)this;
+            _descriptionPresenter = (ContentPresenter)_settingsGroup.GetTemplateChild(PartDescriptionPresenter);
             SetEnabledState();
             IsEnabledChanged += SettingsGroup_IsEnabledChanged;
             base.OnApplyTemplate();
+        }
+
+        private static void OnDescriptionChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SettingsGroup)d).Update();
         }
 
         private void SettingsGroup_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -54,6 +76,28 @@ namespace ModernFlyouts.Settings.Controls
         private void SetEnabledState()
         {
             VisualStateManager.GoToState(this, IsEnabled ? "Normal" : "Disabled", true);
+        }
+
+        private void Update()
+        {
+            if (_settingsGroup == null)
+            {
+                return;
+            }
+
+            if (_settingsGroup.Description == null)
+            {
+                _settingsGroup._descriptionPresenter.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                _settingsGroup._descriptionPresenter.Visibility = Visibility.Visible;
+            }
+        }
+
+        protected override AutomationPeer OnCreateAutomationPeer()
+        {
+            return new SettingsGroupAutomationPeer(this);
         }
     }
 }

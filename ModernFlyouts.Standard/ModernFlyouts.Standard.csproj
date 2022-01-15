@@ -3,12 +3,24 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 	<RootNamespace>ModernFlyouts.Standard</RootNamespace>
-	<Platforms>x64;x86;ARM64</Platforms>
+	<Platforms>x64;x86;arm64</Platforms>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Library\HotkeySettings.cs" />
+    <Compile Remove="Library\HotkeySettingsControlHook.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NPSMLib" Version="0.9.14" />
+    <PackageReference Include="System.IO.Abstractions" Version="16.1.4" />
+    <PackageReference Include="System.Text.Json" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Library\" />
   </ItemGroup>
 
 </Project>

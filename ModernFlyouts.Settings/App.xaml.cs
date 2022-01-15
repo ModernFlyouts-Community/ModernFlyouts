@@ -9,6 +9,8 @@ using ModernFlyouts.Settings.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
+using Windows.UI.ViewManagement;
+using Windows.Foundation;
 
 namespace ModernFlyouts.Settings
 {
@@ -31,6 +33,14 @@ namespace ModernFlyouts.Settings
 
             // Deferred execution until used. Check https://docs.microsoft.com/dotnet/api/system.lazy-1 for further info on Lazy<T> class.
             _activationService = new Lazy<ActivationService>(CreateActivationService);
+
+            ////IMPROVE THIS - window launch size
+
+            ApplicationView.PreferredLaunchViewSize = new Size(1000, 800);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            // if you want not to have any window smaller than this size...
+            //ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(480, 400));
         }
 
         protected override async void OnLaunched(LaunchActivatedEventArgs args)

@@ -3,7 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 	<RootNamespace>ModernFlyouts.Core</RootNamespace>
-	<Platforms>x64;x86;ARM64</Platforms>
+	<Platforms>x64;x86;arm64</Platforms>
+	  <RuntimeIdentifiers>win10-x64;win10-x86;win10-arm64</RuntimeIdentifiers>
+	  <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
