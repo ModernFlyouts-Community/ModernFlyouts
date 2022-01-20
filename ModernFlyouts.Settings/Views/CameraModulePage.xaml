@@ -8,9 +8,8 @@
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d">
 
-    <controls:SettingsPageControl IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png"
-                            ModuleImageLink="https://aka.ms/PowerToysOverview_Awake">
+    <controls:SettingsPageControl x:Uid="Camera" IsTabStop="False"
+                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 

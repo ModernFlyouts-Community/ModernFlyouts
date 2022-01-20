@@ -9,9 +9,8 @@
     mc:Ignorable="d">
     <!--Style="{StaticResource PageStyle}"-->
 
-    <controls:SettingsPageControl x:Uid="Audio_Module" IsTabStop="False"
-                                  ModuleImageSource="ms-appx:///Assets/ms-appx:///Assets/mockup1.png"
-                                  ModuleImageLink="https://aka.ms/PowerToysOverview_Awake">
+    <controls:SettingsPageControl x:Uid="Audio" IsTabStop="False"
+                                  ModuleImageSource="ms-appx:///Assets/ms-appx:///Assets/mockup1.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 

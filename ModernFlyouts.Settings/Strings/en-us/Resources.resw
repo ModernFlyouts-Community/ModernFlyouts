@@ -408,4 +408,34 @@ Made by the ModernFlyouts community.</value>
   <data name="GeneralPage_RequestAFeature.Text" xml:space="preserve">
     <value>Request a feature</value>
   </data>
+  <data name="Airplane.ModuleTitle" xml:space="preserve">
+    <value>Airplane</value>
+  </data>
+  <data name="Appearance_BehaviorSettings.ModuleTitle" xml:space="preserve">
+    <value>Appearance &amp; Behavior</value>
+  </data>
+  <data name="Audio.ModuleTitle" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="Battery.ModuleTitle" xml:space="preserve">
+    <value>Battery</value>
+  </data>
+  <data name="Brightness.ModuleTitle" xml:space="preserve">
+    <value>Brightness Flyout</value>
+  </data>
+  <data name="Camera.ModuleTitle" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+  <data name="General.ModuleTitle" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Layout.ModuleTitle" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="LockKeys.ModuleTitle" xml:space="preserve">
+    <value>Lock Keys</value>
+  </data>
+  <data name="Media.ModuleTitle" xml:space="preserve">
+    <value>Media</value>
+  </data>
 </root>

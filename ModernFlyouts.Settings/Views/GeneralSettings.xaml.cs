@@ -13,6 +13,7 @@ using Windows.ApplicationModel;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Windows.ApplicationModel.Resources;
 
 namespace ModernFlyouts.Settings.Views
 {
@@ -26,6 +27,9 @@ namespace ModernFlyouts.Settings.Views
         public GeneralSettings()
         {
             InitializeComponent();
+
+            // Load string resources
+            ResourceLoader loader = ResourceLoader.GetForViewIndependentUse();
         }
 
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
@@ -92,9 +96,9 @@ namespace ModernFlyouts.Settings.Views
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+
+
+
     }
-
-
-
 }
 

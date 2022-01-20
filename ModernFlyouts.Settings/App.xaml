@@ -40,14 +40,14 @@
             <!--Breakpoints-->  
             <x:Double x:Key="Breakpoint640Plus">641</x:Double>
 
-            <Thickness x:Key="PageHeaderDefaultPadding">0</Thickness>
-            <Thickness x:Key="PageHeaderMinimalPadding">-4,0,12,0</Thickness>
+            <!--<Thickness x:Key="PageHeaderDefaultPadding">0</Thickness>
+            <Thickness x:Key="PageHeaderMinimalPadding">-4,0,12,0</Thickness>-->
 
              <!--L-Pattern Overwriting resources--> 
             <Thickness x:Key="NavigationViewContentMargin">0,48,0,0</Thickness>
             <Thickness x:Key="NavigationViewContentGridBorderThickness">1,1,0,0</Thickness>
             <CornerRadius x:Key="NavigationViewContentGridCornerRadius">8,0,0,0</CornerRadius>
-            <Thickness x:Key="NavigationViewHeaderMargin">56,34,0,0</Thickness>
+            <!--<Thickness x:Key="NavigationViewHeaderMargin">56,34,0,0</Thickness>-->
 
             <SolidColorBrush x:Key="GridViewHeaderItemDividerStroke" Color="Transparent"/>
 
