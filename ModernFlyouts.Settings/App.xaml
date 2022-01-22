@@ -15,10 +15,10 @@
                 <ResourceDictionary Source="/Themes/Colors.xaml"/>
                 <ResourceDictionary Source="/Themes/SettingsExpanderStyles.xaml"/>
 
-                <ResourceDictionary Source="/Styles/_Colors.xaml" />
+                <!--<ResourceDictionary Source="/Styles/_Colors.xaml" />
                 <ResourceDictionary Source="/Styles/_FontSizes.xaml" />
                 <ResourceDictionary Source="/Styles/_Thickness.xaml" />
-                <ResourceDictionary Source="/Styles/Page.xaml"/>
+                <ResourceDictionary Source="/Styles/Page.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
 
             <!--<ResourceDictionary>-->
@@ -52,11 +52,11 @@
             <SolidColorBrush x:Key="GridViewHeaderItemDividerStroke" Color="Transparent"/>
 
 
-            <Style x:Key="OutputTextBlockStyle" BasedOn="{StaticResource BodyTextBlockStyle}" TargetType="TextBlock">
+            <!--<Style x:Key="OutputTextBlockStyle" BasedOn="{StaticResource BodyTextBlockStyle}" TargetType="TextBlock">
                 <Setter Property="Margin" Value="8,8,0,0" />
-            </Style>
+            </Style>-->
 
-            <Style x:Name="NarrowHeaderTextBlockStyle" BasedOn="{StaticResource HeaderTextBlockStyle}" TargetType="TextBlock">
+            <!--<Style x:Name="NarrowHeaderTextBlockStyle" BasedOn="{StaticResource HeaderTextBlockStyle}" TargetType="TextBlock">
                 <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundChromeWhiteBrush}"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
                 <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -67,7 +67,7 @@
                 <Setter Property="VerticalScrollMode" Value="Auto" />
                 <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
                 <Setter Property="ZoomMode" Value="Disabled" />
-            </Style>
+            </Style>-->
             
             <Style TargetType="controls:CheckBoxWithDescriptionControl" BasedOn="{StaticResource DefaultCheckBoxStyle}" />
         </ResourceDictionary>

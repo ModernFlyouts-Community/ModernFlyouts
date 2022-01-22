@@ -115,7 +115,7 @@
             <controls:PageLink x:Uid="GeneralPage_PrivacyStatement_URL" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/LICENSE"/>
             <controls:PageLink x:Uid="OpenSource_Notice" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/NOTICE.md"/>
             <controls:PageLink x:Uid="Contributors" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributor"/>
-            <controls:PageLink x:Uid="Dependencies" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/network/dependencies"/>
+            <controls:PageLink x:Uid="RateAndReview" Link="ms-windows-store://review/?ProductId=9mt60qv066rp"/>
         </controls:SettingsPageControl.SecondaryLinks>
     </controls:SettingsPageControl>
 </Page>

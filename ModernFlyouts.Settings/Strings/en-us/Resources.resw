@@ -438,4 +438,10 @@ Made by the ModernFlyouts community.</value>
   <data name="Media.ModuleTitle" xml:space="preserve">
     <value>Media</value>
   </data>
+  <data name="Contributors.Text" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
+  <data name="RateAndReview.Text" xml:space="preserve">
+    <value>Rate and review on the Microsoft Store</value>
+  </data>
 </root>
