@@ -438,10 +438,25 @@ Made by the ModernFlyouts community.</value>
   <data name="Media.ModuleTitle" xml:space="preserve">
     <value>Media</value>
   </data>
+  <data name="CapsLock.Header" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
   <data name="Contributors.Text" xml:space="preserve">
     <value>Contributors</value>
   </data>
+  <data name="InsertLock.Header" xml:space="preserve">
+    <value>Insert Lock</value>
+  </data>
+  <data name="NumLock.Header" xml:space="preserve">
+    <value>Num Lock</value>
+  </data>
   <data name="RateAndReview.Text" xml:space="preserve">
     <value>Rate and review on the Microsoft Store</value>
+  </data>
+  <data name="ScrollLock.Header" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="SelectLockFlyouts.Header" xml:space="preserve">
+    <value>Select the keys you want to show the flyout for</value>
   </data>
 </root>
