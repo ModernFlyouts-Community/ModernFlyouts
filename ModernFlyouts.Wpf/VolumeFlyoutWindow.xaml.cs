@@ -60,7 +60,7 @@ namespace ModernFlyouts.Wpf
             else if (e.NotificationType == NowPlayingSessionManagerNotificationType.SessionDisconnected)
             {
                  var mediaSession = Volumeflyoutcontrol.MediaSessions.Cast<MediaSession>().FirstOrDefault(x => x.MediaPlayingSession.GetSessionInfo().Equals(e.NowPlayingSessionInfo));
-                Volumeflyoutcontrol.RemoveSession(mediaSession);
+                 Volumeflyoutcontrol.RemoveSession(mediaSession);
             }
 
         }

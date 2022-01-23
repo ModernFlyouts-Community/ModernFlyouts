@@ -23,7 +23,7 @@ namespace ModernFlyouts.Utilities
             string appUserModelId = nps.SourceAppId;
             string path = string.Empty;
             MediaSession ms = new MediaSession();
-            string DisplayName = "uwp";
+            string DisplayName = "UWP";
             if (string.IsNullOrEmpty(nps.SourceAppId)
                 || string.IsNullOrWhiteSpace(nps.SourceAppId))
             {

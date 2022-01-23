@@ -35,12 +35,19 @@ namespace ModernFlyouts.Uwp.UserControls
        
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                MediaSession.MediaPlayingSession.ActivateMediaPlaybackDataSource().MediaPlaybackDataChanged += MediaSessionControl_MediaPlaybackDataChanged;
-                MediaInfo = MediaSessionHelper.GetMediaInfo(MediaSession.MediaPlayingSession);
-                MediaTimeline = MediaSessionHelper.GetTimelineInfo(MediaSession.MediaPlayingSession);
-                MediaImage.Source = await MediaSessionService.GetMusicThumbnail(MediaSession.MediaPlayingSession);
-                AppImage.Source = await MediaSessionService.ConvertIconToBitmap(MediaSession.AppIcon);
-                Bindings.Update();
+                try
+                {
+                    MediaSession.MediaPlayingSession.ActivateMediaPlaybackDataSource().MediaPlaybackDataChanged += MediaSessionControl_MediaPlaybackDataChanged;
+                    MediaInfo = MediaSessionHelper.GetMediaInfo(MediaSession.MediaPlayingSession);
+                    MediaTimeline = MediaSessionHelper.GetTimelineInfo(MediaSession.MediaPlayingSession);
+                    MediaImage.Source = await MediaSessionService.GetMusicThumbnail(MediaSession.MediaPlayingSession);
+                    AppImage.Source = await MediaSessionService.ConvertIconToBitmap(MediaSession.AppIcon);
+                    Bindings.Update();
+                }
+                catch
+                {
+
+                }
             });
         }
 
@@ -48,17 +55,23 @@ namespace ModernFlyouts.Uwp.UserControls
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async() =>
             {
+            try
+            {
                 MediaSession.MediaPlayingSession.ActivateMediaPlaybackDataSource().MediaPlaybackDataChanged += MediaSessionControl_MediaPlaybackDataChanged;
                 MediaInfo = MediaSessionHelper.GetMediaInfo(MediaSession.MediaPlayingSession);
                 MediaTimeline = MediaSessionHelper.GetTimelineInfo(MediaSession.MediaPlayingSession);
                 MediaImage.Source = await MediaSessionService.GetMusicThumbnail(MediaSession.MediaPlayingSession);
                 AppImage.Source = await MediaSessionService.ConvertIconToBitmap(MediaSession.AppIcon);
-/*
-                  endtime = MediaTimeline.EndTime.ToString(@"mm\:ss"); 
-                  currenttime = MediaTimeline.Position.ToString(@"mm\:ss");
-                  currenttimeval = (int)MediaTimeline.Position.TotalSeconds;
-                  endtimeval = (int)MediaTimeline.EndTime.TotalSeconds;*/
-                Bindings.Update();
+               }
+                                    catch
+                                    {
+
+                                    }
+                                   /*   endtime = MediaTimeline.EndTime.ToString(@"mm\:ss"); 
+                                      currenttime = MediaTimeline.Position.ToString(@"mm\:ss");
+                                      currenttimeval = (int)MediaTimeline.Position.TotalSeconds;
+                                      endtimeval = (int)MediaTimeline.EndTime.TotalSeconds;*/
+                    Bindings.Update();
             });
         }
     }
