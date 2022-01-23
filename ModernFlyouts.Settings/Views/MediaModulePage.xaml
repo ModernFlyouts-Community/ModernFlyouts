@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <controls:SettingsPageControl x:Uid="Media" IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png">
+                            ModuleImageSource="ms-appx:///Assets/media.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 

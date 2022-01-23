@@ -22,6 +22,34 @@
                     </controls:Setting.ActionContent>
                 </controls:Setting>
 
+                <controls:SettingsGroup IsEnabled="True" x:Uid="SelectLockFlyouts">
+                    <controls:Setting x:Uid="CapsLock" Icon="&#xE72e;">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  FlowDirection="LeftToRight"/>
+                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="NumLock">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  FlowDirection="LeftToRight"/>
+                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="ScrollLock">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  FlowDirection="LeftToRight"/>
+                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="InsertLock">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  FlowDirection="LeftToRight"/>
+                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+
+                </controls:SettingsGroup>
+
             </StackPanel>
         </controls:SettingsPageControl.ModuleContent>
     </controls:SettingsPageControl>

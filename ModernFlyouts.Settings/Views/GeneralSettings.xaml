@@ -42,15 +42,15 @@
 
                 <controls:SettingsGroup IsEnabled="True" x:Uid="Appearance_Behavior">
                     <controls:Setting x:Uid="DefaultFlyout" Icon="&#xe78b;">
-                            <controls:Setting.ActionContent>
-                                <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
-                                    <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
-                                    <ComboBoxItem x:Uid="Flyout"/>
-                                </ComboBox>
-                            </controls:Setting.ActionContent>
-                        </controls:Setting>
-                        
-                        <controls:Setting x:Uid="ColorModeHeader" Icon="&#xf2b7;">
+                        <controls:Setting.ActionContent>
+                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
+                                <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
+                                <ComboBoxItem x:Uid="Flyout"/>
+                            </ComboBox>
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+
+                    <controls:Setting x:Uid="ColorModeHeader" Icon="&#xf2b7;">
                         <controls:Setting.ActionContent>
                             <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
                                 <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
@@ -65,8 +65,8 @@
                         </controls:Setting.ActionContent>
                     </controls:Setting>
                 </controls:SettingsGroup>
-     
-                
+
+
                 <controls:SettingsGroup x:Uid="Admin_Mode">
                     <controls:SettingExpander IsExpanded="True">
                         <controls:SettingExpander.Header>
@@ -110,181 +110,13 @@
             <controls:PageLink x:Uid="General_Repository" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts"/>
             <controls:PageLink x:Uid="GeneralPage_ReportAbug" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose"/>
             <controls:PageLink x:Uid="GeneralPage_RequestAFeature" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose"/>
-        </controls:SettingsPageControl.PrimaryLinks> <!--Add rate and review in MS store links-->
+        </controls:SettingsPageControl.PrimaryLinks>
+        <!--Add rate and review in MS store links-->
         <controls:SettingsPageControl.SecondaryLinks>
             <controls:PageLink x:Uid="GeneralPage_PrivacyStatement_URL" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/LICENSE"/>
             <controls:PageLink x:Uid="OpenSource_Notice" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/NOTICE.md"/>
             <controls:PageLink x:Uid="Contributors" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributor"/>
-            <controls:PageLink x:Uid="Dependencies" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/network/dependencies"/>
+            <controls:PageLink x:Uid="RateAndReview" Link="ms-windows-store://review/?ProductId=9mt60qv066rp"/>
         </controls:SettingsPageControl.SecondaryLinks>
     </controls:SettingsPageControl>
 </Page>
-    
-<!--x:Class="ModernFlyouts.Settings.Views.GeneralSettings"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:helper="using:ModernFlyouts.Settings.Helpers"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
-    Style="{StaticResource PageStyle}"
-    xmlns:xaml="using:Windows.UI.Xaml"
-    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
-    mc:Ignorable="d">
-
-    <Page.Resources>
-        <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
-    </Page.Resources>
-
-    <Grid Margin="{StaticResource MediumLeftRightMargin}">
-        <StackPanel
-            x:Name="ContentArea">
-            <TextBlock x:Uid="Settings_Appearance" Style="{ThemeResource SubtitleTextBlockStyle}" />
-
-            
-            <TextBlock x:Uid="SettingsAppearance"
-                           Style="{StaticResource BodyStrongTextBlockStyle}"
-                           AutomationProperties.HeadingLevel="Level1"/>
-            <winui:Expander x:Name="AppThemeExpander"
-                               x:Uid="AppThemeExpander"
-                               Grid.Row="1"
-                               Margin="0,8,0,0"
-                               HorizontalAlignment="Stretch"
-                               VerticalAlignment="Top"
-                               HorizontalContentAlignment="Left"
-                               ExpandDirection="Down"
-                               IsExpanded="False">
-                <winui:Expander.Header>
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <FontIcon Margin="0,0,12,0"
-                                      VerticalAlignment="Center"
-                                      Foreground="{ThemeResource TextFillColorPrimaryBrush}"
-                                      FontSize="16"
-                                      Glyph="&#xE790;"/>
-
-                        <StackPanel Grid.Column="1"
-                                        Margin="0,12"
-                                        Orientation="Vertical">
-                            <TextBlock x:Uid="SettingsAppThemeTitle" Style="{StaticResource BodyTextBlockStyle}"/>
-                            <TextBlock x:Uid="SettingsAppThemeDescription"
-                                           Style="{StaticResource CaptionTextBlockStyle}"
-                                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                           TextWrapping="WrapWholeWords"/>
-                        </StackPanel>
-                    </Grid>
-                </winui:Expander.Header>
-                <winui:Expander.Content>
-                    <winui:RadioButtons x:Name="ThemeRadioButtons"
-                                           Margin="32,0,0,0">
-                        <RadioButton
-                        x:Uid="Settings_Theme_Light"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                            <RadioButton.CommandParameter>
-                                <xaml:ElementTheme>Light</xaml:ElementTheme>
-                            </RadioButton.CommandParameter>
-                        </RadioButton>
-                        <RadioButton
-                        x:Uid="Settings_Theme_Dark"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                            <RadioButton.CommandParameter>
-                                <xaml:ElementTheme>Dark</xaml:ElementTheme>
-                            </RadioButton.CommandParameter>
-                        </RadioButton>
-                        <RadioButton
-                        x:Uid="Settings_Theme_Default"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                            <RadioButton.CommandParameter>
-                                <xaml:ElementTheme>Default</xaml:ElementTheme>
-                            </RadioButton.CommandParameter>
-                        </RadioButton>
-                        </winui:RadioButtons>
-                </winui:Expander.Content>
-            </winui:Expander>
-
-
-            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
-
-            <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" />
-                <TextBlock
-                    x:Uid="Settings_AboutDescription"
-                    Margin="{StaticResource XSmallTopMargin}"
-                    Style="{ThemeResource BodyTextBlockStyle}" />
-
-                <HyperlinkButton x:Uid="Settings_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
-            </StackPanel>
-
-
-        </StackPanel>
-    </Grid>
-</Page>-->
-
-    
-
-
-
-
-<!--<winui:Expander x:Name="AppThemeExpander"
-                               x:Uid="AppThemeExpander"
-                               Grid.Row="1"
-                               Margin="0,8,0,0"
-                               HorizontalAlignment="Stretch"
-                               VerticalAlignment="Top"
-                               HorizontalContentAlignment="Left"
-                               ExpandDirection="Down"
-                               IsExpanded="False">
-    <winui:Expander.Header>
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <FontIcon Margin="0,0,12,0"
-                                      VerticalAlignment="Center"
-                                      Foreground="{ThemeResource TextFillColorPrimaryBrush}"
-                                      FontFamily="{ThemeResource CalculatorFontFamily}"
-                                      FontSize="16"
-                                      Glyph="&#xE790;"/>
-
-            <StackPanel Grid.Column="1"
-                                        Margin="0,12"
-                                        Orientation="Vertical">
-                <TextBlock x:Uid="SettingsAppThemeTitle" Style="{StaticResource BodyTextBlockStyle}"/>
-                <TextBlock x:Uid="SettingsAppThemeDescription"
-                                           Style="{StaticResource CaptionTextBlockStyle}"
-                                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                           TextWrapping="WrapWholeWords"/>
-            </StackPanel>
-        </Grid>
-    </winui:Expander.Header>
-    <winui:Expander.Content>
-        <winui:RadioButtons x:Name="ThemeRadioButtons"
-                                           Margin="32,0,0,0"
-                                           SelectionChanged="OnThemeSelectionChanged">
-            <RadioButton x:Name="LightThemeRadioButton"
-                                         x:Uid="LightThemeRadioButton"
-                                         Tag="Light"/>
-            <RadioButton x:Name="DarkThemeRadioButton"
-                                         x:Uid="DarkThemeRadioButton"
-                                         Tag="Dark"/>
-            <RadioButton x:Name="SystemThemeRadioButton"
-                                         x:Uid="SystemThemeRadioButton"
-                                         Tag="Default"/>
-        </winui:RadioButtons>
-    </winui:Expander.Content>
-</winui:Expander>-->
