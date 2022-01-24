@@ -14,28 +14,26 @@
                 <ResourceDictionary Source="/Styles/Button.xaml"/>
                 <ResourceDictionary Source="/Themes/Colors.xaml"/>
                 <ResourceDictionary Source="/Themes/SettingsExpanderStyles.xaml"/>
-
-                <!--<ResourceDictionary Source="/Styles/_Colors.xaml" />
-                <ResourceDictionary Source="/Styles/_FontSizes.xaml" />
-                <ResourceDictionary Source="/Styles/_Thickness.xaml" />
-                <ResourceDictionary Source="/Styles/Page.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
-
-            <!--<ResourceDictionary>-->
-                <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
-                <CornerRadius x:Key="ControlCornerRadius">4</CornerRadius>
-            <!--</ResourceDictionary>-->
-
 
             <Thickness x:Key="InfoBarIconMargin">6,16,16,16</Thickness>
             <Thickness x:Key="InfoBarContentRootPadding">16,0,0,0</Thickness>
             <x:Double x:Key="SettingActionControlMinWidth">240</x:Double>
 
-            <Style TargetType="ListViewItem" >
+            <Style TargetType="ListViewItem">
                 <Setter Property="Margin" Value="0,0,0,2" />
                 <Setter Property="Padding" Value="0,0,0,0" />
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="IsTabStop" Value="False"/>
             </Style>
+
+            <Style TargetType="controls:CheckBoxWithDescriptionControl" BasedOn="{StaticResource DefaultCheckBoxStyle}" />
+
+
+            <!--<ResourceDictionary>-->
+            <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
+            <CornerRadius x:Key="ControlCornerRadius">4</CornerRadius>
+            <!--</ResourceDictionary>-->
 
             <!--Breakpoints-->  
             <x:Double x:Key="Breakpoint640Plus">641</x:Double>
@@ -68,8 +66,6 @@
                 <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
                 <Setter Property="ZoomMode" Value="Disabled" />
             </Style>-->
-            
-            <Style TargetType="controls:CheckBoxWithDescriptionControl" BasedOn="{StaticResource DefaultCheckBoxStyle}" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -134,9 +134,6 @@
     <Compile Include="Controls\CheckBoxWithDescriptionControl.cs" />
     <Compile Include="Controls\IsEnabledTextBlock\IsEnabledTextBlock.cs" />
     <Compile Include="Controls\KeyVisual\KeyVisual.cs" />
-    <Compile Include="Controls\OOBEPageControl\OOBEPageControl.xaml.cs">
-      <DependentUpon>OOBEPageControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\SettingExpander\SettingExpander.cs" />
     <Compile Include="Controls\SettingsGroup\SettingsGroup.cs" />
     <Compile Include="Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
@@ -231,10 +228,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\OOBEPageControl\OOBEPageControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Controls\SettingsGroup\SettingsGroup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -250,18 +243,6 @@
     <Page Include="Styles\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\_Colors.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\_FontSizes.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\_Thickness.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\TextBlock.xaml">
       <SubType>Designer</SubType>

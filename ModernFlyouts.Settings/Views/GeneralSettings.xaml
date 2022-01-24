@@ -103,6 +103,37 @@
                     </controls:SettingExpander>
                 </controls:SettingsGroup>
 
+
+
+                <controls:SettingsGroup x:Uid="Other" IsEnabled="True">
+                    <controls:Setting x:Uid="GeneralPage_ImportSettings">
+                        <controls:Setting.ActionContent>
+                            <Button x:Uid="GeneralPage_ImportSettings_Button"
+                                            />
+                                    <!--Command = "{Binding RestartElevatedButtonEventHandler}"
+                                            IsEnabled="{Binding Mode=TwoWay, Path=IsAdminButtonEnabled}"-->
+                             </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="GeneralPage_ExportSettings">
+                        <controls:Setting.ActionContent>
+                            <Button x:Uid="GeneralPage_ExportSettings_Button"
+                                            />
+                            <!--Command = "{Binding RestartElevatedButtonEventHandler}"
+                                            IsEnabled="{Binding Mode=TwoWay, Path=IsAdminButtonEnabled}"-->
+
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="GeneralPage_ResetSettings">
+                        <controls:Setting.ActionContent>
+                            <Button x:Uid="GeneralPage_ResetSettings_Button"
+                                            />
+                            <!--Command = "{Binding RestartElevatedButtonEventHandler}"
+                                            IsEnabled="{Binding Mode=TwoWay, Path=IsAdminButtonEnabled}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                </controls:SettingsGroup>
+
+
             </StackPanel>
         </controls:SettingsPageControl.ModuleContent>
 

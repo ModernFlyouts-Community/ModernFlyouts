@@ -459,4 +459,28 @@ Made by the ModernFlyouts community.</value>
   <data name="SelectLockFlyouts.Header" xml:space="preserve">
     <value>Select the keys you want to show the flyout for</value>
   </data>
+  <data name="GeneralPage_ExportSettings.Header" xml:space="preserve">
+    <value>Export Settings</value>
+  </data>
+  <data name="GeneralPage_ExportSettings_Button.Content" xml:space="preserve">
+    <value>Export Settings</value>
+  </data>
+  <data name="GeneralPage_ImportSettings.Header" xml:space="preserve">
+    <value>Import Settings</value>
+  </data>
+  <data name="GeneralPage_ImportSettings_Button.Content" xml:space="preserve">
+    <value>Import Settings</value>
+  </data>
+  <data name="GeneralPage_ResetSettings.Header" xml:space="preserve">
+    <value>Reset Settings</value>
+  </data>
+  <data name="GeneralPage_ResetSettings_Button.Content" xml:space="preserve">
+    <value>Reset Settings</value>
+  </data>
+  <data name="GeneralPage_RestartAsAdmin_Button.Content" xml:space="preserve">
+    <value>Restart ModernFlyouts as administrator</value>
+  </data>
+  <data name="Other.Header" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>
