@@ -68,7 +68,7 @@
 			</desktop:FullTrustProcess>
 		</desktop:Extension>
 
-		<uap3:Extension Category="windows.appExecutionAlias"
+		<!--<uap3:Extension Category="windows.appExecutionAlias"
 						Executable="Elevated Extension\Elevated Extension.exe"
 						EntryPoint="Windows.FullTrustApplication">
 			<uap3:AppExecutionAlias>
@@ -81,9 +81,9 @@
 				<uap3:AppExecutionAlias>
 					<desktop:ExecutionAlias Alias="SelfElevationWPF.exe" />
 				</uap3:AppExecutionAlias>
-			</uap3:Extension>
+			</uap3:Extension>-->
 
-			<uap:Extension Category="windows.protocol">
+			<!--<uap:Extension Category="windows.protocol">
 				<uap:Protocol ReturnResults="none" Name="modernflyouts-uwp"/>
 			</uap:Extension>
 			<uap5:Extension
@@ -93,7 +93,7 @@
 				<uap5:AppExecutionAlias>
 					<uap5:ExecutionAlias Alias="ModernFlyouts.exe"/>
 				</uap5:AppExecutionAlias>
-			</uap5:Extension>
+			</uap5:Extension>-->
 
 			<Extension Category="windows.updateTask" EntryPoint="BackgroundTasks.UpdateTask" />
 			
@@ -104,11 +104,11 @@
   </Applications>
 
   <Capabilities>
-    <Capability Name="internetClient" />
-    <rescap:Capability Name="runFullTrust" />
-	  <!--<rescap:Capability Name="allowElevation" />-->
-	  <!--<DeviceCapability Name="bluetooth" />-->
+    <Capability Name="internetClient"/>
+	<Capability Name="globalMediaControl"/>
+    <rescap:Capability Name="runFullTrust"/>
+	<rescap:Capability Name="allowElevation"/>
+	<DeviceCapability Name="bluetooth"/>
 	  <!--<rescap:Capability Name="packageManagement" />-->
-	  <!--<Capability Name="globalMediaControl" / >-->
   </Capabilities>
 </Package>
