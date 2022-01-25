@@ -19,7 +19,7 @@ namespace ModernFlyouts.Core.Utilities
         {
             Bitmap bitmap = new Bitmap(16, 16);
             MediaSession ms = new MediaSession();
-            string DisplayName = "uwp";
+            string DisplayName = "Desktop";
 
             try
             {
@@ -44,9 +44,9 @@ namespace ModernFlyouts.Core.Utilities
             }
 
             try
-            {
+           {
                 DisplayName = sourceProcess.MainModule.FileVersionInfo.FileDescription;
-            }
+           }
             catch { }
 
             try

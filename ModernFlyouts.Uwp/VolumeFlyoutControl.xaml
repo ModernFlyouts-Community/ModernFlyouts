@@ -57,10 +57,12 @@
                                 </Grid.Background>
                                 <Grid x:Name="Pill" Background="{ThemeResource SystemAccentColorLight2}" Margin="42, 0, 0, 0" HorizontalAlignment="Left" Height="6" CornerRadius="4"/>
                                 <Grid Canvas.ZIndex="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="328">
-                                    <icons:FluentSymbolIcon Symbol="Speaker220" HorizontalAlignment="Left" Margin="4, 0, 9, 1"/>
-                                    <Slider x:Name="VolumeSlider" x:FieldModifier="Public" HorizontalAlignment="Left" Width="200" Margin="36, 0, 0, 0" Minimum="0" Maximum="105"/>
-                                    <TextBlock Margin="8, 5, 60, 3" HorizontalAlignment="Right" FontSize="16" Text="{x:Bind VolumeSlider.Value, Mode=OneWay}"/>
-                                    <Button HorizontalAlignment="Right" Height="32" Width="32" BorderBrush="Transparent" Margin="10, 0, 12, 2" Padding="0">
+                                    <Button HorizontalAlignment="Left" Height="32" Background="Transparent" BorderBrush="Transparent" Width="32" Margin="0, 0, 12, 1" Padding="0">
+                                        <icons:FluentSymbolIcon Symbol="Speaker220" Margin="2, 0, 4, 2"/>
+                                    </Button>
+                                    <Slider x:Name="VolumeSlider" x:FieldModifier="Public" HorizontalAlignment="Left" Width="260" Margin="36, 0, 0, 0" Minimum="0" Maximum="100"/>
+                                    <TextBlock Margin="12, 5, 4, 3" TextAlignment="Center" HorizontalAlignment="Right" FontSize="16" Text="{x:Bind VolumeSlider.Value, Mode=OneWay}"/>
+                                    <Button HorizontalAlignment="Right" Height="32" Background="Transparent" Visibility="Collapsed" BorderBrush="Transparent" Width="32" Margin="10, 0, 4, 2" Padding="0">
                                         <icons:FluentSymbolIcon Symbol="ChevronDown20" Margin="2, 0, 4, 2"/>
                                     </Button>
                                 </Grid>
