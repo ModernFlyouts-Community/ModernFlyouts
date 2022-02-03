@@ -34,6 +34,7 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | [foobar2000](https://www.foobar2000.org/) | 🟢 (v1.5.1+) | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟩 | 🟥 |
 | [MusicBee](https://getmusicbee.com/downloads/) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟪 |
 | [AIMP](https://www.aimp.ru/?do=download&os=windows) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
+| [Winamp](https://www.winamp.com/) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
 |**VIDEO**|**ONLY**|
 | Movies & TV    | 🟢 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟪 | 🟩 | 🟥 | 🟥 | 🟩 | 🟩 |
 | [myTube Beta](https://www.microsoft.com/store/productId/9WZDNCRDT29J) | 🟢 | 🟩 | 🟩 | 🟩 | 🟥 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟩 | 🟥 |
@@ -53,6 +54,7 @@ NOTE- Chromium based includes Chromium browsers and its derivatives (Chrome, New
 
 - **MusicBee** - https://github.com/ameer1234567890/mb_MediaControl
 - **AIMP** - https://www.aimp.ru/?do=catalog&rec_id=1097
+- **Winamp** - https://github.com/NanMetal/gen_smtc
 - **VLC (Desktop)** - https://github.com/spmn/vlc-win10smtc
 
 ## Help us include support for more applications that are currently unsupported
