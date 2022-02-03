@@ -46,7 +46,10 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 |**VIDEO**|**ONLY**|
 | Movies & TV    | 🟢 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟪 | 🟩 | 🟥 | 🟥 | 🟩 | 🟩 |
 | [myTube Beta](https://www.microsoft.com/store/productId/9WZDNCRDT29J) | 🟢 | 🟩 | 🟩 | 🟩 | 🟥 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟩 | 🟥 |
+| [Crunchyroll](https://www.microsoft.com/store/productId/9WZDNCRFJ15T) | 🟢 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [Amazon Prime Video](https://www.microsoft.com/store/productId/9P6RC76MSMMJ) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
+| [FreeTube](https://freetubeapp.io/#download) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
+| [Dailymotion](https://www.microsoft.com/store/productId/9WZDNCRFHX2X) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 |**AUDIO**|**AND**|**VIDEO**|
 | Media Player PREVIEW (Formerly Groove Music)  | 🟢 | 🟩 | 🟥 | 🟥 | 🟪 | 🟩 | 🟥 | 🟩 | 🟩 | 🟩 | 🟥 | 🟩 |
 | [MPC-BE](https://sourceforge.net/projects/mpcbe/) | 🟢 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
@@ -57,6 +60,7 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | [MPC-HC (clsid2)](https://github.com/clsid2/mpc-hc) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [KMPlayer](https://www.kmplayer.com/home) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [GOM Player](https://www.gomlab.com/download/) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
+| [Kodi](https://www.microsoft.com/store/productId/9NBLGGH4T892) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | Application | Support | Play\Pause | Previous | Next | Thumbnail | Media Title | Media Artist | App Info | Shuffle | Repeat | Stop | Timeline information |
 
 NOTE- Chromium based includes Chromium browsers and its derivatives (Chrome, New MS Edge, Opera, Brave, Vivaldi, etc.). 
