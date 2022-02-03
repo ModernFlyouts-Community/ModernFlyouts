@@ -56,6 +56,8 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | [VLC (UWP)](https://www.microsoft.com/store/productId/9NBLGGH4VVNH) | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟩 | 🟥 |
 | [VLC (Desktop)](https://www.videolan.org/vlc/) | 🟡 (VLC 3.0.x)| 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [Winamp](https://www.winamp.com/) | 🟡 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
+| [MPV](https://mpv.io/installation/) | 🟡<sup>[1](#f1)</sup> | 🟩 | 🟥 | 🟩 | 🟥 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
+|                                     | 🟡<sup>[2](#f2)</sup> | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [PotPlayer](https://daumpotplayer.com/download/) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [MPC-HC (clsid2)](https://github.com/clsid2/mpc-hc) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [KMPlayer](https://www.kmplayer.com/home) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
@@ -72,6 +74,8 @@ NOTE- Chromium based includes Chromium browsers and its derivatives (Chrome, New
 - **AIMP** - https://www.aimp.ru/?do=catalog&rec_id=1097
 - **VLC (Desktop)** - https://github.com/spmn/vlc-win10smtc
 - **Winamp** - https://github.com/NanMetal/gen_smtc
+- **MPV** - <sup><a name="f1">1</a></sup>https://github.com/x0wllaar/MPV-SMTC OR
+          - <sup><a name="f2">2</a></sup>https://github.com/datasone/MPVMediaControl
 
 ## Help us include support for more applications that are currently unsupported
 
