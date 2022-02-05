@@ -71,7 +71,7 @@ With additional implementations for **"Airplane mode"**, **"Brightness"** and **
 
 ## Installation  ⬇️
 
-Modern Flyouts is available for you to install via  [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP), [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), winget and [Chocolatey](https://chocolatey.org/packages/modernflyouts).
+Modern Flyouts is available for you to install via  [Microsoft Store](https://www.microsoft.com/store/apps/9MT60QV066RP), [GitHub](https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/latest), [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/) and [Chocolatey](https://chocolatey.org/packages/modernflyouts).
 
 All the distribution methods mentioned above are supported, however installing the app from the **Microsoft Store** is **recommended** as it is easier to install and will automatically remain up to date.
 
