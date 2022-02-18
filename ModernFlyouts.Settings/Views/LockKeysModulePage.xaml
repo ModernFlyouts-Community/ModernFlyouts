@@ -5,52 +5,26 @@
     xmlns:controls="using:ModernFlyouts.Settings.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls" xmlns:settings="using:ModernFlyouts.Settings.SettingsControls" xmlns:icons="using:Fluent.Icons"
     mc:Ignorable="d">
-
-    <controls:SettingsPageControl x:Uid="LockKeys" IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/mockup3cut.png">
-        <controls:SettingsPageControl.ModuleContent>
-            <StackPanel Orientation="Vertical">
-
-                <controls:Setting x:Uid="LockKeys_Module_Enable">
-                    <controls:Setting.Icon>
-                        <FontIcon Glyph="&#xE72e;"/>
-                    </controls:Setting.Icon>
-                    <controls:Setting.ActionContent>
-                        <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
-                    </controls:Setting.ActionContent>
-                </controls:Setting>
-
-                <controls:SettingsGroup IsEnabled="True" x:Uid="SelectLockFlyouts">
-                    <controls:Setting x:Uid="CapsLock" Icon="&#xE72e;">
-                        <controls:Setting.ActionContent>
-                            <ToggleSwitch  FlowDirection="LeftToRight"/>
-                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                    <controls:Setting x:Uid="NumLock">
-                        <controls:Setting.ActionContent>
-                            <ToggleSwitch  FlowDirection="LeftToRight"/>
-                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                    <controls:Setting x:Uid="ScrollLock">
-                        <controls:Setting.ActionContent>
-                            <ToggleSwitch  FlowDirection="LeftToRight"/>
-                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                    <controls:Setting x:Uid="InsertLock">
-                        <controls:Setting.ActionContent>
-                            <ToggleSwitch  FlowDirection="LeftToRight"/>
-                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-
-                </controls:SettingsGroup>
-
-            </StackPanel>
-        </controls:SettingsPageControl.ModuleContent>
-    </controls:SettingsPageControl>
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40, 50, 40, 100">
+            <TextBlock FontSize="24" FontWeight="SemiBold" Margin="4, 4, 4, 24">Lock keys</TextBlock>
+            <settings:SettingsBlockControl Title="Lock keys" Margin="2" Description="Adjust Lock keys flyout settings">
+                <settings:SettingsBlockControl.Icon>
+                    <icons:FluentIconElement VerticalAlignment="Center" Symbol="LockClosed24"/>
+                </settings:SettingsBlockControl.Icon>
+                <ToggleSwitch OnContent="On" Margin="0, 0, -44, 0" HorizontalAlignment="Right" OffContent="Off"/>
+                <settings:SettingsBlockControl.ExpandableContent>
+                    <StackPanel Margin="12, 8, 12, 8">
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Select which keys to show flyout for</TextBlock>
+                        <CheckBox  Content="Caps Lock" Margin="12, 0, 0, 0"/>
+                        <CheckBox  Content="Num Lock" Margin="12, 0, 0, 0"/>
+                        <CheckBox  Content="Scroll Lock" Margin="12, 0, 0, 0"/>
+                        <CheckBox  Content="Insert" Margin="12, 0, 0, 0"/>
+                    </StackPanel>
+                </settings:SettingsBlockControl.ExpandableContent>
+            </settings:SettingsBlockControl>
+        </StackPanel>
+    </Grid>
 </Page>

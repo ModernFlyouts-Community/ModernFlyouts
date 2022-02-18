@@ -93,6 +93,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Fluent.Icons">
+      <Version>1.1.110</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
       <Version>4.5.0</Version>
     </PackageReference>
@@ -131,43 +134,27 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Behaviors\NavigationViewHeaderBehavior.cs" />
     <Compile Include="Behaviors\NavigationViewHeaderMode.cs" />
-    <Compile Include="Controls\CheckBoxWithDescriptionControl.cs" />
-    <Compile Include="Controls\IsEnabledTextBlock\IsEnabledTextBlock.cs" />
-    <Compile Include="Controls\KeyVisual\KeyVisual.cs" />
-    <Compile Include="Controls\SettingExpander\SettingExpander.cs" />
-    <Compile Include="Controls\SettingsGroup\SettingsGroup.cs" />
-    <Compile Include="Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
-    <Compile Include="Controls\SettingsPageControl\PageLink.cs" />
-    <Compile Include="Controls\SettingsPageControl\SettingsPageControl.xaml.cs">
-      <DependentUpon>SettingsPageControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Setting\Setting.cs" />
-    <Compile Include="Converters\ModuleEnabledToOpacityConverter.cs" />
+    <Compile Include="Controls\SettingsControls\Converters.cs" />
+    <Compile Include="Controls\SettingsControls\SettingsBlockControl.xaml.cs" />
+    <Compile Include="Controls\SettingsControls\SettingsDisplayControl.xaml.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Helpers\StartProcessHelper.cs" />
-    <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
-    <Compile Include="Services\FirstRunDisplayService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ThemeSelectorService.cs" />
-    <Compile Include="Services\ToastNotificationsService.cs" />
-    <Compile Include="Services\ToastNotificationsService.Samples.cs" />
-    <Compile Include="Services\WhatsNewDisplayService.cs" />
     <Compile Include="ViewModels\AirplaneModeModuleViewModel.cs" />
     <Compile Include="ViewModels\Appearance_BehaviorViewModel.cs" />
     <Compile Include="ViewModels\AudioModuleViewModel.cs" />
     <Compile Include="ViewModels\AudioTrayModuleViewModel.cs" />
     <Compile Include="ViewModels\BatteryModuleViewModel.cs" />
     <Compile Include="ViewModels\BrightnessModuleViewModel.cs" />
-    <Compile Include="ViewModels\CameraModuleViewModel.cs" />
     <Compile Include="ViewModels\Commands\ButtonClickCommand.cs" />
     <Compile Include="ViewModels\GeneralSettingsViewModel.cs" />
     <Compile Include="ViewModels\LayoutViewModel.cs" />
     <Compile Include="ViewModels\LockKeysModuleViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\MediaModuleViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\AirplaneModeModulePage.xaml.cs">
       <DependentUpon>AirplaneModeModulePage.xaml</DependentUpon>
@@ -187,9 +174,6 @@
     <Compile Include="Views\BrightnessModulePage.xaml.cs">
       <DependentUpon>BrightnessModulePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CameraModulePage.xaml.cs">
-      <DependentUpon>CameraModulePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\FirstRunDialog.xaml.cs">
       <DependentUpon>FirstRunDialog.xaml</DependentUpon>
     </Compile>
@@ -202,9 +186,7 @@
     <Compile Include="Views\LockKeysModulePage.xaml.cs">
       <DependentUpon>LockKeysModulePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MediaModulePage.xaml.cs">
-      <DependentUpon>MediaModulePage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Views\OOBEPage.xaml.cs" />
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
@@ -220,43 +202,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\IsEnabledTextBlock\IsEnabledTextBlock.xaml">
+    <Page Include="Controls\SettingsControls\SettingsBlockControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\KeyVisual\KeyVisual.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\SettingsGroup\SettingsGroup.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\SettingsPageControl\SettingsPageControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\Setting\Setting.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\Button.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\TextBlock.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Colors.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\SettingsExpanderStyles.xaml">
+    <Page Include="Controls\SettingsControls\SettingsDisplayControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -284,10 +234,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\CameraModulePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\FirstRunDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -304,7 +250,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\MediaModulePage.xaml">
+    <Page Include="Views\OOBEPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

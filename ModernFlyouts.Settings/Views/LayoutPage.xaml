@@ -5,28 +5,19 @@
     xmlns:controls="using:ModernFlyouts.Settings.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls" xmlns:settings="using:ModernFlyouts.Settings.SettingsControls" xmlns:icons="using:Fluent.Icons"
     mc:Ignorable="d">
-
-    <controls:SettingsPageControl x:Uid="Layout" IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png">
-        <controls:SettingsPageControl.ModuleContent>
-            <StackPanel Orientation="Vertical">
-
-                <controls:SettingsGroup x:Uid="Behavior" IsEnabled="False"><!--IsEnabled="{x:Bind Mode=OneWay, Path=ViewModel.EnablePowerLauncher}"-->
-                    <controls:Setting x:Uid="PositionHeader" Icon="&#xE18C;">
-                        <controls:Setting.ActionContent>
-                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}"><!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.MonitorPositionIndex}"-->
-                                <ComboBoxItem x:Uid="Radio_Position_Cursor"/>
-                                <ComboBoxItem x:Uid="Radio_Position_Primary_Monitor"/>
-                                <ComboBoxItem x:Uid="Radio_Position_Focus"/>
-                            </ComboBox>
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                        
-                </controls:SettingsGroup>
-
-            </StackPanel>
-        </controls:SettingsPageControl.ModuleContent>
-    </controls:SettingsPageControl>
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40, 50, 40, 100">
+            <TextBlock FontSize="24" FontWeight="SemiBold" Margin="4, 4, 4, 24">Layout</TextBlock>
+            <settings:SettingsBlockControl Title="Layout" Margin="2" Description="Adjust flyout layout settings">
+                <settings:SettingsBlockControl.Icon>
+                    <icons:FluentIconElement VerticalAlignment="Center" Symbol="Grid24"/>
+                </settings:SettingsBlockControl.Icon>
+                <settings:SettingsBlockControl.ExpandableContent>
+                    <Grid></Grid>
+                </settings:SettingsBlockControl.ExpandableContent>
+            </settings:SettingsBlockControl>
+        </StackPanel>
+    </Grid>
 </Page>

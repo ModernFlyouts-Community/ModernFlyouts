@@ -8,7 +8,7 @@
     xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
     xmlns:localConverters="using:ModernFlyouts.Settings.Converters"
     xmlns:xaml="using:Windows.UI.Xaml"
-    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls" xmlns:settings="using:ModernFlyouts.Settings.SettingsControls" xmlns:icons="using:Fluent.Icons"
     mc:Ignorable="d"
     AutomationProperties.LandmarkType="Main">
 
@@ -16,8 +16,48 @@
         <converters:BoolToObjectConverter x:Key="BoolToVisibilityConverter" TrueValue="Collapsed" FalseValue="Visible"/>
         <converters:BoolToVisibilityConverter x:Key="VisibleIfTrueConverter"/>
     </Page.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40, 50, 300, 100">
+            <TextBlock FontSize="24" FontWeight="SemiBold" Margin="4, 4, 4, 24">Settings</TextBlock>
+            <settings:SettingsBlockControl Title="General" Margin="2" Description="Adjust general settings">
+                <settings:SettingsBlockControl.Icon>
+                    <icons:FluentIconElement VerticalAlignment="Center" Symbol="Settings24"/>
+                </settings:SettingsBlockControl.Icon>
+                <settings:SettingsBlockControl.ExpandableContent>
+                    <StackPanel Margin="12, 8, 12, 8">
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Run at startup</TextBlock>
+                        <ToggleSwitch OnContent="On" OffContent="Off" Margin="12, 0, 0, 0"/>
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Language</TextBlock>
+                        <ComboBox Margin="12, 8, 0, 0">
+                            <x:String>C#</x:String>
+                            <x:String>Python</x:String>
+                        </ComboBox>
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Import/Export settings</TextBlock>
+                        <StackPanel Orientation="Horizontal" Margin="12, 0, 0, 0">
+                            <Button Margin="0,8,4,0" Width="150">Import settings</Button>
+                            <Button Margin="4,8,4,0" Width="150">Export settings</Button>
+                        </StackPanel>
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Reset settings</TextBlock>
+                        <Button Margin="12,8,4,8" Width="150">Import settings</Button>
+                    </StackPanel>
+                </settings:SettingsBlockControl.ExpandableContent>
+            </settings:SettingsBlockControl>
 
-    <controls:SettingsPageControl x:Uid="General"
+
+        </StackPanel>
+        <StackPanel Margin="100, 100, 50, 100" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4, 4, 4, 8">About this app</TextBlock>
+            <TextBlock FontSize="14" Margin="4, 4, 4, 8" TextWrapping="WrapWholeWords">ModernFlyouts 0.11.x.0<LineBreak/>This app is hot and good and amazing and very good</TextBlock>
+            <HyperlinkButton Margin="4">GitHub</HyperlinkButton>
+            <HyperlinkButton Margin="4">Contributors</HyperlinkButton>
+            <HyperlinkButton Margin="4">Dependencies</HyperlinkButton>
+            <HyperlinkButton Margin="4">License</HyperlinkButton>
+            <Button Margin="4,12,4,8" Width="150">OOBE</Button>
+            <Button Margin="4,8,4,8" Width="150">Submit an issue</Button>
+            <Button Margin="4,8,4,8" Width="150">Join our Discord</Button>
+        </StackPanel>
+    </Grid>
+    <!--  <controls:SettingsPageControl x:Uid="General"
                                   ModuleImageSource="ms-appx:///Assets/Hero.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
@@ -37,14 +77,14 @@
                               IsClosable="False"
                               Severity="Success"
                               />
-                    <!--IsOpen="{Binding IsNewVersionCheckedAndUpToDate}"-->
+
                 </controls:SettingsGroup>
 
                 <controls:SettingsGroup IsEnabled="True" x:Uid="Appearance_Behavior">
                     <controls:Setting x:Uid="DefaultFlyout" Icon="&#xe78b;">
                         <controls:Setting.ActionContent>
                             <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
-                                <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
+                             
                                 <ComboBoxItem x:Uid="Flyout"/>
                             </ComboBox>
                         </controls:Setting.ActionContent>
@@ -53,7 +93,7 @@
                     <controls:Setting x:Uid="ColorModeHeader" Icon="&#xf2b7;">
                         <controls:Setting.ActionContent>
                             <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
-                                <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
+                       
                                 <ComboBoxItem x:Uid="Language"/>
                             </ComboBox>
                         </controls:Setting.ActionContent>
@@ -61,7 +101,7 @@
                     <controls:Setting x:Uid="GeneralPage_RunAtStartUp">
                         <controls:Setting.ActionContent>
                             <ToggleSwitch  FlowDirection="RightToLeft"/>
-                            <!--IsOn="{Binding Mode=TwoWay, Path=Startup}"-->
+                    
                         </controls:Setting.ActionContent>
                     </controls:Setting>
                 </controls:SettingsGroup>
@@ -71,33 +111,32 @@
                     <controls:SettingExpander IsExpanded="True">
                         <controls:SettingExpander.Header>
                             <controls:Setting x:Uid="Admin_Mode" Icon="&#xE1A7;"  Style="{StaticResource ExpanderHeaderSettingStyle}">
-                                <!--Description="{Binding Mode=TwoWay, Path=RunningAsText}"-->
+                     
                                 <controls:Setting.ActionContent>
                                     <Button x:Uid="GeneralPage_RestartAsAdmin_Button"
                                             />
-                                    <!--Command = "{Binding RestartElevatedButtonEventHandler}"
-                                            IsEnabled="{Binding Mode=TwoWay, Path=IsAdminButtonEnabled}"-->
+
                                 </controls:Setting.ActionContent>
                             </controls:Setting>
                         </controls:SettingExpander.Header>
                         <controls:SettingExpander.Content>
                             <StackPanel Orientation="Vertical">
                                 <controls:Setting x:Uid="GeneralSettings_AlwaysRunAsAdminText"  Style="{StaticResource ExpanderContentSettingStyle}">
-                                    <!--IsEnabled="{Binding Mode=TwoWay, Path=IsElevated}"-->
+                   
                                     <controls:Setting.Description>
                                         <HyperlinkButton NavigateUri="https://aka.ms/powertoysDetectedElevatedHelp"
                                                          x:Uid="GeneralPage_ToggleSwitch_AlwaysRunElevated_Link"/>
                                     </controls:Setting.Description>
                                     <controls:Setting.ActionContent>
                                         <ToggleSwitch  FlowDirection="RightToLeft"/>
-                                        <!--IsOn="{Binding Mode=TwoWay, Path=RunElevated}"-->
+              
                                     </controls:Setting.ActionContent>
                                 </controls:Setting>
                                 <winui:InfoBar x:Uid="General_RunAsAdminRequired" 
                                           Severity="Warning"
                                           IsClosable="False"
                                           />
-                                <!--IsOpen="{Binding Mode=TwoWay, Path=IsElevated}"-->
+                    
                             </StackPanel>
                         </controls:SettingExpander.Content>
                     </controls:SettingExpander>
@@ -110,16 +149,14 @@
                         <controls:Setting.ActionContent>
                             <Button x:Uid="GeneralPage_ImportSettings_Button"
                                             />
-                                    <!--Command = "{Binding RestartElevatedButtonEventHandler}"
-                                            IsEnabled="{Binding Mode=TwoWay, Path=IsAdminButtonEnabled}"-->
+                        
                              </controls:Setting.ActionContent>
                     </controls:Setting>
                     <controls:Setting x:Uid="GeneralPage_ExportSettings">
                         <controls:Setting.ActionContent>
                             <Button x:Uid="GeneralPage_ExportSettings_Button"
                                             />
-                            <!--Command = "{Binding RestartElevatedButtonEventHandler}"
-                                            IsEnabled="{Binding Mode=TwoWay, Path=IsAdminButtonEnabled}"-->
+
 
                         </controls:Setting.ActionContent>
                     </controls:Setting>
@@ -127,8 +164,7 @@
                         <controls:Setting.ActionContent>
                             <Button x:Uid="GeneralPage_ResetSettings_Button"
                                             />
-                            <!--Command = "{Binding RestartElevatedButtonEventHandler}"
-                                            IsEnabled="{Binding Mode=TwoWay, Path=IsAdminButtonEnabled}"-->
+       
                         </controls:Setting.ActionContent>
                     </controls:Setting>
                 </controls:SettingsGroup>
@@ -142,12 +178,12 @@
             <controls:PageLink x:Uid="GeneralPage_ReportAbug" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose"/>
             <controls:PageLink x:Uid="GeneralPage_RequestAFeature" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/issues/new/choose"/>
         </controls:SettingsPageControl.PrimaryLinks>
-        <!--Add rate and review in MS store links-->
+
         <controls:SettingsPageControl.SecondaryLinks>
             <controls:PageLink x:Uid="GeneralPage_PrivacyStatement_URL" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/LICENSE"/>
             <controls:PageLink x:Uid="OpenSource_Notice" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/NOTICE.md"/>
             <controls:PageLink x:Uid="Contributors" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributor"/>
             <controls:PageLink x:Uid="RateAndReview" Link="ms-windows-store://review/?ProductId=9mt60qv066rp"/>
         </controls:SettingsPageControl.SecondaryLinks>
-    </controls:SettingsPageControl>
+    </controls:SettingsPageControl>-->
 </Page>

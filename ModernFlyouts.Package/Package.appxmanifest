@@ -105,7 +105,7 @@
 
   <Capabilities>
     <Capability Name="internetClient"/>
-	<Capability Name="globalMediaControl"/>
+    <uap7:Capability Name="globalMediaControl" />
     <rescap:Capability Name="runFullTrust"/>
 	<rescap:Capability Name="allowElevation"/>
 	<DeviceCapability Name="bluetooth"/>

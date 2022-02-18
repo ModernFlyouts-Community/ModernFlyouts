@@ -5,45 +5,43 @@
     xmlns:controls="using:ModernFlyouts.Settings.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls" xmlns:settings="using:ModernFlyouts.Settings.SettingsControls" xmlns:icons="using:Fluent.Icons"
     mc:Ignorable="d">
-
-    <controls:SettingsPageControl x:Uid="Battery" IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/battery1.png">
-        <controls:SettingsPageControl.ModuleContent>
-            <StackPanel Orientation="Vertical">
-
-                <controls:Setting x:Uid="Airplane_Module_Enable">
-                    <controls:Setting.Icon>
-                        <FontIcon Glyph="&#xE83e;"/>
-                    </controls:Setting.Icon>
-                    <controls:Setting.ActionContent>
-                        <ToggleSwitch  HorizontalAlignment="Right"/>
-                        <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
-                    </controls:Setting.ActionContent>
-                </controls:Setting>
-
-                <controls:SettingsGroup x:Uid="Shortcut" IsEnabled="True">
-                    <!--{x:Bind Mode=OneWay, Path=ViewModel.EnableAirplaneModule}-->
-                    <controls:SettingExpander IsExpanded="True">
-                        <controls:SettingExpander.Header>
-                            <controls:Setting x:Uid="Activation_Shortcut" Icon="&#xEDA7;" Style="{StaticResource ExpanderHeaderSettingStyle}">
-                                <!--<controls:Setting.ActionContent>
-                                    <controls:ShortcutControl HotkeySettings="{x:Bind Path=ViewModel.OpenPowerLauncher, Mode=TwoWay}"
-                                                                    MinWidth="{StaticResource SettingActionControlMinWidth}"/>
-                                </controls:Setting.ActionContent>-->
-                            </controls:Setting>
-                        </controls:SettingExpander.Header>
-                        <controls:SettingExpander.Content>
-                            <StackPanel>
-                                <CheckBox x:Uid="IgnoreHotkeysInFullScreen"  Margin="{StaticResource ExpanderSettingMargin}" />
-                                <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.IgnoreHotkeysInFullScreen}"-->
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40, 50, 40, 100">
+            <TextBlock FontSize="24" FontWeight="SemiBold" Margin="4, 4, 4, 24">Battery</TextBlock>
+            <settings:SettingsBlockControl Title="Battery" Margin="2" Description="Adjust Battery flyout settings">
+                <settings:SettingsBlockControl.Icon>
+                    <icons:FluentIconElement VerticalAlignment="Center" Symbol="Battery124"/>
+                </settings:SettingsBlockControl.Icon>
+                <ToggleSwitch OnContent="On" HorizontalAlignment="Right" Margin="0, 0, -44, 0" OffContent="Off"/>
+                <settings:SettingsBlockControl.ExpandableContent>
+                    <StackPanel Margin="12, 8, 12, 8">
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Set default PowerPlan</TextBlock>
+                        <Slider IsThumbToolTipEnabled="False" HorizontalAlignment="Left" Margin="12, 0, 0, 0" TickPlacement="Outside" TickFrequency="1" Width="344" Minimum="0" Maximum="3"/>
+                        <Grid Margin="0, 0, 0, 0">
+                            <StackPanel Orientation="Horizontal">
+                                <icons:FluentSymbolIcon Symbol="LeafThree20" Margin="6, 0, 0, 4" Opacity="0.7"/>
+                                <RichTextBlock FontSize="12" Opacity="0.7" VerticalAlignment="Center" Margin="4, 0, 0, 4">
+                                    <Paragraph>High performance</Paragraph>
+                                </RichTextBlock>
                             </StackPanel>
-                        </controls:SettingExpander.Content>
-                    </controls:SettingExpander>
-                </controls:SettingsGroup>
-
-            </StackPanel>
-        </controls:SettingsPageControl.ModuleContent>
-    </controls:SettingsPageControl>
+                            <StackPanel Orientation="Horizontal"  Margin="220, 0, 14, 0">
+                                <icons:FluentSymbolIcon Symbol="TopSpeed20" Margin="6, 2, 0, 4" Opacity="0.7"/>
+                                <RichTextBlock FontSize="11" Opacity="0.7" VerticalAlignment="Center" Margin="4, 0, 0, 4">
+                                    <Paragraph>High performance</Paragraph>
+                                </RichTextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </settings:SettingsBlockControl.ExpandableContent>
+            </settings:SettingsBlockControl>
+            <settings:SettingsBlockControl Title="Power usage" Margin="2" Description="Toggle power usage info">
+                <settings:SettingsBlockControl.Icon>
+                    <icons:FluentIconElement VerticalAlignment="Center" Symbol="Power24"/>
+                </settings:SettingsBlockControl.Icon>
+                <ToggleSwitch OnContent="On" HorizontalAlignment="Right" OffContent="Off"/>
+            </settings:SettingsBlockControl>
+        </StackPanel>
+    </Grid>
 </Page>

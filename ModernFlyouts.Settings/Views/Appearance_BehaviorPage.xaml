@@ -5,101 +5,34 @@
     xmlns:controls="using:ModernFlyouts.Settings.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+       xmlns:winui="using:Microsoft.UI.Xaml.Controls" xmlns:settings="using:ModernFlyouts.Settings.SettingsControls" xmlns:icons="using:Fluent.Icons"
     mc:Ignorable="d">
-
-    <controls:SettingsPageControl x:Uid="Appearance_BehaviorSettings" IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png">
-        <controls:SettingsPageControl.ModuleContent>
-            <StackPanel Orientation="Vertical">
-
-                <controls:SettingsGroup x:Uid="Appearance" IsEnabled="True">
-
-                    <controls:Setting x:Uid="AppThemeHeader" Icon="&#xE790;">
-                        <controls:Setting.Description>
-                            <HyperlinkButton Click="OpenColorsSettings_Click"
-                                                     x:Uid="Windows_Color_Settings"/>
-                        </controls:Setting.Description>
-                        <controls:Setting.ActionContent>
-                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}"><!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
-                                <ComboBoxItem x:Uid="Radio_Theme_Dark"/>
-                                <ComboBoxItem x:Uid="Radio_Theme_Light"/>
-                                <ComboBoxItem x:Uid="Radio_Theme_Default"/>
-                            </ComboBox>
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-
-                    <controls:Setting x:Uid="FlyoutThemeHeader" Icon="&#xE790;">
-                        <controls:Setting.Description>
-                            <HyperlinkButton Click="OpenColorsSettings_Click"
-                                                     x:Uid="Windows_Color_Settings"/>
-                        </controls:Setting.Description>
-                        <controls:Setting.ActionContent>
-                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}"><!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
-                                <ComboBoxItem x:Uid="Radio_Theme_Dark"/>
-                                <ComboBoxItem x:Uid="Radio_Theme_Light"/>
-                                <ComboBoxItem x:Uid="Radio_Theme_Default"/>
-                            </ComboBox>
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-
-
-                    <controls:Setting x:Uid="Flyout_Opacity">
-                        <controls:Setting.ActionContent>
-                            <Slider Minimum="0"
-                                    Maximum="100"
-                                    MinWidth="{StaticResource SettingActionControlMinWidth}"
-                                    /> <!--Value="{x:Bind Mode=TwoWay, Path=ViewModel.OverlayOpacity}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                </controls:SettingsGroup>
-
-                <controls:SettingsGroup x:Uid="Behavior" IsEnabled="True">
-
-                    <controls:SettingExpander IsExpanded="True">
-                        <controls:SettingExpander.Header>
-                            <controls:Setting x:Uid="Flyout_Timeout" Icon="&#xf182;" Style="{StaticResource ExpanderHeaderSettingStyle}">
-                                <controls:Setting.ActionContent>
-                                    <winui:NumberBox 
-                                                MinWidth="{StaticResource SettingActionControlMinWidth}"
-                                                SpinButtonPlacementMode="Compact"
-                                                Minimum="1"/> <!--Value="{Binding Mode=TwoWay, Path=MaximumNumberOfResults}"-->
-                                </controls:Setting.ActionContent>
-                            </controls:Setting>
-                        </controls:SettingExpander.Header>
-                        <controls:SettingExpander.Content>
-                            <CheckBox x:Uid="SetForAllFlyouts"  Margin="{StaticResource ExpanderSettingMargin}" /> <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.ClearInputOnLaunch}"-->
-                        </controls:SettingExpander.Content>
-                    </controls:SettingExpander>
-
-
-                    <controls:Setting x:Uid="SysTrayIcon_Enable">
-                        <controls:Setting.Icon>
-                            <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
-                        </controls:Setting.Icon>
-                        <controls:Setting.ActionContent>
-                            <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                    <controls:Setting x:Uid="ColoredTrayIcon_Enable">
-                        <controls:Setting.Icon>
-                            <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
-                        </controls:Setting.Icon>
-                        <controls:Setting.ActionContent>
-                            <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                    <controls:Setting x:Uid="FlyoutFadeAnimation_Enable">
-                        <controls:Setting.Icon>
-                            <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
-                        </controls:Setting.Icon>
-                        <controls:Setting.ActionContent>
-                            <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
-                        </controls:Setting.ActionContent>
-                    </controls:Setting>
-                </controls:SettingsGroup>
-
-            </StackPanel>
-        </controls:SettingsPageControl.ModuleContent>
-    </controls:SettingsPageControl>
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40, 50, 40, 100">
+            <TextBlock FontSize="24" FontWeight="SemiBold" Margin="4, 4, 4, 24">Personalisation</TextBlock>
+            <settings:SettingsBlockControl Title="Personalisation" Margin="2" Description="Adjust personalisation settings">
+                <settings:SettingsBlockControl.Icon>
+                    <icons:FluentIconElement VerticalAlignment="Center" Symbol="PaintBrush24"/>
+                </settings:SettingsBlockControl.Icon>
+                <settings:SettingsBlockControl.ExpandableContent>
+                    <StackPanel Margin="12, 8, 12, 8">
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Theme</TextBlock>
+                        <ToggleSwitch OnContent="On" OffContent="Off" Margin="12, 0, 0, 0"/>
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Language</TextBlock>
+                        <ComboBox Margin="12, 8, 0, 0">
+                            <x:String>C#</x:String>
+                            <x:String>Python</x:String>
+                        </ComboBox>
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Import/Export settings</TextBlock>
+                        <StackPanel Orientation="Horizontal" Margin="12, 0, 0, 0">
+                            <Button Margin="0,8,4,0" Width="150">Import settings</Button>
+                            <Button Margin="4,8,4,0" Width="150">Export settings</Button>
+                        </StackPanel>
+                        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="4">Reset settings</TextBlock>
+                        <Button Margin="12,8,4,8" Width="150">Import settings</Button>
+                    </StackPanel>
+                </settings:SettingsBlockControl.ExpandableContent>
+            </settings:SettingsBlockControl>
+        </StackPanel>
+    </Grid>
 </Page>

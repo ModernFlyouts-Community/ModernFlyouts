@@ -141,11 +141,11 @@ namespace ModernFlyouts.Settings.Views
 
         ////////OOBE////
 
-        private async void OOBEItem_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        private void OOBEItem_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            var dialog = new FirstRunDialog();
-            await dialog.ShowAsync();
-
+            Frame rootFrame = new Frame();
+            Window.Current.Content = rootFrame;
+            rootFrame.Navigate(typeof(OOBEPage));
         }
 
         ///Temporary Whats New trigger
@@ -153,7 +153,6 @@ namespace ModernFlyouts.Settings.Views
         {
             var dialog = new WhatsNewDialog();
             await dialog.ShowAsync();
-
         }
 
     }

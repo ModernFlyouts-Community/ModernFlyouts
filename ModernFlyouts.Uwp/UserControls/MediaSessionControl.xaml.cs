@@ -6,6 +6,7 @@ using Windows.UI.Core;
 using ModernFlyouts.Standard.Classes;
 using ModernFlyouts.Uwp.Services;
 using System;
+using System.Threading.Tasks;
 
 namespace ModernFlyouts.Uwp.UserControls
 {
@@ -57,6 +58,7 @@ namespace ModernFlyouts.Uwp.UserControls
             {
             try
             {
+                    await Task.Delay(300);
                 MediaSession.MediaPlayingSession.ActivateMediaPlaybackDataSource().MediaPlaybackDataChanged += MediaSessionControl_MediaPlaybackDataChanged;
                 MediaInfo = MediaSessionHelper.GetMediaInfo(MediaSession.MediaPlayingSession);
                 MediaTimeline = MediaSessionHelper.GetTimelineInfo(MediaSession.MediaPlayingSession);

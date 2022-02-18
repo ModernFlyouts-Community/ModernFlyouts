@@ -6,44 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:settings="using:ModernFlyouts.Settings.SettingsControls" xmlns:icons="using:Fluent.Icons"
     mc:Ignorable="d">
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40, 50, 40, 100">
+            <TextBlock FontSize="24" FontWeight="SemiBold" Margin="4, 4, 4, 24">Brightness</TextBlock>
+            <settings:SettingsBlockControl Title="Brightness" Margin="2" Description="Toggle Brightness Flyout">
+                <settings:SettingsBlockControl.Icon>
+                    <icons:FluentIconElement VerticalAlignment="Center" Symbol="WeatherSunny24"/>
+                </settings:SettingsBlockControl.Icon>
+                <ToggleSwitch  OnContent="On" HorizontalAlignment="Right" OffContent="Off"/>
+            </settings:SettingsBlockControl>
+        </StackPanel>
+    </Grid>
 
-    <controls:SettingsPageControl x:Uid="Brightness" IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/Modules/Awake.png">
-        <controls:SettingsPageControl.ModuleContent>
-            <StackPanel Orientation="Vertical">
-
-                <controls:Setting x:Uid="Airplane_Module_Enable">
-                    <controls:Setting.Icon>
-                        <FontIcon Glyph="&#xE706;"/>
-                    </controls:Setting.Icon>
-                    <controls:Setting.ActionContent>
-                        <ToggleSwitch  HorizontalAlignment="Right"/>
-                        <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
-                    </controls:Setting.ActionContent>
-                </controls:Setting>
-
-                <controls:SettingsGroup x:Uid="Shortcut" IsEnabled="False">
-                    <!--{x:Bind Mode=OneWay, Path=ViewModel.EnableAirplaneModule}-->
-                    <controls:SettingExpander IsExpanded="True">
-                        <controls:SettingExpander.Header>
-                            <controls:Setting x:Uid="Activation_Shortcut" Icon="&#xEDA7;" Style="{StaticResource ExpanderHeaderSettingStyle}">
-                                <!--<controls:Setting.ActionContent>
-                                    <controls:ShortcutControl HotkeySettings="{x:Bind Path=ViewModel.OpenPowerLauncher, Mode=TwoWay}"
-                                                                    MinWidth="{StaticResource SettingActionControlMinWidth}"/>
-                                </controls:Setting.ActionContent>-->
-                            </controls:Setting>
-                        </controls:SettingExpander.Header>
-                        <controls:SettingExpander.Content>
-                            <StackPanel>
-                                <CheckBox x:Uid="IgnoreHotkeysInFullScreen"  Margin="{StaticResource ExpanderSettingMargin}" />
-                                <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.IgnoreHotkeysInFullScreen}"-->
-                            </StackPanel>
-                        </controls:SettingExpander.Content>
-                    </controls:SettingExpander>
-                </controls:SettingsGroup>
-
-            </StackPanel>
-        </controls:SettingsPageControl.ModuleContent>
-    </controls:SettingsPageControl>
 </Page>

@@ -9,7 +9,7 @@
     xmlns:helpers="using:ModernFlyouts.Settings.Helpers"
     xmlns:views="using:ModernFlyouts.Settings.Views"
     xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
-    xmlns:i="using:Microsoft.Xaml.Interactivity" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+    xmlns:i="using:Microsoft.Xaml.Interactivity" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:icons="using:Fluent.Icons"
     mc:Ignorable="d"
     winui:BackdropMaterial.ApplyToRootOrPageBackground="True"
     AutomationProperties.LandmarkType="Main">
@@ -65,7 +65,6 @@
             IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
             SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
             IsSettingsVisible="False"
-            PaneTitle="ModernFlyouts"
             PaneDisplayMode="Auto"
             OpenPaneLength="224" ExpandedModeThresholdWidth="720" CompactModeThresholdWidth="350"
             SelectionFollowsFocus="Disabled"
@@ -76,7 +75,7 @@
             <!--FontFamily="Segoe MDL2 Assets"-->
 
             <winui:NavigationView.MenuItems>
-                <winui:NavigationViewItem x:Uid="GeneralSettings" helpers:NavHelper.NavigateTo="views:GeneralSettings">
+                <winui:NavigationViewItem x:Uid="GeneralSettings" x:Name="GeneralSettings" helpers:NavHelper.NavigateTo="views:GeneralSettings">
                     <winui:NavigationViewItem.Icon>
                         <winui:AnimatedIcon x:Name='SettingsIcon'>
                             <winui:AnimatedIcon.Source>
@@ -101,61 +100,44 @@
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItemSeparator />
                 <winui:NavigationViewItemHeader Content="Settings Modules" />
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Audio" helpers:NavHelper.NavigateTo="views:AudioModulePage">
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE767;"/>
-                    </winui:NavigationViewItem.Icon>
-                    <winui:NavigationViewItem.MenuItems>
-                        <winui:NavigationViewItem x:Uid="Settings_Modules_AudioFlyout" helpers:NavHelper.NavigateTo="views:AudioModulePage">
+                <winui:NavigationViewItem x:Uid="Settings_Modules_AudioFlyout" helpers:NavHelper.NavigateTo="views:AudioModulePage">
                             <winui:NavigationViewItem.Icon>
-                                <FontIcon Glyph="&#xf4c3;"/>
+                                <icons:FluentIconElement Symbol="Speaker224"/>
                             </winui:NavigationViewItem.Icon>
                         </winui:NavigationViewItem>
-                        <winui:NavigationViewItem x:Uid="Settings_Modules_AudioTray" helpers:NavHelper.NavigateTo="views:AudioTrayModulePage">
-                            <winui:NavigationViewItem.Icon>
-                                <FontIcon Glyph="&#xEd1f;"/>
-                            </winui:NavigationViewItem.Icon>
-                        </winui:NavigationViewItem>
-                    </winui:NavigationViewItem.MenuItems>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Media" helpers:NavHelper.NavigateTo="views:MediaModulePage">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon Glyph="&#xea69;"/>
-                </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" helpers:NavHelper.NavigateTo="views:BrightnessModulePage">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon Glyph="&#xE706;"/>
-                </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Airplane" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage">
+                <winui:NavigationViewItem x:Uid="Settings_Modules_AudioTray" helpers:NavHelper.NavigateTo="views:AudioTrayModulePage">
                     <winui:NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE709;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem x:Uid="Settings_Modules_LockKeys" helpers:NavHelper.NavigateTo="views:LockKeysModulePage" >
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE72e;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem x:Uid="Settings_Modules_Camera" helpers:NavHelper.NavigateTo="views:CameraModulePage" >
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE722;"/>
+                        <FontIcon Glyph="&#xEd1f;"/>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Battery" helpers:NavHelper.NavigateTo="views:BatteryModulePage" >
                     <winui:NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE83e;"/>
+                        <icons:FluentIconElement Symbol="Battery324"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" helpers:NavHelper.NavigateTo="views:BrightnessModulePage">
+                <winui:NavigationViewItem.Icon>
+                        <icons:FluentIconElement Symbol="WeatherSunny24"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_Airplane" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage">
+                    <winui:NavigationViewItem.Icon>
+                        <icons:FluentIconElement Symbol="Airplane24"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+                <winui:NavigationViewItem x:Uid="Settings_Modules_LockKeys" helpers:NavHelper.NavigateTo="views:LockKeysModulePage" >
+                    <winui:NavigationViewItem.Icon>
+                        <icons:FluentIconElement Symbol="LockClosed24"/>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
             </winui:NavigationView.MenuItems>
             
             <winui:NavigationView.FooterMenuItems>
-                <winui:NavigationViewItem Content="Whats New" Tapped="WhatsNew_Tapped" ToolTipService.ToolTip="Temporary Whats new trigger for testing">
+               <!-- <winui:NavigationViewItem Content="Whats New" Tapped="WhatsNew_Tapped" ToolTipService.ToolTip="Temporary Whats new trigger for testing">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xe78b;"/>
                     </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
+                </winui:NavigationViewItem>-->
                 <winui:NavigationViewItem x:Uid="Settings_Welcome" Tapped="OOBEItem_Tapped" ToolTipService.ToolTip="Learn more about ModernFlyouts">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xf133;"/>
