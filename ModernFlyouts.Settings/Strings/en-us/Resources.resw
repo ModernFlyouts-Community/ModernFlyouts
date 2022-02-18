@@ -483,4 +483,19 @@ Made by the ModernFlyouts community.</value>
   <data name="Other.Header" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="Audio_VolumeAdjustmentStep" xml:space="preserve">
+    <value>Volume Adjustment Step</value>
+  </data>
+  <data name="GlowUI_Enable.Header" xml:space="preserve">
+    <value>Enable Glow UI</value>
+  </data>
+  <data name="Radio_Flyout_ModernFlyouts.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Radio_Flyout_None.Content" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Radio_Flyout_WindowsDefault.Content" xml:space="preserve">
+    <value>Windows Default</value>
+  </data>
 </root>

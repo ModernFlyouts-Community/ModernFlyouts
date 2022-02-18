@@ -143,10 +143,12 @@
     </Compile>
     <Compile Include="Controls\Setting\Setting.cs" />
     <Compile Include="Converters\ModuleEnabledToOpacityConverter.cs" />
+    <Compile Include="Helpers\AssetsHelper.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Helpers\StartProcessHelper.cs" />
+    <Compile Include="Helpers\UpdateHelper.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
     <Compile Include="Services\FirstRunDisplayService.cs" />

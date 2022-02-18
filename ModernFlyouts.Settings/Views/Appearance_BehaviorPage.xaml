@@ -97,6 +97,12 @@
                             <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
                         </controls:Setting.ActionContent>
                     </controls:Setting>
+                    <controls:Setting x:Uid="GlowUI_Enable" IsEnabled="False">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
                 </controls:SettingsGroup>
 
             </StackPanel>

@@ -6,7 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:ModernFlyouts.Settings.Controls"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    AutomationProperties.LandmarkType="Main">
     <!--Style="{StaticResource PageStyle}"-->
 
     <controls:SettingsPageControl x:Uid="Audio" IsTabStop="False"
@@ -22,6 +23,19 @@
                         <ToggleSwitch IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" HorizontalAlignment="Right"/>
                     </controls:Setting.ActionContent>
                 </controls:Setting>
+
+                <controls:SettingsGroup x:Uid="Behavior" IsEnabled="True">
+                    <controls:Setting x:Uid="Audio_VolumeAdjustmentStep" Icon="&#xf182;">
+                        <controls:Setting.ActionContent>
+                            <winui:NumberBox 
+                                    MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                    SpinButtonPlacementMode="Compact"
+                                    Minimum="1"/>
+                            <!--Value="{Binding Mode=TwoWay, Path=MaximumNumberOfResults}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                </controls:SettingsGroup>
+
             </StackPanel>
         </controls:SettingsPageControl.ModuleContent>
     </controls:SettingsPageControl>

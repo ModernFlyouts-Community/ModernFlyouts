@@ -35,5 +35,6 @@
     <Style x:Key="SecondaryTextStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource SecondaryTextFontSize}"/>
         <Setter Property="Foreground" Value="{ThemeResource TextFillColorSecondaryBrush}"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
     </Style>
 </ResourceDictionary>

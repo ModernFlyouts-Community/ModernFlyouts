@@ -9,15 +9,9 @@
     xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
 
+
     <UserControl.Resources>
         <converters:DoubleToVisibilityConverter x:Name="doubleToVisibilityConverter" GreaterThan="0" TrueValue="Visible" FalseValue="Collapsed" />
-
-    <Style TargetType="HyperlinkButton" BasedOn="{StaticResource TextBlockButtonStyle}">
-        <Style.Setters>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Margin" Value="0,0,16,0"/>
-        </Style.Setters>
-    </Style>
     </UserControl.Resources>
 
     <Grid RowSpacing="24" Padding="20,0,0,0">
@@ -64,6 +58,7 @@
                     <StackPanel Grid.Column="1">
                         <TextBlock x:Name="AboutDescription"
                                    Text="{x:Bind ModuleDescription}"
+                                   FontFamily="Segoe MDL2 Assets"
                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                    TextWrapping="Wrap"/>
 

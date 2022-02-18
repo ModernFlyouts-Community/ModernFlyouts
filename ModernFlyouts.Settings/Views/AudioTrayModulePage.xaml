@@ -16,8 +16,7 @@
 
                 <controls:Setting x:Uid="Airplane_Module_Enable">
                     <controls:Setting.Icon>
-                        <FontIcon Glyph="&#xE709;"/>
-                        <!--<BitmapIcon UriSource="ms-appx:///Assets//SmallTile.scale-100.png" ShowAsMonochrome="False" />-->
+                        <FontIcon Glyph="&#xEd1f;"/>
                     </controls:Setting.Icon>
                     <controls:Setting.ActionContent>
                         <ToggleSwitch IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" HorizontalAlignment="Right"/>

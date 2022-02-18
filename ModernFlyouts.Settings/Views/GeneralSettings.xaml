@@ -44,8 +44,10 @@
                     <controls:Setting x:Uid="DefaultFlyout" Icon="&#xe78b;">
                         <controls:Setting.ActionContent>
                             <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
-                                <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
-                                <ComboBoxItem x:Uid="Flyout"/>
+                                    <!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
+                                <ComboBoxItem x:Uid="Radio_Flyout_None"/>
+                                <ComboBoxItem x:Uid="Radio_Flyout_WindowsDefault"/>
+                                <ComboBoxItem x:Uid="Radio_Flyout_ModernFlyouts"/>
                             </ComboBox>
                         </controls:Setting.ActionContent>
                     </controls:Setting>
@@ -146,7 +148,7 @@
         <controls:SettingsPageControl.SecondaryLinks>
             <controls:PageLink x:Uid="GeneralPage_PrivacyStatement_URL" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/LICENSE"/>
             <controls:PageLink x:Uid="OpenSource_Notice" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/main/NOTICE.md"/>
-            <controls:PageLink x:Uid="Contributors" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributor"/>
+            <controls:PageLink x:Uid="Contributors" Link="https://github.com/ModernFlyouts-Community/ModernFlyouts/graphs/contributors"/>
             <controls:PageLink x:Uid="RateAndReview" Link="ms-windows-store://review/?ProductId=9mt60qv066rp"/>
         </controls:SettingsPageControl.SecondaryLinks>
     </controls:SettingsPageControl>

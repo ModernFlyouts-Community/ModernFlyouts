@@ -149,3 +149,50 @@ namespace ModernFlyouts.Settings.ViewModels
         }
     }
 }
+//private async Task ShowReleaseNoteAsync()
+//{
+//    // Make sure we work in background.
+//    await TaskScheduler.Default;
+
+//    PackageVersion v = Package.Current.Id.Version;
+//    string? currentVersion = $"{v.Major}.{v.Minor}.{v.Build}.{v.Revision}";
+//    string? lastVersion = _settingsProvider.GetSetting(PredefinedSettings.LastVersionRan);
+
+//    if (!_settingsProvider.GetSetting(PredefinedSettings.FirstTimeStart) && currentVersion != lastVersion)
+//    {
+//        _notificationService.ShowInAppNotification(
+//            Strings.GetFormattedNotificationReleaseNoteTitle(currentVersion),
+//            Strings.NotificationReleaseNoteActionableActionText,
+//            () =>
+//            {
+//                ThreadHelper.ThrowIfNotOnUIThread();
+//                Windows.System.Launcher.LaunchUriAsync(new Uri("https://github.com/veler/DevToys/releases")).AsTask().Forget();
+//            },
+//            await AssetsHelper.GetReleaseNoteAsync());
+
+//        _marketingService.NotifyAppJustUpdated();
+//    }
+
+//    _settingsProvider.SetSetting(PredefinedSettings.FirstTimeStart, false);
+//    _settingsProvider.SetSetting(PredefinedSettings.LastVersionRan, currentVersion);
+//}
+
+//private async Task ShowAvailableUpdateAsync()
+//{
+//    // Make sure we work in background.
+//    await TaskScheduler.Default;
+
+//    PackageUpdateAvailabilityResult result = await Package.Current.CheckUpdateAvailabilityAsync();
+
+//    if (result.Availability is PackageUpdateAvailability.Required or PackageUpdateAvailability.Available)
+//    {
+//        _notificationService.ShowInAppNotification(
+//            Strings.NotificationUpdateAvailableTitle,
+//            Strings.NotificationUpdateAvailableActionableActionText,
+//            () =>
+//            {
+//                ThreadHelper.ThrowIfNotOnUIThread();
+//                Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://downloadsandupdates")).AsTask().Forget();
+//            });
+//    }
+//}
