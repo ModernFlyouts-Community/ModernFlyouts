@@ -9,6 +9,7 @@ namespace ModernFlyouts.Settings.ViewModels
         public Func<string, int> UpdateUIThemeCallBack { get; }
         public Appearance_BehaviorViewModel()
         {
+        }
 
             // set the callback function value to update the UI theme.
             //UpdateUIThemeCallBack = updateTheme;
@@ -72,7 +73,28 @@ namespace ModernFlyouts.Settings.ViewModels
             //            }
             //        }
 
+        public bool SysTrayIcon_IsEnabled
+        {
+            get => _isEnabled;
+            set
+            {
+                if (_isEnabled != value)
+                {
+                    _isEnabled = value;
+                    //OnPropertyChanged(nameof(IsEnabled));
 
+                    throw new NotImplementedException();
+                    //// Set the status of ColorPicker in the general settings
+                    //GeneralSettingsConfig.Enabled.ColorPicker = value;
+                    //var outgoing = new OutGoingGeneralSettings(GeneralSettingsConfig);
+
+                    //SendConfigMSG(outgoing.ToString());
+                }
+            }
         }
+        private bool _isEnabled;
+
+    }
+
 }
-}
+

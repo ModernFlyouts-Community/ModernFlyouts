@@ -62,8 +62,9 @@
                                 <controls:Setting.ActionContent>
                                     <winui:NumberBox 
                                                 MinWidth="{StaticResource SettingActionControlMinWidth}"
-                                                SpinButtonPlacementMode="Compact"
-                                                Minimum="1"/> <!--Value="{Binding Mode=TwoWay, Path=MaximumNumberOfResults}"-->
+                                                SpinButtonPlacementMode="Inline"
+                                                Minimum="1"
+                                                SmallChange="10"/> <!--Value="{Binding Mode=TwoWay, Path=MaximumNumberOfResults}"-->
                                 </controls:Setting.ActionContent>
                             </controls:Setting>
                         </controls:SettingExpander.Header>
@@ -81,7 +82,7 @@
                             <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
                         </controls:Setting.ActionContent>
                     </controls:Setting>
-                    <controls:Setting x:Uid="ColoredTrayIcon_Enable">
+                    <controls:Setting x:Uid="ColoredTrayIcon_Enable" IsEnabled="{x:Bind Mode=OneWay, Path=ViewModel.SysTrayIcon_IsEnabled}">
                         <controls:Setting.Icon>
                             <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
                         </controls:Setting.Icon>

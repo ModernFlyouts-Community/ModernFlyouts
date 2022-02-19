@@ -10,14 +10,11 @@
     AutomationProperties.LandmarkType="Main">
 
     <controls:SettingsPageControl x:Uid="Audio" IsTabStop="False"
-                                  ModuleImageSource="ms-appx:///Assets/ms-appx:///Assets/mockup1.png">
+                                  ModuleImageSource="ms-appx:///Assets/Audio1.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 
-                <controls:Setting x:Uid="Audio_Module_Enable">
-                    <controls:Setting.Icon>
-                        <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
-                    </controls:Setting.Icon>
+                <controls:Setting x:Uid="Audio_Module_Enable" Icon="&#xf4c3;">
                     <controls:Setting.ActionContent>
                         <ToggleSwitch IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}" HorizontalAlignment="Right"/>
                     </controls:Setting.ActionContent>

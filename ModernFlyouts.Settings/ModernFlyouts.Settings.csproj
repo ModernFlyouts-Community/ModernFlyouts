@@ -338,6 +338,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Airplane.png" />
+    <Content Include="Assets\Audio1.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-125.png" />
     <Content Include="Assets\BadgeLogo.scale-150.png" />

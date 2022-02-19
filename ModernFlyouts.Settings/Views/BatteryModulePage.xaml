@@ -13,7 +13,7 @@
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 
-                <controls:Setting x:Uid="Airplane_Module_Enable">
+                <controls:Setting x:Uid="Battery_Module_Enable">
                     <controls:Setting.Icon>
                         <FontIcon Glyph="&#xE83e;"/>
                     </controls:Setting.Icon>
@@ -23,7 +23,7 @@
                     </controls:Setting.ActionContent>
                 </controls:Setting>
 
-                <controls:SettingsGroup x:Uid="Configuration" IsEnabled="True">
+                <controls:SettingsGroup x:Uid="Battery_Configuration" IsEnabled="True">
                     <controls:Setting x:Uid="DefaultPowerPlan">
                         <controls:Setting.ActionContent>
                             <Slider Minimum="1"

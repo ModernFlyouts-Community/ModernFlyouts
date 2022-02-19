@@ -268,7 +268,7 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Audio_Module.ModuleDescription" xml:space="preserve">
     <value>Audio Module description goes here</value>
   </data>
-  <data name="IgnoreHotkeysInFullScreen" xml:space="preserve">
+  <data name="IgnoreHotkeysInFullScreen.Content" xml:space="preserve">
     <value>ignore hotkeys in full screen mode</value>
   </data>
   <data name="Shortcut" xml:space="preserve">
@@ -487,7 +487,7 @@ Made by the ModernFlyouts community.</value>
     <value>Volume Adjustment Step</value>
   </data>
   <data name="GlowUI_Enable.Header" xml:space="preserve">
-    <value>Enable Glow UI</value>
+    <value>Enable Glow UI (Coming Soon with 0.12)</value>
   </data>
   <data name="Radio_Flyout_ModernFlyouts.Content" xml:space="preserve">
     <value />
@@ -497,5 +497,41 @@ Made by the ModernFlyouts community.</value>
   </data>
   <data name="Radio_Flyout_WindowsDefault.Content" xml:space="preserve">
     <value>Windows Default</value>
+  </data>
+  <data name="AudioTray.ModuleTitle" xml:space="preserve">
+    <value>Systray Audio Flyout</value>
+  </data>
+  <data name="Battery_Configuration.Header" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Battery_Module_Enable.Header" xml:space="preserve">
+    <value>Battery Module</value>
+  </data>
+  <data name="DefaultPowerPlan.Header" xml:space="preserve">
+    <value>Power Plan</value>
+  </data>
+  <data name="GeneralSettings_Language.Header" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="MediaSessionPanelOrientation.Header" xml:space="preserve">
+    <value>Media Sessions panel Orientation</value>
+  </data>
+  <data name="Media_Module_Enable.Header" xml:space="preserve">
+    <value>Media Module</value>
+  </data>
+  <data name="ShowMediaFlyoutWithVolume_Enable.Header" xml:space="preserve">
+    <value>Show Media Flyout with Volume Flyout</value>
+  </data>
+  <data name="ShowVolumeWithMediaFlyout_Enable.Header" xml:space="preserve">
+    <value>Show Volume Flyout with Media Flyout</value>
+  </data>
+  <data name="ThumbnailAlignment.Header" xml:space="preserve">
+    <value>Thumbnail Alignment</value>
+  </data>
+  <data name="Toggle_powerusageinfo.Header" xml:space="preserve">
+    <value>Power Usage Info</value>
+  </data>
+  <data name="UseThumbnailAsBackround_Enable.Header" xml:space="preserve">
+    <value>Use media thumbnail as Media Flyout Backround</value>
   </data>
 </root>

@@ -98,6 +98,7 @@
                         <ContentPresenter
                             x:Name="ContentPresenter"
                             Content="{TemplateBinding ActionContent}"
+                            FontFamily="Segoe UI Variable"
                             Grid.Column="2"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Right" />

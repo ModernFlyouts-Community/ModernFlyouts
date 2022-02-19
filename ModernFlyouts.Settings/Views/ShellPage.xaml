@@ -106,11 +106,6 @@
                         <FontIcon Glyph="&#xE767;"/>
                     </winui:NavigationViewItem.Icon>
                     <winui:NavigationViewItem.MenuItems>
-                        <winui:NavigationViewItem x:Uid="Settings_Modules_AudioFlyout" helpers:NavHelper.NavigateTo="views:AudioModulePage">
-                            <winui:NavigationViewItem.Icon>
-                                <FontIcon Glyph="&#xf4c3;"/>
-                            </winui:NavigationViewItem.Icon>
-                        </winui:NavigationViewItem>
                         <winui:NavigationViewItem x:Uid="Settings_Modules_AudioTray" helpers:NavHelper.NavigateTo="views:AudioTrayModulePage">
                             <winui:NavigationViewItem.Icon>
                                 <FontIcon Glyph="&#xEd1f;"/>

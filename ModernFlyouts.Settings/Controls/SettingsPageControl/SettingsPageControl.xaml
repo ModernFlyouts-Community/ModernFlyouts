@@ -58,7 +58,7 @@
                     <StackPanel Grid.Column="1">
                         <TextBlock x:Name="AboutDescription"
                                    Text="{x:Bind ModuleDescription}"
-                                   FontFamily="Segoe MDL2 Assets"
+                                   FontFamily="Segoe UI Variable"
                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                    TextWrapping="Wrap"/>
 

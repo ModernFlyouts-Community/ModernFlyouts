@@ -49,7 +49,7 @@
                         </controls:Setting.ActionContent>
                     </controls:Setting>
 
-                    <controls:Setting x:Uid="ColorModeHeader" Icon="&#xf2b7;">
+                    <controls:Setting x:Uid="GeneralSettings_Language" Icon="&#xf2b7;">
                         <controls:Setting.ActionContent>
                             <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}">
                                 <ComboBoxItem x:Uid="Language"/>
