@@ -9,6 +9,14 @@
     mc:Ignorable="d"
     AutomationProperties.LandmarkType="Main">
     <!--Style="{StaticResource PageStyle}"-->
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="40, 50, 40, 100">
+            <TextBlock FontSize="24" FontWeight="SemiBold" Margin="4, 4, 4, 24">Audio?</TextBlock>
+            <settings:SettingsBlockControl Title="Volume mixer" Margin="2" Description="Toggle Audio Flyout">
+                <settings:SettingsBlockControl.Icon>
+                    <FontIcon Glyph="&#xEd1f;" VerticalAlignment="Center"/>
+                </settings:SettingsBlockControl.Icon>
+                <ToggleSwitch OnContent="On" HorizontalAlignment="Right" OffContent="Off"/>
 
     <controls:SettingsPageControl x:Uid="Audio" IsTabStop="False"
                                   ModuleImageSource="ms-appx:///Assets/ms-appx:///Assets/mockup1.png">

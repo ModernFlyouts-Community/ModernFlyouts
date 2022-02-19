@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>ModernFlyouts.Settings</value>
+    <value>ModernFlyouts Settings</value>
     <comment>Application display name</comment>
   </data>
   <data name="AppDescription" xml:space="preserve">
-    <value>ModernFlyouts.Settings</value>
+    <value>ModernFlyouts Settings app</value>
     <comment>Application description</comment>
   </data>
   <data name="GeneralSettings.Content" xml:space="preserve">
@@ -204,7 +204,7 @@ Don't feel restricted to just text. You can also include images and animations i
     <value>Audio</value>
   </data>
   <data name="Settings_Modules_AudioTray.Content" xml:space="preserve">
-    <value>Tray</value>
+    <value>Mixer Tray</value>
   </data>
   <data name="Settings_Modules_Battery.Content" xml:space="preserve">
     <value>Battery</value>

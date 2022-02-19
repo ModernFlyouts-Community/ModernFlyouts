@@ -66,7 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj" />
-    <ProjectReference Include="..\ModernFlyouts.Wpf\ModernFlyouts.Wpf.csproj" />
+    <ProjectReference Include="..\ModernFlyouts.Wpf\ModernFlyouts.Wpf.csproj">
+      <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+    </ProjectReference>
   </ItemGroup>
   <Target Name="_RemoveWinMDFromAppxManifest" BeforeTargets="_GenerateCurrentProjectAppxManifest">
     <ItemGroup>

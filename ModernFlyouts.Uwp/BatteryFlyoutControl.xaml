@@ -61,7 +61,7 @@
                                     <TextBlock x:Name="PowerPlanText" Text="{x:Bind services:PowerService.GetPowerUsageText(BatteryInfo), Mode=OneWay}" FontSize="14" Opacity="0.7" VerticalAlignment="Center" x:FieldModifier="Public" Margin="4, 8, 8, 0"/>
                                 </StackPanel>
                                 <TextBlock FontSize="14" FontWeight="SemiBold" Text="Power mode" Margin="12, 8, 8, 0"/>
-                                <Slider x:Name="PowerSlider" x:FieldModifier="Public" IsThumbToolTipEnabled="False" HorizontalAlignment="Left" Margin="12, 0, 0, 0" TickPlacement="Outside" TickFrequency="1" Width="344" Minimum="0" Maximum="3"/>
+                                <Slider x:Name="PowerSlider" Style="{ThemeResource GlowSlider}" x:FieldModifier="Public" IsThumbToolTipEnabled="False" HorizontalAlignment="Left" Margin="12, 0, 0, 0" TickPlacement="Outside" TickFrequency="1" Width="344" Minimum="0" Maximum="3"/>
                                 <Grid Margin="0, 0, 0, 12">
                                     <StackPanel Orientation="Horizontal">
                                         <icons:FluentSymbolIcon Symbol="LeafThree20" Foreground="{ThemeResource HvidSortBrush}" Margin="6, 0, 0, 4" Opacity="0.7"/>

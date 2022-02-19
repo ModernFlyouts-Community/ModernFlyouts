@@ -76,7 +76,7 @@
             <!--FontFamily="Segoe MDL2 Assets"-->
 
             <winui:NavigationView.MenuItems>
-                <winui:NavigationViewItem x:Uid="GeneralSettings" helpers:NavHelper.NavigateTo="views:GeneralSettings">
+                <winui:NavigationViewItem x:Uid="GeneralSettings" x:Name="GeneralSettings" helpers:NavHelper.NavigateTo="views:GeneralSettings">
                     <winui:NavigationViewItem.Icon>
                         <winui:AnimatedIcon x:Name='SettingsIcon'>
                             <winui:AnimatedIcon.Source>
