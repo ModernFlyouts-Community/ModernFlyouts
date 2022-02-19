@@ -8,9 +8,7 @@
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    xmlns:media="using:Microsoft.UI.Xaml.Media"
-    xmlns:controls1="using:INKMath.Controls"
-    xmlns:icons="using:Fluent.Icons">
+    xmlns:media="using:Microsoft.UI.Xaml.Media">
     <Grid x:Name="Container">
         <Rectangle x:Name="hostForVisual" Fill="Transparent"/>
         <StackPanel HorizontalAlignment="Center" Canvas.ZIndex="2"  VerticalAlignment="Center">
@@ -49,11 +47,11 @@
                             <Image Source="ms-appx:///Assets/Hero.png" Stretch="UniformToFill" Width="365" Visibility="{x:Bind IsMobile, Mode=OneWay}"/>
 
                             <StackPanel Orientation="Vertical" Margin="28,48,28,0" Width="375">
-                                <icons:FluentSymbolIcon Symbol="Speaker124" HorizontalAlignment="Left" Margin="0,0,0,12" RenderTransformOrigin="0.5,0.5">
-                                    <icons:FluentSymbolIcon.RenderTransform>
+                                <FontIcon Glyph="&#xE767;" HorizontalAlignment="Left" Margin="0,0,0,12" RenderTransformOrigin="0.5,0.5">
+                                    <FontIcon.RenderTransform>
                                         <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                                    </icons:FluentSymbolIcon.RenderTransform>
-                                </icons:FluentSymbolIcon>
+                                    </FontIcon.RenderTransform>
+                                </FontIcon>
                                 <TextBlock Text="Lorem ipsum" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20" TextWrapping="WrapWholeWords" Width="350" HorizontalAlignment="Left"/>
                                 <TextBlock Opacity="0.70" LineHeight="24" Width="325" HorizontalAlignment="Left"
                             Text="Lorem ipsum" TextWrapping="WrapWholeWords" />

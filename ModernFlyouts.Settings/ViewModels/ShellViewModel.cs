@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+
 
 using ModernFlyouts.Settings.Helpers;
 using ModernFlyouts.Settings.Services;

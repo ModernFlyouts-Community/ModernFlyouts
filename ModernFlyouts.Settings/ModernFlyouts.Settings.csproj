@@ -146,6 +146,8 @@
     <Compile Include="Helpers\AssetsHelper.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
+    <Compile Include="Helpers\Observable.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Helpers\StartProcessHelper.cs" />
     <Compile Include="Helpers\UpdateHelper.cs" />
@@ -207,6 +209,9 @@
     <Compile Include="Views\MediaModulePage.xaml.cs">
       <DependentUpon>MediaModulePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\OOBEPage.xaml.cs">
+      <DependentUpon>OOBEPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
@@ -226,10 +231,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-	  <Page Include="Controls\SettingsControls\SettingsBlockControl.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		  <SubType>Designer</SubType>
-	  </Page>
     <Page Include="Controls\KeyVisual\KeyVisual.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -307,6 +308,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\LockKeysModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MediaModulePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

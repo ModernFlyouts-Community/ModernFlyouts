@@ -34,25 +34,25 @@ namespace ModernFlyouts.Settings.ViewModels
             set { SetProperty(ref _versionDescription, value); }
         }
 
-        private ICommand _switchThemeCommand;
+        //private ICommand _switchThemeCommand;
 
-        public ICommand SwitchThemeCommand
-        {
-            get
-            {
-                if (_switchThemeCommand == null)
-                {
-                    _switchThemeCommand = new RelayCommand<ElementTheme>(
-                        async (param) =>
-                        {
-                            ElementTheme = param;
-                            await ThemeSelectorService.SetThemeAsync(param);
-                        });
-                }
+        //public ICommand SwitchThemeCommand
+        //{
+        //    get
+        //    {
+        //        if (_switchThemeCommand == null)
+        //        {
+        //            _switchThemeCommand = new RelayCommand<ElementTheme>(
+        //                async (param) =>
+        //                {
+        //                    ElementTheme = param;
+        //                    await ThemeSelectorService.SetThemeAsync(param);
+        //                });
+        //        }
 
-                return _switchThemeCommand;
-            }
-        }
+        //        return _switchThemeCommand;
+        //    }
+        //}
 
         public GeneralSettingsViewModel()
         {
