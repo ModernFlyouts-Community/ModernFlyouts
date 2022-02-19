@@ -31,7 +31,7 @@
                                 <Image Source="ms-appx:///Assets/Hero.png" Stretch="UniformToFill" Width="365" Visibility="{x:Bind IsMobile, Mode=OneWay}"/>
 
                                 <StackPanel Orientation="Vertical" Margin="28,40,28,0" Width="375">
-                                    <TextBlock Text="Welcome to ModernFlyouts v11 pre-alpha beta indev canary!" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
+                                    <TextBlock Text="Welcome to ModernFlyouts!" TextWrapping="WrapWholeWords" FontSize="30" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
                                     <TextBlock Opacity="0.70" LineHeight="24" Width="325" HorizontalAlignment="Left"
                             Text="Thank you for downloading our app. After following this quick slideshow, you'll know some of the amazing features this app has to offer and be able to customize your experience!" TextWrapping="WrapWholeWords"/>
                                     <StackPanel Orientation="Horizontal" Margin="0,172,0,0" >

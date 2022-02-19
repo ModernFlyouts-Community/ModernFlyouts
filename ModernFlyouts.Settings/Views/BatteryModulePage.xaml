@@ -23,6 +23,30 @@
                     </controls:Setting.ActionContent>
                 </controls:Setting>
 
+                <controls:SettingsGroup x:Uid="Configuration" IsEnabled="True">
+                    <controls:Setting x:Uid="DefaultPowerPlan">
+                        <controls:Setting.ActionContent>
+                            <Slider Minimum="1"
+                                    Maximum="4"
+                                    MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                    IsThumbToolTipEnabled="False"
+                                    TickFrequency="1"
+                                    TickPlacement="Outside"
+                                    />
+                            <!--Value="{x:Bind Mode=TwoWay, Path=ViewModel.OverlayOpacity}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="Toggle_powerusageinfo">
+                        <controls:Setting.Icon>
+                            <FontIcon Glyph="&#xE83e;"/>
+                        </controls:Setting.Icon>
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                </controls:SettingsGroup>
+
                 <controls:SettingsGroup x:Uid="Shortcut" IsEnabled="True">
                     <!--{x:Bind Mode=OneWay, Path=ViewModel.EnableAirplaneModule}-->
                     <controls:SettingExpander IsExpanded="True">
