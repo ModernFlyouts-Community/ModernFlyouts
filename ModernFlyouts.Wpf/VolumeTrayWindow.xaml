@@ -1,0 +1,26 @@
+﻿<Window
+  x:Class="ModernFlyouts.Wpf.VolumeTrayWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:xaml="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
+  Width="5"
+  Height="5"
+  AllowsTransparency="True"
+  Background="Transparent"
+  BorderBrush="Transparent"
+  BorderThickness="2"
+  ShowInTaskbar="False"
+  WindowStartupLocation="CenterScreen"
+  WindowStyle="None"
+  mc:Ignorable="d">
+
+  <Grid Background="Transparent" MouseDown="DragWindow">
+    <xaml:WindowsXamlHost
+      Width="1"
+      Height="1"
+      ChildChanged="OnFlyoutControlLoaded"
+      InitialTypeName="ModernFlyouts.Uwp.VolumeTrayControl" />
+  </Grid>
+</Window>

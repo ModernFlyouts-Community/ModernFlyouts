@@ -16,7 +16,7 @@ namespace ModernFlyouts.Wpf
  * ASSET TRAY ICON MANAGER
 */
 
-        private VolumeFlyoutWindow _volumeflyoutwindow;
+        private VolumeTrayWindow _volumetraywindow;
         private NotifyIcon _volumenotifyIcon;
 
         private BatteryFlyoutWindow _batteryflyoutwindow;
@@ -25,23 +25,38 @@ namespace ModernFlyouts.Wpf
         {
             InitializeComponent();
             GenerateBatteryTray();
-            GenerateVolumeTray();
+            GenerateVolumeFlyoutTray();
+            GenerateVolumeMixerTray();
         }
 
-        private void GenerateVolumeTray()
+        private void GenerateVolumeMixerTray()
         {
-            _volumeflyoutwindow = new VolumeFlyoutWindow();
-            _volumeflyoutwindow.Show();
-            _volumeflyoutwindow.Visibility = Visibility.Visible;
+            _volumetraywindow = new VolumeTrayWindow();
+            _volumetraywindow.Show();
+            _volumetraywindow.Visibility = Visibility.Visible;
             _volumenotifyIcon = new NotifyIcon();
             _volumenotifyIcon.Visible = true;
             _volumenotifyIcon.Icon = new System.Drawing.Icon(Path.Combine(Environment.CurrentDirectory, @"Assets\Battery524.ico"));
-            _volumenotifyIcon.MouseDown += (s, args) => ShowVolumeWindow(s, args);
+            _volumenotifyIcon.MouseDown += (s, args) => ShowVolumeMixerWindow(s, args);
         }
 
-        private void ShowVolumeWindow(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void ShowVolumeMixerWindow(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            _volumeflyoutwindow.ShowFlyout();
+            _volumetraywindow.ShowFlyout();
+            var screenWidth = SystemParameters.PrimaryScreenWidth;
+            var screenHeight = SystemParameters.PrimaryScreenHeight;
+            var windowWidth = _volumetraywindow.Width;
+            var windowHeight = _volumetraywindow.Height;
+
+            _volumetraywindow.Left = (screenWidth / 1.17) - (windowWidth / 2);
+            _volumetraywindow.Top = (screenHeight / 1.058) - (windowHeight / 2);
+        }
+
+        private void GenerateVolumeFlyoutTray()
+        {
+            VolumeFlyoutWindow _volumeflyoutwindow = new VolumeFlyoutWindow();
+            _volumeflyoutwindow.Show();
+            _volumeflyoutwindow.Visibility = Visibility.Visible;
             var screenWidth = SystemParameters.PrimaryScreenWidth;
             var screenHeight = SystemParameters.PrimaryScreenHeight;
             var windowWidth = _volumeflyoutwindow.Width;

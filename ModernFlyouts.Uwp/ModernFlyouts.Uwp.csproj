@@ -106,6 +106,9 @@
     <Compile Include="UserControls\MediaSessionControl.xaml.cs">
       <DependentUpon>MediaSessionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VolumeTrayControl.xaml.cs">
+      <DependentUpon>VolumeTrayControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VolumeFlyoutControl.xaml.cs">
       <DependentUpon>VolumeFlyoutControl.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
     <Page Include="UserControls\MediaSessionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VolumeTrayControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="VolumeFlyoutControl.xaml">
       <Generator>MSBuild:Compile</Generator>
