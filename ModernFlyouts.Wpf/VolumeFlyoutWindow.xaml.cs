@@ -10,6 +10,10 @@ using ModernFlyouts.Core.Utilities;
 using ModernFlyouts.Standard.Classes;
 using System.Linq;
 using ModernFlyouts.Utilities;
+using ModernFlyouts.Wpf.Services;
+using Windows.UI.Xaml.Controls.Primitives;
+using System.Timers;
+using System.Windows.Threading;
 
 namespace ModernFlyouts.Wpf
 {
@@ -24,19 +28,66 @@ namespace ModernFlyouts.Wpf
         {
             Volumeflyoutcontrol = (sender as WindowsXamlHost).Child as VolumeFlyoutControl;
             NPSessionManager = new NowPlayingSessionManager();
-            NPSessionManager.SessionListChanged += NPSessionManager_SessionListChanged;
+            Volumeflyoutcontrol.VolumeSlider.Value = (int)AudioService.GetMasterVolume();
+            Volumeflyoutcontrol.VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
+            Volumeflyoutcontrol.VolumeButton.Click += VolumeButton_Click;
+            Volumeflyoutcontrol.ToggleMuteIcon(AudioService.GetMasterVolumeMute());
+            DispatcherTimer VolumeListener = new DispatcherTimer();
+            VolumeListener.Tick += VolumeListener_Tick;
+            VolumeListener.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            VolumeListener.Start();
+            ///   NPSessionManager.SessionListChanged += NPSessionManager_SessionListChanged;
             foreach (var i in NPSessionManager.GetSessions())
             {
-
                 // SessionConstructor should work here but it doesnt, maybe it an async problem but it should replace this
                 using var process = Process.GetProcessById((int)i.PID);
                 if (IsImmersiveProcess(process.Handle))
                 {
-                    Volumeflyoutcontrol.MediaSessions.Add(await ModernAppInfoExtractor.GetModernAppInfo(i));
+                ///    Volumeflyoutcontrol.MediaSessions.Add(await ModernAppInfoExtractor.GetModernAppInfo(i));
                 }
                 else
                 {
-                    Volumeflyoutcontrol.MediaSessions.Add(DesktopAppInfoExtractor.GetDesktopAppInfo(i));
+                 ///   Volumeflyoutcontrol.MediaSessions.Add(DesktopAppInfoExtractor.GetDesktopAppInfo(i));
+                }
+            }
+        }
+        bool IsUpdatingTEST = false;
+        private void VolumeListener_Tick(object sender, EventArgs e)
+        {
+            if (IsUpdatingTEST == false)
+            {
+                IsUpdatingTEST = true;
+                if ((int)AudioService.GetMasterVolume() != (int)Volumeflyoutcontrol.VolumeSlider.Value)
+                {
+                    ShowFlyout();
+                    Volumeflyoutcontrol.VolumeSlider.Value = (int)AudioService.GetMasterVolume();
+                    Volumeflyoutcontrol.ToggleMuteIcon(AudioService.GetMasterVolumeMute());
+                }
+                IsUpdatingTEST = false;
+            }
+        }
+
+        private void VolumeButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            AudioService.SetMasterVolumeMute(!AudioService.GetMasterVolumeMute());
+            Volumeflyoutcontrol.ToggleMuteIcon(AudioService.GetMasterVolumeMute());
+        }
+
+        private void VolumeSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e) => UpdateVolume(e.NewValue);
+
+        public void UpdateVolume(double newVolume)
+        {
+            if (IsUpdatingTEST == false)
+            {
+                if (newVolume == 0)
+                {
+                    Volumeflyoutcontrol.ToggleMuteIcon(true);
+                    AudioService.SetMasterVolume((float)newVolume);
+                }
+                else
+                {
+                    Volumeflyoutcontrol.ToggleMuteIcon(false);
+                    AudioService.SetMasterVolume((float)newVolume);
                 }
             }
         }

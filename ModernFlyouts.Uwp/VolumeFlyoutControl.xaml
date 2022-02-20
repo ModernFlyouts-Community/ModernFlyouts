@@ -57,8 +57,8 @@
                                 </Grid.Background>
                                 <Grid x:Name="Pill" Background="{ThemeResource SystemAccentColorLight2}" Margin="42, 0, 0, 0" HorizontalAlignment="Left" Height="6" CornerRadius="4"/>
                                 <Grid Canvas.ZIndex="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="328">
-                                    <Button HorizontalAlignment="Left" Height="32" Background="Transparent" BorderBrush="Transparent" Width="32" Margin="0, 0, 12, 1" Padding="0">
-                                        <icons:FluentSymbolIcon Symbol="Speaker220" Margin="2, 0, 4, 2"/>
+                                    <Button x:Name="VolumeButton" x:FieldModifier="Public" HorizontalAlignment="Left" Height="32" Background="Transparent" BorderBrush="Transparent" Width="32" Margin="0, 0, 12, 1" Padding="0">
+                                        <icons:FluentSymbolIcon x:Name="VolumeIcon" Margin="2, 0, 4, 2"/>
                                     </Button>
                                     <Slider x:Name="VolumeSlider" x:FieldModifier="Public" HorizontalAlignment="Left" Width="260" Margin="36, 0, 0, 0" Minimum="0" Maximum="100"/>
                                     <TextBlock Margin="12, 5, 4, 3" TextAlignment="Center" HorizontalAlignment="Right" FontSize="16" Text="{x:Bind VolumeSlider.Value, Mode=OneWay}"/>
@@ -68,7 +68,7 @@
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid Background="{ThemeResource MicaBrush}" CornerRadius="8" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}" Margin="0, 16, 0, 0">
+                        <Grid Visibility="Collapsed" Background="{ThemeResource MicaBrush}" CornerRadius="8" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}" Margin="0, 16, 0, 0">
                             <FlipView ItemsSource="{x:Bind MediaSessions, Mode=OneWay}" Height="200" Width="344" CornerRadius="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                 <FlipView.Background>
                                     <media:BackdropBlurBrush Amount="240" />

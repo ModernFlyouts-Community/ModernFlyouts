@@ -8,7 +8,7 @@ namespace ModernFlyouts.Wpf.Services
     /// from: http://stackoverflow.com/questions/14306048/controling-volume-mixer
     /// and: http://netcoreaudio.codeplex.com/
     /// </summary>
-    public static class AudioManager
+    public static class AudioService
     {
         #region Master Volume Manipulation
 
