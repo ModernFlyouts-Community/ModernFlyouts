@@ -1,0 +1,37 @@
+{
+  "IsAudioflyoutEnabled": true,
+  "IsBrighnessEnabled": true,
+  "IsAirplanemodeEnabled": true,
+  "IsMixertrayEnabled": true,
+  "IsBatteryEnabled": true,
+  "BatteryProps": {
+    "DefaultPowerPlan": 1,
+    "IsPowerusageEnabled": true
+  },
+  "IsLockkeysEnabled": true,
+  "LockkeysProperties": {
+    "ShowCapsLock": true,
+    "ShowNumLock": true,
+    "ShowScrollLock": true,
+    "ShowInsert": true
+  },
+  "PersonalisationProperties": {
+    "Theme": "Dark",
+    "FlyoutOpacity": 0.8
+  },
+  "LayoutProperties": {
+    "IsAuto": true,
+    "AutoLayoutProperties": {
+      "Horizontal": 2,
+      "Vertical": 1
+    },
+    "ManualLayoutProperties": {
+      "TopX": 6.17,
+      "TopY": 12.058
+    }
+  },
+  "SettingsProperties": {
+    "Language": "English?",
+    "Startup": false
+  }
+}
