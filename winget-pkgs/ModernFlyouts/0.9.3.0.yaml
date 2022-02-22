@@ -1,0 +1,13 @@
+Id: ModernFlyouts.ModernFlyouts
+Publisher: ModernFlyouts
+Name: ModernFlyouts
+Version: 0.9.3.0
+License: MIT License
+InstallerType: MSIX
+LicenseUrl: https://github.com/ModernFlyouts-Community/ModernFlyouts/blob/master/LICENSE
+AppMoniker: 
+Installers:
+  - Arch: x86
+    InstallerType: MSIX
+    Url: https://github.com/ModernFlyouts-Community/ModernFlyouts/releases/download/0.9.3/32669SamG.ModernFlyouts_0.9.3.0_neutral___pcy8vm99wrpcg.Msixbundle
+    Sha256: C91B2903945709FB598AEF5D8205DEE96FA1A2CE7ADE3F033517CFC5777A1E33
