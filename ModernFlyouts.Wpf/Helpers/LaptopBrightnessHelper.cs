@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ModernFlyouts.Wpf.Helpers
 {
-    class LaptopBrightnessHelper
+    public class LaptopBrightnessHelper
     {
-        static int GetCurrentBrightness()
+        public static int GetCurrentBrightness()
         {
             //define scope (namespace)
             System.Management.ManagementScope s = new System.Management.ManagementScope("root\\WMI");
@@ -28,7 +28,7 @@ namespace ModernFlyouts.Wpf.Helpers
         }
 
         //array of valid brightness values in percent
-        static byte[] GetBrightnessLevels()
+        public static byte[] GetBrightnessLevels()
         {
             //define scope (namespace)
             System.Management.ManagementScope s = new System.Management.ManagementScope("root\\WMI");
@@ -57,7 +57,7 @@ namespace ModernFlyouts.Wpf.Helpers
             return BrightnessLevels;
         }
 
-        static void SetBrightness(byte targetBrightness)
+        public static void SetBrightness(byte targetBrightness)
         {
             //define scope (namespace)
             System.Management.ManagementScope s = new System.Management.ManagementScope("root\\WMI");

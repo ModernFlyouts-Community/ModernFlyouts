@@ -106,6 +106,9 @@
     <Compile Include="UserControls\MediaSessionControl.xaml.cs">
       <DependentUpon>MediaSessionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrightnessFlyoutControl.xaml.cs">
+      <DependentUpon>BrightnessFlyoutControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VolumeTrayControl.xaml.cs">
       <DependentUpon>VolumeTrayControl.xaml</DependentUpon>
     </Compile>
@@ -126,8 +129,82 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Battery124.ico" />
-    <Content Include="Assets\Battery524.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark0.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark1.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark10.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark2.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark3.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark4.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark5.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark6.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark7.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark8.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingDark9.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight0.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight1.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight10.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight2.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight3.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight4.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight5.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight6.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight7.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight8.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryChargingLight9.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark0.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark1.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark10.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark2.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark3.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark4.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark5.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark6.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark7.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark8.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryDark9.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight0.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight1.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight10.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight2.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight3.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight4.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight5.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight6.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight7.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight8.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryLight9.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark0.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark1.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark10.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark2.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark3.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark4.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark5.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark6.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark7.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark8.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverDark9.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight0.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight1.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight10.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight2.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight3.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight4.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight5.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight6.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight7.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight8.ico" />
+    <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight9.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeDark1.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeDark2.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeDark3.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeDarkError.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeDarkMuted.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeLight1.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeLight2.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeLight3.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeLightError.ico" />
+    <Content Include="Assets\VolumeIcons\VolumeLightMuted.ico" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -179,6 +256,10 @@
     <Page Include="UserControls\MediaSessionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BrightnessFlyoutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="VolumeTrayControl.xaml">
       <Generator>MSBuild:Compile</Generator>

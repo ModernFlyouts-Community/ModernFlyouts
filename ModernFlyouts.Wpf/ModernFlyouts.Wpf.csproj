@@ -29,6 +29,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Page Update="BrightnessFlyoutWindow.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
 	  <Page Update="VolumeTrayWindow.xaml">
 	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
 	    <SubType>Designer</SubType>

@@ -1,0 +1,68 @@
+﻿<UserControl
+  x:Class="ModernFlyouts.Uwp.BrightnessFlyoutControl"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="using:ModernFlyouts.Uwp"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:ToolkitControls="using:Microsoft.Toolkit.Uwp.UI.Controls" 
+  xmlns:icons="using:Fluent.Icons" 
+  xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+  xmlns:media="using:Microsoft.Toolkit.Uwp.UI.Media" 
+  xmlns:helpers="using:ModernFlyouts.Uwp.Helpers"
+  xmlns:services="using:ModernFlyouts.Uwp.Services" 
+  xmlns:standard="using:ModernFlyouts.Standard.Classes" 
+  xmlns:UserControls="using:ModernFlyouts.Uwp.UserControls"
+  mc:Ignorable="d">
+    <Grid x:Name="FlyoutGrid">
+        <FlyoutBase.AttachedFlyout>
+            <Flyout
+          AreOpenCloseAnimationsEnabled="True"
+          Placement="Bottom"
+          ShouldConstrainToRootBounds="False"
+          ShowMode="Standard">
+                <Flyout.FlyoutPresenterStyle>
+                    <Style TargetType="FlyoutPresenter">
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Opacity" Value="1" />
+                        <Setter Property="MaxHeight" Value="1400" />
+                        <Setter Property="MinHeight" Value="40" />
+                        <Setter Property="IsDefaultShadowEnabled" Value="False" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="FlyoutPresenter">
+                                    <Border BorderThickness="1" BorderBrush="Transparent" Background="Transparent" CornerRadius="8">
+                                        <ContentPresenter
+                        MaxWidth="{TemplateBinding MaxWidth}"
+                        MaxHeight="{TemplateBinding MaxHeight}"
+                        Margin="0"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        ContentTransitions="{TemplateBinding ContentTransitions}"
+                        CornerRadius="6" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Flyout.FlyoutPresenterStyle>
+                <Flyout.Content>
+                    <Grid Background="{ThemeResource MicaBrush}" CornerRadius="8" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
+                        <Grid x:Name="BrightnessGrid" Padding="8" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                            <Grid.Background>
+                                <media:BackdropBlurBrush Amount="240" />
+                            </Grid.Background>
+                            <Grid Canvas.ZIndex="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="328">
+                                <icons:FluentSymbolIcon x:Name="BrightnessIcon" x:FieldModifier="Public" Symbol="WeatherSunny20" HorizontalAlignment="Left" Margin="2, 2, 4, 3"/>
+                                <Slider x:Name="BrightnessSlider" x:FieldModifier="Public" HorizontalAlignment="Left" Width="260" Margin="36, 0, 0, 0" Minimum="0" Maximum="100"/>
+                                <TextBlock Margin="12, 5, 4, 3" Text="{x:Bind BrightnessSlider.Value, Mode=OneWay}" TextAlignment="Center" HorizontalAlignment="Right" FontSize="16" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Flyout.Content>
+            </Flyout>
+        </FlyoutBase.AttachedFlyout>
+    </Grid>
+</UserControl>

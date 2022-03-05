@@ -25,8 +25,9 @@ namespace ModernFlyouts.Wpf
         {
             InitializeComponent();
             GenerateBatteryTray();
-            GenerateVolumeFlyoutTray();
+            GenerateVolumeFlyout();
             GenerateVolumeMixerTray();
+            GenerateBrightnessFlyout();
         }
 
         private void GenerateVolumeMixerTray()
@@ -36,7 +37,7 @@ namespace ModernFlyouts.Wpf
             _volumetraywindow.Visibility = Visibility.Visible;
             _volumenotifyIcon = new NotifyIcon();
             _volumenotifyIcon.Visible = true;
-            _volumenotifyIcon.Icon = new System.Drawing.Icon(Path.Combine(Environment.CurrentDirectory, @"Assets\Battery524.ico"));
+            _volumenotifyIcon.Icon = new System.Drawing.Icon(Path.Combine(Environment.CurrentDirectory, @"Assets\VolumeIcons\VolumeDark2.ico"));
             _volumenotifyIcon.MouseDown += (s, args) => ShowVolumeMixerWindow(s, args);
         }
 
@@ -52,7 +53,7 @@ namespace ModernFlyouts.Wpf
             _volumetraywindow.Top = (screenHeight / 1.058) - (windowHeight / 2);
         }
 
-        private void GenerateVolumeFlyoutTray()
+        private void GenerateVolumeFlyout()
         {
             VolumeFlyoutWindow _volumeflyoutwindow = new VolumeFlyoutWindow();
             _volumeflyoutwindow.Show();
@@ -66,6 +67,20 @@ namespace ModernFlyouts.Wpf
             _volumeflyoutwindow.Top = (screenHeight / 12.058) - (windowHeight / 2);
         }
 
+        private void GenerateBrightnessFlyout()
+        {
+            BrightnessFlyoutWindow _brightnessflyoutwindow = new BrightnessFlyoutWindow();
+            _brightnessflyoutwindow.Show();
+            _brightnessflyoutwindow.Visibility = Visibility.Visible;
+            var screenWidth = SystemParameters.PrimaryScreenWidth;
+            var screenHeight = SystemParameters.PrimaryScreenHeight;
+            var windowWidth = _brightnessflyoutwindow.Width;
+            var windowHeight = _brightnessflyoutwindow.Height;
+
+            _brightnessflyoutwindow.Left = (screenWidth / 6.17) - (windowWidth / 2);
+            _brightnessflyoutwindow.Top = (screenHeight / 12.058) - (windowHeight / 2);
+        }
+
         private void GenerateBatteryTray()
         {
             _batteryflyoutwindow = new BatteryFlyoutWindow();
@@ -73,7 +88,7 @@ namespace ModernFlyouts.Wpf
             _batteryflyoutwindow.Visibility = Visibility.Visible;
             _notifyIcon = new NotifyIcon();
             _notifyIcon.Visible = true;
-            _notifyIcon.Icon = new System.Drawing.Icon(Path.Combine(Environment.CurrentDirectory, @"Assets\Battery524.ico"));
+            _notifyIcon.Icon = new System.Drawing.Icon(Path.Combine(Environment.CurrentDirectory, @"Assets\BatteryIcons\BatteryDark5.ico"));
             _notifyIcon.MouseDown += (s, args) => ShowBatteryWindow(s, args);
         }
 
