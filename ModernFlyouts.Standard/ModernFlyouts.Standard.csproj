@@ -15,8 +15,8 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NPSMLib" Version="0.9.14" />
-    <PackageReference Include="System.IO.Abstractions" Version="16.1.4" />
-    <PackageReference Include="System.Text.Json" Version="6.0.1" />
+    <PackageReference Include="System.IO.Abstractions" Version="16.1.23" />
+    <PackageReference Include="System.Text.Json" Version="6.0.2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,17 +4,17 @@
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<UseWPF>true</UseWPF>
-		<Platforms>x86;x64;arm64</Platforms>
-		<RuntimeIdentifiers>win10-x64;win10-x86;win10-arm64</RuntimeIdentifiers>
-		<AssetTargetFallback>uap10.0.18362</AssetTargetFallback>
+		<Platforms>x86;x64</Platforms>
+		<RuntimeIdentifiers>win10-x64;win10-x86</RuntimeIdentifiers>
 		<StartupObject>ModernFlyouts.Wpf.Program</StartupObject>
+		<TargetPlatformVersion>10.0.22000.0</TargetPlatformVersion>
+		<TargetPlatformMinVersion>10.0.19041</TargetPlatformMinVersion>
 		<ApplicationIcon>Assets\ModernFlyouts.ico</ApplicationIcon>
-		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
-		<SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
-		<GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
-		<LangVersion>preview</LangVersion>
+		<AssetTargetFallback>uap10.0.19041</AssetTargetFallback>
+		<NoWin32Manifest>true</NoWin32Manifest>
+		
 	</PropertyGroup>
-
+	<!--//		<AssetTargetFallback>uap10.0.18362</AssetTargetFallback> <LangVersion>preview</LangVersion>-->
 	<ItemGroup>
 	  <Compile Remove="JumpListHelper.cs" />
 	  <Compile Remove="TrayIconManager.cs" />
@@ -23,29 +23,16 @@
 	<ItemGroup>
 		<PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
 		<PackageReference Include="Microsoft.Toolkit.Wpf.UI.XamlHost" Version="6.1.2" />
-		<PackageReference Include="NPSMLib" Version="0.9.14" />
+	</ItemGroup>
+		<!--<PackageReference Include="NPSMLib" Version="0.9.14" />
 		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-		<PackageReference Include="System.Management" Version="6.0.0" /> <!--Replace with Microsoft.Management.Infrastructure - arm64 see files for example-->
-	</ItemGroup>
+		<PackageReference Include="System.Management" Version="6.0.0" /> --><!--Replace with Microsoft.Management.Infrastructure - arm64 see files for example-->
 
 	<ItemGroup>
-	  <Page Update="BrightnessFlyoutWindow.xaml">
-	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-	    <SubType>Designer</SubType>
-	  </Page>
-	  <Page Update="VolumeTrayWindow.xaml">
-	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-	    <SubType>Designer</SubType>
-	  </Page>
-	  <Page Update="VolumeFlyoutWindow.xaml">
-	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-	  </Page>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\ModernFlyouts.Core\ModernFlyouts.Core.csproj" />
-	  <ProjectReference Include="..\ModernFlyouts.Standard\ModernFlyouts.Standard.csproj" />
-	  <ProjectReference Include="..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj" />
+	  <ProjectReference Include="..\ModernFlyouts.Settings\ModernFlyouts.Settings.csproj" />
+		<ProjectReference Include="..\ModernFlyouts.Core\ModernFlyouts.Core.csproj" />
+		<ProjectReference Include="..\ModernFlyouts.Standard\ModernFlyouts.Standard.csproj" />
+		<ProjectReference Include="..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

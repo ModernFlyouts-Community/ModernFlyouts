@@ -3,17 +3,15 @@
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-		xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-		xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-		xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap rescap desktop mp">
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  IgnorableNamespaces="uap mp">
 
   <Identity
     Name="627E35B4-6B22-4D7F-883F-C58556BBA2BD"
     Publisher="CN=samue"
     Version="1.0.0.0" />
 
-		<mp:PhoneIdentity PhoneProductId="627E35B4-6B22-4D7F-883F-C58556BBA2BD" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+	<mp:PhoneIdentity PhoneProductId="627E35B4-6B22-4D7F-883F-C58556BBA2BD" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 				
   <Properties>
     <DisplayName>ModernFlyouts.Settings</DisplayName>
@@ -22,8 +20,7 @@
   </Properties>
 
   <Dependencies>
-					<TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
-					<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+	<TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
   </Dependencies>
 
   <Resources>
@@ -42,21 +39,11 @@
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
-        <uap:LockScreen BadgeLogo="Assets\BadgeLogo.png" Notification="badge"/>
       </uap:VisualElements>
-
     </Application>
   </Applications>
 
-				<!--<Extensions>
-								<uap:Extension Category="windows.appService">
-												<uap:AppService Name="SystrayExtensionService" />
-								</uap:Extension>
-								<desktop:Extension Category="windows.fullTrustProcess" Executable="Win32\SystrayComponent.exe" />
-				</Extensions>-->
-
-		<Capabilities>
+  <Capabilities>
     <Capability Name="internetClient" />
-				<!--<rescap:Capability Name="runFullTrust" />-->
   </Capabilities>
 </Package>
