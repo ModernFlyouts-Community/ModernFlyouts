@@ -291,7 +291,7 @@
     <value>解鎖頂部列</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
-    <value>語法錯誤</value>
+    <value>關閉</value>
   </data>
   <data name="Settings.On" xml:space="preserve">
     <value>開啟</value>
