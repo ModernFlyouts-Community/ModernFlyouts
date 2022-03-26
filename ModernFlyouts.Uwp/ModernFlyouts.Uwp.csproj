@@ -111,19 +111,8 @@
     <Compile Include="Settings\Controls\IsEnabledTextBlock\IsEnabledTextBlock.cs" />
     <Compile Include="Settings\Controls\KeyVisual\KeyVisual.cs" />
     <Compile Include="Settings\Controls\SettingExpander\SettingExpander.cs" />
-    <Compile Include="Settings\Controls\SettingsControls\Converters.cs" />
-    <Compile Include="Settings\Controls\SettingsControls\SettingsBlockControl.xaml.cs">
-      <DependentUpon>SettingsBlockControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\Controls\SettingsControls\SettingsDisplayControl.xaml.cs">
-      <DependentUpon>SettingsDisplayControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Settings\Controls\SettingsGroup\SettingsGroup.cs" />
     <Compile Include="Settings\Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
-    <Compile Include="Settings\Controls\SettingsPageControl\PageLink.cs" />
-    <Compile Include="Settings\Controls\SettingsPageControl\SettingsPageControl.xaml.cs">
-      <DependentUpon>SettingsPageControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Settings\Controls\Setting\Setting.cs" />
     <Compile Include="Settings\Converters\ModuleEnabledToOpacityConverter.cs" />
     <Compile Include="Settings\Helpers\AssetsHelper.cs" />
@@ -437,14 +426,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Settings\Controls\KeyVisual\KeyVisual.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Settings\Controls\SettingsControls\SettingsBlockControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Settings\Controls\SettingsControls\SettingsDisplayControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
