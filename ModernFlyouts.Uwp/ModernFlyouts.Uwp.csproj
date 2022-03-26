@@ -118,22 +118,11 @@
     <Compile Include="Settings\Controls\SettingsControls\SettingsDisplayControl.xaml.cs">
       <DependentUpon>SettingsDisplayControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\Controls\SettingsGroup\SettingsGroup.cs" />
-    <Compile Include="Settings\Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
     <Compile Include="Settings\Controls\SettingsPageControl\PageLink.cs" />
     <Compile Include="Settings\Controls\SettingsPageControl\SettingsPageControl.xaml.cs">
       <DependentUpon>SettingsPageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings\Controls\Setting\Setting.cs" />
-    <Compile Include="Settings\Controls\ShortcutControl\ShortcutControl.xaml.cs">
-      <DependentUpon>ShortcutControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\Controls\ShortcutControl\ShortcutDialogContentControl.xaml.cs">
-      <DependentUpon>ShortcutDialogContentControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml.cs">
-      <DependentUpon>ShortcutWithTextLabelControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Settings\Converters\ModuleEnabledToOpacityConverter.cs" />
     <Compile Include="Settings\Helpers\AssetsHelper.cs" />
     <Compile Include="Settings\Helpers\EnumToBooleanConverter.cs" />
@@ -457,27 +446,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Settings\Controls\SettingsGroup\SettingsGroup.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Settings\Controls\SettingsPageControl\SettingsPageControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Settings\Controls\Setting\Setting.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Settings\Controls\ShortcutControl\ShortcutControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Settings\Controls\ShortcutControl\ShortcutDialogContentControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Settings\Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
