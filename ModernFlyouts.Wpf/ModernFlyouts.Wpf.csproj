@@ -29,7 +29,6 @@
 		<PackageReference Include="System.Management" Version="6.0.0" /> --><!--Replace with Microsoft.Management.Infrastructure - arm64 see files for example-->
 
 	<ItemGroup>
-	  <ProjectReference Include="..\ModernFlyouts.Settings\ModernFlyouts.Settings.csproj" />
 		<ProjectReference Include="..\ModernFlyouts.Core\ModernFlyouts.Core.csproj" />
 		<ProjectReference Include="..\ModernFlyouts.Standard\ModernFlyouts.Standard.csproj" />
 		<ProjectReference Include="..\ModernFlyouts.Uwp\ModernFlyouts.Uwp.csproj" />

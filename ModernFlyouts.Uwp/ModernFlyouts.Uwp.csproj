@@ -15,7 +15,7 @@
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
@@ -103,6 +103,116 @@
     <Compile Include="Helpers\MediaSessionHelper.cs" />
     <Compile Include="Helpers\StreamHelper.cs" />
     <Compile Include="Services\MediaSessionService.cs" />
+    <Compile Include="Settings\Activation\ActivationHandler.cs" />
+    <Compile Include="Settings\Activation\DefaultActivationHandler.cs" />
+    <Compile Include="Settings\Behaviors\NavigationViewHeaderBehavior.cs" />
+    <Compile Include="Settings\Behaviors\NavigationViewHeaderMode.cs" />
+    <Compile Include="Settings\Controls\CheckBoxWithDescriptionControl.cs" />
+    <Compile Include="Settings\Controls\IsEnabledTextBlock\IsEnabledTextBlock.cs" />
+    <Compile Include="Settings\Controls\KeyVisual\KeyVisual.cs" />
+    <Compile Include="Settings\Controls\SettingExpander\SettingExpander.cs" />
+    <Compile Include="Settings\Controls\SettingsControls\Converters.cs" />
+    <Compile Include="Settings\Controls\SettingsControls\SettingsBlockControl.xaml.cs">
+      <DependentUpon>SettingsBlockControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Controls\SettingsControls\SettingsDisplayControl.xaml.cs">
+      <DependentUpon>SettingsDisplayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Controls\SettingsGroup\SettingsGroup.cs" />
+    <Compile Include="Settings\Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
+    <Compile Include="Settings\Controls\SettingsPageControl\PageLink.cs" />
+    <Compile Include="Settings\Controls\SettingsPageControl\SettingsPageControl.xaml.cs">
+      <DependentUpon>SettingsPageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Controls\Setting\Setting.cs" />
+    <Compile Include="Settings\Controls\ShortcutControl\ShortcutControl.xaml.cs">
+      <DependentUpon>ShortcutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Controls\ShortcutControl\ShortcutDialogContentControl.xaml.cs">
+      <DependentUpon>ShortcutDialogContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml.cs">
+      <DependentUpon>ShortcutWithTextLabelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Converters\ModuleEnabledToOpacityConverter.cs" />
+    <Compile Include="Settings\Helpers\AssetsHelper.cs" />
+    <Compile Include="Settings\Helpers\EnumToBooleanConverter.cs" />
+    <Compile Include="Settings\Helpers\NativeKeyboardHelper.cs" />
+    <Compile Include="Settings\Helpers\NativeMethods.cs" />
+    <Compile Include="Settings\Helpers\NavHelper.cs" />
+    <Compile Include="Settings\Helpers\Observable.cs" />
+    <Compile Include="Settings\Helpers\RelayCommand.cs" />
+    <Compile Include="Settings\Helpers\ResourceExtensions.cs" />
+    <Compile Include="Settings\Helpers\SettingsStorageExtensions.cs" />
+    <Compile Include="Settings\Helpers\StartProcessHelper.cs" />
+    <Compile Include="Settings\Helpers\UpdateHelper.cs" />
+    <Compile Include="Settings\Services\ActivationService.cs" />
+    <Compile Include="Settings\Services\FirstRunDisplayService.cs" />
+    <Compile Include="Settings\Services\NavigationService.cs" />
+    <Compile Include="Settings\Services\ThemeSelectorService.cs" />
+    <Compile Include="Settings\Services\ToastNotificationsService.cs" />
+    <Compile Include="Settings\Services\ToastNotificationsService.Samples.cs" />
+    <Compile Include="Settings\Services\WhatsNewDisplayService.cs" />
+    <Compile Include="Settings\ViewModels\AirplaneModeModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\Appearance_BehaviorViewModel.cs" />
+    <Compile Include="Settings\ViewModels\AudioModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\AudioTrayModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\BatteryModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\BrightnessModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\CameraModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\Commands\ButtonClickCommand.cs" />
+    <Compile Include="Settings\ViewModels\GeneralSettingsViewModel.cs" />
+    <Compile Include="Settings\ViewModels\LayoutViewModel.cs" />
+    <Compile Include="Settings\ViewModels\LockKeysModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\MainViewModel.cs" />
+    <Compile Include="Settings\ViewModels\MediaModuleViewModel.cs" />
+    <Compile Include="Settings\ViewModels\ShellViewModel.cs" />
+    <Compile Include="Settings\Views\AirplaneModeModulePage.xaml.cs">
+      <DependentUpon>AirplaneModeModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\Appearance_BehaviorPage.xaml.cs">
+      <DependentUpon>Appearance_BehaviorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\AudioModulePage.xaml.cs">
+      <DependentUpon>AudioModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\AudioTrayModulePage.xaml.cs">
+      <DependentUpon>AudioTrayModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\BatteryModulePage.xaml.cs">
+      <DependentUpon>BatteryModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\BrightnessModulePage.xaml.cs">
+      <DependentUpon>BrightnessModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\CameraModulePage.xaml.cs">
+      <DependentUpon>CameraModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\FirstRunDialog.xaml.cs">
+      <DependentUpon>FirstRunDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\GeneralSettings.xaml.cs">
+      <DependentUpon>GeneralSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\LayoutPage.xaml.cs">
+      <DependentUpon>LayoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\LockKeysModulePage.xaml.cs">
+      <DependentUpon>LockKeysModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\MediaModulePage.xaml.cs">
+      <DependentUpon>MediaModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\OOBEPage.xaml.cs">
+      <DependentUpon>OOBEPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\ShellPage.xaml.cs">
+      <DependentUpon>ShellPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Views\VisibleIfNotEmpty.cs" />
+    <Compile Include="Settings\Views\WhatsNewDialog.xaml.cs">
+      <DependentUpon>WhatsNewDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MediaSessionControl.xaml.cs">
       <DependentUpon>MediaSessionControl.xaml</DependentUpon>
     </Compile>
@@ -213,6 +323,75 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Settings\Assets\Airplane.png" />
+    <Content Include="Settings\Assets\Audio1.png" />
+    <Content Include="Settings\Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Settings\Assets\BadgeLogo.scale-125.png" />
+    <Content Include="Settings\Assets\BadgeLogo.scale-150.png" />
+    <Content Include="Settings\Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Settings\Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Settings\Assets\battery.png" />
+    <Content Include="Settings\Assets\battery1.png" />
+    <Content Include="Settings\Assets\Hero.png" />
+    <Content Include="Settings\Assets\LargeTile.scale-100.png" />
+    <Content Include="Settings\Assets\LargeTile.scale-125.png" />
+    <Content Include="Settings\Assets\LargeTile.scale-150.png" />
+    <Content Include="Settings\Assets\LargeTile.scale-200.png" />
+    <Content Include="Settings\Assets\LargeTile.scale-400.png" />
+    <Content Include="Settings\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Settings\Assets\media.png" />
+    <Content Include="Settings\Assets\mockup1.png" />
+    <Content Include="Settings\Assets\mockup2.png" />
+    <Content Include="Settings\Assets\mockup3.png" />
+    <Content Include="Settings\Assets\mockup3cut.png" />
+    <Content Include="Settings\Assets\mockup4.png" />
+    <Content Include="Settings\Assets\ModernFlyouts.svg" />
+    <Content Include="Settings\Assets\SmallTile.scale-100.png" />
+    <Content Include="Settings\Assets\SmallTile.scale-125.png" />
+    <Content Include="Settings\Assets\SmallTile.scale-150.png" />
+    <Content Include="Settings\Assets\SmallTile.scale-200.png" />
+    <Content Include="Settings\Assets\SmallTile.scale-400.png" />
+    <Content Include="Settings\Assets\SplashScreen.scale-100.png" />
+    <Content Include="Settings\Assets\SplashScreen.scale-125.png" />
+    <Content Include="Settings\Assets\SplashScreen.scale-150.png" />
+    <Content Include="Settings\Assets\SplashScreen.scale-200.png" />
+    <Content Include="Settings\Assets\SplashScreen.scale-400.png" />
+    <Content Include="Settings\Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Settings\Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Settings\Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Settings\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Settings\Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Settings\Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Settings\Assets\StoreLogo.backup.png" />
+    <Content Include="Settings\Assets\StoreLogo.scale-100.png" />
+    <Content Include="Settings\Assets\StoreLogo.scale-125.png" />
+    <Content Include="Settings\Assets\StoreLogo.scale-150.png" />
+    <Content Include="Settings\Assets\StoreLogo.scale-200.png" />
+    <Content Include="Settings\Assets\StoreLogo.scale-400.png" />
+    <Content Include="Settings\Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Settings\Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Settings\Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Settings\Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Settings\Assets\Wide310x150Logo.scale-400.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -253,6 +432,126 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Settings\Controls\IsEnabledTextBlock\IsEnabledTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\KeyVisual\KeyVisual.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\SettingsControls\SettingsBlockControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\SettingsControls\SettingsDisplayControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\SettingsGroup\SettingsGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\SettingsPageControl\SettingsPageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\Setting\Setting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\ShortcutControl\ShortcutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\ShortcutControl\ShortcutDialogContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Styles\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Styles\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Themes\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Themes\SettingsExpanderStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\AirplaneModeModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\Appearance_BehaviorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\AudioModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\AudioTrayModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\BatteryModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\BrightnessModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\CameraModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\FirstRunDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\GeneralSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\LayoutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\LockKeysModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\MediaModulePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\OOBEPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\ShellPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Views\WhatsNewDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\MediaSessionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -282,6 +581,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\DefaultSettings.json" />
+    <PRIResource Include="Settings\Strings\en-us\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Settings\Properties\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -8,26 +8,15 @@ namespace ModernFlyouts.Wpf
   {
     public const string AppName = "ModernFlyouts";
 
-    [System.STAThreadAttribute()]
-    public static void Main()
-    {
-        using (new ModernFlyouts.Settings.App())
+        [STAThread]
+        public static void Main()
         {
-            ModernFlyouts.Wpf.App app = new ModernFlyouts.Wpf.App();
-            app.InitializeComponent();
-            app.Run();
+            using (new ModernFlyouts.Uwp.App())
+            {
+                var app = new App();
+                app.InitializeComponent();
+                app.Run();
+            }
         }
     }
-
-    //    [STAThread]
-    //public static void Main()
-    //{
-    //  using (new ModernFlyouts.Uwp.App())
-    //  {
-    //    var app = new App();
-    //    app.InitializeComponent();
-    //    app.Run();
-    //  }
-    //}
-  }
 }

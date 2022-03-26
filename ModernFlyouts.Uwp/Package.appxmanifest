@@ -7,8 +7,8 @@
   IgnorableNamespaces="uap mp">
 
 	<Identity
-    Name="BatteryFlyout"
-    Publisher="CN=3C7C8FC9-7104-4B33-8730-EE1E929D5D3B"
+    Name="ModernFlyouts.Uwp"
+    Publisher="CN=ModernFlyouts-Community"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="fca124aa-866b-42ba-9e51-7a5f8ee1740b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>

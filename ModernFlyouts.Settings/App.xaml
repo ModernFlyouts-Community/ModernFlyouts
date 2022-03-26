@@ -17,8 +17,8 @@
                 <ResourceDictionary Source="/Themes/Colors.xaml"/>
                 <ResourceDictionary Source="/Themes/SettingsExpanderStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
             <ResourceDictionary.ThemeDictionaries>
-
 
                 <ResourceDictionary x:Key="Dark">
                     <ResourceDictionary.MergedDictionaries>
