@@ -79,7 +79,6 @@
                             <Color x:Key="SystemRevealListLowColor">#FFE6E6E6</Color>
                             <Color x:Key="SystemRevealListMediumColor">#FFCCCCCC</Color>
                             <SolidColorBrush x:Key="12Brush" Color="#ededed" />
-                            <SolidColorBrush x:Key="24Brush" Color="#dbdbdb" />
                             <SolidColorBrush x:Key="BrushForSearch" Color="#FFFFFF"/>
                             <RevealBackgroundBrush x:Key="SystemControlHighlightListLowRevealBackgroundBrush" TargetTheme="Light" Color="{ThemeResource SystemRevealListMediumColor}" FallbackColor="{ StaticResource SystemListMediumColor}" />
                             <Color x:Key="RegionColor">#FFFFFFFF</Color>

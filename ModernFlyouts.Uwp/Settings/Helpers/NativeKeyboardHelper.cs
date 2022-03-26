@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace MModernFlyouts.Settings.Helpers
+namespace ModernFlyouts.Settings.Helpers
 {
     internal static class NativeKeyboardHelper
     {

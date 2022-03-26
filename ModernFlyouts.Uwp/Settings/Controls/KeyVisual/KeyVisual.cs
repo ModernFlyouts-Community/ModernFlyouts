@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Design;
+﻿using ModernFlyouts.Uwp;
+using System.ComponentModel.Design;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;

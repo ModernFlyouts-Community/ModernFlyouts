@@ -118,6 +118,8 @@
     <Compile Include="Settings\Controls\SettingsControls\SettingsDisplayControl.xaml.cs">
       <DependentUpon>SettingsDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings\Controls\SettingsGroup\SettingsGroup.cs" />
+    <Compile Include="Settings\Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
     <Compile Include="Settings\Controls\SettingsPageControl\PageLink.cs" />
     <Compile Include="Settings\Controls\SettingsPageControl\SettingsPageControl.xaml.cs">
       <DependentUpon>SettingsPageControl.xaml</DependentUpon>
@@ -416,15 +418,15 @@
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.0-prerelease.220118001</Version>
     </PackageReference>
-	 <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
-	    <Version>2.0.1</Version>
-	 </PackageReference>
-	  <PackageReference Include="Microsoft.Toolkit.Mvvm">
-		  <Version>7.1.2</Version>
-	  </PackageReference>
-	  <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
-		  <Version>7.1.2</Version>
-	  </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Mvvm">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.2</Version>
+    </PackageReference>
     <PackageReference Include="NPSMLib">
       <Version>0.9.14</Version>
     </PackageReference>
@@ -443,6 +445,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Settings\Controls\SettingsControls\SettingsDisplayControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\Controls\SettingsGroup\SettingsGroup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

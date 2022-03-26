@@ -10,6 +10,7 @@ using ModernFlyouts.Settings.Services;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using ModernFlyouts.Uwp;
 
 namespace ModernFlyouts.Settings.Services
 {
