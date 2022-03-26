@@ -100,7 +100,7 @@ body:
     label: Other Software
     description: If you're reporting a bug about our interaction with other software, what software? What versions?
     placeholder: |
-      Chromium Browser (Edge, Chrome ...)
+      Chromium Browser (Edge, Chrome, Vivaldi, Brave ...)
       Firefox
       Spotify (Please specify which app - Web app, PWA, UWP, Desktop, Store)
       Groove Music
