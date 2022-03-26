@@ -113,6 +113,10 @@
     <Compile Include="Settings\Controls\SettingExpander\SettingExpander.cs" />
     <Compile Include="Settings\Controls\SettingsGroup\SettingsGroup.cs" />
     <Compile Include="Settings\Controls\SettingsGroup\SettingsGroupAutomationPeer.cs" />
+    <Compile Include="Settings\Controls\SettingsPageControl\PageLink.cs" />
+    <Compile Include="Settings\Controls\SettingsPageControl\SettingsPageControl.xaml.cs">
+      <DependentUpon>SettingsPageControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Settings\Controls\Setting\Setting.cs" />
     <Compile Include="Settings\Converters\ModuleEnabledToOpacityConverter.cs" />
     <Compile Include="Settings\Helpers\AssetsHelper.cs" />
