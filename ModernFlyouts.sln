@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernFlyouts.Standard", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernFlyouts.Core", "ModernFlyouts.Core\ModernFlyouts.Core.csproj", "{530CCF04-4DCD-43AB-97EF-85884E4C34E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernFlyouts.Settings", "ModernFlyouts.Settings\ModernFlyouts.Settings.csproj", "{E21D8AAC-7C72-4BBB-B465-AA113A864518}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -97,24 +95,6 @@ Global
 		{530CCF04-4DCD-43AB-97EF-85884E4C34E5}.Release|x64.Build.0 = Release|x64
 		{530CCF04-4DCD-43AB-97EF-85884E4C34E5}.Release|x86.ActiveCfg = Release|Any CPU
 		{530CCF04-4DCD-43AB-97EF-85884E4C34E5}.Release|x86.Build.0 = Release|Any CPU
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|ARM64.Build.0 = Debug|ARM64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|ARM64.Deploy.0 = Debug|ARM64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|x64.ActiveCfg = Debug|x64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|x64.Build.0 = Debug|x64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|x64.Deploy.0 = Debug|x64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|x86.ActiveCfg = Debug|x86
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|x86.Build.0 = Debug|x86
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Debug|x86.Deploy.0 = Debug|x86
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|ARM64.ActiveCfg = Release|ARM64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|ARM64.Build.0 = Release|ARM64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|ARM64.Deploy.0 = Release|ARM64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|x64.ActiveCfg = Release|x64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|x64.Build.0 = Release|x64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|x64.Deploy.0 = Release|x64
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|x86.ActiveCfg = Release|x86
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|x86.Build.0 = Release|x86
-		{E21D8AAC-7C72-4BBB-B465-AA113A864518}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
