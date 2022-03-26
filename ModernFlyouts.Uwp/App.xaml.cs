@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Win32.UI.XamlHost;
+using ModernFlyouts.Uwp.Helpers;
 using System.Threading.Tasks;
 
 namespace ModernFlyouts.Uwp
@@ -11,6 +12,7 @@ namespace ModernFlyouts.Uwp
             UnhandledException += OnUnhandledException;
             TaskScheduler.UnobservedTaskException += OnUnobservedException;
             InitializeComponent();
+            JumpListHelper.CreateJumpListAsync();
         }
 
         private static void OnUnobservedException(object sender, UnobservedTaskExceptionEventArgs e) => e.SetObserved();
