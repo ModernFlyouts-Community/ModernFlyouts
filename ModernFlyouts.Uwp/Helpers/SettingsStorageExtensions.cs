@@ -1,8 +1,7 @@
-﻿using System;
+﻿using ModernFlyouts.Standard.Helpers;
+using System;
 using System.IO;
 using System.Threading.Tasks;
-
-using ModernFlyouts.Standard.Helpers;
 
 using Windows.Storage;
 using Windows.Storage.Streams;

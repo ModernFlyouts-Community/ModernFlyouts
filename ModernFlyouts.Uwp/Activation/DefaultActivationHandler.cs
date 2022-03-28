@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-
-using ModernFlyouts.Standard.Helpers;
 using ModernFlyouts.Uwp.Services;
 
 using Windows.ApplicationModel.Activation;
