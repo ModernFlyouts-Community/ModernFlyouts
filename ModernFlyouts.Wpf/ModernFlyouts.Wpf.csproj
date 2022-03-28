@@ -12,6 +12,8 @@
 		<ApplicationIcon>Assets\ModernFlyouts.ico</ApplicationIcon>
 		<AssetTargetFallback>uap10.0.19041</AssetTargetFallback>
 		<NoWin32Manifest>true</NoWin32Manifest>
+		<PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+		<LangVersion>latest</LangVersion>
 		
 	</PropertyGroup>
 	<!--//		<AssetTargetFallback>uap10.0.18362</AssetTargetFallback> <LangVersion>preview</LangVersion>-->

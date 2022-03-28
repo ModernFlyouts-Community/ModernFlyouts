@@ -4,11 +4,11 @@ using System.Drawing;
 using System.Windows;
 using System.Windows.Interop;
 using Microsoft.Toolkit.Wpf.UI.XamlHost;
-using ModernFlyouts.Settings.Views;
+using ModernFlyouts.Uwp.Views;
 using ModernFlyouts.Wpf.Helpers;
 using Windows.ApplicationModel.Resources;
 using Windows.Data.Json;
-using ModernFlyouts.Settings;
+using ModernFlyouts.Uwp;
 
 
 namespace ModernFlyouts.Wpf
