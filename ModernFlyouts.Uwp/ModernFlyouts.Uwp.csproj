@@ -197,6 +197,9 @@
     <Compile Include="Settings\Views\WhatsNewDialog.xaml.cs">
       <DependentUpon>WhatsNewDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TrayIconView.xaml.cs">
+      <DependentUpon>TrayIconView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MediaSessionControl.xaml.cs">
       <DependentUpon>MediaSessionControl.xaml</DependentUpon>
     </Compile>
@@ -289,6 +292,59 @@
     <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight7.ico" />
     <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight8.ico" />
     <Content Include="Assets\BatteryIcons\BatteryPowerSaverLight9.ico" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\ModernFlyouts.svg" />
+    <Content Include="Assets\SettingsAssets\Airplane.png" />
+    <Content Include="Assets\SettingsAssets\Audio1.png" />
+    <Content Include="Assets\SettingsAssets\battery.png" />
+    <Content Include="Assets\SettingsAssets\battery1.png" />
+    <Content Include="Assets\SettingsAssets\Hero.png" />
+    <Content Include="Assets\SettingsAssets\media.png" />
+    <Content Include="Assets\SettingsAssets\mockup1.png" />
+    <Content Include="Assets\SettingsAssets\mockup2.png" />
+    <Content Include="Assets\SettingsAssets\mockup3.png" />
+    <Content Include="Assets\SettingsAssets\mockup3cut.png" />
+    <Content Include="Assets\SettingsAssets\mockup4.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
     <Content Include="Assets\VolumeIcons\VolumeDark1.ico" />
     <Content Include="Assets\VolumeIcons\VolumeDark2.ico" />
     <Content Include="Assets\VolumeIcons\VolumeDark3.ico" />
@@ -299,6 +355,10 @@
     <Content Include="Assets\VolumeIcons\VolumeLight3.ico" />
     <Content Include="Assets\VolumeIcons\VolumeLightError.ico" />
     <Content Include="Assets\VolumeIcons\VolumeLightMuted.ico" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -522,6 +582,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Settings\Views\WhatsNewDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TrayIconView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
