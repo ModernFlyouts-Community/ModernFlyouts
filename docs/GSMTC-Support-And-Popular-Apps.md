@@ -24,6 +24,8 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | Application | Support | Play/Pause | Previous | Next | Thumbnail | Media Title | Media Artist | App Info | Shuffle | Repeat | Stop | Timeline information |
 | --- | --- | ---| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 ||<H3> **BROWSERS** </H3> |
+| Google Chrome  | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
+| Microsoft Edge | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
 | Chromium based | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
 | Firefox        | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
 | Tor            | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
@@ -77,7 +79,7 @@ NOTE- Chromium based includes Chromium browsers and its derivatives (Chrome, New
 - **MusicBee** - https://github.com/ameer1234567890/mb_MediaControl
 - **AIMP** - https://www.aimp.ru/?do=catalog&rec_id=1097
 - **DeaDBeeF** - https://github.com/DeaDBeeF-for-Windows/ddb_smtc
-- **iTunes** - https://github.com/thewizrd/iTunes-SMTC
+- **iTunes** - https://github.com/thewizrd/iTunes-SMTC 
 - **VLC (Desktop)** - https://github.com/spmn/vlc-win10smtc
 - **Winamp** - https://github.com/NanMetal/gen_smtc
 - **MPV** - <sup><a name="f1">1</a></sup>https://github.com/x0wllaar/MPV-SMTC OR
