@@ -1,8 +1,6 @@
 name: "🐛 Bug report"
 description: Report errors or unexpected behavior
 title: "Bug: "
-  validations:
-    required: true
 labels: 
 - Bug
 
