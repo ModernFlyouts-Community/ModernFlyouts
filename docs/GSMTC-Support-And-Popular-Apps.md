@@ -50,6 +50,7 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | [AIMP](https://www.aimp.ru/?do=download&os=windows) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [DeaDBeeF](https://deadbeef.sourceforge.io/download.html) | 🟡 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [iTunes](https://www.microsoft.com/store/productId/9PB2MZ1ZMB1S) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟩 | 🟥 |
+| [Spicetify](https://github.com/spicetify/spicetify-cli) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 |
 | [Audacious](https://audacious-media-player.org/download) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [Quod Libet](https://quodlibet.readthedocs.io/en/latest/downloads.html) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [MusicPlayer2](https://github.com/zhongyang219/MusicPlayer2/) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
@@ -93,6 +94,7 @@ NOTE- Chromium based includes Chromium browsers and its derivatives (Chrome, New
 - **AIMP** - https://www.aimp.ru/?do=catalog&rec_id=1097
 - **DeaDBeeF** - https://github.com/DeaDBeeF-for-Windows/ddb_smtc
 - **iTunes** - https://github.com/thewizrd/iTunes-SMTC 
+- **spicetify** - https://github.com/tjhrulz/WebNowPlaying-BrowserExtension
 - **VLC (Desktop)** - https://github.com/spmn/vlc-win10smtc
 - **Winamp** - https://github.com/NanMetal/gen_smtc
 - **MPV** - <sup><a name="f1">1</a></sup>https://github.com/x0wllaar/MPV-SMTC OR
