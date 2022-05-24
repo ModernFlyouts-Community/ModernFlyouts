@@ -1,0 +1,39 @@
+﻿<winex:WindowEx 
+    xmlns:winex="using:WinUIEx"
+    x:Class="ModernFlyouts.WinUI.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ModernFlyouts.WinUI.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="1024" Height="768" MinWidth="200" MinHeight="200">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Border x:Name="AppTitleBar"
+                IsHitTestVisible="True"
+                VerticalAlignment="Top" 
+                Background="Transparent"
+                Height="40"
+                Canvas.ZIndex="1" 
+                Margin="48,8,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="AppFontIcon"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center"
+                    Source="ms-appx:///Assets/Square44x44Logo.targetsize-48.png" 
+                    Width="16" 
+                    Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}" />
+                <TextBlock x:Name="AppTitle"
+                    Text="{x:Bind GetAppTitleFromSystem()}"
+                    VerticalAlignment="Center"
+                    Margin="12, 0, 0, 0"
+                    Style="{StaticResource CaptionTextBlockStyle}" />
+            </StackPanel>
+        </Border>
+
+        <local:ShellPage/>
+    </Grid>
+    
+</winex:WindowEx> 

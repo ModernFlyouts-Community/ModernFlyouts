@@ -1,0 +1,186 @@
+﻿<Page
+    x:Class="ModernFlyouts.WinUI.Views.Appearance_BehaviorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:ModernFlyouts.WinUI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls" 
+    xmlns:selectors="using:ModernFlyouts.UI.Selectors"
+    mc:Ignorable="d">
+
+    <controls:SettingsPageControl x:Uid="Appearance_BehaviorSettings" IsTabStop="False"
+                            ModuleImageSource="ms-appx:///Assets/SettingsAssets/Awake.png">
+        <controls:SettingsPageControl.ModuleContent>
+            <StackPanel Orientation="Vertical">
+
+                <controls:SettingsGroup x:Uid="Appearance" IsEnabled="True">
+
+                    <controls:Setting x:Uid="AppThemeHeader" Icon="&#xE790;">
+                        <controls:Setting.Description>
+                            <HyperlinkButton Click="OpenColorsSettings_Click"
+                                                     x:Uid="Windows_Color_Settings"/>
+                        </controls:Setting.Description>
+                        <controls:Setting.ActionContent>
+                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}"><!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
+                                <ComboBoxItem x:Uid="Radio_Theme_Dark"/>
+                                <ComboBoxItem x:Uid="Radio_Theme_Light"/>
+                                <ComboBoxItem x:Uid="Radio_Theme_System"/>
+                            </ComboBox>
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+
+                    <controls:Setting x:Uid="FlyoutThemeHeader" Icon="&#xE790;">
+                        <controls:Setting.Description>
+                            <HyperlinkButton Click="OpenColorsSettings_Click"
+                                                     x:Uid="Windows_Color_Settings"/>
+                        </controls:Setting.Description>
+                        <controls:Setting.ActionContent>
+                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}"><!--SelectedIndex="{x:Bind Mode=TwoWay, Path=ViewModel.ThemeIndex}"-->
+                                <ComboBoxItem x:Uid="Radio_Theme_Dark"/>
+                                <ComboBoxItem x:Uid="Radio_Theme_Light"/>
+                                <ComboBoxItem x:Uid="Radio_Theme_System"/>
+                            </ComboBox>
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+
+
+                    <controls:Setting x:Uid="FlyoutBackdropHeader" Icon="&#xF5EF;">
+                        <controls:Setting.Description>
+                            <StackPanel>
+                                <ContentControl Content="{x:Bind ViewModel.BackdropType, Mode=OneWay}" DataContext="{x:Bind ViewModel.BackdropType}">
+                                    <ContentControl.ContentTemplateSelector>
+                                        <selectors:BackdropTypeSelector>
+                                            <selectors:BackdropTypeSelector.Solid>
+                                                <DataTemplate>
+                                                    <TextBlock TextWrapping="WrapWholeWords">
+                                                            <Run x:Uid="BackdropDescription" />
+                                                            <Run x:Uid="SolidBackdropDescription" />
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </selectors:BackdropTypeSelector.Solid>
+                                            <selectors:BackdropTypeSelector.Mica>
+                                                <DataTemplate>
+                                                    <TextBlock TextWrapping="WrapWholeWords">
+                                                            <Run x:Uid="BackdropDescription" />
+                                                            <Run x:Uid="MicaBackdropDescription" />
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </selectors:BackdropTypeSelector.Mica>
+                                            <selectors:BackdropTypeSelector.Acrylic>
+                                                <DataTemplate>
+                                                    <TextBlock TextWrapping="WrapWholeWords">
+                                                            <Run x:Uid="BackdropDescription" />
+                                                            <Run x:Uid="AcrylicBackdropDescription" />
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </selectors:BackdropTypeSelector.Acrylic>
+                                        </selectors:BackdropTypeSelector>
+                                    </ContentControl.ContentTemplateSelector>
+                                </ContentControl>
+                            </StackPanel>
+                        </controls:Setting.Description>
+
+                        <controls:Setting.ActionContent>
+                            <ComboBox  MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                    ItemsSource="{x:Bind ViewModel.BackdropTypes}"
+                                    SelectedItem="{x:Bind ViewModel.BackdropType, Mode=TwoWay}">
+                                <ComboBox.ItemTemplateSelector>
+                                    <selectors:BackdropTypeSelector>
+                                        <selectors:BackdropTypeSelector.Solid>
+                                            <DataTemplate>
+                                                <TextBlock x:Uid="SolidMenuItem" />
+                                            </DataTemplate>
+                                        </selectors:BackdropTypeSelector.Solid>
+                                        <selectors:BackdropTypeSelector.Mica>
+                                            <DataTemplate>
+                                                <TextBlock x:Uid="MicaMenuItem" />
+                                            </DataTemplate>
+                                        </selectors:BackdropTypeSelector.Mica>
+                                        <selectors:BackdropTypeSelector.Acrylic>
+                                            <DataTemplate>
+                                                <TextBlock x:Uid="AcrylicMenuItem" />
+                                            </DataTemplate>
+                                        </selectors:BackdropTypeSelector.Acrylic>
+                                    </selectors:BackdropTypeSelector>
+                                </ComboBox.ItemTemplateSelector>
+                            </ComboBox>
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="Flyout_Opacity"> <!--TODO Bind so only enabled for solid IsEnabled="{x:Bind ViewModel.BackdropType, Mode=OneWay}"--> 
+                        <controls:Setting.ActionContent>
+                            <Slider Minimum="0"
+                                    Maximum="100"
+                                    MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                    />
+                            <!--Value="{x:Bind Mode=TwoWay, Path=ViewModel.OverlayOpacity}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="FollowSystemAccent">
+                        <controls:Setting.Description>
+                            <HyperlinkButton Click="OpenColorsSettings_Click"
+                                                     x:Uid="Windows_Color_Settings"/>
+                        </controls:Setting.Description>
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                </controls:SettingsGroup>
+
+                <controls:SettingsGroup x:Uid="Behavior" IsEnabled="True">
+
+                    <controls:SettingExpander IsExpanded="True">
+                        <controls:SettingExpander.Header>
+                            <controls:Setting x:Uid="Flyout_Timeout" Icon="&#xf182;" Style="{StaticResource ExpanderHeaderSettingStyle}">
+                                <controls:Setting.ActionContent>
+                                    <winui:NumberBox 
+                                                MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                                SpinButtonPlacementMode="Inline"
+                                                Minimum="1"
+                                                SmallChange="10"/> <!--Value="{Binding Mode=TwoWay, Path=MaximumNumberOfResults}"-->
+                                </controls:Setting.ActionContent>
+                            </controls:Setting>
+                        </controls:SettingExpander.Header>
+                        <controls:SettingExpander.Content>
+                            <CheckBox x:Uid="SetForAllFlyouts"  Margin="{StaticResource ExpanderSettingMargin}" /> <!--IsChecked="{x:Bind Mode=TwoWay, Path=ViewModel.ClearInputOnLaunch}"-->
+                        </controls:SettingExpander.Content>
+                    </controls:SettingExpander>
+
+
+                    <controls:Setting x:Uid="SysTrayIcon_Enable">
+                        <controls:Setting.Icon>
+                            <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
+                        </controls:Setting.Icon>
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="ColoredTrayIcon_Enable" IsEnabled="{x:Bind Mode=OneWay, Path=ViewModel.SysTrayIcon_IsEnabled}">
+                        <controls:Setting.Icon>
+                            <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
+                        </controls:Setting.Icon>
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="FlyoutFadeAnimation_Enable">
+                        <controls:Setting.Icon>
+                            <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.scale-100.png" ShowAsMonochrome="False" />
+                        </controls:Setting.Icon>
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/> <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    <controls:Setting x:Uid="GlowUI_Enable" IsEnabled="False">
+                        <controls:Setting.ActionContent>
+                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                </controls:SettingsGroup>
+
+            </StackPanel>
+        </controls:SettingsPageControl.ModuleContent>
+    </controls:SettingsPageControl>
+</Page>

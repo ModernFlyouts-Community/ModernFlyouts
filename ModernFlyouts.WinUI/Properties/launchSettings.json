@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ModernFlyouts.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ModernFlyouts.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
