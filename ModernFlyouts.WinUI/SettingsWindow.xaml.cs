@@ -45,6 +45,12 @@ namespace ModernFlyouts.WinUI
             ShellPage.SetElevationStatus(App.IsElevated);
             ShellPage.SetIsUserAnAdmin(App.IsUserAnAdmin);
 
+            // Set window icon
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
+            AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
+            appWindow.SetIcon("ModernFlyoutsMultiRES.ico");
+
             this.InitializeComponent();
 
             SetTitleBar();

@@ -34,5 +34,5 @@ namespace ModernFlyouts.Core.Helpers.Hardware
     //        }
     //    // dont show flyouts on keyboard trigger
     //    }
-    //}
+    }
 }

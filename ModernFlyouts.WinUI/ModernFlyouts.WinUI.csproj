@@ -11,6 +11,7 @@
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+				<ApplicationIcon>ModernFlyoutsMultiRES.ico</ApplicationIcon>
   </PropertyGroup>
 
 
@@ -39,6 +40,11 @@
     <Compile Remove="Helpers\MonitorBrightnessHelper.cs" />
     <Compile Remove="Helpers\SessionConstructor.cs" />
     <Compile Remove="Services\MediaSessionService.cs" />
+  </ItemGroup>
+				
+				
+  <ItemGroup>
+    <Content Include="ModernFlyoutsMultiRES.ico" />
   </ItemGroup>
 
   <ItemGroup>
