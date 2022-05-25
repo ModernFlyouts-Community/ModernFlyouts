@@ -41,6 +41,7 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | --- | --- | ---| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Spotify        | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟩 |
 | Groove Music   | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 |
+| [Deezer](https://www.microsoft.com/store/productId/9NBLGGH6J7VV) | 🟢 | 🟩 | 🟥 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟩 | 🟥 |
 | [Dopamine-Windows](https://github.com/digimezzo/dopamine-windows) | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟩 |
 | [foobar2000](https://www.foobar2000.org/) | 🟢 (v1.5.1+) | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟩 | 🟥 |
 | [MediaMonkey](https://www.mediamonkey.com/download) | 🟢 | 🟩 | 🟩 | 🟩 | 🟥 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
