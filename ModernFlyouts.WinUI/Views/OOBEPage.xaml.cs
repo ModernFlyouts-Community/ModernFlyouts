@@ -6,11 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-using Windows.ApplicationModel.Core;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI;
-using Windows.UI.ViewManagement;
+
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -20,6 +16,10 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI;
+using ModernFlyouts.WinUI.Helpers;
+using Microsoft.UI.Windowing;
+using WinUIEx;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,34 +31,43 @@ namespace ModernFlyouts.WinUI.Views
     public sealed partial class OOBEPage : Page
     {
         Visibility IsMobile;
+        
         public OOBEPage()
         {
             this.InitializeComponent();
-            if (Window.Current.Bounds.Width > 830)
-            {
-                IsMobile = Visibility.Visible;
-            }
-            else
-            {
-                IsMobile = Visibility.Collapsed;
-            }
 
-            if (Window.Current.Bounds.Height > 700)
-            {
+            //if (WindowEx.Get.Width > 830)
+            //{
+                IsMobile = Visibility.Visible;
+            //}
+            //else
+            //{
+            //    IsMobile = Visibility.Collapsed;
+            //}
+
+            //if (WindowEx.Current.Bounds.Height > 700)
+            //{
                 Stepper.Visibility = Visibility.Visible;
                 Skipper.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Stepper.Visibility = Visibility.Collapsed;
-                Skipper.Visibility = Visibility.Collapsed;
-            }
+            //}
+            //else
+            //{
+            //    Stepper.Visibility = Visibility.Collapsed;
+            //    Skipper.Visibility = Visibility.Collapsed;
+            //}
 
-            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-            coreTitleBar.ExtendViewIntoTitleBar = true;
-            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
-            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
-            titleBar.ButtonBackgroundColor = Colors.Transparent;
+            //var currentWindow = WindowHelper.GetWindowForElement(this);
+            //currentWindow.ExtendsContentIntoTitleBar = true;
+            //currentWindow.SetTitleBar(CustomDragRegion);
+            //CustomDragRegion.MinWidth = 188;
+
+            //var currentWindow = WindowHelper.GetWindowForElement(this);
+            //currentWindow.ExtendsContentIntoTitleBar = true;
+
+            //var coreTitleBar = WindowHelper.GetCurrentView().TitleBar;
+            //coreTitleBar.ExtendViewIntoTitleBar = true;
+            //CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+           // AppWindowTitleBar.ButtonBackgroundColor = Colors.Transparent;
         }
         private void SkipButton_Click(object sender, RoutedEventArgs e)
         {
@@ -72,25 +81,26 @@ namespace ModernFlyouts.WinUI.Views
         }
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (Window.Current.Bounds.Width > 830)
-            {
+            
+            //if (WindowEx.Current.Bounds.Width > 830)
+            //{
                 IsMobile = Visibility.Visible;
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 IsMobile = Visibility.Collapsed;
-            }
+            //}
 
-            if (Window.Current.Bounds.Height > 700)
-            {
-                Stepper.Visibility = Visibility.Visible;
-                Skipper.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Stepper.Visibility = Visibility.Collapsed;
-                Skipper.Visibility = Visibility.Collapsed;
-            }
+            //if (WindowEx.Current.Bounds.Height > 700)
+            //{
+               Stepper.Visibility = Visibility.Visible;
+               Skipper.Visibility = Visibility.Visible;
+            //}
+            //else
+            //{
+            //    Stepper.Visibility = Visibility.Collapsed;
+            //    Skipper.Visibility = Visibility.Collapsed;
+            //}
             Bindings.Update();
 
         }

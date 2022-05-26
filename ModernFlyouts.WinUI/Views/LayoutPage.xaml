@@ -24,48 +24,65 @@
                         </controls:Setting.ActionContent>
                     </controls:Setting>
                         
+                
+
+        <!--very rough draft concept position picker--> 
+                    <Grid x:Name="Control1" Grid.Row="1" ColumnSpacing="30" RowSpacing="12"
+              VerticalAlignment="Center" HorizontalAlignment="Center" Background="Gray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                                <Setter Property="VerticalAlignment" Value="Stretch" />
+                                <Setter Property="CornerRadius" Value="5" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="FontSize" Value="36" />
+                            </Style>
+                        </Grid.Resources>
+
+                        <Button Background="Aqua" Grid.Row="0" Grid.Column="0" Content="Top Right"/>
+                        <Button Background="Aqua" Grid.Row="0" Grid.Column="1" Content="Top Center"/>
+                        <Button Background="Aqua" Grid.Row="0" Grid.Column="2" Content="Top Left"/>
+
+                        <Button Background="Aqua" Grid.Row="1" Grid.Column="0" Content="center Right"/>
+                        <Button Background="Aqua" Grid.Row="1" Grid.Column="1" Content="Cencer center"/>
+                        <Button Background="Aqua" Grid.Row="1" Grid.Column="2" Content="center Left"/>
+
+                        <Button Background="Aqua" Grid.Row="2" Grid.Column="0" Content="Bottom right"/>
+                        <Button Background="Aqua" Grid.Row="2" Grid.Column="1" Content="Bottom centre"/>
+                        <Button Background="Aqua" Grid.Row="2" Grid.Column="2" Content="bottom left"/>
+                    </Grid>
+
+                
+                    <!--IsEnabled="{x:Bind Mode=OneWay, Path=ViewModel.EnablePowerLauncher}"-->
+                    <controls:Setting x:Uid="MarginFromScreeenBorder" Icon="&#xE18C;" IsEnabled="True">
+                        <controls:Setting.ActionContent>
+                            <Slider Minimum="0"
+                                    Maximum="2"
+                                    TickFrequency="1"
+                                    TickPlacement="Outside"                        
+                                    MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                    /> <!--TODO add lables to tick's - loose default tight alignment-->
+                            <!--Value="{x:Bind Mode=TwoWay, Path=ViewModel.OverlayOpacity}"-->
+                        </controls:Setting.ActionContent>
+                    </controls:Setting>
+                    
+
                 </controls:SettingsGroup>
 
-    <!--very rough draft concept position picker--> 
-                <Grid x:Name="Control1" Grid.Row="1" ColumnSpacing="30" RowSpacing="12"
-          VerticalAlignment="Center" HorizontalAlignment="Center" Background="Gray">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <Grid.Resources>
-                        <Style TargetType="Button">
-                            <Setter Property="HorizontalAlignment" Value="Stretch" />
-                            <Setter Property="VerticalAlignment" Value="Stretch" />
-                            <Setter Property="CornerRadius" Value="5" />
-                            <Setter Property="Foreground" Value="White" />
-                            <Setter Property="FontSize" Value="36" />
-                        </Style>
-                    </Grid.Resources>
-
-                    <Button Background="Aqua" Grid.Row="0" Grid.Column="0" Content="Top Right"/>
-                    <Button Background="Aqua" Grid.Row="0" Grid.Column="1" Content="Top Center"/>
-                    <Button Background="Aqua" Grid.Row="0" Grid.Column="2" Content="Top Left"/>
-
-                    <Button Background="Aqua" Grid.Row="1" Grid.Column="0" Content="center Right"/>
-                    <Button Background="Aqua" Grid.Row="1" Grid.Column="1" Content="Cencer center"/>
-                    <Button Background="Aqua" Grid.Row="1" Grid.Column="2" Content="center Left"/>
-
-                    <Button Background="Aqua" Grid.Row="2" Grid.Column="0" Content="Bottom right"/>
-                    <Button Background="Aqua" Grid.Row="2" Grid.Column="1" Content="Bottom centre"/>
-                    <Button Background="Aqua" Grid.Row="2" Grid.Column="2" Content="bottom left"/>
-                </Grid>
-                
 
             </StackPanel>
         </controls:SettingsPageControl.ModuleContent>

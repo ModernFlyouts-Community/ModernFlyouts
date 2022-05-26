@@ -15,6 +15,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using ModernFlyouts.WinUI.Helpers;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -27,6 +28,7 @@ namespace ModernFlyouts.WinUI
     public partial class App : Application
     {
         public Window Window => m_window;
+
         public static bool IsElevated { get; set; }
 
         public static bool IsUserAnAdmin { get; set; }
@@ -39,6 +41,7 @@ namespace ModernFlyouts.WinUI
         {
             InitializeComponent();
             UnhandledException += App_UnhandledException;
+            JumpListHelper.CreateJumpListAsync();
         }
 
         private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -56,8 +59,12 @@ namespace ModernFlyouts.WinUI
         {
             m_window = new SettingsWindow();
             m_window.Activate();
+
+            m_TransparentAppWindow = new TransparentWindow();
         }
 
         internal Window m_window;
+
+        public Window m_TransparentAppWindow;
     }
 }
