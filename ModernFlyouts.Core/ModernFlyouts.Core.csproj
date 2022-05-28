@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 				<LangVersion>latest</LangVersion>
+						<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+						<!--<IsTrimmable>true</IsTrimmable>   //enable to enable trimmable-->
   </PropertyGroup>
 
   <ItemGroup>

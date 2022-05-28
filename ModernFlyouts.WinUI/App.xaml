@@ -9,12 +9,12 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <ResourceDictionary Source="/Controls/KeyVisual/KeyVisual.xaml" />
-                <ResourceDictionary Source="/Controls/IsEnabledTextBlock/IsEnabledTextBlock.xaml" />
-                <ResourceDictionary Source="/Styles/TextBlock.xaml" />
-                <ResourceDictionary Source="/Styles/Button.xaml"/>
-                <ResourceDictionary Source="/Themes/Colors.xaml"/>
-                <ResourceDictionary Source="/Themes/SettingsExpanderStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Controls/KeyVisual/KeyVisual.xaml" />
+                <ResourceDictionary Source="ms-appx:///Controls/IsEnabledTextBlock/IsEnabledTextBlock.xaml" />
+                <ResourceDictionary Source="ms-appx:///Styles/TextBlock.xaml" />
+                <ResourceDictionary Source="ms-appx:///Styles/Button.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Themes/Colors.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Themes/SettingsExpanderStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <ResourceDictionary.ThemeDictionaries>

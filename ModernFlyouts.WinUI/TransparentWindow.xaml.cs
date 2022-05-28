@@ -24,6 +24,9 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using static ModernFlyouts.Core.Helpers.Pinvoke.NativeMethods;
 
+using Microsoft.UI;
+using System.Text.RegularExpressions;
+
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -193,6 +196,7 @@ namespace ModernFlyouts.WinUI
         private Microsoft.UI.Windowing.AppWindow m_TransparentAppWindow;
         private Microsoft.UI.Windowing.OverlappedPresenter _presenter;
 
+
         public TransparentWindow()
         {
             OverlappedPresenter customOverlappedPresenter;
@@ -240,9 +244,6 @@ namespace ModernFlyouts.WinUI
             UIElement root = (UIElement)this.Content;
 
         }
-
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         private ushort? _Opacity = 100;

@@ -3,23 +3,28 @@
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+  xmlns:uap7="http://schemas.microsoft.com/appx/manifest/uap/windows10/7"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap rescap">
+  IgnorableNamespaces="uap uap3 uap5 uap7 desktop rescap">
+
 
   <Identity
     Name="a5640f91-3dcb-4632-be79-38fcc6c6d96f"
-    Publisher="CN=samue"
+    Publisher="CN=ModernFlyouts"
     Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>ModernFlyouts.WinUI</DisplayName>
-    <PublisherDisplayName>samue</PublisherDisplayName>
+    <PublisherDisplayName>ModernFlyouts-Community</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22000.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22000.0" />
   </Dependencies>
 
   <Resources>
@@ -36,13 +41,37 @@
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" >
+												<uap:ShowNameOnTiles>
+																<uap:ShowOn Tile="square150x150Logo" />
+																<uap:ShowOn Tile="wide310x150Logo" />
+																<!--<uap:ShowOn Tile="square310x310Logo" />-->
+												</uap:ShowNameOnTiles>
+								</uap:DefaultTile>
+								<uap:SplashScreen Image="Assets\SplashScreen.scale-400.png" BackgroundColor="transparent" uap5:Optional="true" />
       </uap:VisualElements>
     </Application>
   </Applications>
 
+				<!--<Extensions>
+								<desktop:Extension Category="windows.startupTask"
+															Executable="ModernFlyouts.exe"
+															EntryPoint="Windows.FullTrustApplication">
+												<desktop:StartupTask
+														TaskId="MyStartupId"
+														Enabled="true"
+														DisplayName="ModernFlyouts" />
+								</desktop:Extension>
+				</Extensions>-->
+
   <Capabilities>
-    <rescap:Capability Name="runFullTrust" />
-  </Capabilities>
+    		<Capability Name="internetClient"/>
+						<uap7:Capability Name="globalMediaControl" />
+						<rescap:Capability Name="runFullTrust" />
+						<rescap:Capability Name="allowElevation"/>
+						<DeviceCapability Name="bluetooth"/>
+						<!--<uap3:Capability Name="backgroundMediaPlayback"/>
+						<rescap:Capability Name="packageManagement" />-->
+		</Capabilities>
+
 </Package>

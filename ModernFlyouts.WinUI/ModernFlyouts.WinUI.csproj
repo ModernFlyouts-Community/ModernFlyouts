@@ -12,6 +12,8 @@
     <UseWinUI>true</UseWinUI>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 				<ApplicationIcon>ModernFlyoutsMultiRES.ico</ApplicationIcon>
+				<SelfContained>true</SelfContained>
+				<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
   </PropertyGroup>
 
 

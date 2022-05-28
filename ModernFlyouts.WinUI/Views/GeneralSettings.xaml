@@ -79,7 +79,7 @@
                    
                                     <controls:Setting.Description>
                                         <HyperlinkButton NavigateUri="https://aka.ms/powertoysDetectedElevatedHelp"
-                                                         x:Uid="GeneralPage_ToggleSwitch_AlwaysRunElevated_Link"/>
+                                                         x:Uid="GeneralSettings_ToggleSwitch_AlwaysRunElevated_Link"/>
                                     </controls:Setting.Description>
                                     <controls:Setting.ActionContent>
                                         <ToggleSwitch/>

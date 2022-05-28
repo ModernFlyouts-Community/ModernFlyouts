@@ -329,7 +329,7 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="SysTrayIcon_Enable.Header" xml:space="preserve">
     <value>Show icon on system tray area</value>
   </data>
-  <data name="Windows_Color_Settings" xml:space="preserve">
+  <data name="Windows_Color_Settings.Content" xml:space="preserve">
     <value>Windows Color Settings</value>
   </data>
   <data name="Activation_Shortcut.Header" xml:space="preserve">
@@ -483,14 +483,14 @@ Made by the ModernFlyouts community.</value>
   <data name="Other.Header" xml:space="preserve">
     <value>Other</value>
   </data>
-  <data name="Audio_VolumeAdjustmentStep" xml:space="preserve">
+  <data name="Audio_VolumeAdjustmentStep.Header" xml:space="preserve">
     <value>Volume Adjustment Step</value>
   </data>
   <data name="GlowUI_Enable.Header" xml:space="preserve">
     <value>Enable Glow UI (Coming Soon with 0.12)</value>
   </data>
   <data name="Radio_Flyout_ModernFlyouts.Content" xml:space="preserve">
-    <value />
+    <value>ModernFlyouts</value>
   </data>
   <data name="Radio_Flyout_None.Content" xml:space="preserve">
     <value>None</value>
@@ -575,5 +575,11 @@ Made by the ModernFlyouts community.</value>
   </data>
   <data name="MediaFlyoutLayout_Static_Description.Text" xml:space="preserve">
     <value>Static: Always Show selected controls</value>
+  </data>
+  <data name="GeneralSettings_AlwaysRunAsAdminText.Header" xml:space="preserve">
+    <value>Always Run As Admin</value>
+  </data>
+  <data name="GeneralSettings_ToggleSwitch_AlwaysRunElevated_Link.Content" xml:space="preserve">
+    <value>Learn more about administrator mode</value>
   </data>
 </root>

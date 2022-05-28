@@ -34,7 +34,7 @@
                         <controls:Setting.ActionContent>
                             <winui:NumberBox 
                                     MinWidth="{StaticResource SettingActionControlMinWidth}"
-                                    SpinButtonPlacementMode="Compact"
+                                    SpinButtonPlacementMode="Inline"
                                     Minimum="1"/>
                             <!--Value="{Binding Mode=TwoWay, Path=MaximumNumberOfResults}"-->
                         </controls:Setting.ActionContent>
