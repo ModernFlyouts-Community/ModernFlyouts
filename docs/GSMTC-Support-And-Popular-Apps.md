@@ -48,6 +48,7 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | [Cider](https://github.com/ciderapp/Cider) | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟩 | 🟥 |
 | [SoundCloud](https://www.microsoft.com/store/productId/9NVJBT29B36L) | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟩 | 🟥 |
 | [TuneIn Radio](https://www.microsoft.com/store/productId/9WZDNCRFJ3SF) | 🟢 | 🟩 | 🟥 | 🟥 | 🟩 | 🟩 | 🟪 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
+| [FluentCast](https://www.microsoft.com/store/productId/9PM46JRSDQQR) | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟥 | 🟩 |
 | [MusicBee](https://getmusicbee.com/downloads/) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟪 |
 | [AIMP](https://www.aimp.ru/?do=download&os=windows) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [DeaDBeeF](https://deadbeef.sourceforge.io/download.html) | 🟡 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
@@ -102,7 +103,7 @@ NOTE- Chromium based includes Chromium browsers and its derivatives (Chrome, New
 - **VLC (Desktop)** - https://github.com/spmn/vlc-win10smtc
 - **Winamp** - https://github.com/NanMetal/gen_smtc
 - **iTunes** - https://github.com/thewizrd/iTunes-SMTC 
-- **MPV** - <sup><a name="f1">1</a></sup>https://github.com/x0wllaar/MPV-SMTC OR
+- **MPV** - <sup><a name="f1">1</a></sup>https://github.com/x0wllaar/MPV-SMTC OR<br>
           - <sup><a name="f2">2</a></sup>https://github.com/datasone/MPVMediaControl
 
 ## Help us include support for more applications that are currently unsupported
