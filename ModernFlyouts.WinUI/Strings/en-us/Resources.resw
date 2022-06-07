@@ -365,8 +365,8 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Appearance_Behavior.Header" xml:space="preserve">
     <value>Appearance &amp; behavior</value>
   </data>
-  <data name="DefaultFlyout.Header" xml:space="preserve">
-    <value>Default Flyout</value>
+  <data name="DisplayedFlyout.Header" xml:space="preserve">
+    <value>Displayed Flyout</value>
   </data>
   <data name="General.ModuleDescription" xml:space="preserve">
     <value>ModernFlyouts is a Fluent Design based fully customizable replacement to the system flyouts in Windows. 
@@ -581,5 +581,11 @@ Made by the ModernFlyouts community.</value>
   </data>
   <data name="GeneralSettings_ToggleSwitch_AlwaysRunElevated_Link.Content" xml:space="preserve">
     <value>Learn more about administrator mode</value>
+  </data>
+  <data name="Appearance_RoundedCorners.Header" xml:space="preserve">
+    <value>Rounded corners for controls and flyouts</value>
+  </data>
+  <data name="Appearance_RoundedCorners_Description.Text" xml:space="preserve">
+    <value>Let controls and flyouts use rounded corners</value>
   </data>
 </root>

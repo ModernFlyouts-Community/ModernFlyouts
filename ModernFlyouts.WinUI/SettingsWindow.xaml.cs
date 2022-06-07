@@ -1,11 +1,5 @@
-﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Windowing;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
+﻿using Microsoft.UI.Windowing;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +20,7 @@ using WinRT.Interop;
 using WinUIEx;
 using Windows.UI;
 using WindowId = Microsoft.UI.WindowId;
+using Microsoft.UI.Xaml;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -45,15 +40,12 @@ namespace ModernFlyouts.WinUI
             ShellPage.SetElevationStatus(App.IsElevated);
             ShellPage.SetIsUserAnAdmin(App.IsUserAnAdmin);
 
-            // Set window icon
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-            WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
-            AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
-            appWindow.SetIcon("ModernFlyoutsMultiRES.ico");
-
-            this.InitializeComponent();
+            this.Backdrop = Backdrop.Mica;
 
             SetTitleBar();
+
+            this.InitializeComponent();
+            
         }
 
         private void SetTitleBar()
@@ -69,10 +61,19 @@ namespace ModernFlyouts.WinUI
                 //currentWindow.SetTitleBar(CustomDragRegion);
                 //CustomDragRegion.MinWidth = 188;
 
-                var titlebar = appWindow.TitleBar;
-                titlebar.ExtendsContentIntoTitleBar = true;
-                titlebar.ButtonBackgroundColor = (Color)App.Current.Resources["SolidBackgroundFillColorBase"];
-                titlebar.ButtonInactiveBackgroundColor = (Color)App.Current.Resources["SolidBackgroundFillColorBase"];
+                //var titlebar = appWindow.TitleBar;
+                //titlebar.ExtendsContentIntoTitleBar = true;
+                //titlebar.ButtonBackgroundColor = (Color)App.Current.Resources["SolidBackgroundFillColorBase"];
+                //titlebar.ButtonInactiveBackgroundColor = (Color)App.Current.Resources["SolidBackgroundFillColorBase"];
+                //titlebar.IconShowOptions = IconShowOptions.HideIconAndSystemMenu;
+
+                appWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+                appWindow.TitleBar.IconShowOptions = IconShowOptions.HideIconAndSystemMenu;
+                var transparent = Windows.UI.Color.FromArgb(0, 0, 0, 0);
+                appWindow.TitleBar.BackgroundColor = transparent;
+                appWindow.TitleBar.ButtonBackgroundColor = transparent;
+                appWindow.TitleBar.InactiveBackgroundColor = transparent;
+                appWindow.TitleBar.ButtonInactiveBackgroundColor = transparent;
             }
             else
             {

@@ -8,8 +8,13 @@ using CommunityToolkit.Mvvm.Input;
 using ModernFlyouts.WinUI.Helpers;
 using ModernFlyouts.WinUI.Services;
 
+using ModernFlyouts.WinUI.Contracts.Services;
+using ModernFlyouts.WinUI.Models;
+
 using Windows.ApplicationModel;
 using Microsoft.UI.Xaml;
+using ModernFlyouts.Core;
+using ModernFlyouts.WinUI.Views;
 
 namespace ModernFlyouts.WinUI.ViewModels
 {
@@ -17,6 +22,42 @@ namespace ModernFlyouts.WinUI.ViewModels
     public class GeneralSettingsViewModel : ObservableObject
     {
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
+
+        private readonly ILocalizationService _localizationService;
+
+        private LanguageItem _selectedLanguage;
+        public LanguageItem SelectedLanguage
+        {
+            get { return _selectedLanguage; }
+            set
+            {
+                if (SetProperty(ref _selectedLanguage, value) is true)
+                {
+                    OnSelectedLanguageChanged(value);
+                }
+            }
+        }
+
+        private void OnSelectedLanguageChanged(LanguageItem value)
+        {
+            _localizationService.SetLanguageAsync(value);
+            IsLocalizationChanged = true;
+        }
+
+        private bool _isLocalizationChanged;
+        public bool IsLocalizationChanged
+        {
+            get { return _isLocalizationChanged; }
+            set { SetProperty(ref _isLocalizationChanged, value); }
+        }
+
+        //private List<LanguageItem> _availableLanguages;
+        //public List<LanguageItem> AvailableLanguages
+        //{
+        //    get { return _availableLanguages; }
+        //    set { SetProperty(ref _availableLanguages, value); }
+        //}
+
 
         public ElementTheme ElementTheme
         {
@@ -73,5 +114,19 @@ namespace ModernFlyouts.WinUI.ViewModels
 
             return $"{appName} - {version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
         }
+
+
+        internal IAsyncRelayCommand LicenseCommand { get; }
+
+        //private async Task ExecuteLicenseCommandAsync()
+        //{
+        //    await IWindowManager.ShowContentDialogAsync(
+        //        new MarkdownContentDialog(
+        //            await AssetsHelper.GetLicenseAsync()),
+        //        Strings.Close,
+        //        title: "License");
+        //}
+
+
     }
 }

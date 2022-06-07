@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-GB" original="MODERNFLYOUTS.WINUI/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.1.12.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="MODERNFLYOUTS.WINUI/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
+        <trans-unit id="AppDisplayName" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts Settings</source>
+          <target state="new">ModernFlyouts Settings</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Application display name</note>
+        </trans-unit>
+        <trans-unit id="AppDescription" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts Settings app</source>
+          <target state="new">ModernFlyouts Settings app</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Application description</note>
+        </trans-unit>
+        <trans-unit id="GeneralSettings.Content" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="new">General</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for Blank</note>
+        </trans-unit>
+        <trans-unit id="Settings_Theme.Text" translate="yes" xml:space="preserve">
+          <source>Choose Theme</source>
+          <target state="new">Choose Theme</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Choose theme text for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_Theme_Dark.Content" translate="yes" xml:space="preserve">
+          <source>Dark</source>
+          <target state="new">Dark</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Dark theme text for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_Theme_Default.Content" translate="yes" xml:space="preserve">
+          <source>Windows default</source>
+          <target state="new">Windows default</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Windows default theme text for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_Theme_Light.Content" translate="yes" xml:space="preserve">
+          <source>Light</source>
+          <target state="new">Light</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Light theme text for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_About.Text" translate="yes" xml:space="preserve">
+          <source>About this application</source>
+          <target state="new">About this application</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">About this application title for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_AboutDescription.Text" translate="yes" xml:space="preserve">
+          <source>Settings page placeholder text.  Your app description goes here.</source>
+          <target state="new">Settings page placeholder text.  Your app description goes here.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">About this application description for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_PrivacyTermsLink.Content" translate="yes" xml:space="preserve">
+          <source>Privacy Statement</source>
+          <target state="new">Privacy Statement</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Privacy Statement link content for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_PrivacyTermsLink.NavigateUri" translate="yes" xml:space="preserve">
+          <source>https://YourPrivacyUrlGoesHere/</source>
+          <target state="new">https://YourPrivacyUrlGoesHere/</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Here is your Privacy Statement url for Settings</note>
+        </trans-unit>
+        <trans-unit id="Settings_Appearance_Behavior.Content" translate="yes" xml:space="preserve">
+          <source>Appearance &amp; Behavior</source>
+          <target state="new">Appearance &amp; Behavior</target>
+        </trans-unit>
+        <trans-unit id="Oobe_Overview_Description.Text" translate="yes" xml:space="preserve">
+          <source>Welcome to Modernflyouts. This application aims to provide a Fluent Design based customisable replacement for the flyouts in Windows. This guide will show you how to setup and customise your flyouts.</source>
+          <target state="new">Welcome to Modernflyouts. This application aims to provide a Fluent Design based customisable replacement for the flyouts in Windows. This guide will show you how to setup and customise your flyouts.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">First use prompt message body</note>
+        </trans-unit>
+        <trans-unit id="FirstRunDialog.Title" translate="yes" xml:space="preserve">
+          <source>Welcome</source>
+          <target state="new">Welcome</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">First use prompt message title</note>
+        </trans-unit>
+        <trans-unit id="FirstRunDialog.PrimaryButtonText" translate="yes" xml:space="preserve">
+          <source>Ok</source>
+          <target state="new">Ok</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">First use prompt message primary button text</note>
+        </trans-unit>
+        <trans-unit id="WhatsNew_Body.Text" translate="yes" xml:space="preserve">
+          <source>Replace the content of this dialog with whatever content is appropriate to your app.
+You might want to consider lists of bug fixes and new features.
+Don't feel restricted to just text. You can also include images and animations if you wish too.
+</source>
+          <target state="new">Replace the content of this dialog with whatever content is appropriate to your app.
+You might want to consider lists of bug fixes and new features.
+Don't feel restricted to just text. You can also include images and animations if you wish too.
+</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">What's new prompt message body</note>
+        </trans-unit>
+        <trans-unit id="WhatsNewDialog.Title" translate="yes" xml:space="preserve">
+          <source>What's new in this version</source>
+          <target state="new">What's new in this version</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">What's new prompt message title</note>
+        </trans-unit>
+        <trans-unit id="WhatsNewDialog.PrimaryButtonText" translate="yes" xml:space="preserve">
+          <source>Ok</source>
+          <target state="new">Ok</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">What's new prompt message primary button text</note>
+        </trans-unit>
+        <trans-unit id="Settings_Layout.Content" translate="yes" xml:space="preserve">
+          <source>Layout</source>
+          <target state="new">Layout</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules.Content" translate="yes" xml:space="preserve">
+          <source>Modules</source>
+          <target state="new">Modules</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_Airplane.Content" translate="yes" xml:space="preserve">
+          <source>Airplane</source>
+          <target state="new">Airplane</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_Audio.Content" translate="yes" xml:space="preserve">
+          <source>Audio</source>
+          <target state="new">Audio</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_AudioTray.Content" translate="yes" xml:space="preserve">
+          <source>Mixer Tray</source>
+          <target state="new">Mixer Tray</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_Battery.Content" translate="yes" xml:space="preserve">
+          <source>Battery</source>
+          <target state="new">Battery</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_Brightness.Content" translate="yes" xml:space="preserve">
+          <source>Brightness</source>
+          <target state="new">Brightness</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_Camera.Content" translate="yes" xml:space="preserve">
+          <source>Camera</source>
+          <target state="new">Camera</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_LockKeys.Content" translate="yes" xml:space="preserve">
+          <source>LockKeys</source>
+          <target state="new">LockKeys</target>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_Media.Content" translate="yes" xml:space="preserve">
+          <source>Media</source>
+          <target state="new">Media</target>
+        </trans-unit>
+        <trans-unit id="Settings_Welcome.Content" translate="yes" xml:space="preserve">
+          <source>Welcome/Learn(OOBE)</source>
+          <target state="new">Welcome/Learn(OOBE)</target>
+        </trans-unit>
+        <trans-unit id="Settings_Appearance.Text" translate="yes" xml:space="preserve">
+          <source>Appearance &amp; Behavior</source>
+          <target state="new">Appearance &amp; Behavior</target>
+        </trans-unit>
+        <trans-unit id="SettingsAppearance.Text" translate="yes" xml:space="preserve">
+          <source>Appearance</source>
+          <target state="new">Appearance</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Subtitle of appearance setting on Settings page</note>
+        </trans-unit>
+        <trans-unit id="SettingsAppThemeDescription.Text" translate="yes" xml:space="preserve">
+          <source>Select which app theme to display</source>
+          <target state="new">Select which app theme to display</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description of App theme expander</note>
+        </trans-unit>
+        <trans-unit id="SettingsAppThemeTitle.Text" translate="yes" xml:space="preserve">
+          <source>App theme</source>
+          <target state="new">App theme</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of App theme expander</note>
+        </trans-unit>
+        <trans-unit id="FirstRun_Body.Text" translate="yes" xml:space="preserve">
+          <source>Replace the content of this dialog with whatever content is appropriate to your app.
+You might want to explain key features or functionality.
+Don't feel restricted to just text. You can also include images and animations if you wish too.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+
+Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</source>
+          <target state="new">Replace the content of this dialog with whatever content is appropriate to your app.
+You might want to explain key features or functionality.
+Don't feel restricted to just text. You can also include images and animations if you wish too.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+
+Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">First use prompt message body</note>
+        </trans-unit>
+        <trans-unit id="Settings_Modules_AudioFlyout.Content" translate="yes" xml:space="preserve">
+          <source>Audio Flyout</source>
+          <target state="new">Audio Flyout</target>
+        </trans-unit>
+        <trans-unit id="Audio_Module.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Audio Module</source>
+          <target state="new">Audio Module</target>
+        </trans-unit>
+        <trans-unit id="Audio_Module_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Enable Audio Module</source>
+          <target state="new">Enable Audio Module</target>
+        </trans-unit>
+        <trans-unit id="Airplane_Module_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Enable Audio Module</source>
+          <target state="new">Enable Audio Module</target>
+        </trans-unit>
+        <trans-unit id="Audio_Module.ModuleDescription" translate="yes" xml:space="preserve">
+          <source>Audio Module description goes here</source>
+          <target state="new">Audio Module description goes here</target>
+        </trans-unit>
+        <trans-unit id="IgnoreHotkeysInFullScreen.Content" translate="yes" xml:space="preserve">
+          <source>ignore hotkeys in full screen mode</source>
+          <target state="new">ignore hotkeys in full screen mode</target>
+        </trans-unit>
+        <trans-unit id="Shortcut" translate="yes" xml:space="preserve">
+          <source>Shortcut/Hotkey</source>
+          <target state="new">Shortcut/Hotkey</target>
+        </trans-unit>
+        <trans-unit id="Shell_Appearance_Behavior.Content" translate="yes" xml:space="preserve">
+          <source>Appearance_Behavior</source>
+          <target state="new">Appearance_Behavior</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for Appearance_Behavior</note>
+        </trans-unit>
+        <trans-unit id="Appearance.Header" translate="yes" xml:space="preserve">
+          <source>Appearance</source>
+          <target state="new">Appearance</target>
+        </trans-unit>
+        <trans-unit id="AppThemeHeader.Header" translate="yes" xml:space="preserve">
+          <source>App Theme</source>
+          <target state="new">App Theme</target>
+        </trans-unit>
+        <trans-unit id="Behavior.Header" translate="yes" xml:space="preserve">
+          <source>Behavior</source>
+          <target state="new">Behavior</target>
+        </trans-unit>
+        <trans-unit id="ColoredTrayIcon_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Use colored tray icon</source>
+          <target state="new">Use colored tray icon</target>
+        </trans-unit>
+        <trans-unit id="FlyoutFadeAnimation_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Fade Animation</source>
+          <target state="new">Fade Animation</target>
+        </trans-unit>
+        <trans-unit id="FlyoutThemeHeader.Header" translate="yes" xml:space="preserve">
+          <source>Flyout Theme</source>
+          <target state="new">Flyout Theme</target>
+        </trans-unit>
+        <trans-unit id="Flyout_Opacity.Header" translate="yes" xml:space="preserve">
+          <source>Flyout Opacity/Transparency</source>
+          <target state="new">Flyout Opacity/Transparency</target>
+        </trans-unit>
+        <trans-unit id="Flyout_Timeout.Header" translate="yes" xml:space="preserve">
+          <source>Flyout Timeout (ms)</source>
+          <target state="new">Flyout Timeout (ms)</target>
+        </trans-unit>
+        <trans-unit id="LockKeys_Module_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Enable Lock Keys Flyouts</source>
+          <target state="new">Enable Lock Keys Flyouts</target>
+        </trans-unit>
+        <trans-unit id="PositionHeader.Header" translate="yes" xml:space="preserve">
+          <source>Preferred monitor position</source>
+          <target state="new">Preferred monitor position</target>
+        </trans-unit>
+        <trans-unit id="Radio_Position_Cursor.Content" translate="yes" xml:space="preserve">
+          <source>Monitor with mouse cursor</source>
+          <target state="new">Monitor with mouse cursor</target>
+        </trans-unit>
+        <trans-unit id="Radio_Position_Focus.Content" translate="yes" xml:space="preserve">
+          <source>Monitor with focused window</source>
+          <target state="new">Monitor with focused window</target>
+        </trans-unit>
+        <trans-unit id="Radio_Position_Primary_Monitor.Content" translate="yes" xml:space="preserve">
+          <source>Primary monitor</source>
+          <target state="new">Primary monitor</target>
+        </trans-unit>
+        <trans-unit id="Radio_Theme_Dark.Content" translate="yes" xml:space="preserve">
+          <source>Dark</source>
+          <target state="new">Dark</target>
+        </trans-unit>
+        <trans-unit id="Radio_Theme_System.Content" translate="yes" xml:space="preserve">
+          <source>System</source>
+          <target state="new">System</target>
+        </trans-unit>
+        <trans-unit id="Radio_Theme_Light.Content" translate="yes" xml:space="preserve">
+          <source>Light</source>
+          <target state="new">Light</target>
+        </trans-unit>
+        <trans-unit id="SysTrayIcon_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Show icon on system tray area</source>
+          <target state="new">Show icon on system tray area</target>
+        </trans-unit>
+        <trans-unit id="Windows_Color_Settings.Content" translate="yes" xml:space="preserve">
+          <source>Windows Color Settings</source>
+          <target state="new">Windows Color Settings</target>
+        </trans-unit>
+        <trans-unit id="Activation_Shortcut.Header" translate="yes" xml:space="preserve">
+          <source>Hotkeys</source>
+          <target state="new">Hotkeys</target>
+        </trans-unit>
+        <trans-unit id="GeneralHeader.Header" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="new">General</target>
+        </trans-unit>
+        <trans-unit id="MediaSessionPanelOrientation.Content" translate="yes" xml:space="preserve">
+          <source>Media Session Panel Orientation</source>
+          <target state="new">Media Session Panel Orientation</target>
+        </trans-unit>
+        <trans-unit id="PanelOrientation_Horizontal.Content" translate="yes" xml:space="preserve">
+          <source>Horizontal</source>
+          <target state="new">Horizontal</target>
+        </trans-unit>
+        <trans-unit id="PanelOrientation_Vertical.Content" translate="yes" xml:space="preserve">
+          <source>Vertical</source>
+          <target state="new">Vertical</target>
+        </trans-unit>
+        <trans-unit id="ShowMediaFlyoutWithVolume_Enable.Content" translate="yes" xml:space="preserve">
+          <source>Show Media Flyout with Volume Flyout</source>
+          <target state="new">Show Media Flyout with Volume Flyout</target>
+        </trans-unit>
+        <trans-unit id="ShowVolumeWithMediaFlyout_Enable.Content" translate="yes" xml:space="preserve">
+          <source>Show Volume Flyout with Media Flyout</source>
+          <target state="new">Show Volume Flyout with Media Flyout</target>
+        </trans-unit>
+        <trans-unit id="ThumbnailAlignment.Content" translate="yes" xml:space="preserve">
+          <source>Thumbnail alignment</source>
+          <target state="new">Thumbnail alignment</target>
+        </trans-unit>
+        <trans-unit id="UseThumbnailAsBackround_Enable.Content" translate="yes" xml:space="preserve">
+          <source>Use media's thumbnail as Media Flyout's backround</source>
+          <target state="new">Use media's thumbnail as Media Flyout's backround</target>
+        </trans-unit>
+        <trans-unit id="Admin_mode.Header" translate="yes" xml:space="preserve">
+          <source>Administrator mode</source>
+          <target state="new">Administrator mode</target>
+        </trans-unit>
+        <trans-unit id="Appearance_Behavior.Header" translate="yes" xml:space="preserve">
+          <source>Appearance &amp; behavior</source>
+          <target state="new">Appearance &amp; behavior</target>
+        </trans-unit>
+        <trans-unit id="General.ModuleDescription" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts is a Fluent Design based fully customizable replacement to the system flyouts in Windows. 
+Made by the ModernFlyouts community.</source>
+          <target state="new">ModernFlyouts is a Fluent Design based fully customizable replacement to the system flyouts in Windows. 
+Made by the ModernFlyouts community.</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_Documentation.Text" translate="yes" xml:space="preserve">
+          <source>Documentation</source>
+          <target state="new">Documentation</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_PrivacyStatement_URL.Text" translate="yes" xml:space="preserve">
+          <source>Privacy statement</source>
+          <target state="new">Privacy statement</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_ReportAbug.Text" translate="yes" xml:space="preserve">
+          <source>Report a bug</source>
+          <target state="new">Report a bug</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_RunAtStartUp.Description" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts will launch automatically</source>
+          <target state="new">ModernFlyouts will launch automatically</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_RunAtStartUp.Header" translate="yes" xml:space="preserve">
+          <source>Run at startup</source>
+          <target state="new">Run at startup</target>
+        </trans-unit>
+        <trans-unit id="GeneralSettings_RunningAsAdminText" translate="yes" xml:space="preserve">
+          <source>Running as administrator</source>
+          <target state="new">Running as administrator</target>
+        </trans-unit>
+        <trans-unit id="General_Repository.Text" translate="yes" xml:space="preserve">
+          <source>GitHub repository</source>
+          <target state="new">GitHub repository</target>
+        </trans-unit>
+        <trans-unit id="General_UpToDate.Title" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts is up to date</source>
+          <target state="new">ModernFlyouts is up to date</target>
+        </trans-unit>
+        <trans-unit id="General_Version.Header" translate="yes" xml:space="preserve">
+          <source>Version</source>
+          <target state="new">Version</target>
+        </trans-unit>
+        <trans-unit id="OpenSource_Notice.Text" translate="yes" xml:space="preserve">
+          <source>Open-source notice</source>
+          <target state="new">Open-source notice</target>
+        </trans-unit>
+        <trans-unit id="ReleaseNotes.Content" translate="yes" xml:space="preserve">
+          <source>Release notes</source>
+          <target state="new">Release notes</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_RequestAFeature.Text" translate="yes" xml:space="preserve">
+          <source>Request a feature</source>
+          <target state="new">Request a feature</target>
+        </trans-unit>
+        <trans-unit id="Airplane.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Airplane</source>
+          <target state="new">Airplane</target>
+        </trans-unit>
+        <trans-unit id="Appearance_BehaviorSettings.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Appearance &amp; Behavior</source>
+          <target state="new">Appearance &amp; Behavior</target>
+        </trans-unit>
+        <trans-unit id="Audio.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Audio</source>
+          <target state="new">Audio</target>
+        </trans-unit>
+        <trans-unit id="Battery.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Battery</source>
+          <target state="new">Battery</target>
+        </trans-unit>
+        <trans-unit id="Brightness.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Brightness Flyout</source>
+          <target state="new">Brightness Flyout</target>
+        </trans-unit>
+        <trans-unit id="Camera.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Camera</source>
+          <target state="new">Camera</target>
+        </trans-unit>
+        <trans-unit id="General.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="new">General</target>
+        </trans-unit>
+        <trans-unit id="Layout.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Layout</source>
+          <target state="new">Layout</target>
+        </trans-unit>
+        <trans-unit id="LockKeys.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Lock Keys</source>
+          <target state="new">Lock Keys</target>
+        </trans-unit>
+        <trans-unit id="Media.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Media</source>
+          <target state="new">Media</target>
+        </trans-unit>
+        <trans-unit id="CapsLock.Header" translate="yes" xml:space="preserve">
+          <source>Caps Lock</source>
+          <target state="new">Caps Lock</target>
+        </trans-unit>
+        <trans-unit id="Contributors.Text" translate="yes" xml:space="preserve">
+          <source>Contributors</source>
+          <target state="new">Contributors</target>
+        </trans-unit>
+        <trans-unit id="InsertLock.Header" translate="yes" xml:space="preserve">
+          <source>Insert Lock</source>
+          <target state="new">Insert Lock</target>
+        </trans-unit>
+        <trans-unit id="NumLock.Header" translate="yes" xml:space="preserve">
+          <source>Num Lock</source>
+          <target state="new">Num Lock</target>
+        </trans-unit>
+        <trans-unit id="RateAndReview.Text" translate="yes" xml:space="preserve">
+          <source>Rate and review on the Microsoft Store</source>
+          <target state="new">Rate and review on the Microsoft Store</target>
+        </trans-unit>
+        <trans-unit id="ScrollLock.Header" translate="yes" xml:space="preserve">
+          <source>Scroll Lock</source>
+          <target state="new">Scroll Lock</target>
+        </trans-unit>
+        <trans-unit id="SelectLockFlyouts.Header" translate="yes" xml:space="preserve">
+          <source>Select the keys you want to show the flyout for</source>
+          <target state="new">Select the keys you want to show the flyout for</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_ExportSettings.Header" translate="yes" xml:space="preserve">
+          <source>Export Settings</source>
+          <target state="new">Export Settings</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_ExportSettings_Button.Content" translate="yes" xml:space="preserve">
+          <source>Export Settings</source>
+          <target state="new">Export Settings</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_ImportSettings.Header" translate="yes" xml:space="preserve">
+          <source>Import Settings</source>
+          <target state="new">Import Settings</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_ImportSettings_Button.Content" translate="yes" xml:space="preserve">
+          <source>Import Settings</source>
+          <target state="new">Import Settings</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_ResetSettings.Header" translate="yes" xml:space="preserve">
+          <source>Reset Settings</source>
+          <target state="new">Reset Settings</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_ResetSettings_Button.Content" translate="yes" xml:space="preserve">
+          <source>Reset Settings</source>
+          <target state="new">Reset Settings</target>
+        </trans-unit>
+        <trans-unit id="GeneralPage_RestartAsAdmin_Button.Content" translate="yes" xml:space="preserve">
+          <source>Restart ModernFlyouts as administrator</source>
+          <target state="new">Restart ModernFlyouts as administrator</target>
+        </trans-unit>
+        <trans-unit id="Other.Header" translate="yes" xml:space="preserve">
+          <source>Other</source>
+          <target state="new">Other</target>
+        </trans-unit>
+        <trans-unit id="Audio_VolumeAdjustmentStep.Header" translate="yes" xml:space="preserve">
+          <source>Volume Adjustment Step</source>
+          <target state="new">Volume Adjustment Step</target>
+        </trans-unit>
+        <trans-unit id="GlowUI_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Enable Glow UI (Coming Soon with 0.12)</source>
+          <target state="new">Enable Glow UI (Coming Soon with 0.12)</target>
+        </trans-unit>
+        <trans-unit id="Radio_Flyout_ModernFlyouts.Content" translate="yes" xml:space="preserve">
+          <source>ModernFlyouts</source>
+          <target state="new">ModernFlyouts</target>
+        </trans-unit>
+        <trans-unit id="Radio_Flyout_None.Content" translate="yes" xml:space="preserve">
+          <source>None</source>
+          <target state="new">None</target>
+        </trans-unit>
+        <trans-unit id="Radio_Flyout_WindowsDefault.Content" translate="yes" xml:space="preserve">
+          <source>Windows Default</source>
+          <target state="new">Windows Default</target>
+        </trans-unit>
+        <trans-unit id="AudioTray.ModuleTitle" translate="yes" xml:space="preserve">
+          <source>Systray Audio Flyout</source>
+          <target state="new">Systray Audio Flyout</target>
+        </trans-unit>
+        <trans-unit id="Battery_Configuration.Header" translate="yes" xml:space="preserve">
+          <source>Configuration</source>
+          <target state="new">Configuration</target>
+        </trans-unit>
+        <trans-unit id="Battery_Module_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Battery Module</source>
+          <target state="new">Battery Module</target>
+        </trans-unit>
+        <trans-unit id="DefaultPowerPlan.Header" translate="yes" xml:space="preserve">
+          <source>Power Plan</source>
+          <target state="new">Power Plan</target>
+        </trans-unit>
+        <trans-unit id="GeneralSettings_Language.Header" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <target state="new">Language</target>
+        </trans-unit>
+        <trans-unit id="MediaSessionPanelOrientation.Header" translate="yes" xml:space="preserve">
+          <source>Media Sessions panel Orientation</source>
+          <target state="new">Media Sessions panel Orientation</target>
+        </trans-unit>
+        <trans-unit id="Media_Module_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Media Module</source>
+          <target state="new">Media Module</target>
+        </trans-unit>
+        <trans-unit id="ShowMediaFlyoutWithVolume_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Show Media Flyout with Volume Flyout</source>
+          <target state="new">Show Media Flyout with Volume Flyout</target>
+        </trans-unit>
+        <trans-unit id="ShowVolumeWithMediaFlyout_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Show Volume Flyout with Media Flyout</source>
+          <target state="new">Show Volume Flyout with Media Flyout</target>
+        </trans-unit>
+        <trans-unit id="ThumbnailAlignment.Header" translate="yes" xml:space="preserve">
+          <source>Thumbnail Alignment</source>
+          <target state="new">Thumbnail Alignment</target>
+        </trans-unit>
+        <trans-unit id="Toggle_powerusageinfo.Header" translate="yes" xml:space="preserve">
+          <source>Power Usage Info</source>
+          <target state="new">Power Usage Info</target>
+        </trans-unit>
+        <trans-unit id="UseThumbnailAsBackround_Enable.Header" translate="yes" xml:space="preserve">
+          <source>Use media thumbnail as Media Flyout Backround</source>
+          <target state="new">Use media thumbnail as Media Flyout Backround</target>
+        </trans-unit>
+        <trans-unit id="AcrylicBackdropDescription.Text" translate="yes" xml:space="preserve">
+          <source>Acrylic Backdrop sets an Acrylic backdrop</source>
+          <target state="new">Acrylic Backdrop sets an Acrylic backdrop</target>
+        </trans-unit>
+        <trans-unit id="AcrylicMenuItem.Content" translate="yes" xml:space="preserve">
+          <source>Acrylic</source>
+          <target state="new">Acrylic</target>
+        </trans-unit>
+        <trans-unit id="BackdropDescription.Text" translate="yes" xml:space="preserve">
+          <source>Set Flyout backdrop type,</source>
+          <target state="new">Set Flyout backdrop type,</target>
+        </trans-unit>
+        <trans-unit id="FlyoutBackdropHeader.Header" translate="yes" xml:space="preserve">
+          <source>Flyout Backdrop</source>
+          <target state="new">Flyout Backdrop</target>
+        </trans-unit>
+        <trans-unit id="FollowSystemAccent.Header" translate="yes" xml:space="preserve">
+          <source>Follow System Accent Colour</source>
+          <target state="new">Follow System Accent Colour</target>
+        </trans-unit>
+        <trans-unit id="MicaBackdropDescription.Text" translate="yes" xml:space="preserve">
+          <source>Mica Backdrop sets a mica backdrop</source>
+          <target state="new">Mica Backdrop sets a mica backdrop</target>
+        </trans-unit>
+        <trans-unit id="MicaMenuItem.Content" translate="yes" xml:space="preserve">
+          <source>Mica</source>
+          <target state="new">Mica</target>
+        </trans-unit>
+        <trans-unit id="SolidBackdropDescription.Text" translate="yes" xml:space="preserve">
+          <source>Solid Backdrop sets a solid colour matching your system theme with adjustable transparency.</source>
+          <target state="new">Solid Backdrop sets a solid colour matching your system theme with adjustable transparency.</target>
+        </trans-unit>
+        <trans-unit id="SolidMenuItem.Content" translate="yes" xml:space="preserve">
+          <source>Solid</source>
+          <target state="new">Solid</target>
+        </trans-unit>
+        <trans-unit id="MediaFlyoutLayout.Header" translate="yes" xml:space="preserve">
+          <source>Flyout Layout</source>
+          <target state="new">Flyout Layout</target>
+        </trans-unit>
+        <trans-unit id="MediaFlyoutLayout_Adaptive.Content" translate="yes" xml:space="preserve">
+          <source>Adaptive</source>
+          <target state="new">Adaptive</target>
+        </trans-unit>
+        <trans-unit id="MediaFlyoutLayout_Adaptive_Description.Text" translate="yes" xml:space="preserve">
+          <source>Adaptive: Show all supported controls</source>
+          <target state="new">Adaptive: Show all supported controls</target>
+        </trans-unit>
+        <trans-unit id="MediaFlyoutLayout_Static.Content" translate="yes" xml:space="preserve">
+          <source>Static</source>
+          <target state="new">Static</target>
+        </trans-unit>
+        <trans-unit id="MediaFlyoutLayout_Static_Description.Text" translate="yes" xml:space="preserve">
+          <source>Static: Always Show selected controls</source>
+          <target state="new">Static: Always Show selected controls</target>
+        </trans-unit>
+        <trans-unit id="GeneralSettings_AlwaysRunAsAdminText.Header" translate="yes" xml:space="preserve">
+          <source>Always Run As Admin</source>
+          <target state="new">Always Run As Admin</target>
+        </trans-unit>
+        <trans-unit id="GeneralSettings_ToggleSwitch_AlwaysRunElevated_Link.Content" translate="yes" xml:space="preserve">
+          <source>Learn more about administrator mode</source>
+          <target state="new">Learn more about administrator mode</target>
+        </trans-unit>
+        <trans-unit id="Appearance_RoundedCorners.Header" translate="yes" xml:space="preserve">
+          <source>Rounded corners for controls and flyouts</source>
+          <target state="new">Rounded corners for controls and flyouts</target>
+        </trans-unit>
+        <trans-unit id="Appearance_RoundedCorners_Description.Text" translate="yes" xml:space="preserve">
+          <source>Let controls and flyouts use rounded corners</source>
+          <target state="new">Let controls and flyouts use rounded corners</target>
+        </trans-unit>
+        <trans-unit id="DisplayedFlyout.Header" translate="yes" xml:space="preserve">
+          <source>Displayed Flyout</source>
+          <target state="new">Displayed Flyout</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

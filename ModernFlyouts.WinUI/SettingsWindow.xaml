@@ -7,10 +7,46 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Width="1024" Height="768" MinWidth="200" MinHeight="200"
-    Title="ModernFlyouts Settings">
+    Width="1024" Height="768" 
+    MinWidth="200" MinHeight="200"
+    Backdrop="Mica"
+    TaskBarIcon="ModernFlyoutsMultiRES.ico"
+    Title="{x:Bind GetAppTitleFromSystem()}"
+    ExtendsContentIntoTitleBar="True">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!--<Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid x:Name="AppTitleBar" Background="Transparent" VerticalAlignment="Top" 
+                Canvas.ZIndex="1" 
+                Margin="48,8,0,0"    Height="48">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition x:Name="IconColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="TitleColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="LeftDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="AppFontIcon"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center"
+                    Source="ms-appx:///Assets/Square44x44Logo.targetsize-48.png" 
+                    Width="16" 
+                    Grid.Column = "1"
+                    Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}" />
+            <TextBlock x:Name="TitleTextBlock"
+                    Text="{x:Bind GetAppTitleFromSystem()}"
+                    VerticalAlignment="Center"
+                    Margin="12, 0, 0, 0"
+                    Grid.Column = "2"
+                    Style="{StaticResource CaptionTextBlockStyle}" />
+        </Grid>-->
+
+
+    <Grid Background="Transparent" >
 
         <Border x:Name="AppTitleBar"
                 IsHitTestVisible="True"
@@ -18,18 +54,21 @@
                 Background="Transparent"
                 Height="40"
                 Canvas.ZIndex="1" 
-                Margin="48,8,0,0">
+                Margin="48,8,0,0"          
+                >
             <StackPanel Orientation="Horizontal">
                 <Image x:Name="AppFontIcon"
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Center"
                     Source="ms-appx:///Assets/Square44x44Logo.targetsize-48.png" 
                     Width="16" 
+                        Grid.Column = "1"
                     Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}" />
                 <TextBlock x:Name="AppTitle"
                     Text="{x:Bind GetAppTitleFromSystem()}"
                     VerticalAlignment="Center"
                     Margin="12, 0, 0, 0"
+                        Grid.Column = "2"
                     Style="{StaticResource CaptionTextBlockStyle}" />
             </StackPanel>
         </Border>

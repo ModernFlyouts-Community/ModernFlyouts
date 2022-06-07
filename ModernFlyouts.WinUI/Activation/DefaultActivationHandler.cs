@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ModernFlyouts.WinUI.Services;
 
 using Windows.ApplicationModel.Activation;
+using LaunchActivatedEventArgs = Windows.ApplicationModel.Activation.LaunchActivatedEventArgs;
 
 namespace ModernFlyouts.WinUI.Activation
 {

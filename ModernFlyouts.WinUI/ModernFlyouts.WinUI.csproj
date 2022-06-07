@@ -1,40 +1,76 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
-				<SupportedOSPlatformVersion>10.0.18362.0</SupportedOSPlatformVersion>	
+    <SupportedOSPlatformVersion>10.0.18362.0</SupportedOSPlatformVersion>
     <RootNamespace>ModernFlyouts.WinUI</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>x86;x64;arm64</Platforms>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
-				<ApplicationIcon>ModernFlyoutsMultiRES.ico</ApplicationIcon>
-				<SelfContained>true</SelfContained>
-				<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateKeyFile>ModernFlyouts_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Never</AppxBundle>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <ApplicationIcon>ModernFlyoutsMultiRES.ico</ApplicationIcon>
+    <SelfContained>true</SelfContained>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <NoWarn>
+										0108; <!-- 'x' hides inherited member 'y'. Use the new keyword if hiding was intended. -->
+										8305  <!-- 'x' is for evaluation purposes only and is subject to change or removal in future updates. -->
+										CA1416 <!--This call site is reachable on: 'Windows' 10.0.18362.0 and later. _ is only supported on: 'Windows' 10.0.22000.0 and later.--></NoWarn>
+    <MSBuildWarningsAsMessages>
+										WMC1501 <!-- x is for evaluation purposes only and is subject to change or removal in future updates. --></MSBuildWarningsAsMessages>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
-
-
-				<PropertyGroup Condition="'$(Configuration)'=='Debug'">
-								<NoWarn></NoWarn>
-								<!--<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <NoWarn>CA1416</NoWarn>
+    <!--<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 	<WarningsNotAsErrors>CA1720</WarningsNotAsErrors>-->
-								<Optimize>False</Optimize>
-								<DebugType>full</DebugType>
-								<DebugSymbols>true</DebugSymbols>
-								<DefineConstants>DEBUG;TRACE</DefineConstants>
-				</PropertyGroup>
-
-				<PropertyGroup Condition="'$(Configuration)'=='Release'">
-								<NoWarn></NoWarn>
-								<!--<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <Optimize>False</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE.</DefineConstants>
+  </PropertyGroup>
+				
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <NoWarn>CA1416</NoWarn>
+    <!--<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 	<WarningsNotAsErrors>CA1720</WarningsNotAsErrors>-->
-								<Optimize>true</Optimize>
-				</PropertyGroup>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
+    <PlatformTarget>arm64</PlatformTarget>
+  </PropertyGroup>
 				
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
 				
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.PriResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <ItemGroup>
     <Compile Remove="Helpers\BatteryHelper.cs" />
     <Compile Remove="Helpers\LaptopBrightnessHelper.cs" />
@@ -43,32 +79,31 @@
     <Compile Remove="Helpers\SessionConstructor.cs" />
     <Compile Remove="Services\MediaSessionService.cs" />
   </ItemGroup>
-				
-				
   <ItemGroup>
+    <None Remove="MultilingualResources\ModernFlyouts.WinUI.en-GB.xlf" />
+    <None Remove="MultilingualResources\ModernFlyouts.WinUI.es.xlf" />
+    <None Remove="MultilingualResources\ModernFlyouts.WinUI.fr.xlf" />
     <None Remove="TransparentWindow.xaml" />
   </ItemGroup>
-				
-				
   <ItemGroup>
     <Content Include="ModernFlyoutsMultiRES.ico" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0-preview3" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621-preview" />
-						<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.8" />
-						<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3" />
-						<PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />
-						<PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
-						<PackageReference Include="CommunityToolkit.WinUI.Notifications" Version="7.1.2" />
-						<PackageReference Include="PInvoke.User32" Version="0.7.104" />
-						<PackageReference Include="WinUIEx" Version="1.4.2" />
-						<!-- Get latest WinRT.Runtime.dll from C#/WinRT -->
-						<PackageReference Update="Microsoft.Windows.CsWinRT" Version="1.6.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.25131-preview" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.8" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3" />
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.WinUI.Notifications" Version="7.1.2" />
+    <PackageReference Include="PInvoke.User32" Version="0.7.104" />
+    <PackageReference Include="WinUIEx" Version="1.5.0" />
+    <!-- Get latest WinRT.Runtime.dll from C#/WinRT -->
+    <PackageReference Update="Microsoft.Windows.CsWinRT" Version="1.6.3" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
-
   <!-- Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
        Tools extension to be activated for this project even if the Windows App SDK Nuget
        package has not yet been restored -->
@@ -77,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="Views\Dialogs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModernFlyouts.Core\ModernFlyouts.Core.csproj" />
@@ -85,5 +121,28 @@
     <Page Update="TransparentWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Link>Assets\LICENSE.md</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\PRIVACY.md">
+      <Link>Assets\PRIVACY-POLICY.md</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\THIRD-PARTY-NOTICES.md">
+      <Link>Assets\THIRD-PARTY-NOTICES.md</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\docs\CHANGELOG.md">
+      <Link>Assets\CHANGELOG.md</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\ModernFlyouts.WinUI.en-GB.xlf" />
+    <XliffResource Include="MultilingualResources\ModernFlyouts.WinUI.es.xlf" />
+    <XliffResource Include="MultilingualResources\ModernFlyouts.WinUI.fr.xlf" />
   </ItemGroup>
 </Project>

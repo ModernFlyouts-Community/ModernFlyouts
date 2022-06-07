@@ -16,6 +16,7 @@
             <StaticResource x:Key="ControlExampleDisplayBrush" ResourceKey="SolidBackgroundFillColorBaseBrush" />
             <Thickness x:Key="ControlExampleDisplayBorderThickness">0</Thickness>
             <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="Transparent"/>
+            <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="{StaticResource SolidBackgroundFillColorBase}" />
         </ResourceDictionary>
 
         <ResourceDictionary x:Key="Dark">

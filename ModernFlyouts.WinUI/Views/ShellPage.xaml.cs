@@ -4,9 +4,8 @@ using System.Diagnostics.CodeAnalysis;
 using ModernFlyouts.WinUI.Services;
 using ModernFlyouts.WinUI.ViewModels;
 using Windows.Data.Json;
-using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
-using Microsoft.UI.Xaml.Controls;
+using CommunityToolkit.Mvvm.Input;
 
 namespace ModernFlyouts.WinUI.Views
 {
@@ -22,6 +21,8 @@ namespace ModernFlyouts.WinUI.Views
         /// Gets view model.
         /// </summary>
         public ShellViewModel ViewModel { get; } = new ShellViewModel();
+
+        private readonly IWindowManager _windowManager;
 
         public static bool IsElevated { get; set; }
 
@@ -41,10 +42,6 @@ namespace ModernFlyouts.WinUI.Views
 
         }
 
-        public string GetAppTitleFromSystem()
-        {
-            return Windows.ApplicationModel.Package.Current.DisplayName;
-        }
 
 
         ////////OOBE////
@@ -57,11 +54,33 @@ namespace ModernFlyouts.WinUI.Views
             rootFrame.Navigate(typeof(OOBEPage));
         }
 
+        //#region PrivacyPolicyCommand
+
+        //internal IAsyncRelayCommand PrivacyPolicyCommand { get; }
+
+        //private async Task ExecutePrivacyPolicyCommandAsync()
+        //{
+        //    await _windowManager.ShowContentDialogAsync(
+        //        new MarkdownContentDialog(
+        //            await AssetsHelper.GetPrivacyStatementAsync()),
+        //        Strings.Close,
+        //        title: Strings.PrivacyPolicy);
+        //}
+
+        //#endregion
+
         ///Temporary Whats New trigger
         private async void WhatsNew_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            var dialog = new WhatsNewDialog();
-            await dialog.ShowAsync();
+            ContentDialog WhatsNewdialog = new ContentDialog();
+
+            WhatsNewdialog.XamlRoot = this.XamlRoot;
+            WhatsNewdialog.Title = "Whats New in this Version";
+            WhatsNewdialog.CloseButtonText = "Close";
+            WhatsNewdialog.DefaultButton = ContentDialogButton.Close;
+            WhatsNewdialog.Content = new MarkdownContentDialog(await AssetsHelper.GetReleaseNoteAsync());
+                //new WhatsNewDialog();
+            _ = await WhatsNewdialog.ShowAsync();
         }
 
         public static void SetElevationStatus(bool isElevated)

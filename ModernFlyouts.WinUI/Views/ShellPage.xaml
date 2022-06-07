@@ -20,23 +20,22 @@
         <ic:EventTriggerBehavior EventName="Loaded">
             <ic:InvokeCommandAction Command="{x:Bind ViewModel.LoadedCommand}" />
         </ic:EventTriggerBehavior>
-    </i:Interaction.Behaviors>-->
+    </i:Interaction.Behaviors>
 
 
-    <!--<Grid>
+    <Grid>
+        Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
+        Canvas.ZIndex="1">
+        <TextBlock x:Name="AppTitle"
+            Text="{x:Bind GetAppTitleFromSystem()}"
+            VerticalAlignment="Center"
+            Height="16"
 
-                Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
-                Canvas.ZIndex="1">
-            <TextBlock x:Name="AppTitle"
-                       Text="{x:Bind GetAppTitleFromSystem()}"
-                       VerticalAlignment="Center"-->
-
-    <!--Height="16"-->
-
-    <!--<Page.Resources>
-        --><!--This top margin is the height of the custom TitleBar--><!--
+    <Page.Resources>
+        This top margin is the height of the custom TitleBar
         <Thickness x:Key="NavigationViewContentMargin">0,48,0,0</Thickness>
     </Page.Resources>-->
+    
     <Grid x:Name="RootGrid"
           Background="Transparent">
         <!--<Border x:Name="AppTitleBar"

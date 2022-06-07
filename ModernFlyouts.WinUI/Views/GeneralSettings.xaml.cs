@@ -12,7 +12,7 @@ using Windows.ApplicationModel;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
-using Windows.ApplicationModel.Resources;
+using Microsoft.Windows.ApplicationModel.Resources;
 
 namespace ModernFlyouts.WinUI.Views
 {
@@ -28,7 +28,7 @@ namespace ModernFlyouts.WinUI.Views
             InitializeComponent();
 
             // Load string resources
-            ResourceLoader loader = ResourceLoader.GetForViewIndependentUse();
+            //ResourceLoader loader = ResourceLoader.GetForViewIndependentUse();
         }
 
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
