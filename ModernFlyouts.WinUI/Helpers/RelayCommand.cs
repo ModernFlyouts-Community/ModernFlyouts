@@ -2,7 +2,7 @@
 using System.Windows.Input;
 
 namespace ModernFlyouts.WinUI.Helpers
-{
+{ //TODO Evaluate need for this given CommunityToolkit.Mvvm.Input.RelayCommand
     public class RelayCommand : ICommand
     {
         private readonly Action _execute;

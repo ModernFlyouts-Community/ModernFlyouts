@@ -89,6 +89,7 @@
     <Content Include="ModernFlyoutsMultiRES.ico" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="GitInfo" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0" />

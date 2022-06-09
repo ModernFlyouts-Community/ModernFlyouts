@@ -25,11 +25,22 @@
                     <controls:Setting Header="{x:Bind ViewModel.ModernFlyoutsVersion, Mode=OneWay}" Icon="&#xE117;">
                         <controls:Setting.Description>
                             <StackPanel Orientation="Vertical">
+                                <TextBlock Style="{StaticResource SecondaryTextStyle}">
+                                <Run Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}"/>
+                                </TextBlock>
                                 <HyperlinkButton x:Uid="ReleaseNotes"
                                                  NavigateUri="https://github.com/ModernFlyouts-Community/ModernFlyouts/releases"
                                                  Margin="0,2,0,0"/>
                             </StackPanel>
                         </controls:Setting.Description>
+                        <controls:Setting.ActionContent>
+                            <Button
+                                ToolTipService.ToolTip="Copy"
+                                Command="{x:Bind ViewModel.CopyVersionCommand}">
+                                <FontIcon Glyph="&#xe8c8;"/>
+                            </Button>
+                        </controls:Setting.ActionContent>
+                        
                     </controls:Setting>
 
                     <winui:InfoBar x:Uid="General_UpToDate"
