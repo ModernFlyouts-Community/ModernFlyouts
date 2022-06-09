@@ -94,7 +94,7 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.25131-preview" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.8" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.Notifications" Version="7.1.2" />

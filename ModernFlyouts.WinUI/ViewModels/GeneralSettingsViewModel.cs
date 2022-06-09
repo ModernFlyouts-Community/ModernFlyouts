@@ -15,6 +15,7 @@ using Windows.ApplicationModel;
 using Microsoft.UI.Xaml;
 using ModernFlyouts.Core;
 using ModernFlyouts.WinUI.Views;
+using CommunityToolkit.WinUI.Helpers;
 
 namespace ModernFlyouts.WinUI.ViewModels
 {
@@ -66,15 +67,13 @@ namespace ModernFlyouts.WinUI.ViewModels
             set { SetProperty(ref _elementTheme, value); }
         }
 
-        private string _versionDescription;
-
-        public string VersionDescription
+        public string ModernFlyoutsVersion
         {
-            get { return _versionDescription; }
-
-            set { SetProperty(ref _versionDescription, value); }
+            get
+            {
+                return SystemInformation.Instance.ApplicationVersion.ToFormattedString();
+            }
         }
-
         //private ICommand _switchThemeCommand;
 
         //public ICommand SwitchThemeCommand
@@ -99,24 +98,16 @@ namespace ModernFlyouts.WinUI.ViewModels
         {
         }
 
-        public async Task InitializeAsync()
-        {
-            VersionDescription = GetVersionDescription();
-            await Task.CompletedTask;
-        }
-
-        private string GetVersionDescription()
-        {
-            var appName = "AppDisplayName".GetLocalized();
-            var package = Package.Current;
-            var packageId = package.Id;
-            var version = packageId.Version;
-
-            return $"{appName} - {version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
-        }
+        //public async Task InitializeAsync()
+        //{
+        //    ModernFlyoutsVersion = ModernFlyoutsVersion()
+        //    await Task.CompletedTask;
+        //}
 
 
-        internal IAsyncRelayCommand LicenseCommand { get; }
+
+
+        //internal IAsyncRelayCommand LicenseCommand { get; }
 
         //private async Task ExecuteLicenseCommandAsync()
         //{

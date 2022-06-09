@@ -56,11 +56,6 @@ namespace ModernFlyouts.WinUI
             // Only works on Windows 11 for now
             if (AppWindowTitleBar.IsCustomizationSupported())
             {
-                //var currentWindow = WindowHelper.GetWindowForElement(this);
-                //currentWindow.ExtendsContentIntoTitleBar = true;
-                //currentWindow.SetTitleBar(CustomDragRegion);
-                //CustomDragRegion.MinWidth = 188;
-
                 //var titlebar = appWindow.TitleBar;
                 //titlebar.ExtendsContentIntoTitleBar = true;
                 //titlebar.ButtonBackgroundColor = (Color)App.Current.Resources["SolidBackgroundFillColorBase"];

@@ -12,7 +12,7 @@
     Backdrop="Mica"
     TaskBarIcon="ModernFlyoutsMultiRES.ico"
     Title="{x:Bind GetAppTitleFromSystem()}"
-    ExtendsContentIntoTitleBar="True">
+    ><!--ExtendsContentIntoTitleBar="True"-->
 
     <!--<Grid Background="Transparent">
         <Grid.RowDefinitions>
