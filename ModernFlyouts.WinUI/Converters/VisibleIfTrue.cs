@@ -2,7 +2,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 
-namespace MicaForEveryone.UI.Converters
+namespace ModernFlyouts.WinUI.Converters
 {
     public class VisibleIfTrue : IValueConverter
     {

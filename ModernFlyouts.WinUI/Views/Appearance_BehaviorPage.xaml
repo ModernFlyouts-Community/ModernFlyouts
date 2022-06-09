@@ -9,13 +9,12 @@
     xmlns:selectors="using:ModernFlyouts.UI.Selectors"
     mc:Ignorable="d">
 
-    <controls:SettingsPageControl x:Uid="Appearance_BehaviorSettings" IsTabStop="False"
-                            ModuleImageSource="ms-appx:///Assets/SettingsAssets/Awake.png">
+    <controls:SettingsPageControl x:Uid="Appearance_BehaviorSettings" IsTabStop="False" TopPanelIsEnabled="False"
+                                  ModuleImageSource="ms-appx:///Assets/SettingsAssets/Awake.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
 
                 <controls:SettingsGroup x:Uid="Appearance" IsEnabled="True">
-
                     <controls:Setting x:Uid="AppThemeHeader" Icon="&#xE790;">
                         <controls:Setting.Description>
                             <HyperlinkButton Click="OpenColorsSettings_Click"

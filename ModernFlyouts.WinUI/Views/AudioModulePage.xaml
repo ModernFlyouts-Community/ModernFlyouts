@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     AutomationProperties.LandmarkType="Main">
 
-    <controls:SettingsPageControl x:Uid="Audio" IsTabStop="False"
+    <controls:SettingsPageControl x:Uid="Audio" IsTabStop="False" TopPanelIsEnabled="True"
                                   ModuleImageSource="ms-appx:///Assets/SettingsAssets/Audio1.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">

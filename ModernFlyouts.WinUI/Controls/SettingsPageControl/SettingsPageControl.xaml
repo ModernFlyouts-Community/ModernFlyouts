@@ -12,6 +12,7 @@
 
     <UserControl.Resources>
         <converters:DoubleToVisibilityConverter x:Name="doubleToVisibilityConverter" GreaterThan="0" TrueValue="Visible" FalseValue="Collapsed" />
+        <converters:BoolToVisibilityConverter x:Name="topPanelVisibilityConverter"/>
     </UserControl.Resources>
 
     <Grid RowSpacing="24" Padding="20,0,0,0">
@@ -42,7 +43,10 @@
                 </Grid.RowDefinitions>
 
                 <!-- Top panel -->
-                <Grid ColumnSpacing="16">
+                <Grid 
+                    Visibility="{x:Bind TopPanelIsEnabled, Converter={StaticResource topPanelVisibilityConverter}}" 
+                    ColumnSpacing="16"
+                    Margin="0,0,0,12">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="160"/>
                         <ColumnDefinition Width="*" />
@@ -86,7 +90,7 @@
                                       HorizontalContentAlignment="Stretch"
                                       Content="{x:Bind ModuleContent}"
                                       MaxWidth="1048"
-                                      Margin="0,12,0,0" Grid.Row="1"/>
+                                      Grid.Row="1"/> <!--Margin="0,12,0,0" moved margin to top grid so can be hidden-->
 
                 <!-- Bottom panel -->
                 <StackPanel x:Name="SecondaryLinksPanel"

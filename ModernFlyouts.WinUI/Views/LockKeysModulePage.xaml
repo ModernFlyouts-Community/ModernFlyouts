@@ -8,7 +8,7 @@
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d">
 
-    <controls:SettingsPageControl x:Uid="LockKeys" IsTabStop="False"
+    <controls:SettingsPageControl x:Uid="LockKeys" IsTabStop="False" TopPanelIsEnabled="True"
                             ModuleImageSource="ms-appx:///Assets/SettingsAssets/mockup3cut.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">

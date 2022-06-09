@@ -16,7 +16,7 @@
         <converters:BoolToObjectConverter x:Key="BoolToVisibilityConverter" TrueValue="Collapsed" FalseValue="Visible"/>
         <converters:BoolToVisibilityConverter x:Key="VisibleIfTrueConverter"/>
     </Page.Resources>
-      <controls:SettingsPageControl x:Uid="General"
+    <controls:SettingsPageControl x:Uid="General" TopPanelIsEnabled="True"
                                   ModuleImageSource="ms-appx:///Assets/SettingsAssets/Hero.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">

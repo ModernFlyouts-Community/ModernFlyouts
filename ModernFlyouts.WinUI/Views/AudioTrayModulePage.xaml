@@ -9,7 +9,7 @@
     mc:Ignorable="d">
     <!--Style="{StaticResource PageStyle}"-->
 
-    <controls:SettingsPageControl x:Uid="AudioTray" IsTabStop="False"
+    <controls:SettingsPageControl x:Uid="AudioTray" IsTabStop="False" TopPanelIsEnabled="True"
                             ModuleImageSource="ms-appx:///Assets/SettingsAssets/Airplane.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">

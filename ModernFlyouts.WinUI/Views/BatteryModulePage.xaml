@@ -8,7 +8,7 @@
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d">
 
-    <controls:SettingsPageControl x:Uid="Battery" IsTabStop="False"
+    <controls:SettingsPageControl x:Uid="Battery" IsTabStop="False" TopPanelIsEnabled="True"
                             ModuleImageSource="ms-appx:///Assets/SettingsAssets/battery1.png">
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel Orientation="Vertical">
