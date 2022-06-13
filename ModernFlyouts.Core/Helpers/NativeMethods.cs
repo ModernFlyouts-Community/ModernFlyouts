@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ModernFlyouts.Core.Helpers.Pinvoke
+namespace ModernFlyouts.Core.Helpers
 {
     /// <summary>
     /// From lively
@@ -35,7 +35,7 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
             int cxDesired, int cyDesired, uint fuLoad);
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        public static extern int MessageBox(IntPtr hWnd, String text, String caption, uint type);
+        public static extern int MessageBox(IntPtr hWnd, string text, string caption, uint type);
 
         [DllImport("User32")]
         public static extern int GetDpiForWindow(IntPtr hwnd);
@@ -141,7 +141,7 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
         /// <param name="nYSrc">The topmost y-coordinate of the source rectangle (in pixels).</param>
         /// <param name="dwRop">A raster-operation code.</param>
         /// <returns>
-        ///    <c>true</c> if the operation succeedes, <c>false</c> otherwise. To get extended error information, call <see cref="System.Runtime.InteropServices.Marshal.GetLastWin32Error"/>.
+        ///    <c>true</c> if the operation succeedes, <c>false</c> otherwise. To get extended error information, call <see cref="Marshal.GetLastWin32Error"/>.
         /// </returns>
         [DllImport("gdi32.dll", EntryPoint = "BitBlt", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -153,7 +153,7 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
         /// <param name="hdc">A handle to a device context.</param>
         /// <param name="nWidth">The bitmap width, in pixels.</param>
         /// <param name="nHeight">The bitmap height, in pixels.</param>
-        /// <returns>If the function succeeds, the return value is a handle to the compatible bitmap (DDB). If the function fails, the return value is <see cref="System.IntPtr.Zero"/>.</returns>
+        /// <returns>If the function succeeds, the return value is a handle to the compatible bitmap (DDB). If the function fails, the return value is <see cref="IntPtr.Zero"/>.</returns>
         [DllImport("gdi32.dll", EntryPoint = "CreateCompatibleBitmap")]
         public static extern IntPtr CreateCompatibleBitmap([In] IntPtr hdc, int nWidth, int nHeight);
 
@@ -189,7 +189,7 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
         ///        the function creates a memory DC compatible with the application's current screen.</param>
         /// <returns>
         ///        If the function succeeds, the return value is the handle to a memory DC.
-        ///        If the function fails, the return value is <see cref="System.IntPtr.Zero"/>.
+        ///        If the function fails, the return value is <see cref="IntPtr.Zero"/>.
         /// </returns>
         [DllImport("gdi32.dll", EntryPoint = "CreateCompatibleDC", SetLastError = true)]
         public static extern IntPtr CreateCompatibleDC([In] IntPtr hdc);
@@ -210,7 +210,7 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
         public const int HWND_BROADCAST = 0xffff;
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-        public static extern System.IntPtr GetCommandLine();
+        public static extern IntPtr GetCommandLine();
 
         [DllImport("user32")]
         public static extern bool PostMessage(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam);
@@ -268,9 +268,9 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
             public static readonly int SizeOf = Marshal.SizeOf(typeof(LASTINPUTINFO));
 
             [MarshalAs(UnmanagedType.U4)]
-            public UInt32 cbSize;
+            public uint cbSize;
             [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dwTime;
+            public uint dwTime;
         }
 
         [DllImport("user32.dll")]
@@ -310,10 +310,10 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
 
         [DllImport("User32.dll", EntryPoint = "PostMessageW", CallingConvention = CallingConvention.Winapi
         , CharSet = CharSet.Unicode)]
-        public extern static IntPtr PostMessageW(IntPtr hWnd, Int32 Msg, IntPtr wParam, IntPtr lParam);
+        public extern static IntPtr PostMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("User32.dll", EntryPoint = "PostMessageW", CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode)]
-        public extern static IntPtr PostMessageW(IntPtr hWnd, Int32 Msg, IntPtr wParam, UIntPtr lParam);
+        public extern static IntPtr PostMessageW(IntPtr hWnd, int Msg, IntPtr wParam, UIntPtr lParam);
 
         /// <summary>
         /// Windows Messages
@@ -1433,13 +1433,13 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
 
         public enum GWL
         {
-            GWL_WNDPROC = (-4),
-            GWL_HINSTANCE = (-6),
-            GWL_HWNDPARENT = (-8),
-            GWL_STYLE = (-16),
-            GWL_EXSTYLE = (-20),
-            GWL_USERDATA = (-21),
-            GWL_ID = (-12)
+            GWL_WNDPROC = -4,
+            GWL_HINSTANCE = -6,
+            GWL_HWNDPARENT = -8,
+            GWL_STYLE = -16,
+            GWL_EXSTYLE = -20,
+            GWL_USERDATA = -21,
+            GWL_ID = -12
         }
 
         public abstract class WindowStyles
@@ -1474,17 +1474,17 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
             // Common Window Styles
 
             public const uint WS_OVERLAPPEDWINDOW =
-                (WS_OVERLAPPED |
+                WS_OVERLAPPED |
                   WS_CAPTION |
                   WS_SYSMENU |
                   WS_THICKFRAME |
                   WS_MINIMIZEBOX |
-                  WS_MAXIMIZEBOX);
+                  WS_MAXIMIZEBOX;
 
             public const uint WS_POPUPWINDOW =
-                (WS_POPUP |
+                WS_POPUP |
                   WS_BORDER |
-                  WS_SYSMENU);
+                  WS_SYSMENU;
 
             public const uint WS_CHILDWINDOW = WS_CHILD;
 
@@ -1514,8 +1514,8 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
             public const uint WS_EX_STATICEDGE = 0x00020000;
             public const uint WS_EX_APPWINDOW = 0x00040000;
 
-            public const uint WS_EX_OVERLAPPEDWINDOW = (WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE);
-            public const uint WS_EX_PALETTEWINDOW = (WS_EX_WINDOWEDGE | WS_EX_TOOLWINDOW | WS_EX_TOPMOST);
+            public const uint WS_EX_OVERLAPPEDWINDOW = WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE;
+            public const uint WS_EX_PALETTEWINDOW = WS_EX_WINDOWEDGE | WS_EX_TOOLWINDOW | WS_EX_TOPMOST;
             //#endif /* WINVER >= 0x0400 */
 
             //#if(_WIN32_WINNT >= 0x0500)
@@ -1546,7 +1546,7 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.I4)]
-        public static extern Int32 SystemParametersInfo(UInt32 uiAction, UInt32 uiParam, String pvParam, UInt32 fWinIni);
+        public static extern int SystemParametersInfo(uint uiAction, uint uiParam, string pvParam, uint fWinIni);
 
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -1560,10 +1560,10 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
      int flags);
 
 
-        public static UInt32 SPIF_SENDWININICHANGE = 0x02;
-        public static UInt32 SPI_SETDESKWALLPAPER = 20;
-        public static UInt32 SPIF_UPDATEINIFILE = 0x1;
-        public static UInt32 SPI_SETCLIENTAREAANIMATION = 0x1043;
+        public static uint SPIF_SENDWININICHANGE = 0x02;
+        public static uint SPI_SETDESKWALLPAPER = 20;
+        public static uint SPIF_UPDATEINIFILE = 0x1;
+        public static uint SPI_SETCLIENTAREAANIMATION = 0x1043;
 
         #endregion //WinDesktopCore
 
@@ -1587,15 +1587,15 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
         [Flags]
         public enum ThreadAccess : int
         {
-            TERMINATE = (0x0001),
-            SUSPEND_RESUME = (0x0002),
-            GET_CONTEXT = (0x0008),
-            SET_CONTEXT = (0x0010),
-            SET_INFORMATION = (0x0020),
-            QUERY_INFORMATION = (0x0040),
-            SET_THREAD_TOKEN = (0x0080),
-            IMPERSONATE = (0x0100),
-            DIRECT_IMPERSONATION = (0x0200)
+            TERMINATE = 0x0001,
+            SUSPEND_RESUME = 0x0002,
+            GET_CONTEXT = 0x0008,
+            SET_CONTEXT = 0x0010,
+            SET_INFORMATION = 0x0020,
+            QUERY_INFORMATION = 0x0040,
+            SET_THREAD_TOKEN = 0x0080,
+            IMPERSONATE = 0x0100,
+            DIRECT_IMPERSONATION = 0x0200
         }
 
         [DllImport("kernel32.dll")]
@@ -1674,8 +1674,8 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
 
             public POINT(int x, int y)
             {
-                this.X = x;
-                this.Y = y;
+                X = x;
+                Y = y;
             }
 
             public static implicit operator System.Drawing.Point(POINT p)
@@ -1852,8 +1852,8 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
 
             public void Init()
             {
-                this.Size = 40 + 2 * CCHDEVICENAME;
-                this.DeviceName = string.Empty;
+                Size = 40 + 2 * CCHDEVICENAME;
+                DeviceName = string.Empty;
             }
         }
         /// <summary>
@@ -3971,10 +3971,10 @@ namespace ModernFlyouts.Core.Helpers.Pinvoke
 
             public COMRECT(System.Drawing.Rectangle r)
             {
-                left = (int)r.X;
-                top = (int)r.Y;
-                right = (int)r.Right;
-                bottom = (int)r.Bottom;
+                left = r.X;
+                top = r.Y;
+                right = r.Right;
+                bottom = r.Bottom;
             }
 
             public COMRECT(int left, int top, int right, int bottom)

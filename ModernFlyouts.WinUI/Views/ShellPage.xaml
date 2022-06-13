@@ -97,9 +97,9 @@
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItem x:Uid="Settings_Layout" helpers:NavHelper.NavigateTo="views:LayoutPage">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon Glyph="&#xeca5;"/>
-                </winui:NavigationViewItem.Icon>
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xeca5;"/>
+                    </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItemSeparator />
                 <winui:NavigationViewItemHeader Content="Settings Modules" />
@@ -116,14 +116,14 @@
                     </winui:NavigationViewItem.MenuItems>
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Media" helpers:NavHelper.NavigateTo="views:MediaModulePage">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon Glyph="&#xea69;"/>
-                </winui:NavigationViewItem.Icon>
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xea69;"/>
+                    </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Brightness" helpers:NavHelper.NavigateTo="views:BrightnessModulePage">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon Glyph="&#xE706;"/>
-                </winui:NavigationViewItem.Icon>
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE706;"/>
+                    </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
                 <winui:NavigationViewItem x:Uid="Settings_Modules_Airplane" helpers:NavHelper.NavigateTo="views:AirplaneModeModulePage">
                     <winui:NavigationViewItem.Icon>
@@ -146,7 +146,7 @@
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
             </winui:NavigationView.MenuItems>
-            
+
             <winui:NavigationView.FooterMenuItems>
                 <winui:NavigationViewItemSeparator />
                 <winui:NavigationViewItem Content="Whats New" Tapped="WhatsNew_Tapped" ToolTipService.ToolTip="Temporary Whats new trigger for testing">

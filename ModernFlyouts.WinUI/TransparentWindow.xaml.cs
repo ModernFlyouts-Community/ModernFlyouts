@@ -9,13 +9,12 @@ using Windows.Foundation.Collections;
 using WinRT;
 using Microsoft.UI.Windowing;
 
-using ModernFlyouts.Core.Helpers.Pinvoke;
+using ModernFlyouts.Core.Helpers;
 
 using ModernFlyouts.WinUI.Interop;
-using PInvoke;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using static ModernFlyouts.Core.Helpers.Pinvoke.NativeMethods;
+using static ModernFlyouts.Core.Helpers.NativeMethods;
 
 using Microsoft.UI;
 using System.Text.RegularExpressions;

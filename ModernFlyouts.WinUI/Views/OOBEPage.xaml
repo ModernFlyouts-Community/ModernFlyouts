@@ -21,6 +21,7 @@
             Background="{ThemeResource SortHvidBrush}" VerticalAlignment="Stretch"
             MaxHeight="480" HorizontalAlignment="Stretch" MaxWidth="800" 
             CornerRadius="8" 
+            FontFamily="Segoe UI Variable"
             Style="{StaticResource FlipStyle}">
 
                     <FlipViewItem>

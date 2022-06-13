@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
 				<LangVersion>latest</LangVersion>
 						<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+						<PlatformTarget>x64</PlatformTarget>
+						<Platforms>AnyCPU;x64;x86</Platforms>
 						<!--<IsTrimmable>true</IsTrimmable>   //enable to enable trimmable-->
   </PropertyGroup>
 

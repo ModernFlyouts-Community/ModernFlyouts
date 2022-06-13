@@ -48,11 +48,43 @@ namespace ModernFlyouts.WinUI.Views
 
         private void OOBEItem_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            Frame rootFrame = new Frame();
-            var window = (Application.Current as App)?.Window as SettingsWindow;
-           // Window.Current.Content = rootFrame;
-            rootFrame.Navigate(typeof(OOBEPage));
+            // Frame rootFrame = new Frame();
+            // var window = (Application.Current as App)?.Window as SettingsWindow;
+            ////Window.Current.Content = rootFrame;
+            //rootFrame.Navigate(typeof(OOBEPage));
+            shellFrame.Navigate(typeof(OOBEPage));
         }
+
+        //private void OOBEItem_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
+        //{
+        //    var OOBEdialog = new TeachingTip();
+
+        //    //OOBEdialog.XamlRoot = this.XamlRoot;
+        //    //OOBEdialog.MinHeight = this.ActualWidth;
+        //    OOBEdialog.PreferredPlacement = TeachingTipPlacementMode.Center;
+        //    //OOBEdialog.MinWidth = this.ActualWidth;
+        //    //OOBEdialog.Content = new OOBEPage();
+        //    OOBEdialog.Content = "test";
+        //    OOBEdialog.IsOpen = true;
+
+        //    // _ = await OOBEdialog.ShowAsync();
+
+        //}
+
+        private async void WhatsNew_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            ContentDialog WhatsNewdialog = new ContentDialog();
+
+            WhatsNewdialog.XamlRoot = this.XamlRoot;
+            WhatsNewdialog.Title = "Whats New in this Version";
+            WhatsNewdialog.CloseButtonText = "Close";
+            WhatsNewdialog.DefaultButton = ContentDialogButton.Close;
+            WhatsNewdialog.Content = new MarkdownContentDialog(await AssetsHelper.GetReleaseNoteAsync());
+            //new WhatsNewDialog();
+            _ = await WhatsNewdialog.ShowAsync();
+        }
+
+
 
         //#region PrivacyPolicyCommand
 
@@ -68,20 +100,6 @@ namespace ModernFlyouts.WinUI.Views
         //}
 
         //#endregion
-
-        ///Temporary Whats New trigger
-        private async void WhatsNew_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            ContentDialog WhatsNewdialog = new ContentDialog();
-
-            WhatsNewdialog.XamlRoot = this.XamlRoot;
-            WhatsNewdialog.Title = "Whats New in this Version";
-            WhatsNewdialog.CloseButtonText = "Close";
-            WhatsNewdialog.DefaultButton = ContentDialogButton.Close;
-            WhatsNewdialog.Content = new MarkdownContentDialog(await AssetsHelper.GetReleaseNoteAsync());
-                //new WhatsNewDialog();
-            _ = await WhatsNewdialog.ShowAsync();
-        }
 
         public static void SetElevationStatus(bool isElevated)
         {
