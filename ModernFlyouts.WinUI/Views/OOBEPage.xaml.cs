@@ -29,6 +29,8 @@ namespace ModernFlyouts.Views
 
         public OOBEPage()
         {
+            //SetTitleBar();
+
             this.InitializeComponent();
 
 
