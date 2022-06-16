@@ -104,12 +104,12 @@
 				
   <ItemGroup>
     <PackageReference Include="GitInfo" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.5.22301.12" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0-preview.5.22301.12" />
 						<PackageReference Include="Microsoft.Windows.CsWin32" Version="0.2.1-beta">
 										<PrivateAssets>all</PrivateAssets>
 						</PackageReference>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.1" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.25136-preview" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.8" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />

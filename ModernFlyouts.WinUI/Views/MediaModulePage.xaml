@@ -49,7 +49,10 @@
                     </controls:Setting>
                     <controls:Setting x:Uid="ThumbnailAlignment">
                         <controls:Setting.ActionContent>
-                            <ToggleSwitch  HorizontalAlignment="Right"/>
+                            <ToggleSwitch  HorizontalAlignment="Right"
+                                           OnContent="Right"
+                                           OffContent="Left" />
+                            <!--TODO: LOCALISE LEFT RIGHT   "{Binding Label, Converter={StaticResource TranslatorConverter}}"-->
                             <!--IsOn="{x:Bind ViewModel.IsEnabled, Mode=TwoWay}"-->
                         </controls:Setting.ActionContent>
                     </controls:Setting>

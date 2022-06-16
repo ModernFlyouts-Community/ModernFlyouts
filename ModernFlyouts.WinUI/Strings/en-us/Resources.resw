@@ -588,4 +588,10 @@ Made by the ModernFlyouts community.</value>
   <data name="Appearance_RoundedCorners_Description.Text" xml:space="preserve">
     <value>Let controls and flyouts use rounded corners</value>
   </data>
+  <data name="Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
 </root>

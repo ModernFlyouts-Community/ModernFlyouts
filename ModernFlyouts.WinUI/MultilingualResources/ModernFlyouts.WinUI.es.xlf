@@ -636,6 +636,14 @@ Made by the ModernFlyouts community.</target>
           <source>Displayed Flyout</source>
           <target state="new">Displayed Flyout</target>
         </trans-unit>
+        <trans-unit id="Left" translate="yes" xml:space="preserve">
+          <source>Left</source>
+          <target state="new">Left</target>
+        </trans-unit>
+        <trans-unit id="Right" translate="yes" xml:space="preserve">
+          <source>Right</source>
+          <target state="new">Right</target>
+        </trans-unit>
       </group>
     </body>
   </file>
