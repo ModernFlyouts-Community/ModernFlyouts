@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="en-GB" original="MODERNFLYOUTS.WINUI/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en-US" target-language="en-GB" original="ModernFlyouts/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.1.12.0" tool-company="Microsoft" />
     </header>
     <body>
-      <group id="MODERNFLYOUTS.WINUI/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
+      <group id="MODERNFLYOUTS/STRINGS/EN-US/RESOURCES.RESW">
         <trans-unit id="AppDisplayName" translate="yes" xml:space="preserve">
           <source>ModernFlyouts Settings</source>
           <target state="new">ModernFlyouts Settings</target>
@@ -338,6 +338,10 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
           <source>Appearance &amp; behavior</source>
           <target state="new">Appearance &amp; behavior</target>
         </trans-unit>
+        <trans-unit id="DisplayedFlyout.Header" translate="yes" xml:space="preserve">
+          <source>Displayed Flyout</source>
+          <target state="new">Displayed Flyout</target>
+        </trans-unit>
         <trans-unit id="General.ModuleDescription" translate="yes" xml:space="preserve">
           <source>ModernFlyouts is a Fluent Design based fully customizable replacement to the system flyouts in Windows. 
 Made by the ModernFlyouts community.</source>
@@ -631,10 +635,6 @@ Made by the ModernFlyouts community.</target>
         <trans-unit id="Appearance_RoundedCorners_Description.Text" translate="yes" xml:space="preserve">
           <source>Let controls and flyouts use rounded corners</source>
           <target state="new">Let controls and flyouts use rounded corners</target>
-        </trans-unit>
-        <trans-unit id="DisplayedFlyout.Header" translate="yes" xml:space="preserve">
-          <source>Displayed Flyout</source>
-          <target state="new">Displayed Flyout</target>
         </trans-unit>
         <trans-unit id="Left" translate="yes" xml:space="preserve">
           <source>Left</source>

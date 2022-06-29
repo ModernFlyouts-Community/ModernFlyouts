@@ -1,4 +1,4 @@
-﻿namespace ModernFlyouts.WinUI.Behaviors
+﻿namespace ModernFlyouts.Behaviors
 {
     public enum NavigationViewHeaderMode
     {

@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 
-namespace ModernFlyouts.WinUI.ViewModels
+namespace ModernFlyouts.ViewModels
 {
     public class AirplaneModeModuleViewModel : ObservableObject
     {

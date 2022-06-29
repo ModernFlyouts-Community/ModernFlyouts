@@ -1,12 +1,12 @@
 ﻿
-using ModernFlyouts.WinUI.ViewModels;
+using ModernFlyouts.ViewModels;
 
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-using ModernFlyouts.WinUI.Helpers;
-using ModernFlyouts.WinUI.Services;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Services;
 
 using Windows.ApplicationModel;
 using Microsoft.UI.Xaml;
@@ -14,7 +14,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.Windows.ApplicationModel.Resources;
 
-namespace ModernFlyouts.WinUI.Views
+namespace ModernFlyouts.Views
 {
     // TODO WTS: Add other settings as necessary. For help see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/pages/settings-codebehind.md
     // TODO WTS: Change the URL for your privacy policy in the Resource File, currently set to https://YourPrivacyUrlGoesHere

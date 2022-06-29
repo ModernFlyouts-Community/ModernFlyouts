@@ -2,7 +2,7 @@
 // The Microsoft Corporation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ModernFlyouts.WinUI;
+using ModernFlyouts;
 using System.ComponentModel;
 using Windows.UI.Accessibility;
 using Microsoft.UI.Xaml;
@@ -10,7 +10,7 @@ using Microsoft.UI.Xaml.Automation;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 
-namespace ModernFlyouts.WinUI.Controls
+namespace ModernFlyouts.Controls
 {
     public class CheckBoxWithDescriptionControl : CheckBox
     {

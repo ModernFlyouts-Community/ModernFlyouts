@@ -1,4 +1,4 @@
-﻿namespace ModernFlyouts.WinUI.EfficiencyMode;
+﻿namespace ModernFlyouts.EfficiencyMode;
 /// <summary>
 /// Based on: <br/>
 /// <see href="https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setpriorityclass#parameters"/>

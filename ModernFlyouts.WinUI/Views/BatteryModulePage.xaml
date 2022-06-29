@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="ModernFlyouts.WinUI.Views.BatteryModulePage"
+    x:Class="ModernFlyouts.Views.BatteryModulePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:ModernFlyouts.WinUI.Controls"
+    xmlns:controls="using:ModernFlyouts.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"

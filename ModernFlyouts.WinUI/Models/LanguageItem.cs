@@ -1,4 +1,4 @@
-﻿namespace ModernFlyouts.WinUI.Models
+﻿namespace ModernFlyouts.Models
 {
     public record LanguageItem(string Tag, string DisplayName);
 }

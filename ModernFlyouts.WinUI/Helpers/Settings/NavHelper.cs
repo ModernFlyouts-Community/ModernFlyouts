@@ -4,7 +4,7 @@ using Microsoft.UI.Xaml.Controls;
 
 using Microsoft.UI.Xaml;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     public class NavHelper
     {

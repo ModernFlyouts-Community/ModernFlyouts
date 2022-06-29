@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using ModernFlyouts.WinUI.Helpers;
+using ModernFlyouts.Helpers;
 
 using Windows.ApplicationModel.Core;
 using Windows.Storage;
 using Windows.UI.Core;
 using Microsoft.UI.Xaml;
 
-namespace ModernFlyouts.WinUI.Services
+namespace ModernFlyouts.Services
 {
     public static class ThemeSelectorService
     {

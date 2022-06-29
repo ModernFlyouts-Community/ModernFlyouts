@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace ModernFlyouts.WinUI.Interop;
+namespace ModernFlyouts.Interop;
 
 internal static class InteropUtilities
 {

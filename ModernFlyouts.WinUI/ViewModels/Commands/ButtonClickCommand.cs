@@ -5,7 +5,7 @@
 using System;
 using System.Windows.Input;
 
-namespace ModernFlyouts.WinUI.ViewModels.Commands
+namespace ModernFlyouts.ViewModels.Commands
 {
     public class ButtonClickCommand : ICommand
     {

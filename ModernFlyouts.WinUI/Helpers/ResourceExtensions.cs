@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 using Windows.ApplicationModel.Resources;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     internal static class ResourceExtensions
     {

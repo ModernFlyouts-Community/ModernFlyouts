@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Windows.Devices.Power;
 using Windows.System.Power;
-namespace ModernFlyouts.WinUI.Services
+namespace ModernFlyouts.Services
 {
     class TimeService
     {

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace ModernFlyouts.WinUI.Contracts.Services
+namespace ModernFlyouts.Contracts.Services
 {
     public interface ILocalSettingsService
     {

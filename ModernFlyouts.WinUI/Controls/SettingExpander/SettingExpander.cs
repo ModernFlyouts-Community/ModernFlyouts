@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.UI.Xaml.Controls;
-using ModernFlyouts.WinUI;
+using ModernFlyouts;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation;
 
-namespace ModernFlyouts.WinUI.Controls
+namespace ModernFlyouts.Controls
 {
     public partial class SettingExpander : Expander
     {

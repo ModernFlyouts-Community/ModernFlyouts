@@ -1,10 +1,10 @@
 ﻿using System;
 
-using ModernFlyouts.WinUI.ViewModels;
+using ModernFlyouts.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ModernFlyouts.WinUI.Views
+namespace ModernFlyouts.Views
 {
     public sealed partial class Appearance_BehaviorPage : Page
     {

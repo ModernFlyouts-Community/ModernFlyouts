@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ModernFlyouts.WinUI.Controls
+namespace ModernFlyouts.Controls
 {
     public sealed partial class ShortcutDialogContentControl : UserControl
     {

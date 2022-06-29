@@ -1,5 +1,5 @@
 ﻿<ContentDialog
-    x:Class="ModernFlyouts.WinUI.Views.FirstRunDialog"
+    x:Class="ModernFlyouts.Views.FirstRunDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,7 +9,7 @@
     CornerRadius="8"
     CloseButtonText="Close"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
-    xmlns:controls="using:ModernFlyouts.WinUI.Controls"
+    xmlns:controls="using:ModernFlyouts.Controls"
     mc:Ignorable="d">
     
     <!--<controls:OOBEPageControl ModuleTitle="ModernFlyouts"

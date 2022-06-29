@@ -8,10 +8,10 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
-using ModernFlyouts.WinUI.Helpers;
-using ModernFlyouts.WinUI.Views;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Views;
 using System.Threading.Tasks;
-using ModernFlyouts.WinUI.Services;
+using ModernFlyouts.Services;
 
 using Microsoft.UI;
 using Windows.ApplicationModel.Resources;
@@ -21,12 +21,13 @@ using WinUIEx;
 using Windows.UI;
 using WindowId = Microsoft.UI.WindowId;
 using Microsoft.UI.Xaml;
+using ModernFlyouts;
 
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ModernFlyouts.WinUI
+namespace ModernFlyouts
 {
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
@@ -45,7 +46,7 @@ namespace ModernFlyouts.WinUI
             SetTitleBar();
 
             this.InitializeComponent();
-            
+
         }
 
         private void SetTitleBar()
@@ -91,6 +92,12 @@ namespace ModernFlyouts.WinUI
         public void NavigateToSection(System.Type type)
         {
             ShellPage.Navigate(type);
+        }
+
+        public void NavigateToOOBESection(object sender, RoutedEventArgs e)
+        {
+            ShellPage.Navigate(typeof(OOBEPage));
+            //App.SettingsRoot.Navigate(typeof(OOBEPage));
         }
 
         public string GetAppTitleFromSystem()

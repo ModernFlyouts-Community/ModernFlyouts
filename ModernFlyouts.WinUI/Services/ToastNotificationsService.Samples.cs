@@ -2,7 +2,7 @@
 using System;
 using Windows.UI.Notifications;
 
-namespace ModernFlyouts.WinUI.Services
+namespace ModernFlyouts.Services
 {
     internal partial class ToastNotificationsService
     {

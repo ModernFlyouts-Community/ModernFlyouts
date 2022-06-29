@@ -7,7 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     // Based on https://stackoverflow.com/a/62811758/5001796
     public static class ThemeHelpers

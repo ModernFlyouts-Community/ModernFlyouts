@@ -4,7 +4,7 @@ using Windows.System;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     public sealed partial class SystemInformationPage : Page
     {

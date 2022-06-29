@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace ModernFlyouts.WinUI
+namespace ModernFlyouts
 {
     //public static class AssetsHelper
     //{

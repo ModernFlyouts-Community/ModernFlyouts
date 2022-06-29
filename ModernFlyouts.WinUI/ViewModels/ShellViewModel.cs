@@ -7,9 +7,9 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 
-using ModernFlyouts.WinUI.Helpers;
-using ModernFlyouts.WinUI.Services;
-using ModernFlyouts.WinUI.Views;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Services;
+using ModernFlyouts.Views;
 
 using Windows.System;
 using Microsoft.UI.Xaml.Controls;
@@ -17,7 +17,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Navigation;
 using ModernFlyouts.Core.Models;
 
-namespace ModernFlyouts.WinUI.ViewModels
+namespace ModernFlyouts.ViewModels
 {
     public class ShellViewModel : ObservableObject
     {

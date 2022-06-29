@@ -1,11 +1,11 @@
-﻿using ModernFlyouts.WinUI.Contracts.Services;
-using ModernFlyouts.WinUI.Models;
+﻿using ModernFlyouts.Contracts.Services;
+using ModernFlyouts.Models;
 using Microsoft.Windows.ApplicationModel.Resources;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ModernFlyouts.WinUI.Services
+namespace ModernFlyouts.Services
 { 
     public class LocalizationService : ILocalizationService
     {

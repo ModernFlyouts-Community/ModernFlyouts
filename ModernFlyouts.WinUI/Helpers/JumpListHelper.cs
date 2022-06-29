@@ -5,7 +5,7 @@ using Windows.UI.StartScreen;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     public class JumpListHelper
     {

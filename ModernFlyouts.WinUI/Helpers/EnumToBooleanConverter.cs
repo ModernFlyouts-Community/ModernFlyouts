@@ -2,7 +2,7 @@
 
 using Microsoft.UI.Xaml.Data;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     public class EnumToBooleanConverter : IValueConverter
     {

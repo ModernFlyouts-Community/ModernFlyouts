@@ -7,7 +7,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Media;
 
-namespace ModernFlyouts.WinUI.Converters
+namespace ModernFlyouts.Converters
 {
     public sealed class ModuleEnabledToOpacityConverter : IValueConverter
     {

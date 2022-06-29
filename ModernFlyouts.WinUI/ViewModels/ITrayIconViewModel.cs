@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 
-namespace ModernFlyouts.WinUI.ViewModels
+namespace ModernFlyouts.ViewModels
 {
     public interface ITrayIconViewModel : INotifyPropertyChanged
     {

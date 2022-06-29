@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Automation.Peers;
 
-namespace ModernFlyouts.WinUI.Controls
+namespace ModernFlyouts.Controls
 {
     public class SettingsGroupAutomationPeer : FrameworkElementAutomationPeer
     {

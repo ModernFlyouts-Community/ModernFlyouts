@@ -6,23 +6,23 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-using ModernFlyouts.WinUI.Helpers;
-using ModernFlyouts.WinUI.Services;
+using ModernFlyouts.Helpers;
+using ModernFlyouts.Services;
 
-using ModernFlyouts.WinUI.Contracts.Services;
-using ModernFlyouts.WinUI.Models;
+using ModernFlyouts.Contracts.Services;
+using ModernFlyouts.Models;
 
 using Windows.ApplicationModel;
 using Microsoft.UI.Xaml;
 using ModernFlyouts.Core;
-using ModernFlyouts.WinUI.Views;
+using ModernFlyouts.Views;
 using CommunityToolkit.WinUI.Helpers;
 
 using Windows.ApplicationModel.DataTransfer;
 using Clipboard = Windows.ApplicationModel.DataTransfer.Clipboard;
 using RelayCommand = CommunityToolkit.Mvvm.Input.RelayCommand;
 
-namespace ModernFlyouts.WinUI.ViewModels
+namespace ModernFlyouts.ViewModels
 {
     // TODO WTS: Add other settings as necessary. For help see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/pages/settings.md
     public class GeneralSettingsViewModel : ObservableObject

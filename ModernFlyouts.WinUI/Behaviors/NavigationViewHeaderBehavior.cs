@@ -1,13 +1,13 @@
 ﻿using Microsoft.Xaml.Interactivity;
 
-using ModernFlyouts.WinUI.Services;
+using ModernFlyouts.Services;
 
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
 
-namespace ModernFlyouts.WinUI.Behaviors
+namespace ModernFlyouts.Behaviors
 {
     public class NavigationViewHeaderBehavior : Behavior<NavigationView>
     {

@@ -5,7 +5,7 @@
 using System;
 using System.Collections;
 
-namespace ModernFlyouts.WinUI.Views
+namespace ModernFlyouts.Views
 {
     public class VisibleIfNotEmpty : IValueConverter
     {

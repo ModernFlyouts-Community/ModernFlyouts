@@ -1,8 +1,8 @@
-﻿using ModernFlyouts.WinUI.Models;
+﻿using ModernFlyouts.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ModernFlyouts.WinUI.Contracts.Services
+namespace ModernFlyouts.Contracts.Services
 {
     public interface ILocalizationService
     {

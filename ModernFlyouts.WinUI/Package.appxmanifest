@@ -17,7 +17,7 @@
     Version="0.11.0.0" />
 
   <Properties>
-    <DisplayName>ModernFlyouts.WinUI</DisplayName>
+    <DisplayName>ModernFlyouts</DisplayName>
     <PublisherDisplayName>ModernFlyouts-Community</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -36,8 +36,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ModernFlyouts.WinUI"
-        Description="ModernFlyouts.WinUI"
+        DisplayName="ModernFlyouts"
+        Description="ModernFlyouts"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">

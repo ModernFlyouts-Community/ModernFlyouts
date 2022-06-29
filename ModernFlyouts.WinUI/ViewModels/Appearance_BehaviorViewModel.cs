@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using ModernFlyouts.Core.Models;
 
 
-namespace ModernFlyouts.WinUI.ViewModels
+namespace ModernFlyouts.ViewModels
 {
     public class Appearance_BehaviorViewModel : ObservableObject
     {

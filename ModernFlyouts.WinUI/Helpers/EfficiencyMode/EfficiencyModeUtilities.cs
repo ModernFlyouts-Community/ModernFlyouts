@@ -1,7 +1,7 @@
-﻿using ModernFlyouts.WinUI.Interop;
+﻿using ModernFlyouts.Interop;
 using System;
 
-namespace ModernFlyouts.WinUI.EfficiencyMode;
+namespace ModernFlyouts.EfficiencyMode;
 
 /// <summary>
 /// Based on: <br/>

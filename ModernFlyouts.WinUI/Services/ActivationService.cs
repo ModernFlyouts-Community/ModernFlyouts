@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using ModernFlyouts.WinUI.Activation;
+using ModernFlyouts.Activation;
 using ModernFlyouts.Core.Helpers;
-using ModernFlyouts.WinUI.Services;
+using ModernFlyouts.Services;
 
 using Windows.ApplicationModel.Activation;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ModernFlyouts.WinUI.Services
+namespace ModernFlyouts.Services
 {
     internal class ActivationService
     {

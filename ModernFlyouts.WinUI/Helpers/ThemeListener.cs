@@ -6,7 +6,7 @@ using System;
 using System.Management;
 using System.Security.Principal;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     /// <summary>
     /// The Delegate for a ThemeChanged Event.

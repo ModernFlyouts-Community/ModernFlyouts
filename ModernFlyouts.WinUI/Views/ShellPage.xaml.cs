@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using ModernFlyouts.WinUI.Services;
-using ModernFlyouts.WinUI.ViewModels;
+using ModernFlyouts.Services;
+using ModernFlyouts.ViewModels;
 using Windows.Data.Json;
 using Microsoft.UI.Xaml.Automation.Peers;
 using CommunityToolkit.Mvvm.Input;
 
-namespace ModernFlyouts.WinUI.Views
+namespace ModernFlyouts.Views
 {
     // TODO WTS: Change the icons and titles for all NavigationViewItems in ShellPage.xaml.
     public sealed partial class ShellPage : UserControl
@@ -43,16 +43,16 @@ namespace ModernFlyouts.WinUI.Views
         }
 
 
-
         ////////OOBE////
 
         private void OOBEItem_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            // Frame rootFrame = new Frame();
+           // NavigateToOOBESection();
+            // //Frame rootFrame = new Frame();
             // var window = (Application.Current as App)?.Window as SettingsWindow;
-            ////Window.Current.Content = rootFrame;
-            //rootFrame.Navigate(typeof(OOBEPage));
-            shellFrame.Navigate(typeof(OOBEPage));
+            //////Window.Current.Content = rootFrame;
+            //SettingsWindow.rootFrame.Navigate(typeof(OOBEPage));
+            Navigate(typeof(OOBEPage));
         }
 
         //private void OOBEItem_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)

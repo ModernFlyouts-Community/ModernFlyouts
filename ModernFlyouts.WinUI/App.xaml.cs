@@ -8,19 +8,19 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using ModernFlyouts.WinUI.Helpers;
+using ModernFlyouts.Helpers;
 using System;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ModernFlyouts.WinUI.Contracts.Services;
-using ModernFlyouts.WinUI.Services;
+using ModernFlyouts.Contracts.Services;
+using ModernFlyouts.Services;
 using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ModernFlyouts.WinUI
+namespace ModernFlyouts
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -28,6 +28,8 @@ namespace ModernFlyouts.WinUI
     public partial class App : Application
     {
         public Window Window => m_window;
+
+        public static FrameworkElement SettingsRoot { get; private set; }
 
         public static bool IsElevated { get; set; }
 
@@ -124,16 +126,20 @@ namespace ModernFlyouts.WinUI
 
             m_window = new SettingsWindow();
             m_window.Activate();
+            SettingsRoot = m_window.Content as FrameworkElement;
 
 
             //TODO Fix Remote desktop white screen issue
-           // m_TransparentAppWindow = new TransparentWindow();
+            // m_TransparentAppWindow = new TransparentWindow();
         }
 
         internal Window m_window;
         //public Window m_TransparentAppWindow;
 
-
+        public static void Navigate(Type type)
+        {
+            NavigationService.Navigate(type);
+        }
 
 
         ////Cannot change runtime.

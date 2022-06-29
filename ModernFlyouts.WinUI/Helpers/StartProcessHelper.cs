@@ -4,7 +4,7 @@
 
 using System.Diagnostics;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     public static class StartProcessHelper
     {

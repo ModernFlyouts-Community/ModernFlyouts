@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 
 using CommunityToolkit.WinUI.Helpers;
 
-using ModernFlyouts.WinUI.Views;
+using ModernFlyouts.Views;
 
 using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
 
-namespace ModernFlyouts.WinUI.Services
+namespace ModernFlyouts.Services
 {
     // For instructions on testing this service see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/features/whats-new-prompt.md
     public static class WhatsNewDisplayService

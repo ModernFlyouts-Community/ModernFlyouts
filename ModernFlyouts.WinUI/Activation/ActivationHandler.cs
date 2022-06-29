@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace ModernFlyouts.WinUI.Activation
+namespace ModernFlyouts.Activation
 {
     // For more information on understanding and extending activation flow see
     // https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/activation.md

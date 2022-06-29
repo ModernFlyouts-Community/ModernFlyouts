@@ -1,4 +1,4 @@
-﻿namespace ModernFlyouts.WinUI.EfficiencyMode;
+﻿namespace ModernFlyouts.EfficiencyMode;
 
 /// <summary>
 /// The system maintains multiple QoS levels, each with differentiated performance and power efficiency.  <br/>

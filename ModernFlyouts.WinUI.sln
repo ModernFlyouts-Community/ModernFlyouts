@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32505.426
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernFlyouts.WinUI", "ModernFlyouts.WinUI\ModernFlyouts.WinUI.csproj", "{FE217C2B-5B6B-405C-98C6-76FA6ED50055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernFlyouts", "ModernFlyouts.WinUI\ModernFlyouts.csproj", "{FE217C2B-5B6B-405C-98C6-76FA6ED50055}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernFlyouts.Core", "ModernFlyouts.Core\ModernFlyouts.Core.csproj", "{40BAF5BF-38B6-4C0B-81AB-81891BF01523}"
 EndProject

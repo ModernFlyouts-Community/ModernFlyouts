@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ModernFlyouts.WinUI.Controls
+namespace ModernFlyouts.Controls
 {
     public class PageLink
     {

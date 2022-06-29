@@ -3,7 +3,7 @@
 using System;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ModernFlyouts.WinUI.Views
+namespace ModernFlyouts.Views
 {
     public sealed partial class MarkdownContentDialog : UserControl
     {

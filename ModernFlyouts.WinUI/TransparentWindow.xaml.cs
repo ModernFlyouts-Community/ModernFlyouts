@@ -11,7 +11,7 @@ using Microsoft.UI.Windowing;
 
 using ModernFlyouts.Core.Helpers;
 
-using ModernFlyouts.WinUI.Interop;
+using ModernFlyouts.Interop;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using static ModernFlyouts.Core.Helpers.NativeMethods;
@@ -22,7 +22,7 @@ using System.Text.RegularExpressions;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ModernFlyouts.WinUI
+namespace ModernFlyouts
 {
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.

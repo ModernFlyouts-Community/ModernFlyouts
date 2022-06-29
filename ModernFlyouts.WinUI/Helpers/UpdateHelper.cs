@@ -6,12 +6,12 @@ using System.Collections.Generic;
 using Windows.Foundation;
 
 using System.Runtime.InteropServices;
-using ModernFlyouts.WinUI.Helpers;
+using ModernFlyouts.Helpers;
 
 //private StoreContext context = null;
 
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 {
     internal static class UpdateHelper
     {

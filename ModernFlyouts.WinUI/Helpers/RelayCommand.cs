@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace ModernFlyouts.WinUI.Helpers
+namespace ModernFlyouts.Helpers
 { //TODO Evaluate need for this given CommunityToolkit.Mvvm.Input.RelayCommand
     public class RelayCommand : ICommand
     {

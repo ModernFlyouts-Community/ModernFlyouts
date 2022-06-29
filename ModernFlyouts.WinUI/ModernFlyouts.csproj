@@ -27,7 +27,7 @@
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 				<LangVersion>latest</LangVersion>
-					<Nullable>enable</Nullable>
+					<!--<Nullable>enable</Nullable>-->
     <NoWarn>
 										0108; <!-- 'x' hides inherited member 'y'. Use the new keyword if hiding was intended. -->
 										8305  <!-- 'x' is for evaluation purposes only and is subject to change or removal in future updates. -->
@@ -110,7 +110,7 @@
 										<PrivateAssets>all</PrivateAssets>
 						</PackageReference>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.1" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.25136-preview" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.25145-preview" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.8" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />

@@ -3,12 +3,12 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using ModernFlyouts.WinUI.Helpers;
+using ModernFlyouts.Helpers;
 using Microsoft.UI.Xaml.Automation;
 using Windows.ApplicationModel.Resources;
 using Windows.System;
 
-namespace ModernFlyouts.WinUI.Controls
+namespace ModernFlyouts.Controls
 {
     public sealed partial class ShortcutControl : UserControl, IDisposable
     {

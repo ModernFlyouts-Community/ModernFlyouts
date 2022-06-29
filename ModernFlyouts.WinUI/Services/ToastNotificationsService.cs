@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using ModernFlyouts.WinUI.Activation;
+using ModernFlyouts.Activation;
 
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Notifications;
 
-namespace ModernFlyouts.WinUI.Services
+namespace ModernFlyouts.Services
 {
     internal partial class ToastNotificationsService : ActivationHandler<ToastNotificationActivatedEventArgs>
     {

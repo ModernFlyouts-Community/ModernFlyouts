@@ -1,11 +1,11 @@
-﻿using ModernFlyouts.WinUI;
+﻿using ModernFlyouts;
 using System.ComponentModel.Design;
 using Windows.System;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Markup;
 
-namespace ModernFlyouts.WinUI.Controls
+namespace ModernFlyouts.Controls
 {
     [TemplatePart(Name = KeyPresenter, Type = typeof(ContentPresenter))]
     [TemplateVisualState(Name = "Normal", GroupName = "CommonStates")]
