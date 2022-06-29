@@ -44,42 +44,9 @@
         </Grid>
 
 
-
         <local:ShellPage />
         <!--<Frame x:Name="rootFrame"/>-->
 
     </Grid>
-
-
-    <!--<Grid Background="Transparent" >
-
-        <Grid x:Name="AppTitleBar"
-                IsHitTestVisible="True"
-                VerticalAlignment="Top" 
-                Background="Transparent"
-                Height="40"
-                Canvas.ZIndex="1" 
-                Margin="48,8,0,0"          
-                >
-
-            <Image x:Name="TitleBarIcon"
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Center"
-                    Source="ms-appx:///Assets/Square44x44Logo.targetsize-48.png" 
-                    Width="16" 
-                    Grid.Column = "1"
-                    Height="16" />
-            <TextBlock x:Name="AppTitle"
-                    Text="{x:Bind GetAppTitleFromSystem()}"
-                    VerticalAlignment="Center"
-                    Margin="12, 0, 0, 0"
-                    Grid.Column = "2"
-                    Style="{StaticResource CaptionTextBlockStyle}" />
-        </Grid>
-
-        <local:ShellPage/>
-    </Grid>-->
-
-
 
 </winex:WindowEx> 
