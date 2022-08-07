@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -29,33 +28,33 @@ namespace ModernFlyouts.ViewModels
     {
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
 
-        private readonly ILocalizationService _localizationService;
+        //private readonly ILocalizationService _localizationService;
 
-        private LanguageItem _selectedLanguage;
-        public LanguageItem SelectedLanguage
-        {
-            get { return _selectedLanguage; }
-            set
-            {
-                if (SetProperty(ref _selectedLanguage, value) is true)
-                {
-                    OnSelectedLanguageChanged(value);
-                }
-            }
-        }
+        //private LanguageItem _selectedLanguage;
+        //public LanguageItem SelectedLanguage
+        //{
+        //    get { return _selectedLanguage; }
+        //    set
+        //    {
+        //        if (SetProperty(ref _selectedLanguage, value) is true)
+        //        {
+        //            OnSelectedLanguageChanged(value);
+        //        }
+        //    }
+        //}
 
-        private void OnSelectedLanguageChanged(LanguageItem value)
-        {
-            _localizationService.SetLanguageAsync(value);
-            IsLocalizationChanged = true;
-        }
+        //private void OnSelectedLanguageChanged(LanguageItem value)
+        //{
+        //    _localizationService.SetLanguageAsync(value);
+        //    IsLocalizationChanged = true;
+        //}
 
-        private bool _isLocalizationChanged;
-        public bool IsLocalizationChanged
-        {
-            get { return _isLocalizationChanged; }
-            set { SetProperty(ref _isLocalizationChanged, value); }
-        }
+        //private bool _isLocalizationChanged;
+        //public bool IsLocalizationChanged
+        //{
+        //    get { return _isLocalizationChanged; }
+        //    set { SetProperty(ref _isLocalizationChanged, value); }
+        //}
 
         //private List<LanguageItem> _availableLanguages;
         //public List<LanguageItem> AvailableLanguages
@@ -84,21 +83,21 @@ namespace ModernFlyouts.ViewModels
         {
             get
             {
-                string? architecture = Package.Current.Id.Architecture.ToString();
+                string architecture = Package.Current.Id.Architecture.ToString();
 #if DEBUG
-                string? buildConfiguration = "DEBUG";
-                string? versionType = "BETA";
+                string buildConfiguration = "DEBUG";
+                string versionType = "BETA";
 
 #else
                 string buildConfiguration = "RELEASE";
-                string? versionType = "RELEASE";
+                string versionType = "RELEASE";
 #endif
 
                 //TODO Add binding of version type eg. Beta, alpha, release
                 //temporarily use debug = beta, release = release
 
-                string? gitBranch = ThisAssembly.Git.Branch;
-                string? gitCommit = ThisAssembly.Git.Commit;
+                string gitBranch = ThisAssembly.Git.Branch;
+                string gitCommit = ThisAssembly.Git.Commit;
 
                 //Dont show git branch, commit and buildconfig on release version
                 if (versionType == "RELEASE")
@@ -158,8 +157,9 @@ namespace ModernFlyouts.ViewModels
                 Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
                 Clipboard.Flush();
             }
-            catch (Exception ex)
+            catch
             {
+               //TODO: Catch exception
                 //Logger.LogFault($"Failed to copy data from copy version command, version: ${Version}", ex);
             }
         }

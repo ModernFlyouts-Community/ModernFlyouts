@@ -22,7 +22,7 @@ namespace ModernFlyouts.Views
         /// </summary>
         public ShellViewModel ViewModel { get; } = new ShellViewModel();
 
-        private readonly IWindowManager _windowManager;
+        //private readonly IWindowManager _windowManager;
 
         public static bool IsElevated { get; set; }
 

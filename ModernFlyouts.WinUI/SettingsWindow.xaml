@@ -9,10 +9,12 @@
     mc:Ignorable="d"
     Width="1024" Height="768" 
     MinWidth="450" MinHeight="400"
-    
     TaskBarIcon="ModernFlyoutsMultiRES.ico"
     Title="{x:Bind GetAppTitleFromSystem()}"
     >
+    <winex:WindowEx.Backdrop>
+        <winex:MicaSystemBackdrop  />
+    </winex:WindowEx.Backdrop>
     <!--ExtendsContentIntoTitleBar="True" Backdrop="Mica" Canvas.ZIndex="1"-->
 
     <Grid>
@@ -45,7 +47,6 @@
 
 
         <local:ShellPage />
-        <!--<Frame x:Name="rootFrame"/>-->
 
     </Grid>
 

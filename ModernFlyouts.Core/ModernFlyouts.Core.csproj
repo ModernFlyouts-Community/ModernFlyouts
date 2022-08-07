@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 				<LangVersion>latest</LangVersion>
@@ -12,14 +12,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
-						<PackageReference Include="DesktopBridge.Helpers" Version="1.2.2" />
-						<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="7.0.0-preview.5.22301.12" />
-						<PackageReference Include="System.Drawing.Common" Version="7.0.0-preview.5.22301.12" />
-						<PackageReference Include="System.Management" Version="7.0.0-preview.5.22301.12" />
+    <Compile Remove="Helpers\Shell\DesktopUtil.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
+						<PackageReference Include="DesktopBridge.Helpers" Version="1.2.2" />
+						<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="7.0.0-preview.6.22324.4" />
+						<PackageReference Include="System.Drawing.Common" Version="7.0.0-preview.6.22324.4" />
+						<PackageReference Include="System.Management" Version="7.0.0-preview.6.22324.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\Shell\" />
     <Folder Include="Models\" />
   </ItemGroup>
 

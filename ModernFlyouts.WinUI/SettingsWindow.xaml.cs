@@ -41,8 +41,6 @@ namespace ModernFlyouts
             ShellPage.SetElevationStatus(App.IsElevated);
             ShellPage.SetIsUserAnAdmin(App.IsUserAnAdmin);
 
-            this.Backdrop = Backdrop.Mica;
-
             SetTitleBar();
 
             this.InitializeComponent();

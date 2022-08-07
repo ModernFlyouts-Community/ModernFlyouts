@@ -90,7 +90,7 @@ namespace ModernFlyouts
         {
             InitializeComponent();
             UnhandledException += App_UnhandledException;
-            JumpListHelper.CreateJumpListAsync();
+            //JumpListHelper.CreateJumpListAsync();
         }
 
         private void App_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
