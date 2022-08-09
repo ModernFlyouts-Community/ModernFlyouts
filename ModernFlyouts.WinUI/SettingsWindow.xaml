@@ -15,9 +15,97 @@
     <winex:WindowEx.Backdrop>
         <winex:MicaSystemBackdrop  />
     </winex:WindowEx.Backdrop>
-    <!--ExtendsContentIntoTitleBar="True" Backdrop="Mica" Canvas.ZIndex="1"-->
 
-    <Grid>
+    <Grid x:Name="windowRoot" 
+          x:FieldModifier="private">
+
+        <!--<Grid.Resources>
+            <XamlUICommand
+                x:Key="OpenAppCommand"
+                ExecuteRequested="OpenAppCommand_ExecuteRequested"
+                Label="Open My Phone"
+                Description="Open My Phone" />
+            <XamlUICommand 
+                x:Key="ExitCommand"
+                ExecuteRequested="ExitCommand_ExecuteRequested"
+                Label="Exit"
+                Description="Exit">
+                <XamlUICommand.IconSource>
+                    <SymbolIconSource Symbol="Cancel" />
+                </XamlUICommand.IconSource>
+            </XamlUICommand>
+        </Grid.Resources>-->
+
+        <!--<Border x:Name="AppTitleBar"
+                IsHitTestVisible="True"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                Height="40"
+                Canvas.ZIndex="1"
+                Margin="48,4,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="AppFontIcon"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center"
+                    Source="Assets/Square44x44Logo.png" 
+                    Width="16" 
+                    Height="16"/>
+                <TextBlock x:Name="AppTitle"
+                    Text="{x:Bind local:MainWindow.AppTitleDisplayName}"
+                    VerticalAlignment="Center"
+                    Margin="12,0,0,0"
+                    Style="{StaticResource CaptionTextBlockStyle}" />
+            </StackPanel>
+        </Border>-->
+        
+        <Grid x:Name="AppTitleBar"
+              Height="48"
+              IsHitTestVisible="True"
+              VerticalAlignment="Top" 
+              Canvas.ZIndex="1"
+              Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition x:Name="LeftBackPaddingColumn" Width="48"/>
+                <ColumnDefinition x:Name="IconColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="TitleColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="LeftDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="TitleBarIcon" Source="ms-appx:///Assets/Square44x44Logo.targetsize-48.png" 
+                   Grid.Column="2"
+                   HorizontalAlignment="Left"
+                   Width="16" Height="16"/>
+            <TextBlock x:Name="TitleTextBlock" 
+                       Text="{x:Bind GetAppTitleFromSystem()}"
+                       TextWrapping="NoWrap"
+                       Style="{StaticResource CaptionTextBlockStyle}"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       Margin="28,0,0,0"/>
+        </Grid>
+
+        <!--<Frame x:Name="rootFrame"
+               Canvas.ZIndex="0"/>-->
+        <local:ShellPage />
+        <!--<tb:TaskbarIcon
+            ToolTipText="{x:Bind local:MainWindow.AppTitleDisplayName}"
+            IconSource="/Assets/Icon.ico"
+            MenuActivation="LeftOrRightClick"
+            DoubleClickCommand="{StaticResource OpenAppCommand}">
+            <tb:TaskbarIcon.ContextFlyout>
+                <MenuFlyout>
+                    <MenuFlyoutItem Command="{StaticResource OpenAppCommand}" />
+                    <MenuFlyoutItem Command="{StaticResource ExitCommand}" />
+                </MenuFlyout>
+            </tb:TaskbarIcon.ContextFlyout>
+        </tb:TaskbarIcon>-->
+    </Grid>
+     
+</winex:WindowEx>
+
+<!--<Grid>
         <Grid x:Name="AppTitleBar"
               Height="48"
               IsHitTestVisible="True"
@@ -48,6 +136,4 @@
 
         <local:ShellPage />
 
-    </Grid>
-
-</winex:WindowEx> 
+    </Grid>-->

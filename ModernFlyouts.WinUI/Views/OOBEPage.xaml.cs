@@ -24,7 +24,7 @@ namespace ModernFlyouts.Views
     /// </summary>
     public sealed partial class OOBEPage : Page
     {
-        Visibility IsMobile;
+        //Visibility IsMobile;
         //private AppWindow appWindow;
 
         public OOBEPage()
@@ -36,7 +36,7 @@ namespace ModernFlyouts.Views
 
             //if (WindowEx.Current.Bounds.Width  > 830)
             //{
-            IsMobile = Visibility.Visible;
+            //IsMobile = Visibility.Visible;
             //}
             //else
             //{
@@ -66,7 +66,7 @@ namespace ModernFlyouts.Views
 
             //if (WindowEx.Current.Bounds.Width > 830)
             //{
-            IsMobile = Visibility.Visible;
+            //IsMobile = Visibility.Visible;
             //}
             //else
             //{

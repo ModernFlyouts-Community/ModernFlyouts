@@ -1,6 +1,4 @@
-﻿using Microsoft.UI.Windowing;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,39 +11,101 @@ using ModernFlyouts.Views;
 using System.Threading.Tasks;
 using ModernFlyouts.Services;
 
-using Microsoft.UI;
 using Windows.ApplicationModel.Resources;
 
 using WinRT.Interop;
 using WinUIEx;
 using Windows.UI;
 using WindowId = Microsoft.UI.WindowId;
-using Microsoft.UI.Xaml;
 using ModernFlyouts;
 
+using H.NotifyIcon;
+using Microsoft.UI;
+using Microsoft.UI.Composition;
+using Microsoft.UI.Composition.SystemBackdrops;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Windowing;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Media;
+using System.Diagnostics;
+using Windows.Win32;
+using WinRT;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace ModernFlyouts
 {
     /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// The Settings window of ModernFlyouts.
     /// </summary>
-    public sealed partial class SettingsWindow : WinUIEx.WindowEx
+    public sealed partial class SettingsWindow : WinUIEx.WindowEx, IDisposable
     {
+        public static XamlRoot XamlRoot { get => _instance.windowRoot.XamlRoot; }
+        public static DispatcherQueue WindowDispatcher { get => _instance.DispatcherQueue; }
+        public static string AppTitleDisplayName { get => Windows.ApplicationModel.Package.Current.DisplayName; }
+
+        //private readonly ISettingsService _settingsService;
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private static SettingsWindow _instance;
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private IntPtr hWnd;
+
         private AppWindow appWindow;
 
-        public SettingsWindow()
+        // private readonly WindowsSystemDispatcherQueueHelper _wsdqHelper;
+
+        public SettingsWindow() : base()
         {
+            InitializeComponent();
+            _instance = this;
+            //_settingsService = settingsService;
+            //_oobeCompleted = settingsService.GetValue<bool>(settingsService.KeyOobeIsCompleted);
+            Title = AppTitleDisplayName;
+
+            // Hide default title bar.
+            ExtendsContentIntoTitleBar = true;
+            SetTitleBar(AppTitleBar); // Set XAML element as a draggable region.
+
+            //Register a handler for when the window changes focus
+            Activated += SettingsWindow_Activated;
+
+            // AppWindow Interop
+            hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
+            AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
+            appWindow.Closing += AppWindow_Closing;
+
+            // Resize the window 
+            uint dpi = PInvoke.GetDpiForWindow((Windows.Win32.Foundation.HWND)hWnd);
+            double factor = dpi / 96d;
+            appWindow.Resize(new Windows.Graphics.SizeInt32(Convert.ToInt32(1200 * factor), Convert.ToInt32(800 * factor)));
+
+
+
             ShellPage.SetElevationStatus(App.IsElevated);
             ShellPage.SetIsUserAnAdmin(App.IsUserAnAdmin);
 
-            SetTitleBar();
+            //SetTitleBar();
 
-            this.InitializeComponent();
 
+
+
+            // if (_oobeCompleted == true)
+            //{
+            //rootFrame.Navigate(typeof(ShellPage));
+            //}
+            //else
+            //{
+                 // rootFrame.Navigate(typeof(OobePage));
+            //}
         }
+
+        /// <summary>
+        /// ////////////////////////////////////////////
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
 
         private void SetTitleBar()
         {
@@ -80,6 +140,9 @@ namespace ModernFlyouts
             }
         }
 
+
+
+
         private AppWindow GetAppWindowForCurrentWindow()
         {
             IntPtr hWnd = WindowNative.GetWindowHandle(this);
@@ -94,7 +157,7 @@ namespace ModernFlyouts
 
         public void NavigateToOOBESection(object sender, RoutedEventArgs e)
         {
-            ShellPage.Navigate(typeof(OOBEPage));
+            //ShellPage.Navigate(typeof(OOBEPage));
             //App.SettingsRoot.Navigate(typeof(OOBEPage));
         }
 
@@ -104,8 +167,31 @@ namespace ModernFlyouts
         }
 
 
+        /// ///////////////////////////////
 
+        private void SettingsWindow_Activated(object sender, WindowActivatedEventArgs args)
+        {
+        }
 
+        private void AppWindow_Closing(AppWindow sender, AppWindowClosingEventArgs args)
+        {
+            this.Hide(enableEfficiencyMode: true);
+            args.Cancel = true;
+        }
 
+        private void OpenAppCommand_ExecuteRequested(Microsoft.UI.Xaml.Input.XamlUICommand sender, Microsoft.UI.Xaml.Input.ExecuteRequestedEventArgs args)
+        {
+            this.Show(disableEfficiencyMode: true);
+            PInvoke.SetForegroundWindow((Windows.Win32.Foundation.HWND)hWnd);
+        }
+
+        private void ExitCommand_ExecuteRequested(Microsoft.UI.Xaml.Input.XamlUICommand sender, Microsoft.UI.Xaml.Input.ExecuteRequestedEventArgs args)
+        {
+            Close();
+        }
+
+        public void Dispose()
+        {
+        }
     }
 }

@@ -80,6 +80,7 @@
     <Compile Remove="Helpers\SessionConstructor.cs" />
     <Compile Remove="Services\MediaSessionService.cs" />
     <Compile Remove="TransparentWindow.xaml.cs" />
+    <Compile Remove="Views\OOBEPage.xaml.cs" />
     <Compile Remove="Views\TrayIconView.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,10 +88,12 @@
     <None Remove="MultilingualResources\ModernFlyouts.WinUI.es.xlf" />
     <None Remove="MultilingualResources\ModernFlyouts.WinUI.fr.xlf" />
     <None Remove="TransparentWindow.xaml" />
+    <None Remove="Views\OOBEPage.xaml" />
     <None Remove="Views\TrayIconView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Page Remove="TransparentWindow.xaml" />
+    <Page Remove="Views\OOBEPage.xaml" />
     <Page Remove="Views\TrayIconView.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +102,7 @@
 				
   <ItemGroup>
     <PackageReference Include="GitInfo" Version="2.2.0" />
+    <PackageReference Include="H.NotifyIcon.WinUI" Version="2.0.59" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.6.22324.4" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0-preview.6.22324.4" />
 						<PackageReference Include="Microsoft.Windows.CsWin32" Version="0.2.10-beta">

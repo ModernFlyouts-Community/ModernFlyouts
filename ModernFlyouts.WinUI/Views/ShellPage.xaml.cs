@@ -47,12 +47,7 @@ namespace ModernFlyouts.Views
 
         private void OOBEItem_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-           // NavigateToOOBESection();
-            // //Frame rootFrame = new Frame();
-            // var window = (Application.Current as App)?.Window as SettingsWindow;
-            //////Window.Current.Content = rootFrame;
-            //SettingsWindow.rootFrame.Navigate(typeof(OOBEPage));
-            Navigate(typeof(OOBEPage));
+            //windowRoot.Navigate(typeof(OOBEPage));
         }
 
         //private void OOBEItem_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
