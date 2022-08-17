@@ -341,10 +341,11 @@ namespace ModernFlyouts.Core.Interop
         private bool GetAllInfos()
         {
             IntPtr hWndHost;
-            while ((hWndHost = FindWindowEx(IntPtr.Zero, IntPtr.Zero, "NativeHWNDHost", "")) != IntPtr.Zero)
+            _ = Environment.OSVersion.Version.Build;
+            while ((hWndHost = FindWindowEx(IntPtr.Zero, IntPtr.Zero, Environment.OSVersion.Version.Build > 22000 ? "XamlExplorerHostIslandWindow" : "NativeHWNDHost", "")) != IntPtr.Zero)
             {
                 IntPtr hWndDUI;
-                if ((hWndDUI = FindWindowEx(hWndHost, IntPtr.Zero, "DirectUIHWND", "")) != IntPtr.Zero)
+                if ((hWndDUI = FindWindowEx(hWndHost, IntPtr.Zero, Environment.OSVersion.Version.Build > 22000 ? "Windows.UI.Composition.DesktopWindowContentBridge" : "DirectUIHWND", Environment.OSVersion.Version.Build > 22000 ? "DesktopWindowXamlSource" : "")) != IntPtr.Zero)
                 {
                     GetWindowThreadProcessId(hWndHost, out int pid);
                     if (Process.GetProcessById(pid).ProcessName.ToLower() == "explorer")
