@@ -341,7 +341,6 @@ namespace ModernFlyouts.Core.Interop
         private bool GetAllInfos()
         {
             IntPtr hWndHost;
-            _ = Environment.OSVersion.Version.Build;
             while ((hWndHost = FindWindowEx(IntPtr.Zero, IntPtr.Zero, Environment.OSVersion.Version.Build > 22000 ? "XamlExplorerHostIslandWindow" : "NativeHWNDHost", "")) != IntPtr.Zero)
             {
                 IntPtr hWndDUI;
