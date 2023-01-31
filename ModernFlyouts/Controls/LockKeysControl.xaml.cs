@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using ModernWpf.Controls;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace ModernFlyouts.Controls
 {
@@ -7,6 +9,12 @@ namespace ModernFlyouts.Controls
         public LockKeysControl()
         {
             InitializeComponent();
+        }
+
+        public void InvalidateProperties()
+        {
+            BindingOperations.GetBindingExpression(LockStatusText, TextBlock.TextProperty).UpdateTarget();
+            BindingOperations.GetBindingExpression(LockStatusGlyph, FontIcon.GlyphProperty).UpdateTarget();
         }
     }
 }
