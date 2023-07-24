@@ -25,7 +25,7 @@
     <value>Режим полёта включен</value>
   </data>
   <data name="Align" xml:space="preserve">
-    <value>Выравнять к позиции по умолчанию</value>
+    <value>Выровнять к позиции по умолчанию</value>
   </data>
   <data name="AudioFlyoutHelper.NoDevices" xml:space="preserve">
     <value>Нет подключенных аудиоустройств</value>
@@ -63,7 +63,7 @@
     <value>Восстановить значения по умолчанию</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Восстанавливает всплывающие окна по умолчанию и безопасно завершает приложение</value>
+    <value>Восстанавливает всплывающие окна по умолчанию и безопасно совершает выход из приложения</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Другие элементы</value>
@@ -114,7 +114,7 @@
     <value>Выберите всплывающие окна по умолчанию</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>При выборе всплывающих окон из Windows по умолчанию, данное приложение будет работать в фоновом режиме.
+    <value>При выборе всплывающих окон из Windows по умолчанию данное приложение будет работать в фоновом режиме.
           Пожалуйста, выйдите безопасно из данного приложения, чтобы улучшить производительность.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
@@ -148,7 +148,7 @@
     <value>Клавиши блокировки</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Автозагрузка</value>
+    <value>Автозапуск при старте компьютера</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Настройки</value>
@@ -250,7 +250,7 @@
     <value>Scroll Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Выберите клавиши для которых желаете отображать всплывающее окно</value>
+    <value>Выберите клавиши, для которых желаете отображать всплывающее окно</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Внешний вид</value>
@@ -313,7 +313,7 @@
     <value>Выровнять положение к этой точке</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Перезагрузка необходима для применения некоторых изменений.</value>
+    <value>Для применения некоторых изменений необходима перезагрузка.</value>
   </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Снизу</value>
@@ -350,12 +350,6 @@
   </data>
   <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
     <value>Вручную</value>
-  </data>
-  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
-    <value>По возрастанию</value>
-  </data>
-  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
-    <value>По убыванию</value>
   </data>
   <data name="Settings.Display" xml:space="preserve">
     <value>Отобразить</value>

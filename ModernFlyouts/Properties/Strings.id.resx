@@ -285,7 +285,7 @@
     <value>Kanan</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Keterlihatan Bilah</value>
+    <value>Keterlihatan bilah</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Tampilkan ikon pada area baki sistem</value>
@@ -388,5 +388,8 @@
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Perataan vertikal</value>
+  </data>
+  <data name="Settings.FlyoutAnimationEnabled" xml:space="preserve">
+    <value>Animasi pudar</value>
   </data>
 </root>

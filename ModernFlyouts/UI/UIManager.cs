@@ -1,4 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ModernFlyouts.Controls;
 using ModernFlyouts.Core.UI;
 using ModernFlyouts.Helpers;

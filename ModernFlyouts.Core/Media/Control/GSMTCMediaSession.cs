@@ -1,4 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.Input;
 using ModernFlyouts.Core.AppInformation;
 using ModernFlyouts.Core.Helpers;
 using System;

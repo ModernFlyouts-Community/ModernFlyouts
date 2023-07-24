@@ -121,10 +121,10 @@
     <value>ModernFlyouts is an open source, modern, and Fluent Design-based replacement for the old Metro-themed flyouts present in Windows 10.</value>
   </data>
   <data name="ApplicationDisplayName" xml:space="preserve">
-    <value>ModernFlyouts (Preview)</value>
+    <value>ModernFlyouts (rams)</value>
   </data>
   <data name="PackageDisplayName" xml:space="preserve">
-    <value>ModernFlyouts (Preview)</value>
+    <value>ModernFlyouts (rams)</value>
   </data>
   <data name="PublisherDisplayName" xml:space="preserve">
     <value>Sam G</value>
