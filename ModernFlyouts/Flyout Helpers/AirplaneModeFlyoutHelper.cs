@@ -14,7 +14,11 @@ namespace ModernFlyouts
         public bool AirplaneMode
         {
             get => airplaneMode;
-            private set => SetProperty(ref airplaneMode, value);
+            private set
+            {
+                SetProperty(ref airplaneMode, value);
+                airplaneModeControl.InvalidateProperties();
+            }
         }
 
         #endregion

@@ -12,8 +12,8 @@
              Height="64" d:DesignWidth="354" DataContext="{x:Static root:FlyoutHandler.Instance}">
 
     <StackPanel DataContext="{Binding AirplaneModeFlyoutHelper.AirplaneMode}"
-                Orientation="Horizontal" HorizontalAlignment="Center">
-        <ui:FontIcon d:Glyph="{x:Static utils:CommonGlyphs.Info}" FontSize="24">
+                Orientation="Horizontal" HorizontalAlignment="Center" Name="MainStackPanel">
+        <ui:FontIcon d:Glyph="{x:Static utils:CommonGlyphs.Info}" FontSize="24" Name="AirplaneStatusGlyph">
             <ui:FontIcon.Glyph>
                 <Binding>
                     <Binding.Converter>
@@ -27,13 +27,13 @@
 
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
                    Style="{DynamicResource BaseTextBlockStyle}" FontSize="18"
-                   Margin="20" d:Text="{x:Static resx:Strings.AirplaneMode_NotAvailable}">
+                   Margin="20" d:Text="{x:Static resx:Strings.AirplaneMode_NotAvailable}" Name="AirplaneStatusText">
             <TextBlock.Text>
-                <Binding>
+                <Binding BindsDirectlyToSource="True" IsAsync="True" Mode="OneWay">
                     <Binding.Converter>
                         <toolkit:BoolToObjectConverter
-                                       TrueValue="{x:Static resx:Strings.AirplaneModeOn}"
-                                       FalseValue="{x:Static resx:Strings.AirplaneModeOff}" />
+                            TrueValue="{x:Static resx:Strings.AirplaneModeOn}"
+                            FalseValue="{x:Static resx:Strings.AirplaneModeOff}" />
                     </Binding.Converter>
                 </Binding>
             </TextBlock.Text>

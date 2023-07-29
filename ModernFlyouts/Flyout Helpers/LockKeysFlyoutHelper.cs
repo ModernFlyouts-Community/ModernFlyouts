@@ -16,7 +16,11 @@ namespace ModernFlyouts
         public string StatusGlyph
         {
             get => statusGlyph;
-            private set => SetProperty(ref statusGlyph, value);
+            private set
+            {
+                SetProperty(ref statusGlyph, value);
+                lockKeysControl.InvalidateProperties();
+            }
         }
 
         private string statusText = string.Empty;

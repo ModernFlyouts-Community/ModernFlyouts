@@ -10,11 +10,11 @@
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
         <ui:FontIcon Glyph="{Binding LockKeysFlyoutHelper.StatusGlyph}"
-                     d:Glyph="{x:Static utils:CommonGlyphs.Lock}" FontSize="24" />
+                     d:Glyph="{x:Static utils:CommonGlyphs.Lock}" FontSize="24" Name="LockStatusGlyph" />
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
                    Style="{DynamicResource BaseTextBlockStyle}" FontSize="18"
                    Margin="20" Text="{Binding LockKeysFlyoutHelper.StatusText}"
-                   d:Text="Lock key is on" />
+                   d:Text="Lock key is on" Name="LockStatusText" />
     </StackPanel>
 
 </UserControl>

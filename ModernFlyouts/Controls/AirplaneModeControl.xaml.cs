@@ -1,4 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using ModernWpf.Controls;
+using System.ComponentModel;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace ModernFlyouts.Controls
 {
@@ -7,6 +10,11 @@ namespace ModernFlyouts.Controls
         public AirplaneModeControl()
         {
             InitializeComponent();
+        }
+
+        public void InvalidateProperties()
+        {
+            BindingOperations.GetBindingExpression(MainStackPanel, StackPanel.DataContextProperty).UpdateTarget();
         }
     }
 }
