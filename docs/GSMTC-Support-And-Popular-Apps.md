@@ -55,7 +55,7 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | [Quod Libet](https://quodlibet.readthedocs.io/en/latest/downloads.html) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [MusicPlayer2](https://github.com/zhongyang219/MusicPlayer2/) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [Strawberry](https://www.strawberrymusicplayer.org/#download) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
-| [NetEase Cloud Music](https://music.163.com/#/download) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
+| [NetEase Cloud Music](https://music.163.com/#/download) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 |
 | [QQ Music](https://y.qq.com/download) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 
 ##### Video:
@@ -99,7 +99,7 @@ NOTE- Chromium based includes Chromium browsers and its derivatives (Chrome, New
 - **Winamp** - https://github.com/NanMetal/gen_smtc
 - **MPV** - <sup><a name="f1">1</a></sup>https://github.com/x0wllaar/MPV-SMTC OR
           - <sup><a name="f2">2</a></sup>https://github.com/datasone/MPVMediaControl
-
+- **Netease Cloud Music** - https://github.com/BetterNCM/InfinityLink
 ## Help us include support for more applications that are currently unsupported
 
 - **VLC** : We have filed a [feature request on VLC's bug tracker site](https://trac.videolan.org/vlc/ticket/25258#ticket) asking built-in support for the SMTC APIs for the VLC Desktop (Win32) app.
