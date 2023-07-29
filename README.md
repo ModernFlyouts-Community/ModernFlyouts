@@ -1,5 +1,3 @@
-# **Note:**
-## **This is just me trying to fix a couple of bugs with this practically abandoned project.**
 ![ModernFlyouts](ModernFlyouts/Assets/Images/Readme_Banner.png)
 
 #### An open source, modern, **Fluent Design-based** set of flyouts for Windows.
