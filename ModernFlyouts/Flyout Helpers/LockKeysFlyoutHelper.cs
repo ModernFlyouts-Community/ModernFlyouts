@@ -11,22 +11,6 @@ namespace ModernFlyouts
 
         #region Properties
 
-        private string statusGlyph = string.Empty;
-
-        public string StatusGlyph
-        {
-            get => statusGlyph;
-            private set => SetProperty(ref statusGlyph, value);
-        }
-
-        private string statusText = string.Empty;
-
-        public string StatusText
-        {
-            get => statusText;
-            private set => SetProperty(ref statusText, value);
-        }
-
         private bool capsLockEnabled = DefaultValuesStore.LockKeysModule_CapsLockEnabled;
 
         public bool CapsLockEnabled
@@ -151,7 +135,6 @@ namespace ModernFlyouts
         private void Prepare(LockKeys key, bool islock)
         {
             string msg;
-            string glyph;
 
             if (key != LockKeys.Insert)
             {
@@ -164,16 +147,15 @@ namespace ModernFlyouts
                 };
 
                 msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, keyName);
-                glyph = islock ? CommonGlyphs.Lock : CommonGlyphs.Unlock;
+                lockKeysControl.LockGlyph.Glyph = islock ? CommonGlyphs.Lock : CommonGlyphs.Unlock;
             }
             else
             {
                 msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
-                glyph = string.Empty;
+                lockKeysControl.LockGlyph.Glyph = string.Empty;
             }
 
-            StatusGlyph = glyph;
-            StatusText = msg;
+            lockKeysControl.txt.Text = msg;
         }
 
         private enum LockKeys
