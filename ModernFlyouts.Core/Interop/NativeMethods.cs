@@ -779,6 +779,9 @@ namespace ModernFlyouts.Core.Interop
         internal static extern uint GetWindowThreadProcessId(IntPtr hWnd, out int processId);
 
         [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool GetWindowBand(IntPtr hWnd, out UIntPtr pdwBand);
+
+        [DllImport("user32.dll", SetLastError = true)]
         internal static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, int uFlags);
 
         [DllImport("user32.dll")]

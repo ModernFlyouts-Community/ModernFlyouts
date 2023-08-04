@@ -371,10 +371,15 @@ namespace ModernFlyouts.Core.Interop
                     GetWindowThreadProcessId(hWndHost, out int pid);
                     if (Process.GetProcessById(pid).ProcessName.ToLower() == "explorer")
                     {
-                        HWndHost = hWndHost;
-                        HWndDUI = hWndDUI;
-                        ShellProcessId = (uint)pid;
-                        return true;
+                        UIntPtr pdwBand = UIntPtr.Zero;
+                        GetWindowBand(hWndHost, out pdwBand);
+                        if (pdwBand == (UIntPtr)ZBandID.AboveLockUX)
+                        {
+                            HWndHost = hWndHost;
+                            HWndDUI = hWndDUI;
+                            ShellProcessId = (uint)pid;
+                            return true;
+                        }
                     }
                 }
             }

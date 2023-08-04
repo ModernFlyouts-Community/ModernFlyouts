@@ -351,7 +351,8 @@ namespace ModernFlyouts.Core.Interop
             {
                 WindowStyle = (int)(WindowStyles.WS_VISIBLE | WindowStyles.WS_CHILD),
                 ParentWindow = hWnd,
-                UsesPerPixelTransparency = true
+                UsesPerPixelTransparency = true,
+                ExtendedWindowStyle = (int)(ExtendedWindowStyles.WS_EX_NOREDIRECTIONBITMAP)
             };
 
             hwndSource = new(param)
