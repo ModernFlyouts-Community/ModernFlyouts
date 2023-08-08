@@ -9,12 +9,10 @@
              Height="64" d:DesignWidth="354" DataContext="{x:Static root:FlyoutHandler.Instance}">
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-        <ui:FontIcon Glyph="{Binding LockKeysFlyoutHelper.StatusGlyph}"
-                     d:Glyph="{x:Static utils:CommonGlyphs.Lock}" FontSize="24" />
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+        <ui:FontIcon x:Name="LockGlyph" Glyph="{x:Static utils:CommonGlyphs.Lock}" FontSize="24" />
+        <TextBlock x:Name="txt" HorizontalAlignment="Left" VerticalAlignment="Center"
                    Style="{DynamicResource BaseTextBlockStyle}" FontSize="18"
-                   Margin="20" Text="{Binding LockKeysFlyoutHelper.StatusText}"
-                   d:Text="Lock key is on" />
+                   Margin="20" Text="Lock key is on" />
     </StackPanel>
 
 </UserControl>

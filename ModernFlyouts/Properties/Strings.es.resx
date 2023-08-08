@@ -87,7 +87,7 @@
     <value>Repetir: desactivado</value>
   </data>
   <data name="SessionControl.RepeatOne" xml:space="preserve">
-    <value>Repetir: una</value>
+    <value>Repetir: bucle</value>
   </data>
   <data name="SessionControl.ShuffleOff" xml:space="preserve">
     <value>Aleatorio: desactivado</value>
@@ -147,7 +147,7 @@
     <value>Teclas de bloqueo</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
-    <value>Ejecutar al inicio</value>
+    <value>Iniciar con Windows</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
     <value>Configuración</value>
@@ -216,7 +216,7 @@
     <value>Mostrar controles de transporte de medios del sistema global (GSMTC) también conocidos como controles de medios en el control flotante de volumen</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Mostrar control de volumen en global system Media Transport Controls (GSMTC) también conocido como control flotante de medios</value>
+    <value>Mostrar control de volumen en transporte de medios del sistema global (GSMTC) también conocido como control flotante de medios</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Alineación de miniaturas</value>
@@ -249,7 +249,7 @@
     <value>Bloq Despl</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Seleccione las teclas para las que desea mostrar el control flotante</value>
+    <value>Selecciona las teclas para las que desea mostrar el control flotante</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Apariencia</value>
@@ -258,13 +258,13 @@
     <value>Activar el control flotante del modo avión</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Activar el control flotante del audio</value>
+    <value>Activar control flotante para audio</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Activar el control flotante del brillo</value>
+    <value>Activar control flotante para brillo</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Activar el control flotante del bloqueo de teclas</value>
+    <value>Activar control flotante para bloqueo de teclas</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
     <value>Tema del control flotante</value>
@@ -312,55 +312,13 @@
     <value>Alinear control flotante a esta posición</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Reinicio necesario para aplicar algunos cambios</value>
+    <value>Reinicia la aplicación para aplicar algunos cambios</value>
   </data>
   <data name="AudioFlyoutHelper.UseThumbnailAsBackground" xml:space="preserve">
     <value>Usar la miniatura multimedia como fondo del control multimedia</value>
   </data>
-  <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
-    <value>Inferior</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Center" xml:space="preserve">
-    <value>Centro</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
-    <value>Izquierda</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
-    <value>Derecha</value>
-  </data>
-  <data name="Enums.FlyoutWindowAlignments.Top" xml:space="preserve">
-    <value>Arriba</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Auto" xml:space="preserve">
-    <value>Automático</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
-    <value>Abajo</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
-    <value>Izquierda</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
-    <value>Derecha</value>
-  </data>
-  <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
-    <value>Arriba</value>
-  </data>
-  <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
-    <value>Automático</value>
-  </data>
   <data name="Enums.FlyoutWindowPlacementMode.Manual" xml:space="preserve">
     <value>Manualmente</value>
-  </data>
-  <data name="Enums.StackingDirection.Ascending" xml:space="preserve">
-    <value>Ascendente</value>
-  </data>
-  <data name="Enums.StackingDirection.Descending" xml:space="preserve">
-    <value>Descendente</value>
-  </data>
-  <data name="Settings.Display" xml:space="preserve">
-    <value>Mostrar</value>
   </data>
   <data name="Settings.HorizontalAlignment" xml:space="preserve">
     <value>Alineación horizontal</value>

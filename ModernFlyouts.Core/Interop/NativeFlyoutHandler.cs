@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Interop;
 using System.Windows.Threading;
 using static ModernFlyouts.Core.Interop.NativeMethods;
 
@@ -340,19 +342,44 @@ namespace ModernFlyouts.Core.Interop
 
         private bool GetAllInfos()
         {
-            IntPtr hWndHost;
-            while ((hWndHost = FindWindowEx(IntPtr.Zero, IntPtr.Zero, "NativeHWNDHost", "")) != IntPtr.Zero)
+            IntPtr hWndHost = IntPtr.Zero;
+            IntPtr hWndDUI = IntPtr.Zero;
+
+            String build = RuntimeInformation.OSDescription.Substring(RuntimeInformation.OSDescription.LastIndexOf('.') + 1);
+            int buildNumber = int.Parse(build);
+
+            String outerClass = "";
+            String outerName = "";
+            String innerClass = "";
+            String innerName = "";
+            if (buildNumber >= 22000)
             {
-                IntPtr hWndDUI;
-                if ((hWndDUI = FindWindowEx(hWndHost, IntPtr.Zero, "DirectUIHWND", "")) != IntPtr.Zero)
+                outerClass = "XamlExplorerHostIslandWindow";
+                innerClass = "Windows.UI.Composition.DesktopWindowContentBridge";
+                innerName = "DesktopWindowXamlSource";
+            }
+            else
+            {
+                outerClass = "NativeHWNDHost";
+                innerClass = "DirectUIHWND";
+            }
+
+            while ((hWndHost = FindWindowEx(IntPtr.Zero, hWndHost, outerClass, outerName)) != IntPtr.Zero)
+            {
+                if ((hWndDUI = FindWindowEx(hWndHost, IntPtr.Zero, innerClass, innerName)) != IntPtr.Zero)
                 {
                     GetWindowThreadProcessId(hWndHost, out int pid);
                     if (Process.GetProcessById(pid).ProcessName.ToLower() == "explorer")
                     {
-                        HWndHost = hWndHost;
-                        HWndDUI = hWndDUI;
-                        ShellProcessId = (uint)pid;
-                        return true;
+                        UIntPtr pdwBand = UIntPtr.Zero;
+                        GetWindowBand(hWndHost, out pdwBand);
+                        if (pdwBand == (UIntPtr)ZBandID.AboveLockUX)
+                        {
+                            HWndHost = hWndHost;
+                            HWndDUI = hWndDUI;
+                            ShellProcessId = (uint)pid;
+                            return true;
+                        }
                     }
                 }
             }

@@ -16,13 +16,13 @@
     <value>Hakkında</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Uçak modu kullanılamıyor :(</value>
+    <value>Uçak Modu kullanılamıyor :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
-    <value>Uçak modu kapalı</value>
+    <value>Uçak Modu kapalı</value>
   </data>
   <data name="AirplaneModeOn" xml:space="preserve">
-    <value>Uçak modu açık</value>
+    <value>Uçak Modu açık</value>
   </data>
   <data name="Align" xml:space="preserve">
     <value>Varsayılan konuma hizala</value>
@@ -135,7 +135,7 @@
     <value>Açılır Pencere Modülleri</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Uçak modu</value>
+    <value>Uçak Modu</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
     <value>Ses</value>
@@ -144,7 +144,7 @@
     <value>Parlaklık</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Kilit tuşları</value>
+    <value>Kilit Tuşları</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Başlangıçta çalıştır</value>
@@ -249,13 +249,13 @@
     <value>Scroll Lock</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Açılır pencerede gözükmesini istediğiniz tuşları seçin</value>
+    <value>Açılır pencerede göstermek istediğiniz tuşları seçin</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Görünüm</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Uçak modu Açılır Penceresini etkinleştirin</value>
+    <value>Uçak Modu Açılır Penceresini etkinleştirin</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
     <value>Ses Açılır Penceresini etkinleştirin</value>
