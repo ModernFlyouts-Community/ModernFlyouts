@@ -1,4 +1,5 @@
-﻿using ModernFlyouts.Controls;
+﻿using ModernFlyouts.Assets;
+using ModernFlyouts.Controls;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
 using System.Windows.Input;
@@ -8,6 +9,8 @@ namespace ModernFlyouts
     public class LockKeysFlyoutHelper : FlyoutHelperBase
     {
         private LockKeysControl lockKeysControl;
+
+        private LockIcons lockIcons;
 
         #region Properties
 
@@ -84,6 +87,7 @@ namespace ModernFlyouts
             InsertEnabled = AppDataHelper.LockKeysModule_InsertEnabled;
 
             lockKeysControl = new LockKeysControl();
+            lockIcons = new LockIcons();
 
             PrimaryContent = lockKeysControl;
 
@@ -147,12 +151,19 @@ namespace ModernFlyouts
                 };
 
                 msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, keyName);
-                lockKeysControl.LockGlyph.Glyph = islock ? CommonGlyphs.Lock : CommonGlyphs.Unlock;
+
+                lockKeysControl.LockIcon.Source = key switch
+                {
+                    LockKeys.CapsLock => islock ? lockIcons.caps.OnImage : lockIcons.caps.OffImage,
+                    LockKeys.NumLock => islock ? lockIcons.num.OnImage : lockIcons.num.OffImage,
+                    LockKeys.ScrollLock => islock ? lockIcons.scroll_lock.OnImage : lockIcons.scroll_lock.OffImage,
+                    _ => null,
+                };
             }
             else
             {
                 msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
-                lockKeysControl.LockGlyph.Glyph = string.Empty;
+                lockKeysControl.LockIcon.Source = null;
             }
 
             lockKeysControl.txt.Text = msg;

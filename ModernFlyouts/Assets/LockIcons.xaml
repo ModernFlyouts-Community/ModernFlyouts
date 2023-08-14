@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="caps_on">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V39 H39 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M39,39z M0,0z M35.2618,2.91261L2.9154,2.91261 2.9154,35.259 35.2618,35.259 35.2618,2.91261z M0.0885773,0.0857925L0.0885773,38.0858 38.0886,38.0858 38.0886,0.0857925 0.0885773,0.0857925z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F1 M39,39z M0,0z M27.9068,28L24.4215,28 22.6989,23.126 15.1675,23.126 13.5117,28 10.0398,28 17.2106,8.85107 20.7894,8.85107 27.9068,28z M21.8576,20.5354L19.2003,12.8972C19.1202,12.6479,19.0356,12.2473,18.9466,11.6954L18.8932,11.6954C18.813,12.2028,18.724,12.6034,18.6261,12.8972L15.9955,20.5354 21.8576,20.5354z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="caps_off">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V39 H39 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M39,39z M0,0z M36.0758,2.91261L3.72948,2.91261 3.72948,35.259 36.0758,35.259 36.0758,2.91261z M0.902664,0.0857925L0.902664,38.0858 38.9027,38.0858 38.9027,0.0857925 0.902664,0.0857925z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F1 M39,39z M0,0z M25.3681,28L22.3636,28 22.3636,25.8634 22.3102,25.8634C21.3665,27.5015 19.9822,28.3205 18.1572,28.3205 16.813,28.3205 15.758,27.9555 14.9924,27.2255 14.2357,26.4955 13.8574,25.5296 13.8574,24.3278 13.8574,21.7461 15.3441,20.2416 18.3175,19.8143L22.3769,19.2401C22.3769,17.2905 21.4511,16.3157 19.5994,16.3157 17.9703,16.3157 16.5014,16.8765 15.1927,17.9982L15.1927,15.2875C16.6349,14.4328 18.2997,14.0055 20.187,14.0055 23.6411,14.0055 25.3681,15.7059 25.3681,19.1066L25.3681,28z M22.3769,21.2832L19.5059,21.6838C18.6157,21.7995 17.9436,22.0176 17.4895,22.3381 17.0444,22.6497 16.8219,23.2016 16.8219,23.9939 16.8219,24.5726 17.0266,25.0489 17.4361,25.4228 17.8545,25.7878 18.4109,25.9703 19.1053,25.9703 20.049,25.9703 20.8279,25.6409 21.4422,24.9821 22.0653,24.3144 22.3769,23.4776 22.3769,22.4716L22.3769,21.2832z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="scroll_lock_on">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V39 H39 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M39,39z M0,0z M35.2618,3.7871L2.91541,3.7871 2.91541,36.1335 35.2618,36.1335 35.2618,3.7871z M0.0885925,0.960281L0.0885925,38.9603 38.0886,38.9603 38.0886,0.960281 0.0885925,0.960281z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M39,39z M0,0z M21.4571,9.99624L21.4571,24.6559 27.2341,18.8789 29.233,20.8777 20.0437,30.067 10.8544,20.8777 12.8533,18.8789 18.6303,24.6559 18.6303,9.99624 21.4571,9.99624z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="scroll_lock_off">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V50 H50 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M50,50z M0,0z M41.0758,8.78709L8.72949,8.78709 8.72949,41.1334 41.0758,41.1334 41.0758,8.78709z M5.90267,5.96027L5.90267,43.9603 43.9027,43.9603 43.9027,5.96027 5.90267,5.96027z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M50,50z M0,0z M34.7238,17.8053L49.9926,2.55582 47.5044,0 32.2179,15.2672 34.7238,17.8053z M17.7701,34.7374L15.2642,32.1993 0,47.4442 2.48818,50 17.7701,34.7374z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M50,50z M0,0z M27.2712,14.9962L27.2712,29.6559 33.0482,23.8789 35.047,25.8777 25.8578,35.067 16.6685,25.8777 18.6674,23.8789 24.4444,29.6559 24.4444,14.9962 27.2712,14.9962z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="num_on">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V39 H39 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M39,39z M0,0z M35.2618,2.9126L2.91541,2.9126 2.91541,35.259 35.2618,35.259 35.2618,2.9126z M0.0885925,0.0857849L0.0885925,38.0858 38.0886,38.0858 38.0886,0.0857849 0.0885925,0.0857849z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F1 M39,39z M0,0z M22.3967,9.54929L22.3967,29.1255 19.2986,29.1255 19.2986,13.3417C18.7378,13.7423 18.1324,14.085 17.4826,14.3699 16.8416,14.6459 16.1072,14.8907 15.2792,15.1043L15.2792,12.4604C15.7956,12.2912 16.2941,12.1132 16.7748,11.9262 17.2556,11.7393 17.7274,11.5301 18.1903,11.2986 18.6621,11.0671 19.1339,10.809 19.6058,10.5241 20.0865,10.2392 20.5806,9.91428 21.088,9.54929L22.3967,9.54929z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="num_off">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V51 H50 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M50,51z M0,0z M41.0759,8.9126L8.7295,8.9126 8.7295,41.259 41.0759,41.259 41.0759,8.9126z M5.90268,6.08578L5.90268,44.0858 43.9027,44.0858 43.9027,6.08578 5.90268,6.08578z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F0 M50,51z M0,0z M34.7238,17.9308L49.9926,2.68133 47.5044,0.125519 32.2179,15.3927 34.7238,17.9308z M17.7701,34.8629L15.2642,32.3248 0,47.5697 2.48818,50.1255 17.7701,34.8629z" />
+                <GeometryDrawing Brush="{DynamicResource SystemControlPageTextBaseHighBrush}" Geometry="F1 M50,51z M0,0z M27.3967,15.5493L27.3967,35.1255 24.2986,35.1255 24.2986,19.3417C23.7378,19.7423 23.1324,20.085 22.4826,20.3699 21.8416,20.6459 21.1072,20.8907 20.2792,21.1043L20.2792,18.4604C20.7956,18.2912 21.2941,18.1132 21.7748,17.9262 22.2556,17.7393 22.7274,17.5301 23.1903,17.2986 23.6621,17.0671 24.1339,16.809 24.6058,16.5241 25.0865,16.2392 25.5806,15.9143 26.088,15.5493L27.3967,15.5493z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>
