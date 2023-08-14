@@ -10,7 +10,7 @@
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
-        <Image x:Name="LockIcon" Height="30" Width="30"/>
+        <Image x:Name="LockIcon" MaxHeight="30" MaxWidth="30"/>
         <TextBlock x:Name="txt" HorizontalAlignment="Left" VerticalAlignment="Center"
                    Style="{DynamicResource BaseTextBlockStyle}" FontSize="18"
                    Margin="20" Text="Lock key is on" />
