@@ -163,7 +163,7 @@ namespace ModernFlyouts
             else
             {
                 msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
-                lockKeysControl.LockIcon.Source = null;
+                lockKeysControl.LockIcon.Source = islock ? lockIcons.insert.OffImage : lockIcons.insert.OnImage; 
             }
 
             lockKeysControl.txt.Text = msg;

@@ -32,5 +32,11 @@ namespace ModernFlyouts.Assets
             OnImage = (DrawingImage)Application.Current.Resources["num_on"],
             OffImage = (DrawingImage)Application.Current.Resources["num_off"]
         };
+
+        public IconPair insert = new IconPair
+        {
+            OnImage = (DrawingImage)Application.Current.Resources["insert_on"],
+            OffImage = (DrawingImage)Application.Current.Resources["insert_off"]
+        };
     }
 }
