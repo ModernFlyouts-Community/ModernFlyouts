@@ -1,8 +1,10 @@
-﻿using ModernFlyouts.Assets;
+﻿using Microsoft.VisualBasic.Logging;
+using ModernFlyouts.Assets;
 using ModernFlyouts.Controls;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
 using System.Windows.Input;
+using System.Windows.Interop;
 
 namespace ModernFlyouts
 {
@@ -154,34 +156,40 @@ namespace ModernFlyouts
 
         private void Prepare(LockKeys key, bool islock)
         {
-            string msg;
-
-            if (key != LockKeys.Insert)
+            string msg = string.Empty;
+            lockKeysControl.Pad.Width = 0;
+            if (!(UseSmallFlyout))
             {
-                string keyName = key switch
+                lockKeysControl.Pad.Width = 10;
+                if (key != LockKeys.Insert)
                 {
-                    LockKeys.CapsLock => Properties.Strings.LockKeysFlyoutHelper_CapsLock,
-                    LockKeys.NumLock => Properties.Strings.LockKeysFlyoutHelper_NumLock,
-                    LockKeys.ScrollLock => Properties.Strings.LockKeysFlyoutHelper_ScrollLock,
-                    _ => string.Empty,
-                };
+                    string keyName = key switch
+                    {
+                        LockKeys.CapsLock => Properties.Strings.LockKeysFlyoutHelper_CapsLock,
+                        LockKeys.NumLock => Properties.Strings.LockKeysFlyoutHelper_NumLock,
+                        LockKeys.ScrollLock => Properties.Strings.LockKeysFlyoutHelper_ScrollLock,
+                        _ => string.Empty,
+                    };
 
-                msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, keyName);
+                    msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, keyName);
 
-                lockKeysControl.LockIcon.Source = key switch
+                }
+                else
                 {
-                    LockKeys.CapsLock => islock ? lockIcons.caps.OnImage : lockIcons.caps.OffImage,
-                    LockKeys.NumLock => islock ? lockIcons.num.OnImage : lockIcons.num.OffImage,
-                    LockKeys.ScrollLock => islock ? lockIcons.scroll_lock.OnImage : lockIcons.scroll_lock.OffImage,
-                    _ => null,
-                };
-            }
-            else
-            {
-                msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
-                lockKeysControl.LockIcon.Source = islock ? lockIcons.insert.OffImage : lockIcons.insert.OnImage; 
+                    msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
+                }
+
+                
             }
 
+            lockKeysControl.LockIcon.Source = key switch
+            {
+                LockKeys.CapsLock => islock ? lockIcons.caps.OnImage : lockIcons.caps.OffImage,
+                LockKeys.NumLock => islock ? lockIcons.num.OnImage : lockIcons.num.OffImage,
+                LockKeys.ScrollLock => islock ? lockIcons.scroll_lock.OnImage : lockIcons.scroll_lock.OffImage,
+                LockKeys.Insert => islock ? lockIcons.insert.OffImage : lockIcons.insert.OnImage,
+                _ => null,
+            };
             lockKeysControl.txt.Text = msg;
         }
 
