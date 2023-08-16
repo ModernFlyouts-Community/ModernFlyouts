@@ -14,6 +14,20 @@ namespace ModernFlyouts
 
         #region Properties
 
+        private bool useSmallFlyout = DefaultValuesStore.UseSmallFlyout;
+
+        public bool UseSmallFlyout
+        {
+            get => useSmallFlyout;
+            set
+            {
+                if (SetProperty(ref useSmallFlyout, value))
+                {
+                    OnUseSmallFlyoutChanged();
+                }
+            }
+        }
+
         private bool capsLockEnabled = DefaultValuesStore.LockKeysModule_CapsLockEnabled;
 
         public bool CapsLockEnabled
@@ -85,6 +99,8 @@ namespace ModernFlyouts
             NumLockEnabled = AppDataHelper.LockKeysModule_NumLockEnabled;
             ScrollLockEnabled = AppDataHelper.LockKeysModule_ScrollLockEnabled;
             InsertEnabled = AppDataHelper.LockKeysModule_InsertEnabled;
+
+            UseSmallFlyout = AppDataHelper.UseSmallFlyout;
 
             lockKeysControl = new LockKeysControl();
             lockIcons = new LockIcons();
@@ -175,6 +191,11 @@ namespace ModernFlyouts
             NumLock,
             ScrollLock,
             Insert
+        }
+
+        private void OnUseSmallFlyoutChanged()
+        {
+            AppDataHelper.UseSmallFlyout = UseSmallFlyout;
         }
 
         protected override void OnEnabled()

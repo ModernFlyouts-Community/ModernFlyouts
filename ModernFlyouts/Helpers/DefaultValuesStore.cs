@@ -38,6 +38,10 @@ namespace ModernFlyouts.Helpers
 
         public const StackingDirection OnScreenFlyoutContentStackingDirection = StackingDirection.Ascending;
 
+        public const bool UseAlternativeFlyout = false;
+
+        public const bool UseSmallFlyout = false;
+
         #endregion
 
         #region Module specific
@@ -63,7 +67,7 @@ namespace ModernFlyouts.Helpers
         #endregion
 
         #endregion
-
+        
         #region UI
 
         public const TopBarVisibility DefaultTopBarVisibility = TopBarVisibility.Visible;

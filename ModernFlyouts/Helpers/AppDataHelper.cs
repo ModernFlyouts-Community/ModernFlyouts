@@ -195,6 +195,18 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
+        public static bool UseAlternativeFlyout
+        {
+            get => GetValue(DefaultValuesStore.UseAlternativeFlyout);
+            set => SetValue(value);
+        }
+
+        public static bool UseSmallFlyout
+        {
+            get => GetValue(DefaultValuesStore.UseSmallFlyout);
+            set => SetValue(value);
+        }
+
         #endregion
 
         #region Module Specific

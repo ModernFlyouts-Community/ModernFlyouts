@@ -37,7 +37,7 @@
             Direction="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.OnScreenFlyoutContentStackingDirection}">
             <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
                 CornerRadius="{DynamicResource FlyoutCornerRadius}"
-                Width="{DynamicResource FlyoutWidth}"
+                MaxWidth="{DynamicResource FlyoutWidth}"
                 Visibility="{Binding PrimaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid>
                     <Border Background="{DynamicResource FlyoutBackground}"
@@ -60,7 +60,7 @@
             </ui:ThemeShadowChrome>
             <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
                 CornerRadius="{DynamicResource FlyoutCornerRadius}"
-                Width="{DynamicResource FlyoutWidth}"
+                MaxWidth="{DynamicResource FlyoutWidth}"
                 Visibility="{Binding SecondaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid>
                     <Border Background="{DynamicResource FlyoutBackground}"

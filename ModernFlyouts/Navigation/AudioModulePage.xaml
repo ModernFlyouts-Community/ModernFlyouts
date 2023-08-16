@@ -23,6 +23,11 @@
                         Margin="-10,0" Style="{DynamicResource TabControlPivotStyle}">
                 <TabItem Header="{x:Static resx:Strings.GeneralSettings}">
                     <ui:SimpleStackPanel Margin="10" Spacing="10">
+                        <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_UseAlternativeFlyout}"
+                    IsEnabled="True"
+                    IsOn="{Binding AudioFlyoutHelper.UseAlternativeFlyout}"
+                    OnContent="{x:Static resx:Strings.Settings_On}"
+                    OffContent="{x:Static resx:Strings.Settings_Off}" />
                         <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_ShowGSMTCInVolumeFlyout}"
                                          IsOn="{Binding AudioFlyoutHelper.ShowGSMTCInVolumeFlyout}"
                                          OnContent="{x:Static resx:Strings.Settings_On}"

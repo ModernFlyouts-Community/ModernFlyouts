@@ -31,6 +31,20 @@ namespace ModernFlyouts
 
         public CompositeCollection AllMediaSessions { get; } = new();
 
+        private bool useAlternativeFlyout = DefaultValuesStore.UseAlternativeFlyout;
+
+        public bool UseAlternativeFlyout
+        {
+            get => useAlternativeFlyout;
+            set
+            {
+                if (SetProperty(ref useAlternativeFlyout, value))
+                {
+                    OnUseAlternativeFlyoutChanged();
+                }
+            }
+        }
+
         private bool showGSMTCInVolumeFlyout = true;
 
         public bool ShowGSMTCInVolumeFlyout
@@ -72,6 +86,8 @@ namespace ModernFlyouts
 
             ShowGSMTCInVolumeFlyout = AppDataHelper.ShowGSMTCInVolumeFlyout;
             ShowVolumeControlInGSMTCFlyout = AppDataHelper.ShowVolumeControlInGSMTCFlyout;
+
+            UseAlternativeFlyout = AppDataHelper.UseAlternativeFlyout;
 
             #region Volume control sub-module initialization
 
@@ -134,6 +150,13 @@ namespace ModernFlyouts
             }
 
             return base.CanHandleNativeOnScreenFlyout(triggerData);
+        }
+
+        private void OnUseAlternativeFlyoutChanged()
+        {
+            ValidatePrimaryContentVisible();
+
+            AppDataHelper.UseAlternativeFlyout = useAlternativeFlyout;
         }
 
         private void OnShowGSMTCInVolumeFlyoutChanged()
