@@ -5,14 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
-             mc:Ignorable="d" d:DesignWidth="354">
+             mc:Ignorable="d">
 
-    <Grid Height="48">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="48" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="48" />
-        </Grid.ColumnDefinitions>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
         <Button x:Name="VolumeButton" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,0,0"
                 ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
                 Width="48" Padding="0" Height="48" Background="Transparent">
@@ -23,12 +18,12 @@
             </Grid>
         </Button>
 
-        <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0"
+        <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0" Width="258" Orientation="Horizontal"
                         SmallChange="0.01" Value="100" IsMoveToPointEnabled="True" />
 
-        <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="6"
+        <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="8"
                    Style="{DynamicResource SubtitleTextBlockStyle}"
                    Text="100" VerticalAlignment="Center" />
-    </Grid>
+    </StackPanel>
 
 </UserControl>

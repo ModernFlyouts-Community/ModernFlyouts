@@ -6,7 +6,7 @@
              xmlns:root="clr-namespace:ModernFlyouts"
              xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d"
-             Height="64" DataContext="{x:Static root:FlyoutHandler.Instance}">
+             Height="48" DataContext="{x:Static root:FlyoutHandler.Instance}">
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
         <GridSplitter Width="10" Background="Transparent" />
