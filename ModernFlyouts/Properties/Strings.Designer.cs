@@ -1150,11 +1150,11 @@ namespace ModernFlyouts.Properties {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Use a vertical flyout for the volume flyout.
+        ///   Looks up a localized string similar to Change axis of flyout.
         /// </summary>
-        public static string Settings_UseAlternativeFlyout {
+        public static string Settings_FlyoutAxis {
             get {
-                return ResourceManager.GetString("Settings.UseAlternativeFlyout", resourceCulture);
+                return ResourceManager.GetString("Settings.FlyoutAxis", resourceCulture);
             }
         }
 

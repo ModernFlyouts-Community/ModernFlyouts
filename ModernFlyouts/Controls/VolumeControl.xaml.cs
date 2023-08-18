@@ -9,8 +9,6 @@ namespace ModernFlyouts.Controls
     public partial class VolumeControl : UserControl
     {
 
-        private Grid grid;
-
         public VolumeControl(Orientation orientation)
         {
             InitializeComponent();
@@ -25,22 +23,46 @@ namespace ModernFlyouts.Controls
 
         public void SetToHorizontal()
         {
-            MinWidth = UIManager.FlyoutWidth;
-            VolumeButton.SetValue(DockPanel.DockProperty, Dock.Left);
-            textVal.SetValue(DockPanel.DockProperty, Dock.Right);
+            Horizontal.MinWidth = UIManager.FlyoutWidth;
+            Vertical.MinHeight = 0;
+
             VolumeSlider.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
             VolumeSlider.VerticalAlignment = System.Windows.VerticalAlignment.Center;
             VolumeSlider.Orientation = Orientation.Horizontal;
+
+            Horizontal.Children.Clear();
+
+            Vertical.Children.Remove(VolumeButton);
+            Vertical.Children.Remove(VolumeSlider);
+            Vertical.Children.Remove(textVal);
+
+            Horizontal.Children.Add(VolumeButton);
+            Horizontal.Children.Add(VolumeSlider);
+            Horizontal.Children.Add(textVal);
+
+
+
         }
 
         public void SetToVertical()
         {
-            MinWidth = 0;
+            Horizontal.MinWidth = 0;
+            Vertical.MinHeight = UIManager.DefaultSessionControlHeight;
+
             VolumeSlider.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-            VolumeSlider.Orientation = Orientation.Vertical;
-            VolumeButton.SetValue(DockPanel.DockProperty, Dock.Top);
-            textVal.SetValue(DockPanel.DockProperty, Dock.Bottom);
             VolumeSlider.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+            VolumeSlider.Orientation = Orientation.Vertical;
+
+            Vertical.Children.Clear();
+
+            Horizontal.Children.Remove(VolumeButton);
+            Horizontal.Children.Remove(VolumeSlider);
+            Horizontal.Children.Remove(textVal);
+
+            Vertical.Children.Add(VolumeButton);
+            Vertical.Children.Add(VolumeSlider);
+            Vertical.Children.Add(textVal);
+
         }
     }
 }

@@ -7,24 +7,37 @@
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d">
 
-    <DockPanel x:Name="ContentPanel" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" LastChildFill="True">
-        <Button x:Name="VolumeButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" DockPanel.Dock="Top"
-                ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
-                Width="48" Padding="0" Height="48" Background="Transparent">
-            <Grid>
-                <ui:FontIcon x:Name="VolumeShadowGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16"
-                             Foreground="{DynamicResource SystemControlForegroundChromeGrayBrush}" />
-                <ui:FontIcon x:Name="VolumeGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16" />
-            </Grid>
-        </Button>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid x:Name="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+        </Grid>
+        <Grid x:Name="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button x:Name="VolumeButton" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="0"
+    ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
+    Width="48" Padding="0" Height="48" Background="Transparent">
+                <Grid>
+                    <ui:FontIcon x:Name="VolumeShadowGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16"
+                 Foreground="{DynamicResource SystemControlForegroundChromeGrayBrush}" />
+                    <ui:FontIcon x:Name="VolumeGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16" />
+                </Grid>
+            </Button>
 
+            <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" VerticalAlignment="Stretch" Margin="8,0" Grid.Row="1" Grid.Column="1"
+            SmallChange="0.01" Value="100" IsMoveToPointEnabled="True" />
 
-        <TextBlock x:Name="textVal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8" Height="30"
-                   Style="{DynamicResource SubtitleTextBlockStyle}"
-                   Text="100" DockPanel.Dock="Bottom"/>
-
-        <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" HorizontalAlignment="Center" VerticalAlignment="Stretch"
-                        SmallChange="0.01" Value="0" IsMoveToPointEnabled="True" />
-    </DockPanel>
-
+            <TextBlock x:Name="textVal" HorizontalAlignment="Center" Margin="6" Grid.Row="2" Grid.Column="2"
+       Style="{DynamicResource SubtitleTextBlockStyle}"
+       Text="100" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
 </UserControl>

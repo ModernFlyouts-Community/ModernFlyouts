@@ -513,13 +513,13 @@
           <source>Fade animation</source>
           <target state="new">Анимация исчезновения</target>
         </trans-unit>
-        <trans-unit id="Settings.UseAlternativeFlyout" translate="yes" xml:space="preserve">
-          <source>Use a vertical flyout for the volume flyout</source>
-          <target state="new">Use a vertical flyout for the volume flyout</target>
-        </trans-unit>
         <trans-unit id="Settings.UseSmallFlyout" translate="yes" xml:space="preserve">
           <source>Use consise flyouts for the lock flyouts</source>
           <target state="new">Use consise flyouts for the lock flyouts</target>
+        </trans-unit>
+        <trans-unit id="Settings.FlyoutAxis" translate="yes" xml:space="preserve">
+          <source>Change axis of flyout</source>
+          <target state="new">Change axis of flyout</target>
         </trans-unit>
       </group>
     </body>

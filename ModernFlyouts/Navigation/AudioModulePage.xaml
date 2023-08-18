@@ -24,7 +24,7 @@
                 <TabItem Header="{x:Static resx:Strings.GeneralSettings}">
                     <ui:SimpleStackPanel Margin="10" Spacing="10">
                         <ComboBox x:Name="OrientationPicker"
-    ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutExpandDirection}"
+    ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutAxis}"
     Width="240"
     ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
     SelectedItem="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=OnScreenFlyoutOrientation}"/>

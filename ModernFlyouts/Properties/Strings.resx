@@ -497,8 +497,8 @@
   <data name="Settings.VerticalAlignment" xml:space="preserve">
     <value>Vertical alignment</value>
   </data>
-  <data name="Settings.UseAlternativeFlyout" xml:space="preserve">
-    <value>Use a vertical flyout for the volume flyout</value>
+  <data name="Settings.FlyoutAxis" xml:space="preserve">
+    <value>Change axis of flyout</value>
   </data>
   <data name="Settings.UseSmallFlyout" xml:space="preserve">
     <value>Use consise flyouts for the lock flyouts</value>
