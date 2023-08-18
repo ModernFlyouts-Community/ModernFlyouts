@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ModernFlyouts.AppLifecycle;
+using ModernFlyouts.Controls;
 using ModernFlyouts.Core.Display;
 using ModernFlyouts.Core.Interop;
 using ModernFlyouts.Core.UI;
@@ -16,6 +17,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using static ModernFlyouts.Core.Interop.NativeMethods;
 
@@ -55,6 +57,20 @@ namespace ModernFlyouts
         public LockKeysFlyoutHelper LockKeysFlyoutHelper { get; set; }
 
         public BrightnessFlyoutHelper BrightnessFlyoutHelper { get; set; }
+
+        private Orientation onScreenFlyoutOrientation = DefaultValuesStore.FlyoutOrientation;
+
+        public Orientation OnScreenFlyoutOrientation
+        {
+            get => onScreenFlyoutOrientation;
+            set
+            {
+                if (SetProperty(ref onScreenFlyoutOrientation, value))
+                {
+                    OnFlyoutOrientationChanged();
+                }
+            }
+        }
 
         private DefaultFlyout defaultFlyout = DefaultValuesStore.PreferredDefaultFlyout;
 
@@ -177,7 +193,7 @@ namespace ModernFlyouts
 
             #region Initiate Helpers
 
-            AudioFlyoutHelper = new AudioFlyoutHelper() { IsEnabled = adEnabled };
+            AudioFlyoutHelper = new AudioFlyoutHelper(OnScreenFlyoutOrientation) { IsEnabled = adEnabled };
             AirplaneModeFlyoutHelper = new AirplaneModeFlyoutHelper() { IsEnabled = apmdEnabled };
             LockKeysFlyoutHelper = new LockKeysFlyoutHelper() { IsEnabled = lkkyEnabled };
             BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled };
@@ -193,6 +209,8 @@ namespace ModernFlyouts
             }
 
             #endregion
+
+            OnScreenFlyoutView.ContentStackPanel.Orientation = onScreenFlyoutOrientation;
 
             HasInitialized = true;
             Initialized?.Invoke(this, EventArgs.Empty);
@@ -504,6 +522,12 @@ namespace ModernFlyouts
             {
                 UpdatePreferredMonitor();
             }
+        }
+
+        private void OnFlyoutOrientationChanged()
+        {
+            OnScreenFlyoutView.ContentStackPanel.Orientation = onScreenFlyoutOrientation;
+            AudioFlyoutHelper.OnFlyoutOrientationChanged(onScreenFlyoutOrientation);
         }
 
         private void SaveOnScreenFlyoutPosition()

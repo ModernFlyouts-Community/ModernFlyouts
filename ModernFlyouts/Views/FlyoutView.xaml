@@ -33,7 +33,9 @@
                 input:InputHelper.TappedCommand="{x:Static utils:CommonCommands.CloseFlyoutCommand}"
                 input:InputHelper.TappedCommandParameter="{x:Reference Name=TopBarHost}" />
         <controls:DirectableStackPanel
+            x:Name="ContentStackPanel"
             Spacing="8" Margin="{x:Static localui:UIManager.FlyoutShadowMargin}"
+            Orientation="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=OnScreenFlyoutOrientation}"
             Direction="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.OnScreenFlyoutContentStackingDirection}">
             <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
                 CornerRadius="{DynamicResource FlyoutCornerRadius}"

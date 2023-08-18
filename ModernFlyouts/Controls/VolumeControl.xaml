@@ -7,8 +7,8 @@
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
              mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-        <Button x:Name="VolumeButton" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,0,0"
+    <DockPanel x:Name="ContentPanel" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" LastChildFill="True">
+        <Button x:Name="VolumeButton" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" DockPanel.Dock="Top"
                 ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
                 Width="48" Padding="0" Height="48" Background="Transparent">
             <Grid>
@@ -18,12 +18,13 @@
             </Grid>
         </Button>
 
-        <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0" Width="258" Orientation="Horizontal"
-                        SmallChange="0.01" Value="100" IsMoveToPointEnabled="True" />
 
-        <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="8"
+        <TextBlock x:Name="textVal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8" Height="30"
                    Style="{DynamicResource SubtitleTextBlockStyle}"
-                   Text="100" VerticalAlignment="Center" />
-    </StackPanel>
+                   Text="100" DockPanel.Dock="Bottom"/>
+
+        <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                        SmallChange="0.01" Value="0" IsMoveToPointEnabled="True" />
+    </DockPanel>
 
 </UserControl>

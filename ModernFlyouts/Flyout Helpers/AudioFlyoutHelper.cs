@@ -21,7 +21,7 @@ namespace ModernFlyouts
         private AudioDeviceNotificationClient client;
         private MMDeviceEnumerator enumerator;
         private MMDevice device;
-        private VolumeControl volumeControl;
+        public VolumeControl volumeControl;
         private SessionsPanel sessionsPanel;
         private TextBlock noDeviceMessageBlock;
         private List<MediaSessionManager> mediaSessionManagers = new();
@@ -30,20 +30,6 @@ namespace ModernFlyouts
         #region Properties
 
         public CompositeCollection AllMediaSessions { get; } = new();
-
-        private bool useAlternativeFlyout = DefaultValuesStore.UseAlternativeFlyout;
-
-        public bool UseAlternativeFlyout
-        {
-            get => useAlternativeFlyout;
-            set
-            {
-                if (SetProperty(ref useAlternativeFlyout, value))
-                {
-                    OnUseAlternativeFlyoutChanged();
-                }
-            }
-        }
 
         private bool showGSMTCInVolumeFlyout = true;
 
@@ -75,8 +61,11 @@ namespace ModernFlyouts
 
         #endregion
 
-        public AudioFlyoutHelper()
+        private Orientation volumeOrientation;
+
+        public AudioFlyoutHelper(Orientation orientation)
         {
+            volumeOrientation = orientation;
             Initialize();
         }
 
@@ -87,11 +76,9 @@ namespace ModernFlyouts
             ShowGSMTCInVolumeFlyout = AppDataHelper.ShowGSMTCInVolumeFlyout;
             ShowVolumeControlInGSMTCFlyout = AppDataHelper.ShowVolumeControlInGSMTCFlyout;
 
-            UseAlternativeFlyout = AppDataHelper.UseAlternativeFlyout;
-
             #region Volume control sub-module initialization
 
-            volumeControl = new VolumeControl();
+            volumeControl = new VolumeControl(volumeOrientation);
             volumeControl.VolumeButton.Click += VolumeButton_Click;
             volumeControl.VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
             volumeControl.VolumeSlider.PreviewMouseWheel += VolumeSlider_PreviewMouseWheel;
@@ -152,11 +139,16 @@ namespace ModernFlyouts
             return base.CanHandleNativeOnScreenFlyout(triggerData);
         }
 
-        private void OnUseAlternativeFlyoutChanged()
+        public void OnFlyoutOrientationChanged(Orientation orientation)
         {
-            ValidatePrimaryContentVisible();
-
-            AppDataHelper.UseAlternativeFlyout = useAlternativeFlyout;
+            if (orientation == Orientation.Vertical)
+            {
+                volumeControl.SetToHorizontal();
+                
+            } else
+            {
+                volumeControl.SetToVertical();
+            }
         }
 
         private void OnShowGSMTCInVolumeFlyoutChanged()

@@ -38,7 +38,7 @@ namespace ModernFlyouts.Helpers
 
         public const StackingDirection OnScreenFlyoutContentStackingDirection = StackingDirection.Ascending;
 
-        public const bool UseAlternativeFlyout = false;
+        public const Orientation FlyoutOrientation = Orientation.Horizontal;
 
         public const bool UseSmallFlyout = false;
 

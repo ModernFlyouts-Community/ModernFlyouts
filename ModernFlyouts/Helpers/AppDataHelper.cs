@@ -195,9 +195,9 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
-        public static bool UseAlternativeFlyout
+        public static Orientation FlyoutOrientation
         {
-            get => GetValue(DefaultValuesStore.UseAlternativeFlyout);
+            get => GetValue(DefaultValuesStore.FlyoutOrientation);
             set => SetValue(value);
         }
 
