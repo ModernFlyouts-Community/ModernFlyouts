@@ -32,6 +32,10 @@ namespace ModernFlyouts.Controls
 
             Horizontal.Children.Clear();
 
+            Thickness pad = new Thickness();
+            pad.Right = 4;
+            textVal.Padding = pad;
+
             Vertical.Children.Remove(VolumeButton);
             Vertical.Children.Remove(VolumeSlider);
             Vertical.Children.Remove(textVal);
@@ -54,6 +58,10 @@ namespace ModernFlyouts.Controls
             VolumeSlider.Orientation = Orientation.Vertical;
 
             Vertical.Children.Clear();
+
+            Thickness pad = new Thickness();
+            pad.Bottom = 4;
+            textVal.Padding = pad;
 
             Horizontal.Children.Remove(VolumeButton);
             Horizontal.Children.Remove(VolumeSlider);
