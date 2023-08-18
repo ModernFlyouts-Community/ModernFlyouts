@@ -16,7 +16,7 @@
             </Grid.ColumnDefinitions>
             
         </Grid>
-        <Grid x:Name="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid x:Name="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,4,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
