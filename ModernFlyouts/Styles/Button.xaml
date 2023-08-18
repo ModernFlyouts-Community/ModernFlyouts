@@ -83,7 +83,7 @@
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ButtonForegroundPressed}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Background" Property="Background" Value="{DynamicResource ButtonRevealBackgroundDisabled}" />
+                            <Setter TargetName="Background" Property="Background" Value="Transparent" />
                             <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ButtonRevealBorderBrushDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
 
@@ -96,13 +96,13 @@
         </Setter>
     </Style>
 
-    <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+    <Style x:Key="HighlightedMediaButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonRevealStyle}">
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
         <Setter Property="ui:ControlHelper.CornerRadius" Value="6" />
     </Style>
 
-    <Style x:Key="MediaButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+    <Style x:Key="MediaButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonRevealStyle}">
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
         <Setter Property="ui:ControlHelper.CornerRadius" Value="6" />
