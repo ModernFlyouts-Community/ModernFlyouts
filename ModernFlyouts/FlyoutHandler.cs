@@ -166,6 +166,9 @@ namespace ModernFlyouts
 
             DefaultFlyoutPosition = AppDataHelper.DefaultFlyoutPosition;
 
+            onScreenFlyoutOrientation = AppDataHelper.FlyoutOrientation;
+            OnScreenFlyoutView.ContentStackPanel.Orientation = OnScreenFlyoutOrientation;
+
             if (DisplayManager.Instance.DisplayMonitors
                 .Any(x => x.DeviceId == preferredDisplayMonitorId))
             {
@@ -209,8 +212,6 @@ namespace ModernFlyouts
             }
 
             #endregion
-
-            OnScreenFlyoutView.ContentStackPanel.Orientation = onScreenFlyoutOrientation;
 
             HasInitialized = true;
             Initialized?.Invoke(this, EventArgs.Empty);
@@ -526,8 +527,9 @@ namespace ModernFlyouts
 
         private void OnFlyoutOrientationChanged()
         {
-            OnScreenFlyoutView.ContentStackPanel.Orientation = onScreenFlyoutOrientation;
-            AudioFlyoutHelper.OnFlyoutOrientationChanged(onScreenFlyoutOrientation);
+            AppDataHelper.FlyoutOrientation = OnScreenFlyoutOrientation;
+            OnScreenFlyoutView.ContentStackPanel.Orientation = OnScreenFlyoutOrientation;
+            AudioFlyoutHelper.OnFlyoutOrientationChanged(OnScreenFlyoutOrientation);
         }
 
         private void SaveOnScreenFlyoutPosition()

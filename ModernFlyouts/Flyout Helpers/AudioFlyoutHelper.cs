@@ -141,7 +141,8 @@ namespace ModernFlyouts
 
         public void OnFlyoutOrientationChanged(Orientation orientation)
         {
-            if (orientation == Orientation.Vertical)
+            volumeOrientation = orientation;
+            if (volumeOrientation == Orientation.Vertical)
             {
                 volumeControl.SetToHorizontal();
                 
