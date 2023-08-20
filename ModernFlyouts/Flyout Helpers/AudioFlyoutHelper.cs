@@ -144,11 +144,10 @@ namespace ModernFlyouts
             volumeOrientation = orientation;
             if (volumeOrientation == Orientation.Vertical)
             {
-                volumeControl.SetToHorizontal();
-                
+                volumeControl.SetToVertical();
             } else
             {
-                volumeControl.SetToVertical();
+                volumeControl.SetToHorizontal();
             }
         }
 

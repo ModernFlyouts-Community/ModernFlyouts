@@ -1150,7 +1150,7 @@ namespace ModernFlyouts.Properties {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Change axis of flyout.
+        ///   Looks up a localized string similar to Flyout Axis.
         /// </summary>
         public static string Settings_FlyoutAxis {
             get {
@@ -1159,7 +1159,7 @@ namespace ModernFlyouts.Properties {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Use consise flyouts for the lock flyouts.
+        ///   Looks up a localized string similar to Enable Condensed Lock Flyouts.
         /// </summary>
         public static string Settings_UseSmallFlyout
         {

@@ -513,12 +513,12 @@
           <target state="new">Soluk animasyon</target>
         </trans-unit>
         <trans-unit id="Settings.UseSmallFlyout" translate="yes" xml:space="preserve">
-          <source>Use consise flyouts for the lock flyouts</source>
-          <target state="new">Use consise flyouts for the lock flyouts</target>
+          <source>Enable Condensed Lock Flyouts</source>
+          <target state="new">Enable Condensed Lock Flyouts</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAxis" translate="yes" xml:space="preserve">
-          <source>Change axis of flyout</source>
-          <target state="new">Change axis of flyout</target>
+          <source>Flyout axis</source>
+          <target state="new">Flyout axis</target>
         </trans-unit>
       </group>
     </body>

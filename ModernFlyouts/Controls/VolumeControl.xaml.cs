@@ -15,9 +15,9 @@ namespace ModernFlyouts.Controls
 
             if (orientation == Orientation.Vertical)
             {
-                SetToHorizontal();
-            } else {
                 SetToVertical();
+            } else {
+                SetToHorizontal();
             }
         }
 
