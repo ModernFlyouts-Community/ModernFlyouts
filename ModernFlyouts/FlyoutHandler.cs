@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ModernFlyouts.AppLifecycle;
-using ModernFlyouts.Assets;
 using ModernFlyouts.Controls;
 using ModernFlyouts.Core.Display;
 using ModernFlyouts.Core.Interop;

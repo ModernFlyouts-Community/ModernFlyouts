@@ -1,10 +1,12 @@
 ﻿using Microsoft.VisualBasic.Logging;
-using ModernFlyouts.Assets;
 using ModernFlyouts.Controls;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
 using System.Windows.Input;
 using System.Windows.Interop;
+using System.Windows;
+using System.Windows.Media;
+using System;
 
 namespace ModernFlyouts
 {
@@ -12,7 +14,7 @@ namespace ModernFlyouts
     {
         private LockKeysControl lockKeysControl;
 
-        private LockIcons lockIcons;
+        private DrawingImage drawingImage;
 
         #region Properties
 
@@ -102,10 +104,11 @@ namespace ModernFlyouts
             ScrollLockEnabled = AppDataHelper.LockKeysModule_ScrollLockEnabled;
             InsertEnabled = AppDataHelper.LockKeysModule_InsertEnabled;
 
+            drawingImage = new DrawingImage();
+
             UseSmallFlyout = AppDataHelper.UseSmallFlyout;
 
             lockKeysControl = new LockKeysControl();
-            lockIcons = new LockIcons();
 
             PrimaryContent = lockKeysControl;
 
@@ -182,15 +185,39 @@ namespace ModernFlyouts
                 
             }
 
-            lockKeysControl.LockIcon.Source = key switch
+            resetIcons();
+            switch (key)
             {
-                LockKeys.CapsLock => islock ? lockIcons.caps.OnImage : lockIcons.caps.OffImage,
-                LockKeys.NumLock => islock ? lockIcons.num.OnImage : lockIcons.num.OffImage,
-                LockKeys.ScrollLock => islock ? lockIcons.scroll_lock.OnImage : lockIcons.scroll_lock.OffImage,
-                LockKeys.Insert => islock ? lockIcons.insert.OffImage : lockIcons.insert.OnImage,
-                _ => null,
-            };
+                case LockKeys.CapsLock:
+                    if (islock == false) lockKeysControl.caps_off.Visibility = Visibility.Visible;
+                    if (islock) lockKeysControl.caps_on.Visibility = Visibility.Visible;
+                    break;
+                case LockKeys.NumLock:
+                    if (islock == false) lockKeysControl.num_off.Visibility = Visibility.Visible;
+                    if (islock) lockKeysControl.num_on.Visibility = Visibility.Visible;
+                    break;
+                case LockKeys.ScrollLock:
+                    if (islock == false) lockKeysControl.scroll_lock_off.Visibility = Visibility.Visible;
+                    if (islock) lockKeysControl.scroll_lock_on.Visibility = Visibility.Visible;
+                    break;
+                case LockKeys.Insert:
+                    if (islock == false) lockKeysControl.insert_on.Visibility = Visibility.Visible; // this if statement needs to be false on purpose because islock is swapped for insert
+                    if (islock) lockKeysControl.insert_off.Visibility = Visibility.Visible;
+                    break;
+            }
             lockKeysControl.txt.Text = msg;
+        }
+
+        private void resetIcons()
+        {
+            lockKeysControl.caps_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.caps_on.Visibility = Visibility.Collapsed;
+            lockKeysControl.num_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.num_on.Visibility = Visibility.Collapsed;
+            lockKeysControl.scroll_lock_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.scroll_lock_on.Visibility = Visibility.Collapsed;
+            lockKeysControl.insert_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.insert_on.Visibility = Visibility.Collapsed;
         }
 
         private enum LockKeys

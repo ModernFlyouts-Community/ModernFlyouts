@@ -12,9 +12,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary x:Name="IconsDictionary" 
-            Source="pack://application:,,,/ModernFlyouts;component/Assets/LockIcons.xaml" />
-                    <ui:ThemeResources>
+                <ui:ThemeResources>
                     <ui:ThemeResources.ThemeDictionaries>
                         <ResourceDictionary x:Key="Light" ui:ThemeDictionary.Key="Light" local:ToolkitThemeDictionary.Key="Light">
                             <SolidColorBrush x:Key="FlyoutBackground" Color="#EFEFEF" />
