@@ -238,6 +238,7 @@ namespace ModernFlyouts.Core.Display
         private void CompatibilityModeChanged(bool mode)
         {
             compatibilityMode = mode;
+            Instance = null;
             Initialize(compatibilityMode);
         }
     }
