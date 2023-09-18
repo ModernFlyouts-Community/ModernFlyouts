@@ -66,8 +66,14 @@ namespace ModernFlyouts.Helpers
 
         #endregion
 
+        #region Brightness module related
+
+        public const bool BrightnessCompatibility = false;
+
         #endregion
-        
+
+        #endregion
+
         #region UI
 
         public const TopBarVisibility DefaultTopBarVisibility = TopBarVisibility.Visible;

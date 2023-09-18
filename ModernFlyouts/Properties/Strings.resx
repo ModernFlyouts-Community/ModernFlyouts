@@ -503,4 +503,7 @@
   <data name="Settings.UseSmallFlyout" xml:space="preserve">
     <value>Enable Condensed Lock Flyouts</value>
   </data>
+  <data name="Settings.BrightnessCompatibility" xml:space="preserve">
+    <value>Enable compatibility for laptop screens</value>
+  </data>
 </root>

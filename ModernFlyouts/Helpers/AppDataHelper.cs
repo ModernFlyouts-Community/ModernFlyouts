@@ -255,6 +255,16 @@ namespace ModernFlyouts.Helpers
 
         #endregion
 
+        #region Brightness module related
+
+        public static bool BrightnessCompatibility
+        {
+            get => GetValue(DefaultValuesStore.BrightnessCompatibility);
+            set => SetValue(value);
+        }
+
+        #endregion
+
         #endregion
 
         #region UI

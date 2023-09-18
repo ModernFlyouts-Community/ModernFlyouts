@@ -58,6 +58,20 @@ namespace ModernFlyouts
 
         public BrightnessFlyoutHelper BrightnessFlyoutHelper { get; set; }
 
+        private bool brightnessCompatibility = DefaultValuesStore.BrightnessCompatibility;
+
+        public bool BrightnessCompatibility
+        {
+            get => brightnessCompatibility;
+            set
+            {
+                if (SetProperty(ref brightnessCompatibility, value))
+                {
+                    OnBrightnessCompatibilityChanged();
+                }
+            }
+        }
+
         private Orientation onScreenFlyoutOrientation = DefaultValuesStore.FlyoutOrientation;
 
         public Orientation OnScreenFlyoutOrientation
@@ -204,7 +218,7 @@ namespace ModernFlyouts
             AudioFlyoutHelper = new AudioFlyoutHelper(OnScreenFlyoutOrientation) { IsEnabled = adEnabled };
             AirplaneModeFlyoutHelper = new AirplaneModeFlyoutHelper() { IsEnabled = apmdEnabled };
             LockKeysFlyoutHelper = new LockKeysFlyoutHelper() { IsEnabled = lkkyEnabled };
-            BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled };
+            BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled, CompatibilityMode = AppDataHelper.BrightnessCompatibility };
 
             flyoutHelpers.Add(AudioFlyoutHelper);
             flyoutHelpers.Add(AirplaneModeFlyoutHelper);
@@ -528,6 +542,12 @@ namespace ModernFlyouts
             {
                 UpdatePreferredMonitor();
             }
+        }
+
+        private void OnBrightnessCompatibilityChanged()
+        {
+            AppDataHelper.BrightnessCompatibility = brightnessCompatibility;
+            BrightnessFlyoutHelper.CompatibilityMode = brightnessCompatibility;
         }
 
         private void OnFlyoutOrientationChanged()

@@ -520,6 +520,10 @@
           <source>Flyout axis</source>
           <target state="new">Flyout axis</target>
         </trans-unit>
+        <trans-unit id="Settings.BrightnessCompatibility" translate="yes" xml:space="preserve">
+          <source>Enable compatibility for laptop screens</source>
+          <target state="new">Enable compatibility for laptop screens</target>
+        </trans-unit>
       </group>
     </body>
   </file>

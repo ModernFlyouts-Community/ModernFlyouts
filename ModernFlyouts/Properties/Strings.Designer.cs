@@ -754,6 +754,17 @@ namespace ModernFlyouts.Properties {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Enable compatibility for laptop screens.
+        /// </summary>
+        public static string Settings_BrightnessCompatibility
+        {
+            get
+            {
+                return ResourceManager.GetString("Settings.BrightnessCompatibility", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Default Flyout.
         /// </summary>
         public static string Settings_DefaultFlyout {
