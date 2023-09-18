@@ -1,7 +1,12 @@
-﻿using ModernFlyouts.Controls;
+﻿using Microsoft.VisualBasic.Logging;
+using ModernFlyouts.Controls;
 using ModernFlyouts.Helpers;
 using ModernFlyouts.Utilities;
 using System.Windows.Input;
+using System.Windows.Interop;
+using System.Windows;
+using System.Windows.Media;
+using System;
 
 namespace ModernFlyouts
 {
@@ -9,7 +14,23 @@ namespace ModernFlyouts
     {
         private LockKeysControl lockKeysControl;
 
+        private DrawingImage drawingImage;
+
         #region Properties
+
+        private bool useSmallFlyout = DefaultValuesStore.UseSmallFlyout;
+
+        public bool UseSmallFlyout
+        {
+            get => useSmallFlyout;
+            set
+            {
+                if (SetProperty(ref useSmallFlyout, value))
+                {
+                    OnUseSmallFlyoutChanged();
+                }
+            }
+        }
 
         private bool capsLockEnabled = DefaultValuesStore.LockKeysModule_CapsLockEnabled;
 
@@ -83,6 +104,10 @@ namespace ModernFlyouts
             ScrollLockEnabled = AppDataHelper.LockKeysModule_ScrollLockEnabled;
             InsertEnabled = AppDataHelper.LockKeysModule_InsertEnabled;
 
+            drawingImage = new DrawingImage();
+
+            UseSmallFlyout = AppDataHelper.UseSmallFlyout;
+
             lockKeysControl = new LockKeysControl();
 
             PrimaryContent = lockKeysControl;
@@ -134,28 +159,65 @@ namespace ModernFlyouts
 
         private void Prepare(LockKeys key, bool islock)
         {
-            string msg;
-
-            if (key != LockKeys.Insert)
+            string msg = string.Empty;
+            lockKeysControl.Pad.Width = 0;
+            if (!(UseSmallFlyout))
             {
-                string keyName = key switch
+                lockKeysControl.Pad.Width = 10;
+                if (key != LockKeys.Insert)
                 {
-                    LockKeys.CapsLock => Properties.Strings.LockKeysFlyoutHelper_CapsLock,
-                    LockKeys.NumLock => Properties.Strings.LockKeysFlyoutHelper_NumLock,
-                    LockKeys.ScrollLock => Properties.Strings.LockKeysFlyoutHelper_ScrollLock,
-                    _ => string.Empty,
-                };
+                    string keyName = key switch
+                    {
+                        LockKeys.CapsLock => Properties.Strings.LockKeysFlyoutHelper_CapsLock,
+                        LockKeys.NumLock => Properties.Strings.LockKeysFlyoutHelper_NumLock,
+                        LockKeys.ScrollLock => Properties.Strings.LockKeysFlyoutHelper_ScrollLock,
+                        _ => string.Empty,
+                    };
 
-                msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, keyName);
-                lockKeysControl.LockGlyph.Glyph = islock ? CommonGlyphs.Lock : CommonGlyphs.Unlock;
+                    msg = string.Format(islock ? Properties.Strings.LockKeysFlyoutHelper_KeyIsOn : Properties.Strings.LockKeysFlyoutHelper_KeyIsOff, keyName);
+
+                }
+                else
+                {
+                    msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
+                }
+
+                
             }
-            else
+
+            resetIcons();
+            switch (key)
             {
-                msg = islock ? Properties.Strings.LockKeysFlyoutHelper_OvertypeMode : Properties.Strings.LockKeysFlyoutHelper_InsertMode;
-                lockKeysControl.LockGlyph.Glyph = string.Empty;
+                case LockKeys.CapsLock:
+                    if (islock == false) lockKeysControl.caps_off.Visibility = Visibility.Visible;
+                    if (islock) lockKeysControl.caps_on.Visibility = Visibility.Visible;
+                    break;
+                case LockKeys.NumLock:
+                    if (islock == false) lockKeysControl.num_off.Visibility = Visibility.Visible;
+                    if (islock) lockKeysControl.num_on.Visibility = Visibility.Visible;
+                    break;
+                case LockKeys.ScrollLock:
+                    if (islock == false) lockKeysControl.scroll_lock_off.Visibility = Visibility.Visible;
+                    if (islock) lockKeysControl.scroll_lock_on.Visibility = Visibility.Visible;
+                    break;
+                case LockKeys.Insert:
+                    if (islock == false) lockKeysControl.insert_on.Visibility = Visibility.Visible; // this if statement needs to be false on purpose because islock is swapped for insert
+                    if (islock) lockKeysControl.insert_off.Visibility = Visibility.Visible;
+                    break;
             }
-
             lockKeysControl.txt.Text = msg;
+        }
+
+        private void resetIcons()
+        {
+            lockKeysControl.caps_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.caps_on.Visibility = Visibility.Collapsed;
+            lockKeysControl.num_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.num_on.Visibility = Visibility.Collapsed;
+            lockKeysControl.scroll_lock_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.scroll_lock_on.Visibility = Visibility.Collapsed;
+            lockKeysControl.insert_off.Visibility = Visibility.Collapsed;
+            lockKeysControl.insert_on.Visibility = Visibility.Collapsed;
         }
 
         private enum LockKeys
@@ -164,6 +226,11 @@ namespace ModernFlyouts
             NumLock,
             ScrollLock,
             Insert
+        }
+
+        private void OnUseSmallFlyoutChanged()
+        {
+            AppDataHelper.UseSmallFlyout = UseSmallFlyout;
         }
 
         protected override void OnEnabled()
