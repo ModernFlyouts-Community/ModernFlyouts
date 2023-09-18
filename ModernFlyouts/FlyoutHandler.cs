@@ -216,6 +216,7 @@ namespace ModernFlyouts
             #region Initiate Helpers
 
             AudioFlyoutHelper = new AudioFlyoutHelper(OnScreenFlyoutOrientation) { IsEnabled = adEnabled };
+            AudioFlyoutHelper.SetupEvents();
             AirplaneModeFlyoutHelper = new AirplaneModeFlyoutHelper() { IsEnabled = apmdEnabled };
             LockKeysFlyoutHelper = new LockKeysFlyoutHelper() { IsEnabled = lkkyEnabled };
             BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled, CompatibilityMode = AppDataHelper.BrightnessCompatibility };

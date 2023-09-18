@@ -54,15 +54,10 @@ namespace ModernFlyouts.Controls
             Horizontal.Children.Add(VolumeButton);
             Horizontal.Children.Add(VolumeSlider);
             Horizontal.Children.Add(textVal);
-
-
-
         }
 
         public void SetToVertical()
         {
-            FlyoutHandler.Instance.UIManager.PropertyChanged += CheckIfTopbarChanged;
-            FlyoutHandler.Instance.AudioFlyoutHelper.PropertyChanged += CheckIfTopbarChanged;
             _orientation = Orientation.Vertical;
 
             Horizontal.MinWidth = 0;
@@ -111,6 +106,12 @@ namespace ModernFlyouts.Controls
             {
                 VerticalHeight();
             }
+        }
+
+        public void SetupEvents()
+        {
+            FlyoutHandler.Instance.UIManager.PropertyChanged += CheckIfTopbarChanged;
+            FlyoutHandler.Instance.AudioFlyoutHelper.PropertyChanged += CheckIfTopbarChanged;
         }
     }
 }

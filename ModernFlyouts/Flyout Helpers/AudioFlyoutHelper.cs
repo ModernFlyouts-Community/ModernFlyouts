@@ -394,5 +394,10 @@ namespace ModernFlyouts
 
             AppDataHelper.AudioModuleEnabled = IsEnabled;
         }
+
+        public void SetupEvents()
+        {
+            volumeControl.SetupEvents();
+        }
     }
 }
