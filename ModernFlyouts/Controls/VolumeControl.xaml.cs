@@ -15,7 +15,6 @@ namespace ModernFlyouts.Controls
         {
             InitializeComponent();
             _orientation = orientation;
-            FlyoutHandler.Instance.UIManager.PropertyChanged += CheckIfTopbarChanged;
 
             if (orientation == Orientation.Vertical)
             {
@@ -23,6 +22,12 @@ namespace ModernFlyouts.Controls
             } else {
                 SetToHorizontal();
             }
+        }
+
+        ~VolumeControl()
+        {
+            FlyoutHandler.Instance.UIManager.PropertyChanged -= CheckIfTopbarChanged;
+            FlyoutHandler.Instance.AudioFlyoutHelper.PropertyChanged -= CheckIfTopbarChanged;
         }
 
         public void SetToHorizontal()
@@ -56,20 +61,12 @@ namespace ModernFlyouts.Controls
 
         public void SetToVertical()
         {
+            FlyoutHandler.Instance.UIManager.PropertyChanged += CheckIfTopbarChanged;
+            FlyoutHandler.Instance.AudioFlyoutHelper.PropertyChanged += CheckIfTopbarChanged;
             _orientation = Orientation.Vertical;
 
             Horizontal.MinWidth = 0;
-            Vertical.MinHeight = UIManager.DefaultSessionControlHeight;
-
-            int mediaSessionCount = FlyoutHandler.Instance.AudioFlyoutHelper.AllMediaSessions.Count;
-            TopBarVisibility topBarVisibility = FlyoutHandler.Instance.UIManager.TopBarVisibility;
-            if (topBarVisibility == TopBarVisibility.Visible || topBarVisibility == TopBarVisibility.AutoHide)
-            {
-                Vertical.MinHeight = Vertical.MinHeight - 32; // topbar height
-            }
-
-
-            Vertical.MinHeight = Vertical.MinHeight - 4; // account for padding
+            VerticalHeight();
 
             VolumeSlider.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
             VolumeSlider.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
@@ -91,22 +88,28 @@ namespace ModernFlyouts.Controls
 
         }
 
+        private void VerticalHeight()
+        {
+            Vertical.MinHeight = UIManager.DefaultSessionControlHeight;
+            int mediaSessionCount = 0;
+            if (FlyoutHandler.Instance.AudioFlyoutHelper != null)
+            {
+                mediaSessionCount = FlyoutHandler.Instance.AudioFlyoutHelper.AllMediaSessions.Count;
+            }
+            TopBarVisibility topBarVisibility = FlyoutHandler.Instance.UIManager.TopBarVisibility;
+            if ((topBarVisibility == TopBarVisibility.Visible || topBarVisibility == TopBarVisibility.AutoHide) && (mediaSessionCount > 0 && FlyoutHandler.Instance.AudioFlyoutHelper.ShowGSMTCInVolumeFlyout))
+            {
+                Vertical.MinHeight = Vertical.MinHeight - 32; // topbar height
+            }
 
+            Vertical.MinHeight = Vertical.MinHeight - 4; // account for padding
+        }
 
         private void CheckIfTopbarChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (_orientation == Orientation.Vertical)
             {
-                Vertical.MinHeight = UIManager.DefaultSessionControlHeight;
-
-                TopBarVisibility topBarVisibility = FlyoutHandler.Instance.UIManager.TopBarVisibility;
-
-                if (topBarVisibility == TopBarVisibility.Visible || topBarVisibility == TopBarVisibility.AutoHide)
-                {
-                    Vertical.MinHeight = Vertical.MinHeight - 32; // topbar height
-                }
-
-                Vertical.MinHeight = Vertical.MinHeight - 4; // account for padding
+                VerticalHeight();
             }
         }
     }
