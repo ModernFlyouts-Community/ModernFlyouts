@@ -1,4 +1,5 @@
-﻿using ModernFlyouts.Core.UI;
+﻿using ModernFlyouts.Core.Media.Control;
+using ModernFlyouts.Core.UI;
 using ModernFlyouts.UI;
 using NAudio.Gui;
 using System.Windows;
@@ -8,10 +9,13 @@ namespace ModernFlyouts.Controls
 {
     public partial class VolumeControl : UserControl
     {
+        private Orientation _orientation;
 
         public VolumeControl(Orientation orientation)
         {
             InitializeComponent();
+            _orientation = orientation;
+            FlyoutHandler.Instance.UIManager.PropertyChanged += CheckIfTopbarChanged;
 
             if (orientation == Orientation.Vertical)
             {
@@ -23,6 +27,8 @@ namespace ModernFlyouts.Controls
 
         public void SetToHorizontal()
         {
+            _orientation = Orientation.Horizontal;
+
             Horizontal.MinWidth = UIManager.FlyoutWidth;
             Vertical.MinHeight = 0;
 
@@ -50,8 +56,20 @@ namespace ModernFlyouts.Controls
 
         public void SetToVertical()
         {
+            _orientation = Orientation.Vertical;
+
             Horizontal.MinWidth = 0;
             Vertical.MinHeight = UIManager.DefaultSessionControlHeight;
+
+            int mediaSessionCount = FlyoutHandler.Instance.AudioFlyoutHelper.AllMediaSessions.Count;
+            TopBarVisibility topBarVisibility = FlyoutHandler.Instance.UIManager.TopBarVisibility;
+            if (topBarVisibility == TopBarVisibility.Visible || topBarVisibility == TopBarVisibility.AutoHide)
+            {
+                Vertical.MinHeight = Vertical.MinHeight - 32; // topbar height
+            }
+
+
+            Vertical.MinHeight = Vertical.MinHeight - 4; // account for padding
 
             VolumeSlider.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
             VolumeSlider.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
@@ -71,6 +89,25 @@ namespace ModernFlyouts.Controls
             Vertical.Children.Add(VolumeSlider);
             Vertical.Children.Add(textVal);
 
+        }
+
+
+
+        private void CheckIfTopbarChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (_orientation == Orientation.Vertical)
+            {
+                Vertical.MinHeight = UIManager.DefaultSessionControlHeight;
+
+                TopBarVisibility topBarVisibility = FlyoutHandler.Instance.UIManager.TopBarVisibility;
+
+                if (topBarVisibility == TopBarVisibility.Visible || topBarVisibility == TopBarVisibility.AutoHide)
+                {
+                    Vertical.MinHeight = Vertical.MinHeight - 32; // topbar height
+                }
+
+                Vertical.MinHeight = Vertical.MinHeight - 4; // account for padding
+            }
         }
     }
 }
