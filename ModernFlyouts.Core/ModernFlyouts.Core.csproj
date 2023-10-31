@@ -16,11 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 						<PackageReference Include="DesktopBridge.Helpers" Version="1.2.2" />
-						<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="7.0.0-preview.6.22324.4" />
-						<PackageReference Include="System.Drawing.Common" Version="7.0.0-preview.6.22324.4" />
-						<PackageReference Include="System.Management" Version="7.0.0-preview.6.22324.4" />
+						<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="7.0.0" />
+						<PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+						<PackageReference Include="System.Management" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>
