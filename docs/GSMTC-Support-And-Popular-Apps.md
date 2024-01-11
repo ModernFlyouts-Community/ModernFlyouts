@@ -51,7 +51,7 @@ Users tend to know which functionalities are supported by ModernFlyouts' Media S
 | [DeaDBeeF](https://deadbeef.sourceforge.io/download.html) | 🟡 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟩 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [iTunes](https://www.microsoft.com/store/productId/9PB2MZ1ZMB1S) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟥 | 🟥 | 🟩 | 🟥 |
 | [Spicetify](https://github.com/spicetify/spicetify-cli) | 🟡 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 |
-| [FeelUOwn](https://github.com/feeluown/FeelUOwn) | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 | 🟩 | 🟥 | 🟩 |
+| [FeelUOwn](https://github.com/feeluown/FeelUOwn) | 🟢 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟩 | 🟪 | 🟩 |
 | [Audacious](https://audacious-media-player.org/download) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [Quod Libet](https://quodlibet.readthedocs.io/en/latest/downloads.html) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
 | [MusicPlayer2](https://github.com/zhongyang219/MusicPlayer2/) | 🔴 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 | 🟥 |
