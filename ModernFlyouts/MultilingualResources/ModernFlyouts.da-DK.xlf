@@ -314,7 +314,7 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
           <source>Num lock</source>
-          <target state="translated" state-qualifier="mt-suggestion">Mum lock</target>
+          <target state="translated" state-qualifier="mt-suggestion">Num lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
