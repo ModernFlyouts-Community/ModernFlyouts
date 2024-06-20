@@ -25,7 +25,7 @@ This project has its roots in the app [AudioFlyout](https://github.com/ADeltaX/A
 With additional implementations for **"Airplane mode"**, **"Brightness"** and **"LockKeys"** *(includes Insert key, Caps, Num & Scroll lock keys)* flyouts, this project stands as a complete replacement for the built-in flyouts.
 
 > Note : The built-in flyout will not be permanently affected. It will be hidden temporarily while this application is running. So, no reason to fear breaking your system.
-> For more information on how to recover the original flyouts, check out [this How To page](https://github.com/ModernFlyouts-Community/ModernFlyouts/wiki/How-To).
+> For more information on how to recover the original flyouts, check out [this How To page](https://github.com/ModernFlyouts-Community/ModernFlyouts/wiki/How-Tos).
 
 > Users are provided the freedom to choose between the Windows built-in flyouts or modern flyouts from ModernFlyouts or neither of them.
 
