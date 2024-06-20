@@ -38,6 +38,10 @@ namespace ModernFlyouts.Helpers
 
         public const StackingDirection OnScreenFlyoutContentStackingDirection = StackingDirection.Ascending;
 
+        public const Orientation FlyoutOrientation = Orientation.Horizontal;
+
+        public const bool UseSmallFlyout = false;
+
         #endregion
 
         #region Module specific
@@ -59,6 +63,12 @@ namespace ModernFlyouts.Helpers
         public const bool LockKeysModule_ScrollLockEnabled = true;
 
         public const bool LockKeysModule_InsertEnabled = true;
+
+        #endregion
+
+        #region Brightness module related
+
+        public const bool BrightnessCompatibility = false;
 
         #endregion
 
