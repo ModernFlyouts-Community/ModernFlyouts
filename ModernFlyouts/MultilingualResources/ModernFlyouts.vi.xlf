@@ -12,15 +12,15 @@
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ máy bay không khả :(</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ máy bay không khả dụng(</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chế độ Máy bay tắt</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tắt Chế độ Máy bay</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOn" translate="yes" xml:space="preserve">
           <source>Airplane mode on</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chế độ Máy bay bật</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bật Chế độ Máy bay</target>
         </trans-unit>
         <trans-unit id="Align" translate="yes" xml:space="preserve">
           <source>Align to default position</source>
