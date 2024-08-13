@@ -126,7 +126,7 @@
     <value>Độ mờ của Flyout</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Vị trí mặc định Của Flyout (đối với nút Căn chỉnh)</value>
+    <value>Vị trí mặc định Của Flyout</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Thanh trên Flyout</value>
