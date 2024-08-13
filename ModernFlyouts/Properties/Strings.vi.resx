@@ -16,7 +16,7 @@
     <value>Giới thiệu</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>Chế độ máy bay không khả dụng(</value>
+    <value>Chế độ máy bay không khả dụng :(</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
     <value>Tắt chế độ Máy bay</value>
@@ -57,7 +57,7 @@
     <value>Chế độ Ghi đè (Overtype)</value>
   </data>
   <data name="PinTopBar" xml:space="preserve">
-    <value>Ghim thanh trên cùng</value>
+    <value>Ghim thanh trên</value>
   </data>
   <data name="RestoreDefaultItem" xml:space="preserve">
     <value>Khôi phục cài đặt mặc định</value>
@@ -126,7 +126,7 @@
     <value>Độ mờ của Flyout</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Vị trí mặc định Của Flyout</value>
+    <value>Vị trí mặc định của Flyout</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
     <value>Thanh trên Flyout</value>
@@ -216,7 +216,7 @@
     <value>Hiển thị GSMTC</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Hiển thị điều khiển âm lượng GSMTC\</value>
+    <value>Hiển thị điều khiển âm lượng GSMTC</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
     <value>Căn chỉnh hình Thumbnail</value>
@@ -285,7 +285,7 @@
     <value>Phải</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Khả năng hiển thị Thanh trên</value>
+    <value>Hiển thị Thanh trên</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
     <value>Hiện biểu tượng trên khay hệ thống</value>
@@ -303,7 +303,7 @@
     <value>Màu biểu tượng trên khay hệ thống</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Đặt lại tất cả các thiết đặt về mặc định</value>
+    <value>Đặt lại tất cả các cài đặt về mặc định</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Cá nhân hoá</value>
@@ -312,7 +312,7 @@
     <value>Căn chỉnh Flyout đến vị trí này</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Khởi động lại cần thiết để áp dụng một số thay đổi</value>
+    <value>Khởi động lại ứng dụng để áp dụng thay đổi</value>
   </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>Dưới cùng</value>
