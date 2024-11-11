@@ -5,30 +5,39 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:utils="clr-namespace:ModernFlyouts.Utilities"
-             mc:Ignorable="d" d:DesignWidth="354">
+             mc:Ignorable="d">
 
-    <Grid Height="48">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="48" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="48" />
-        </Grid.ColumnDefinitions>
-        <Button x:Name="VolumeButton" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,0,0"
-                ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
-                Width="48" Padding="0" Height="48" Background="Transparent">
-            <Grid>
-                <ui:FontIcon x:Name="VolumeShadowGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16"
-                             Foreground="{DynamicResource SystemControlForegroundChromeGrayBrush}" />
-                <ui:FontIcon x:Name="VolumeGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16" />
-            </Grid>
-        </Button>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid x:Name="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+        </Grid>
+        <Grid x:Name="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,4,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button x:Name="VolumeButton" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="0"
+    ui:ControlHelper.CornerRadius="{DynamicResource FlyoutCornerRadius}"
+    Width="48" Padding="0" Height="48" Background="Transparent">
+                <Grid>
+                    <ui:FontIcon x:Name="VolumeShadowGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16"
+                 Foreground="{DynamicResource SystemControlForegroundChromeGrayBrush}" />
+                    <ui:FontIcon x:Name="VolumeGlyph" Glyph="{x:Static utils:CommonGlyphs.Volume3}" FontSize="16" />
+                </Grid>
+            </Button>
 
-        <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" Grid.Column="1" VerticalAlignment="Center" Margin="8,0"
-                        SmallChange="0.01" Value="100" IsMoveToPointEnabled="True" />
+            <Slider x:Name="VolumeSlider" Maximum="100" Minimum="0" VerticalAlignment="Stretch" Margin="8,0" Grid.Row="1" Grid.Column="1"
+            SmallChange="0.01" Value="100" IsMoveToPointEnabled="True" />
 
-        <TextBlock x:Name="textVal" Grid.Column="2" HorizontalAlignment="Center" Margin="6"
-                   Style="{DynamicResource SubtitleTextBlockStyle}"
-                   Text="100" VerticalAlignment="Center" />
+            <TextBlock x:Name="textVal" HorizontalAlignment="Center" Margin="6" Grid.Row="2" Grid.Column="2"
+       Style="{DynamicResource SubtitleTextBlockStyle}"
+       Text="100" VerticalAlignment="Center" />
+        </Grid>
     </Grid>
-
 </UserControl>

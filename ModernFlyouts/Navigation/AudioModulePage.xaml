@@ -23,6 +23,11 @@
                         Margin="-10,0" Style="{DynamicResource TabControlPivotStyle}">
                 <TabItem Header="{x:Static resx:Strings.GeneralSettings}">
                     <ui:SimpleStackPanel Margin="10" Spacing="10">
+                        <ComboBox x:Name="OrientationPicker"
+    ui:ControlHelper.Header="{x:Static resx:Strings.Settings_FlyoutAxis}"
+    Width="240"
+    ItemTemplate="{StaticResource LocalizedEnumItemTemplate}"
+    SelectedItem="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=OnScreenFlyoutOrientation}"/>
                         <ui:ToggleSwitch Header="{x:Static resx:Strings.AudioFlyoutHelper_ShowGSMTCInVolumeFlyout}"
                                          IsOn="{Binding AudioFlyoutHelper.ShowGSMTCInVolumeFlyout}"
                                          OnContent="{x:Static resx:Strings.Settings_On}"

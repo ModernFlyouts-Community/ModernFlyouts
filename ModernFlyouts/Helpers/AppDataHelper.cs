@@ -195,6 +195,18 @@ namespace ModernFlyouts.Helpers
             set => SetValue(value);
         }
 
+        public static Orientation FlyoutOrientation
+        {
+            get => GetValue(DefaultValuesStore.FlyoutOrientation);
+            set => SetValue(value);
+        }
+
+        public static bool UseSmallFlyout
+        {
+            get => GetValue(DefaultValuesStore.UseSmallFlyout);
+            set => SetValue(value);
+        }
+
         #endregion
 
         #region Module Specific
@@ -238,6 +250,16 @@ namespace ModernFlyouts.Helpers
         public static bool LockKeysModule_InsertEnabled
         {
             get => GetValue(DefaultValuesStore.LockKeysModule_InsertEnabled);
+            set => SetValue(value);
+        }
+
+        #endregion
+
+        #region Brightness module related
+
+        public static bool BrightnessCompatibility
+        {
+            get => GetValue(DefaultValuesStore.BrightnessCompatibility);
             set => SetValue(value);
         }
 

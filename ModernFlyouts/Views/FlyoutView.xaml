@@ -33,19 +33,21 @@
                 input:InputHelper.TappedCommand="{x:Static utils:CommonCommands.CloseFlyoutCommand}"
                 input:InputHelper.TappedCommandParameter="{x:Reference Name=TopBarHost}" />
         <controls:DirectableStackPanel
+            x:Name="ContentStackPanel"
             Spacing="8" Margin="{x:Static localui:UIManager.FlyoutShadowMargin}"
+            Orientation="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=OnScreenFlyoutOrientation}"
             Direction="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=UIManager.OnScreenFlyoutContentStackingDirection}">
             <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
                 CornerRadius="{DynamicResource FlyoutCornerRadius}"
-                Width="{DynamicResource FlyoutWidth}"
+                MaxWidth="{DynamicResource FlyoutWidth}"
                 Visibility="{Binding PrimaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid>
                     <Border Background="{DynamicResource FlyoutBackground}"
                             CornerRadius="{DynamicResource FlyoutCornerRadius}"/>
-                    <StackPanel>
-                        <ContentControl x:Name="TopBarHost" x:FieldModifier="private" />
-                        <controls:CrossFadeContentControl Content="{Binding PrimaryContent}" />
-                    </StackPanel>
+                    <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <ContentControl x:Name="TopBarHost" x:FieldModifier="private" DockPanel.Dock="Top"/>
+                        <controls:CrossFadeContentControl Content="{Binding PrimaryContent}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                    </DockPanel>
                     <Border
                         BorderThickness="{DynamicResource FlyoutBorderThemeThickness}"
                         BorderBrush="{DynamicResource FlyoutBorderThemeBrush}"
@@ -60,7 +62,7 @@
             </ui:ThemeShadowChrome>
             <ui:ThemeShadowChrome Depth="{x:Static localui:UIManager.FlyoutShadowDepth}"
                 CornerRadius="{DynamicResource FlyoutCornerRadius}"
-                Width="{DynamicResource FlyoutWidth}"
+                MaxWidth="{DynamicResource FlyoutWidth}"
                 Visibility="{Binding SecondaryContentVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid>
                     <Border Background="{DynamicResource FlyoutBackground}"

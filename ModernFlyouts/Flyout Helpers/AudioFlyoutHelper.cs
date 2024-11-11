@@ -21,7 +21,7 @@ namespace ModernFlyouts
         private AudioDeviceNotificationClient client;
         private MMDeviceEnumerator enumerator;
         private MMDevice device;
-        private VolumeControl volumeControl;
+        public VolumeControl volumeControl;
         private SessionsPanel sessionsPanel;
         private TextBlock noDeviceMessageBlock;
         private List<MediaSessionManager> mediaSessionManagers = new();
@@ -61,8 +61,11 @@ namespace ModernFlyouts
 
         #endregion
 
-        public AudioFlyoutHelper()
+        private Orientation volumeOrientation;
+
+        public AudioFlyoutHelper(Orientation orientation)
         {
+            volumeOrientation = orientation;
             Initialize();
         }
 
@@ -75,7 +78,7 @@ namespace ModernFlyouts
 
             #region Volume control sub-module initialization
 
-            volumeControl = new VolumeControl();
+            volumeControl = new VolumeControl(volumeOrientation);
             volumeControl.VolumeButton.Click += VolumeButton_Click;
             volumeControl.VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
             volumeControl.VolumeSlider.PreviewMouseWheel += VolumeSlider_PreviewMouseWheel;
@@ -134,6 +137,18 @@ namespace ModernFlyouts
             }
 
             return base.CanHandleNativeOnScreenFlyout(triggerData);
+        }
+
+        public void OnFlyoutOrientationChanged(Orientation orientation)
+        {
+            volumeOrientation = orientation;
+            if (volumeOrientation == Orientation.Vertical)
+            {
+                volumeControl.SetToVertical();
+            } else
+            {
+                volumeControl.SetToHorizontal();
+            }
         }
 
         private void OnShowGSMTCInVolumeFlyoutChanged()
@@ -378,6 +393,11 @@ namespace ModernFlyouts
             }
 
             AppDataHelper.AudioModuleEnabled = IsEnabled;
+        }
+
+        public void SetupEvents()
+        {
+            volumeControl.SetupEvents();
         }
     }
 }
