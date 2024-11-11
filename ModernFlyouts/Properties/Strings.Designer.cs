@@ -10,8 +10,8 @@
 
 namespace ModernFlyouts.Properties {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace ModernFlyouts.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Strings() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace ModernFlyouts.Properties {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace ModernFlyouts.Properties {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
@@ -68,7 +68,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8..
         /// </summary>
@@ -77,7 +77,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.AppDescription", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Contributors.
         /// </summary>
@@ -86,7 +86,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.Contributors", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Dependencies.
         /// </summary>
@@ -95,7 +95,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.Dependencies", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to If you find any bugs, please open a new issue in the github repository..
         /// </summary>
@@ -104,7 +104,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.FileABug", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to GitHub repository.
         /// </summary>
@@ -113,7 +113,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.GitHub", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Open a new issue.
         /// </summary>
@@ -122,7 +122,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.OpenNewIssue", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Rate and Review on Microsoft Store.
         /// </summary>
@@ -131,7 +131,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.RateAndReview", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Version : .
         /// </summary>
@@ -140,7 +140,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("About.Version", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Airplane mode is not available :(.
         /// </summary>
@@ -149,7 +149,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AirplaneMode.NotAvailable", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Airplane mode off.
         /// </summary>
@@ -158,7 +158,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AirplaneModeOff", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Airplane mode on.
         /// </summary>
@@ -167,7 +167,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AirplaneModeOn", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Align to default position.
         /// </summary>
@@ -176,7 +176,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Align", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Number of sessions to show.
         /// </summary>
@@ -185,7 +185,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.MaxVerticalSessionControlsCount", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to No Connected Audio Devices.
         /// </summary>
@@ -194,7 +194,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.NoDevices", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Media sessions panel orientation.
         /// </summary>
@@ -203,7 +203,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.SessionsPanelOrientation", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout.
         /// </summary>
@@ -212,7 +212,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.ShowGSMTCInVolumeFlyout", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout.
         /// </summary>
@@ -221,7 +221,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Thumbnail alignment.
         /// </summary>
@@ -230,7 +230,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.ThumbnailAlignment", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Use media&apos;s thumbnail as media control&apos;s background.
         /// </summary>
@@ -239,7 +239,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("AudioFlyoutHelper.UseThumbnailAsBackground", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
@@ -248,7 +248,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Close", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to ModernFlyouts.
         /// </summary>
@@ -257,7 +257,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.DefaultFlyout.ModernFlyouts", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
@@ -266,7 +266,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.DefaultFlyout.None", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Windows default.
         /// </summary>
@@ -275,7 +275,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.DefaultFlyout.WindowsDefault", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
@@ -284,7 +284,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.ElementTheme.Dark", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Light.
         /// </summary>
@@ -293,7 +293,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.ElementTheme.Light", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Bottom.
         /// </summary>
@@ -302,7 +302,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Bottom", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Center.
         /// </summary>
@@ -311,7 +311,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Center", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
@@ -320,7 +320,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Left", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Right.
         /// </summary>
@@ -329,7 +329,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Right", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Top.
         /// </summary>
@@ -338,7 +338,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowAlignments.Top", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Auto.
         /// </summary>
@@ -347,7 +347,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Auto", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Down.
         /// </summary>
@@ -356,7 +356,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Down", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
@@ -365,7 +365,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Left", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Right.
         /// </summary>
@@ -374,7 +374,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Right", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Up.
         /// </summary>
@@ -383,7 +383,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowExpandDirection.Up", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Auto.
         /// </summary>
@@ -392,7 +392,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowPlacementMode.Auto", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Manual.
         /// </summary>
@@ -401,7 +401,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.FlyoutWindowPlacementMode.Manual", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Horizontal.
         /// </summary>
@@ -410,7 +410,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.Orientation.Horizontal", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Vertical.
         /// </summary>
@@ -419,7 +419,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.Orientation.Vertical", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Ascending.
         /// </summary>
@@ -428,7 +428,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.StackingDirection.Ascending", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Descending.
         /// </summary>
@@ -437,7 +437,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.StackingDirection.Descending", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Auto-hide.
         /// </summary>
@@ -446,7 +446,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.TopBarVisibility.AutoHide", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Collapsed.
         /// </summary>
@@ -455,7 +455,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.TopBarVisibility.Collapsed", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Visible.
         /// </summary>
@@ -464,7 +464,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Enums.TopBarVisibility.Visible", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
@@ -473,7 +473,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("ExitItem", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Exit the app safely.
         /// </summary>
@@ -482,7 +482,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("ExitItemDescription", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
@@ -491,7 +491,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("GeneralSettings", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Caps lock.
         /// </summary>
@@ -500,7 +500,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.CapsLock", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Insert.
         /// </summary>
@@ -509,7 +509,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.Insert", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Insert Mode.
         /// </summary>
@@ -518,7 +518,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.InsertMode", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {0} is off.
         /// </summary>
@@ -527,7 +527,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.KeyIsOff", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {0} is on.
         /// </summary>
@@ -536,7 +536,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.KeyIsOn", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Num lock.
         /// </summary>
@@ -545,7 +545,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.NumLock", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Overtype Mode.
         /// </summary>
@@ -554,7 +554,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.OvertypeMode", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Scroll lock.
         /// </summary>
@@ -563,7 +563,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.ScrollLock", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Select the keys you want to show the flyout for.
         /// </summary>
@@ -572,7 +572,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("LockKeysFlyoutHelper.SelectKeyDescription", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Pin TopBar.
         /// </summary>
@@ -581,7 +581,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("PinTopBar", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Restore legacy flyout.
         /// </summary>
@@ -590,7 +590,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("RestoreDefaultItem", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Restores the windows default flyout and safely quits this app.
         /// </summary>
@@ -599,7 +599,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("RestoreDefaultItemDescription", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to More Controls.
         /// </summary>
@@ -608,7 +608,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.MoreControls", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
@@ -617,7 +617,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.Next", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Pause.
         /// </summary>
@@ -626,7 +626,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.Pause", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Play.
         /// </summary>
@@ -635,7 +635,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.Play", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Previous.
         /// </summary>
@@ -644,7 +644,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.Previous", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Repeat: all.
         /// </summary>
@@ -653,7 +653,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.RepeatAll", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Repeat: off.
         /// </summary>
@@ -662,7 +662,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.RepeatOff", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Repeat: one.
         /// </summary>
@@ -671,7 +671,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.RepeatOne", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Shuffle: off.
         /// </summary>
@@ -680,7 +680,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.ShuffleOff", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Shuffle: on.
         /// </summary>
@@ -689,7 +689,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.ShuffleOn", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Stop.
         /// </summary>
@@ -698,7 +698,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.Stop", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Timeline Info.
         /// </summary>
@@ -707,7 +707,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("SessionControl.TimelineInfo", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Additional.
         /// </summary>
@@ -716,7 +716,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Additional", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Align flyout to this position.
         /// </summary>
@@ -725,7 +725,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.AlignFlyout", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Appearance.
         /// </summary>
@@ -734,7 +734,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Appearance", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to App Theme.
         /// </summary>
@@ -743,7 +743,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.AppTheme", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Behavior.
         /// </summary>
@@ -752,18 +752,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Behavior", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Enable compatibility for laptop screens.
-        /// </summary>
-        public static string Settings_BrightnessCompatibility
-        {
-            get
-            {
-                return ResourceManager.GetString("Settings.BrightnessCompatibility", resourceCulture);
-            }
-        }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Default Flyout.
         /// </summary>
@@ -772,7 +761,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.DefaultFlyout", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Select the default flyout.
         /// </summary>
@@ -781,7 +770,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.DefaultFlyoutDescription", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Choosing the Windows Default Flyout as default won&apos;t close this app. This app will still keep running in the background. Please exit this app safely to improve performance..
         /// </summary>
@@ -790,7 +779,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.DefaultFlyoutWarningMessage", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Disabled.
         /// </summary>
@@ -799,7 +788,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Disabled", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Display.
         /// </summary>
@@ -808,7 +797,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Display", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Select the preferred display monitor to show the flyout on.
         /// </summary>
@@ -817,7 +806,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.DisplayDescription", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Enabled.
         /// </summary>
@@ -826,7 +815,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Enabled", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Enable Airplane mode Flyout.
         /// </summary>
@@ -835,7 +824,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.EnableModule.Airplane", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Enable Audio Flyout.
         /// </summary>
@@ -844,7 +833,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.EnableModule.Audio", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Enable Brightness Flyout.
         /// </summary>
@@ -853,7 +842,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.EnableModule.Brightness", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Enable Lock keys Flyout.
         /// </summary>
@@ -862,7 +851,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.EnableModule.LockKeys", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout alignment.
         /// </summary>
@@ -871,7 +860,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutAlignment", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout background opacity.
         /// </summary>
@@ -880,7 +869,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutBackgroundOpacity", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout content stacking direction.
         /// </summary>
@@ -889,7 +878,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutContentStackingDirection", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout default position.
         /// </summary>
@@ -898,7 +887,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutDefaultPosition", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout expand direction.
         /// </summary>
@@ -907,7 +896,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutExpandDirection", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout placement.
         /// </summary>
@@ -916,7 +905,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutPlacement", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Placement mode.
         /// </summary>
@@ -925,7 +914,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutPlacementMode", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout theme.
         /// </summary>
@@ -934,7 +923,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutTheme", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout timeout (ms).
         /// </summary>
@@ -943,7 +932,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutTimeout", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout TopBar.
         /// </summary>
@@ -952,7 +941,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.FlyoutTopBar", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Horizontal alignment.
         /// </summary>
@@ -961,7 +950,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.HorizontalAlignment", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
@@ -970,7 +959,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Language", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Restart required to apply language change properly.
         /// </summary>
@@ -979,7 +968,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.LanguageDescription", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Layout.
         /// </summary>
@@ -988,7 +977,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Layout", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
@@ -997,7 +986,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Left", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flyout modules.
         /// </summary>
@@ -1006,7 +995,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Modules", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Airplane mode.
         /// </summary>
@@ -1015,7 +1004,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Modules.Airplane", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Audio.
         /// </summary>
@@ -1024,7 +1013,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Modules.Audio", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Media.
         /// </summary>
@@ -1033,7 +1022,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Modules.Audio.Media", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Volume.
         /// </summary>
@@ -1042,7 +1031,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Modules.Audio.Volume", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Brightness.
         /// </summary>
@@ -1051,7 +1040,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Modules.Brightness", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Lock keys.
         /// </summary>
@@ -1060,7 +1049,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Modules.LockKeys", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Off.
         /// </summary>
@@ -1069,7 +1058,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Off", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to On.
         /// </summary>
@@ -1078,7 +1067,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.On", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Personalization.
         /// </summary>
@@ -1087,7 +1076,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Personalization", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Reset all settings to defaults.
         /// </summary>
@@ -1096,7 +1085,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.ResetToDefaults", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Restart required to apply some changes.
         /// </summary>
@@ -1105,7 +1094,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.RestartRequired", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Right.
         /// </summary>
@@ -1114,7 +1103,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.Right", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Run at startup.
         /// </summary>
@@ -1123,7 +1112,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.RunAtStartup", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to System default.
         /// </summary>
@@ -1132,7 +1121,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.SystemDefault", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to TopBar visibility.
         /// </summary>
@@ -1141,7 +1130,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.TopBarVisibility", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Show icon on system tray area.
         /// </summary>
@@ -1150,7 +1139,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.TrayIconEnabled", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Use colored tray icon.
         /// </summary>
@@ -1159,27 +1148,7 @@ namespace ModernFlyouts.Properties {
                 return ResourceManager.GetString("Settings.UseColoredTrayIcon", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Flyout Axis.
-        /// </summary>
-        public static string Settings_FlyoutAxis {
-            get {
-                return ResourceManager.GetString("Settings.FlyoutAxis", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Enable Condensed Lock Flyouts.
-        /// </summary>
-        public static string Settings_UseSmallFlyout
-        {
-            get
-            {
-                return ResourceManager.GetString("Settings.UseSmallFlyout", resourceCulture);
-            }
-        }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Vertical alignment.
         /// </summary>

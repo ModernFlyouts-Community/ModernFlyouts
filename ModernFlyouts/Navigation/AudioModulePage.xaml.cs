@@ -1,6 +1,4 @@
-﻿using ModernFlyouts.Core.UI;
-using System.Collections.ObjectModel;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace ModernFlyouts.Navigation
 {
@@ -9,11 +7,6 @@ namespace ModernFlyouts.Navigation
         public AudioModulePage()
         {
             InitializeComponent();
-
-            OrientationPicker.ItemsSource = new Collection<Orientation>
-            {
-                Orientation.Horizontal, Orientation.Vertical,
-            };
         }
     }
 }

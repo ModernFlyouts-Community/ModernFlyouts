@@ -11,13 +11,6 @@ namespace ModernFlyouts.Core.Display
 {
     public class BrightnessManager
     {
-        private bool compatibilityMode;
-        public bool CompatibilityMode
-        {
-            get { return compatibilityMode; }
-            set { CompatibilityModeChanged(value); }
-        }
-
         private BrightnessWatcher brightnessWatcher;
         private byte[] validWMIBrightnessLevels;
 
@@ -29,10 +22,9 @@ namespace ModernFlyouts.Core.Display
 
         public ObservableCollection<BrightnessController> BrightnessControllers { get; } = new();
 
-        private BrightnessManager(bool mode)
+        private BrightnessManager()
         {
-            compatibilityMode = mode;
-            validWMIBrightnessLevels = GetValidWMIBrightnessLevels(compatibilityMode);
+            validWMIBrightnessLevels = GetValidWMIBrightnessLevels();
 
             if (AreWMIMethodsSupported())
             {
@@ -52,9 +44,9 @@ namespace ModernFlyouts.Core.Display
             //BrightnessControllers.Add(new MockBrightnessController());
         }
 
-        public static void Initialize(bool mode)
+        public static void Initialize()
         {
-            Instance ??= new(mode);
+            Instance ??= new();
 
             Instance.InitializeImpl();
         }
@@ -194,35 +186,25 @@ namespace ModernFlyouts.Core.Display
             return validWMIBrightnessLevels.Length > 0;
         }
 
-        private byte[] GetValidWMIBrightnessLevels(bool mode)
+        private byte[] GetValidWMIBrightnessLevels()
         {
             byte[] brightnessLevels = Array.Empty<byte>();
 
-            if (mode) // If user is finding the incorrect brightness min/max is being reported, we force it to 0 -> 100 levels
+            try
             {
-                byte[] array = new byte[101];
-                for (int i = 0; i <= 100; i++)
-                {
-                    array[i] = (byte)i;
-                }
-                brightnessLevels = array;
-            } else
-            {
-                try
-                {
-                    var s = new ManagementScope("root\\WMI");
-                    var q = new SelectQuery("WmiMonitorBrightness");
-                    using var mos = new ManagementObjectSearcher(s, q);
-                    using var moc = mos.Get();
+                var s = new ManagementScope("root\\WMI");
+                var q = new SelectQuery("WmiMonitorBrightness");
+                using var mos = new ManagementObjectSearcher(s, q);
+                using var moc = mos.Get();
 
-                    foreach (ManagementObject managementObject in moc)
-                    {
-                        brightnessLevels = (byte[])managementObject.GetPropertyValue("Level");
-                        break;
-                    }
+                foreach (ManagementObject managementObject in moc)
+                {
+                    brightnessLevels = (byte[])managementObject.GetPropertyValue("Level");
+                    break;
                 }
-                catch { }
             }
+            catch { }
+
             return brightnessLevels;
         }
 
@@ -233,13 +215,6 @@ namespace ModernFlyouts.Core.Display
                 if (DefaultBrightnessController != null)
                     DefaultBrightnessController.UpdateBrightness(e.NewValue);
             });
-        }
-
-        private void CompatibilityModeChanged(bool mode)
-        {
-            compatibilityMode = mode;
-            Instance = null;
-            Initialize(compatibilityMode);
         }
     }
 }

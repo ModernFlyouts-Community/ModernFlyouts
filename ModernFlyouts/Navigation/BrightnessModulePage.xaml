@@ -21,11 +21,6 @@
                                  OffContent="{x:Static resx:Strings.Settings_Off}" />
             </GroupBox>
 
-            <ui:ToggleSwitch Header="{x:Static resx:Strings.Settings_BrightnessCompatibility}"
-                 IsOn="{Binding Source={x:Static local:FlyoutHandler.Instance}, Path=BrightnessCompatibility}"
-                 OnContent="{x:Static resx:Strings.Settings_On}"
-                 OffContent="{x:Static resx:Strings.Settings_Off}" />
-
             <ItemsControl ItemsSource="{Binding Source={x:Static display:BrightnessManager.Instance}, Path=BrightnessControllers}"
                           IsEnabled="{Binding BrightnessFlyoutHelper.IsEnabled, Mode=OneWay}">
                 <ItemsControl.ItemsPanel>

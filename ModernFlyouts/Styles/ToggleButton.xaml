@@ -98,7 +98,7 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="Background" Value="Transparent" />
+                            <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundDisabled}" />
                             <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundDisabled}" />
 
@@ -145,7 +145,7 @@
                                 <Condition Property="IsChecked" Value="True" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="Background" Value="Transparent" />
+                            <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundCheckedDisabled}" />
                             <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushCheckedDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundCheckedDisabled}" />
 
@@ -192,7 +192,7 @@
                                 <Condition Property="IsChecked" Value="{x:Null}" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Background" Property="Background" Value="Transparent" />
+                            <Setter TargetName="Background" Property="Background" Value="{DynamicResource ToggleButtonRevealBackgroundIndeterminateDisabled}" />
                             <Setter TargetName="ContentBorder" Property="BorderBrush" Value="{DynamicResource ToggleButtonRevealBorderBrushIndeterminateDisabled}" />
                             <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource ToggleButtonForegroundIndeterminateDisabled}" />
 
@@ -205,7 +205,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="MediaToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource ToggleButtonRevealStyle}">
+    <Style x:Key="MediaToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource DefaultToggleButtonStyle}">
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
         <Setter Property="ui:ControlHelper.CornerRadius" Value="6" />

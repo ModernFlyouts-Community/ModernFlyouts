@@ -8,13 +8,6 @@ namespace ModernFlyouts
     {
         private BrightnessControl brightnessControl;
 
-        private bool compatibilityMode = false;
-        public bool CompatibilityMode
-        {
-            get { return compatibilityMode; }
-            set { CompatibilityChanged(value); }
-        }
-
         public BrightnessFlyoutHelper()
         {
             Initialize();
@@ -24,7 +17,7 @@ namespace ModernFlyouts
         {
             AlwaysHandleDefaultFlyout = true;
 
-            BrightnessManager.Initialize(compatibilityMode);
+            BrightnessManager.Initialize();
 
             brightnessControl = new BrightnessControl();
 
@@ -47,7 +40,7 @@ namespace ModernFlyouts
 
             AppDataHelper.BrightnessModuleEnabled = IsEnabled;
 
-            BrightnessManager.Initialize(compatibilityMode);
+            BrightnessManager.Initialize();
         }
 
         protected override void OnDisabled()
@@ -57,12 +50,6 @@ namespace ModernFlyouts
             BrightnessManager.Suspend();
 
             AppDataHelper.BrightnessModuleEnabled = IsEnabled;
-        }
-
-        public void CompatibilityChanged(bool mode)
-        {
-            compatibilityMode = mode;
-            BrightnessManager.Instance.CompatibilityMode = compatibilityMode;
         }
     }
 }

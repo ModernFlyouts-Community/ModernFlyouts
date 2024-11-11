@@ -78,7 +78,7 @@
       <Extensions>
         <uap5:Extension
             Category="windows.startupTask"
-            Executable="ModernFlyouts.exe"
+            Executable="ModernFlyoutsHost.exe"
             EntryPoint="Windows.FullTrustApplication">
           <uap5:StartupTask
             TaskId="ModernFlyoutsStartupId"

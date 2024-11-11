@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ModernFlyouts.AppLifecycle;
-using ModernFlyouts.Controls;
 using ModernFlyouts.Core.Display;
 using ModernFlyouts.Core.Interop;
 using ModernFlyouts.Core.UI;
@@ -17,7 +16,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using static ModernFlyouts.Core.Interop.NativeMethods;
 
@@ -57,34 +55,6 @@ namespace ModernFlyouts
         public LockKeysFlyoutHelper LockKeysFlyoutHelper { get; set; }
 
         public BrightnessFlyoutHelper BrightnessFlyoutHelper { get; set; }
-
-        private bool brightnessCompatibility = DefaultValuesStore.BrightnessCompatibility;
-
-        public bool BrightnessCompatibility
-        {
-            get => brightnessCompatibility;
-            set
-            {
-                if (SetProperty(ref brightnessCompatibility, value))
-                {
-                    OnBrightnessCompatibilityChanged();
-                }
-            }
-        }
-
-        private Orientation onScreenFlyoutOrientation = DefaultValuesStore.FlyoutOrientation;
-
-        public Orientation OnScreenFlyoutOrientation
-        {
-            get => onScreenFlyoutOrientation;
-            set
-            {
-                if (SetProperty(ref onScreenFlyoutOrientation, value))
-                {
-                    OnFlyoutOrientationChanged();
-                }
-            }
-        }
 
         private DefaultFlyout defaultFlyout = DefaultValuesStore.PreferredDefaultFlyout;
 
@@ -180,14 +150,6 @@ namespace ModernFlyouts
 
             DefaultFlyoutPosition = AppDataHelper.DefaultFlyoutPosition;
 
-            onScreenFlyoutOrientation = AppDataHelper.FlyoutOrientation;
-            
-            OnScreenFlyoutView.ContentStackPanel.Orientation = OnScreenFlyoutOrientation switch
-            {
-                Orientation.Vertical => Orientation.Horizontal,
-                _ => Orientation.Vertical,
-            };
-
             if (DisplayManager.Instance.DisplayMonitors
                 .Any(x => x.DeviceId == preferredDisplayMonitorId))
             {
@@ -215,11 +177,10 @@ namespace ModernFlyouts
 
             #region Initiate Helpers
 
-            AudioFlyoutHelper = new AudioFlyoutHelper(OnScreenFlyoutOrientation) { IsEnabled = adEnabled };
-            AudioFlyoutHelper.SetupEvents();
+            AudioFlyoutHelper = new AudioFlyoutHelper() { IsEnabled = adEnabled };
             AirplaneModeFlyoutHelper = new AirplaneModeFlyoutHelper() { IsEnabled = apmdEnabled };
             LockKeysFlyoutHelper = new LockKeysFlyoutHelper() { IsEnabled = lkkyEnabled };
-            BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled, CompatibilityMode = AppDataHelper.BrightnessCompatibility };
+            BrightnessFlyoutHelper = new BrightnessFlyoutHelper() { IsEnabled = brEnabled };
 
             flyoutHelpers.Add(AudioFlyoutHelper);
             flyoutHelpers.Add(AirplaneModeFlyoutHelper);
@@ -543,23 +504,6 @@ namespace ModernFlyouts
             {
                 UpdatePreferredMonitor();
             }
-        }
-
-        private void OnBrightnessCompatibilityChanged()
-        {
-            AppDataHelper.BrightnessCompatibility = brightnessCompatibility;
-            BrightnessFlyoutHelper.CompatibilityMode = brightnessCompatibility;
-        }
-
-        private void OnFlyoutOrientationChanged()
-        {
-            AppDataHelper.FlyoutOrientation = OnScreenFlyoutOrientation;
-            OnScreenFlyoutView.ContentStackPanel.Orientation = OnScreenFlyoutOrientation switch
-            {
-                Orientation.Vertical => Orientation.Horizontal,
-                _ => Orientation.Vertical,
-            };
-            AudioFlyoutHelper.OnFlyoutOrientationChanged(OnScreenFlyoutOrientation);
         }
 
         private void SaveOnScreenFlyoutPosition()

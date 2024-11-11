@@ -512,18 +512,6 @@
           <source>Fade animation</source>
           <target state="translated">Animação fade</target>
         </trans-unit>
-        <trans-unit id="Settings.UseSmallFlyout" translate="yes" xml:space="preserve">
-          <source>Enable Condensed Lock Flyouts</source>
-          <target state="new">Enable Condensed Lock Flyouts</target>
-        </trans-unit>
-        <trans-unit id="Settings.FlyoutAxis" translate="yes" xml:space="preserve">
-          <source>Flyout axis</source>
-          <target state="new">Flyout axis</target>
-        </trans-unit>
-        <trans-unit id="Settings.BrightnessCompatibility" translate="yes" xml:space="preserve">
-          <source>Enable compatibility for laptop screens</source>
-          <target state="new">Enable compatibility for laptop screens</target>
-        </trans-unit>
       </group>
     </body>
   </file>
