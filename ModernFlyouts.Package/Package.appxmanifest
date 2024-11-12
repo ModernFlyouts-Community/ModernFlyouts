@@ -11,7 +11,7 @@
   <Identity
     Name="32669SamG.ModernFlyouts"
     Publisher="CN=samue"
-    Version="0.9.8513.0" />
+    Version="0.9.8622.0" />
 
   <Properties>
     <DisplayName>ms-resource:Resources/PackageDisplayName</DisplayName>
@@ -78,7 +78,7 @@
       <Extensions>
         <uap5:Extension
             Category="windows.startupTask"
-            Executable="ModernFlyoutsHost.exe"
+            Executable="ModernFlyouts.exe"
             EntryPoint="Windows.FullTrustApplication">
           <uap5:StartupTask
             TaskId="ModernFlyoutsStartupId"

@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
     <Platforms>x86;x64;arm64</Platforms>
-    <RuntimeIdentifiers>win10-x64;win10-x86;win10-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x64;win-x86;win-arm64</RuntimeIdentifiers>
     <UseWPF>true</UseWPF>
     <OutputType>WinExe</OutputType>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -24,17 +24,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <!--<PackageReference Include="H.NotifyIcon.Wpf" Version="2.1.4" />-->
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageReference Include="ModernWpf.Toolkit.UI.Controls" Version="0.1.0" />
     <PackageReference Include="ModernWpfUI" Version="0.9.6" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.18" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.0-rc.2.24474.1" />
+    <PackageReference Include="System.Management" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Release'">
-    <PackageReference Include="Microsoft.AppCenter" Version="4.3.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.3.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.6" />
     <PackageReference Include="Microsoft.Services.Store.SDK" Version="10.1705.16001" />
   </ItemGroup>
 

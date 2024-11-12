@@ -352,7 +352,7 @@ namespace ModernFlyouts.Core.Interop
             String outerName = "";
             String innerClass = "";
             String innerName = "";
-            if (buildNumber >= 22000)
+            if (buildNumber >= 22620) // 22H2 changes the OSD
             {
                 outerClass = "XamlExplorerHostIslandWindow";
                 innerClass = "Windows.UI.Composition.DesktopWindowContentBridge";
