@@ -12,15 +12,15 @@
         </trans-unit>
         <trans-unit id="AirplaneMode.NotAvailable" translate="yes" xml:space="preserve">
           <source>Airplane mode is not available :(</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ máy bay không khả :(</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ máy bay không khả dụng :(</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOff" translate="yes" xml:space="preserve">
           <source>Airplane mode off</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chế độ Máy bay tắt</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tắt Chế độ Máy bay</target>
         </trans-unit>
         <trans-unit id="AirplaneModeOn" translate="yes" xml:space="preserve">
           <source>Airplane mode on</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chế độ Máy bay bật</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bật Chế độ Máy bay</target>
         </trans-unit>
         <trans-unit id="Align" translate="yes" xml:space="preserve">
           <source>Align to default position</source>
@@ -28,7 +28,7 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.NoDevices" translate="yes" xml:space="preserve">
           <source>No Connected Audio Devices</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Không có Thiết bị Âm thanh Được kết nối</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Không có thiết bị âm thanh!</target>
         </trans-unit>
         <trans-unit id="Close" translate="yes" xml:space="preserve">
           <source>Close</source>
@@ -40,7 +40,7 @@
         </trans-unit>
         <trans-unit id="ExitItemDescription" translate="yes" xml:space="preserve">
           <source>Exit the app safely</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thoát khỏi ứng dụng một cách an toàn</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thoát hoàn toàn khỏi ứng dụng</target>
         </trans-unit>
         <trans-unit id="GeneralSettings" translate="yes" xml:space="preserve">
           <source>General</source>
@@ -48,37 +48,37 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.InsertMode" translate="yes" xml:space="preserve">
           <source>Insert Mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ Chèn</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ Chèn (Insert)</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOff" translate="yes" xml:space="preserve">
           <source>{0} is off</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} đã tắt</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tắt {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is off</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.KeyIsOn" translate="yes" xml:space="preserve">
           <source>{0} is on</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">{0} đang bật</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bật {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">E.g. Caps lock is on</note>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.OvertypeMode" translate="yes" xml:space="preserve">
           <source>Overtype Mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ ghi công</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chế độ Ghi đè (Overtype)</target>
         </trans-unit>
         <trans-unit id="PinTopBar" translate="yes" xml:space="preserve">
           <source>Pin TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ghim Thanh Trên cùng</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ghim thanh trên</target>
         </trans-unit>
         <trans-unit id="RestoreDefaultItem" translate="yes" xml:space="preserve">
           <source>Restore legacy flyout</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Khôi phục Mặc định</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Khôi phục mặc định</target>
         </trans-unit>
         <trans-unit id="RestoreDefaultItemDescription" translate="yes" xml:space="preserve">
           <source>Restores the windows default flyout and safely quits this app</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Khôi phục cửa sổ mặc định tờ rơi và thoát khỏi ứng dụng này một cách an toàn</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Khôi phục cài đặt mặc định và thoát hoàn toàn khỏi ứng dụng</target>
         </trans-unit>
         <trans-unit id="SessionControl.MoreControls" translate="yes" xml:space="preserve">
           <source>More Controls</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Quyền kiểm soát khác</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Những hành động khác</target>
         </trans-unit>
         <trans-unit id="SessionControl.Next" translate="yes" xml:space="preserve">
           <source>Next</source>
@@ -122,11 +122,11 @@
         </trans-unit>
         <trans-unit id="SessionControl.TimelineInfo" translate="yes" xml:space="preserve">
           <source>Timeline Info</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thông tin Đường thời gian</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thông tin thời gian</target>
         </trans-unit>
         <trans-unit id="Settings.Additional" translate="yes" xml:space="preserve">
           <source>Additional</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bổ sung</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Thêm</target>
         </trans-unit>
         <trans-unit id="Settings.Behavior" translate="yes" xml:space="preserve">
           <source>Behavior</source>
@@ -134,15 +134,15 @@
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyout" translate="yes" xml:space="preserve">
           <source>Default Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bay lên mặc định</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout mặc định</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutDescription" translate="yes" xml:space="preserve">
           <source>Select the default flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chọn hộp bay mặc định</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chọn Flyout mặc định</target>
         </trans-unit>
         <trans-unit id="Settings.DefaultFlyoutWarningMessage" translate="yes" xml:space="preserve">
           <source>Choosing the Windows Default Flyout as default won't close this app. This app will still keep running in the background. Please exit this app safely to improve performance.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chọn Flyout Mặc định của Windows làm mặc định sẽ không đóng ứng dụng này. Ứng dụng này vẫn sẽ tiếp tục chạy trong nền. Vui lòng thoát khỏi ứng dụng này một cách an toàn để cải thiện hiệu suất.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chọn Flyout Mặc định của Windows làm mặc định sẽ không đóng ứng dụng này. Vui lòng thoát hoàn toàn ứng dụng này để cải thiện hiệu suất.</target>
         </trans-unit>
         <trans-unit id="Settings.Disabled" translate="yes" xml:space="preserve">
           <source>Disabled</source>
@@ -154,15 +154,15 @@
         </trans-unit>
         <trans-unit id="Settings.FlyoutBackgroundOpacity" translate="yes" xml:space="preserve">
           <source>Flyout background opacity</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Độ mờ nền bay ra</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Độ mờ Flyout</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutDefaultPosition" translate="yes" xml:space="preserve">
           <source>Flyout default position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vị trí Mặc định Của Flyout (đối với nút Căn chỉnh)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vị trí mặc định của Flyout</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTopBar" translate="yes" xml:space="preserve">
           <source>Flyout TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thanh trên cùng bay ra</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thanh trên Flyout</target>
         </trans-unit>
         <trans-unit id="Settings.Modules" translate="yes" xml:space="preserve">
           <source>Flyout modules</source>
@@ -170,19 +170,19 @@
         </trans-unit>
         <trans-unit id="Settings.Modules.Airplane" translate="yes" xml:space="preserve">
           <source>Airplane mode</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun máy bayMode-flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun Chế độ máy bay</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Audio" translate="yes" xml:space="preserve">
           <source>Audio</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun phát âm thanh</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun Âm thanh</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.Brightness" translate="yes" xml:space="preserve">
           <source>Brightness</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun độ sáng-flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun Độ sáng</target>
         </trans-unit>
         <trans-unit id="Settings.Modules.LockKeys" translate="yes" xml:space="preserve">
           <source>Lock keys</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun khóa-flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mô-đun nút bàn phím</target>
         </trans-unit>
         <trans-unit id="Settings.RunAtStartup" translate="yes" xml:space="preserve">
           <source>Run at startup</source>
@@ -194,15 +194,15 @@
         </trans-unit>
         <trans-unit id="SettingsItemDescription" translate="yes" xml:space="preserve">
           <source>Open settings window</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mở cửa sổ thiết đặt</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mở cửa sổ cài đặt</target>
         </trans-unit>
         <trans-unit id="UnpinTopBar" translate="yes" xml:space="preserve">
           <source>Unpin TopBar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bỏ ghim Thanh Trên cùng</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bỏ ghim thanh trên</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.ModernFlyouts" translate="yes" xml:space="preserve">
           <source>ModernFlyouts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ModernFlyouts (Hiện đạiFlyouts)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ModernFlyouts</target>
         </trans-unit>
         <trans-unit id="Enums.DefaultFlyout.None" translate="yes" xml:space="preserve">
           <source>None</source>
@@ -214,23 +214,23 @@
         </trans-unit>
         <trans-unit id="Enums.Orientation.Horizontal" translate="yes" xml:space="preserve">
           <source>Horizontal</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Theo chiều ngang</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chiều ngang</target>
         </trans-unit>
         <trans-unit id="Enums.Orientation.Vertical" translate="yes" xml:space="preserve">
           <source>Vertical</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dọc</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chiều Dọc</target>
         </trans-unit>
         <trans-unit id="About.AppDescription" translate="yes" xml:space="preserve">
           <source>This app is designed to be a modern Fluent Design replacement for the old metro themed flyouts present in Windows since Windows 8.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ứng dụng này được thiết kế để thay thế Fluent Design hiện đại cho các tờ rơi theo chủ đề tàu điện ngầm cũ có trong Windows kể từ Windows 8.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ứng dụng này được thiết kế để thay thế Fluent Design của Windows kể từ Windows 8.</target>
         </trans-unit>
         <trans-unit id="About.Contributors" translate="yes" xml:space="preserve">
           <source>Contributors</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Người đóng góp</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Những người đóng góp</target>
         </trans-unit>
         <trans-unit id="About.GitHub" translate="yes" xml:space="preserve">
           <source>GitHub repository</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kho lưu trữ GitHub</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">GitHub</target>
         </trans-unit>
         <trans-unit id="About.OpenNewIssue" translate="yes" xml:space="preserve">
           <source>Open a new issue</source>
@@ -250,7 +250,7 @@
         </trans-unit>
         <trans-unit id="Settings.LanguageDescription" translate="yes" xml:space="preserve">
           <source>Restart required to apply language change properly</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vui lòng khởi động lại ứng dụng để thay đổi ngôn ngữ đúng cách</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vui lòng khởi động lại ứng dụng để thay đổi ngôn ngữ hoàn toàn</target>
         </trans-unit>
         <trans-unit id="Settings.SystemDefault" translate="yes" xml:space="preserve">
           <source>System default</source>
@@ -258,11 +258,11 @@
         </trans-unit>
         <trans-unit id="About.Dependencies" translate="yes" xml:space="preserve">
           <source>Dependencies</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Quan hệ phụ thuộc</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Phụ thuộc vào</target>
         </trans-unit>
         <trans-unit id="About.FileABug" translate="yes" xml:space="preserve">
           <source>If you find any bugs, please open a new issue in the github repository.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nếu bạn tìm thấy bất kỳ lỗi nào, vui lòng mở một vấn đề mới trong kho github.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nếu bạn tìm thấy bất kỳ lỗi nào, vui lòng mở một vấn đề mới trong GitHub.</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.MaxVerticalSessionControlsCount" translate="yes" xml:space="preserve">
           <source>Number of sessions to show</source>
@@ -274,15 +274,15 @@
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" translate="yes" xml:space="preserve">
           <source>Show Global System Media Transport Controls (GSMTC) aka Media controls in Volume flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiển thị Điều khiển Truyền tải Phương tiện Truyền thông Hệ thống Toàn cầu (GSMTC) hay còn gọi là Điều khiển Phương tiện trong phần phát ra Ổ đĩa</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiển thị GSMTC</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" translate="yes" xml:space="preserve">
           <source>Show Volume control in Global System Media Transport Controls (GSMTC) aka Media flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiển thị điều khiển âm lượng trong điều khiển truyền thông truyền thông toàn cầu (GSMTC) aka phương tiện truyền thông flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiển thị điều khiển âm lượng GSMTC</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.ThumbnailAlignment" translate="yes" xml:space="preserve">
           <source>Thumbnail alignment</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Căn chỉnh hình thu nhỏ</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Căn chỉnh hình Thumbnail</target>
         </trans-unit>
         <trans-unit id="Enums.ElementTheme.Dark" translate="yes" xml:space="preserve">
           <source>Dark</source>
@@ -294,7 +294,7 @@
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.AutoHide" translate="yes" xml:space="preserve">
           <source>Auto-hide</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tự ẩn</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tự động ẩn</target>
         </trans-unit>
         <trans-unit id="Enums.TopBarVisibility.Collapsed" translate="yes" xml:space="preserve">
           <source>Collapsed</source>
@@ -306,51 +306,51 @@
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.CapsLock" translate="yes" xml:space="preserve">
           <source>Caps lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Caps lock</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Caps Lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.Insert" translate="yes" xml:space="preserve">
           <source>Insert</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chèn</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chèn (Insert)</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.NumLock" translate="yes" xml:space="preserve">
           <source>Num lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Khóa Num</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Num Lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.ScrollLock" translate="yes" xml:space="preserve">
           <source>Scroll lock</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Khóa cuộn</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Scroll Lock</target>
         </trans-unit>
         <trans-unit id="LockKeysFlyoutHelper.SelectKeyDescription" translate="yes" xml:space="preserve">
           <source>Select the keys you want to show the flyout for</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chọn các phím bạn muốn hiển thị hộp chú thích cho</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chọn các phím bạn muốn hiển thị Flyout</target>
         </trans-unit>
         <trans-unit id="Settings.Appearance" translate="yes" xml:space="preserve">
           <source>Appearance</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Diện mạo</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hiển thị</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Airplane" translate="yes" xml:space="preserve">
           <source>Enable Airplane mode Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bật Chế độ máy bay Flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">FLyout Chế độ máy bay</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Audio" translate="yes" xml:space="preserve">
           <source>Enable Audio Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bật Hộp bay Ra Âm thanh</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout Âm thanh</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.Brightness" translate="yes" xml:space="preserve">
           <source>Enable Brightness Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bật Hộp bay Có Độ sáng</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout Độ sáng</target>
         </trans-unit>
         <trans-unit id="Settings.EnableModule.LockKeys" translate="yes" xml:space="preserve">
           <source>Enable Lock keys Flyout</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bật Khóa phím Flyout</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Flyout các phím</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTheme" translate="yes" xml:space="preserve">
           <source>Flyout theme</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chủ đề Bay ra</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chủ đề Flyout</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutTimeout" translate="yes" xml:space="preserve">
           <source>Flyout timeout (ms)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thời gian chờ bay ra (ms)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thời gian chờ Flyout (ms)</target>
         </trans-unit>
         <trans-unit id="Settings.Left" translate="yes" xml:space="preserve">
           <source>Left</source>
@@ -370,11 +370,11 @@
         </trans-unit>
         <trans-unit id="Settings.TopBarVisibility" translate="yes" xml:space="preserve">
           <source>TopBar visibility</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Khả năng hiển thị Thanh Trên cùng</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiển thị thanh trên cùng</target>
         </trans-unit>
         <trans-unit id="Settings.TrayIconEnabled" translate="yes" xml:space="preserve">
           <source>Show icon on system tray area</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiện biểu tượng trên vùng khay hệ thống</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiện biểu tượng trên khay hệ thống</target>
         </trans-unit>
         <trans-unit id="Settings.Off" translate="yes" xml:space="preserve">
           <source>Off</source>
@@ -390,11 +390,11 @@
         </trans-unit>
         <trans-unit id="Settings.UseColoredTrayIcon" translate="yes" xml:space="preserve">
           <source>Use colored tray icon</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Biểu tượng Sử dụng khay màu</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Màu biểu tượng trên khay hệ thống</target>
         </trans-unit>
         <trans-unit id="Settings.ResetToDefaults" translate="yes" xml:space="preserve">
           <source>Reset all settings to defaults</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đặt lại tất cả các thiết đặt về mặc định</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đặt lại tất cả các cài đặt về mặc định</target>
         </trans-unit>
         <trans-unit id="Settings.Personalization" translate="yes" xml:space="preserve">
           <source>Personalization</source>
@@ -402,15 +402,15 @@
         </trans-unit>
         <trans-unit id="Settings.AlignFlyout" translate="yes" xml:space="preserve">
           <source>Align flyout to this position</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Căn chỉnh tờ rơi đến vị trí này</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Căn chỉnh Flyout đến vị trí này</target>
         </trans-unit>
         <trans-unit id="Settings.RestartRequired" translate="yes" xml:space="preserve">
           <source>Restart required to apply some changes</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Khởi động lại cần thiết để áp dụng một số thay đổi</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Khởi động lại ứng dụng để áp dụng thay đổi</target>
         </trans-unit>
         <trans-unit id="AudioFlyoutHelper.UseThumbnailAsBackground" translate="yes" xml:space="preserve">
           <source>Use media's thumbnail as media control's background</source>
-          <target state="new">Use media's thumbnail as media control's background</target>
+          <target state="new">Sử dụng Thumbnail làm hình nền</target>
         </trans-unit>
         <trans-unit id="Enums.FlyoutWindowAlignments.Bottom" translate="yes" xml:space="preserve">
           <source>Bottom</source>
@@ -474,27 +474,27 @@
         </trans-unit>
         <trans-unit id="Settings.DisplayDescription" translate="yes" xml:space="preserve">
           <source>Select the preferred display monitor to show the flyout on</source>
-          <target state="new">Select the preferred display monitor to show the flyout on</target>
+          <target state="new">Chọn màn hình hiển thị Flyout</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutAlignment" translate="yes" xml:space="preserve">
           <source>Flyout alignment</source>
-          <target state="new">Flyout alignment</target>
+          <target state="new">Hướng Fluent</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutContentStackingDirection" translate="yes" xml:space="preserve">
           <source>Flyout content stacking direction</source>
-          <target state="new">Flyout content stacking direction</target>
+          <target state="new">Hướng Flyout chông</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutExpandDirection" translate="yes" xml:space="preserve">
           <source>Flyout expand direction</source>
-          <target state="new">Flyout expand direction</target>
+          <target state="new">Hướng Flyout hiện ra</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacement" translate="yes" xml:space="preserve">
           <source>Flyout placement</source>
-          <target state="new">Flyout placement</target>
+          <target state="new">Nơi đặt Fluent</target>
         </trans-unit>
         <trans-unit id="Settings.FlyoutPlacementMode" translate="yes" xml:space="preserve">
           <source>Placement mode</source>
-          <target state="new">Placement mode</target>
+          <target state="new">Chê độ đặt</target>
         </trans-unit>
         <trans-unit id="Settings.HorizontalAlignment" translate="yes" xml:space="preserve">
           <source>Horizontal alignment</source>
