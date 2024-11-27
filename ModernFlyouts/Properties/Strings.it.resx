@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
@@ -7,16 +7,16 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Informazioni</value>
   </data>
   <data name="AirplaneMode.NotAvailable" xml:space="preserve">
-    <value>La modalità Aereo non è disponibile :(</value>
+    <value>Modalità aereo non disponibile</value>
   </data>
   <data name="AirplaneModeOff" xml:space="preserve">
     <value>Modalità aereo disattivata</value>
@@ -37,20 +37,20 @@
     <value>Esci</value>
   </data>
   <data name="ExitItemDescription" xml:space="preserve">
-    <value>Uscire dall'app in modo sicuro</value>
+    <value>Esci dall'app</value>
   </data>
   <data name="GeneralSettings" xml:space="preserve">
-    <value>Generale</value>
+    <value>Generali</value>
   </data>
   <data name="LockKeysFlyoutHelper.InsertMode" xml:space="preserve">
     <value>Modalità inserimento</value>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOff" xml:space="preserve">
-    <value>{0} è disattivato</value>
+    <value>{0} disattivato</value>
     <comment>E.g. Caps lock is off</comment>
   </data>
   <data name="LockKeysFlyoutHelper.KeyIsOn" xml:space="preserve">
-    <value>{0} è attivato</value>
+    <value>{0} attivato</value>
     <comment>E.g. Caps lock is on</comment>
   </data>
   <data name="LockKeysFlyoutHelper.OvertypeMode" xml:space="preserve">
@@ -63,7 +63,7 @@
     <value>Ripristina</value>
   </data>
   <data name="RestoreDefaultItemDescription" xml:space="preserve">
-    <value>Ripristina il riquadro a comparsa predefinito di Windows e chiude in modo sicuro quest'app</value>
+    <value>Ripristina i flyout predefiniti di Windows e chiude in modo sicuro l'app.</value>
   </data>
   <data name="SessionControl.MoreControls" xml:space="preserve">
     <value>Altri controlli</value>
@@ -105,16 +105,16 @@
     <value>Aggiuntivo</value>
   </data>
   <data name="Settings.Behavior" xml:space="preserve">
-    <value>Comportamento</value>
+    <value>Preferenze</value>
   </data>
   <data name="Settings.DefaultFlyout" xml:space="preserve">
-    <value>Riquadro a comparsa predefinito</value>
+    <value>Flyout predefiniti</value>
   </data>
   <data name="Settings.DefaultFlyoutDescription" xml:space="preserve">
-    <value>Selezionare il riquadro a comparsa predefinito</value>
+    <value>Seleziona il flyout predefinito</value>
   </data>
   <data name="Settings.DefaultFlyoutWarningMessage" xml:space="preserve">
-    <value>La scelta del riquadro a comparsa predefinito di Windows come predefinito non chiuderà questa app. Questa applicazione continuerà a funzionare in background. Si prega di uscire da questa applicazione in modo sicuro per migliorare le prestazioni.</value>
+    <value>La scelta del flyout predefinito di Windows non comporta la chiusura dell'app. L'esecuzione continuerà in background. Si prega di uscire dall'app in modo sicuro per migliorare le prestazioni.</value>
   </data>
   <data name="Settings.Disabled" xml:space="preserve">
     <value>Disabilitato</value>
@@ -123,40 +123,40 @@
     <value>Abilitato</value>
   </data>
   <data name="Settings.FlyoutBackgroundOpacity" xml:space="preserve">
-    <value>Opacità sfondo riquadro a comparsa</value>
+    <value>Opacità sfondo flyout</value>
   </data>
   <data name="Settings.FlyoutDefaultPosition" xml:space="preserve">
-    <value>Posizione predefinita riquadro a comparsa (per il pulsante Allinea)</value>
+    <value>Posizione predefinita flyout</value>
   </data>
   <data name="Settings.FlyoutTopBar" xml:space="preserve">
-    <value>Barra superiore riquadro a comparsa</value>
+    <value>Barra superiore dei flyout</value>
   </data>
   <data name="Settings.Modules" xml:space="preserve">
-    <value>Moduli</value>
+    <value>Flyout</value>
   </data>
   <data name="Settings.Modules.Airplane" xml:space="preserve">
-    <value>Modulo a comparsa - Mod.Aereo</value>
+    <value>Modalità aereo</value>
   </data>
   <data name="Settings.Modules.Audio" xml:space="preserve">
-    <value>Modulo a comparsa - Audio</value>
+    <value>Audio</value>
   </data>
   <data name="Settings.Modules.Brightness" xml:space="preserve">
-    <value>Modulo a comparsa - Luminosità</value>
+    <value>Luminosità</value>
   </data>
   <data name="Settings.Modules.LockKeys" xml:space="preserve">
-    <value>Modulo a comparsa - Tasti Block</value>
+    <value>Tasti di blocco</value>
   </data>
   <data name="Settings.RunAtStartup" xml:space="preserve">
     <value>Esegui all'avvio</value>
   </data>
   <data name="SettingsItem" xml:space="preserve">
-    <value>impostazioni</value>
+    <value>Impostazioni</value>
   </data>
   <data name="SettingsItemDescription" xml:space="preserve">
-    <value>Aprire la finestra delle impostazioni</value>
+    <value>Apri impostazioni</value>
   </data>
   <data name="UnpinTopBar" xml:space="preserve">
-    <value>Rimuovi TopBar</value>
+    <value>Rimuovi barra superiore</value>
   </data>
   <data name="Enums.DefaultFlyout.ModernFlyouts" xml:space="preserve">
     <value>ModernFlyouts</value>
@@ -165,7 +165,7 @@
     <value>Nessuno</value>
   </data>
   <data name="Enums.DefaultFlyout.WindowsDefault" xml:space="preserve">
-    <value>Impostazioni predefinite di Windows</value>
+    <value>Predefinito di Windows</value>
   </data>
   <data name="Enums.Orientation.Horizontal" xml:space="preserve">
     <value>Orizzontale</value>
@@ -174,7 +174,7 @@
     <value>Verticale</value>
   </data>
   <data name="About.AppDescription" xml:space="preserve">
-    <value>Questa applicazione è progettata per sostituire i vecchi flyout a tema Metro presenti in Windows con un moderno flyout in Fluent Design.</value>
+    <value>Modern Flyouts è un'app progettata per rimpiazzare i vecchi flyouts di Windows 10 con un Fluent Design intuitivo.</value>
   </data>
   <data name="About.Contributors" xml:space="preserve">
     <value>Collaboratori</value>
@@ -183,43 +183,43 @@
     <value>Repository GitHub</value>
   </data>
   <data name="About.OpenNewIssue" xml:space="preserve">
-    <value>Aprire un nuovo problema</value>
+    <value>Segnala un problema</value>
   </data>
   <data name="About.RateAndReview" xml:space="preserve">
-    <value>Valuta e rivedi su Microsoft Store</value>
+    <value>Valuta sul Microsoft Store</value>
   </data>
   <data name="About.Version" xml:space="preserve">
-    <value>Versione: </value>
+    <value>Versione </value>
   </data>
   <data name="Settings.Language" xml:space="preserve">
-    <value>lingua</value>
+    <value>Lingua</value>
   </data>
   <data name="Settings.LanguageDescription" xml:space="preserve">
     <value>Si prega di riavviare l'applicazione per cambiare la lingua correttamente</value>
   </data>
   <data name="Settings.SystemDefault" xml:space="preserve">
-    <value>Predefinito del sistema</value>
+    <value>Predefinito di Sistema</value>
   </data>
   <data name="About.Dependencies" xml:space="preserve">
     <value>Dipendenze</value>
   </data>
   <data name="About.FileABug" xml:space="preserve">
-    <value>Se si trovano bug, si prega di aprire un nuovo problema nel repository github.</value>
+    <value>In caso di errori, si prega di segnalare il problema su GitHub.</value>
   </data>
   <data name="AudioFlyoutHelper.MaxVerticalSessionControlsCount" xml:space="preserve">
     <value>Numero di sessioni da visualizzare</value>
   </data>
   <data name="AudioFlyoutHelper.SessionsPanelOrientation" xml:space="preserve">
-    <value>Orientamento del pannello Sessioni multimediali</value>
+    <value>Orientamento pannello Sessioni Multimediali</value>
   </data>
   <data name="AudioFlyoutHelper.ShowGSMTCInVolumeFlyout" xml:space="preserve">
-    <value>Mostra controlli globali di trasporto multimediale di sistema (GSMTC) aka Controlli multimediali nel riquadro a comparsa Volume</value>
+    <value>Mostra controlli multimediali di sistema nel flyout del Volume</value>
   </data>
   <data name="AudioFlyoutHelper.ShowVolumeControlInGSMTCFlyout" xml:space="preserve">
-    <value>Mostra controllo volume nel riquadro a comparsa GSMTC (Global System Media Transport Controls)</value>
+    <value>Mostra controllo volume nel flyout GSMTC (Global System Media Transport Controls)</value>
   </data>
   <data name="AudioFlyoutHelper.ThumbnailAlignment" xml:space="preserve">
-    <value>Allineamento delle miniature</value>
+    <value>Allineamento miniature</value>
   </data>
   <data name="Enums.ElementTheme.Dark" xml:space="preserve">
     <value>Scuro</value>
@@ -231,7 +231,7 @@
     <value>Nascondi automaticamente</value>
   </data>
   <data name="Enums.TopBarVisibility.Collapsed" xml:space="preserve">
-    <value>Compresso</value>
+    <value>Compressa</value>
   </data>
   <data name="Enums.TopBarVisibility.Visible" xml:space="preserve">
     <value>Visibile</value>
@@ -249,46 +249,46 @@
     <value>Blocco scorrimento</value>
   </data>
   <data name="LockKeysFlyoutHelper.SelectKeyDescription" xml:space="preserve">
-    <value>Selezionare i tasti per i quale si desidera visualizzare il riquadro a comparsa</value>
+    <value>Mostra all'attivazione di</value>
   </data>
   <data name="Settings.Appearance" xml:space="preserve">
     <value>Aspetto</value>
   </data>
   <data name="Settings.EnableModule.Airplane" xml:space="preserve">
-    <value>Abilita riquadro a comparsa modalità aereo</value>
+    <value>Abilita flyout Modalità aereo</value>
   </data>
   <data name="Settings.EnableModule.Audio" xml:space="preserve">
-    <value>Abilita riquadro a comparsa audio</value>
+    <value>Abilita flyout Audio</value>
   </data>
   <data name="Settings.EnableModule.Brightness" xml:space="preserve">
-    <value>Abilita riquadro a comparsa Luminosità</value>
+    <value>Abilita flyout Luminosità</value>
   </data>
   <data name="Settings.EnableModule.LockKeys" xml:space="preserve">
-    <value>Abilita tasti di blocco riquadro a comparsa</value>
+    <value>Abilita flyout Tasti di blocco</value>
   </data>
   <data name="Settings.FlyoutTheme" xml:space="preserve">
-    <value>Tema riquadro a comparsa</value>
+    <value>Tema flyout</value>
   </data>
   <data name="Settings.FlyoutTimeout" xml:space="preserve">
-    <value>Timeout riquadro a comparsa (ms)</value>
+    <value>Timeout flyout (ms)</value>
   </data>
   <data name="Settings.Left" xml:space="preserve">
     <value>A sinistra</value>
   </data>
   <data name="Settings.Modules.Audio.Media" xml:space="preserve">
-    <value>File multimediali</value>
+    <value>Media</value>
   </data>
   <data name="Settings.Modules.Audio.Volume" xml:space="preserve">
-    <value>Anno</value>
+    <value>Volume</value>
   </data>
   <data name="Settings.Right" xml:space="preserve">
     <value>A destra</value>
   </data>
   <data name="Settings.TopBarVisibility" xml:space="preserve">
-    <value>Visibilità TopBar</value>
+    <value>Visibilità barra superiore</value>
   </data>
   <data name="Settings.TrayIconEnabled" xml:space="preserve">
-    <value>Mostra icona nell'area della barra delle applicazioni</value>
+    <value>Mostra icona nella sezione System Tray</value>
   </data>
   <data name="Settings.Off" xml:space="preserve">
     <value>Disattivato</value>
@@ -300,10 +300,10 @@
     <value>Tema dell'app</value>
   </data>
   <data name="Settings.UseColoredTrayIcon" xml:space="preserve">
-    <value>Utilizzare l'icona del vassoio colorato</value>
+    <value>Utilizza icona colorata nella sezione System Tray</value>
   </data>
   <data name="Settings.ResetToDefaults" xml:space="preserve">
-    <value>Ripristinare le impostazioni predefinite di tutte le impostazioni</value>
+    <value>Ripristina impostazioni predefinite</value>
   </data>
   <data name="Settings.Personalization" xml:space="preserve">
     <value>Personalizzazione</value>
@@ -312,7 +312,7 @@
     <value>Allinea riquadro a comparsa in questa posizione</value>
   </data>
   <data name="Settings.RestartRequired" xml:space="preserve">
-    <value>Riavvio necessario per applicare alcune modifiche</value>
+    <value>Riavvio necessario per applicare le modifiche</value>
   </data>
   <data name="Enums.FlyoutWindowAlignments.Bottom" xml:space="preserve">
     <value>In basso</value>
@@ -321,7 +321,7 @@
     <value>Al centro</value>
   </data>
   <data name="Enums.FlyoutWindowAlignments.Left" xml:space="preserve">
-    <value>sinistra</value>
+    <value>A sinistra</value>
   </data>
   <data name="Enums.FlyoutWindowAlignments.Right" xml:space="preserve">
     <value>A destra</value>
@@ -333,16 +333,16 @@
     <value>Automatico</value>
   </data>
   <data name="Enums.FlyoutWindowExpandDirection.Down" xml:space="preserve">
-    <value>giù</value>
+    <value>In basso</value>
   </data>
   <data name="Enums.FlyoutWindowExpandDirection.Left" xml:space="preserve">
-    <value>sinistra</value>
+    <value>A sinistra</value>
   </data>
   <data name="Enums.FlyoutWindowExpandDirection.Right" xml:space="preserve">
     <value>A destra</value>
   </data>
   <data name="Enums.FlyoutWindowExpandDirection.Up" xml:space="preserve">
-    <value>su</value>
+    <value>In alto</value>
   </data>
   <data name="Enums.FlyoutWindowPlacementMode.Auto" xml:space="preserve">
     <value>Automatico</value>
@@ -363,9 +363,9 @@
     <value>Allineamento orizzontale</value>
   </data>
   <data name="Settings.Layout" xml:space="preserve">
-    <value>Forma</value>
+    <value>Layout</value>
   </data>
   <data name="Settings.VerticalAlignment" xml:space="preserve">
-    <value>&amp;Allineamento verticale:</value>
+    <value>Allineamento verticale</value>
   </data>
 </root>
